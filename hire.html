@@ -8,99 +8,183 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Include your standard header navigation here -->
     <header class="header">
-        <!-- Your standard navigation -->
+        <nav class="main-nav">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Bar Harbor Police Department Logo" class="logo">
+            </a>
+
+            <div class="nav-wrapper">
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
+                            <li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
+                            <li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
+                            <li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
+                            <li><a href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Unit</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-hands-helping"></i> Programs <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="good-morning-program.html"><i class="fas fa-sun"></i> Good Morning Program</a></li>
+                            <li><a href="citizens-academy.html"><i class="fas fa-graduation-cap"></i> Citizens Academy</a></li>
+                            <li><a href="community-outreach.html"><i class="fas fa-heart"></i> Community Outreach</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="active"><i class="fas fa-user-tie"></i> Recruitment <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="bhmdrec.html"><i class="fas fa-briefcase"></i> Career Opportunities</a></li>
+                            <li><a href="application-process.html" class="active"><i class="fas fa-file-alt"></i> Application Process</a></li>
+                            <li><a href="benefits.html"><i class="fas fa-medal"></i> Benefits & Salary</a></li>
+                            <li><a href="academy-training.html"><i class="fas fa-chalkboard-teacher"></i> Academy Training</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
+                    <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
-    <main class="recruitment-page">
-        <div class="top-spacer"></div>
-        
-        <div class="hero-section">
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
             <div class="hero-content">
                 <h1>Join Our Department</h1>
                 <p>Follow these steps to become part of the Bar Harbor Police Department team</p>
             </div>
-        </div>
+        </section>
 
-        <div class="process-timeline">
-            <div class="timeline-step active">
-                <div class="step-icon">
-                    <i class="fas fa-file-alt"></i>
-                </div>
-                <span>Application</span>
-            </div>
-            <div class="timeline-step">
-                <div class="step-icon">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <span>Testing</span>
-            </div>
-            <div class="timeline-step">
-                <div class="step-icon">
-                    <i class="fas fa-search"></i>
-                </div>
-                <span>Background</span>
-            </div>
-            <div class="timeline-step">
-                <div class="step-icon">
-                    <i class="fas fa-heartbeat"></i>
-                </div>
-                <span>Medical</span>
-            </div>
-            <div class="timeline-step">
-                <div class="step-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <span>Final Interview</span>
-            </div>
-        </div>
-
-        <div class="process-sections">
-            <section id="application" class="process-section">
-                <div class="section-card">
-                    <div class="card-header">
-                        <i class="fas fa-file-alt"></i>
-                        <h2>Step 1: Application Process</h2>
+        <!-- Timeline Section -->
+        <section class="process-timeline">
+            <div class="container">
+                <div class="timeline-wrapper">
+                    <div class="timeline-step active">
+                        <div class="step-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <span>Application</span>
                     </div>
-                    <div class="card-content">
-                        <p>Begin your journey with the Bar Harbor Police Department by submitting your application.</p>
-                        <div class="action-box">
-                            <a href="#" class="apply-button">
+                    <div class="timeline-step">
+                        <div class="step-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <span>Testing</span>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <span>Background</span>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <span>Medical</span>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <span>Final Interview</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Sections -->
+        <section class="process-sections">
+            <div class="container">
+                <div class="info-grid">
+                    <!-- Application Step -->
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-file-alt"></i>
+                            <h2>Step 1: Application</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>Begin your journey with the Bar Harbor Police Department by submitting your application.</p>
+                            <a href="#" class="btn btn-primary mt-2">
                                 Start Your Application
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
-                </div>
-            </section>
 
-            <section id="testing" class="process-section">
-                <div class="section-card">
-                    <div class="card-header">
-                        <i class="fas fa-tasks"></i>
-                        <h2>Step 2: Testing Requirements</h2>
-                    </div>
-                    <div class="test-types">
-                        <div class="test-card">
+                    <!-- Testing Step -->
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-tasks"></i>
+                            <h2>Step 2: Testing</h2>
+                        </div>
+                        <div class="card-body">
                             <h3><i class="fas fa-pencil-alt"></i> Written Exam (TABE)</h3>
                             <p>Online proctored test covering Reading and Language skills</p>
+                            
+                            <h3 class="mt-3"><i class="fas fa-running"></i> Physical Abilities Test</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> 1.5 Mile Run</li>
+                                <li><i class="fas fa-check"></i> Dummy Drag</li>
+                                <li><i class="fas fa-check"></i> Obstacle Course</li>
+                                <li><i class="fas fa-check"></i> Equipment Handling</li>
+                            </ul>
                         </div>
-                        <div class="test-card">
-                            <h3><i class="fas fa-running"></i> Physical Abilities Test</h3>
-                            <ul>
-                                <li>1.5 Mile Run</li>
-                                <li>Dummy Drag</li>
-                                <li>Obstacle Course</li>
-                                <li>Equipment Handling</li>
+                    </div>
+
+                    <!-- Background Step -->
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-search"></i>
+                            <h2>Step 3: Background</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>Comprehensive background investigation including:</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Criminal History Check</li>
+                                <li><i class="fas fa-check"></i> Reference Verification</li>
+                                <li><i class="fas fa-check"></i> Employment History</li>
+                                <li><i class="fas fa-check"></i> Personal History</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Medical Step -->
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-heartbeat"></i>
+                            <h2>Step 4: Medical</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>Medical evaluation including:</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Physical Examination</li>
+                                <li><i class="fas fa-check"></i> Drug Screening</li>
+                                <li><i class="fas fa-check"></i> Vision Test</li>
+                                <li><i class="fas fa-check"></i> Hearing Test</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- Similar sections for Background, Medical, and Interview -->
-        </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
