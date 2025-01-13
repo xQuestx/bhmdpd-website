@@ -158,28 +158,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
 
     mobileMenuBtn.addEventListener('click', function(e) {
-        e.stopPropagation(); // Prevent event from bubbling
+        e.stopPropagation();
+        this.classList.toggle('active');
         navWrapper.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
-        body.classList.toggle('menu-open'); // Prevent scrolling when menu is open
-    });
-
-    // Handle dropdown clicks
-    document.querySelectorAll('.dropdown > a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                e.stopPropagation();
-                const dropdown = this.parentElement;
-                
-                // Close other dropdowns
-                document.querySelectorAll('.dropdown').forEach(d => {
-                    if (d !== dropdown) d.classList.remove('active');
-                });
-                
-                dropdown.classList.toggle('active');
-            }
-        });
+        body.classList.toggle('menu-open');
+        
+        // Toggle icon
+        const icon = this.querySelector('i');
+        if (this.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
     });
 
     // Close menu when clicking outside
@@ -188,6 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navWrapper.classList.remove('active');
             mobileMenuBtn.classList.remove('active');
             body.classList.remove('menu-open');
+            mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
         }
     });
 });
