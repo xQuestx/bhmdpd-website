@@ -2301,7 +2301,29 @@ h6 {
       margin-bottom: var(--spacing-xs);
   }
 }
+/* Mobile Navigation Styles */
+.mobile-menu-btn {
+  display: none; /* Hidden by default on desktop */
+}
+
 @media (max-width: 768px) {
+  .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--light-text-color);
+      z-index: 1000;
+  }
+
+  .main-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+      height: 80px;
+  }
+
   .mobile-menu-btn {
       display: block;
       background: none;
@@ -2309,7 +2331,7 @@ h6 {
       font-size: 1.5rem;
       color: var(--primary-color);
       cursor: pointer;
-      z-index: 1001;
+      z-index: 1002;
       padding: 0.5rem;
   }
 
@@ -2320,22 +2342,28 @@ h6 {
       width: 100%;
       height: calc(100vh - 80px);
       background: var(--light-text-color);
-      transition: 0.3s ease-in-out;
+      transition: all 0.3s ease;
       overflow-y: auto;
-      z-index: 1000;
+      z-index: 1001;
+      visibility: hidden;
+      opacity: 0;
   }
 
   .nav-wrapper.active {
       right: 0;
+      visibility: visible;
+      opacity: 1;
   }
 
   .nav-links {
+      display: flex;
       flex-direction: column;
       padding: 1rem;
   }
 
   .nav-links li {
       width: 100%;
+      border-bottom: 1px solid var(--gray-200);
   }
 
   .nav-links a {
@@ -2347,9 +2375,10 @@ h6 {
 
   .dropdown-content {
       position: static;
+      display: none;
+      width: 100%;
       background: var(--gray-50);
       box-shadow: none;
-      display: none;
       padding-left: 1rem;
   }
 
@@ -2357,31 +2386,19 @@ h6 {
       display: block;
   }
 
-  .dropdown > a {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+  /* Animation for menu icon */
+  .mobile-menu-btn.active i {
+      transform: rotate(90deg);
   }
 
+  /* Prevent body scroll when menu is open */
   body.menu-open {
       overflow: hidden;
   }
 
-  /* Adjust header for mobile */
-  .header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      background: var(--light-text-color);
-      z-index: 1000;
-  }
-
-  .main-nav {
-      justify-content: space-between;
-      padding: 0 1rem;
-  }
-
+  /* Logo size adjustment for mobile */
   .logo {
-      height: 60px; /* Slightly smaller logo on mobile */
+      height: 60px;
+      width: auto;
   }
 }
