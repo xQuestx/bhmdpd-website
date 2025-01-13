@@ -8,91 +8,157 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header class="header">
+        <nav class="main-nav">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Bar Harbor Police Department Logo" class="logo">
+            </a>
     
+            <div class="nav-wrapper">
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
+                            <li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
+                            <li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
+                            <li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
+                            <li><a href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Unit</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-hands-helping"></i> Programs <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="good-morning-program.html"><i class="fas fa-sun"></i> Good Morning Program</a></li>
+                            <li><a href="citizens-academy.html"><i class="fas fa-graduation-cap"></i> Citizens Academy</a></li>
+                            <li><a href="community-outreach.html"><i class="fas fa-heart"></i> Community Outreach</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="active"><i class="fas fa-user-tie"></i> Recruitment <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="bhmdrec.html"><i class="fas fa-briefcase"></i> Career Opportunities</a></li>
+                            <li><a href="application-process.html"><i class="fas fa-file-alt"></i> Application Process</a></li>
+                            <li><a href="benefits.html" class="active"><i class="fas fa-medal"></i> Benefits & Salary</a></li>
+                            <li><a href="academy-training.html"><i class="fas fa-chalkboard-teacher"></i> Academy Training</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
+                    <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     
-    <main class="benefits-page">
-        <div class="top-spacer"></div>
-        
-        <div class="hero-section">
-            <div class="hero-section">
-        <div class="hero-content">
-           
-            <h1>Pay & Benefits</h1>
-            <p>A rewarding career with competitive compensation and comprehensive support</p>
-            <div class="highlight-box">
-                <i class="fas fa-dollar-sign"></i>
-                <span>Starting at $32.35/hour</span>
-            </div>
-        </div>
-    </div>
-
-        <div class="benefits-grid">
-  <div class="benefit-card">
-    <div class="card-header">
-      <i class="fas fa-calendar-alt"></i>
-      <h3>Work Schedule</h3>
-    </div>
-    <ul class="benefit-list">
-      <li><i class="fas fa-clock"></i>12-hour Panama Schedule</li>
-      <li><i class="fas fa-moon"></i>Overnight Shift Differential</li>
-      <li><i class="fas fa-suitcase"></i>Two Weeks Paid Vacation</li>
-      <li><i class="fas fa-star"></i>12 Paid Holidays</li>
-    </ul>
-  </div>
-
-            <div class="benefit-card retirement">
-                <div class="card-header">
-                    <i class="fas fa-piggy-bank"></i>
-                    <h2>Retirement</h2>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Pay & Benefits</h1>
+                <p>A rewarding career with competitive compensation and comprehensive support</p>
+                <div class="highlight-box">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Starting at $32.35/hour</span>
                 </div>
-                <div class="retirement-highlight">
-                    <span class="new-tag">New for 2025</span>
-                    <h3>MEPERS 3C Plan</h3>
-                </div>
-                <ul class="benefit-list">
-                    <li><i class="fas fa-check"></i> 25 Years of Service</li>
-                    <li><i class="fas fa-check"></i> No Age Requirement</li>
-                    <li><i class="fas fa-check"></i> 2/3's Average Final Compensation</li>
-                    <li><i class="fas fa-check"></i> Cost of Living Adjustment (COLA)</li>
-                </ul>
             </div>
+        </section>
 
-            <div class="benefit-card health">
-                <div class="card-header">
-                    <i class="fas fa-heart"></i>
-                    <h2>Health & Wellness</h2>
+        <!-- Benefits Grid Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <div class="info-grid">
+                    <!-- Work Schedule Card -->
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-piggy-bank"></i>
+                            <h3>Retirement</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="plan-highlight">
+                                <span class="badge--new">New for 2025</span>
+                                <h4 class="plan-title">MEPERS 3C Plan</h4>
+                            </div>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i>25 Years of Service</li>
+                                <li><i class="fas fa-check"></i>No Age Requirement</li>
+                                <li><i class="fas fa-check"></i>2/3's Average Final Compensation</li>
+                                <li><i class="fas fa-check"></i>Cost of Living Adjustment (COLA)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Retirement Card -->
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-piggy-bank"></i>
+                            <h3>Retirement</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="badge badge--new">New for 2025</div>
+                            <h4>MEPERS 3C Plan</h4>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i>25 Years of Service</li>
+                                <li><i class="fas fa-check"></i>No Age Requirement</li>
+                                <li><i class="fas fa-check"></i>2/3's Average Final Compensation</li>
+                                <li><i class="fas fa-check"></i>Cost of Living Adjustment (COLA)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Health Card -->
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-heart"></i>
+                            <h3>Health & Wellness</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                <li><i class="fas fa-kit-medical"></i>MMEHT PPO-1500 Health Plan</li>
+                                <li><i class="fas fa-dumbbell"></i>Paid On-Duty Exercise Time</li>
+                                <li><i class="fas fa-dollar-sign"></i>$6,000 Annual Wellness Incentive</li>
+                                <li><i class="fas fa-heart"></i>Comprehensive Wellness Program</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Additional Benefits Card -->
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-plus"></i>
+                            <h3>Additional Benefits</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                <li><i class="fas fa-shirt"></i>All Uniforms and Duty Gear Provided</li>
+                                <li><i class="fas fa-clock"></i>Overtime & Compensatory Time Available</li>
+                                <li><i class="fas fa-head-side-mask"></i>Up to 960 Hours Paid Sick Time</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <ul class="benefit-list">
-                    <li><i class="fas fa-medical-kit"></i> MMEHT PPO-1500 Health Plan</li>
-                    <li><i class="fas fa-dumbbell"></i> Paid On-Duty Exercise Time</li>
-                    <li><i class="fas fa-dollar-sign"></i> $6,000 Annual Wellness Incentive</li>
-                    <li><i class="fas fa-heart"></i> Comprehensive Wellness Program</li>
-                </ul>
             </div>
+        </section>
 
-            <div class="benefit-card additional">
-                <div class="card-header">
-                    <i class="fas fa-plus"></i>
-                    <h2>Additional Benefits</h2>
-                </div>
-                <ul class="benefit-list">
-                    <li><i class="fas fa-tshirt"></i> All Uniforms and Duty Gear Provided</li>
-                    <li><i class="fas fa-clock"></i> Overtime & Compensatory Time Available</li>
-                    <li><i class="fas fa-head-side-mask"></i> Up to 960 Hours Paid Sick Time</li>
-                </ul>
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2>Ready to Join Our Team?</h2>
+                <a href="hire.html" class="btn btn-primary">
+                    Apply Now <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-        </div>
-
-        <div class="cta-section">
-        <h2>Ready to Join Our Team?</h2>
-        <a href="application.html" class="cta-button">
-            Apply Now
-            <i class="fas fa-arrow-right"></i>
-        </a>
-    </div>
-</div>
+        </section>
     </main>
 
-    <!-- Standard Footer here -->
+    <footer class="footer">
+        <!-- Your standard footer here -->
+    </footer>
 </body>
 </html>
