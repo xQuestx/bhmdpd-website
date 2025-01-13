@@ -2189,3 +2189,115 @@ h6 {
       padding-top: var(--spacing-md);
   }
 }
+/* Seasonal Tab Styling */
+.season-section {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+}
+
+.season-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.season-header i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.date-badge {
+  background: var(--primary-color);
+  color: var(--light-text-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  margin-left: auto;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--light-text-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-list i {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  padding-top: 0.2rem;
+}
+
+.feature-list span {
+  flex: 1;
+}
+
+.feature-list strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--primary-color);
+}
+
+.feature-list p {
+  margin: 0;
+  color: var(--gray-700);
+  font-size: 0.95rem;
+}
+
+.info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--blue-100);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-xl);
+}
+
+.info-box i {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+}
+
+.info-content h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+}
+
+.info-content p {
+  margin: 0;
+  color: var(--gray-700);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .season-header {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .date-badge {
+      margin: var(--spacing-sm) 0 0 0;
+  }
+
+  .feature-list li {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .feature-list i {
+      margin-bottom: var(--spacing-xs);
+  }
+}
