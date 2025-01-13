@@ -277,13 +277,13 @@ h6 {
 *********************************************/
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  z-index: 1000;
-  background: var(--light-text-color);
-  box-shadow: var(--shadow-sm);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Set a fixed height */
+    z-index: 1000;
+    background: var(--light-text-color);
+    box-shadow: var(--shadow-sm);
 }
 .main-nav {
   max-width: 1400px;
@@ -360,14 +360,17 @@ h6 {
 8. Hero Sections
 *********************************************/
 .hero-section {
+  margin-top: 80px; /* Match the header height */
+  /* or */
+  padding-top: 80px; /* Match the header height */
+  position: relative;
+  background: linear-gradient(rgba(26, 43, 74, 0.9), rgba(26, 43, 74, 0.95)),
+              url('images/hero-bg.jpg') center/cover no-repeat;
+  min-height: 400px; /* Add minimum height */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: 
-    url('images/waves-pattern.png') center/cover no-repeat,
-    var(--dark-blue);
-  padding: 5rem 1rem;
+  text-align: center;
   color: var(--light-text-color);
 }
 .hero-section h1 {
@@ -1607,4 +1610,130 @@ h6 {
   .contact-section {
       padding: 2rem 1rem;
   }
+}
+/* Feature List Styling */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    color: var(--gray-700);
+}
+
+.feature-list li i {
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
+}
+
+/* Badge Styling */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.badge--new {
+    background: var(--accent-color);
+    color: var(--light-text-color);
+}
+
+/* CTA Section */
+.cta-section {
+    background: var(--gray-50);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Highlight Box */
+.highlight-box {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-md);
+}
+
+.highlight-box i {
+    color: var(--accent-color);
+}
+/* Hero Section Enhancement */
+.hero-section {
+  background: linear-gradient(rgba(26, 43, 74, 0.9), rgba(26, 43, 74, 0.95)),
+              url('images/hero-bg.jpg') center/cover no-repeat;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--light-text-color);
+}
+
+.hero-section h1,
+.hero-section p {
+  color: var(--light-text-color); /* Ensure white text on dark background */
+}
+
+/* Card Header Fix */
+.card-header {
+  background: var(--primary-color);
+  padding: 1.5rem;
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.card-header h3 {
+  color: var(--light-text-color); /* Ensure white text */
+  margin: 0;
+}
+
+.card-header i {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--light-text-color); /* Make icons white */
+}
+
+/* Pay Rate Highlight - Better Contrast */
+.highlight-box {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 1rem 2rem;
+  background: var(--accent-color);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-lg);
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: var(--shadow-lg);
+  color: var(--light-text-color); /* Ensure white text */
+}
+
+.highlight-box i {
+  color: var(--light-text-color);
+  font-size: 1.5rem;
+}
+
+/* Plan Highlight */
+.plan-title {
+  font-size: 1.5rem;
+  color: var(--primary-color); /* Dark color for light background */
+  margin: var(--spacing-sm) 0;
+  font-weight: bold;
+}
+
+/* Feature List - Better Contrast */
+.feature-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--gray-700); /* Darker text for better readability */
 }
