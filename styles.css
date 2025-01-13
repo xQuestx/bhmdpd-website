@@ -2301,3 +2301,72 @@ h6 {
       margin-bottom: var(--spacing-xs);
   }
 }
+@media (max-width: 768px) {
+  .nav-wrapper {
+      position: fixed;
+      top: 80px; /* Header height */
+      left: -100%;
+      width: 100%;
+      height: calc(100vh - 80px);
+      background: var(--light-text-color);
+      transition: 0.3s ease-in-out;
+      overflow-y: auto;
+  }
+
+  .nav-wrapper.active {
+      left: 0;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      padding: 2rem;
+  }
+
+  .nav-links li {
+      width: 100%;
+  }
+
+  .nav-links a {
+      padding: 1rem;
+      display: block;
+      width: 100%;
+  }
+
+  .mobile-menu-btn {
+      display: block;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      cursor: pointer;
+  }
+
+  .dropdown-content {
+      position: static;
+      display: none;
+      box-shadow: none;
+      background: var(--gray-100);
+      padding-left: 2rem;
+  }
+
+  .dropdown.active .dropdown-content {
+      display: block;
+  }
+
+  .dropdown > a {
+      position: relative;
+  }
+
+  .dropdown > a::after {
+      content: '\f107';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      right: 1rem;
+      transition: 0.3s;
+  }
+
+  .dropdown.active > a::after {
+      transform: rotate(180deg);
+  }
+}
