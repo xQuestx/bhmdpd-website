@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Parking Services - Bar Harbor Police Department</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-   <link rel="stylesheet" href="styles.css">
-<div class="tabs-section centered-tabs">
+    <meta charset="UTF-8">
+    <title>Parking Services - Bar Harbor Police Department</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body id="top">
 <body>
-<header class="header hero-header">
+    <header class="header">
         <nav class="main-nav">
-            <!-- Logo Section -->
             <a href="index.html" class="logo-link">
                 <img src="images/logo.png" alt="Bar Harbor Police Department Logo" class="logo">
             </a>
-            
+
             <div class="nav-wrapper">
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    
                     <li class="dropdown">
-                        <a href="#"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
+                        <a href="#" class="active"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
                         <ul class="dropdown-content">
                             <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
-                            <li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
+                            <li><a href="bar-harbor-parking.html" class="active"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
                             <li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
                             <li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
                             <li><a href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Unit</a></li>
                         </ul>
                     </li>
+                    
                     <li class="dropdown">
                         <a href="#"><i class="fas fa-hands-helping"></i> Programs <i class="fas fa-caret-down"></i></a>
                         <ul class="dropdown-content">
@@ -38,6 +37,7 @@
                             <li><a href="community-outreach.html"><i class="fas fa-heart"></i> Community Outreach</a></li>
                         </ul>
                     </li>
+                    
                     <li class="dropdown">
                         <a href="#"><i class="fas fa-user-tie"></i> Recruitment <i class="fas fa-caret-down"></i></a>
                         <ul class="dropdown-content">
@@ -47,499 +47,305 @@
                             <li><a href="academy-training.html"><i class="fas fa-chalkboard-teacher"></i> Academy Training</a></li>
                         </ul>
                     </li>
+                    
                     <li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
                     <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
                     <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
                     <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
-
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
         </nav>
     </header>
 
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section parking-hero">
+            <div class="hero-content">
+                <i class="fas fa-parking hero-icon"></i>
+                <h1>Parking Services</h1>
+                <p>Convenient, efficient parking solutions for Bar Harbor</p>
+                <div class="highlight-badges">
+                    <span class="badge"><i class="fas fa-money-bill"></i> $2.00 - $4.00/hour</span>
+                    <span class="badge"><i class="fas fa-calendar"></i> May 15 - Oct 30</span>
+                    <span class="badge"><i class="fas fa-clock"></i> 8 AM - 9 PM</span>
+                </div>
+            </div>
+        </section>
 
+        <!-- Info Cards -->
+        <section class="info-section">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Parking Zones</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                <li><i class="fas fa-clock"></i> Seasonal: May 15 - October 30</li>
+                                <li><i class="fas fa-calendar"></i> Mon-Sat: 8 AM - 9 PM</li>
+                                <li><i class="fas fa-sun"></i> Sunday: 12 PM - 9 PM</li>
+                                <li><i class="fas fa-wheelchair"></i> Handicapped Parking Available</li>
+                            </ul>
+                        </div>
+                    </div>
 
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-id-card"></i>
+                            <h3>Permit Types</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                <li><i class="fas fa-home"></i> Residential Permits</li>
+                                <li><i class="fas fa-graduation-cap"></i> Student Permits</li>
+                                <li><i class="fas fa-hard-hat"></i> Contractor Permits</li>
+                                <li><i class="fas fa-ship"></i> Commercial Fishing</li>
+                            </ul>
+                        </div>
+                    </div>
 
-           <div class="nav-wrapper">
-               <ul class="nav-links">
-                   <!-- Full navigation menu from original document -->
-               </ul>
-           </div>
-       </nav>
-   </header>
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-credit-card"></i>
+                            <h3>Payment Options</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                <li><i class="fas fa-mobile-alt"></i> ParkMobile App</li>
+                                <li><i class="fas fa-credit-card"></i> Credit/Debit Cards</li>
+                                <li><i class="fas fa-coins"></i> Parking Tokens</li>
+                                <li><i class="fab fa-apple"></i> Apple Pay</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-   <main class="parking-services-page">
-       <div class="top-spacer"></div>
-
-       <div class="hero-section">
-           <div class="hero-content">
-               <h1>Parking Services</h1>
-               <p>Convenient, efficient parking solutions for Bar Harbor</p>
-               <div class="highlight-box">
-                   <i class="fas fa-parking"></i>
-                   <span class="parking-rates">$2.00 - $4.00 per hour</span>
-               </div>
-           </div>
-       </div>
-
-       <div class="benefits-grid parking-services-grid">
-           <div class="benefit-card parking-overview">
-               <div class="card-header">
-                   <i class="fas fa-map-marker-alt"></i>
-                   <h2>Parking Zones</h2>
-               </div>
-               <ul class="benefit-list">
-                   <li><i class="fas fa-clock"></i> Seasonal: May 15 - October 30</li>
-                   <li><i class="fas fa-calendar"></i> Enforcement Hours: 8 AM - 9 PM (Mon-Sat), 12 PM - 9 PM (Sun)</li>
-                   <li><i class="fas fa-credit-card"></i> Accept Credit/Debit/Tokens</li>
-                   <li><i class="fas fa-wheelchair"></i> Handicapped Parking Accommodations</li>
-               </ul>
-           </div>
-
-           <div class="benefit-card permit-info">
-               <div class="card-header">
-                   <i class="fas fa-id-card"></i>
-                   <h2>Permit Types</h2>
-               </div>
-               <ul class="benefit-list">
-                   <li><i class="fas fa-home"></i> Residential Permits</li>
-                   <li><i class="fas fa-building"></i> COA Student Permits</li>
-                   <li><i class="fas fa-hard-hat"></i> Contractor Permits</li>
-                   <li><i class="fas fa-ship"></i> Commercial Fishing Permits</li>
-               </ul>
-           </div>
-
-           <div class="benefit-card payment-options">
-               <div class="card-header">
-                   <i class="fas fa-mobile-alt"></i>
-                   <h2>Payment Methods</h2>
-               </div>
-               <ul class="benefit-list">
-                   <li><i class="fas fa-credit-card"></i> Credit/Debit Cards</li>
-                   <li><i class="fas fa-coins"></i> Parking Tokens</li>
-                   <li><i class="fab fa-apple"></i> Apple Pay</li>
-                   <li><i class="fas fa-mobile"></i> ParkMobile App</li>
-               </ul>
-           </div>
-
-           
-       </div>
-
-       <div class="tabs-section">
-           <div class="tabs">
-               <button class="tab-button active" data-tab="general"><i class="fas fa-info-circle"></i> General Information</button>
-               <button class="tab-button" data-tab="kiosk"><i class="fas fa-calculator"></i> Kiosk Usage</button>
-               <button class="tab-button" data-tab="parkmobile"><i class="fas fa-mobile-alt"></i> ParkMobile App</button>
-               <button class="tab-button" data-tab="citations"><i class="fas fa-file-invoice"></i> Citations</button>
-               <button class="tab-button" data-tab="tokens"><i class="fas fa-coins"></i> Parking Tokens</button>
-               <button class="tab-button" data-tab="summer"><i class="fas fa-sun"></i> Summer Parking</button>
-               <button class="tab-button" data-tab="winter"><i class="fas fa-snowflake"></i> Winter Parking</button>
-           </div>
-
-           <div class="tab-contents">
-               <!-- General Information Tab -->
-               <div class="tab-content active" id="general">
-                   <div class="modern-card">
-                       <div class="card-header">
-                           <i class="fas fa-parking"></i>
-                           <h2>General Parking Information</h2>
-                       </div>
-                       <div class="card-body">
-                           <div class="parking-rules">
-                               <h3>Parking Guidelines</h3>
-                               <ul>
-                                   <li>Handicapped vehicles park free in paid/permit areas</li>
-                                   <li>Do not obstruct traffic</li>
-                                   <li>No parking on sidewalks, near hydrants, or in intersections</li>
-                                   <li>Maximum 72-hour street/lot parking</li>
-                               </ul>
-                           </div>
-                           <div class="parking-policy">
-                               <h3>Parking Policy Details</h3>
-                               <p>Rates: $2.00 - $4.00 per hour</p>
-                               <p>Enforcement: May 15 - October 30</p>
-                               <p>Hours: 8 AM - 9 PM (Mon-Sat), 12 PM - 9 PM (Sun)</p>
-                               <p>Specialty permits available for residents, employees, and students</p>
-                           </div>
-                           <a href="images/map.jpg" download class="download-map-btn">
-                               <i class="fas fa-map-marked-alt"></i> Download Parking Map
-                           </a>
-                       </div>
-                   </div>
-               </div><div class="tab-content" id="winter">
-   <div class="modern-card winter-permit-card">
-       <div class="card-header">
-           <i class="fas fa-snowflake"></i>
-           <h2>Winter Parking Ban</h2>
-           <p class="date-range">November 15th - April 15th</p>
-       </div>
-       <div class="card-body">
-           <div class="winter-permit-steps">
-               <h3>Getting Your Winter Parking Permit</h3>
-               <div class="steps-container">
-                   <div class="step-item">
-                       <div class="step-icon">
-                           <i class="fas fa-qrcode"></i>
-                       </div>
-                       <div class="step-content">
-                           <h4>Access Portal</h4>
-                           <p>Scan the QR code or visit <a href="http://www.thepermitportal.com" target="_blank">www.thepermitportal.com</a></p>
-                       </div>
-                   </div>
-                   
-                   <div class="step-item">
-                       <div class="step-icon">
-                           <i class="fas fa-mouse-pointer"></i>
-                       </div>
-                       <div class="step-content">
-                           <h4>Select Permit Type</h4>
-                           <p>Click 'Apply for Permit' and select 'Winter Overnight Permit'</p>
-                       </div>
-                   </div>
-                   
-                   <div class="step-item">
-                       <div class="step-icon">
-                           <i class="fas fa-clipboard-list"></i>
-                       </div>
-                       <div class="step-content">
-                           <h4>Submit Information</h4>
-                           <p>Enter your vehicle plate number, email, and phone number</p>
-                       </div>
-                   </div>
-               </div>
-           </div>
-           
-           <div class="winter-alert">
-               <div class="alert-icon">
-                   <i class="fas fa-exclamation-circle"></i>
-               </div>
-               <div class="alert-content">
-                   <h4>Snow Removal Notice</h4>
-                   <p>During snowstorms, check your email in the morning for potential vehicle relocation requirements for snow removal.</p>
-               </div>
-           </div>
-           
-           <div class="permit-access">
-               <div class="qr-section">
-                   <img src="images/winter-permit-qr.png" alt="QR Code for Winter Parking Permit" class="qr-image">
-               </div>
-               <a href="http://www.thepermitportal.com" class="apply-button">
-                   Apply for Winter Permit
-                   <i class="fas fa-arrow-right"></i>
-               </a>
-           </div>
-       </div>
-   </div>
-</div>
-
-<div class="tab-content" id="tokens">
-   <div class="modern-card">
-       <div class="card-header">
-           <i class="fas fa-coins"></i>
-           <h2>Parking Tokens</h2>
-       </div>
-       <div class="card-body">
-           <div class="token-details">
-               <h3>Token Information</h3>
-               <div class="token-pricing">
-                   <p><i class="fas fa-dollar-sign"></i> $1 tokens accepted at all meters and kiosks</p>
-                   <p><i class="fas fa-tags"></i> Available in two packages:</p>
-                   <ul>
-                       <li>25 tokens for $25</li>
-                       <li>10 tokens for $10</li>
-                   </ul>
-               </div>
-               <div class="token-features">
-                   <h4>Unique Token Characteristics</h4>
-                   <ul>
-                       <li><i class="fas fa-ruler"></i> Slightly larger than a nickel</li>
-                       <li><i class="fas fa-flask"></i> Made from nickel plated brass (copper alloy)</li>
-                       <li><i class="fas fa-shield-virus"></i> Antimicrobial properties</li>
-                       <li><i class="fas fa-money-bill-wave"></i> Limits cash sitting in meters</li>
-                   </ul>
-               </div>
-           </div>
-
-           <div class="token-image-container">
-               <img src="images/token1.png" alt="Bar Harbor Parking Token" class="token-image">
-           </div>
-
-           <div class="token-design">
-               <h3>Token Design</h3>
-               <div class="design-details">
-                   <p><i class="fas fa-palette"></i> Town logo on one side</p>
-                   <p><i class="fas fa-sunrise"></i> Sunrise in Acadia design</p>
-                   <p><i class="fas fa-user-edit"></i> Created by Austria Morehouse</p>
-                   <p><i class="fas fa-school"></i> Student artist from MDI High School</p>
-               </div>
-           </div>
-           <div class="additional-info">
-               <h3>Additional Resources</h3>
-               <a href="#" class="regulations-link">
-                   <i class="fas fa-book-open"></i> Bar Harbor Town Code, Chapter 194 Vehicles and Traffic
-               </a>
-           </div>
-       </div>
-   </div>
-</div>
-<div class="tab-content" id="citations">
-   <div class="modern-card">
-       <div class="card-header">
-           <i class="fas fa-file-invoice"></i>
-           <h2>Citation Information & Payment</h2>
-       </div>
-       <div class="card-body">
-           <div class="contact-info">
-               <h3>Contact Information</h3>
-               <div class="contact-details">
-                   <p><i class="fas fa-phone"></i> Parking Enforcement: (207) 288-1777</p>
-                   <p><i class="fas fa-calendar"></i> Off-Season (Nov-Apr): Finance Dept (207) 288-5096</p>
-               </div>
-           </div>
-
-           <div class="payment-methods">
-               <h3>Citation Payment Options</h3>
-               <div class="payment-section">
-                   <h4><i class="fas fa-globe"></i> Online Payment</h4>
-                   <a href="https://barharbor.citationportal.com/" target="_blank">Pay Online</a>
-               </div>
-               <div class="payment-section">
-                   <h4><i class="fas fa-envelope"></i> Mail Payment</h4>
-                   <p>Make checks payable to:</p>
-                   <address>
-                       Treasurer, Town of Bar Harbor<br>
-                       93 Cottage Street<br>
-                       Bar Harbor, ME 04609
-                   </address>
-               </div>
-               <div class="payment-section">
-                   <h4><i class="fas fa-building"></i> In-Person Payment</h4>
-                   <p>Treasurer's Office – Municipal Building</p>
-                   <p>Weekdays: 8:30am - 5:00pm</p>
-               </div>
-           </div>
-
-           <div class="citation-contest">
-               <h3>Contesting a Citation</h3>
-               <ol>
-                   <li>Visit citation portal</li>
-                   <li>Enter citation number</li>
-                   <li>Click "More Info"</li>
-                   <li>Select "Contest Citation"</li>
-                   <li>Complete contest form</li>
-               </ol>
-               <a href="https://barharbor.citationportal.com/" class="contest-btn">
-                   <i class="fas fa-gavel"></i> Contest Citation
-               </a>
-           </div>
-       </div>
-   </div>
-</div>
-<div class="tab-content" id="parkmobile">
-   <div class="modern-card">
-       <div class="card-header">
-           <i class="fas fa-mobile-alt"></i>
-           <h2>ParkMobile App Instructions</h2>
-       </div>
-       <div class="card-body">
-           <div class="app-steps">
-               <!-- Your existing steps content -->
-           </div>
-           <div class="app-tips">
-               <h3>Helpful Tips</h3>
-               <ul>
-                   <li><i class="fas fa-mobile-alt"></i> Available on iOS and Android</li>
-                   <li><i class="fas fa-clock"></i> Convenient time extension</li>
-                   <li><i class="fas fa-shield-alt"></i> Secure payment methods</li>
-               </ul>
-           </div>
-           <div class="video-container">
-               <h3>How to Use ParkMobile</h3>
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/RBSYC32KC-8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-           </div>
-       </div>
-   </div>
-</div>
-    <div class="tab-content" id="summer">
-   <div class="modern-card summer-permit-card">
-       <div class="card-header">
-           <i class="fas fa-sun"></i>
-           <h2>Summer Parking Permits</h2>
-           <p class="date-range">May 15th - October 30th</p>
-       </div>
-       <div class="card-body">
-           <div class="summer-permit-section">
-               <h3><i class="fas fa-home"></i> Resident & Employee Permits</h3>
-               <div class="permit-info">
-                   <p>Available for residents, employees, and College of the Atlantic students. Permits are valid for designated permit parking areas only.</p>
-                   
-                   <div class="permit-alert">
-                       <div class="alert-icon">
-                           <i class="fas fa-exclamation-circle"></i>
-                       </div>
-                       <div class="alert-content">
-                           <h4>Important Notice</h4>
-                           <p>Resident/Employee permits are NOT valid for metered or kiosk parking locations. These zones remain strictly pay-to-park.</p>
-                       </div>
-                   </div>
-                   
-                   <a href="http://www.thepermitportal.com" class="apply-button">
-                       Apply for Resident/Employee Permit
-                       <i class="fas fa-arrow-right"></i>
-                   </a>
-               </div>
-           </div>
-
-           <div class="contractor-permits">
-               <h3><i class="fas fa-hard-hat"></i> Contractor & Special Event Permits</h3>
-               <div class="permit-options">
-                   <div class="permit-card">
-                       <div class="permit-header">
-                           <h4>Non-Premium Areas</h4>
-                           <span class="price-tag">$24.00/day</span>
-                       </div>
-                       <ul>
-                           <li>Contractor/Dumpster Use of Space Permit</li>
-                           <li>Special Events Permit</li>
-                       </ul>
-                       <a href="http://www.thepermitportal.com" class="apply-button secondary">
-                           Apply for Non-Premium Permit
-                       </a>
-                   </div>
-
-                   <div class="permit-card">
-                       <div class="permit-header">
-                           <h4>Premium Areas</h4>
-                           <span class="price-tag">$54.00/day</span>
-                       </div>
-                       <ul>
-                           <li>Contractor/Dumpster Use of Space Permit</li>
-                           <li>Special Events Permit</li>
-                       </ul>
-                       <a href="http://www.thepermitportal.com" class="apply-button secondary">
-                           Apply for Premium Permit
-                       </a>
-                   </div>
-               </div>
-
-               <div class="area-definitions">
-                   <div class="definition-icon">
-                       <i class="fas fa-info-circle"></i>
-                   </div>
-                   <div class="definition-content">
-                       <h4>Area Definitions</h4>
-                       <ul>
-                           <li><strong>Premium Areas:</strong> Zones with $4.00/hour parking rates</li>
-                           <li><strong>Non-Premium Areas:</strong> Zones with $2.00/hour parking rates</li>
-                       </ul>
-                       <p>Please refer to the parking map for specific zone locations.</p>
-                   </div>
-               </div>
-           </div>
-
-           <div class="quick-portal-access">
-               <img src="images/permit-qr.png" alt="QR Code for Permit Portal" class="qr-image">
-               <div class="portal-info">
-                   <h4>Quick Access to Permit Portal</h4>
-                   <p>Scan the QR code or visit <a href="http://www.thepermitportal.com">www.thepermitportal.com</a></p>
-               </div>
-           </div>
-       </div>
-   </div>
-</div>          
-
- <div class="tab-content" id="kiosk">
-    <div class="modern-card">
+        <section class="tabs-section">
+            <div class="container">
+                <!-- Tab Buttons -->
+                <div class="modern-tabs">
+                    <button class="tab-button active" data-tab="general">
+                        <i class="fas fa-info-circle"></i>
+                        <span>General Info</span>
+                    </button>
+                    <button class="tab-button" data-tab="kiosk">
+                        <i class="fas fa-calculator"></i>
+                        <span>Kiosk Guide</span>
+                    </button>
+                    <button class="tab-button" data-tab="parkmobile">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>ParkMobile</span>
+                    </button>
+                    <button class="tab-button" data-tab="citations">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Citations</span>
+                    </button>
+                    <button class="tab-button" data-tab="seasonal">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Seasonal</span>
+                    </button>
+                </div>
+        
+                <!-- Tab Contents -->
+                <div class="tab-contents">
+                    <!-- General Info Tab -->
+                    <div class="tab-content active" id="general">
+                        <div class="info-card">
+                            <div class="card-header">
+                                <i class="fas fa-info-circle"></i>
+                                <h2>General Parking Information</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="parking-rules">
+                                    <h3>Parking Guidelines</h3>
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i>Handicapped vehicles park free in paid/permit areas</li>
+                                        <li><i class="fas fa-ban"></i>No parking on sidewalks or near hydrants</li>
+                                        <li><i class="fas fa-clock"></i>Maximum 72-hour street/lot parking</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>Follow posted signage for restrictions</li>
+                                    </ul>
+                                </div>
+                                <a href="images/parking-map.jpg" class="btn btn-primary mt-4" download>
+                                    <i class="fas fa-map-marked-alt"></i> Download Parking Map
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Kiosk Guide Tab -->
+<div class="tab-content" id="kiosk">
+    <div class="info-card">
         <div class="card-header">
             <i class="fas fa-calculator"></i>
-            <h2>Parking Kiosk Usage Guide</h2>
+            <h2>How to Use Parking Kiosks</h2>
         </div>
         <div class="card-body">
-            <div class="kiosk-steps">
+            <div class="steps-grid">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <div class="step-details">
-                        <h3>Locate Parking Kiosk</h3>
-                        <p>After parking, find the nearest kiosk located at central points in the parking area.</p>
+                    <div class="step-content">
+                        <h3>Locate Your Kiosk</h3>
+                        <p>Find the nearest kiosk to your parking space</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <div class="step-details">
-                        <h3>Payment Method</h3>
-                        <p>Choose your payment option:</p>
-                        <ul>
-                            <li>Quick card insertion</li>
-                            <li>Coins or tokens accepted</li>
-                        </ul>
+                    <div class="step-content">
+                        <h3>Enter Plate Number</h3>
+                        <p>Input your vehicle's license plate number</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <div class="step-details">
-                        <h3>Enter Vehicle Plate Number</h3>
-                        <p>Carefully input your license plate number. Accuracy is crucial for payment verification.</p>
+                    <div class="step-content">
+                        <h3>Select Duration</h3>
+                        <p>Choose your desired parking duration</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <div class="step-details">
-                        <h3>Add Parking Time</h3>
-                        <p>Use the 'More Time' button to set your parking duration. Pre-payment is available, with time starting at the parking period begins.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <div class="step-details">
-                        <h3>Confirm Payment</h3>
-                        <p>Press the green 'OK' button to confirm. A ticket will be issued for your records.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">6</div>
-                    <div class="step-details">
-                        <h3>Keep Your Ticket</h3>
-                        <p>Collect and retain your ticket. Your plate number is electronically sent to parking enforcement.</p>
+                    <div class="step-content">
+                        <h3>Payment</h3>
+                        <p>Pay using card, coins, or parking tokens</p>
                     </div>
                 </div>
             </div>
-            <div class="kiosk-tips">
-                <h3>Additional Tips</h3>
-                <ul>
-                    <li><i class="fas fa-eye"></i> Ensure kiosk screen is clearly visible</li>
-                    <li><i class="fas fa-check-double"></i> Double-check all entered information</li>
-                    <li><i class="fas fa-ticket-alt"></i> Keep ticket until leaving parking area</li>
-                </ul>
-            </div>
-            <div class="video-container">
-                <h3>How to Use Parking Kiosks</h3>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/YunXfTt2wag" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <div class="video-section">
+                <h3><i class="fas fa-video"></i> How to Use Parking Kiosks</h3>
+                <div class="video-container">
+                    <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/YunXfTt2wag" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                    ></iframe>
+                </div>
             </div>
         </div>
     </div>
 </div>
-           </div>
-       </div>
 
-       <div class="cta-section">
-           <h2>Need Parking Assistance?</h2>
-           <a href="contact.html" class="cta-button">
-               Contact Parking Services
-               <i class="fas fa-arrow-right"></i>
-           </a>
-       </div>
-   </main>
+<!-- ParkMobile Tab -->
+<div class="tab-content" id="parkmobile">
+    <div class="info-card">
+        <div class="card-header">
+            <i class="fas fa-mobile-alt"></i>
+            <h2>ParkMobile App</h2>
+        </div>
+        <div class="card-body">
+            <div class="app-features">
+                <h3>App Benefits</h3>
+                <ul class="feature-list">
+                    <li><i class="fas fa-bell"></i>Get reminders before your time expires</li>
+                    <li><i class="fas fa-clock"></i>Extend your parking remotely</li>
+                    <li><i class="fas fa-history"></i>View your parking history</li>
+                    <li><i class="fas fa-receipt"></i>Receive digital receipts</li>
+                </ul>
+                <div class="app-download mt-4">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                </div>
+            </div>
 
-   <footer class="footer">
-       <!-- Footer from original document -->
-   </footer>
-<a href="#top" class="scroll-to-top" title="Go to top">
-    <i class="fas fa-arrow-up"></i>
-</a>
-   <script src="script.js"></script>
+            <div class="video-section">
+                <h3><i class="fas fa-video"></i> How to Use ParkMobile</h3>
+                <div class="video-container">
+                    <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/RBSYC32KC-8" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+                    <!-- Citations Tab -->
+                    <div class="tab-content" id="citations">
+                        <div class="info-card">
+                            <div class="card-header">
+                                <i class="fas fa-file-invoice"></i>
+                                <h2>Citation Information</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="payment-options">
+                                    <h3>Payment Methods</h3>
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-globe"></i>Online at barharbor.citationportal.com</li>
+                                        <li><i class="fas fa-envelope"></i>By mail to Town of Bar Harbor</li>
+                                        <li><i class="fas fa-building"></i>In person at Municipal Building</li>
+                                    </ul>
+                                    <a href="https://barharbor.citationportal.com" class="btn btn-primary mt-4">
+                                        Pay Citation Online
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Seasonal Tab -->
+                    <div class="tab-content" id="seasonal">
+                        <div class="info-card">
+                            <div class="card-header">
+                                <i class="fas fa-calendar-alt"></i>
+                                <h2>Seasonal Parking</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="season-info">
+                                    <h3>Summer Season (May 15 - October 30)</h3>
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-sun"></i>Paid parking in effect</li>
+                                        <li><i class="fas fa-clock"></i>8 AM - 9 PM enforcement</li>
+                                        <li><i class="fas fa-dollar-sign"></i>$2.00 - $4.00 hourly rates</li>
+                                    </ul>
+                                    
+                                    <h3 class="mt-4">Winter Season (November 1 - May 14)</h3>
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-snowflake"></i>Winter parking bans during storms</li>
+                                        <li><i class="fas fa-car"></i>Free parking in most areas</li>
+                                        <li><i class="fas fa-bell"></i>Sign up for winter ban notifications</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Need Parking Assistance?</h2>
+                <a href="contact.html" class="btn btn-primary">
+                    Contact Parking Services
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
