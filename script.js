@@ -155,10 +155,31 @@ document.querySelectorAll('.read-more').forEach(button => {
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navWrapper = document.querySelector('.nav-wrapper');
+    const body = document.body;
 
-    mobileMenuBtn.addEventListener('click', function() {
+    mobileMenuBtn.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent event from bubbling
         navWrapper.classList.toggle('active');
         mobileMenuBtn.classList.toggle('active');
+        body.classList.toggle('menu-open'); // Prevent scrolling when menu is open
+    });
+
+    // Handle dropdown clicks
+    document.querySelectorAll('.dropdown > a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                const dropdown = this.parentElement;
+                
+                // Close other dropdowns
+                document.querySelectorAll('.dropdown').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('active');
+                });
+                
+                dropdown.classList.toggle('active');
+            }
+        });
     });
 
     // Close menu when clicking outside
@@ -166,15 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!navWrapper.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
             navWrapper.classList.remove('active');
             mobileMenuBtn.classList.remove('active');
-        }
-    });
-});
-// Add to your script.js
-document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            this.parentElement.classList.toggle('active');
+            body.classList.remove('menu-open');
         }
     });
 });
