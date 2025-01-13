@@ -152,3 +152,29 @@ document.querySelectorAll('.read-more').forEach(button => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navWrapper = document.querySelector('.nav-wrapper');
+
+    mobileMenuBtn.addEventListener('click', function() {
+        navWrapper.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navWrapper.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            navWrapper.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+        }
+    });
+});
+// Add to your script.js
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+        }
+    });
+});
