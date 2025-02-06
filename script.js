@@ -209,4 +209,102 @@ document.addEventListener('DOMContentLoaded', function() {
     initTabs();
     initReadMore();
     initMobileMenu();
+
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const darkModeMoon = darkModeToggle.querySelector('.fa-moon');
+    const darkModeSun = darkModeToggle.querySelector('.fa-sun');
+
+    // Function to enable dark mode
+    function enableDarkMode() {
+        body.classList.add('dark-mode');
+        darkModeMoon.style.display = 'none';
+        darkModeSun.style.display = 'inline-block';
+        localStorage.setItem('darkMode', 'enabled');
+    }
+
+    // Function to disable dark mode
+    function disableDarkMode() {
+        body.classList.remove('dark-mode');
+        darkModeMoon.style.display = 'inline-block';
+        darkModeSun.style.display = 'none';
+        localStorage.setItem('darkMode', 'disabled');
+    }
+
+    // Check if dark mode was previously enabled
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        enableDarkMode();
+    }
+
+    // Toggle dark mode on button click
+    darkModeToggle.addEventListener('click', function() {
+        if (body.classList.contains('dark-mode')) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
+        }
+    });
+
+    // Add scroll progress functionality
+    function initScrollProgress() {
+        const progressBar = document.querySelector('.scroll-progress');
+        
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+    }
+
+    // Add to your initialization
+    initScrollProgress();
+
+    function initKeyboardNav() {
+        const dropdowns = document.querySelectorAll('.dropdown');
+        
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            const content = dropdown.querySelector('.dropdown-content');
+            
+            link.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+    }
+
+    // Add to your initialization
+    initKeyboardNav();
+
+    function initShareButtons() {
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const card = btn.closest('.news-card');
+                const title = card.querySelector('h3').textContent;
+                const text = card.querySelector('.news-preview p').textContent;
+                
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: title,
+                            text: text,
+                            url: window.location.href
+                        });
+                    } catch (err) {
+                        console.log('Error sharing:', err);
+                    }
+                } else {
+                    // Fallback copy to clipboard
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('Link copied to clipboard!');
+                }
+            });
+        });
+    }
+
+    // Add to your initialization
+    initShareButtons();
 });
