@@ -210,55 +210,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initReadMore();
     initMobileMenu();
 
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const darkModeMoon = darkModeToggle.querySelector('.fa-moon');
-    const darkModeSun = darkModeToggle.querySelector('.fa-sun');
-
-    // Function to enable dark mode
-    function enableDarkMode() {
-        body.classList.add('dark-mode');
-        darkModeMoon.style.display = 'none';
-        darkModeSun.style.display = 'inline-block';
-        localStorage.setItem('darkMode', 'enabled');
+    // Initialize scroll progress if element exists
+    const progressBar = document.querySelector('.scroll-progress');
+    if (progressBar) {
+        initScrollProgress();
     }
-
-    // Function to disable dark mode
-    function disableDarkMode() {
-        body.classList.remove('dark-mode');
-        darkModeMoon.style.display = 'inline-block';
-        darkModeSun.style.display = 'none';
-        localStorage.setItem('darkMode', 'disabled');
-    }
-
-    // Check if dark mode was previously enabled
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        enableDarkMode();
-    }
-
-    // Toggle dark mode on button click
-    darkModeToggle.addEventListener('click', function() {
-        if (body.classList.contains('dark-mode')) {
-            disableDarkMode();
-        } else {
-            enableDarkMode();
-        }
-    });
-
-    // Add scroll progress functionality
-    function initScrollProgress() {
-        const progressBar = document.querySelector('.scroll-progress');
-        
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            progressBar.style.width = scrolled + '%';
-        });
-    }
-
-    // Add to your initialization
-    initScrollProgress();
 
     function initKeyboardNav() {
         const dropdowns = document.querySelectorAll('.dropdown');
@@ -307,4 +263,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add to your initialization
     initShareButtons();
+
+    function initScrollProgress() {
+        const scrollProgress = document.querySelector('.scroll-progress');
+        if (scrollProgress) {
+            window.addEventListener('scroll', () => {
+                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = (window.scrollY / totalHeight) * 100;
+                scrollProgress.style.width = `${progress}%`;
+            });
+        }
+    }
+
+    // Make sure to call it after DOM is loaded
+    initScrollProgress();
 });

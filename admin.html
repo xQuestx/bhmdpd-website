@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrative Services - Bar Harbor Police Department</title>
+    <!-- Dark mode initialization -->
+    <meta name="theme-color" content="#ffffff" id="theme-color">
+    <script src="darkmode.js"></script>
+    <script>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.getElementById('theme-color').setAttribute('content', '#121212');
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-main">
+        Skip to main content
+    </a>
+    <div class="scroll-progress"></div>
+
     <header class="header hero-header">
         <nav class="main-nav">
             <!-- Logo Section -->
@@ -50,6 +63,10 @@
         <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
         <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
+    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
 </div>
 <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn">
@@ -58,7 +75,7 @@
         </nav>
     </header>
 
-   <main class="admin-page">
+   <main id="main-content" class="main-content admin-page">
     <div class="top-spacer"></div>
 
     <div class="hero-section">

@@ -316,10 +316,12 @@ h6 {
 /* Desktop only navigation styles */
 @media (min-width: 769px) {
   .nav-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    margin-left: 120px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      margin-left: 120px;
+      align-items: center;
+      gap: 1rem;
   }
   
   .nav-links {
@@ -2879,4 +2881,427 @@ body.dark-mode .share-btn {
 .share-btn:hover {
     background: var(--gray-200);
     transform: translateY(-2px);
+}
+
+/* Add this to your existing CSS */
+html {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+html.loading {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    opacity: 0.8;
+}
+
+.dark-mode-toggle .fa-sun {
+    display: none;
+    color: var(--light-text-color);
+}
+
+.dark-mode-toggle .fa-moon {
+    display: inline-block;
+}
+
+body.dark-mode .dark-mode-toggle .fa-sun {
+    display: inline-block;
+}
+
+body.dark-mode .dark-mode-toggle .fa-moon {
+    display: none;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;  /* This will push it to the right */
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: var(--gray-100);
+    border: 2px solid var(--gray-200);
+    color: var(--gray-800);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Fix text visibility in dark mode for parking page */
+body.dark-mode .hero-section.parking-hero {
+  background: linear-gradient(rgba(26, 43, 74, 0.95), rgba(26, 43, 74, 0.95)),
+              url('images/parking-hero.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .hero-section.parking-hero h1,
+body.dark-mode .hero-section.parking-hero p {
+  color: var(--light-text-color);
+}
+
+body.dark-mode .badge {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--light-text-color);
+}
+
+body.dark-mode .info-card {
+  background-color: var(--dark-mode-card-bg);
+}
+
+body.dark-mode .info-card .card-header {
+  background-color: var(--dark-mode-primary-color);
+}
+
+body.dark-mode .info-card .card-header h3,
+body.dark-mode .info-card .card-header i {
+  color: var(--light-text-color);
+}
+
+body.dark-mode .feature-list li {
+  color: var(--dark-mode-text-color);
+  border-bottom-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .feature-list i {
+  color: var(--accent-color);
+}
+
+body.dark-mode .container p,
+body.dark-mode .container li {
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .highlight-badges .badge i {
+  color: var(--accent-color);
+}
+
+/* Dark mode styles for animal control page */
+body.dark-mode .animal-control-page .hero-section {
+  background: linear-gradient(rgba(26, 43, 74, 0.95), rgba(26, 43, 74, 0.95)),
+              url('images/animal-control-hero.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .animal-control-page .hero-content h1,
+body.dark-mode .animal-control-page .hero-content p,
+body.dark-mode .animal-control-page .hero-icon {
+  color: var(--light-text-color);
+}
+
+/* Dark mode styles for good morning program page */
+body.dark-mode .good-morning-page .hero-section {
+  background: linear-gradient(rgba(26, 43, 74, 0.95), rgba(26, 43, 74, 0.95)),
+              url('images/good-morning-hero.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .good-morning-page .hero-content h1,
+body.dark-mode .good-morning-page .hero-content p,
+body.dark-mode .good-morning-page .hero-icon {
+  color: var(--light-text-color);
+}
+
+body.dark-mode .info-card {
+  background-color: var(--dark-mode-card-bg);
+  border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .info-card .card-header {
+  background-color: var(--dark-mode-primary-color);
+}
+
+body.dark-mode .info-card .card-header h2,
+body.dark-mode .info-card .card-header h3,
+body.dark-mode .info-card .card-header i {
+  color: var(--light-text-color);
+}
+
+body.dark-mode .info-card .card-body p,
+body.dark-mode .info-card .card-body li,
+body.dark-mode .info-card .card-body h3 {
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .contact-item i {
+  color: var(--accent-color);
+}
+
+body.dark-mode .responsibility-item {
+  background-color: var(--dark-mode-card-bg);
+  border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .responsibility-item i {
+  color: var(--accent-color);
+}
+
+body.dark-mode .responsibility-item span {
+  color: var(--dark-mode-text-color);
+}
+
+/* Dark mode styles for specific pages */
+body.dark-mode .animal-control-page .hero-section,
+body.dark-mode .good-morning-page .hero-section {
++   background-color: var(--dark-mode-background);
+}
+
+body.dark-mode .animal-control-page .hero-content *,
+body.dark-mode .good-morning-page .hero-content * {
++   color: var(--light-text-color);
+}
+
+body.dark-mode .animal-control-page .info-card,
+body.dark-mode .good-morning-page .info-card {
++   background-color: var(--dark-mode-card-bg);
+}
+
+body.dark-mode .animal-control-page .card-body,
+body.dark-mode .good-morning-page .card-body {
++   color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .animal-control-page .contact-details,
+body.dark-mode .good-morning-page .contact-details {
++   color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .animal-control-page .responsibility-grid,
+body.dark-mode .good-morning-page .responsibility-grid {
++   color: var(--dark-mode-text-color);
+}
+
+/* Dark mode styles for specific pages */
+body.dark-mode .harbor-master-page .hero-section,
+body.dark-mode .admin-page .hero-section,
+body.dark-mode .animal-health-page .hero-section,
+body.dark-mode .good-morning-program-page .hero-section {
+    background: linear-gradient(rgba(26, 43, 74, 0.95), rgba(26, 43, 74, 0.95)),
+                url('images/hero-bg.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .harbor-master-page .hero-content *,
+body.dark-mode .admin-page .hero-content *,
+body.dark-mode .animal-health-page .hero-content *,
+body.dark-mode .good-morning-program-page .hero-content * {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .harbor-master-page .info-card,
+body.dark-mode .admin-page .info-card,
+body.dark-mode .animal-health-page .info-card,
+body.dark-mode .good-morning-program-page .info-card {
+    background-color: var(--dark-mode-card-bg);
+}
+
+body.dark-mode .harbor-master-page .card-body,
+body.dark-mode .admin-page .card-body,
+body.dark-mode .animal-health-page .card-body,
+body.dark-mode .good-morning-program-page .card-body {
+    color: var(--dark-mode-text-color);
+}
+
+/* Dark mode styles for specific pages */
+body.dark-mode .administrative-services-page .hero-section {
+  background: linear-gradient(rgba(26, 43, 74, 0.95), rgba(26, 43, 74, 0.95)),
+              url('images/admin-services-hero.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .administrative-services-page .hero-content h1,
+body.dark-mode .administrative-services-page .hero-content p,
+body.dark-mode .administrative-services-page .hero-icon {
+  color: var(--light-text-color);
+}
+
+body.dark-mode .administrative-services-page .info-card {
+  background-color: var(--dark-mode-card-bg);
+  border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .administrative-services-page .card-header {
+  background-color: var(--dark-mode-primary-color);
+}
+
+body.dark-mode .administrative-services-page .card-header h2,
+body.dark-mode .administrative-services-page .card-header h3,
+body.dark-mode .administrative-services-page .card-header i {
+  color: var(--light-text-color);
+}
+
+body.dark-mode .administrative-services-page .card-body,
+body.dark-mode .administrative-services-page .card-body p,
+body.dark-mode .administrative-services-page .card-body li {
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .administrative-services-page .service-list li {
+  background-color: var(--dark-mode-card-bg);
+  border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .administrative-services-page .service-list i {
+  color: var(--accent-color);
+}
+
+body.dark-mode .administrative-services-page .contact-section {
+  background-color: var(--dark-mode-background);
+}
+
+body.dark-mode .administrative-services-page .contact-info h3,
+body.dark-mode .administrative-services-page .contact-info p {
+  color: var(--dark-mode-text-color);
+}
+
+/* Dark mode styles for Animal Control page */
+body.dark-mode .animal-control-page .contact-details h3,
+body.dark-mode .animal-control-page .contact-details p,
+body.dark-mode .animal-control-page .contact-item div h3,
+body.dark-mode .animal-control-page .contact-item div p {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .animal-control-page .contact-item {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .animal-control-page .contact-item i {
+    color: var(--accent-color);
+}
+
+body.dark-mode .animal-control-page .responsibility-item {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .animal-control-page .responsibility-item span {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .animal-control-page .card-body ul li {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .animal-control-page .action-button {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+}
+
+body.dark-mode .animal-control-page .action-button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+/* Dark mode styles for FAQ page */
+body.dark-mode .faq-question {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .faq-question:hover {
+    background-color: var(--dark-mode-primary-color);
+}
+
+body.dark-mode .faq-item.active .faq-question {
+    background-color: var(--dark-mode-primary-color);
+    color: var(--light-text-color);
+}
+
+body.dark-mode .faq-answer {
+    background-color: var(--dark-mode-card-bg);
+}
+
+body.dark-mode .faq-answer p,
+body.dark-mode .faq-answer ul,
+body.dark-mode .faq-answer li {
+    color: var(--dark-mode-text-color);
+}
+
+/* Remove blue lines over icons in dark mode */
+body.dark-mode .hero-icon,
+body.dark-mode .card-header i,
+body.dark-mode .info-card i,
+body.dark-mode .responsibility-item i,
+body.dark-mode .contact-item i,
+body.dark-mode .nav-links i,
+body.dark-mode .dropdown-content i,
+body.dark-mode .hero-section i {
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-text-decoration: none !important;
+    color: var(--accent-color);
+}
+
+/* Override specific icon colors where needed */
+body.dark-mode .card-header i {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .nav-links i,
+body.dark-mode .dropdown-content i {
+    color: var(--dark-mode-text-color);
+}
+
+/* Dark mode styles for contact information */
+body.dark-mode .contact-details,
+body.dark-mode .contact-info,
+body.dark-mode .contact-section {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .contact-details h3,
+body.dark-mode .contact-info h3,
+body.dark-mode .contact-section h3,
+body.dark-mode .contact-item h3 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .contact-details p,
+body.dark-mode .contact-info p,
+body.dark-mode .contact-section p,
+body.dark-mode .contact-item p,
+body.dark-mode .contact-item a {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .contact-item {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+}
+
+body.dark-mode .contact-item i {
+    color: var(--accent-color);
+}
+
+/* Phone numbers and email addresses should be extra visible */
+body.dark-mode .contact-item a[href^="tel:"],
+body.dark-mode .contact-item a[href^="mailto:"],
+body.dark-mode .contact-details a[href^="tel:"],
+body.dark-mode .contact-details a[href^="mailto:"] {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+body.dark-mode .contact-item a[href^="tel:"]:hover,
+body.dark-mode .contact-item a[href^="mailto:"]:hover,
+body.dark-mode .contact-details a[href^="tel:"]:hover,
+body.dark-mode .contact-details a[href^="mailto:"]:hover {
+    text-decoration: underline;
 }
