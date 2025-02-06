@@ -72,12 +72,26 @@
 }
 
 /*********************************************
+2.1. Dark Mode CSS Variables
+*********************************************/
+:root {
+  --dark-mode-background: #121212;
+  --dark-mode-text-color: #f8f8f8;
+  --dark-mode-primary-color: #29487d; /* Lighter primary for dark mode */
+  --dark-mode-secondary-color: #333; /* Darker secondary for dark mode */
+  --dark-mode-card-bg: #242424;
+  --dark-mode-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  --dark-mode-border-color: #444;
+}
+
+/*********************************************
 3. Typography
 *********************************************/
 body {
   font-family: Roboto, sans-serif;
   color: #333;
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 h1,
 h2,
@@ -284,6 +298,7 @@ h6 {
     z-index: 1000;
     background: var(--light-text-color);
     box-shadow: var(--shadow-sm);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .main-nav {
   max-width: 1400px;
@@ -341,7 +356,7 @@ h6 {
   min-width: 200px;
   box-shadow: var(--shadow-lg);
   transform: translateY(10px);
-  transition: transform 0.3s;
+  transition: transform 0.3s, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
 }
 .dropdown:hover .dropdown-content {
@@ -375,6 +390,7 @@ h6 {
   justify-content: center;
   text-align: center;
   color: var(--light-text-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .hero-section h1 {
   font-size: 3rem;
@@ -404,7 +420,7 @@ h6 {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s ease, border-color 0.3s ease;
   overflow: hidden;
 }
 .card:hover {
@@ -418,6 +434,7 @@ h6 {
   gap: var(--spacing-sm);
   border-bottom: 3px solid var(--primary-color-dark);
   align-items: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .card-header h2 {
   color: var(--light-text-color);
@@ -438,7 +455,7 @@ h6 {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s ease, border-color 0.3s ease;
 }
 .modern-card:hover {
   transform: translateY(-4px);
@@ -451,6 +468,7 @@ h6 {
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .modern-card .card-body {
   padding: 1.5rem;
@@ -463,7 +481,7 @@ h6 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 1.5rem 0;
   padding: 1.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s ease, border-color 0.3s ease;
   overflow: hidden;
 }
 .benefit-card:hover {
@@ -480,6 +498,7 @@ h6 {
   display: flex;
   flex-direction: column;
   transition: var(--transition-base);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .info-card:hover {
   transform: translateY(-5px);
@@ -660,6 +679,7 @@ h6 {
   background: var(--gray-100);
   padding: var(--spacing-md) 0;
   margin-top: var(--spacing-xl);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .footer-content {
   display: grid;
@@ -1739,7 +1759,9 @@ h6 {
   padding: 0.75rem 0;
   border-bottom: 1px solid var(--gray-200);
   color: var(--gray-700); /* Darker text for better readability */
-}/* Timeline Styles */
+}
+
+/* Timeline Styles */
 .timeline-wrapper {
   display: flex;
   justify-content: space-between;
@@ -1814,7 +1836,9 @@ h6 {
       flex-direction: row;
       gap: 2rem;
   }
-}/* Enhanced Hero Section */
+}
+
+/* Enhanced Hero Section */
 .benefits-hero {
   background: linear-gradient(rgba(26, 43, 74, 0.9), rgba(26, 43, 74, 0.95)),
               url('images/hero-bg.jpg') center/cover no-repeat;
@@ -1924,6 +1948,8 @@ h6 {
 
 .feature-list i {
   color: var(--accent-color);
+  width: 20px;
+  text-align: center;
 }
 
 /* Section Intro */
@@ -1942,6 +1968,7 @@ h6 {
   color: var(--gray-600);
   font-size: 1.1rem;
 }
+
 /* Parking Services Hero Section */
 .hero-section.parking-hero {
   background: linear-gradient(rgba(26, 43, 74, 0.9), rgba(26, 43, 74, 0.95)),
@@ -2317,15 +2344,36 @@ h6 {
       display: block;
       position: absolute;
       right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: #333;
-      cursor: pointer;
-      z-index: 1002;
-      padding: 10px;
+  }
+
+  .header.hero-header .dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .header.hero-header .dark-mode-toggle:hover {
+    background-color: var(--gray-300);
+  }
+
+  body.dark-mode .header.hero-header .dark-mode-toggle {
+    background-color: var(--gray-800);
+    color: var(--light-text-color);
+  }
+
+  body.dark-mode .header.hero-header .dark-mode-toggle:hover {
+    background-color: var(--gray-700);
   }
 
   .header.hero-header .nav-wrapper {
@@ -2334,7 +2382,7 @@ h6 {
       right: -100%;
       width: 100%;
       height: calc(100vh - 80px);
-      background-color: #003366; /* Dark blue background */
+      background-color: #003366;
       transition: right 0.3s ease;
       z-index: 1000;
       overflow-y: auto;
@@ -2356,14 +2404,14 @@ h6 {
       padding: 15px;
       display: block;
       width: 100%;
-      color: #ffffff; /* White text */
+      color: #ffffff;
       border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
   .header.hero-header .dropdown-content {
       display: none;
       width: 100%;
-      background-color: #004480; /* Slightly lighter blue */
+      background-color: #004480;
       padding: 0;
       position: static;
       box-shadow: none;
@@ -2379,7 +2427,6 @@ h6 {
       border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
-  /* Fix icon colors */
   .header.hero-header .nav-links i {
       color: #ffffff;
   }
@@ -2432,4 +2479,404 @@ h6 {
       padding: 1.5rem;
       margin: 1rem;
   }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: var(--dark-mode-background);
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .header {
+  background-color: var(--dark-mode-background);
+  box-shadow: var(--dark-mode-shadow);
+}
+
+body.dark-mode .main-nav {
+  background-color: var(--dark-mode-background);
+}
+
+body.dark-mode .nav-wrapper {
+    background-color: var(--dark-mode-background);
+}
+
+body.dark-mode .nav-links a,
+body.dark-mode .nav-links a:hover,
+body.dark-mode .dropdown-content a,
+body.dark-mode .dropdown-content a:hover {
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .dropdown-content {
+  background-color: var(--dark-mode-secondary-color);
+  box-shadow: var(--dark-mode-shadow);
+}
+
+body.dark-mode .card,
+body.dark-mode .modern-card,
+body.dark-mode .benefit-card,
+body.dark-mode .info-card,
+body.dark-mode .modern-form,
+body.dark-mode .responsibility-item,
+body.dark-mode .event-card,
+body.dark-mode .info-box,
+body.dark-mode .subscribe-box,
+body.dark-mode .table-container,
+body.dark-mode .tab-content,
+body.dark-mode .faq-item,
+body.dark-mode .news-card,
+body.dark-mode .staff-item,
+body.dark-mode .forms-notice,
+body.dark-mode .training-item,
+body.dark-mode .wellness-item,
+body.dark-mode .season-section,
+body.dark-mode .feature-list li,
+body.dark-mode .alert-box {
+  background-color: var(--dark-mode-card-bg);
+  box-shadow: var(--dark-mode-shadow);
+}
+
+body.dark-mode .card-header,
+body.dark-mode .modern-card .card-header,
+body.dark-mode .table th,
+body.dark-mode .faq-question {
+  background-color: var(--dark-mode-primary-color);
+  border-bottom-color: var(--accent-color-dark);
+}
+
+body.dark-mode .card-body,
+body.dark-mode .modern-card .card-body,
+body.dark-mode .news-content,
+body.dark-mode .staff-item p,
+body.dark-mode .forms-notice p,
+body.dark-mode .info-content p,
+body.dark-mode .feature-list p,
+body.dark-mode .faq-answer p,
+body.dark-mode .faq-answer ul,
+body.dark-mode .faq-answer li,
+body.dark-mode .event-card p {
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode .card-header h2,
+body.dark-mode .modern-card .card-header,
+body.dark-mode .card-header h3,
+body.dark-mode .news-content h3,
+body.dark-mode .staff-item h3,
+body.dark-mode .forms-notice h3,
+body.dark-mode .info-content h4,
+body.dark-mode .season-header h2,
+body.dark-mode .faq-section-title h2,
+body.dark-mode .section-title,
+body.dark-mode .recruitment-features__title,
+body.dark-mode .feature-card__title,
+body.dark-mode .requirements__cta h2,
+body.dark-mode .cta-section h2,
+body.dark-mode .plan-title,
+body.dark-mode .event-card h3,
+body.dark-mode .footer-column h3,
+body.dark-mode .footer-bottom,
+body.dark-mode .footer-bottom p {
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .text-primary,
+body.dark-mode .event-date,
+body.dark-mode .event-date i,
+body.dark-mode .responsibility-item i,
+body.dark-mode .info-box i,
+body.dark-mode .feature-list li i,
+body.dark-mode .season-header i,
+body.dark-mode .faq-section-title i,
+body.dark-mode .step-icon,
+body.dark-mode .step-icon i,
+body.dark-mode .badge--new,
+body.dark-mode .highlight-box,
+body.dark-mode .highlight-box i,
+body.dark-mode .calendar-button,
+body.dark-mode .calendar-button:hover,
+body.dark-mode .submit-btn,
+body.dark-mode .submit-btn:hover,
+body.dark-mode .btn-primary,
+body.dark-mode .btn-primary:hover,
+body.dark-mode .btn-accent,
+body.dark-mode .btn-accent:hover,
+body.dark-mode .contact-button,
+body.dark-mode .contact-button:hover,
+body.dark-mode .download-button,
+body.dark-mode .download-button:hover,
+body.dark-mode .cta-button,
+body.dark-mode .cta-button:hover,
+body.dark-mode .apply-button,
+body.dark-mode .apply-button:hover,
+body.dark-mode .tab-button.active,
+body.dark-mode .tab-button.active::after {
+  color: var(--accent-color);
+  background-color: var(--dark-mode-primary-color);
+}
+
+body.dark-mode .form-input,
+body.dark-mode .form-textarea,
+body.dark-mode .table th,
+body.dark-mode .table td,
+body.dark-mode .footer,
+body.dark-mode .footer-bottom {
+  background-color: var(--dark-mode-secondary-color);
+  border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .footer-links a,
+body.dark-mode .footer-links a:hover,
+body.dark-mode .footer p {
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .footer-column h3 {
+  color: var(--light-text-color);
+}
+
+body.dark-mode .text-dark {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .text-light {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .btn-secondary {
+    background-color: var(--gray-800);
+    color: var(--light-text-color);
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: var(--gray-700);
+}
+
+body.dark-mode .header.hero-header .nav-wrapper {
+    background-color: var(--dark-mode-primary-color);
+}
+
+body.dark-mode .header.hero-header .nav-links > li > a,
+body.dark-mode .header.hero-header .dropdown-content a {
+    color: var(--light-text-color);
+    border-bottom-color: rgba(255,255,255,0.1);
+}
+
+body.dark-mode .header.hero-header .dropdown-content {
+    background-color: var(--dark-mode-secondary-color);
+}
+
+body.dark-mode .header.hero-header .mobile-menu-btn {
+    color: var(--dark-mode-text-color);
+}
+
+/* Dark Mode Toggle Button Styles */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    margin-left: 20px;
+    border-radius: 12px;
+    background: var(--gray-100);
+    border: 2px solid var(--gray-200);
+    color: var(--gray-800);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dark-mode-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Dark mode styles for the toggle */
+body.dark-mode .dark-mode-toggle {
+    background: var(--dark-mode-card-bg);
+    border-color: var(--gray-700);
+    color: #ffd700; /* Golden yellow for the sun icon */
+    box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255,255,255,0.15);
+}
+
+/* Fix the blue navigation menu in dark mode */
+body.dark-mode .header.hero-header .nav-wrapper {
+    background-color: var(--dark-mode-background);
+}
+
+body.dark-mode .header.hero-header .dropdown-content {
+    background-color: var(--dark-mode-card-bg);
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .dark-mode-toggle {
+        position: absolute;
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+    }
+
+    .dark-mode-toggle:hover {
+        transform: translateY(-50%) translateY(-2px);
+    }
+
+    body.dark-mode .header.hero-header .nav-wrapper {
+        background-color: var(--dark-mode-background);
+    }
+
+    body.dark-mode .header.hero-header .dropdown-content {
+        background-color: var(--dark-mode-card-bg);
+    }
+
+    body.dark-mode .header.hero-header .nav-links > li > a {
+        border-bottom: 1px solid var(--dark-mode-border-color);
+    }
+
+    body.dark-mode .header.hero-header .dropdown-content a {
+        border-bottom: 1px solid var(--dark-mode-border-color);
+        background-color: var(--dark-mode-card-bg);
+    }
+
+    body.dark-mode .header.hero-header .dropdown-content a:hover {
+        background-color: var(--dark-mode-primary-color);
+    }
+}
+
+/* Fix news article text colors in dark mode */
+body.dark-mode .news-card .date,
+body.dark-mode .news-card .news-preview p,
+body.dark-mode .news-card .news-full p {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .news-card .read-more {
+    color: var(--accent-color);
+    background: transparent;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .news-card .read-more:hover {
+    background: var(--accent-color);
+    color: var(--light-text-color);
+}
+
+body.dark-mode .news-card {
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .news-card .news-image {
+    border-bottom: 1px solid var(--dark-mode-border-color);
+}
+
+.skip-to-main {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+}
+
+.skip-to-main:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+}
+
+/* Add progress bar styles */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent-color);
+    z-index: 1001;
+    transition: width 0.1s ease;
+}
+
+body.dark-mode .scroll-progress {
+    background: #ffd700; /* Golden yellow in dark mode */
+}
+
+.last-updated {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+body.dark-mode .last-updated {
+    color: var(--gray-400);
+}
+
+@media print {
+    .header,
+    .footer,
+    .dark-mode-toggle,
+    .mobile-menu-btn,
+    .scroll-progress,
+    .skip-to-main {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .main-content {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+}
+
+.share-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.share-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: var(--gray-100);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .share-btn {
+    background: var(--dark-mode-card-bg);
+    color: var(--dark-mode-text-color);
+}
+
+.share-btn:hover {
+    background: var(--gray-200);
+    transform: translateY(-2px);
 }

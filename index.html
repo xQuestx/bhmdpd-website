@@ -21,6 +21,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-main">
+        Skip to main content
+    </a>
+
     <header class="header hero-header">
         <nav class="main-nav">
             <!-- Logo -->
@@ -147,11 +151,19 @@
                     </li>
                 </ul>
             </div>
+            <!-- Navigation wrapper closing div -->
+
+            <!-- Dark Mode Toggle Button - Moved outside nav-wrapper -->
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun" style="display: none;"></i>
+            </button>
+
         </nav>
     </header>
 
   <!-- MAIN CONTENT -->
-  <main class="main-content">
+  <main id="main-content" class="main-content">
     <!-- HERO / SLIDER SECTION -->
     <section class="hero">
       <div class="hero-slider">
@@ -223,6 +235,11 @@
                     <div class="news-full" style="display: none;">
                         <p>Join our 8-week Citizens Police Academy starting April 15th. This comprehensive program offers community members a behind-the-scenes look at law enforcement operations.</p>
                     </div>
+                    <div class="share-buttons">
+                        <button class="share-btn" aria-label="Share this article">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
                     <button class="read-more">
                         Read More <i class="fas fa-arrow-right"></i>
                     </button>
@@ -243,6 +260,11 @@
                     <div class="news-full" style="display: none;">
                         <p>Join us for coffee and conversation at Local Bean Cafe on April 5th from 8:00 AM to 10:00 AM. This monthly event provides an opportunity for community members to meet with officers in a casual setting.</p>
                     </div>
+                    <div class="share-buttons">
+                        <button class="share-btn" aria-label="Share this article">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
                     <button class="read-more">
                         Read More <i class="fas fa-arrow-right"></i>
                     </button>
@@ -262,6 +284,11 @@
                     </div>
                     <div class="news-full" style="display: none;">
                         <p>Join us for our annual Summer Safety Workshop on April 20th at the Bar Harbor Municipal Building. Learn important safety tips for the upcoming tourist season.</p>
+                    </div>
+                    <div class="share-buttons">
+                        <button class="share-btn" aria-label="Share this article">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
                     </div>
                     <button class="read-more">
                         Read More <i class="fas fa-arrow-right"></i>
@@ -340,10 +367,16 @@
        <div class="footer-bottom">
            <p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
        </div>
+       <div class="last-updated">
+           Last updated: <time datetime="2024-03-28">March 28, 2024</time>
+       </div>
    </footer>
 
   <!-- JS FILES -->
   <!-- Link to your existing 'script.js' that contains the slider logic -->
   <script src="script.js"></script>
+
+  <!-- Add this right after <body> -->
+  <div class="scroll-progress"></div>
 </body>
 </html>
