@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harbor Master Division - Bar Harbor Police Department</title>
+    <!-- Dark mode initialization -->
+    <meta name="theme-color" content="#ffffff" id="theme-color">
+    <script src="darkmode.js"></script>
+    <script>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.getElementById('theme-color').setAttribute('content', '#121212');
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-main">
+        Skip to main content
+    </a>
+    <div class="scroll-progress"></div>
+
     <header class="header hero-header">
         <nav class="main-nav">
             <!-- Logo -->
@@ -133,11 +146,15 @@
                         </a>
                     </li>
                 </ul>
+                <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
             </div>
         </nav>
     </header>
 
-    <main class="harbor-master-page">
+    <main id="main-content" class="harbor-master-page">
         <div class="top-spacer"></div>
 
         <div class="hero-section">

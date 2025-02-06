@@ -19,6 +19,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Add this right after your stylesheet links and before other scripts -->
+    <script src="darkmode.js"></script>
+
+    <!-- Add these meta tags -->
+    <meta name="theme-color" content="#ffffff" id="theme-color">
+    <script>
+        // Update theme-color based on dark mode
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.getElementById('theme-color').setAttribute('content', '#121212');
+        }
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-to-main">
@@ -150,15 +162,12 @@
                         </a>
                     </li>
                 </ul>
+                <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
             </div>
             <!-- Navigation wrapper closing div -->
-
-            <!-- Dark Mode Toggle Button - Moved outside nav-wrapper -->
-            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun" style="display: none;"></i>
-            </button>
-
         </nav>
     </header>
 
