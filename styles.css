@@ -3305,3 +3305,175 @@ body.dark-mode .contact-details a[href^="tel:"]:hover,
 body.dark-mode .contact-details a[href^="mailto:"]:hover {
     text-decoration: underline;
 }
+
+/* Dark mode styles for recruitment page */
+body.dark-mode .recruitment-page {
+    background-color: var(--dark-mode-background);
+}
+
+body.dark-mode .recruitment-page .hero-section {
+    background: linear-gradient(rgba(26, 43, 74, 0.95), rgba(26, 43, 74, 0.95)),
+                url('images/recruitment-hero.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .recruitment-page .hero-content h1,
+body.dark-mode .recruitment-page .hero-content p {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .recruitment-page .feature-card {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .recruitment-page .feature-card__title {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .recruitment-page .feature-card__text {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .recruitment-page .highlight-box {
+    background-color: var(--dark-mode-primary-color);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .recruitment-page .section-title {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .recruitment-page .requirements-list li {
+    color: var(--dark-mode-text-color);
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+body.dark-mode .recruitment-page .cta-section {
+    background-color: var(--dark-mode-primary-color);
+}
+
+body.dark-mode .recruitment-page .benefits-grid .info-card {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+/* Enhanced Dark Mode styles for recruitment page */
+body.dark-mode .recruitment {
+    background-color: var(--dark-mode-background);
+}
+
+/* Hero Section */
+body.dark-mode .recruitment__hero {
+    background: linear-gradient(rgba(26, 43, 74, 0.95), rgba(26, 43, 74, 0.95)),
+                url('images/acad192.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .recruitment__hero-content h1,
+body.dark-mode .recruitment__hero-content p {
+    color: var(--light-text-color);
+}
+
+/* Features Grid */
+body.dark-mode .recruitment-features {
+    background-color: var(--dark-mode-card-bg);
+    padding: var(--spacing-xl) 0;
+}
+
+body.dark-mode .recruitment-features__title {
+    color: var(--light-text-color);
+    margin-bottom: var(--spacing-xl);
+}
+
+body.dark-mode .feature-card__inner {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .feature-card__inner:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+body.dark-mode .feature-card__title {
+    color: var(--light-text-color);
+    margin: var(--spacing-sm) 0;
+}
+
+body.dark-mode .feature-card__text {
+    color: var(--dark-mode-text-color);
+}
+
+/* Contact Form */
+body.dark-mode .contact-section {
+    background-color: var(--dark-mode-background);
+    padding: var(--spacing-xl) 0;
+}
+
+body.dark-mode .modern-form {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .modern-form label {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .form-input,
+body.dark-mode .form-textarea {
+    background-color: var(--dark-mode-background);
+    border: 1px solid var(--dark-mode-border-color);
+    color: var(--light-text-color);
+}
+
+body.dark-mode .form-input:focus,
+body.dark-mode .form-textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Requirements Section */
+body.dark-mode .requirements {
+    background-color: var(--dark-mode-card-bg);
+    padding: var(--spacing-xl) 0;
+}
+
+body.dark-mode .requirements h2 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .requirements__text {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .requirements__cta {
+    background-color: var(--dark-mode-primary-color);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .requirements__cta a {
+    color: var(--accent-color);
+}
+
+body.dark-mode .requirements__cta a:hover {
+    text-decoration: underline;
+}
+
+/* Submit Button */
+body.dark-mode .submit-btn {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+}
+
+body.dark-mode .submit-btn:hover {
+    background-color: var(--accent-color-dark);
+}
+
+/* Required Field Indicator */
+body.dark-mode .required {
+    color: #ff6b6b;
+}
