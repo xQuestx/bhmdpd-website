@@ -3673,3 +3673,252 @@ body.dark-mode .timeline-content h3 {
 body.dark-mode .timeline-content p {
     color: var(--dark-mode-text-color);
 }
+
+/* Application Process Page Styles */
+.application-process-page .hero-section {
+    background: linear-gradient(rgba(26, 43, 74, 0.9), rgba(26, 43, 74, 0.9)),
+                url('images/acad192.jpg') center/cover no-repeat;
+    padding: 120px 0;
+    text-align: center;
+    color: var(--light-text-color);
+}
+
+.intro-section {
+    background-color: var(--light-background);
+    padding: var(--spacing-xl) 0;
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Steps Grid Layout */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl) 0;
+}
+
+.step-card {
+    background: var(--light-text-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    color: var(--light-text-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: var(--shadow-md);
+}
+
+.step-content {
+    padding: var(--spacing-lg);
+    margin-top: 20px;
+}
+
+.step-content h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.4rem;
+}
+
+/* Requirements List Styling */
+.requirements-list {
+    list-style: none;
+    padding: 0;
+}
+
+.requirements-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+    transition: background-color 0.3s ease;
+}
+
+.requirements-list li:hover {
+    background: var(--gray-100);
+}
+
+.requirements-list i {
+    color: var(--accent-color);
+    margin-right: var(--spacing-sm);
+    font-size: 1.2rem;
+}
+
+/* Contact Section Styling */
+.contact-section {
+    background: linear-gradient(rgba(26, 43, 74, 0.97), rgba(26, 43, 74, 0.97)),
+                url('images/contact-bg.jpg') center/cover fixed;
+    padding: var(--spacing-xl) 0;
+    color: var(--light-text-color);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.cta-box {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(5px);
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: var(--accent-color);
+    color: var(--light-text-color);
+    border-radius: var(--radius-md);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background: var(--accent-color-dark);
+}
+
+/* Dark Mode Styles */
+body.dark-mode .application-process-page .step-card {
+    background: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .application-process-page .step-content h3 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .application-process-page .requirements-list li {
+    background: var(--dark-mode-primary-color);
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .application-process-page .requirements-list li:hover {
+    background: var(--dark-mode-card-bg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-number {
+        top: 10px;
+        left: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Dark mode styles for application process page */
+body.dark-mode .application-process-page .hero-content h1,
+body.dark-mode .application-process-page .hero-content p {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .application-process-page .intro-content h2 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .application-process-page .intro-content p {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .application-process-page .container h2 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .application-process-page .step-content p,
+body.dark-mode .application-process-page .step-content li {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .application-process-page .contact-info a {
+    color: var(--accent-color);
+}
+
+body.dark-mode .application-process-page .contact-section {
+    background-color: var(--dark-mode-card-bg);
+}
+
+body.dark-mode .application-process-page .cta-box {
+    background-color: var(--dark-mode-primary-color);
+}
+
+/* Dark mode styles for application process page requirements */
+body.dark-mode .application-process-page .requirements-list li {
+    background-color: var(--dark-mode-card-bg);
+    color: var(--dark-mode-text-color);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .application-process-page .requirements-list li:hover {
+    background-color: var(--dark-mode-primary-color);
+}
+
+body.dark-mode .application-process-page .requirements-list i {
+    color: var(--accent-color);
+}
+
+body.dark-mode .application-process-page .step-card {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .application-process-page .step-content {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .application-process-page .contact-info a {
+    color: var(--accent-color);
+}
+
+body.dark-mode .application-process-page .contact-info p {
+    color: var(--dark-mode-text-color);
+}
+
+/* Make step numbers more visible */
+body.dark-mode .application-process-page .step-number {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
