@@ -6,6 +6,39 @@
     <title>Application Process - Bar Harbor Police Department</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add these styles in the head section */
+        .step-card {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dark-mode .step-card {
+            background-color: var(--dark-card-bg);
+            border-color: var(--dark-border-color);
+        }
+
+        .dark-mode .requirements-list li {
+            color: var(--dark-text-color);
+        }
+
+        .dark-mode .step-number {
+            background-color: var(--primary-color);
+            color: var(--dark-text-color);
+        }
+
+        .dark-mode .contact-section,
+        .dark-mode .intro-section {
+            background-color: var(--dark-bg);
+            color: var(--dark-text-color);
+        }
+
+        .dark-mode .hero-section {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
 </head>
 <body class="application-process-page">
     <header class="header">

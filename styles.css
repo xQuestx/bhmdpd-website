@@ -69,6 +69,26 @@
   --transition-bg: background-color 0.3s ease;
 
   --spacing-form-input: 0.75rem;
+
+  /* Light mode variables */
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --border-color: #e0e0e0;
+  --primary-color: #0066cc;
+  
+  /* Dark mode variables */
+  --dark-bg: #1a1a1a;
+  --dark-card-bg: #2d2d2d;
+  --dark-text-color: #e0e0e0;
+  --dark-border-color: #404040;
+}
+
+/* Make sure these styles are also present */
+.dark-mode {
+  --bg-color: var(--dark-bg);
+  --text-color: var(--dark-text-color);
+  --card-bg: var(--dark-card-bg);
+  --border-color: var(--dark-border-color);
 }
 
 /*********************************************
@@ -3921,4 +3941,90 @@ body.dark-mode .application-process-page .step-number {
     background-color: var(--accent-color);
     color: var(--light-text-color);
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Application Process Page - Dark Mode Fixes */
+body.dark-mode .application-process-page {
+    background-color: var(--dark-mode-background);
+}
+
+/* Step Cards */
+body.dark-mode .step-card {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+/* Step Content */
+body.dark-mode .step-content h3 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .step-content {
+    color: var(--dark-mode-text-color);
+}
+
+/* Requirements List */
+body.dark-mode .requirements-list {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .requirements-list li {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .requirements-list li i {
+    color: var(--accent-color);
+}
+
+/* Contact Section */
+body.dark-mode .contact-section {
+    background-color: var(--dark-mode-background);
+}
+
+body.dark-mode .contact-info {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .contact-info h3 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .contact-info p {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .contact-info a {
+    color: var(--accent-color);
+}
+
+/* CTA Box */
+body.dark-mode .cta-box {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .cta-box p {
+    color: var(--dark-mode-text-color);
+}
+
+/* Step Numbers */
+body.dark-mode .step-number {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    border: 2px solid var(--dark-mode-border-color);
+}
+
+/* Intro Section */
+body.dark-mode .intro-section {
+    background-color: var(--dark-mode-background);
+}
+
+body.dark-mode .intro-content h2 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .intro-content p {
+    color: var(--dark-mode-text-color);
 }
