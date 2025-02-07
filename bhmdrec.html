@@ -274,5 +274,33 @@
             <p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
         </div>
     </footer>
+
+<style>
+.modern-form label {
+    color: var(--text-color, #333);
+}
+
+.modern-form .required {
+    color: #ff0000;
+}
+
+.modern-form .form-input,
+.modern-form .form-textarea {
+    color: var(--text-color, #333);
+    background-color: var(--input-bg, #fff);
+    border: 1px solid var(--border-color, #ccc);
+}
+
+[data-theme="dark"] .modern-form label {
+    --text-color: #fff;
+}
+
+[data-theme="dark"] .modern-form .form-input,
+[data-theme="dark"] .modern-form .form-textarea {
+    --text-color: #fff;
+    --input-bg: #2d2d2d;
+    --border-color: #444;
+}
+</style>
 </body>
 </html>
