@@ -3077,32 +3077,32 @@ body.dark-mode .responsibility-item span {
 /* Dark mode styles for specific pages */
 body.dark-mode .animal-control-page .hero-section,
 body.dark-mode .good-morning-page .hero-section {
-+   background-color: var(--dark-mode-background);
+   background-color: var(--dark-mode-background);
 }
 
 body.dark-mode .animal-control-page .hero-content *,
 body.dark-mode .good-morning-page .hero-content * {
-+   color: var(--light-text-color);
+   color: var(--light-text-color);
 }
 
 body.dark-mode .animal-control-page .info-card,
 body.dark-mode .good-morning-page .info-card {
-+   background-color: var(--dark-mode-card-bg);
+   background-color: var(--dark-mode-card-bg);
 }
 
 body.dark-mode .animal-control-page .card-body,
 body.dark-mode .good-morning-page .card-body {
-+   color: var(--dark-mode-text-color);
+   color: var(--dark-mode-text-color);
 }
 
 body.dark-mode .animal-control-page .contact-details,
 body.dark-mode .good-morning-page .contact-details {
-+   color: var(--dark-mode-text-color);
+   color: var(--dark-mode-text-color);
 }
 
 body.dark-mode .animal-control-page .responsibility-grid,
 body.dark-mode .good-morning-page .responsibility-grid {
-+   color: var(--dark-mode-text-color);
+  color: var(--dark-mode-text-color);
 }
 
 /* Dark mode styles for specific pages */
@@ -4027,4 +4027,19 @@ body.dark-mode .intro-content h2 {
 
 body.dark-mode .intro-content p {
     color: var(--dark-mode-text-color);
+}
+
+/* Info card dark mode styles */
+body.dark-mode .info-card {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .info-card .card-header {
+    background-color: var(--dark-mode-primary-color);
+}
+
+body.dark-mode .info-card .card-header h3,
+body.dark-mode .info-card .card-header i {
+    color: var(--light-text-color);
 }
