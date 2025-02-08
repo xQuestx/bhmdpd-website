@@ -4178,3 +4178,110 @@ body.dark-mode .staff-item .subtitle {
         padding: var(--spacing-md);
     }
 }
+
+/* Forms Page Styles */
+.forms-page .forms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl) 0;
+}
+
+.form-item {
+    background: var(--card-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+}
+
+.form-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.form-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-top: var(--spacing-xs);
+}
+
+.form-text {
+    flex: 1;
+}
+
+.form-text h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: var(--spacing-sm);
+}
+
+.download-button:hover {
+    background-color: var(--accent-color-dark);
+    transform: translateY(-2px);
+}
+
+.forms-notice {
+    background: var(--card-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.forms-notice h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Dark mode styles */
+body.dark-mode .form-item {
+    background: var(--dark-mode-card-bg);
+    border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .form-text h3 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .forms-notice {
+    background: var(--dark-mode-card-bg);
+    border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .forms-notice h3 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .forms-notice p {
+    color: var(--dark-mode-text-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .forms-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-item {
+        padding: var(--spacing-md);
+    }
+}
