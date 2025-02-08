@@ -4285,3 +4285,34 @@ body.dark-mode .forms-notice p {
         padding: var(--spacing-md);
     }
 }
+
+/* Logo and scroll animations */
+.logo-link {
+    transition: transform 0.3s ease;
+}
+
+.logo {
+    width: 60px; /* Initial size */
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* Scrolled state styles */
+.header.scrolled .logo {
+    width: 40px; /* Smaller size when scrolled */
+}
+
+.header.scrolled .logo-link {
+    transform: scale(0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo {
+        width: 50px; /* Smaller initial size on mobile */
+    }
+    
+    .header.scrolled .logo {
+        width: 35px; /* Even smaller when scrolled on mobile */
+    }
+}
