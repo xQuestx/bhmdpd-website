@@ -4071,3 +4071,110 @@ body.dark-mode .calendar-container iframe {
         height: 600px;
     }
 }
+
+/* Contact Page Styles */
+.contact-page .department-section {
+    padding: var(--spacing-xl) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-page .department-section h2 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.contact-page .department-section h2 i {
+    color: var(--accent-color);
+}
+
+.staff-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.staff-item {
+    background: var(--card-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.staff-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.staff-item h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.3rem;
+}
+
+.staff-item p {
+    color: var(--gray-700);
+    margin-bottom: var(--spacing-xs);
+}
+
+.staff-item .subtitle {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.staff-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+}
+
+.staff-item a:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode styles */
+body.dark-mode .contact-page .department-section {
+    border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .contact-page .department-section h2 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .staff-item {
+    background: var(--dark-mode-card-bg);
+    border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .staff-item h3 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .staff-item p {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .staff-item .subtitle {
+    color: var(--accent-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .staff-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .staff-item {
+        padding: var(--spacing-md);
+    }
+}
