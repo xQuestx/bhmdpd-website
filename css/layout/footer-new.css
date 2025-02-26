@@ -1,0 +1,325 @@
+/*
+ * Footer - New Version
+ * Apple-inspired footer with improved visibility and contrast
+ */
+
+/* Main Footer */
+.footer {
+  background-color: #f8f9fa !important;
+  color: #212529 !important;
+  padding-top: 3rem !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.footer::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 3px !important;
+  background: linear-gradient(to right, #007bff, #0056b3) !important;
+}
+
+/* Footer Content Grid */
+.footer-content {
+  display: grid !important;
+  grid-template-columns: 1fr 2fr 1fr !important;
+  gap: 2rem !important;
+  margin-bottom: 2rem !important;
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 1.5rem !important;
+}
+
+/* Logo Container */
+.footer-logo-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.footer-logo-container p {
+  margin: 0.25rem 0 !important;
+  color: #212529 !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+}
+
+.footer-logo-container p strong {
+  font-weight: 600 !important;
+  color: #212529 !important;
+}
+
+.footer-logo {
+  max-width: 120px !important;
+  margin-bottom: 1rem !important;
+  transition: transform 0.2s ease !important;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05) !important;
+}
+
+/* Footer Links Grid */
+.footer-links {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+  gap: 2rem !important;
+}
+
+/* Footer Column */
+.footer-column h3 {
+  color: #212529 !important;
+  margin-bottom: 1.25rem !important;
+  font-size: 1rem !important;
+  position: relative !important;
+  padding-bottom: 0.5rem !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.footer-column h3::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 24px !important;
+  height: 2px !important;
+  background-color: #007bff !important;
+}
+
+.footer-column ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-column li {
+  margin-bottom: 0.75rem !important;
+}
+
+.footer-column a {
+  color: #212529 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+}
+
+.footer-column a:hover {
+  color: #007bff !important;
+  transform: translateX(2px) !important;
+}
+
+/* Footer Map */
+.footer-map {
+  overflow: hidden !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+}
+
+.footer-map h3 {
+  color: #212529 !important;
+  margin-bottom: 1rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif !important;
+  letter-spacing: -0.01em !important;
+}
+
+.footer-map iframe {
+  width: 100% !important;
+  height: 200px !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 1.5rem 1.5rem !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.footer-bottom p {
+  color: #212529 !important;
+  font-size: 0.9rem !important;
+  margin: 0 !important;
+  font-weight: 500 !important;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex !important;
+  gap: 0.75rem !important;
+  margin-top: 1rem !important;
+}
+
+.social-icons a {
+  color: #212529 !important;
+  font-size: 1rem !important;
+  transition: all 0.2s ease !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-radius: 50% !important;
+}
+
+.social-icons a:hover {
+  color: white !important;
+  background-color: #007bff !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Last Updated */
+.last-updated {
+  text-align: center !important;
+  padding: 1rem 0 !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  font-size: 0.85rem !important;
+  color: #212529 !important;
+  font-weight: 500 !important;
+}
+
+/* Address Styling */
+address {
+  font-style: normal !important;
+  line-height: 1.6 !important;
+}
+
+address p {
+  margin-bottom: 0.75rem !important;
+  color: #212529 !important;
+  font-weight: 500 !important;
+}
+
+address a {
+  color: #007bff !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  font-weight: 600 !important;
+}
+
+address a:hover {
+  text-decoration: underline !important;
+  color: #0056b3 !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  
+  .footer-map {
+    grid-column: span 2 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    text-align: center !important;
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .footer-map {
+    grid-column: span 1 !important;
+  }
+  
+  .footer-logo-container {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .footer-column h3 {
+    text-align: left !important;
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .footer {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-mode .footer-column h3 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .footer-column a {
+  color: #ffffff !important;
+}
+
+body.dark-mode .footer-column a:hover {
+  color: #007bff !important;
+}
+
+body.dark-mode .footer-logo-container p {
+  color: #ffffff !important;
+}
+
+body.dark-mode .footer-logo-container p strong {
+  color: #ffffff !important;
+}
+
+body.dark-mode .footer-bottom {
+  border-top-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-mode .footer-bottom p {
+  color: #ffffff !important;
+}
+
+body.dark-mode .social-icons a {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .social-icons a:hover {
+  background-color: #007bff !important;
+  color: white !important;
+}
+
+body.dark-mode .footer-map {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.dark-mode .footer-map h3 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .last-updated {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  color: #ffffff !important;
+}

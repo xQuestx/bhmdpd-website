@@ -18,7 +18,7 @@
     <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <!-- Add this right after your stylesheet links and before other scripts -->
     <script src="darkmode.js"></script>
@@ -36,6 +36,7 @@
     <a href="#main-content" class="skip-to-main">
         Skip to main content
     </a>
+    <div class="scroll-progress"></div>
 
     <header class="header hero-header">
         <nav class="main-nav">
@@ -177,24 +178,27 @@
     <section class="hero">
       <div class="hero-slider">
         <div class="slide active" data-index="0">
-          <img src="images/1.jpg" alt="Slide 1" />
+          <img src="images/5.jpg" alt="Bar Harbor Police" />
           <div class="slide-content">
             <h2>Community First</h2>
             <p>Building strong relationships through community engagement.</p>
+            <a href="community-outreach.html" class="btn btn-light">Learn More</a>
           </div>
         </div>
         <div class="slide" data-index="1">
-          <img src="images/2.jpg" alt="Slide 2" />
+          <img src="images/DJI_20241120_103608_416.jpg" alt="Harbor Patrol" />
           <div class="slide-content">
             <h2>Harbor Protection</h2>
-            <p>Ensuring safety on our waters.</p>
+            <p>Ensuring safety on our waters year-round.</p>
+            <a href="harbor-master-division.html" class="btn btn-light">Learn More</a>
           </div>
         </div>
         <div class="slide" data-index="2">
-          <img src="images/3.jpg" alt="Slide 3" />
+          <img src="images/crime.jpg" alt="Bar Harbor Aerial View" />
           <div class="slide-content">
-            <h2>Youth Engagement</h2>
-            <p>Creating positive connections with our youth.</p>
+            <h2>Serving Bar Harbor</h2>
+            <p>Dedicated to the safety and wellbeing of our community.</p>
+            <a href="contact.html" class="btn btn-light">Contact Us</a>
           </div>
         </div>
       </div>
@@ -206,11 +210,10 @@
       </div>
     </section>
     
-
-<!-- CAREER SPOTLIGHT SECTION -->
-<section class="career-spotlight">
-    <div class="content-wrapper text-center">
-        <div class="modern-card mb-3" style="max-width: 400px; margin: auto;">
+    <!-- CAREER SPOTLIGHT SECTION -->
+    <section class="career-spotlight">
+      <div class="content-wrapper text-center">
+        <div class="modern-card mb-3" style="max-width: 600px; margin: auto;">
             <div class="card-header text-center">
                 <h3 class="text-center">
                     <i class="fas fa-star"></i>
@@ -218,100 +221,164 @@
                 </h3>
             </div>
             <div class="card-body">
+                <p>Join our team and make a difference in the Bar Harbor community.</p>
                 <a href="bhmdrec.html" class="btn btn-primary">View Career Opportunities</a>
             </div>
         </div>
-    </div>
- </section>
-    <!-- END CAREER SPOTLIGHT -->
-
-   
-   <!-- NEWS SECTION -->
-<section class="news-section">
-    <div class="content-wrapper">
-        <div class="news-grid">
-            <!-- First Card -->
-            <article class="news-card">
-                <div class="news-image">
-                    <img src="images/training.jpg" alt="Police Training" />
+      </div>
+    </section>
+    
+    <!-- FEATURED SERVICES SECTION -->
+    <section class="featured-services">
+      <div class="content-wrapper">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="images/coffee.jpg" alt="Community Engagement">
                 </div>
-                <div class="news-content">
-                    <span class="date">March 28, 2024</span>
-                    <h3>Spring Academy Starting Soon</h3>
-                    <div class="news-preview">
-                        <p>Join our 8-week Citizens Police Academy starting April 15th...</p>
-                    </div>
-                    <div class="news-full" style="display: none;">
-                        <p>Join our 8-week Citizens Police Academy starting April 15th. This comprehensive program offers community members a behind-the-scenes look at law enforcement operations.</p>
-                    </div>
-                    <div class="share-buttons">
-                        <button class="share-btn" aria-label="Share this article">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                    </div>
-                    <button class="read-more">
-                        Read More <i class="fas fa-arrow-right"></i>
-                    </button>
+                <div class="service-content">
+                    <h3><i class="fas fa-mug-hot"></i> Community Engagement</h3>
+                    <p>Join us for coffee and conversation. Our Coffee with a Cop program builds bridges with community members in a relaxed environment.</p>
+                    <a href="events.html" class="btn btn-outline">Upcoming Events</a>
                 </div>
-            </article>
-
-            <!-- Second Card -->
-            <article class="news-card">
-                <div class="news-image">
-                    <img src="images/community.jpg" alt="Community Outreach" />
+            </div>
+            
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="images/police_lights.jpg" alt="Emergency Response">
                 </div>
-                <div class="news-content">
-                    <span class="date">March 25, 2024</span>
-                    <h3>Community Coffee with Cops</h3>
-                    <div class="news-preview">
-                        <p>Join us for coffee and conversation at Local Bean Cafe...</p>
-                    </div>
-                    <div class="news-full" style="display: none;">
-                        <p>Join us for coffee and conversation at Local Bean Cafe on April 5th from 8:00 AM to 10:00 AM. This monthly event provides an opportunity for community members to meet with officers in a casual setting.</p>
-                    </div>
-                    <div class="share-buttons">
-                        <button class="share-btn" aria-label="Share this article">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                    </div>
-                    <button class="read-more">
-                        Read More <i class="fas fa-arrow-right"></i>
-                    </button>
+                <div class="service-content">
+                    <h3><i class="fas fa-shield-alt"></i> Emergency Response</h3>
+                    <p>Our officers are available 24/7 to respond to emergency situations throughout Bar Harbor and Mount Desert.</p>
+                    <a href="contact.html" class="btn btn-outline">Emergency Contacts</a>
                 </div>
-            </article>
-
-            <!-- Third Card -->
-            <article class="news-card">
-                <div class="news-image">
-                    <img src="images/safety.jpg" alt="Summer Safety" />
+            </div>
+            
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="images/bolights.jpg" alt="Community Programs">
                 </div>
-                <div class="news-content">
-                    <span class="date">March 22, 2024</span>
-                    <h3>Summer Safety Workshop</h3>
-                    <div class="news-preview">
-                        <p>Preparing for the summer tourist season with safety tips...</p>
-                    </div>
-                    <div class="news-full" style="display: none;">
-                        <p>Join us for our annual Summer Safety Workshop on April 20th at the Bar Harbor Municipal Building. Learn important safety tips for the upcoming tourist season.</p>
-                    </div>
-                    <div class="share-buttons">
-                        <button class="share-btn" aria-label="Share this article">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                    </div>
-                    <button class="read-more">
-                        Read More <i class="fas fa-arrow-right"></i>
-                    </button>
+                <div class="service-content">
+                    <h3><i class="fas fa-hands-helping"></i> Community Programs</h3>
+                    <p>We offer various community programs including the Citizens Academy and Good Morning Program.</p>
+                    <a href="community-outreach.html" class="btn btn-outline">Our Programs</a>
                 </div>
-            </article>
-        </div>
-    </div>
-</section>
-<!-- END NEWS SECTION -->
+            </div>
         </div>
       </div>
     </section>
-    <!-- END NEWS SECTION -->
+   
+    <!-- NEWS & INFORMATION HUB SECTION -->
+    <section class="news-hub-section">
+      <div class="content-wrapper">
+        <h2 class="section-title">News & Information Hub</h2>
+        
+        <div class="news-hub-container">
+          <!-- Featured News Column -->
+          <div class="featured-news-column">
+            <h3 class="column-title">Latest Department Updates</h3>
+            
+            <div class="news-list">
+              <!-- News Item 1 -->
+              <article class="news-item">
+                <div class="news-image">
+                  <img src="images/training.jpg" alt="Police Training">
+                </div>
+                <div class="news-content">
+                  <span class="news-date">March 28, 2024</span>
+                  <h4>Spring Academy Starting Soon</h4>
+                  <p>Join our 8-week Citizens Police Academy starting April 15th. This comprehensive program offers community members a behind-the-scenes look at law enforcement operations.</p>
+                  <a href="#" class="read-more-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </article>
+              
+              <!-- News Item 2 -->
+              <article class="news-item">
+                <div class="news-image">
+                  <img src="images/community.jpg" alt="Community Outreach">
+                </div>
+                <div class="news-content">
+                  <span class="news-date">March 25, 2024</span>
+                  <h4>Community Coffee with Cops</h4>
+                  <p>Join us for coffee and conversation at Local Bean Cafe on April 5th from 8:00 AM to 10:00 AM. This monthly event provides an opportunity for community members to meet with officers in a casual setting.</p>
+                  <a href="#" class="read-more-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </article>
+              
+              <!-- News Item 3 -->
+              <article class="news-item">
+                <div class="news-image">
+                  <img src="images/safety.jpg" alt="Summer Safety">
+                </div>
+                <div class="news-content">
+                  <span class="news-date">March 22, 2024</span>
+                  <h4>Summer Safety Workshop</h4>
+                  <p>Join us for our annual Summer Safety Workshop on April 20th at the Bar Harbor Municipal Building. Learn important safety tips for the upcoming tourist season.</p>
+                  <a href="#" class="read-more-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </article>
+            </div>
+            
+            <div class="view-all-container">
+              <a href="news.html" class="btn btn-outline">View All News</a>
+            </div>
+          </div>
+          
+          <!-- Resources Sidebar -->
+          <div class="resources-sidebar">
+            <div class="community-resources">
+              <h3 class="column-title">Community Resources</h3>
+              
+              <div class="resource-card emergency-contacts">
+                <h4><i class="fas fa-phone-alt"></i> Emergency Contacts</h4>
+                <ul class="resource-list">
+                  <li><strong>Emergency:</strong> 911</li>
+                  <li><strong>Non-Emergency:</strong> (207) 288-3391</li>
+                  <li><strong>Harbor Master:</strong> (207) 288-5571</li>
+                </ul>
+                <a href="contact.html" class="btn btn-sm">More Contact Info</a>
+              </div>
+              
+              <div class="resource-card">
+                <h4><i class="fas fa-calendar-alt"></i> Upcoming Events</h4>
+                <ul class="event-list">
+                  <li>
+                    <span class="event-date">Apr 5</span>
+                    <span class="event-name">Coffee with a Cop</span>
+                  </li>
+                  <li>
+                    <span class="event-date">Apr 15</span>
+                    <span class="event-name">Citizens Academy Begins</span>
+                  </li>
+                  <li>
+                    <span class="event-date">Apr 20</span>
+                    <span class="event-name">Summer Safety Workshop</span>
+                  </li>
+                </ul>
+                <a href="events.html" class="btn btn-sm">View Calendar</a>
+              </div>
+              
+              <div class="resource-card">
+                <h4><i class="fas fa-file-alt"></i> Common Forms</h4>
+                <ul class="resource-list">
+                  <li><a href="forms.html#parking">Parking Permit Application</a></li>
+                  <li><a href="forms.html#report">File a Police Report</a></li>
+                  <li><a href="forms.html#records">Records Request Form</a></li>
+                </ul>
+                <a href="forms.html" class="btn btn-sm">All Forms</a>
+              </div>
+              
+              <div class="resource-card">
+                <h4><i class="fas fa-question-circle"></i> FAQ</h4>
+                <p>Find answers to commonly asked questions about our services, permits, and processes.</p>
+                <a href="faq.html" class="btn btn-sm">Browse FAQ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <!-- END MAIN CONTENT -->
 
@@ -375,17 +442,14 @@
        </div>
        <div class="footer-bottom">
            <p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
-       </div>
-       <div class="last-updated">
-           Last updated: <time datetime="2025-02-10">February 10, 2025</time>
+           <div class="last-updated">
+               Last updated: <time datetime="2025-02-26">February 26th, 2025</time>
+           </div>
        </div>
    </footer>
 
   <!-- JS FILES -->
   <!-- Link to your existing 'script.js' that contains the slider logic -->
   <script src="script.js"></script>
-
-  <!-- Add this right after <body> -->
-  <div class="scroll-progress"></div>
 </body>
 </html>

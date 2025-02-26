@@ -1,0 +1,193 @@
+/*
+ * Mental Health Unit Page
+ * Styles specific to the Mental Health Unit page
+ */
+
+/* Main Content */
+.mental-health-page {
+  padding-top: var(--header-height, 80px);
+}
+
+/* Hero Section */
+.mental-health-page .hero-section {
+  background: linear-gradient(rgba(26, 43, 74, 0.85), rgba(10, 20, 40, 0.95)),
+              url('../../images/mental-health-hero.jpg') center/cover no-repeat;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--light-text-color, #fff);
+}
+
+.mental-health-page .hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mental-health-page .hero-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color, #007bff);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.mental-health-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--light-text-color, #fff);
+  font-family: "Roboto Slab", serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.mental-health-page .hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Responsibility Grid */
+.responsibility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.responsibility-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: var(--gray-50, #f8f9fa);
+  border-radius: var(--radius-sm, 4px);
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200, #e9ecef);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.responsibility-item:hover {
+  background-color: var(--gray-100, #f1f3f4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.responsibility-item i {
+  color: var(--accent-color, #007bff);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.responsibility-item span {
+  color: var(--gray-800, #343a40);
+  font-weight: 500;
+}
+
+/* Contact Details */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-item i {
+  color: var(--accent-color, #007bff);
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+}
+
+.contact-item h3 {
+  margin: 0 0 0.25rem 0;
+  color: var(--primary-color, #1a2b4a);
+  font-size: 1.1rem;
+}
+
+.contact-item p {
+  margin: 0;
+  color: var(--gray-700, #495057);
+}
+
+/* Reservation Note */
+.reservation-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: var(--gray-50, #f8f9fa);
+  border-radius: var(--radius-md, 8px);
+  border-left: 4px solid var(--accent-color, #007bff);
+  margin-top: 1rem;
+}
+
+.reservation-note i {
+  color: var(--accent-color, #007bff);
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+}
+
+.reservation-note p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--gray-700, #495057);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .mental-health-page .hero-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .mental-health-page h1 {
+    font-size: 2rem;
+  }
+  
+  .responsibility-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .mental-health-page {
+  background-color: var(--dark-mode-background, #121212);
+}
+
+body.dark-mode .mental-health-page .hero-section {
+  background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
+              url('../../images/mental-health-hero.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .responsibility-item {
+  background-color: var(--dark-mode-card-bg, #2d2d2d);
+  border-color: var(--dark-mode-border-color, #404040);
+}
+
+body.dark-mode .responsibility-item:hover {
+  background-color: var(--dark-mode-background, #121212);
+}
+
+body.dark-mode .responsibility-item span {
+  color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .contact-item h3 {
+  color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .contact-item p {
+  color: var(--dark-mode-text-color, #e0e0e0);
+}
+
+body.dark-mode .reservation-note {
+  background-color: var(--dark-mode-background, #121212);
+  border-left-color: var(--accent-color, #007bff);
+}
+
+body.dark-mode .reservation-note p {
+  color: var(--dark-mode-text-color, #e0e0e0);
+} 

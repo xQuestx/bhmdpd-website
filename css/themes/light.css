@@ -1,0 +1,306 @@
+/*
+ * Light Theme
+ * Light mode styles (default) - Apple-inspired
+ */
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--accent-color);
+}
+
+a:hover {
+  color: var(--accent-color-dark);
+}
+
+/* Header */
+.header {
+  background: var(--light-text-color);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-md);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-links a {
+  color: var(--gray-800);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-color);
+}
+
+/* Dropdown styles for light mode - Apple style */
+.dropdown-content {
+  background: white !important;
+  border: none !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 12px !important;
+}
+
+/* Dropdown triangle for light mode - fix blue line issue */
+.dropdown-content::before {
+  border-bottom-color: white !important;
+  z-index: 1002 !important;
+  top: -8px !important;
+  pointer-events: none !important;
+  animation: none !important;
+  display: block !important;
+  transition: none !important;
+}
+
+/* Remove the border triangle that was causing issues */
+.dropdown-content::after {
+  display: none !important;
+}
+
+/* Ensure consistent dropdown behavior in light mode */
+.dropdown:hover .dropdown-content,
+.dropdown.active .dropdown-content {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(0) !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+.dropdown-content a {
+  color: var(--gray-800) !important;
+  font-weight: 400 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transition: background 0.15s ease, color 0.15s ease !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 0.9rem !important;
+}
+
+.dropdown-content a:hover {
+  background: rgba(0, 0, 0, 0.03) !important;
+  color: var(--accent-color) !important;
+  border-left: 2px solid var(--accent-color) !important;
+}
+
+.mobile-menu-btn {
+  color: var(--gray-800);
+}
+
+.dark-mode-toggle {
+  background: var(--gray-100);
+  border-color: var(--gray-200);
+  color: var(--gray-800);
+}
+
+/* Cards - Apple style */
+.card,
+.modern-card,
+.info-card,
+.feature-card,
+.news-card,
+.quick-link-card {
+  background: var(--card-bg);
+  box-shadow: var(--shadow-md);
+  border-radius: 12px;
+  border: none;
+  overflow: hidden;
+}
+
+.card-header {
+  background: var(--primary-color);
+}
+
+.card-header h2,
+.card-header h3 {
+  color: var(--light-text-color);
+}
+
+.card-body {
+  color: var(--text-color);
+}
+
+.card-footer {
+  border-top-color: var(--border-color);
+}
+
+/* Buttons - Apple style */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--primary-color-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 8px;
+  font-weight: 500;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--secondary-color-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Forms - Apple style */
+input,
+textarea,
+select {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+  outline: none;
+}
+
+label {
+  color: var(--gray-700);
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--gray-900);
+  color: white;
+}
+
+.footer-column a {
+  color: var(--gray-300);
+}
+
+.footer-column a:hover {
+  color: white;
+}
+
+.last-updated {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--gray-400);
+}
+
+/* Sections */
+.quick-links {
+  background-color: var(--gray-50);
+}
+
+.career-spotlight {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.stats-section {
+  background-color: var(--gray-50);
+}
+
+.cta-section {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Components */
+.quick-link-card p {
+  color: var(--gray-600);
+}
+
+.news-content .date {
+  color: var(--gray-600);
+}
+
+.stat-item {
+  background-color: white;
+}
+
+.stat-item p {
+  color: var(--gray-700);
+}
+
+.notification {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.back-to-top {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.scroll-progress {
+  background-color: var(--accent-color);
+} 

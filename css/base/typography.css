@@ -1,0 +1,213 @@
+/*
+ * Typography
+ * Text styling and font definitions
+ */
+
+/* Base Typography */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color, #333);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif;
+  margin-bottom: var(--spacing-sm, 1rem);
+  line-height: 1.2;
+  color: var(--primary-color, #1a2b4a);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md, 1.5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm, 1rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm, 1rem);
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: var(--spacing-md, 1.5rem);
+  color: var(--text-color, #333);
+}
+
+/* Links */
+a {
+  color: var(--accent-color, #007bff);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--accent-color-dark, #0056b3);
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: var(--spacing-md, 1.5rem);
+  padding-left: var(--spacing-lg, 2rem);
+}
+
+ul li, ol li {
+  margin-bottom: var(--spacing-xs, 0.5rem);
+}
+
+/* Emphasis */
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+  color: var(--primary-color, #1a2b4a);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--accent-color, #007bff);
+}
+
+/* Text Utilities */
+.text-primary {
+  color: var(--primary-color, #1a2b4a);
+}
+
+.text-accent {
+  color: var(--accent-color, #007bff);
+}
+
+.text-light {
+  color: var(--light-text-color, #fff);
+}
+
+.text-dark {
+  color: var(--dark-text-color, #333);
+}
+
+.text-muted {
+  color: var(--gray-600, #6c757d);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.text-small {
+  font-size: 0.875rem;
+}
+
+.text-large {
+  font-size: 1.25rem;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Dark Mode Typography */
+body.dark-mode {
+  color: var(--dark-mode-text-color, #e0e0e0);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .section-title {
+  color: var(--light-text-color, #fff);
+}
+
+body.dark-mode p {
+  color: var(--dark-mode-text-color, #e0e0e0);
+}
+
+body.dark-mode a {
+  color: var(--accent-color, #007bff);
+}
+
+body.dark-mode a:hover {
+  color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .text-muted {
+  color: var(--gray-400, #ced4da);
+} 
