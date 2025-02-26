@@ -1,0 +1,458 @@
+/*
+ * Hero Sections
+ * Hero and banner section styles
+ */
+
+/* Base Hero Section */
+.hero {
+  position: relative;
+  height: 450px; /* Reduced from 600px */
+  overflow: hidden;
+  margin-top: var(--header-height, 80px);
+  box-shadow: var(--shadow-lg, 0 8px 15px rgba(0, 0, 0, 0.1));
+}
+
+/* Hero Slider */
+.hero-slider {
+  height: 100%;
+  position: relative;
+}
+
+/* Individual Slides */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  align-items: center;
+}
+
+.slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.8);
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Slide Content */
+.slide-content {
+  color: white;
+  text-align: left;
+  max-width: 600px;
+  margin-left: 10%;
+  padding: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: var(--radius-md, 8px);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  box-shadow: var(--shadow-lg, 0 8px 15px rgba(0, 0, 0, 0.1));
+  border-left: 4px solid var(--accent-color, #007bff);
+}
+
+.slide-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 700;
+  font-family: "Roboto Slab", serif;
+}
+
+.slide-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Phone Contact Highlight */
+.phone-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  margin: 0.5rem 0;
+  border: 1px solid var(--accent-color, #007bff);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(0, 123, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.phone-highlight:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(0, 123, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.phone-highlight i {
+  color: var(--accent-color, #007bff);
+  font-size: 1.1rem;
+}
+
+.phone-highlight a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.phone-highlight a:hover {
+  color: var(--accent-color, #007bff);
+}
+
+/* Contact Item Enhancement */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-item i {
+  color: var(--accent-color, #007bff);
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+}
+
+.contact-item h3 {
+  margin: 0 0 0.25rem 0;
+  color: var(--primary-color, #1a2b4a);
+  font-size: 1.1rem;
+}
+
+.contact-item p, .contact-item a {
+  margin: 0;
+  font-weight: 500;
+}
+
+.contact-item a {
+  color: var(--accent-color, #007bff);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: var(--accent-dark, #0056b3);
+  text-decoration: underline;
+}
+
+/* Slider Navigation Dots */
+.slide-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+}
+
+.slide-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition-base, all 0.3s ease);
+  border: 2px solid transparent;
+}
+
+.slide-dots .dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.slide-dots .dot.active {
+  background-color: white;
+  transform: scale(1.2);
+  border-color: var(--accent-color, #007bff);
+}
+
+/* Standard Hero Section */
+.hero-section {
+  margin-top: var(--header-height, 80px);
+  position: relative;
+  background: linear-gradient(rgba(26, 43, 74, 0.85), rgba(10, 20, 40, 0.95)),
+              url('../../images/hero-bg.jpg') center/cover no-repeat;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--light-text-color, #fff);
+  padding: 4rem 2rem;
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--light-text-color, #fff);
+  font-family: "Roboto Slab", serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  margin-top: 0.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.hero-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-md, 1.5rem);
+  color: var(--light-text-color, #fff);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Career Spotlight Section */
+.career-spotlight {
+  padding: 2.5rem 0; /* Reduced from 4rem */
+  background-color: var(--primary-color, #1a2b4a);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.career-spotlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../images/pattern.png');
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.career-spotlight-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md, 1.5rem);
+}
+
+.career-spotlight-content h2 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: "Roboto Slab", serif;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.career-spotlight-content h2 i {
+  color: var(--accent-color, #007bff);
+}
+
+.career-spotlight-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.career-spotlight-cta {
+  display: flex;
+  gap: 1rem;
+}
+
+.career-spotlight-image {
+  border-radius: var(--radius-lg, 12px);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg, 0 8px 15px rgba(0, 0, 0, 0.1));
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.5s ease;
+}
+
+.career-spotlight-image:hover {
+  transform: perspective(1000px) rotateY(0);
+}
+
+.career-spotlight-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.career-spotlight-image:hover img {
+  transform: scale(1.05);
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 4rem 0;
+  background-color: var(--primary-color, #1a2b4a);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../images/pattern.png');
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md, 1.5rem);
+}
+
+.cta-content h2 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: "Roboto Slab", serif;
+}
+
+.cta-content p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .hero {
+    height: 500px;
+  }
+  
+  .slide-content {
+    max-width: 500px;
+  }
+  
+  .slide-content h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .career-spotlight-container {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+  }
+  
+  .career-spotlight-image {
+    order: -1;
+    transform: perspective(1000px) rotateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 400px;
+  }
+  
+  .slide-content {
+    margin-left: 5%;
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+  
+  .slide-content h2 {
+    font-size: 1.75rem;
+  }
+  
+  .hero-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-icon {
+    font-size: 3rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .hero-section {
+  background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
+              url('../../images/hero-bg.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .career-spotlight {
+  background-color: var(--dark-mode-primary-color, #29487d);
+}
+
+body.dark-mode .cta-section {
+  background-color: var(--dark-mode-primary-color, #29487d);
+}
+
+body.dark-mode .phone-highlight {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-color: var(--accent-color, #007bff);
+}
+
+body.dark-mode .contact-item h3 {
+  color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .contact-item a {
+  color: var(--accent-color, #007bff);
+} 

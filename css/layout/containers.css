@@ -1,0 +1,129 @@
+/*
+ * Containers
+ * Layout container styles
+ */
+
+/* Main Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 1.5rem);
+  position: relative;
+  z-index: 1;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  width: 100%;
+  max-width: var(--content-max-width, 1400px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 1.5rem);
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Containers */
+.section {
+  padding: var(--spacing-xl, 3rem) 0;
+  position: relative;
+}
+
+.section-sm {
+  padding: var(--spacing-md, 1.5rem) 0;
+}
+
+.section-lg {
+  padding: calc(var(--spacing-xl, 3rem) * 1.5) 0;
+}
+
+/* Card Container */
+.card-container {
+  background-color: var(--card-bg, #ffffff);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+  padding: var(--spacing-md, 1.5rem);
+  margin-bottom: var(--spacing-md, 1.5rem);
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200, #e8eaed);
+}
+
+.card-container:hover {
+  box-shadow: var(--shadow-lg, 0 8px 15px rgba(0, 0, 0, 0.1));
+  transform: translateY(-3px);
+  border-color: var(--accent-color, #007bff);
+}
+
+/* Two Column Layout */
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg, 2rem);
+  align-items: start;
+}
+
+/* Three Column Layout */
+.three-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg, 2rem);
+  align-items: start;
+}
+
+/* Four Column Layout */
+.four-column {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md, 1.5rem);
+  align-items: start;
+}
+
+/* Auto Grid Layout */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md, 1.5rem);
+  align-items: start;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .three-column,
+  .four-column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .container,
+  .content-wrapper {
+    padding: 0 var(--spacing-md, 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .two-column,
+  .three-column,
+  .four-column {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md, 1.5rem);
+  }
+  
+  .section {
+    padding: var(--spacing-lg, 2rem) 0;
+  }
+  
+  .section-lg {
+    padding: var(--spacing-xl, 3rem) 0;
+  }
+  
+  .container,
+  .content-wrapper {
+    padding: 0 var(--spacing-sm, 1rem);
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .card-container {
+  background-color: var(--dark-mode-card-bg, #2d2d2d);
+  border-color: var(--dark-mode-border-color, #404040);
+  color: var(--dark-mode-text-color, #e0e0e0);
+} 

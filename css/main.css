@@ -1,0 +1,95 @@
+/* 
+ * Main CSS File
+ * This file imports all CSS modules
+ */
+
+/* Base Styles */
+@import 'base/reset.css';
+@import 'base/variables.css';
+@import 'base/typography.css';
+@import 'base/utilities.css';
+
+/* Layout Styles */
+@import 'layout/grid.css';
+@import 'layout/header.css';
+@import 'layout/footer.css';
+@import 'layout/containers.css';
+
+/* Component Styles */
+@import 'components/buttons.css';
+@import 'components/cards.css';
+@import 'components/forms.css';
+@import 'components/navigation.css';
+@import 'components/hero.css';
+@import 'components/news.css';
+@import 'components/stats.css';
+@import 'components/notifications.css';
+@import 'components/tabs.css';
+@import 'components/faq.css';
+@import 'components/services.css';
+
+/* Page-Specific Styles */
+@import 'pages/home.css';
+@import 'pages/contact.css';
+@import 'pages/forms.css';
+@import 'pages/recruitment.css';
+@import 'pages/faq.css';
+@import 'pages/parking.css';
+@import 'pages/events.css';
+@import 'pages/harbor-master.css';
+@import 'pages/good-morning.css';
+@import 'pages/animalcontrol.css';
+@import 'pages/mentalhealth.css';
+
+/* Theme Styles */
+@import 'themes/light.css';
+@import 'themes/dark.css';
+
+/* Print Styles */
+@media print {
+  body {
+    font-size: 12pt;
+    color: #000;
+  }
+  
+  .header, .footer, .hero-slider, .quick-links, 
+  .career-spotlight, .stats-section, .cta-section,
+  .back-to-top, .scroll-progress, .mobile-menu-btn {
+    display: none !important;
+  }
+  
+  .news-section {
+    padding: 0;
+  }
+  
+  .news-grid {
+    display: block;
+  }
+  
+  .news-card {
+    break-inside: avoid;
+    margin-bottom: 20pt;
+    box-shadow: none;
+    border: 1pt solid #ddd;
+  }
+  
+  .news-image {
+    height: auto;
+  }
+  
+  .news-footer {
+    display: none;
+  }
+  
+  .news-full {
+    display: block !important;
+  }
+  
+  .news-preview {
+    display: none !important;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+} 

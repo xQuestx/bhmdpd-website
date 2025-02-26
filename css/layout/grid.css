@@ -1,0 +1,139 @@
+/*
+ * Grid Systems
+ * Layout grid systems and spacing
+ */
+
+/* Basic Grid */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+/* Grid with equal columns */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* Auto-fit grid */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* Auto-fill grid */
+.grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* Grid with specific column sizes */
+.grid-1-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-md);
+}
+
+.grid-2-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.grid-1-3 {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: var(--spacing-md);
+}
+
+.grid-3-1 {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: var(--spacing-md);
+}
+
+/* Grid with sidebar */
+.grid-sidebar {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--spacing-lg);
+}
+
+.grid-sidebar-right {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  gap: var(--spacing-lg);
+}
+
+/* Grid gap variations */
+.gap-xs {
+  gap: var(--spacing-xs);
+}
+
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+.gap-lg {
+  gap: var(--spacing-lg);
+}
+
+.gap-xl {
+  gap: var(--spacing-xl);
+}
+
+/* Grid alignment */
+.grid-center {
+  align-items: center;
+}
+
+.grid-start {
+  align-items: start;
+}
+
+.grid-end {
+  align-items: end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-sidebar,
+  .grid-sidebar-right {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-1-2,
+  .grid-2-1,
+  .grid-1-3,
+  .grid-3-1 {
+    grid-template-columns: 1fr;
+  }
+} 

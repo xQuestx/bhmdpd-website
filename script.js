@@ -197,6 +197,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (window.innerWidth <= 768) {
                         e.preventDefault();
                         this.parentElement.classList.toggle('active');
+                        
+                        // Toggle caret icon rotation
+                        const caretIcon = this.querySelector('.fa-caret-down');
+                        if (caretIcon) {
+                            if (this.parentElement.classList.contains('active')) {
+                                caretIcon.style.transform = 'translateY(-50%) rotate(180deg)';
+                            } else {
+                                caretIcon.style.transform = 'translateY(-50%) rotate(0deg)';
+                            }
+                        }
                     }
                 });
             });
