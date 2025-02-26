@@ -1,0 +1,245 @@
+/*
+ * Community Outreach Page Styles
+ * Specific styles for the community outreach page
+ */
+
+/* Resource Categories */
+.resource-category {
+  margin-bottom: 3rem;
+  border-radius: var(--radius-lg, 12px);
+  overflow: hidden;
+  background-color: var(--light-bg-color, #f8f9fa);
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: var(--primary-color, #1a2b4a);
+  color: white;
+}
+
+.category-icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.category-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.category-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+}
+
+.resource-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.resource-card {
+  background-color: white;
+  border-radius: var(--radius-md, 8px);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.05));
+  transition: all 0.3s ease;
+  border-top: 3px solid var(--primary-color, #1a2b4a);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.resource-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color, #1a2b4a);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+}
+
+.resource-card p {
+  color: var(--gray-700, #495057);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+}
+
+.resource-card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Intro Section */
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color, #1a2b4a);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--gray-700, #495057);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+}
+
+.intro-text a {
+  color: var(--accent-color, #007bff);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.intro-text a:hover {
+  text-decoration: underline;
+}
+
+.resources-section {
+  padding: 2rem 0 4rem;
+}
+
+.resources-section .section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--primary-color, #1a2b4a);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .resource-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-header {
+    padding: 1rem;
+  }
+  
+  .category-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .category-icon i {
+    font-size: 1.2rem;
+  }
+  
+  .category-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .intro-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .resources-section .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Hero Section Customization */
+.hero-section {
+  text-align: center;
+}
+
+.hero-section h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-section p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA Section Customization */
+.cta-section {
+  background-color: var(--primary-color, #1a2b4a);
+}
+
+.cta-content h2 {
+  color: white;
+}
+
+.cta-content p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Dark Mode Styles */
+body.dark-mode .resource-category {
+  background-color: var(--dark-mode-card-bg, #2d2d2d);
+}
+
+body.dark-mode .category-header {
+  background-color: var(--dark-mode-primary-color, #29487d);
+}
+
+body.dark-mode .resource-card {
+  background-color: var(--dark-mode-background, #121212);
+  border-top-color: var(--dark-mode-primary-color, #29487d);
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+body.dark-mode .resource-card:hover {
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+body.dark-mode .resource-card h4 {
+  color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .resource-card p {
+  color: var(--gray-400, #ced4da);
+}
+
+body.dark-mode .intro-text h2 {
+  color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .intro-text p {
+  color: var(--gray-400, #ced4da);
+}
+
+body.dark-mode .resources-section .section-title {
+  color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .cta-content h2 {
+  color: white;
+}
+
+body.dark-mode .cta-content p {
+  color: rgba(255, 255, 255, 0.9);
+}
