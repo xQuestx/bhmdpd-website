@@ -1,56 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Hero Slider
-    const slider = document.querySelector('.hero-slider');
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-
-    if (slider && slides.length > 0) {
-        let currentSlideIndex = 0;
-        let slideInterval;
-
-        function showSlide(index) {
-            // Remove active class from all slides and dots
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            // Add active class to current slide and dot
-            slides[index].classList.add('active');
-            dots[index].classList.add('active');
-            
-            currentSlideIndex = index;
-        }
-
-        function nextSlide() {
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            showSlide(currentSlideIndex);
-        }
-
-        // Add click event listeners to dots
-        if (dots.length > 0) {
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    showSlide(index);
-                });
-            });
-        }
-
-        // Start automatic slideshow
-        function startSlideshow() {
-            slideInterval = setInterval(nextSlide, 5000);
-        }
-
-        // Pause slideshow
-        function pauseSlideshow() {
-            clearInterval(slideInterval);
-        }
-
-        // Event listeners for pause/resume
-        slider.addEventListener('mouseenter', pauseSlideshow);
-        slider.addEventListener('mouseleave', startSlideshow);
-
-        // Initialize first slide and start slideshow
-        showSlide(0);
-        startSlideshow();
+    // Modern Hero Parallax Effect
+    const heroSection = document.querySelector('.modern-hero');
+    const heroImage = document.querySelector('.hero-image');
+    
+    if (heroSection && heroImage) {
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            if (scrollPosition < heroSection.offsetHeight) {
+                // Create a subtle parallax effect
+                heroImage.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+            }
+        });
     }
 
     // FAQ Accordion Functionality
