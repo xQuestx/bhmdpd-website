@@ -170,18 +170,21 @@
 /* Hero Section Customization */
 .hero-section {
   text-align: center;
+  color: var(--light-text-color, #fff);
 }
 
 .hero-section h1 {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  color: var(--light-text-color, #fff);
 }
 
 .hero-section p {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  color: white;
 }
 
 /* CTA Section Customization */
