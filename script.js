@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Functionality
     function initMobileMenu() {
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileCloseBtn = document.querySelector('.mobile-close-btn');
         const navWrapper = document.querySelector('.nav-wrapper');
         const body = document.body;
 
@@ -135,8 +136,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
+                    
+                    // Close all dropdowns when closing the menu
+                    const activeDropdowns = navWrapper.querySelectorAll('.dropdown.active');
+                    activeDropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
                 }
             });
+            
+            // Handle close button click
+            if (mobileCloseBtn) {
+                mobileCloseBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navWrapper.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                    body.classList.remove('menu-open');
+                    
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    
+                    // Close all dropdowns
+                    const activeDropdowns = navWrapper.querySelectorAll('.dropdown.active');
+                    activeDropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                });
+            }
 
             // Close menu when clicking outside
             document.addEventListener('click', function(e) {
@@ -147,6 +174,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     const icon = mobileMenuBtn.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
+                    
+                    // Close all dropdowns
+                    const activeDropdowns = navWrapper.querySelectorAll('.dropdown.active');
+                    activeDropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
                 }
             });
 
@@ -156,18 +189,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 dropdown.addEventListener('click', function(e) {
                     if (window.innerWidth <= 768) {
                         e.preventDefault();
+                        e.stopPropagation(); // Prevent event bubbling
+                        
+                        // Close other dropdowns
+                        const allDropdowns = navWrapper.querySelectorAll('.dropdown');
+                        allDropdowns.forEach(item => {
+                            if (item !== this.parentElement) {
+                                item.classList.remove('active');
+                            }
+                        });
+                        
                         this.parentElement.classList.toggle('active');
                         
                         // Toggle caret icon rotation
                         const caretIcon = this.querySelector('.fa-caret-down');
                         if (caretIcon) {
                             if (this.parentElement.classList.contains('active')) {
-                                caretIcon.style.transform = 'translateY(-50%) rotate(180deg)';
+                                caretIcon.style.transform = 'rotate(180deg)';
                             } else {
-                                caretIcon.style.transform = 'translateY(-50%) rotate(0deg)';
+                                caretIcon.style.transform = 'rotate(0deg)';
                             }
                         }
                     }
+                });
+            });
+            
+            // Allow clicking on dropdown links in mobile view
+            const dropdownLinks = navWrapper.querySelectorAll('.dropdown-content a');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Don't prevent default here to allow navigation
+                    // Just close the menu
+                    navWrapper.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                    body.classList.remove('menu-open');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
                 });
             });
         }

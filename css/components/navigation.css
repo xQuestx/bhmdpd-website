@@ -170,6 +170,24 @@
   padding: 0.5rem;
 }
 
+/* Mobile Close Button */
+.mobile-close-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--light-text-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+body.dark-mode .mobile-close-btn {
+  color: var(--dark-text-color);
+}
+
 /* Breadcrumbs */
 .breadcrumbs {
   display: flex;
@@ -259,6 +277,11 @@
     right: 70px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1001;
+  }
+  
+  .mobile-close-btn {
+    display: block;
   }
   
   .nav-wrapper {
@@ -273,6 +296,7 @@
     overflow-y: auto;
     visibility: hidden;
     margin-left: 0;
+    padding-bottom: 50px; /* Add padding at the bottom for better scrolling */
   }
   
   .nav-wrapper.active {
@@ -285,15 +309,19 @@
     flex-direction: column;
     padding: var(--spacing-md);
     gap: 0;
+    width: 100%;
   }
   
   .nav-links > li {
     width: 100%;
+    position: relative;
   }
   
   .nav-links > li > a {
     padding: var(--spacing-md);
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     color: var(--light-text-color);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -310,11 +338,14 @@
     border: none;
     border-radius: 0;
     margin-top: 0;
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
     visibility: visible;
   }
   
   .dropdown.active .dropdown-content {
+    max-height: 500px; /* Large enough to fit all content */
     display: block;
   }
   
@@ -331,14 +362,15 @@
   }
   
   .dropdown > a i.fa-caret-down {
-    position: absolute;
-    right: var(--spacing-md);
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin-left: 5px;
   }
   
   .dropdown.active > a i.fa-caret-down {
-    transform: translateY(-50%) rotate(180deg);
+    transform: rotate(180deg);
   }
   
   .nav-links a.active::after {
@@ -352,29 +384,29 @@
 
 /* Dark Mode Styles */
 body.dark-mode .nav-links a {
-  color: var(--dark-mode-text-color);
+  color: var(--dark-text-color);
 }
 
 body.dark-mode .nav-links a:hover,
 body.dark-mode .nav-links a.active {
-  color: var(--accent-color);
+  color: var(--dark-accent-color);
 }
 
 body.dark-mode .dropdown-content {
-  background-color: var(--dark-mode-card-bg);
+  background-color: var(--dark-card-bg);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
 body.dark-mode .dropdown-content a {
-  color: var(--dark-mode-text-color);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--dark-text-color);
+  border-left: 2px solid transparent;
 }
 
 body.dark-mode .dropdown-content a:hover,
 body.dark-mode .dropdown-content a.active {
   background-color: rgba(255, 255, 255, 0.05);
-  color: var(--accent-color);
-  border-left: 2px solid var(--accent-color);
+  color: var(--dark-accent-color);
+  border-left: 2px solid var(--dark-accent-color);
 }
 
 body.dark-mode .dropdown > a:hover {
@@ -382,26 +414,45 @@ body.dark-mode .dropdown > a:hover {
 }
 
 body.dark-mode .mobile-menu-btn {
-  color: var(--dark-mode-text-color);
+  color: var(--dark-text-color);
 }
 
 body.dark-mode .breadcrumbs .current {
-  color: var(--gray-400);
+  color: var(--dark-text-muted);
 }
 
 body.dark-mode .pagination-item {
-  background-color: var(--dark-mode-card-bg);
-  color: var(--dark-mode-text-color);
+  background-color: var(--dark-card-bg);
+  color: var(--dark-text-color);
 }
 
 body.dark-mode .pagination-item:hover {
-  background-color: var(--dark-mode-primary-color);
+  background-color: var(--dark-gray-700);
 }
 
 body.dark-mode .nav-wrapper {
-  background-color: var(--dark-mode-primary-color);
+  background-color: var(--dark-primary-color);
 }
 
 body.dark-mode .nav-links > li > a {
-  border-bottom-color: var(--dark-mode-border-color);
+  color: var(--dark-text-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Dark Mode Specific Styles */
+@media (max-width: 768px) {
+  body.dark-mode .dropdown-content {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  body.dark-mode .dropdown-content a {
+    color: var(--dark-text-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: none;
+  }
+  
+  body.dark-mode .dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: none;
+  }
 } 

@@ -89,8 +89,13 @@
   --dark-bg: #1a1a1a;
   --dark-card-bg: #2d2d2d;
   --dark-text-color: #e0e0e0;
+  --dark-text-muted: #a0a0a0;
   --dark-border-color: #404040;
   --dark-hover-bg: rgba(0, 123, 255, 0.15);
+  --dark-primary-color: #29487d; /* Lighter primary for dark mode */
+  --dark-secondary-color: #333; /* Darker secondary for dark mode */
+  --dark-accent-color: #3b9dff;
+  --dark-gray-700: #444;
   --dark-mode-background: #121212;
   --dark-mode-text-color: #f8f8f8;
   --dark-mode-primary-color: #29487d; /* Lighter primary for dark mode */
@@ -118,4 +123,6 @@
   --color-light-bg: var(--dark-mode-background);
   --color-text: var(--dark-mode-text-color);
   --color-text-muted: #a0a0a0;
+  --primary-color: var(--dark-primary-color);
+  --accent-color: var(--dark-accent-color);
 }
