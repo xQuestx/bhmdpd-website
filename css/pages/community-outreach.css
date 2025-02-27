@@ -169,21 +169,21 @@
 
 /* Hero Section Customization */
 .hero-section {
+  background: linear-gradient(rgba(26, 43, 74, 0.85), rgba(10, 20, 40, 0.95));
   text-align: center;
   color: var(--light-text-color, #fff);
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-section h1 {
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   color: var(--light-text-color, #fff);
 }
 
 .hero-section p {
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   color: white;
 }
 
