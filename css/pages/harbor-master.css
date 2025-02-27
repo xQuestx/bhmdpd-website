@@ -5,7 +5,6 @@
 
 /* Main Content */
 .harbor-master-page {
-  padding-top: var(--header-height, 80px);
 }
 
 /* Hero Section */
@@ -333,4 +332,4 @@ body.dark-mode .reservation-note {
 
 body.dark-mode .contact-item h3 {
   color: var(--light-text-color, #fff);
-} 
+}

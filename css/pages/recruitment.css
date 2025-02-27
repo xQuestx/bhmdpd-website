@@ -15,6 +15,7 @@
   padding: 4rem 2rem;
   text-align: center;
   color: var(--light-text-color, #fff);
+  margin-top: 40px;
 }
 
 .recruitment__hero-content {
@@ -573,7 +574,7 @@ body.dark-mode .recruitment-page {
 }
 
 body.dark-mode .recruitment__hero {
-  background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
+  background: linear-gradient(rgba(26, 43, 74, 0.85), rgba(10, 20, 40, 0.95)),
               url('../../images/recruitment-hero.jpg') center/cover no-repeat;
 }
 
@@ -634,4 +635,4 @@ body.dark-mode .modern-form .form-textarea {
 body.dark-mode .cta-box {
   background-color: var(--dark-mode-card-bg, #2d2d2d);
   border-color: var(--dark-mode-border-color, #404040);
-} 
+}

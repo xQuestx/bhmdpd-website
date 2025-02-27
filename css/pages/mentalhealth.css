@@ -5,7 +5,6 @@
 
 /* Main Content */
 .mental-health-page {
-  padding-top: var(--header-height, 80px);
 }
 
 /* Hero Section */
@@ -190,4 +189,4 @@ body.dark-mode .reservation-note {
 
 body.dark-mode .reservation-note p {
   color: var(--dark-mode-text-color, #e0e0e0);
-} 
+}
