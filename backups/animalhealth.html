@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Control - Bar Harbor Police Department</title>
+    <!-- Dark mode initialization -->
+    <meta name="theme-color" content="#ffffff" id="theme-color">
+    <script src="darkmode.js"></script>
+    <script>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.getElementById('theme-color').setAttribute('content', '#121212');
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">
+        Skip to main content
+    </a>
+    <div class="scroll-progress"></div>
+
+    <header class="header">
+        <nav class="main-nav">
+            <!-- ... existing nav content ... -->
+            <div class="nav-wrapper">
+                <ul class="nav-links">
+                    <!-- ... existing nav links ... -->
+                </ul>
+            </div>
+
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content" class="main-content animal-health-page">
+        <div class="top-spacer"></div>
+
+        <div class="hero-section">
+            <div class="hero-content">
+                <i class="fas fa-paw hero-icon"></i>
+                <h1>Animal Control</h1>
+                <p>Protecting and serving our community's pets and wildlife</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 
