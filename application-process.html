@@ -4,43 +4,283 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Process - Bar Harbor Police Department</title>
+    <!-- Dark mode initialization -->
+    <meta name="theme-color" content="#ffffff" id="theme-color">
+    <script src="darkmode.js"></script>
+    <script>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.getElementById('theme-color').setAttribute('content', '#121212');
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
     <style>
-        /* Add these styles in the head section */
+        /* Enhanced styles for application process page */
+        .hero-section {
+            background: linear-gradient(rgba(26, 43, 74, 0.85), rgba(10, 20, 40, 0.95)),
+                        url('../images/programs/citizens-academy/training.jpg') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        }
+        
+        .intro-section {
+            background-color: var(--card-bg, #ffffff);
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color, #e0e0e0);
+        }
+        
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .intro-content h2 {
+            color: var(--primary-color, #1a2b4a);
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+        
+        .intro-content p {
+            line-height: 1.7;
+            color: var(--text-color, #333);
+            font-size: 1.1rem;
+        }
+        
+        .application-steps {
+            padding: 4rem 0;
+            background-color: var(--gray-50, #f8f9fa);
+        }
+        
+        .application-steps h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color, #1a2b4a);
+            font-size: 2.2rem;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
         .step-card {
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: var(--card-bg, #ffffff);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            border-top: 5px solid var(--primary-color, #1a2b4a);
         }
-
-        .dark-mode .step-card {
-            background-color: var(--dark-card-bg);
-            border-color: var(--dark-border-color);
+        
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
         }
-
-        .dark-mode .requirements-list li {
-            color: var(--dark-text-color);
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color, #007bff);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-        .dark-mode .step-number {
-            background-color: var(--primary-color);
-            color: var(--dark-text-color);
+        
+        .step-content {
+            padding: 2rem;
         }
-
-        .dark-mode .contact-section,
-        .dark-mode .intro-section {
-            background-color: var(--dark-bg);
-            color: var(--dark-text-color);
+        
+        .step-content h3 {
+            color: var(--primary-color, #1a2b4a);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--accent-color, #007bff);
+            padding-bottom: 0.5rem;
+            display: inline-block;
         }
-
-        .dark-mode .hero-section {
-            background-color: rgba(0, 0, 0, 0.7);
+        
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .requirements-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            color: var(--text-color, #333);
+        }
+        
+        .requirements-list li i {
+            color: var(--accent-color, #007bff);
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color, #e0e0e0);
+            font-size: 0.9rem;
+        }
+        
+        .contact-section {
+            background: linear-gradient(rgba(26, 43, 74, 0.9), rgba(10, 20, 40, 0.95)),
+                        url('../images/backgrounds/sunset.jpg') center/cover no-repeat;
+            padding: 4rem 0;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .contact-section h2 {
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-info p i {
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+        
+        .cta-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .cta-box .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent-color, #007bff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-box .btn:hover {
+            background-color: var(--accent-dark, #0056b3);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-box p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Dark mode adjustments */
+        [data-theme="dark"] .step-card {
+            background-color: var(--dark-card-bg, #2d2d2d);
+            border-color: var(--accent-color, #007bff);
+        }
+        
+        [data-theme="dark"] .requirements-list li {
+            color: var(--dark-text-color, #e0e0e0);
+        }
+        
+        [data-theme="dark"] .intro-section {
+            background-color: var(--dark-bg, #1a1a1a);
+        }
+        
+        [data-theme="dark"] .intro-content h2,
+        [data-theme="dark"] .intro-content p,
+        [data-theme="dark"] .step-content h3 {
+            color: var(--dark-text-color, #e0e0e0);
+        }
+        
+        [data-theme="dark"] .application-steps {
+            background-color: var(--dark-bg-alt, #121212);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body class="application-process-page">
+    <a href="#main-content" class="skip-to-main">
+        Skip to main content
+    </a>
+    <div class="scroll-progress"></div>
+
     <header class="header">
         <nav class="main-nav">
             <!-- Logo Section -->
@@ -49,6 +289,9 @@
             </a>
     
             <div class="nav-wrapper">
+                <button class="mobile-close-btn" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
                 <ul class="nav-links">
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li class="dropdown">
@@ -85,19 +328,19 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
 
             <!-- Dark Mode Toggle -->
-            <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
                 <i class="fas fa-moon"></i>
                 <i class="fas fa-sun"></i>
             </button>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-content">
@@ -110,7 +353,7 @@
         <section class="intro-section">
             <div class="container">
                 <div class="intro-content">
-                    <h2>Protecting Our Community Since 1896</h2>
+                    <h2><i class="fas fa-shield-alt"></i> Protecting Our Community Since 1896</h2>
                     <p>The Bar Harbor Mount Desert Police Department serves the communities of Bar Harbor and Mount Desert. Our law enforcement professionals help maintain one of the lowest violent crime rates for towns of this size, protecting approximately 5,000 year-round residents and millions of seasonal visitors to Acadia National Park.</p>
                 </div>
             </div>
@@ -119,7 +362,7 @@
         <!-- Application Steps -->
         <section class="application-steps">
             <div class="container">
-                <h2>Application Process</h2>
+                <h2><i class="fas fa-clipboard-list"></i> Application Process</h2>
                 <div class="steps-grid">
                     <div class="step-card">
                         <div class="step-number">1</div>
@@ -191,16 +434,17 @@
         <!-- Contact Section -->
         <section class="contact-section">
             <div class="container">
-                <h2>Ready to Apply?</h2>
+                <h2><i class="fas fa-paper-plane"></i> Ready to Apply?</h2>
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h3>Contact Us</h3>
                         <p><i class="fas fa-phone"></i> <a href="tel:207-288-3391">207-288-3391</a></p>
                         <p><i class="fas fa-map-marker-alt"></i> 37 Firefly Lane, Bar Harbor, ME 04609</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:recruitment@barharbor.gov">recruitment@barharbor.gov</a></p>
                     </div>
                     <div class="cta-box">
-                        <a href="#" class="btn btn-primary">Download Application</a>
-                        <p>Submit completed applications to the address listed</p>
+                        <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download Application</a>
+                        <p>Submit completed applications to the address listed or email to our recruitment team.</p>
                     </div>
                 </div>
             </div>
@@ -209,53 +453,71 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-section">
-                <h3>Emergency Services</h3>
-                <p><strong>Emergency:</strong> 911</p>
-                <p><strong>Non-Emergency:</strong> (207) 288-3391</p>
-                <p><strong>Dispatch:</strong> (207) 288-3391</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Department Location</h3>
-                <p><strong>Address:</strong></p>
-                <p>37 Firefly Lane</p>
-                <p>Bar Harbor, ME 04609</p>
-                <p><strong>Hours:</strong> 24/7</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="forms.html">Forms</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="events.html">Events</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <div class="footer-logo-container">
+                <img src="images/branding/logo.png" alt="Bar Harbor Police Department Logo" class="footer-logo">
+                <p><strong>Bar Harbor Police Department</strong></p>
+                <p>37 Firefly Lane, Bar Harbor, ME 04609</p>
+                <p>General Information: (207) 288-3391</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
-                <div class="footer-buttons">
-                    <a href="contact.html" class="footer-button">Contact Us</a>
-                    <a href="forms.html" class="footer-button">Download Forms</a>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>DIVISIONS</h3>
+                    <ul>
+                        <li><a href="harbor-master-division.html">Harbor Master</a></li>
+                        <li><a href="bar-harbor-parking.html">Parking Enforcement</a></li>
+                        <li><a href="admin.html">Administrative Services</a></li>
+                        <li><a href="animalcontrol.html">Animal Control</a></li>
+                    </ul>
                 </div>
+                <div class="footer-column">
+                    <h3>SERVICES</h3>
+                    <ul>
+                        <li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" target="_blank">AMBER Alert</a></li>
+                        <li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" target="_blank">Missing Persons</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>CAREERS</h3>
+                    <ul>
+                        <li><a href="application-process.html">Application Process</a></li>
+                        <li><a href="bhmdrec.html">Career Opportunities</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>ABOUT</h3>
+                    <ul>
+                        <li><a href="admin.html">Administration</a></li>
+                        <li><a href="#">Command Staff</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-map">
+                <h3>Our Location</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.076072177352!2d-68.20830382343881!3d44.38821380458311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4caebf7cae314357%3A0xb7e0edbf086c978c!2s37%20Firefly%20Ln%2C%20Bar%20Harbor%2C%20ME%2004609!5e1!3m2!1sen!2sus!4v1734624380504!5m2!1sen!2sus"
+                    width="100%"
+                    height="250"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Bar Harbor Police Department. All Rights Reserved.</p>
+            <p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
+            <div class="last-updated">
+                Last updated: <time datetime="2024-03-15">March 15, 2024</time>
+            </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="darkmode.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
