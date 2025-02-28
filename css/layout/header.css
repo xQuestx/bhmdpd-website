@@ -210,6 +210,7 @@
   .nav-wrapper.active {
     right: 0;
     visibility: visible;
+    background-color: var(--dark-mode-background, #121212); /* Ensure background when active */
   }
   
   .nav-links {
@@ -297,4 +298,17 @@ body.dark-mode .dark-mode-toggle .fa-moon {
 
 body.dark-mode .scroll-progress {
   background-color: var(--accent-color, #007bff);
-} 
+}
+
+/* Add dark mode specific styling */
+body.dark-mode .nav-wrapper {
+  background-color: var(--dark-mode-background, #121212) !important; /* Force override */
+  z-index: 1001; /* Ensure it's above the header */
+}
+
+/* Ensure dropdown menus in dark mode match the theme */
+body.dark-mode .dropdown-content {
+  background-color: var(--dark-mode-card-bg, #242424);
+  border: 1px solid var(--dark-mode-border-color, #444);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
