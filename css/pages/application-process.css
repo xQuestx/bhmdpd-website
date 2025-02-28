@@ -8,35 +8,65 @@
     /* Removed padding-top to avoid double spacing with hero-section margin-top */
 }
 
-/* Hero Section */
-.application-process-page .hero-section {
+/* Hero Section - Matching parking page style */
+.hero-section.recruitment-hero {
     background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95)),
-                url('../../images/backgrounds/background.jpg') center/cover no-repeat;
+                url('../../images/recruitment-bg.jpg') center/cover no-repeat;
     padding: 4rem 2rem;
     text-align: center;
-    position: relative;
+    padding-top: var(--header-height, 80px);
 }
 
-.application-process-page .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.application-process-page .hero-content h1 {
-    color: white !important;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.hero-section.recruitment-hero .hero-content h1,
+.hero-section.recruitment-hero .hero-content p {
+    color: #ffffff !important;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section.recruitment-hero .hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    font-weight: 500;
     opacity: 1 !important;
 }
 
-.application-process-page .hero-content p {
-    color: white !important;
-    font-size: 1.2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    opacity: 1 !important;
+.hero-section.recruitment-hero .hero-icon {
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.badge {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(5px);
+    color: #ffffff;
+}
+
+.badge i {
+    color: var(--accent-color, #007bff);
+}
+
+/* Dark Mode Styles */
+body.dark-mode .hero-section.recruitment-hero {
+    background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
+                url('../../images/recruitment-bg.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .badge {
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* Intro Section */
@@ -65,6 +95,156 @@
     font-size: 1.1rem;
 }
 
+/* Application Process Page Styles */
+.recruitment__hero {
+    position: relative;
+    min-height: 300px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+                url('../images/recruitment-bg.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-top: 0; /* Ensure no unwanted margin */
+}
+
+.recruitment__hero-content {
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.recruitment__hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.recruitment__hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    color: #fff;
+}
+
+.process-overview {
+    padding: 4rem 0;
+    background-color: var(--bg-main, #fff);
+}
+
+.timeline-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.timeline {
+    position: relative;
+    margin-top: 3rem;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    padding-left: 3rem;
+    position: relative;
+}
+
+.timeline-content {
+    background-color: var(--bg-card, #fff);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    left: -1.5rem;
+    top: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.requirements {
+    background-color: var(--bg-alt, #f5f5f5);
+    padding: 4rem 0;
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.requirement-card {
+    background-color: var(--bg-card, #fff);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.requirement-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.cta-section {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--bg-main, #fff);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .process-overview {
+    background-color: var(--dark-bg-main);
+}
+
+[data-theme="dark"] .timeline-content,
+[data-theme="dark"] .requirement-card {
+    background-color: var(--dark-bg-card);
+    border: 1px solid var(--dark-border-color);
+}
+
+[data-theme="dark"] .requirements {
+    background-color: var(--dark-bg-alt);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .timeline-item {
+        padding-left: 2rem;
+    }
+
+    .step-number {
+        left: -1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
 /* Application Steps */
 .application-process-page .application-steps {
     padding: 4rem 0;
@@ -91,40 +271,191 @@
 }
 
 /* Dark Mode Styles */
+body.dark-mode .application-process-page {
+    background-color: var(--dark-mode-background);
+    color: var(--dark-mode-text-color);
+}
+
 body.dark-mode .application-process-page .hero-section {
-    background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
+    background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.95)),
                 url('../../images/backgrounds/background.jpg') center/cover no-repeat;
 }
 
 body.dark-mode .application-process-page .intro-section {
-    background-color: var(--dark-bg, #1a1a1a);
+    background-color: var(--dark-mode-background);
 }
 
 body.dark-mode .application-process-page .intro-content h2,
 body.dark-mode .application-process-page .intro-content p {
-    color: var(--dark-text-color, #e0e0e0);
+    color: var(--dark-mode-text-color);
 }
 
 body.dark-mode .application-process-page .application-steps {
-    background-color: var(--dark-bg-alt, #121212);
+    background-color: var(--dark-mode-background);
 }
 
 body.dark-mode .application-process-page .step-card {
-    background-color: var(--dark-card-bg, #2d2d2d);
-    border-color: var(--accent-color, #007bff);
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Adjustments */
+body.dark-mode .application-process-page .step-card h3 {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .application-process-page .step-card p {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .application-process-page .step-number {
+    background-color: var(--accent-color);
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .application-process-page .requirements-section {
+    background-color: var(--dark-mode-card-bg);
+}
+
+body.dark-mode .application-process-page .requirements-list li {
+    color: var(--dark-mode-text-color);
+    border-bottom: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .application-process-page .cta-section {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .application-process-page .action-button {
+    background-color: var(--accent-color);
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .application-process-page .action-button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+/* Timeline specific dark mode styles */
+body.dark-mode .application-process-page .timeline-item {
+    border-left-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .application-process-page .timeline-content {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .application-process-page .timeline-date {
+    color: var(--accent-color);
+}
+
+/* FAQ section dark mode */
+body.dark-mode .application-process-page .faq-section {
+    background-color: var(--dark-mode-background);
+}
+
+body.dark-mode .application-process-page .faq-item {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border-color);
+}
+
+body.dark-mode .application-process-page .faq-question {
+    color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .application-process-page .faq-answer {
+    color: var(--dark-mode-text-color);
+    border-top: 1px solid var(--dark-mode-border-color);
+}
+
+/* Dark Mode Enhancements */
+body.dark-mode .process-overview {
+    background-color: var(--dark-mode-background, #121212);
+    color: var(--dark-mode-text-color, #f0f0f0);
+}
+
+body.dark-mode .timeline-content {
+    background-color: var(--dark-mode-card-bg, #1e1e1e);
+    border: 1px solid var(--dark-mode-border-color, #333);
+    color: var(--dark-mode-text-color, #f0f0f0);
+}
+
+body.dark-mode .timeline-content h3 {
+    color: var(--dark-mode-heading-color, #fff);
+}
+
+body.dark-mode .timeline-content p,
+body.dark-mode .timeline-content li {
+    color: var(--dark-mode-text-color, #f0f0f0);
+}
+
+body.dark-mode .requirements {
+    background-color: var(--dark-mode-background-alt, #1a1a1a);
+}
+
+body.dark-mode .requirement-card {
+    background-color: var(--dark-mode-card-bg, #1e1e1e);
+    border: 1px solid var(--dark-mode-border-color, #333);
+    color: var(--dark-mode-text-color, #f0f0f0);
+}
+
+body.dark-mode .requirement-card h3 {
+    color: var(--dark-mode-heading-color, #fff);
+}
+
+body.dark-mode .requirement-card i {
+    color: var(--accent-color, #4a90e2);
+}
+
+body.dark-mode .cta-section {
+    background-color: var(--dark-mode-background, #121212);
+    color: var(--dark-mode-text-color, #f0f0f0);
+}
+
+body.dark-mode .btn-outline {
+    border-color: var(--dark-mode-border-color, #333);
+    color: var(--dark-mode-text-color, #f0f0f0);
+}
+
+body.dark-mode .btn-outline:hover {
+    background-color: var(--dark-mode-border-color, #333);
+}
+
+/* Timeline specific styles */
+.timeline-content {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.timeline-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Ensure proper spacing and alignment */
+.header {
+    margin-bottom: 0; /* Remove any margin that might affect hero section */
+}
+
+main {
+    margin-top: 0; /* Remove any top margin from main content */
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .application-process-page .hero-section {
-        padding: 3rem 1.5rem;
+    .recruitment__hero {
+        min-height: 250px;
+        padding: 3rem 1rem;
     }
 
-    .application-process-page .hero-content h1 {
+    .recruitment__hero-content h1 {
         font-size: 2rem;
-    }
-
-    .application-process-page .hero-content p {
-        font-size: 1rem;
     }
 }

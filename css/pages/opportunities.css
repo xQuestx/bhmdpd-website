@@ -1,0 +1,71 @@
+/* Hero Section - Matching parking page style */
+.hero-section.benefits-hero {
+    background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95)),
+                url('../../images/benefits-bg.jpg') center/cover no-repeat;
+    padding: 4rem 2rem;
+    text-align: center;
+    padding-top: var(--header-height, 80px);
+}
+
+.hero-section.benefits-hero .hero-content h1,
+.hero-section.benefits-hero .hero-content p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section.benefits-hero .hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    font-weight: 500;
+    opacity: 1 !important;
+}
+
+.hero-section.benefits-hero .hero-icon {
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.badge {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(5px);
+    color: #ffffff;
+}
+
+.badge i {
+    color: var(--accent-color, #007bff);
+}
+
+/* Dark Mode Styles */
+body.dark-mode .hero-section.benefits-hero {
+    background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
+                url('../../images/benefits-bg.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .badge {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section.benefits-hero {
+        padding: 3rem 1rem;
+    }
+
+    .hero-section.benefits-hero .hero-content h1 {
+        font-size: 2rem;
+    }
+}
