@@ -226,3 +226,23 @@ body.dark-mode .step-header {
 body.dark-mode .step-body p {
   color: var(--dark-mode-text-color, #e0e0e0);
 }
+
+.action-button i {
+  color: var(--primary-color, #1a2b4a);  /* Using the darker primary color */
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.action-button:hover i {
+  transform: translateY(-1px);
+  color: var(--primary-color-dark, #002c57);  /* Slightly darker on hover */
+}
+
+/* Dark mode support */
+body.dark-mode .action-button i {
+  color: var(--dark-mode-primary-color, #29487d);
+}
+
+body.dark-mode .action-button:hover i {
+  color: var(--dark-mode-text-color, #f8f8f8);
+}
