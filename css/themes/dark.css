@@ -55,13 +55,13 @@ body.dark-mode .nav-links a.active {
 
 /* Apple-style dropdown for dark mode */
 body.dark-mode .dropdown-content {
-  background-color: var(--dark-mode-card-bg);
-  border: none;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  background-color: var(--dark-mode-card-bg, #242424) !important;
+  border: none !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+  border-radius: 12px !important;
 }
 
-/* Fix dropdown triangle in dark mode - completely fix blue line issue */
+/* Fix dropdown triangle in dark mode */
 body.dark-mode .dropdown-content::before {
   content: '';
   position: absolute;
@@ -72,13 +72,8 @@ body.dark-mode .dropdown-content::before {
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid var(--dark-mode-card-bg);
+  border-bottom: 8px solid var(--dark-mode-card-bg, #242424) !important;
   z-index: 1002;
-  pointer-events: none;
-  animation: none;
-  display: block;
-  background: transparent;
-  transition: none;
 }
 
 /* Remove the second triangle that was causing issues */
@@ -99,22 +94,25 @@ body.dark-mode .dropdown.active .dropdown-content {
 
 /* Apple-style dropdown links for dark mode */
 body.dark-mode .dropdown-content a {
-  color: var(--dark-mode-text-color);
-  font-weight: 400;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  transition: background 0.15s ease, color 0.15s ease;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.9rem;
-  padding: 0.75rem 1rem;
+  color: var(--dark-mode-text-color, #f8f8f8) !important;
+  font-weight: 400 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transition: background 0.15s ease, color 0.15s ease !important;
+  font-size: 0.9rem !important;
+  padding: 0.75rem 1rem !important;
+}
+
+body.dark-mode .dropdown-content a i {
+  color: var(--dark-accent-color, #3b9dff) !important;
 }
 
 body.dark-mode .dropdown-content a:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--accent-color);
-  border-left: 2px solid var(--accent-color);
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: var(--dark-accent-color, #3b9dff) !important;
+  border-left: 2px solid var(--dark-accent-color, #3b9dff) !important;
 }
 
 body.dark-mode .mobile-menu-btn {
