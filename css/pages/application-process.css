@@ -1,0 +1,130 @@
+/*
+ * Application Process Page
+ * Styles specific to the application process page
+ */
+
+/* Main Content */
+.application-process-page {
+    padding-top: var(--header-height, 80px);
+}
+
+/* Hero Section */
+.application-process-page .hero-section {
+    background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95)),
+                url('../../images/backgrounds/background.jpg') center/cover no-repeat;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.application-process-page .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.application-process-page .hero-content h1 {
+    color: white !important;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    opacity: 1 !important;
+}
+
+.application-process-page .hero-content p {
+    color: white !important;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    opacity: 1 !important;
+}
+
+/* Intro Section */
+.application-process-page .intro-section {
+    background-color: var(--card-bg, #ffffff);
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+
+.application-process-page .intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.application-process-page .intro-content h2 {
+    color: var(--primary-color, #1a2b4a);
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+}
+
+.application-process-page .intro-content p {
+    line-height: 1.7;
+    color: var(--text-color, #333);
+    font-size: 1.1rem;
+}
+
+/* Application Steps */
+.application-process-page .application-steps {
+    padding: 4rem 0;
+    background-color: var(--gray-50, #f8f9fa);
+}
+
+.application-process-page .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.application-process-page .step-card {
+    background-color: var(--card-bg, #ffffff);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border-top: 5px solid var(--primary-color, #1a2b4a);
+}
+
+/* Dark Mode Styles */
+body.dark-mode .application-process-page .hero-section {
+    background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
+                url('../../images/backgrounds/background.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .application-process-page .intro-section {
+    background-color: var(--dark-bg, #1a1a1a);
+}
+
+body.dark-mode .application-process-page .intro-content h2,
+body.dark-mode .application-process-page .intro-content p {
+    color: var(--dark-text-color, #e0e0e0);
+}
+
+body.dark-mode .application-process-page .application-steps {
+    background-color: var(--dark-bg-alt, #121212);
+}
+
+body.dark-mode .application-process-page .step-card {
+    background-color: var(--dark-card-bg, #2d2d2d);
+    border-color: var(--accent-color, #007bff);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .application-process-page .hero-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .application-process-page .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .application-process-page .hero-content p {
+        font-size: 1rem;
+    }
+}

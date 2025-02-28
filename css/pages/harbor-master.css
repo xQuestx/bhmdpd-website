@@ -9,7 +9,7 @@
 
 /* Hero Section */
 .harbor-master-page .hero-section {
-  background: linear-gradient(rgba(26, 43, 74, 0.85), rgba(10, 20, 40, 0.95)),
+  background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95)),
               url('../../images/harbor-hero.jpg') center/cover no-repeat;
   padding: 4rem 2rem;
   text-align: center;
@@ -21,25 +21,16 @@
   margin: 0 auto;
 }
 
-.harbor-master-page .hero-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--accent-color, #007bff);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.harbor-master-page h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.harbor-master-page .hero-content h1,
+.harbor-master-page .hero-content p {
   color: var(--light-text-color, #fff);
-  font-family: "Roboto Slab", serif;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Enhanced text shadow for better visibility */
 }
 
 .harbor-master-page .hero-content p {
   font-size: 1.1rem;
   margin-bottom: 0;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  font-weight: 500; /* Added weight for better visibility */
 }
 
 /* Content Wrapper */
@@ -75,13 +66,19 @@
   grid-column: span 2;
 }
 
+/* Card Header Styles - using dark mode as reference */
 .card-header {
+  background-color: var(--dark-mode-primary-color, #29487d);
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: var(--primary-color, #1a2b4a);
-  color: var(--light-text-color, #fff);
-  padding: 1rem 1.5rem;
+}
+
+.card-header h2,
+.card-header h3 {
+  color: var(--light-text-color, #fff) !important; /* Force white text for visibility */
+  margin: 0;
 }
 
 .card-header i {
@@ -89,10 +86,10 @@
   color: var(--accent-color, #007bff);
 }
 
-.card-header h2 {
-  margin: 0;
-  font-family: "Roboto Slab", serif;
-  font-size: 1.5rem;
+/* Maintain dark mode styles */
+.dark-mode .card-header h2,
+.dark-mode .card-header h3 {
+  color: var(--light-text-color, #fff);
 }
 
 .card-body {
@@ -332,4 +329,33 @@ body.dark-mode .reservation-note {
 
 body.dark-mode .contact-item h3 {
   color: var(--light-text-color, #fff);
+}
+
+/* Harbor Master Page Specific Styles */
+.harbor-master-page .info-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.harbor-master-page .info-card .card-body {
+    color: var(--text-color, #333);
+}
+
+.harbor-master-page .info-card .card-body p,
+.harbor-master-page .info-card .card-body h3,
+.harbor-master-page .info-card .responsibilities h3,
+.harbor-master-page .info-card .responsibility-item span {
+    color: var(--text-color, #333);
+}
+
+/* Maintain contrast in dark mode */
+.dark-mode .harbor-master-page .info-card .card-body {
+    color: var(--dark-mode-text-color, #e0e0e0);
+}
+
+.dark-mode .harbor-master-page .info-card .card-body p,
+.dark-mode .harbor-master-page .info-card .card-body h3,
+.dark-mode .harbor-master-page .info-card .responsibilities h3,
+.dark-mode .harbor-master-page .info-card .responsibility-item span {
+    color: var(--dark-mode-text-color, #e0e0e0);
 }

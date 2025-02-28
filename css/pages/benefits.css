@@ -1,0 +1,271 @@
+/*
+ * Benefits Page Styles
+ * Styles specific to the benefits and compensation page
+ */
+
+.benefits-page {
+    /* Removed padding-top to avoid double spacing with hero-section margin-top */
+}
+
+/* Hero Section */
+.benefits-page .hero-section {
+    background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95)),
+                url('../../images/backgrounds/benefits-bg.jpg') center/cover no-repeat;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.benefits-page .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.benefits-page .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.benefits-page .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.benefits-page .highlight-box {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.benefits-page .highlight-box i {
+    margin-right: 0.5rem;
+    color: var(--accent-color, #ffd700);
+}
+
+.benefits-page .highlight-box span {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* Benefits Grid Section */
+.benefits-page .benefits-section {
+    padding: 4rem 2rem;
+    background-color: var(--section-bg, #f8f9fa);
+}
+
+.benefits-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefits-page .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Info Cards */
+.benefits-page .info-card {
+    background: var(--card-bg, #ffffff);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefits-page .info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.benefits-page .card-header {
+    background: var(--primary-color, #1a2b4a);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.benefits-page .card-header i {
+    font-size: 1.5rem;
+}
+
+.benefits-page .card-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.benefits-page .card-body {
+    padding: 1.5rem;
+}
+
+/* Feature Lists */
+.benefits-page .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-page .feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color, #eee);
+}
+
+.benefits-page .feature-list li:last-child {
+    border-bottom: none;
+}
+
+.benefits-page .feature-list i {
+    color: var(--success-color, #28a745);
+}
+
+/* Plan Highlight */
+.benefits-page .plan-highlight {
+    margin-bottom: 1.5rem;
+}
+
+.benefits-page .badge--new {
+    display: inline-block;
+    background: var(--accent-color, #ffd700);
+    color: var(--dark-text, #000);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.benefits-page .plan-title {
+    font-size: 1.5rem;
+    color: var(--primary-color, #1a2b4a);
+    margin: 0.5rem 0;
+}
+
+/* CTA Section */
+.benefits-page .cta-section {
+    padding: 4rem 2rem;
+    background: var(--light-bg, #ffffff);
+    text-align: center;
+}
+
+.benefits-page .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color, #333);
+}
+
+/* Dark Mode Styles */
+body.dark-mode .benefits-page .hero-section {
+    background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
+                url('../../images/backgrounds/benefits-bg.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .benefits-page .benefits-section {
+    background-color: var(--dark-bg, #121212);
+}
+
+body.dark-mode .benefits-page .info-card {
+    background: var(--dark-card-bg, #1e1e1e);
+}
+
+body.dark-mode .benefits-page .card-header {
+    background: var(--dark-primary, #2a3f6d);
+}
+
+body.dark-mode .benefits-page .feature-list li {
+    border-bottom-color: var(--dark-border, #333);
+}
+
+body.dark-mode .benefits-page .cta-section {
+    background: var(--dark-bg, #121212);
+}
+
+body.dark-mode .benefits-page .cta-section h2 {
+    color: var(--dark-text-color, #ffffff);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .benefits-page .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .benefits-page .hero-content p {
+        font-size: 1rem;
+    }
+
+    .benefits-page .highlight-box {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .benefits-page .highlight-box span {
+        font-size: 1rem;
+    }
+
+    .benefits-page .benefits-section {
+        padding: 2rem 1rem;
+    }
+
+    .benefits-page .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    .benefits-page .hero-section {
+        min-height: auto;
+        padding: 2rem;
+        background: none;
+    }
+
+    .benefits-page .hero-content h1,
+    .benefits-page .hero-content p {
+        color: #000;
+        text-shadow: none;
+    }
+
+    .benefits-page .highlight-box {
+        border: 1px solid #000;
+        background: none;
+    }
+
+    .benefits-page .highlight-box span {
+        color: #000;
+    }
+
+    .benefits-page .info-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+
+    .benefits-page .card-header {
+        background: none;
+        color: #000;
+        border-bottom: 1px solid #000;
+    }
+
+    .benefits-page .cta-section {
+        display: none;
+    }
+}

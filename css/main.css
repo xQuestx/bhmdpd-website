@@ -3,9 +3,9 @@
  * This file imports all CSS modules
  */
 
-/* Base Styles */
-@import 'base/reset.css';
+/* Base Styles - These should come first */
 @import 'base/variables.css';
+@import 'base/reset.css';
 @import 'base/typography.css';
 @import 'base/utilities.css';
 
@@ -32,16 +32,18 @@
 @import 'pages/home.css';
 @import 'pages/contact.css';
 @import 'pages/forms.css';
-@import 'pages/recruitment.css';
+@import 'pages/benefits.css';
 @import 'pages/faq.css';
 @import 'pages/parking.css';
+@import 'pages/application-process.css';
 @import 'pages/events.css';
 @import 'pages/harbor-master.css';
 @import 'pages/good-morning.css';
 @import 'pages/animalcontrol.css';
 @import 'pages/mentalhealth.css';
+@import 'pages/admin.css';
 
-/* Theme Styles */
+/* Theme Styles - These should come last */
 @import 'themes/light.css';
 @import 'themes/dark.css';
 
@@ -92,4 +94,4 @@
   a[href]:after {
     content: " (" attr(href) ")";
   }
-} 
+}
