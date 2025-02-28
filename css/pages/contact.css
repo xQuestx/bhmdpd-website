@@ -9,11 +9,11 @@
 
 /* Hero Section */
 .contact-page .hero-section {
-  background: linear-gradient(rgba(26, 43, 74, 0.9), rgba(26, 43, 74, 0.95)),
-              url('../../images/contact-hero.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95)),
+              url('../../images/backgrounds/background.jpg') center/cover no-repeat;
   padding: 4rem 2rem;
   text-align: center;
-  color: var(--light-text-color, #fff);
+  color: white !important;
 }
 
 .contact-page .hero-content {
@@ -30,14 +30,18 @@
 .contact-page h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--light-text-color, #fff);
+  color: white !important;
   font-family: "Roboto Slab", serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  opacity: 1 !important;
 }
 
 .contact-page .hero-content p {
   font-size: 1.1rem;
   margin-bottom: 0;
-  color: white;
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  opacity: 1 !important;
 }
 
 /* Content Wrapper */
@@ -169,7 +173,7 @@ body.dark-mode .contact-page {
 
 body.dark-mode .contact-page .hero-section {
   background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
-              url('../../images/contact-hero.jpg') center/cover no-repeat;
+              url('../../images/backgrounds/background.jpg') center/cover no-repeat;
 }
 
 body.dark-mode .department-section h2 {

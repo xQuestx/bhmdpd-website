@@ -5,7 +5,7 @@
 
 /* Main Content */
 .application-process-page {
-    padding-top: var(--header-height, 80px);
+    /* Removed padding-top to avoid double spacing with hero-section margin-top */
 }
 
 /* Hero Section */
