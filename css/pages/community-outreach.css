@@ -12,13 +12,32 @@
   box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
+/* Category Header Styling with proper specificity */
+html:not(.dark-mode) .category-header h3,
+body:not(.dark-mode) .category-header h3,
+.category-header h3 {
+  color: var(--light-text-color, #fff);
+}
+
 .category-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  background-color: var(--primary-color, #1a2b4a);
-  color: white;
+  background-color: var(--primary-color);
+  padding: 1.5rem 2rem;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .category-header h3 {
+  color: var(--light-text-color, #fff);
+}
+
+/* Ensure contrast ratios meet WCAG standards */
+@media (prefers-contrast: more) {
+  .category-header h3,
+  body.dark-mode .category-header h3 {
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .category-icon {
@@ -35,14 +54,6 @@
 .category-icon i {
   font-size: 1.5rem;
   color: white;
-}
-
-.category-header h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0;
-  color: white;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
 }
 
 .resource-cards {
@@ -191,17 +202,87 @@
   opacity: 1 !important;
 }
 
-/* CTA Section Customization */
+/* CTA Section Styles */
 .cta-section {
-  background-color: var(--primary-color, #1a2b4a);
+  background-color: var(--primary-color);
+  padding: 4rem 2rem;
+  margin-top: 3rem;
 }
 
-.cta-content h2 {
-  color: white;
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
+.cta-content h2,
 .cta-content p {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--light-text-color, #fff);
+  margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--light-text-color, #fff);
+}
+
+.btn-outline-light {
+  border: 2px solid var(--light-text-color, #fff);
+  color: var(--light-text-color, #fff);
+  background-color: transparent;
+}
+
+.btn-outline-light:hover {
+  background-color: var(--light-text-color, #fff);
+  color: var(--primary-color);
+}
+
+/* CTA Section heading fix */
+html body .cta-section h2,
+body.dark-mode .cta-section h2,
+.cta-section h2 {
+    color: var(--light-text-color, #fff);
+}
+
+/* Ensure paragraph is also visible */
+html body .cta-section p,
+body.dark-mode .cta-section p,
+.cta-section p {
+    color: var(--light-text-color, #fff);
+}
+
+/* Dark mode adjustments */
+body.dark-mode .cta-section {
+  background: linear-gradient(135deg, #1e3257, #29487d);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Light mode specific adjustments */
+body:not(.dark-mode) .cta-section {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 3rem 1.5rem;
+    margin: 1.5rem;
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+
+  .cta-content p {
+    font-size: 1.1rem;
+  }
 }
 
 /* Dark Mode Styles */
