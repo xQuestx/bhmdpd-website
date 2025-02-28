@@ -172,7 +172,7 @@
 }
 
 .social-icons a {
-  color: var(--gray-900) !important;
+  color: white !important;
   font-size: 1rem !important;
   transition: all 0.2s ease !important;
   width: 36px !important;
@@ -180,14 +180,31 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  background-color: rgba(0, 0, 0, 0.05) !important;
   border-radius: 50% !important;
 }
 
+.social-icons a.facebook {
+  background-color: #3b5998 !important;
+}
+
+.social-icons a.youtube {
+  background-color: #c4302b !important;
+}
+
 .social-icons a:hover {
-  color: white !important;
-  background-color: var(--accent-color) !important;
   transform: translateY(-2px) !important;
+  filter: brightness(1.1) !important;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .social-icons a.facebook {
+  background-color: #3b5998 !important;
+  color: white !important;
+}
+
+body.dark-mode .social-icons a.youtube {
+  background-color: #c4302b !important;
+  color: white !important;
 }
 
 /* Last Updated */
