@@ -144,3 +144,30 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+/* FAQ Styles */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.faq-section-title {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.faq-item {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+}
+
+.faq-answer {
+    padding: 1rem;
+}

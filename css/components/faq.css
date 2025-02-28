@@ -6,8 +6,13 @@
 /* FAQ Container */
 .faq-container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 2rem auto;  /* Added top margin */
   padding: var(--spacing-xl, 3rem) var(--spacing-md, 1.5rem);
+}
+
+/* Ensure proper spacing when no hero section */
+.faq-container:first-child {
+  margin-top: calc(var(--header-height, 80px) + 2rem);
 }
 
 /* FAQ Section Title */
@@ -170,4 +175,4 @@ body.dark-mode .faq-answer li {
 
 body.dark-mode .faq-item.active .faq-answer {
   border-top-color: var(--dark-mode-border-color, #404040);
-} 
+}
