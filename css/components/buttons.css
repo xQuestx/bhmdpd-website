@@ -216,4 +216,51 @@ body.dark-mode .back-to-top {
 
 body.dark-mode .back-to-top:hover {
   background-color: var(--accent-color, #007bff);
-} 
+}
+
+/* Modern button styling for dark mode */
+body.dark-mode .btn-primary.btn-lg {
+    background-color: var(--dark-primary-color, #29487d) !important;
+    color: var(--light-text-color, #ffffff) !important;
+    border: none !important;
+    padding: 1rem 2rem !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px !important;
+    box-shadow: 0 4px 12px rgba(41, 72, 125, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+body.dark-mode .btn-primary.btn-lg:hover {
+    background-color: var(--accent-color, #007bff) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(41, 72, 125, 0.4) !important;
+}
+
+/* Contact Us button styling in dark mode */
+body.dark-mode .btn.contact-us,
+body.dark-mode .btn-secondary.btn-lg {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: var(--light-text-color, #ffffff) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 1rem 2rem !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease !important;
+}
+
+body.dark-mode .btn.contact-us:hover,
+body.dark-mode .btn-secondary.btn-lg:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Icon styling for both buttons */
+body.dark-mode .btn-lg i {
+    margin-right: 8px !important;
+    font-size: 1.1em !important;
+    vertical-align: middle !important;
+}
