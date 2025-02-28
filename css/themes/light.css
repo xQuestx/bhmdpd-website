@@ -3,20 +3,35 @@
  * Light mode styles (default) - Apple-inspired
  */
 
-body {
+html:not(.dark-mode) body,
+body:not(.dark-mode) {
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-family-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+html:not(.dark-mode) h1,
+html:not(.dark-mode) h2,
+html:not(.dark-mode) h3,
+html:not(.dark-mode) h4,
+html:not(.dark-mode) h5,
+html:not(.dark-mode) h6 {
   color: var(--primary-color);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-family-display);
   font-weight: 600;
   letter-spacing: -0.02em;
+}
+
+/* Form elements */
+html:not(.dark-mode) label,
+html:not(.dark-mode) input,
+html:not(.dark-mode) textarea,
+html:not(.dark-mode) select,
+html:not(.dark-mode) button {
+  font-family: var(--font-family-text);
 }
 
 a {

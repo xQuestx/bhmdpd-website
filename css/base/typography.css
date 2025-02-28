@@ -4,22 +4,31 @@
  */
 
 /* Base Typography */
-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text-color, #333);
+html, body {
+  font-family: var(--font-family-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Forms */
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-family-text);
+}
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto Slab', serif;
   margin-bottom: var(--spacing-sm, 1rem);
   line-height: 1.2;
   color: var(--primary-color, #1a2b4a);
-  font-weight: 700;
 }
 
 h1 {

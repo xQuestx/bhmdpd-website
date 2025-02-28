@@ -8,13 +8,30 @@
   padding-top: var(--header-height, 80px);
 }
 
-/* Hero Section */
-.animalcontrol-page .hero-section {
-  background: linear-gradient(rgba(26, 43, 74, 0.85), rgba(10, 20, 40, 0.95)),
+/* Hero Section - More specific selectors */
+.hero-section.animal-control-hero {
+  background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95)),
               url('../../images/animal-control-hero.jpg') center/cover no-repeat;
   padding: 4rem 2rem;
   text-align: center;
-  color: var(--light-text-color, #fff);
+}
+
+.hero-section.animal-control-hero .hero-content h1,
+.hero-section.animal-control-hero .hero-content p {
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section.animal-control-hero .hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  font-weight: 500;
+  opacity: 1 !important;
+}
+
+body.dark-mode .hero-section.animal-control-hero .hero-content h1,
+body.dark-mode .hero-section.animal-control-hero .hero-content p {
+  color: #ffffff !important;
 }
 
 .animalcontrol-page .hero-content {
@@ -27,23 +44,6 @@
   margin-bottom: 1rem;
   color: var(--accent-color, #007bff);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.animalcontrol-page h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--light-text-color, #fff);
-  font-family: "Roboto Slab", serif;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.animalcontrol-page .hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  color: white;
-  font-weight: 600;
-  letter-spacing: 0.5px;
 }
 
 /* Responsibility Grid */

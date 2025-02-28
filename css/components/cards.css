@@ -332,7 +332,29 @@
   line-height: 1.5;
 }
 
-/* Dark Mode Styles */
+/* Light mode card styles */
+.card,
+.modern-card,
+.info-card,
+.feature-card,
+.news-card,
+.quick-link-card {
+  background-color: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #e0e0e0);
+  color: var(--text-color, #333); /* Ensuring good contrast in light mode */
+}
+
+.card-body,
+.news-content p {
+  color: var(--text-color, #333);
+}
+
+.card-header h2,
+.card-header h3 {
+  color: var(--light-text-color, #fff);
+}
+
+/* Keep your existing dark mode styles below */
 body.dark-mode .card,
 body.dark-mode .modern-card,
 body.dark-mode .info-card,
@@ -341,10 +363,6 @@ body.dark-mode .news-card,
 body.dark-mode .quick-link-card {
   background-color: var(--dark-mode-card-bg, #2d2d2d);
   border: 1px solid var(--dark-mode-border-color, #404040);
-}
-
-body.dark-mode .card-header {
-  background-color: var(--dark-mode-primary-color, #29487d);
 }
 
 body.dark-mode .card-body,

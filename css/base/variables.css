@@ -4,6 +4,11 @@
  */
 
 :root {
+  /* Add these at the top of your variables */
+  --font-family-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --font-family-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  
+  /* Your existing variables continue below */
   /* Colors */
   --primary-color: #1a2b4a;
   --primary-color-rgb: 26, 43, 74;
