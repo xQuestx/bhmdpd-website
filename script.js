@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Add this debugging code at the top
+    console.log('Script loaded');
+    
+    // Handle all links that go to contact.html#scott-pinkham specifically
+    document.querySelectorAll('a[href="contact.html#scott-pinkham"]').forEach(link => {
+        console.log('Found parking manager link:', link);
+        link.addEventListener('click', function(e) {
+            console.log('Parking manager link clicked');
+            e.preventDefault();
+            
+            // Store the hash for after page load
+            sessionStorage.setItem('scrollTarget', 'scott-pinkham');
+            window.location.href = this.href;
+        });
+    });
+
+    // Check if we need to scroll after page load
+    const scrollTarget = sessionStorage.getItem('scrollTarget');
+    if (scrollTarget) {
+        console.log('Found scroll target:', scrollTarget);
+        const targetElement = document.getElementById(scrollTarget);
+        if (targetElement) {
+            console.log('Found target element:', targetElement);
+            setTimeout(() => {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                console.log('Scrolling to element');
+            }, 500);
+        }
+        sessionStorage.removeItem('scrollTarget');
+    }
+
     // Modern Hero Parallax Effect
     const heroSection = document.querySelector('.modern-hero');
     const heroImage = document.querySelector('.hero-image');
@@ -305,4 +336,58 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Make sure to call it after DOM is loaded
     initScrollProgress();
+
+    // Add this function to handle anchor navigation
+    function handleAnchorLinks() {
+        // Check if we have a hash in the URL (anchor link)
+        if (window.location.hash) {
+            // Prevent the default scroll
+            event.preventDefault();
+            
+            // Get the target element
+            const targetId = window.location.hash.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Wait a brief moment for page to settle
+                setTimeout(() => {
+                    // Get header height for offset
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    
+                    // Calculate position
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+                    
+                    // Smooth scroll to element
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
+        }
+    }
+
+    // Add to your initialization
+    handleAnchorLinks();
+    
+    // Handle dynamic navigation to anchor links
+    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href').split('#')[1];
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                e.preventDefault();
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });

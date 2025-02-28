@@ -95,3 +95,52 @@
     content: " (" attr(href) ")";
   }
 }
+
+.cta-section {
+    background-color: #f8f9fa;
+    padding: 3rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-info h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.cta-info h2 i {
+    margin-right: 0.5rem;
+    color: #3498db;
+}
+
+.contact-details {
+    margin-top: 1.5rem;
+}
+
+.contact-details p {
+    margin: 0.5rem 0;
+    color: #505050;
+}
+
+.contact-details i {
+    margin-right: 0.5rem;
+    color: #3498db;
+}
+
+.contact-details .btn {
+    margin-top: 1.5rem;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-details .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
