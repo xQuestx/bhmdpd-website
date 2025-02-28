@@ -455,4 +455,32 @@ body.dark-mode .nav-links > li > a {
     background-color: rgba(255, 255, 255, 0.1);
     border-left: none;
   }
-} 
+}
+
+/* Dark Mode Dropdown Styles */
+body.dark-mode .dropdown-content {
+    background-color: var(--dark-mode-card-bg, #242424);
+    border: none;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+
+body.dark-mode .dropdown-content a {
+    color: var(--dark-mode-text-color, #f8f8f8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .dropdown-content a i {
+    color: var(--dark-accent-color, #3b9dff); /* Keep icons accent colored */
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--dark-accent-color, #3b9dff);
+    border-left: 2px solid var(--dark-accent-color, #3b9dff);
+}
+
+/* Fix dropdown triangle in dark mode */
+body.dark-mode .dropdown-content::before {
+    border-bottom-color: var(--dark-mode-card-bg, #242424);
+}
