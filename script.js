@@ -108,7 +108,28 @@ document.addEventListener('DOMContentLoaded', function() {
         const tabContents = document.querySelectorAll('.tab-content');
 
         tabButtons.forEach((button) => {
-            button.addEventListener('click', () => {
+            // Add ripple effect to tab buttons
+            button.addEventListener('click', function(e) {
+                // Create ripple element
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                
+                // Set position
+                const rect = button.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                // Remove after animation completes
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+                
                 // Remove .active from all tab buttons
                 tabButtons.forEach((btn) => btn.classList.remove('active'));
                 // Remove .active from all tab contents

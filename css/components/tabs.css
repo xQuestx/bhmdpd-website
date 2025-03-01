@@ -9,6 +9,29 @@
   margin-bottom: var(--spacing-lg, 2rem);
 }
 
+/* Tab Hint Message */
+.tab-hint {
+  text-align: center;
+  margin-bottom: var(--spacing-md, 1.5rem);
+  animation: pulse 2s infinite;
+}
+
+.tab-hint p {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color, #007bff);
+  color: white;
+  border-radius: var(--radius-md, 8px);
+  font-weight: 500;
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.tab-hint i {
+  margin-right: 0.5rem;
+  animation: pointBounce 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
 /* Modern Tabs */
 .modern-tabs {
   display: flex;
@@ -31,6 +54,21 @@
   font-weight: 500;
   color: var(--gray-700, #495057);
   box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.1));
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-color, #007bff);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
 }
 
 .tab-button i {
@@ -45,6 +83,11 @@
   box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
+.tab-button:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .tab-button.active {
   background-color: var(--primary-color, #1a2b4a);
   color: var(--light-text-color, #fff);
@@ -52,6 +95,11 @@
 
 .tab-button.active i {
   color: var(--accent-color, #007bff);
+}
+
+.tab-button.active::after {
+  transform: scaleX(1);
+  background-color: var(--accent-color, #007bff);
 }
 
 /* Tab Contents */
@@ -126,6 +174,24 @@
   to { opacity: 1; }
 }
 
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+@keyframes pointBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .modern-tabs {
@@ -136,6 +202,11 @@
   .tab-button {
     width: 100%;
     justify-content: flex-start;
+  }
+  
+  .tab-hint p {
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .step {
@@ -190,4 +261,83 @@ body.dark-mode .step-number {
 body.dark-mode .alert-box {
   background-color: var(--dark-mode-card-bg, #2d2d2d);
   border-left-color: var(--accent-color, #007bff);
+}
+
+/* Dark mode styles for tab hint */
+body.dark-mode .tab-hint p {
+  background-color: var(--dark-accent-color, #0056b3);
+  color: var(--light-text-color, #fff);
+}
+
+/* Additional interactive elements for tab buttons */
+.tab-button span {
+  position: relative;
+  z-index: 1;
+}
+
+.tab-button i {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.tab-button:hover i {
+  transform: scale(1.2);
+}
+
+/* Add a subtle ripple effect on click */
+.tab-button .ripple {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+/* Winter Permit CTA Styles */
+.winter-permit-cta {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: rgba(240, 248, 255, 0.5);
+  border-radius: var(--radius-md, 8px);
+  border-left: 4px solid var(--accent-color, #007bff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.winter-permit-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.winter-permit-cta .btn {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.permit-note {
+  font-size: 0.9rem;
+  color: var(--gray-700, #495057);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.permit-note i {
+  color: var(--accent-color, #007bff);
+}
+
+/* Dark mode styles for winter permit CTA */
+body.dark-mode .winter-permit-cta {
+  background-color: rgba(0, 30, 60, 0.2);
+  border-left-color: var(--accent-color, #007bff);
+}
+
+body.dark-mode .permit-note {
+  color: var(--dark-text-color, #e0e0e0);
 } 
