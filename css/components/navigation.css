@@ -529,6 +529,31 @@ body.menu-open {
     .mobile-menu-btn {
       right: 60px;
     }
+    
+    /* Admin page specific adjustments */
+    .admin-page .nav-links {
+      max-width: 200px;
+    }
+    
+    .admin-page .nav-links > li > a,
+    .admin-page .dropdown > a,
+    .admin-page .dropdown-content a {
+      font-size: 0.8rem;
+      padding: 0.7rem 0.15rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .admin-page .nav-links > li > a i,
+    .admin-page .dropdown > a i:not(.fa-caret-down),
+    .admin-page .dropdown-content a i {
+      font-size: 0.75rem;
+      width: 0.8rem;
+    }
+    
+    .admin-page .dropdown > a i.fa-caret-down {
+      font-size: 0.7rem;
+      margin-left: 2px;
+    }
   }
   
   /* Smallest iPhone screens */
@@ -547,6 +572,195 @@ body.menu-open {
     .mobile-menu-btn {
       right: 50px;
     }
+    
+    /* Admin page specific adjustments for smallest screens */
+    .admin-page .nav-links {
+      max-width: 180px;
+    }
+    
+    .admin-page .nav-links > li > a,
+    .admin-page .dropdown > a,
+    .admin-page .dropdown-content a {
+      font-size: 0.75rem;
+      padding: 0.65rem 0.1rem;
+      letter-spacing: -0.03em;
+      word-spacing: -0.05em;
+    }
+    
+    .admin-page .nav-links > li > a i,
+    .admin-page .dropdown > a i:not(.fa-caret-down),
+    .admin-page .dropdown-content a i {
+      font-size: 0.7rem;
+      width: 0.75rem;
+    }
+    
+    .admin-page .dropdown > a i.fa-caret-down {
+      font-size: 0.65rem;
+      margin-left: 1px;
+    }
+  }
+  
+  /* Extra small iPhone screens (iPhone SE/5/5S) */
+  @media screen and (max-width: 320px) {
+    .nav-links {
+      max-width: 180px;
+    }
+    
+    .nav-links > li > a,
+    .dropdown > a,
+    .dropdown-content a {
+      font-size: 0.75rem;
+      padding: 0.65rem 0.1rem;
+    }
+    
+    .mobile-menu-btn {
+      right: 45px;
+    }
+    
+    /* Admin page specific adjustments for extra small screens */
+    .admin-page .nav-links {
+      max-width: 160px;
+    }
+    
+    .admin-page .nav-links > li > a,
+    .admin-page .dropdown > a,
+    .admin-page .dropdown-content a {
+      font-size: 0.7rem;
+      padding: 0.6rem 0.1rem;
+      letter-spacing: -0.03em;
+      word-spacing: -0.05em;
+    }
+    
+    .admin-page .nav-links > li > a i,
+    .admin-page .dropdown > a i:not(.fa-caret-down),
+    .admin-page .dropdown-content a i {
+      font-size: 0.65rem;
+      width: 0.7rem;
+    }
+    
+    .admin-page .dropdown > a i.fa-caret-down {
+      font-size: 0.6rem;
+      margin-left: 1px;
+    }
+    
+    /* Extreme optimization for very small screens */
+    .admin-page .nav-wrapper {
+      padding: 20px 2px 50px;
+    }
+    
+    /* Minimize padding and spacing */
+    .admin-page .nav-links > li > a,
+    .admin-page .dropdown > a,
+    .admin-page .dropdown-content a {
+      padding: 0.55rem 0.05rem;
+      gap: 2px;
+    }
+    
+    /* Ensure text is properly truncated */
+    .admin-page .nav-links > li > a span,
+    .admin-page .dropdown > a span,
+    .admin-page .dropdown-content a span {
+      max-width: calc(100% - 15px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  
+  /* Admin page specific adjustments for mobile */
+  .admin-page .nav-links > li > a,
+  .admin-page .dropdown > a,
+  .admin-page .dropdown-content a {
+    font-size: 0.85rem;
+    padding: 0.75rem 0.25rem;
+    letter-spacing: -0.01em;
+    gap: 3px;
+  }
+  
+  .admin-page .nav-links > li > a i,
+  .admin-page .dropdown > a i:not(.fa-caret-down),
+  .admin-page .dropdown-content a i {
+    font-size: 0.8rem;
+    width: 0.85rem;
+  }
+  
+  .admin-page .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .admin-page .dropdown.active .dropdown-content {
+    max-height: 500px;
+  }
+  
+  /* Ensure dropdown content is properly displayed */
+  .admin-page .dropdown-content li {
+    width: 100%;
+  }
+  
+  .admin-page .dropdown-content a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Additional optimizations for admin page navigation */
+  .admin-page .nav-links {
+    max-width: 240px; /* Slightly narrower for admin page */
+  }
+
+  /* Improve text truncation for longer navigation items */
+  .admin-page .nav-links > li > a,
+  .admin-page .dropdown > a {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+  /* Ensure proper spacing between icon and text */
+  .admin-page .nav-links > li > a i,
+  .admin-page .dropdown > a i:not(.fa-caret-down) {
+    flex-shrink: 0;
+    margin-right: 0;
+  }
+
+  /* Adjust dropdown caret position */
+  .admin-page .dropdown > a i.fa-caret-down {
+    margin-left: 2px;
+    flex-shrink: 0;
+  }
+  
+  /* Ensure mobile close button is visible in admin page */
+  .admin-page .mobile-close-btn {
+    display: block;
+    color: #fff;
+    font-size: 1.3rem;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 1010;
+  }
+  
+  .admin-page .mobile-close-btn:hover {
+    color: var(--accent-color);
+  }
+  
+  /* Ensure mobile menu button is properly positioned in admin page */
+  .admin-page .mobile-menu-btn {
+    display: block;
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1002;
+  }
+  
+  /* Fix mobile menu activation for admin page */
+  .admin-page .nav-wrapper.active {
+    right: 0;
+    visibility: visible;
+    display: flex;
   }
 }
 
