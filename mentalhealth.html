@@ -1,300 +1,277 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Health Unit - Bar Harbor Police Department</title>
-    <!-- Dark mode initialization -->
-    <meta name="theme-color" content="#ffffff" id="theme-color">
-    <script src="darkmode.js"></script>
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mental Health Unit - Bar Harbor Police Department</title>
+<!-- Dark mode initialization -->
+<meta content="#ffffff" id="theme-color" name="theme-color"/>
+<script src="darkmode.js"></script>
+<script>
         if (localStorage.getItem('darkMode') === 'enabled') {
             document.getElementById('theme-color').setAttribute('content', '#121212');
         }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/main.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<link href="css/main.css" rel="stylesheet"/>
 </head>
 <body>
-    <a href="#main-content" class="skip-to-main">
+<a class="skip-to-main" href="#main-content">
         Skip to main content
     </a>
-    <div class="scroll-progress"></div>
-
-    <header class="header hero-header">
-        <nav class="main-nav">
-            <!-- Logo Section -->
-            <a href="index.html" class="logo-link">
-                <img src="images/branding/logo.png" alt="Bar Harbor Police Department Logo" class="logo">
-            </a>
-
-            <div class="nav-wrapper">
-                <ul class="nav-links">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="dropdown">
-                        <a href="#"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
-                        <ul class="dropdown-content">
-                            <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
-                            <li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
-                            <li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
-                            <li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
-                            <li><a href="mentalhealth.html" class="active"><i class="fas fa-heart"></i> Mental Health Unit</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#"><i class="fas fa-hands-helping"></i> Programs <i class="fas fa-caret-down"></i></a>
-                        <ul class="dropdown-content">
-                            <li><a href="good-morning-program.html"><i class="fas fa-sun"></i> Good Morning Program</a></li>
-                            <li><a href="community-outreach.html"><i class="fas fa-heart"></i> Community Outreach</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#"><i class="fas fa-user-tie"></i> Recruitment <i class="fas fa-caret-down"></i></a>
-                        <ul class="dropdown-content">
-                            <li><a href="bhmdrec.html"><i class="fas fa-briefcase"></i> Career Opportunities</a></li>
-                            <li><a href="application-process.html"><i class="fas fa-file-alt"></i> Application Process</a></li>
-                            <li><a href="benefits.html"><i class="fas fa-medal"></i> Benefits & Salary</a></li>
-                            <li><a href="academy-training.html"><i class="fas fa-chalkboard-teacher"></i> Academy Training</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
-                    <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                    <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
-            </button>
-        </nav>
-    </header>
-
-
-    <main id="main-content" class="mental-health-page">
-        <div class="top-spacer"></div>
-
-        <section class="hero-section mental-health-hero">
-            <div class="hero-content">
-                <i class="fas fa-heart hero-icon"></i>
-                <h1>Mental Health Unit</h1>
-                <p>Serving Our Island Communities with Compassion and Understanding</p>
-            </div>
-        </section>
-
-        <div class="content-wrapper">
-            <section class="info-grid">
-                <!-- Mission Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-handshake"></i>
-                        <h2>Our Mission</h2>
-                    </div>
-                    <div class="card-body">
-                        <p>The Bar Harbor-Mount Desert Police Department's Mental Health Unit represents our commitment to providing specialized support for Mount Desert Island community members experiencing mental health crises. Under the leadership of Mental Health Liaison Melissa Tozier, our unit takes a compassionate approach to mental health emergency response.</p>
-                    </div>
-                </div>
-
-                <!-- Emergency Response Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <h2>Emergency Response</h2>
-                    </div>
-                    <div class="card-body">
-                        <h3>Call 911 Immediately If:</h3>
-                        <ul>
-                            <li>Someone has attempted or is at risk of self-harm</li>
-                            <li>A person in mental health crisis poses a danger to others</li>
-                        </ul>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <h3>Emergency</h3>
-                                    <p>Dial 911</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Our Impact Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-chart-line"></i>
-                        <h2>Our Impact</h2>
-                    </div>
-                    <div class="card-body">
-                        <h3>Enhanced Crisis Response</h3>
-                        <div class="responsibility-grid">
-                            <div class="responsibility-item">
-                                <i class="fas fa-user-shield"></i>
-                                <span>Crisis Services</span>
-                            </div>
-                            <div class="responsibility-item">
-                                <i class="fas fa-hands-helping"></i>
-                                <span>Community Support</span>
-                            </div>
-                            <div class="responsibility-item">
-                                <i class="fas fa-hospital"></i>
-                                <span>Treatment Access</span>
-                            </div>
-                            <div class="responsibility-item">
-                                <i class="fas fa-heart"></i>
-                                <span>Compassionate Care</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Island Solutions Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-hands-helping"></i>
-                        <h2>Island Solutions</h2>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Direct referrals to behavioral health services</li>
-                            <li>Transportation to treatment facilities when needed</li>
-                            <li>Ongoing support for stable, community-based care</li>
-                            <li>Coordination with MDI Hospital and mainland resources</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Philosophy Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-brain"></i>
-                        <h2>Our Philosophy</h2>
-                    </div>
-                    <div class="card-body">
-                        <p>Mental health calls represent some of law enforcement's most complex challenges, particularly in our island community where resources can be limited. Our dedicated unit approaches each situation with compassion, understanding that connection to appropriate mental health services, not criminal charges, often provides the best path forward.</p>
-                    </div>
-                </div>
-
-                <!-- Contact Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-envelope"></i>
-                        <h2>Contact Information</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-user"></i>
-                                <div>
-                                    <h3>Mental Health Liaison</h3>
-                                    <p>Melissa Tozier</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <h3>Email</h3>
-                                    <a href="mailto:mtozier@barharbormaine.gov">mtozier@barharbormaine.gov</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <h3>Phone</h3>
-                                    <p>207-288-3391</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reservation-note">
-                            <i class="fas fa-info-circle"></i>
-                            <p>Call to speak with Melissa or leave a voice message</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo-container">
-                <img src="images/branding/logo.png" alt="Bar Harbor Police Department Logo" class="footer-logo">
-                <p><strong>Bar Harbor Police Department</strong></p>
-                <p>37 Firefly Lane, Bar Harbor, ME 04609</p>
-                <p>General Information: (207) 288-3391</p>
-                <div class="social-icons">
-                    <a href="https://facebook.com" class="facebook" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://youtube.com" class="youtube" target="_blank" aria-label="Visit our YouTube channel"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h3>DIVISIONS</h3>
-                    <ul>
-                        <li><a href="harbor-master-division.html">Harbor Master</a></li>
-                        <li><a href="bar-harbor-parking.html">Parking Enforcement</a></li>
-                        <li><a href="administrative-services.html">Administrative Services</a></li>
-                        <li><a href="animalcontrol.html">Animal Control</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>SERVICES</h3>
-                    <ul>
-                        <li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" target="_blank" rel="noopener">AMBER Alert</a></li>
-                        <li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" target="_blank" rel="noopener">Missing Persons</a></li>
-                        <li><a href="community-outreach.html">Community Programs</a></li>
-                        <li><a href="mentalhealth.html">Mental Health Resources</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>CAREERS</h3>
-                    <ul>
-                        <li><a href="application-process.html">Application Process</a></li>
-                        <li><a href="opportunities.html">Career Opportunities</a></li>
-                        <li><a href="benefits.html">Benefits</a></li>
-                        <li><a href="hire.html">Apply Now</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>ABOUT</h3>
-                    <ul>
-                        <li><a href="administration.html">Administration</a></li>
-                        <li><a href="command-staff.html">Command Staff</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-map">
-                <h3>Our Location</h3>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.076072177352!2d-68.20830382343881!3d44.38821380458311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4caebf7cae314357%3A0xb7e0edbf086c978c!2s37%20Firefly%20Ln%2C%20Bar%20Harbor%2C%20ME%2004609!5e1!3m2!1sen!2sus!4v1734624380504!5m2!1sen!2sus"
-                    width="100%"
-                    height="250"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    title="Map showing Bar Harbor Police Department location">
-                </iframe>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
-            <div class="last-updated">
+<div class="scroll-progress"></div>
+<header class="header hero-header">
+<nav class="main-nav">
+<!-- Logo Section -->
+<a class="logo-link" href="index.html">
+<img alt="Bar Harbor Police Department Logo" class="logo" src="images/branding/logo.png"/>
+</a>
+<div class="nav-wrapper">
+<ul class="nav-links">
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li class="dropdown">
+<a href="#"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
+<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
+<li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
+<li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
+<li><a class="active" href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Unit</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#"><i class="fas fa-hands-helping"></i> Programs <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="good-morning-program.html"><i class="fas fa-sun"></i> Good Morning Program</a></li>
+<li><a href="community-outreach.html"><i class="fas fa-heart"></i> Community Outreach</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#"><i class="fas fa-user-tie"></i> Recruitment <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="bhmdrec.html"><i class="fas fa-briefcase"></i> Career Opportunities</a></li>
+<li><a href="application-process.html"><i class="fas fa-file-alt"></i> Application Process</a></li>
+<li><a href="benefits.html"><i class="fas fa-medal"></i> Benefits &amp; Salary</a></li>
+<li><a href="academy-training.html"><i class="fas fa-chalkboard-teacher"></i> Academy Training</a></li>
+</ul>
+</li>
+<li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
+<li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+</ul>
+</div>
+<!-- Mobile Menu Button -->
+<button class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+<button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle">
+<i class="fas fa-moon"></i>
+<i class="fas fa-sun"></i>
+</button>
+</nav>
+</header>
+<main class="mental-health-page" id="main-content">
+<div class="top-spacer"></div>
+<section class="hero-section mental-health-hero">
+<div class="hero-content">
+<i class="fas fa-heart hero-icon"></i>
+<h1>Mental Health Unit</h1>
+<p>Serving Our Island Communities with Compassion and Understanding</p>
+</div>
+</section>
+<div class="content-wrapper">
+<section class="info-grid">
+<!-- Mission Card -->
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-handshake"></i>
+<h2>Our Mission</h2>
+</div>
+<div class="card-body">
+<p>The Bar Harbor-Mount Desert Police Department's Mental Health Unit represents our commitment to providing specialized support for Mount Desert Island community members experiencing mental health crises. Under the leadership of Mental Health Liaison Melissa Tozier, our unit takes a compassionate approach to mental health emergency response.</p>
+</div>
+</div>
+<!-- Emergency Response Card -->
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-exclamation-circle"></i>
+<h2>Emergency Response</h2>
+</div>
+<div class="card-body">
+<h3>Call 911 Immediately If:</h3>
+<ul>
+<li>Someone has attempted or is at risk of self-harm</li>
+<li>A person in mental health crisis poses a danger to others</li>
+</ul>
+<div class="contact-details">
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<div>
+<h3>Emergency</h3>
+<p>Dial 911</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Our Impact Card -->
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-chart-line"></i>
+<h2>Our Impact</h2>
+</div>
+<div class="card-body">
+<h3>Enhanced Crisis Response</h3>
+<div class="responsibility-grid">
+<div class="responsibility-item">
+<i class="fas fa-user-shield"></i>
+<span>Crisis Services</span>
+</div>
+<div class="responsibility-item">
+<i class="fas fa-hands-helping"></i>
+<span>Community Support</span>
+</div>
+<div class="responsibility-item">
+<i class="fas fa-hospital"></i>
+<span>Treatment Access</span>
+</div>
+<div class="responsibility-item">
+<i class="fas fa-heart"></i>
+<span>Compassionate Care</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Island Solutions Card -->
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-hands-helping"></i>
+<h2>Island Solutions</h2>
+</div>
+<div class="card-body">
+<ul>
+<li>Direct referrals to behavioral health services</li>
+<li>Transportation to treatment facilities when needed</li>
+<li>Ongoing support for stable, community-based care</li>
+<li>Coordination with MDI Hospital and mainland resources</li>
+</ul>
+</div>
+</div>
+<!-- Philosophy Card -->
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-brain"></i>
+<h2>Our Philosophy</h2>
+</div>
+<div class="card-body">
+<p>Mental health calls represent some of law enforcement's most complex challenges, particularly in our island community where resources can be limited. Our dedicated unit approaches each situation with compassion, understanding that connection to appropriate mental health services, not criminal charges, often provides the best path forward.</p>
+</div>
+</div>
+<!-- Contact Card -->
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-envelope"></i>
+<h2>Contact Information</h2>
+</div>
+<div class="card-body">
+<div class="contact-details">
+<div class="contact-item">
+<i class="fas fa-user"></i>
+<div>
+<h3>Mental Health Liaison</h3>
+<p>Melissa Tozier</p>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-envelope"></i>
+<div>
+<h3>Email</h3>
+<a href="mailto:mtozier@barharbormaine.gov">mtozier@barharbormaine.gov</a>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<div>
+<h3>Phone</h3>
+<p>207-288-3391</p>
+</div>
+</div>
+</div>
+<div class="reservation-note">
+<i class="fas fa-info-circle"></i>
+<p>Call to speak with Melissa or leave a voice message</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-logo-container">
+<img alt="Bar Harbor Police Department Logo" class="footer-logo" src="images/branding/logo.png"/>
+<p><strong>Bar Harbor Police Department</strong></p>
+<p>37 Firefly Lane, Bar Harbor, ME 04609</p>
+<p>General Information: (207) 288-3391</p>
+<div class="social-icons">
+<a aria-label="Visit our Facebook page" class="facebook" href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Visit our YouTube channel" class="youtube" href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<div class="footer-links">
+<div class="footer-column">
+<h3>DIVISIONS</h3>
+<ul>
+<li><a href="harbor-master-division.html">Harbor Master</a></li>
+<li><a href="bar-harbor-parking.html">Parking Enforcement</a></li>
+<li><a href="administrative-services.html">Administrative Services</a></li>
+<li><a href="animalcontrol.html">Animal Control</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>SERVICES</h3>
+<ul>
+<li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" rel="noopener" target="_blank">AMBER Alert</a></li>
+<li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" rel="noopener" target="_blank">Missing Persons</a></li>
+<li><a href="community-outreach.html">Community Programs</a></li>
+<li><a href="mentalhealth.html">Mental Health Resources</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>CAREERS</h3>
+<ul>
+<li><a href="application-process.html">Application Process</a></li>
+<li><a href="opportunities.html">Career Opportunities</a></li>
+<li><a href="benefits.html">Benefits</a></li>
+<li><a href="application-process.html">Apply Now</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>ABOUT</h3>
+<ul>
+<li><a href="administration.html">Administration</a></li>
+<li><a href="command-staff.html">Command Staff</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-map">
+<h3>Our Location</h3>
+<iframe allowfullscreen="" height="250" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.076072177352!2d-68.20830382343881!3d44.38821380458311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4caebf7cae314357%3A0xb7e0edbf086c978c!2s37%20Firefly%20Ln%2C%20Bar%20Harbor%2C%20ME%2004609!5e1!3m2!1sen!2sus!4v1734624380504!5m2!1sen!2sus" style="border:0;" title="Map showing Bar Harbor Police Department location" width="100%">
+</iframe>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
+<div class="last-updated">
                 Last updated: <time datetime="2024-02-28">February 28th, 2024</time>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Add before closing body tag -->
-    <script src="script.js"></script>
+</div>
+</div>
+</footer>
+<!-- Add before closing body tag -->
+<script src="script.js"></script>
 </body>
 </html>
