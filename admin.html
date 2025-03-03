@@ -1,278 +1,254 @@
 <!DOCTYPE html>
+
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <title>Administrative Services - Bar Harbor Police Department</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Dark mode initialization -->
-    <meta name="theme-color" content="#ffffff" id="theme-color">
-    <script src="darkmode.js"></script>
-    <script>
+<meta charset="utf-8"/>
+<title>Administrative Services - Bar Harbor Police Department</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Dark mode initialization -->
+<meta content="#ffffff" id="theme-color" name="theme-color"/>
+<script src="darkmode.js"></script>
+<script>
         if (localStorage.getItem('darkMode') === 'enabled') {
             document.getElementById('theme-color').setAttribute('content', '#121212');
         }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/main.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<link href="css/main.css" rel="stylesheet"/>
 </head>
 <body>
-    <a href="#main-content" class="skip-to-main">
+<a class="skip-to-main" href="#main-content">
         Skip to main content
     </a>
-    <div class="scroll-progress"></div>
-
-    <header class="header">
-        <nav class="main-nav">
-            <a href="index.html" class="logo-link">
-                <img src="images/branding/logo.png" alt="Bar Harbor Police Department Logo" class="logo">
-            </a>
-
-            <div class="nav-wrapper">
-                <button class="mobile-close-btn" aria-label="Close menu">
-                    <i class="fas fa-times"></i>
-                </button>
-                <ul class="nav-links">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    
-                    <li class="dropdown">
-                        <a href="#" class="active"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
-                        <ul class="dropdown-content">
-                            <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
-                            <li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
-                            <li><a href="admin.html" class="active"><i class="fas fa-users"></i> Administrative Services</a></li>
-                            <li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
-                            <li><a href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Unit</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li class="dropdown">
-                        <a href="#"><i class="fas fa-hands-helping"></i> Programs <i class="fas fa-caret-down"></i></a>
-                        <ul class="dropdown-content">
-                            <li><a href="good-morning-program.html"><i class="fas fa-sun"></i> Good Morning Program</a></li>
-                            <li><a href="community-outreach.html"><i class="fas fa-heart"></i> Community Outreach</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li class="dropdown">
-                        <a href="#"><i class="fas fa-user-tie"></i> Recruitment <i class="fas fa-caret-down"></i></a>
-                        <ul class="dropdown-content">
-                            <li><a href="bhmdrec.html"><i class="fas fa-briefcase"></i> Career Opportunities</a></li>
-                            <li><a href="application-process.html"><i class="fas fa-file-alt"></i> Application Process</a></li>
-                            <li><a href="benefits.html"><i class="fas fa-medal"></i> Benefits & Salary</a></li>
-                            <!-- Removed academy-training.html link -->
-                        </ul>
-                    </li>
-                    
-                    <li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
-                    <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                    <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-            </div>
-
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
-            </button>
-        </nav>
-    </header>
-
-    <main id="main-content" class="admin-page">
-        <div class="hero-section admin-hero">
-            <div class="hero-content">
-                <i class="fas fa-users-cog hero-icon"></i>
-                <h1>Administrative Services</h1>
-                <p>Supporting the operations of the Bar Harbor Police Department</p>
-                <div class="highlight-badges">
-                    <span class="badge"><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 4:00 PM</span>
-                    <span class="badge"><i class="fas fa-phone"></i> (207) 288-3391</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-wrapper">
-            <section class="info-grid">
-                <!-- Office Support Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-desktop"></i>
-                        <h2>Office Support</h2>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Document processing and management</li>
-                            <li>Administrative correspondence</li>
-                            <li>Filing system maintenance</li>
-                            <li>Department communications support</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Records Management Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-folder-open"></i>
-                        <h2>Records & Information</h2>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Maintain department files and records</li>
-                            <li>Process documentation for new hires</li>
-                            <li>Handle license applications</li>
-                            <li>Process Injured on Duty payments</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Training & Development Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h2>Training & Development</h2>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Enforce POST rules and regulations</li>
-                            <li>Maintain training certification records</li>
-                            <li>Schedule department training</li>
-                            <li>Track continuing education requirements</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Fiscal Management Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-calculator"></i>
-                        <h2>Fiscal Management</h2>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Handle department purchasing</li>
-                            <li>Manage contracts and agreements</li>
-                            <li>Monitor budget expenditures</li>
-                            <li>Process financial documentation</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Contact Information Card -->
-                <div class="info-card contact">
-                    <div class="card-header">
-                        <i class="fas fa-phone"></i>
-                        <h2>Contact Administrative Services</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-clock"></i>
-                                <div>
-                                    <h3>Office Hours</h3>
-                                    <p>Monday - Friday: 8:00 AM - 4:00 PM</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <h3>Phone</h3>
-                                    <p>(207) 288-3391</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <h3>Location</h3>
-                                    <p>37 Firefly Lane<br>Bar Harbor, ME 04609</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="btn btn-primary">
-                            <i class="fas fa-envelope"></i>
+<div class="scroll-progress"></div>
+<header class="header">
+<nav class="main-nav">
+<a class="logo-link" href="index.html">
+<img alt="Bar Harbor Police Department Logo" class="logo" src="images/branding/logo.png"/>
+</a>
+<div class="nav-wrapper">
+<button aria-label="Close menu" class="mobile-close-btn">
+<i class="fas fa-times"></i>
+</button>
+<ul class="nav-links">
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li class="dropdown">
+<a class="active" href="#"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
+<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
+<li><a class="active" href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
+<li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
+<li><a href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Unit</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#"><i class="fas fa-hands-helping"></i> Programs <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="good-morning-program.html"><i class="fas fa-sun"></i> Good Morning Program</a></li>
+<li><a href="community-outreach.html"><i class="fas fa-heart"></i> Community Outreach</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#"><i class="fas fa-user-tie"></i> Recruitment <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="bhmdrec.html"><i class="fas fa-briefcase"></i> Career Opportunities</a></li>
+<li><a href="application-process.html"><i class="fas fa-file-alt"></i> Application Process</a></li>
+<li><a href="benefits.html"><i class="fas fa-medal"></i> Benefits &amp; Salary</a></li>
+<!-- Removed academy-training.html link -->
+</ul>
+</li>
+<li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
+<li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+</ul>
+</div>
+<button aria-label="Toggle menu" class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+<button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle">
+<i class="fas fa-moon"></i>
+<i class="fas fa-sun"></i>
+</button>
+</nav>
+</header>
+<main class="admin-page" id="main-content">
+<div class="hero-section admin-hero">
+<div class="hero-content">
+<i class="fas fa-users-cog hero-icon"></i>
+<h1>Administrative Services</h1>
+<p>Supporting the operations of the Bar Harbor Police Department</p>
+<div class="highlight-badges">
+<span class="badge"><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 4:00 PM</span>
+<span class="badge"><i class="fas fa-phone"></i> (207) 288-3391</span>
+</div>
+</div>
+</div>
+<div class="content-wrapper">
+<section class="info-grid">
+<!-- Office Support Card -->
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-desktop"></i>
+<h2>Office Support</h2>
+</div>
+<div class="card-body">
+<ul>
+<li>Document processing and management</li>
+<li>Administrative correspondence</li>
+<li>Filing system maintenance</li>
+<li>Department communications support</li>
+</ul>
+</div>
+</div>
+<!-- Records Management Card -->
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-folder-open"></i>
+<h2>Records &amp; Information</h2>
+</div>
+<div class="card-body">
+<ul>
+<li>Maintain department files and records</li>
+<li>Process documentation for new hires</li>
+<li>Handle license applications</li>
+<li>Process Injured on Duty payments</li>
+</ul>
+</div>
+</div>
+<!-- Training & Development Card -->
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-graduation-cap"></i>
+<h2>Training &amp; Development</h2>
+</div>
+<div class="card-body">
+<ul>
+<li>Enforce POST rules and regulations</li>
+<li>Maintain training certification records</li>
+<li>Schedule department training</li>
+<li>Track continuing education requirements</li>
+</ul>
+</div>
+</div>
+<!-- Fiscal Management Card -->
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-calculator"></i>
+<h2>Fiscal Management</h2>
+</div>
+<div class="card-body">
+<ul>
+<li>Handle department purchasing</li>
+<li>Manage contracts and agreements</li>
+<li>Monitor budget expenditures</li>
+<li>Process financial documentation</li>
+</ul>
+</div>
+</div>
+<!-- Contact Information Card -->
+<div class="info-card contact">
+<div class="card-header">
+<i class="fas fa-phone"></i>
+<h2>Contact Administrative Services</h2>
+</div>
+<div class="card-body">
+<div class="contact-details">
+<div class="contact-item">
+<i class="fas fa-clock"></i>
+<div>
+<h3>Office Hours</h3>
+<p>Monday - Friday: 8:00 AM - 4:00 PM</p>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<div>
+<h3>Phone</h3>
+<p>(207) 288-3391</p>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-map-marker-alt"></i>
+<div>
+<h3>Location</h3>
+<p>37 Firefly Lane<br/>Bar Harbor, ME 04609</p>
+</div>
+</div>
+</div>
+<a class="btn btn-primary" href="contact.html">
+<i class="fas fa-envelope"></i>
                             Contact Us
                         </a>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo-container">
-                <img src="images/branding/logo.png" alt="Bar Harbor Police Department Logo" class="footer-logo">
-                <p><strong>Bar Harbor Police Department</strong></p>
-                <p>37 Firefly Lane, Bar Harbor, ME 04609</p>
-                <p>General Information: (207) 288-3391</p>
-                <div class="social-icons">
-                    <a href="https://facebook.com" class="facebook" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://youtube.com" class="youtube" target="_blank" aria-label="Visit our YouTube channel"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h3>DIVISIONS</h3>
-                    <ul>
-                        <li><a href="harbor-master-division.html">Harbor Master</a></li>
-                        <li><a href="bar-harbor-parking.html">Parking Enforcement</a></li>
-                        <li><a href="administrative-services.html">Administrative Services</a></li>
-                        <li><a href="animalcontrol.html">Animal Control</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>SERVICES</h3>
-                    <ul>
-                        <li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" target="_blank" rel="noopener">AMBER Alert</a></li>
-                        <li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" target="_blank" rel="noopener">Missing Persons</a></li>
-                        <li><a href="community-outreach.html">Community Programs</a></li>
-                        <li><a href="mentalhealth.html">Mental Health Resources</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>CAREERS</h3>
-                    <ul>
-                        <li><a href="application-process.html">Application Process</a></li>
-                        <li><a href="opportunities.html">Career Opportunities</a></li>
-                        <li><a href="benefits.html">Benefits</a></li>
-                        <li><a href="hire.html">Apply Now</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>ABOUT</h3>
-                    <ul>
-                        <li><a href="administration.html">Administration</a></li>
-                        <li><a href="command-staff.html">Command Staff</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-map">
-                <h3>Our Location</h3>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.076072177352!2d-68.20830382343881!3d44.38821380458311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4caebf7cae314357%3A0xb7e0edbf086c978c!2s37%20Firefly%20Ln%2C%20Bar%20Harbor%2C%20ME%2004609!5e1!3m2!1sen!2sus!4v1734624380504!5m2!1sen!2sus"
-                    width="100%"
-                    height="250"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    title="Map showing Bar Harbor Police Department location">
-                </iframe>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
-            <div class="last-updated">
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-logo-container">
+<img alt="Bar Harbor Police Department Logo" class="footer-logo" src="images/branding/logo.png"/>
+<p><strong>Bar Harbor Police Department</strong></p>
+<p>37 Firefly Lane, Bar Harbor, ME 04609</p>
+<p>General Information: (207) 288-3391</p>
+<div class="social-icons">
+<a aria-label="Visit our Facebook page" class="facebook" href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Visit our YouTube channel" class="youtube" href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<div class="footer-links">
+<div class="footer-column">
+<h3>DIVISIONS</h3>
+<ul>
+<li><a href="harbor-master-division.html">Harbor Master</a></li>
+<li><a href="bar-harbor-parking.html">Parking Enforcement</a></li>
+<li><a href="administrative-services.html">Administrative Services</a></li>
+<li><a href="animalcontrol.html">Animal Control</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>SERVICES</h3>
+<ul>
+<li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" rel="noopener" target="_blank">AMBER Alert</a></li>
+<li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" rel="noopener" target="_blank">Missing Persons</a></li>
+<li><a href="community-outreach.html">Community Programs</a></li>
+<li><a href="mentalhealth.html">Mental Health Resources</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>CAREERS</h3>
+<ul>
+<li><a href="application-process.html">Application Process</a></li>
+<li><a href="opportunities.html">Career Opportunities</a></li>
+<li><a href="benefits.html">Benefits</a></li>
+<li><a href="application-process.html">Apply Now</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>ABOUT</h3>
+<ul>
+<li><a href="administration.html">Administration</a></li>
+<li><a href="command-staff.html">Command Staff</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-map">
+<h3>Our Location</h3>
+<iframe allowfullscreen="" height="250" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.076072177352!2d-68.20830382343881!3d44.38821380458311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4caebf7cae314357%3A0xb7e0edbf086c978c!2s37%20Firefly%20Ln%2C%20Bar%20Harbor%2C%20ME%2004609!5e1!3m2!1sen!2sus!4v1734624380504!5m2!1sen!2sus" style="border:0;" title="Map showing Bar Harbor Police Department location" width="100%">
+</iframe>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
+<div class="last-updated">
                 Last updated: <time datetime="2024-02-28">February 28th, 2024</time>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+</div>
+</div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
