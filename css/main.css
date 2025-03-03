@@ -42,6 +42,8 @@
 @import 'pages/animalcontrol.css';
 @import 'pages/mentalhealth.css';
 @import 'pages/admin.css';
+@import 'pages/news-article.css';
+@import 'pages/news-archive.css';
 
 /* Theme Styles - These should come last */
 @import 'themes/light.css';
