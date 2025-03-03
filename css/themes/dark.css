@@ -9,6 +9,8 @@ body.dark-mode {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --dark-primary-color: rgb(18, 18, 18);
+  --primary-color: rgb(18, 18, 18);
 }
 
 /* Typography */
@@ -34,14 +36,16 @@ body.dark-mode a:hover {
 
 /* Header */
 body.dark-mode .header {
-  background-color: rgba(18, 18, 18, 0.8);
+  background-color: rgb(18, 18, 18);
   box-shadow: var(--dark-mode-shadow);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
 body.dark-mode .header.scrolled {
-  background-color: rgba(18, 18, 18, 0.9);
+  background-color: rgb(18, 18, 18);
+}
+
+body.dark-mode .nav-wrapper {
+  background-color: transparent;
 }
 
 body.dark-mode .nav-links a {
@@ -313,4 +317,92 @@ body.dark-mode .back-to-top:hover {
 
 body.dark-mode .scroll-progress {
   background-color: var(--accent-color);
+}
+
+/* News Article Styles */
+body.dark-mode .news-article-section {
+  background-color: var(--dark-mode-background);
+}
+
+body.dark-mode .article-header {
+  border-bottom-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .article-title {
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .article-meta {
+  color: var(--gray-400);
+}
+
+body.dark-mode .article-content {
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .article-content blockquote {
+  background-color: var(--dark-mode-card-bg);
+  border-left-color: var(--accent-color);
+}
+
+body.dark-mode .article-content blockquote p {
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .image-caption {
+  color: var(--gray-400);
+}
+
+body.dark-mode .gallery-grid {
+  background-color: var(--dark-mode-card-bg);
+  border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .gallery-item {
+  background-color: var(--dark-mode-background);
+  border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .gallery-item figcaption {
+  color: var(--gray-400);
+}
+
+body.dark-mode .article-footer {
+  border-top-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .share-buttons span {
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .share-btn {
+  background-color: var(--dark-mode-card-bg);
+  color: var(--dark-mode-text-color);
+  border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .share-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--light-text-color);
+}
+
+body.dark-mode .related-articles h3 {
+  color: var(--dark-mode-text-color);
+}
+
+body.dark-mode .related-articles-grid {
+  background-color: var(--dark-mode-card-bg);
+  border-color: var(--dark-mode-border-color);
+}
+
+body.dark-mode .breadcrumbs {
+  color: var(--gray-400);
+}
+
+body.dark-mode .breadcrumbs a {
+  color: var(--accent-color);
+}
+
+body.dark-mode .breadcrumbs .separator {
+  color: var(--gray-400);
 } 
