@@ -10,6 +10,8 @@ function initDarkMode() {
     // Set initial state
     if (darkMode) {
         document.body.classList.add('dark-mode');
+        // Update theme-color meta tag
+        updateThemeColor(true);
     }
 
     // Get the toggle button
@@ -25,6 +27,16 @@ function initDarkMode() {
             const isDarkMode = document.body.classList.contains('dark-mode');
             localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
             updateDarkModeIcon(isDarkMode);
+            updateThemeColor(isDarkMode);
+            
+            // Force repaint of mobile navigation if it's active
+            const navWrapper = document.querySelector('.nav-wrapper');
+            if (navWrapper && navWrapper.classList.contains('active')) {
+                navWrapper.style.display = 'none';
+                setTimeout(() => {
+                    navWrapper.style.display = 'flex';
+                }, 10);
+            }
         });
     }
 }
@@ -41,5 +53,17 @@ function updateDarkModeIcon(isDarkMode) {
             moonIcon.style.display = 'inline-block';
             sunIcon.style.display = 'none';
         }
+    }
+}
+
+function updateThemeColor(isDarkMode) {
+    const themeColorMeta = document.getElementById('theme-color');
+    if (themeColorMeta) {
+        themeColorMeta.setAttribute('content', isDarkMode ? '#121212' : '#ffffff');
+    }
+    
+    const appleStatusBarMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+    if (appleStatusBarMeta) {
+        appleStatusBarMeta.setAttribute('content', isDarkMode ? 'black' : 'default');
     }
 } 

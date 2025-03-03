@@ -796,7 +796,12 @@ body.dark-mode .dropdown > a:hover {
 }
 
 body.dark-mode .mobile-menu-btn {
-  color: var(--dark-text-color);
+  color: var(--dark-mode-text-color);
+  background-color: transparent;
+}
+
+body.dark-mode .mobile-menu-btn:hover {
+  color: var(--accent-color);
 }
 
 body.dark-mode .breadcrumbs .current {
@@ -823,12 +828,23 @@ body.dark-mode .nav-links > li > a {
 
 /* Mobile Dark Mode Specific Styles */
 @media (max-width: 768px) {
+  body.dark-mode .nav-wrapper {
+    background-color: var(--dark-mode-background, #121212);
+    box-shadow: none;
+  }
+  
+  body.dark-mode .nav-wrapper.active {
+    background-color: var(--dark-mode-background, #121212);
+    right: 0;
+    visibility: visible;
+  }
+  
   body.dark-mode .dropdown-content {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(36, 36, 36, 0.95);
   }
   
   body.dark-mode .dropdown-content a {
-    color: var(--dark-text-color);
+    color: var(--dark-mode-text-color);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-left: none;
   }

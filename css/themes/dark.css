@@ -13,6 +13,28 @@ body.dark-mode {
   --primary-color: rgb(18, 18, 18);
 }
 
+/* Mobile specific dark mode fixes */
+@media (max-width: 768px) {
+  body.dark-mode {
+    background-color: var(--dark-mode-background) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  body.dark-mode .nav-wrapper,
+  body.dark-mode .nav-wrapper.active {
+    background-color: var(--dark-mode-background) !important;
+    background: var(--dark-mode-background) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  body.dark-mode .header {
+    background-color: rgb(18, 18, 18) !important;
+    background: rgb(18, 18, 18) !important;
+  }
+}
+
 /* Typography */
 body.dark-mode h1,
 body.dark-mode h2,
