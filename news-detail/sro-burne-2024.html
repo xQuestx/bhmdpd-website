@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome SRO Burne | Bar Harbor Police Department</title>
+    <meta name="description" content="Bar Harbor Police Department welcomes Officer Elias Burne as the newest School Resource Officer serving MDI High School and local elementary schools.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../images/branding/favicon.ico" type="image/x-icon">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <!-- Add this right after your stylesheet links and before other scripts -->
+    <script src="../darkmode.js"></script>
+    
+    <!-- Add these meta tags -->
+    <meta name="theme-color" content="#ffffff" id="theme-color">
+    <script>
+        // Update theme-color based on dark mode
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.getElementById('theme-color').setAttribute('content', '#121212');
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">
+        Skip to main content
+    </a>
+    <div class="scroll-progress"></div>
+
+    <header class="header hero-header">
+        <nav class="main-nav">
+            <!-- Logo -->
+            <a href="../index.html" class="logo-link">
+                <img src="../images/branding/logo.png" alt="Bar Harbor Police Department Logo" class="logo">
+            </a>
+
+            <!-- Navigation -->
+            <div class="nav-wrapper">
+                <button class="mobile-close-btn" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="nav-links">
+                    <li>
+                        <a href="../index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            <i class="fas fa-building"></i> Divisions
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li>
+                                <a href="../harbor-master-division.html">
+                                    <i class="fas fa-ship"></i> Harbor Master
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../bar-harbor-parking.html">
+                                    <i class="fas fa-parking"></i> Parking Enforcement
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../admin.html">
+                                    <i class="fas fa-users"></i> Administrative Services
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../animalcontrol.html">
+                                    <i class="fas fa-paw"></i> Animal Control
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../mentalhealth.html">
+                                    <i class="fas fa-heart"></i> Mental Health Unit
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            <i class="fas fa-hands-helping"></i> Programs
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li>
+                                <a href="../good-morning-program.html">
+                                    <i class="fas fa-sun"></i> Good Morning Program
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../community-outreach.html">
+                                    <i class="fas fa-heart"></i> Community Outreach
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            <i class="fas fa-user-tie"></i> Recruitment
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li>
+                                <a href="../bhmdrec.html">
+                                    <i class="fas fa-briefcase"></i> Career Opportunities
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../application-process.html">
+                                    <i class="fas fa-file-alt"></i> Application Process
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../benefits.html">
+                                    <i class="fas fa-medal"></i> Benefits & Salary
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../hire.html">
+                                    <i class="fas fa-user-plus"></i> Hiring Process
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../forms.html">
+                            <i class="fas fa-file-alt"></i> Forms
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../faq.html">
+                            <i class="fas fa-question-circle"></i> FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../events.html">
+                            <i class="fas fa-calendar-alt"></i> Events
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../contact.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" class="main-content">
+        <!-- NEWS ARTICLE SECTION -->
+        <section class="news-article-section">
+            <div class="content-wrapper">
+                <div class="breadcrumbs">
+                    <a href="../index.html">Home</a> &gt; 
+                    <a href="../news.html">News</a> &gt; 
+                    <span>Welcome SRO Burne</span>
+                </div>
+                
+                <article class="news-article">
+                    <header class="article-header">
+                        <h1 class="article-title">Welcome Our New School Resource Officer: Officer Elias Burne</h1>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="far fa-calendar-alt"></i> March 15, 2024</span>
+                            <span class="article-category"><i class="fas fa-tag"></i> Department News</span>
+                        </div>
+                    </header>
+                    
+                    <div class="article-featured-image" style="max-width: 600px; margin: 0 auto;">
+                        <img src="../images/staff/sroburne.jpg" alt="School Resource Officer Elias Burne" class="full-width-image">
+                        <p class="image-caption">Officer Elias Burne, Bar Harbor Police Department's newest School Resource Officer</p>
+                    </div>
+                    
+                    <div class="article-content">
+                        <p>We are proud to announce and recognize our newest School Resource Officer (SRO), Officer Elias Burne! SRO Burne has been an integral part of the Bar Harbor Mount Desert Police Department since 2018, where he has served with distinction in the patrol division.</p>
+                        
+                        <p>Officer Burne brings a wealth of experience and qualifications to his new role. He serves as a department Field Training Officer and M.A.R.C. instructor, and shares his expertise by teaching at the Maine Criminal Justice Academy. His connection to the local community runs deep - as a graduate of MDI High School himself, he now gives back by assisting in coaching the MDI HS football team.</p>
+                        
+                        <p>In his new role as School Resource Officer, SRO Burne will divide his time between three schools:</p>
+                        <ul>
+                            <li>MDI High School</li>
+                            <li>Conners-Emerson School in Bar Harbor</li>
+                            <li>Mount Desert Elementary School</li>
+                        </ul>
+                        
+                        <p>This assignment allows Officer Burne to serve the community where he grew up, making him uniquely qualified to connect with and understand the needs of our local students.</p>
+                        
+                        <blockquote>
+                            <p>Please join us in congratulating SRO Burne on his new assignment! His experience, dedication, and strong community ties make him an excellent choice for this important role in our schools.</p>
+                        </blockquote>
+                    </div>
+                    
+                    <footer class="article-footer">
+                        <div class="share-buttons">
+                            <span>Share this article:</span>
+                            <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="share-btn email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> Emergency: 911</p>
+                <p><i class="fas fa-phone"></i> Non-Emergency: (207) 288-3391</p>
+                <p><i class="fas fa-map-marker-alt"></i> 37 Firefly Lane, Bar Harbor, ME 04609</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../forms.html">Forms & Documents</a></li>
+                    <li><a href="../events.html">Events Calendar</a></li>
+                    <li><a href="../faq.html">FAQ</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bar Harbor Police Department. All rights reserved.</p>
+            <p class="last-updated">Last Updated: March 15, 2024</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+</body>
+</html> 
