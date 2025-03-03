@@ -3,7 +3,7 @@
 <html lang="en-US">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>Bar Harbor Mount Desert Police Department</title>
 <meta content="Official website of the Bar Harbor Mount Desert Police Department, serving the Bar Harbor Mount Desert community with pride and dedication." name="description"/>
 <meta content="Bar Harbor Police, Mount Desert, law enforcement, Maine police, public safety" name="keywords"/>
@@ -21,10 +21,13 @@
 <script src="darkmode.js"></script>
 <!-- Add these meta tags -->
 <meta content="#ffffff" id="theme-color" name="theme-color"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <script>
         // Update theme-color based on dark mode
         if (localStorage.getItem('darkMode') === 'enabled') {
             document.getElementById('theme-color').setAttribute('content', '#121212');
+            document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute('content', 'black');
         }
     </script>
 </head>
