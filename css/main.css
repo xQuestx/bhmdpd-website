@@ -27,9 +27,11 @@
 @import 'components/tabs.css';
 @import 'components/faq.css';
 @import 'components/services.css';
+@import 'components/services-enhanced.css'; /* Enhanced service components */
 
 /* Page-Specific Styles */
 @import 'pages/home.css';
+@import 'pages/home-enhanced.css'; /* Enhanced home page styles */
 @import 'pages/contact.css';
 @import 'pages/forms.css';
 @import 'pages/benefits.css';
