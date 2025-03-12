@@ -166,7 +166,7 @@ body.dark-mode .info-card,
 body.dark-mode .feature-card,
 body.dark-mode .news-card,
 body.dark-mode .quick-link-card {
-  background-color: var(--dark-mode-card-bg);
+  background-color: var(--dark-mode-card-bg, #2d2d2d) !important;
   border: none;
   border-radius: 12px;
   overflow: hidden;
@@ -174,16 +174,18 @@ body.dark-mode .quick-link-card {
 }
 
 body.dark-mode .card-header {
-  background-color: var(--dark-mode-primary-color);
+  background-color: var(--dark-mode-primary-color, #29487d) !important;
 }
 
 body.dark-mode .card-body,
 body.dark-mode .news-content p {
-  color: var(--dark-mode-text-color);
+  color: var(--dark-mode-text-color, #e0e0e0) !important;
+  background-color: var(--dark-mode-card-bg, #2d2d2d) !important;
 }
 
 body.dark-mode .card-footer {
-  border-top-color: var(--dark-mode-border-color);
+  border-top-color: var(--dark-mode-border-color, #404040);
+  background-color: var(--dark-mode-card-bg, #2d2d2d) !important;
 }
 
 /* Buttons - Apple style */
@@ -427,4 +429,91 @@ body.dark-mode .breadcrumbs a {
 
 body.dark-mode .breadcrumbs .separator {
   color: var(--gray-400);
+}
+
+/* Card and Content Text Colors */
+body.dark-mode .card-body,
+body.dark-mode .info-card .card-body,
+body.dark-mode .info-card li,
+body.dark-mode .info-card p,
+body.dark-mode .contact-item p,
+body.dark-mode .timeline-content,
+body.dark-mode .timeline-content li,
+body.dark-mode .process-overview p,
+body.dark-mode .requirement-card p,
+body.dark-mode .benefits-section p,
+body.dark-mode .benefits-section li,
+body.dark-mode .info-grid p,
+body.dark-mode .info-grid li {
+  color: var(--dark-mode-text-color, #e0e0e0) !important;
+}
+
+body.dark-mode .card-header h2,
+body.dark-mode .card-header h3,
+body.dark-mode .info-card h2,
+body.dark-mode .info-card h3,
+body.dark-mode .contact-item h3,
+body.dark-mode .timeline-content h3,
+body.dark-mode .process-overview h2,
+body.dark-mode .process-overview h3,
+body.dark-mode .requirement-card h3,
+body.dark-mode .benefits-section h2,
+body.dark-mode .benefits-section h3,
+body.dark-mode .info-grid h2,
+body.dark-mode .info-grid h3 {
+  color: var(--light-text-color, #ffffff) !important;
+}
+
+/* Ensure links are visible in dark mode */
+body.dark-mode .card-body a,
+body.dark-mode .info-card a,
+body.dark-mode .timeline-content a,
+body.dark-mode .process-overview a,
+body.dark-mode .requirement-card a,
+body.dark-mode .benefits-section a,
+body.dark-mode .info-grid a {
+  color: var(--accent-color, #007bff) !important;
+}
+
+body.dark-mode .card-body a:hover,
+body.dark-mode .info-card a:hover,
+body.dark-mode .timeline-content a:hover,
+body.dark-mode .process-overview a:hover,
+body.dark-mode .requirement-card a:hover,
+body.dark-mode .benefits-section a:hover,
+body.dark-mode .info-grid a:hover {
+  color: var(--accent-color-dark, #0056b3) !important;
+  text-decoration: underline;
+}
+
+/* Fix for all card bodies in dark mode */
+body.dark-mode .card-body,
+body.dark-mode .info-card .card-body,
+body.dark-mode .timeline-content,
+body.dark-mode .process-overview .card-body,
+body.dark-mode .requirement-card,
+body.dark-mode .benefits-section .card-body,
+body.dark-mode .info-grid .card-body,
+body.dark-mode .faq-answer,
+body.dark-mode .contact-details,
+body.dark-mode .news-content,
+body.dark-mode .feature-card .card-body {
+  background-color: var(--dark-mode-card-bg, #2d2d2d) !important;
+  color: var(--dark-mode-text-color, #e0e0e0) !important;
+}
+
+/* Fix for all card headers in dark mode */
+body.dark-mode .card-header,
+body.dark-mode .info-card .card-header,
+body.dark-mode .timeline-header,
+body.dark-mode .process-overview .card-header,
+body.dark-mode .requirement-header,
+body.dark-mode .benefits-section .card-header,
+body.dark-mode .info-grid .card-header,
+body.dark-mode .faq-question.active,
+body.dark-mode .contact-header,
+body.dark-mode .news-header,
+body.dark-mode .feature-card .card-header {
+  background-color: var(--dark-mode-primary-color, #29487d) !important;
+  color: var(--light-text-color, #ffffff) !important;
 } 

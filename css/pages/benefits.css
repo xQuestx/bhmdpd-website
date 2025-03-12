@@ -181,19 +181,29 @@ body.dark-mode .benefits-page .hero-section {
 }
 
 body.dark-mode .benefits-page .benefits-section {
-    background-color: var(--dark-bg, #121212);
+    background-color: var(--dark-mode-background, #121212);
 }
 
 body.dark-mode .benefits-page .info-card {
-    background: var(--dark-card-bg, #1e1e1e);
+    background-color: var(--dark-mode-card-bg, #2d2d2d) !important;
+    border-color: var(--dark-mode-border-color, #404040);
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
 }
 
 body.dark-mode .benefits-page .card-header {
-    background: var(--dark-primary, #2a3f6d);
+    background-color: var(--dark-mode-primary-color, #29487d) !important;
+    color: var(--light-text-color, #ffffff) !important;
 }
 
-body.dark-mode .benefits-page .feature-list li {
-    border-bottom-color: var(--dark-border, #333);
+body.dark-mode .benefits-page .card-body {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+    background-color: var(--dark-mode-card-bg, #2d2d2d) !important;
+}
+
+body.dark-mode .benefits-page .card-body p,
+body.dark-mode .benefits-page .card-body li,
+body.dark-mode .benefits-page .card-body ul {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
 }
 
 body.dark-mode .benefits-page .cta-section {

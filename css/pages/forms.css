@@ -32,13 +32,7 @@
   margin: 0 auto;
 }
 
-.forms-page .hero-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  color: var(--light-text-color);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
+/* Hero icon styling is now handled by the global hero.css */
 
 .forms-page .hero-content h1 {
   font-size: 2.8rem;
