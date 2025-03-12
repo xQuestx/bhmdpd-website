@@ -4,40 +4,61 @@
  */
 
 /* Main Content */
-.recruitment-page {
-  padding-top: var(--header-height, 80px);
+.recruitment {
+  padding-top: 0; /* Remove padding-top to avoid double spacing */
 }
 
 /* Hero Section */
-.recruitment__hero {
+.recruitment .hero-section {
   background: linear-gradient(rgba(26, 43, 74, 0.85), rgba(10, 20, 40, 0.95)),
               url('../../images/recruitment-hero.jpg') center/cover no-repeat;
   padding: 4rem 2rem;
   text-align: center;
   color: var(--light-text-color, #fff);
-  margin-top: 40px;
+  margin-top: var(--header-height, 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
 }
 
-.recruitment__hero-content {
+.recruitment .hero-content {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.recruitment__hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--light-text-color, #fff);
-  font-family: "Roboto Slab", serif;
+.recruitment .hero-icon {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  display: block;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.recruitment__hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+.recruitment .hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white !important;
+  font-family: "Roboto Slab", serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  font-weight: 700;
 }
 
-.recruitment__hero .btn {
+/* Add a more specific selector to override any other styles */
+.recruitment .hero-section .hero-content h1 {
+  color: white !important;
+}
+
+.recruitment .hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  color: white !important;
+  font-weight: 500;
+  opacity: 1 !important;
+}
+
+.recruitment .hero-section .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   background-color: var(--accent-color, #007bff);
@@ -48,10 +69,10 @@
   transition: all 0.3s ease;
 }
 
-.recruitment__hero .btn:hover {
+.recruitment .hero-section .btn:hover {
   background-color: var(--accent-dark, #0056b3);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Stats Section */
@@ -542,11 +563,11 @@
 }
 
 @media (max-width: 768px) {
-  .recruitment__hero {
+  .recruitment .hero-section {
     padding: 3rem 1.5rem;
   }
   
-  .recruitment__hero h1 {
+  .recruitment .hero-section h1 {
     font-size: 2rem;
   }
   
@@ -569,13 +590,19 @@
 }
 
 /* Dark Mode Styles */
-body.dark-mode .recruitment-page {
+body.dark-mode .recruitment {
   background-color: var(--dark-mode-background, #121212);
 }
 
-body.dark-mode .recruitment__hero {
-  background: linear-gradient(rgba(26, 43, 74, 0.85), rgba(10, 20, 40, 0.95)),
+body.dark-mode .recruitment .hero-section {
+  background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
               url('../../images/recruitment-hero.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .recruitment .hero-icon,
+body.dark-mode .recruitment .hero-section h1,
+body.dark-mode .recruitment .hero-section p {
+  color: var(--light-text-color-dark, #f0f0f0) !important;
 }
 
 body.dark-mode .stats-section,

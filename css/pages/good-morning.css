@@ -25,7 +25,7 @@
 .good-morning-page .hero-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: var(--accent-color, #007bff);
+  color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -225,6 +225,10 @@ body.dark-mode .step-header {
 
 body.dark-mode .step-body p {
   color: var(--dark-mode-text-color, #e0e0e0);
+}
+
+body.dark-mode .good-morning-page .hero-icon {
+  color: var(--light-text-color-dark, #f0f0f0);
 }
 
 .action-button i {
