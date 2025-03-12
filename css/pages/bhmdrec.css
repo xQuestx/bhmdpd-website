@@ -44,13 +44,7 @@
     letter-spacing: 0.5px;
 }
 
-.recruitment__hero-content .hero-icon {
-    font-size: 4rem;
-    margin-bottom: var(--spacing-md, 1.5rem);
-    color: white !important;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    opacity: 1 !important;
-}
+/* Hero icon styling moved to global hero.css */
 
 /* Also add styles for the hero-section class structure */
 .hero-section h1,

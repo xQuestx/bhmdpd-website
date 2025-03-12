@@ -18,12 +18,7 @@
     margin: 0 auto;
 }
 
-.hero-icon {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    display: block;
-    color: white;
-}
+/* Hero icon styling is now handled by the global hero.css */
 
 .admin-hero h1 {
     font-size: 3rem;
@@ -157,16 +152,32 @@ body.dark-mode .admin-hero {
 }
 
 body.dark-mode .info-card {
-    background-color: var(--dark-mode-card-bg, #2d2d2d);
+    background-color: var(--dark-mode-card-bg, #2d2d2d) !important;
     border-color: var(--dark-mode-border-color, #404040);
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
 }
 
 body.dark-mode .card-header {
-    background-color: var(--dark-mode-primary-color, #29487d);
+    background-color: var(--dark-mode-primary-color, #29487d) !important;
+    color: var(--light-text-color, #ffffff) !important;
+}
+
+body.dark-mode .card-body {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+    background-color: var(--dark-mode-card-bg, #2d2d2d) !important;
 }
 
 body.dark-mode .card-body li {
     border-bottom-color: var(--dark-mode-border-color, #404040);
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+}
+
+body.dark-mode .contact-item p {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+}
+
+body.dark-mode .contact-item h3 {
+    color: var(--light-text-color, #ffffff) !important;
 }
 
 /* Responsive Adjustments */

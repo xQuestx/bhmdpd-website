@@ -30,11 +30,7 @@
     opacity: 1 !important;
 }
 
-.hero-section.recruitment-hero .hero-icon {
-    font-size: 3.5rem;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-}
+/* Hero icon styling moved to global hero.css */
 
 .highlight-badges {
     display: flex;
@@ -376,18 +372,19 @@ body.dark-mode .process-overview {
 }
 
 body.dark-mode .timeline-content {
-    background-color: var(--dark-mode-card-bg, #1e1e1e);
-    border: 1px solid var(--dark-mode-border-color, #333);
-    color: var(--dark-mode-text-color, #f0f0f0);
+    background-color: var(--dark-mode-card-bg, #2d2d2d) !important;
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+    border-color: var(--dark-mode-border-color, #404040);
 }
 
 body.dark-mode .timeline-content h3 {
-    color: var(--dark-mode-heading-color, #fff);
+    color: var(--light-text-color, #ffffff) !important;
 }
 
 body.dark-mode .timeline-content p,
-body.dark-mode .timeline-content li {
-    color: var(--dark-mode-text-color, #f0f0f0);
+body.dark-mode .timeline-content li,
+body.dark-mode .timeline-content ul {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
 }
 
 body.dark-mode .requirements {
@@ -395,13 +392,12 @@ body.dark-mode .requirements {
 }
 
 body.dark-mode .requirement-card {
-    background-color: var(--dark-mode-card-bg, #1e1e1e);
-    border: 1px solid var(--dark-mode-border-color, #333);
-    color: var(--dark-mode-text-color, #f0f0f0);
+    background-color: var(--dark-mode-card-bg, #2d2d2d) !important;
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
 }
 
 body.dark-mode .requirement-card h3 {
-    color: var(--dark-mode-heading-color, #fff);
+    color: var(--light-text-color, #ffffff) !important;
 }
 
 body.dark-mode .requirement-card i {
@@ -458,4 +454,33 @@ main {
     .recruitment__hero-content h1 {
         font-size: 2rem;
     }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .application-process-page .process-overview {
+    background-color: var(--dark-mode-background, #121212);
+}
+
+body.dark-mode .step-number {
+    background-color: var(--dark-mode-primary-color, #29487d) !important;
+    color: var(--light-text-color, #ffffff) !important;
+}
+
+body.dark-mode .requirement-card {
+    background-color: var(--dark-mode-card-bg, #2d2d2d) !important;
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+}
+
+body.dark-mode .requirement-card h3 {
+    color: var(--light-text-color, #ffffff) !important;
+}
+
+body.dark-mode .cta-section {
+    background-color: var(--dark-mode-background, #121212);
+    color: var(--dark-mode-text-color, #f0f0f0);
+}
+
+body.dark-mode .btn-outline {
+    border-color: var(--dark-mode-border-color, #333);
+    color: var(--dark-mode-text-color, #f0f0f0);
 }

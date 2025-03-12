@@ -18,13 +18,7 @@
   margin-top: 0; /* Remove any top margin */
 }
 
-.hero-section.faq-hero .hero-icon {
-  font-size: 3rem;
-  color: white;
-  margin-bottom: 1.5rem;
-  display: block;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
+/* Hero icon styling moved to global hero.css */
 
 .hero-section.faq-hero .hero-content h1,
 .hero-section.faq-hero .hero-content p {
@@ -196,5 +190,5 @@ body.dark-mode .faq-cta p {
 }
 
 body.dark-mode .hero-section.faq-hero .hero-icon {
-  color: var(--light-text-color-dark, #f0f0f0);
+  /* Hero icon styling moved to global hero.css */
 } 

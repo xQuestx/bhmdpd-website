@@ -102,12 +102,13 @@
   --dark-accent-color: #3b9dff;
   --dark-gray-700: #444;
   --dark-mode-background: #121212;
-  --dark-mode-text-color: #f8f8f8;
-  --dark-mode-primary-color: #29487d; /* Lighter primary for dark mode */
-  --dark-mode-secondary-color: #333; /* Darker secondary for dark mode */
-  --dark-mode-card-bg: #242424;
-  --dark-mode-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-  --dark-mode-border-color: #444;
+  --dark-mode-text-color: #e0e0e0;
+  --dark-mode-primary-color: #29487d;
+  --dark-mode-secondary-color: #333333;
+  --dark-mode-card-bg: #2d2d2d;
+  --dark-mode-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  --dark-mode-border-color: #404040;
+  --dark-mode-accent-color: #3b9dff;
   
   /* Layout */
   --header-height: 80px;
@@ -128,6 +129,6 @@
   --color-light-bg: var(--dark-mode-background);
   --color-text: var(--dark-mode-text-color);
   --color-text-muted: #a0a0a0;
-  --primary-color: var(--dark-primary-color);
-  --accent-color: var(--dark-accent-color);
+  --primary-color: var(--dark-mode-primary-color);
+  --accent-color: var(--dark-mode-accent-color);
 }
