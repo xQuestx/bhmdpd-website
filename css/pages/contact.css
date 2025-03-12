@@ -24,7 +24,8 @@
 .contact-page .hero-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: var(--accent-color, #007bff);
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .contact-page h1 {
@@ -186,6 +187,10 @@ body.dark-mode .contact-page {
 body.dark-mode .contact-page .hero-section {
   background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
               url('../../images/backgrounds/background.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .contact-page .hero-icon {
+  color: var(--light-text-color-dark, #f0f0f0);
 }
 
 body.dark-mode .department-section h2 {

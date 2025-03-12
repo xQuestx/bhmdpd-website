@@ -52,6 +52,13 @@
     opacity: 1 !important;
 }
 
+/* Also add styles for the hero-section class structure */
+.hero-section h1,
+.hero-section .hero-content h1 {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 /* Stats section */
 .stats-section {
     padding: 60px 0;
