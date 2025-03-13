@@ -330,6 +330,40 @@ body.dark-mode .department-stats-widget .stat-item {
     background: #2980b9;
 }
 
+/* Clickable events in upcoming events widget */
+.upcoming-events-widget .event {
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.upcoming-events-widget .event:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .upcoming-events-widget .event:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.upcoming-events-widget .event h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+body.dark-mode .upcoming-events-widget .event h4 {
+    color: var(--light-text-color);
+}
+
+.upcoming-events-widget .event:hover h4 {
+    text-decoration: underline;
+}
+
 /* Common Forms Widget */
 .common-forms-widget {
     background: #f0f9f0;
