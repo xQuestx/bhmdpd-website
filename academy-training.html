@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Academy Training - Bar Harbor Police Department</title>
+<meta name="description" content="Learn about the Maine Criminal Justice Academy training requirements for Bar Harbor Police Department officers.">
+<!-- OpenGraph Tags -->
+<meta content="Maine Criminal Justice Academy - Bar Harbor Police" property="og:title"/>
+<meta content="Training Maine's Law Enforcement and Corrections Officers" property="og:description"/>
+<meta content="images/og-image.jpg" property="og:image"/>
+<meta content="website" property="og:type"/>
+<!-- Stylesheets -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<link href="css/main.css" rel="stylesheet"/>
+<link href="css/pages/academy-training.css" rel="stylesheet"/>
+<link href="css/components/hero.css" rel="stylesheet"/>
+<link href="css/themes/dark.css" rel="stylesheet"/>
+<!-- Add this right after your stylesheet links and before other scripts -->
+<style>
+    /* Direct fix for text visibility issues */
+    body.dark-mode .resources-cta h2,
+    body.dark-mode .career-cta h2 {
+        color: #ffffff !important;
+    }
+    
+    body.dark-mode .resources-cta p,
+    body.dark-mode .resources-cta .cta-text,
+    body.dark-mode .career-cta p,
+    body.dark-mode .career-cta .cta-text {
+        color: #ffffff !important;
+    }
+    
+    .resources-cta h2,
+    .career-cta h2 {
+        color: var(--primary-color, #1a2b4a) !important;
+    }
+    
+    .resources-cta p,
+    .resources-cta .cta-text,
+    .career-cta p,
+    .career-cta .cta-text {
+        color: var(--text-color, #333) !important;
+    }
+
+    /* New fix: Ensure both CTA sections have the same background for consistency */
+    .resources-cta,
+    .career-cta {
+        background-color: #f5f5f7 !important;
+    }
+    
+    body.dark-mode .resources-cta,
+    body.dark-mode .career-cta {
+        background-color: #2c2c2e !important;
+    }
+    
+    /* Fix for timeline year spans */
+    .timeline-marker {
+        position: relative;
+        z-index: 2; /* Ensure it's above the timeline line */
+    }
+    
+    .timeline-marker .year {
+        position: relative;
+        z-index: 2;
+        background-color: #fff; /* Match page background */
+        padding: 0 5px;
+        margin-right: -5px;
+    }
+    
+    body.dark-mode .timeline-marker .year {
+        background-color: #121212; /* Match dark mode background */
+    }
+    
+    /* Adjust dot position to align with year */
+    .timeline-marker .dot {
+        top: 0.6rem !important; /* Fine-tune alignment with year text */
+    }
+    
+    @media (max-width: 768px) {
+        .timeline-marker .year {
+            font-size: 1rem;
+            padding: 0 4px;
+            margin-right: -4px;
+        }
+        
+        .timeline-marker .dot {
+            top: 0.5rem !important;
+        }
+    }
+</style>
+<script src="darkmode.js"></script>
+<!-- Add these meta tags -->
+<meta content="#ffffff" id="theme-color" name="theme-color"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script>
+    // Check for dark mode preference
+    document.addEventListener('DOMContentLoaded', function() {
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark-mode');
+            document.body.classList.add('dark-mode');
+            document.getElementById('theme-color').setAttribute('content', '#121212');
+        }
+    });
+</script>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<a class="skip-to-main" href="#main-content">
+        Skip to main content
+    </a>
+<div class="scroll-progress"></div>
+<header class="header">
+<nav class="main-nav">
+<!-- Logo Section -->
+<a class="logo-link" href="index.html">
+<img alt="Bar Harbor Police Department Logo" class="logo" src="images/branding/logo.png"/>
+</a>
+<div class="nav-wrapper">
+<button aria-label="Close menu" class="mobile-close-btn">
+<i class="fas fa-times"></i>
+</button>
+<ul class="nav-links">
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li class="dropdown">
+<a href="#"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
+<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
+<li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
+<li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
+<li><a href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Unit</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#"><i class="fas fa-hands-helping"></i> Programs <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="good-morning-program.html"><i class="fas fa-sun"></i> Good Morning Program</a></li>
+<li><a href="community-outreach.html"><i class="fas fa-heart"></i> Community Outreach</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="active" href="#"><i class="fas fa-user-tie"></i> Recruitment <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="bhmdrec.html"><i class="fas fa-briefcase"></i> Career Opportunities</a></li>
+<li><a href="application-process.html"><i class="fas fa-file-alt"></i> Application Process</a></li>
+<li><a href="benefits.html"><i class="fas fa-medal"></i> Benefits &amp; Salary</a></li>
+<li><a class="active" href="academy-training.html"><i class="fas fa-chalkboard-teacher"></i> Academy Training</a></li>
+</ul>
+</li>
+<li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
+<li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+</ul>
+</div>
+<!-- Mobile Menu Button -->
+<button aria-label="Toggle menu" class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+<!-- Dark Mode Toggle -->
+<button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle" onclick="toggleDarkMode()">
+<i class="fas fa-moon"></i>
+<i class="fas fa-sun" style="display: none;"></i>
+</button>
+</nav>
+</header>
+<main class="academy-training-page" id="main-content">
+<div class="hero-section recruitment-hero">
+<div class="hero-content">
+<i class="fas fa-chalkboard-teacher hero-icon"></i>
+<h1>Maine Criminal Justice Academy</h1>
+<p>Training Maine's Law Enforcement and Corrections Officers</p>
+<div class="highlight-badges">
+<span class="badge"><i class="fas fa-map-marker-alt"></i> Vassalboro, Maine</span>
+<span class="badge"><i class="fas fa-graduation-cap"></i> Professional Standards</span>
+<span class="badge"><i class="fas fa-shield-alt"></i> Excellence in Training</span>
+</div>
+</div>
+</div>
+
+<div class="content-wrapper">
+<!-- Academy Overview -->
+<section class="process-overview">
+<div class="container">
+<div class="section-intro">
+<h2>About the Academy</h2>
+<p>The Maine Criminal Justice Academy (MCJA) is the official training institution for law enforcement and corrections officers in the state of Maine. Established by legislative mandate in 1972, the Academy is responsible for setting and maintaining professional standards through comprehensive training programs.</p>
+<p>Located at 15 Oak Grove Road in Vassalboro, Maine, the Academy serves as the central hub for basic and advanced training for all law enforcement and corrections personnel throughout the state.</p>
+</div>
+
+<!-- Training Programs Comparison Table -->
+<div class="training-programs">
+    <h2>Training Programs</h2>
+    <div class="programs-table-wrapper">
+        <div class="programs-table">
+            <div class="program-column">
+                <div class="program-header">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Basic Law Enforcement Training Program</h3>
+                    <div class="program-duration">18-Week Residential Program</div>
+                </div>
+                <ul class="program-features">
+                    <li><i class="fas fa-check"></i> Comprehensive academic curriculum</li>
+                    <li><i class="fas fa-check"></i> Chain of command structure</li>
+                    <li><i class="fas fa-check"></i> Lifetime fitness training</li>
+                    <li><i class="fas fa-check"></i> Report writing and documentation</li>
+                    <li><i class="fas fa-check"></i> Community policing strategies</li>
+                    <li><i class="fas fa-check"></i> Effective communications</li>
+                    <li><i class="fas fa-check"></i> Problem-solving techniques</li>
+                    <li><i class="fas fa-check"></i> Ethics and professional conduct</li>
+                </ul>
+                <div class="program-footer">
+                    <p>The BLETP is a residential program where cadets stay at the Academy Monday through Friday, with weekends off to return home. Two classes are offered annually, starting in January and August.</p>
+                </div>
+            </div>
+            
+            <div class="program-column">
+                <div class="program-header">
+                    <i class="fas fa-building"></i>
+                    <h3>Basic Corrections Training Program</h3>
+                    <div class="program-duration">5-Week, 200-Hour Program</div>
+                </div>
+                <ul class="program-features">
+                    <li><i class="fas fa-check"></i> Recently redesigned curriculum</li>
+                    <li><i class="fas fa-check"></i> Addresses changes in correctional facilities</li>
+                    <li><i class="fas fa-check"></i> Focus on inmate safety and security</li>
+                    <li><i class="fas fa-check"></i> De-escalation techniques</li>
+                    <li><i class="fas fa-check"></i> Crisis intervention</li>
+                    <li><i class="fas fa-check"></i> Correctional law and procedures</li>
+                    <li><i class="fas fa-check"></i> Professional standards</li>
+                </ul>
+                <div class="program-footer">
+                    <p>The BCTP provides essential training for corrections officers working in county and state facilities throughout Maine, ensuring they have the skills needed to maintain safe and secure environments.</p>
+                </div>
+            </div>
+            
+            <div class="program-column">
+                <div class="program-header">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>In-Service Training</h3>
+                    <div class="program-duration">Continuing Professional Development</div>
+                </div>
+                <ul class="program-features">
+                    <li><i class="fas fa-check"></i> Supervisor and Leadership Development</li>
+                    <li><i class="fas fa-check"></i> Executive Development</li>
+                    <li><i class="fas fa-check"></i> New Chiefs/Sheriffs Seminar</li>
+                    <li><i class="fas fa-check"></i> Intelligence Gathering</li>
+                    <li><i class="fas fa-check"></i> Interview and Interrogation</li>
+                    <li><i class="fas fa-check"></i> Police Photography</li>
+                    <li><i class="fas fa-check"></i> Evidence Collection</li>
+                    <li><i class="fas fa-check"></i> Regional and online training options</li>
+                </ul>
+                <div class="program-footer">
+                    <p>In-service training is delivered both at the Academy in Vassalboro and regionally throughout the state, in partnership with Dirigo Safety and Police1 online training platforms.</p>
+                </div>
+            </div>
+            
+            <div class="program-column">
+                <div class="program-header">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>Law Enforcement Pre-Service (LEPS)</h3>
+                    <div class="program-duration">Three-Phase Program</div>
+                </div>
+                <ul class="program-features">
+                    <li><i class="fas fa-check"></i> Phase 1: 40-hour online curriculum</li>
+                    <li><i class="fas fa-check"></i> Phase 2: 80-hour classroom instruction</li>
+                    <li><i class="fas fa-check"></i> Phase 3: 80-hour field supervision</li>
+                </ul>
+                <div class="program-footer">
+                    <p>The LEPS program is designed for individuals seeking to enter law enforcement prior to being hired by an agency. This program provides foundational knowledge and skills that prepare candidates for basic law enforcement duties.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Academy Leadership -->
+<div class="section-intro">
+<h2>Academy Leadership and Mission</h2>
+<p>The Academy is led by Director Jack Peck, who oversees a comprehensive mission focused on:</p>
+<ul>
+<li>Delivering high-quality basic training programs</li>
+<li>Providing ongoing professional development</li>
+<li>Ensuring training is accessible regionally and online</li>
+<li>Handling legislative issues related to law enforcement training</li>
+<li>Managing license and decertification processes with the MCJA Board</li>
+<li>Engaging with communities to enhance training effectiveness</li>
+</ul>
+</div>
+
+<!-- Historical Context -->
+<div class="timeline-section">
+    <h2>Historical Development</h2>
+    <div class="modern-timeline">
+        <div class="timeline-item">
+            <div class="timeline-marker">
+                <span class="year">1972</span>
+                <div class="dot"></div>
+            </div>
+            <div class="timeline-content">
+                <h3>Municipal and County Law Enforcement</h3>
+                <p>The Maine Legislature mandated the Academy to set training standards for Municipal and County Law Enforcement Officers.</p>
+                <div class="timeline-icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-marker">
+                <span class="year">1978</span>
+                <div class="dot"></div>
+            </div>
+            <div class="timeline-content">
+                <h3>Corrections Officers</h3>
+                <p>Training standards were established for Corrections Officers throughout the state.</p>
+                <div class="timeline-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-marker">
+                <span class="year">1989</span>
+                <div class="dot"></div>
+            </div>
+            <div class="timeline-content">
+                <h3>Pre-Service Training</h3>
+                <p>The Board of Trustees established pre-service training standards for law enforcement candidates.</p>
+                <div class="timeline-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Information -->
+<div class="contact-section">
+    <h2>Contact the Academy</h2>
+    <div class="contact-cards">
+        <div class="contact-card">
+            <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Location</h3>
+            <div class="contact-details">
+                <p>Maine Criminal Justice Academy<br>
+                15 Oak Grove Road<br>
+                Vassalboro, Maine 04989</p>
+            </div>
+        </div>
+        
+        <div class="contact-card">
+            <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3>Phone & Fax</h3>
+            <div class="contact-details">
+                <p><strong>Phone:</strong> (207) 877-8000<br>
+                <strong>Fax:</strong> (207) 877-8027</p>
+            </div>
+        </div>
+        
+        <div class="contact-card">
+            <div class="contact-icon">
+                <i class="fas fa-globe"></i>
+            </div>
+            <h3>Website</h3>
+            <div class="contact-details">
+                <a href="https://www.maine.gov/dps/mcja" target="_blank" class="website-link">
+                    <span>www.maine.gov/dps/mcja</span>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Resources -->
+<div class="cta-section resources-cta">
+<h2>Additional Resources</h2>
+<p class="cta-text">For more information about the Maine Criminal Justice Academy, including upcoming classes, forms, and detailed program information, visit the official MCJA website.</p>
+<div class="cta-buttons">
+<a class="btn btn-primary" href="https://www.maine.gov/dps/mcja" target="_blank">Visit MCJA Website</a>
+<a class="btn btn-outline" href="application-process.html">Application Process</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section career-cta">
+<h2>Ready to Begin Your Law Enforcement Career?</h2>
+<p class="cta-text">The Bar Harbor Police Department is looking for dedicated individuals who want to make a difference in our community. Join our team and receive top-tier training at the Maine Criminal Justice Academy.</p>
+<div class="cta-buttons">
+<a href="application-process.html" class="btn btn-primary">
+<i class="fas fa-file-alt"></i> Apply Now
+</a>
+<a href="contact.html" class="btn btn-outline">
+<i class="fas fa-envelope"></i> Contact Us
+</a>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-logo-container">
+<img alt="Bar Harbor Police Department Logo" class="footer-logo" src="images/branding/logo.png"/>
+<p><strong>Bar Harbor Police Department</strong></p>
+<p>37 Firefly Lane, Bar Harbor, ME 04609</p>
+<p>General Information: (207) 288-3391</p>
+<div class="social-icons">
+<a aria-label="Visit our Facebook page" class="facebook" href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Visit our YouTube channel" class="youtube" href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<div class="footer-links">
+<div class="footer-column">
+<h3>DIVISIONS</h3>
+<ul>
+<li><a href="harbor-master-division.html">Harbor Master</a></li>
+<li><a href="bar-harbor-parking.html">Parking Enforcement</a></li>
+<li><a href="administrative-services.html">Administrative Services</a></li>
+<li><a href="animalcontrol.html">Animal Control</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>SERVICES</h3>
+<ul>
+<li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" rel="noopener" target="_blank">AMBER Alert</a></li>
+<li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" rel="noopener" target="_blank">Missing Persons</a></li>
+<li><a href="community-outreach.html">Community Programs</a></li>
+<li><a href="mentalhealth.html">Mental Health Resources</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>CAREERS</h3>
+<ul>
+<li><a href="application-process.html">Application Process</a></li>
+<li><a href="opportunities.html">Career Opportunities</a></li>
+<li><a href="benefits.html">Benefits</a></li>
+<li><a href="application-process.html">Apply Now</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>ABOUT</h3>
+<ul>
+<li><a href="administration.html">Administration</a></li>
+<li><a href="command-staff.html">Command Staff</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-map">
+<h3>Our Location</h3>
+<iframe allowfullscreen="" height="250" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.076072177352!2d-68.20830382343881!3d44.38821380458311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4caebf7cae314357%3A0xb7e0edbf086c978c!2s37%20Firefly%20Ln%2C%20Bar%20Harbor%2C%20ME%2004609!5e1!3m2!1sen!2sus!4v1734624380504!5m2!1sen!2sus" style="border:0;" width="100%">
+</iframe>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
+<div class="last-updated">
+               Last updated: <time datetime="2024-08-01">August 1, 2024</time>
+</div>
+</div>
+</footer>
+<script>
+    // Direct toggle function for the onclick event
+    function toggleDarkMode() {
+        console.log('Toggle dark mode function called');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const moonIcon = darkModeToggle.querySelector('.fa-moon');
+        const sunIcon = darkModeToggle.querySelector('.fa-sun');
+        
+        // Toggle dark mode classes
+        document.body.classList.toggle('dark-mode');
+        document.documentElement.classList.toggle('dark-mode');
+        
+        // Check if dark mode is now enabled
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        
+        // Update localStorage and UI
+        if (isDarkMode) {
+            localStorage.setItem('darkMode', 'enabled');
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline-block';
+            document.getElementById('theme-color').setAttribute('content', '#121212');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+            moonIcon.style.display = 'inline-block';
+            sunIcon.style.display = 'none';
+            document.getElementById('theme-color').setAttribute('content', '#ffffff');
+        }
+    }
+
+    // Dark mode toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const moonIcon = darkModeToggle.querySelector('.fa-moon');
+        const sunIcon = darkModeToggle.querySelector('.fa-sun');
+        
+        // Check initial state
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            document.documentElement.classList.add('dark-mode');
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline-block';
+        }
+    });
+</script>
+<script src="darkmode.js"></script>
+<script src="script.js"></script>
+</body>
+</html> 
