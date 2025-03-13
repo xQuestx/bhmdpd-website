@@ -1319,4 +1319,106 @@ body.dark-mode .resources-cta p,
 body.dark-mode [class*="cta-section"] h2,
 body.dark-mode [class*="cta-section"] p {
     color: var(--light-text-color, #fff) !important;
+}
+
+/* Dark mode text visibility fixes */
+body.dark-mode .resources-cta h2,
+body.dark-mode .career-cta h2 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .resources-cta p,
+body.dark-mode .resources-cta .cta-text,
+body.dark-mode .career-cta p,
+body.dark-mode .career-cta .cta-text {
+    color: #ffffff !important;
+}
+
+.resources-cta h2,
+.career-cta h2 {
+    color: var(--primary-color, #1a2b4a) !important;
+}
+
+.resources-cta p,
+.resources-cta .cta-text,
+.career-cta p,
+.career-cta .cta-text {
+    color: var(--text-color, #333) !important;
+}
+
+/* CTA sections background consistency */
+.resources-cta,
+.career-cta {
+    background-color: #f5f5f7 !important;
+}
+
+body.dark-mode .resources-cta,
+body.dark-mode .career-cta {
+    background-color: #2c2c2e !important;
+}
+
+/* Button styling overrides */
+.resources-cta .btn-outline,
+.career-cta .btn-outline {
+    background-color: transparent !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    border-radius: 50px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    transition: all 0.3s ease !important;
+}
+
+body.dark-mode .resources-cta .btn-outline,
+body.dark-mode .career-cta .btn-outline {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+.resources-cta .btn-outline:hover,
+.career-cta .btn-outline:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+body.dark-mode .resources-cta .btn-outline:hover,
+body.dark-mode .career-cta .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Timeline styling */
+.timeline-marker {
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-marker .year {
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    padding: 0 5px;
+    margin-right: -5px;
+}
+
+body.dark-mode .timeline-marker .year {
+    background-color: #121212;
+}
+
+.timeline-marker .dot {
+    top: 0.6rem !important;
+}
+
+@media (max-width: 768px) {
+    .timeline-marker .year {
+        font-size: 1rem;
+        padding: 0 4px;
+        margin-right: -4px;
+    }
+    
+    .timeline-marker .dot {
+        top: 0.5rem !important;
+    }
 } 
