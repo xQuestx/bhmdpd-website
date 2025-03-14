@@ -1070,3 +1070,101 @@ body.dark-mode .recruitment-cta .primary-cta:hover {
 .community-resources-column > div:last-child {
     margin-bottom: 0;
 }
+
+/* Dark Mode Transition Styles */
+/* Add these at the end of the file */
+html, body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Apply transitions to all common elements that change in dark mode */
+.header, .footer, .main-nav, .nav-links, .dropdown-content, 
+.card, .btn, .hero-section, .info-card, .news-item, 
+.service-card, .resource-card, .quick-info, .cta-section,
+.featured-services, .news-hub-section, .recruitment-widget,
+.quick-links-widget, .common-forms-widget, .faq-widget,
+.upcoming-events-widget, .hero-overlay, .back-to-top,
+input, textarea, select, .form-control, table, th, td,
+.accordion-header, .accordion-body, .tab-button, .tab-content,
+.footer-content, .footer-bottom, .footer-links, .footer-column,
+.social-icons a, .hero-cta .btn, .info-icon, .category-header,
+.benefit-item, .salary-highlight, .hiring-badge, .pulse-circle {
+  transition: all 0.5s ease;
+}
+
+/* Ensure text and border colors also transition smoothly */
+* {
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+/* Exclude transitions from elements where it might cause issues */
+.mobile-menu-btn, .mobile-close-btn, 
+.scroll-progress, .hero-image, iframe, img, video, 
+.fa, .fas, .far, .fab, .badge-image, .logo {
+  transition: none;
+}
+
+/* Enhanced Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode-toggle .fa-moon,
+.dark-mode-toggle .fa-sun {
+  position: absolute;
+  font-size: 1.2rem;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.dark-mode-toggle .fa-moon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.dark-mode-toggle .fa-sun {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+body.dark-mode .dark-mode-toggle .fa-moon {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+body.dark-mode .dark-mode-toggle .fa-sun {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* Add a subtle animation during transition */
+html.transitioning,
+body.transitioning {
+  animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
