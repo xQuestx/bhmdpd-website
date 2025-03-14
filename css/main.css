@@ -1022,7 +1022,7 @@ body.dark-mode .recruitment-cta .primary-cta:hover {
 .community-resources-column .faq-widget,
 .community-resources-column .recruitment-widget {
     border-radius: 15px;
-    margin-bottom: 1.23rem;
+    margin-bottom: .55rem;
     box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     border: none;
     width: 100%;
