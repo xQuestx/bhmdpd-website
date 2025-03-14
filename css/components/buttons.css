@@ -288,3 +288,24 @@ body.dark-mode .btn-lg i {
     font-size: 1.1em !important;
     vertical-align: middle !important;
 }
+
+/* Phone button styling for CTA section */
+.cta-buttons .btn-outline-light {
+    display: inline-block !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    background-color: transparent !important;
+    border: 1px solid white !important;
+    padding: 0.85rem 1.75rem !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.cta-buttons .btn-outline-light:hover {
+    background-color: white !important;
+    color: var(--primary-color, #1a2b4a) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3) !important;
+}
