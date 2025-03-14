@@ -6,7 +6,7 @@
 /* Enhanced Hero Section */
 .modern-hero {
   position: relative;
-  height: 650px; /* Increased height for more impact */
+  height: 700px; /* Changed from 650px to 700px to match hero.css */
   overflow: hidden;
   margin-top: var(--header-height, 80px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -38,11 +38,11 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; /* Ensure this is 100% to match container */
   background: linear-gradient(135deg, 
-    rgba(26, 43, 74, 0.9) 0%, 
-    rgba(26, 43, 74, 0.8) 50%, 
-    rgba(26, 43, 74, 0.75) 100%);
+    rgba(26, 43, 74, 0.85) 0%, 
+    rgba(26, 43, 74, 0.75) 50%, 
+    rgba(26, 43, 74, 0.7) 100%); /* Updated gradient to match hero.css */
   z-index: 1;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .badge-image {
-  width: 170px; /* Slightly larger */
+  width: 180px; /* Updated to match hero.css */
   height: auto;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
   animation: badgePulse 3s infinite alternate; /* Subtle pulse animation */
@@ -114,13 +114,13 @@
 
 .hero-cta {
   display: flex;
-  gap: 1.5rem; /* More spacing between buttons */
-  margin-top: 2.5rem;
+  gap: 1.5rem; /* Match hero.css */
+  margin-top: 3rem; /* Updated to match hero.css */
   justify-content: center;
 }
 
 .hero-cta .btn {
-  padding: 0.85rem 2rem; /* Larger buttons */
+  padding: 0.85rem 1.75rem; /* Updated to match hero.css */
   font-size: 1.2rem;
   display: inline-flex;
   align-items: center;
@@ -616,7 +616,7 @@ a.btn-sm:hover {
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .modern-hero {
-    height: 550px;
+    height: 650px; /* Match our hero.css media query */
   }
   
   .hero-title {
@@ -630,7 +630,8 @@ a.btn-sm:hover {
 
 @media (max-width: 768px) {
   .modern-hero {
-    height: 500px;
+    height: auto;
+    min-height: 100vh; /* Match our hero.css media query */
   }
   
   .hero-title {
@@ -643,8 +644,10 @@ a.btn-sm:hover {
   
   .hero-cta {
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    gap: 1rem; /* Updated to match hero.css */
+    width: 100%;
+    max-width: 320px; /* Updated to match hero.css */
+    margin: 2.5rem auto 0; /* Updated to match hero.css */
   }
   
   .hero-cta .btn {
@@ -663,11 +666,19 @@ a.btn-sm:hover {
   .resources-sidebar {
     padding-top: 0;
   }
+  
+  .department-badge {
+    margin-bottom: 2.5rem; /* Updated to match hero.css */
+  }
+  
+  .badge-image {
+    width: 140px; /* Updated to match hero.css */
+  }
 }
 
 @media (max-width: 480px) {
   .modern-hero {
-    height: 450px;
+    height: 500px; /* Match our hero.css media query */
   }
   
   .hero-title {
@@ -675,7 +686,7 @@ a.btn-sm:hover {
   }
   
   .badge-image {
-    width: 130px;
+    width: 120px; /* Updated to match hero.css */
   }
   
   .section-title {
