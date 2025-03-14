@@ -1157,6 +1157,21 @@ body.dark-mode .dark-mode-toggle .fa-sun {
   transform: rotate(0deg);
 }
 
+/* Mobile styles for dark mode toggle */
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1002;
+  }
+  
+  .dark-mode-toggle:hover {
+    transform: translateY(-50%) translateY(-2px);
+  }
+}
+
 /* Add a subtle animation during transition */
 html.transitioning,
 body.transitioning {
