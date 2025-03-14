@@ -101,26 +101,49 @@
 }
 
 .cta-section {
-    background-color: #f8f9fa;
+    background-color: var(--primary-color, #1a2b4a);
+    color: white;
     padding: 3rem 0;
     margin-top: 2rem;
-    border-top: 1px solid #e9ecef;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cta-content {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-.cta-info h2 {
-    color: #2c3e50;
+.cta-content h2 {
+    color: white;
     margin-bottom: 1rem;
+    font-size: 2rem;
 }
 
-.cta-info h2 i {
-    margin-right: 0.5rem;
-    color: #3498db;
+.cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons a {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 .contact-details {
