@@ -501,4 +501,73 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Add News Dropdown to Navigation
+    function addNewsDropdown() {
+        const navLinks = document.querySelector('.nav-links');
+        if (!navLinks) return;
+        
+        // Check if News dropdown already exists
+        if (navLinks.querySelector('a[href="#"] i.fa-newspaper')) {
+            console.log('News dropdown already exists');
+            return;
+        }
+        
+        // Find the Contact link to insert before
+        const contactLink = Array.from(navLinks.children).find(li => {
+            const anchor = li.querySelector('a');
+            return anchor && anchor.textContent.trim().includes('Contact');
+        });
+        
+        if (!contactLink) {
+            console.log('Contact link not found');
+            return;
+        }
+        
+        // Create the News dropdown HTML
+        const newsDropdown = document.createElement('li');
+        newsDropdown.className = 'dropdown';
+        newsDropdown.innerHTML = `
+            <a href="#"><i class="fas fa-newspaper"></i> News <i class="fas fa-caret-down"></i></a>
+            <ul class="dropdown-content">
+                <li><a href="news.html"><i class="fas fa-list"></i> All News</a></li>
+                <li><a href="news.html#department-updates"><i class="fas fa-bullhorn"></i> Department Updates</a></li>
+                <li><a href="news.html#community-news"><i class="fas fa-users"></i> Community News</a></li>
+                <li><a href="news.html#press-releases"><i class="fas fa-file-alt"></i> Press Releases</a></li>
+            </ul>
+        `;
+        
+        // Fix paths for subdirectory pages
+        const path = window.location.pathname;
+        if (path.includes('/news-detail/') || path.includes('/subdirectory/')) {
+            const links = newsDropdown.querySelectorAll('a');
+            links.forEach(link => {
+                if (link.getAttribute('href').startsWith('news.html')) {
+                    link.setAttribute('href', '../' + link.getAttribute('href'));
+                }
+            });
+        }
+        
+        // Insert the News dropdown before the Contact link
+        navLinks.insertBefore(newsDropdown, contactLink);
+        console.log('News dropdown added successfully');
+    }
+
+    // Initialize all components
+    function initAll() {
+        console.log('Initializing all components');
+        initHeaderScroll();
+        initBackToTop();
+        initTabs();
+        initReadMore();
+        initMobileMenu();
+        initKeyboardNav();
+        initShareButtons();
+        initScrollProgress();
+        handleAnchorLinks();
+        addNewsDropdown();
+    }
+
+    // Call the initialization function
+    initAll();
 });
