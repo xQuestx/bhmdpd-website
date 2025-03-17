@@ -1,0 +1,194 @@
+/*
+ * Mobile Menu Fixes
+ * This file contains fixes for mobile menu issues
+ */
+
+/* Ensure mobile menu button is visible */
+.mobile-menu-btn {
+  display: none !important;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--gray-800);
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1002;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Show mobile menu button on mobile devices */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block !important;
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .mobile-menu-btn:hover {
+    color: var(--primary-color, #1a2b4a);
+  }
+  
+  .mobile-menu-btn.active {
+    color: var(--primary-color, #1a2b4a);
+  }
+  
+  .mobile-menu-btn.active i {
+    transform: rotate(90deg);
+  }
+}
+
+/* Mobile menu container */
+@media (max-width: 768px) {
+  .nav-wrapper {
+    position: fixed;
+    top: var(--header-height, 80px);
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - var(--header-height, 80px));
+    background-color: var(--primary-color, #1a2b4a);
+    transition: right 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    visibility: hidden;
+    margin-left: 0;
+    padding: 20px 5px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  
+  .nav-wrapper.active {
+    right: 0;
+    visibility: visible;
+  }
+  
+  /* Navigation links container */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+    width: 100%;
+    max-width: 250px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  /* Navigation links */
+  .nav-links > li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-links > li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-links > li > a,
+  .dropdown > a {
+    color: white;
+    padding: 1rem 0.5rem;
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links > li > a:hover,
+  .dropdown > a:hover,
+  .nav-links > li > a.active,
+  .dropdown > a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  /* Dropdown menus */
+  .dropdown {
+    width: 100%;
+    position: relative;
+  }
+  
+  .dropdown-content {
+    position: static;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+    transform: none;
+    margin-top: 0;
+    width: 100%;
+    border-radius: 0;
+    padding: 0;
+    display: block !important; /* Always display as block, but control visibility with other properties */
+  }
+  
+  .dropdown.active .dropdown-content {
+    visibility: visible !important;
+    max-height: 500px !important;
+    opacity: 1 !important;
+  }
+  
+  .dropdown-content a {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.75rem 0.5rem;
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .dropdown-content a i {
+    margin-right: 8px;
+  }
+  
+  .dropdown-content a:hover,
+  .dropdown-content a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-left: none;
+  }
+  
+  .dropdown-content a:last-child {
+    border-bottom: none;
+  }
+  
+  /* Caret icon in dropdowns */
+  .dropdown > a .fa-caret-down {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown.active > a .fa-caret-down {
+    transform: rotate(180deg);
+  }
+  
+  /* Prevent body scrolling when mobile menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+  
+  /* Dark mode adjustments */
+  .dark-mode .mobile-menu-btn {
+    color: var(--gray-200);
+  }
+  
+  .dark-mode .mobile-menu-btn:hover,
+  .dark-mode .mobile-menu-btn.active {
+    color: var(--accent-color, #4a90e2);
+  }
+  
+  /* Fix for News dropdown specifically */
+  .dropdown a i.fa-newspaper + .fa-caret-down {
+    margin-left: 8px;
+  }
+} 
