@@ -51,6 +51,9 @@
 @import 'themes/light.css';
 @import 'themes/dark.css';
 
+/* Mobile Menu Fixes - This should be the very last import */
+@import 'components/mobile-fix.css';
+
 /* Print Styles */
 @media print {
   body {
@@ -60,7 +63,7 @@
   
   .header, .footer, .hero-slider, .quick-links, 
   .career-spotlight, .stats-section, .cta-section,
-  .back-to-top, .scroll-progress, .mobile-menu-btn {
+  .back-to-top, .scroll-progress {
     display: none !important;
   }
   
@@ -1123,7 +1126,7 @@ input, textarea, select, .form-control, table, th, td,
 }
 
 /* Exclude transitions from elements where it might cause issues */
-.mobile-menu-btn, .mobile-close-btn, 
+.mobile-close-btn, 
 .scroll-progress, .hero-image, iframe, img, video, 
 .fa, .fas, .far, .fab, .badge-image, .logo {
   transition: none;
