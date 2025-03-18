@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8"/>
+    <title>Parking Permit Guide - Bar Harbor Police Department</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <!-- Dark mode initialization -->
+    <meta content="#ffffff" id="theme-color" name="theme-color"/>
+    <script src="darkmode.js"></script>
+    <script>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.getElementById('theme-color').setAttribute('content', '#121212');
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet"/>
+    <style>
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .step {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .step:last-child {
+            border-bottom: none;
+        }
+        
+        .step-number {
+            background-color: var(--accent-color, #f8a01c);
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color, #1a3c6c);
+        }
+        
+        .step-details {
+            margin-bottom: 15px;
+        }
+        
+        .step-image {
+            max-width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+        }
+        
+        .guide-section {
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .permit-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .permit-card {
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        
+        .permit-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color, #1a3c6c);
+        }
+        
+        @media (max-width: 768px) {
+            .step {
+                flex-direction: column;
+            }
+            
+            .permit-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-to-main" href="#main-content">
+        Skip to main content
+    </a>
+    <div class="scroll-progress"></div>
+    <header class="header">
+        <nav class="main-nav">
+            <!-- Logo -->
+            <a class="logo-link" href="index.html">
+                <img alt="Bar Harbor Police Department Logo" class="logo" src="images/branding/logo.png"/>
+            </a>
+            <!-- Navigation -->
+            <div class="nav-wrapper">
+                <button aria-label="Close menu" class="mobile-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="active" href="#">
+                            <i class="fas fa-building"></i> Divisions
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li>
+                                <a href="harbor-master-division.html">
+                                    <i class="fas fa-ship"></i> Harbor Master
+                                </a>
+                            </li>
+                            <li>
+                                <a class="active" href="bar-harbor-parking.html">
+                                    <i class="fas fa-parking"></i> Parking Enforcement
+                                </a>
+                            </li>
+                            <li>
+                                <a href="admin.html">
+                                    <i class="fas fa-users"></i> Administrative Services
+                                </a>
+                            </li>
+                            <li>
+                                <a href="animalcontrol.html">
+                                    <i class="fas fa-paw"></i> Animal Control
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mentalhealth.html">
+                                    <i class="fas fa-heart"></i> Mental Health Unit
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            <i class="fas fa-hands-helping"></i> Programs
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li>
+                                <a href="good-morning-program.html">
+                                    <i class="fas fa-sun"></i> Good Morning Program
+                                </a>
+                            </li>
+                            <li>
+                                <a href="community-outreach.html">
+                                    <i class="fas fa-heart"></i> Community Outreach
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            <i class="fas fa-user-tie"></i> Recruitment
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li>
+                                <a href="bhmdrec.html">
+                                    <i class="fas fa-briefcase"></i> Career Opportunities
+                                </a>
+                            </li>
+                            <li>
+                                <a href="application-process.html">
+                                    <i class="fas fa-file-alt"></i> Application Process
+                                </a>
+                            </li>
+                            <li>
+                                <a href="benefits.html">
+                                    <i class="fas fa-medal"></i> Benefits &amp; Salary
+                                </a>
+                            </li>
+                            <li>
+                                <a href="academy-training.html">
+                                    <i class="fas fa-chalkboard-teacher"></i> Academy Training
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="forms.html">
+                            <i class="fas fa-file-alt"></i> Forms
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faq.html">
+                            <i class="fas fa-question-circle"></i> FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="events.html">
+                            <i class="fas fa-calendar-alt"></i> Events
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button aria-label="Toggle menu" class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="main-content" id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section parking-hero">
+            <div class="hero-content">
+                <i class="fas fa-id-card hero-icon"></i>
+                <h1>Parking Permit Application Guide</h1>
+                <p>A step-by-step guide to obtain your Bar Harbor parking permit</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="guide-section">
+                <h1>Step-by-Step Permit Application Guide</h1>
+                <p>Follow this comprehensive guide to obtain your Bar Harbor parking permit through the online portal system.</p>
+                
+                <div class="callout">
+                    <div class="callout-title"><i class="fas fa-info-circle"></i> Before You Begin</div>
+                    <p>Make sure you have the following items ready:</p>
+                    <ul>
+                        <li>Current vehicle registration (must be registered in Bar Harbor)</li>
+                        <li>Credit card for payment (if applicable)</li>
+                        <li>Proof of residency or employment (depending on permit type)</li>
+                    </ul>
+                </div>
+                
+                <div class="step-container">
+                    <!-- Step 1 -->
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h2 class="step-title">Access and Log In</h2>
+                            <div class="step-details">
+                                <p>First, you'll need to access the permit portal and log in to your account:</p>
+                                <ol>
+                                    <li>Go to <a href="http://www.thepermitportal.com">thepermitportal.com</a></li>
+                                    <li>Log in with your existing account credentials</li>
+                                    <li>If you don't have an account, click "Register" to create one</li>
+                                </ol>
+                            </div>
+                            <img src="images/permitimages/ipsloginreg.png" alt="Login screen for the permit portal" class="step-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h2 class="step-title">Start the Application Process</h2>
+                            <div class="step-details">
+                                <p>From your dashboard, begin the application process:</p>
+                                <ol>
+                                    <li>Click the blue "Apply for Permit" button</li>
+                                    <li>You'll see a "Check Availability" screen where you need to select a location</li>
+                                    <li>From the dropdown, select "BH - Resident/Employee Permit Parking Areas" (or another permit type that meets your needs)</li>
+                                    <li>Enter the tentative start date for your permit (it defaults to the current date)</li>
+                                    <li>Choose between the permit options shown</li>
+                                    <li>Click the green "Apply" button next to your preferred permit type</li>
+                                </ol>
+                            </div>
+                            <img src="images/permitimages/applyforpermit.png" alt="Apply for permit screen" class="step-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h2 class="step-title">Complete the Permit Purchase Form</h2>
+                            <div class="step-details">
+                                <h3>Basic Information</h3>
+                                <ul>
+                                    <li>Note: The system shows you can apply for up to 10 permits per application</li>
+                                    <li>Enter the number of permits you need (default is 1)</li>
+                                    <li>Payment Option: Select "Credit Card" from the dropdown</li>
+                                    <li>Auto Payment: Check this box for automatic renewal (required for residential permits)</li>
+                                </ul>
+                                
+                                <h3>Address Section</h3>
+                                <ul>
+                                    <li>Your saved address should appear</li>
+                                    <li>If you need to add a different address, click the "+ ADD ADDRESS" button</li>
+                                </ul>
+                                
+                                <h3>Vehicle Information</h3>
+                                <ul>
+                                    <li>Select the vehicle(s) from your saved vehicles list by checking the box next to each one</li>
+                                    <li>If you need to add a new vehicle, click the "+ ADD VEHICLE" button</li>
+                                    <li>The system requires license plate number, make, model, color, and year for each vehicle</li>
+                                </ul>
+                                <div class="callout info-callout">
+                                    <div class="callout-title"><i class="fas fa-exclamation-circle"></i> Important Vehicle Information</div>
+                                    <p>Please be aware that in the "Edit Profile Vehicles" section, the license plates shown do not correspond to your permitted vehicle. To view the correct plate information, please navigate to the Orange Review/Renew button. There, you will find the plate details for the vehicle currently registered under your permit.</p>
+                                    <p><strong>Note:</strong> Once your employee permit is activated, you are not allowed to switch vehicles.</p>
+                                </div>
+                                <img src="images/permitimages/mypermitsvehinfo.png" alt="Vehicle information section" class="step-image">
+                                
+                                <h3>Document Information</h3>
+                                <ul>
+                                    <li>Upload required documents:
+                                        <ul>
+                                            <li>Current Vehicle Registration in the Town of Bar Harbor (Required)</li>
+                                            <li>Additional vehicle registrations (if applicable)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Click "Choose File" to upload each document</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h2 class="step-title">Submit Your Application</h2>
+                            <div class="step-details">
+                                <p>Review all the information for accuracy before submitting:</p>
+                                <ol>
+                                    <li>Check that all required fields are completed</li>
+                                    <li>Verify that all uploaded documents are correct</li>
+                                    <li>Scroll to the bottom of the form</li>
+                                    <li>Click the blue "Submit" button</li>
+                                </ol>
+                            </div>
+                            <img src="images/permitimages/reviewpermit.png" alt="Review and submit application" class="step-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h2 class="step-title">Process Payment (if applicable)</h2>
+                            <div class="step-details">
+                                <p>For permits that require payment:</p>
+                                <ol>
+                                    <li>You'll be directed to a payment screen after submitting your application</li>
+                                    <li>Enter your credit card details</li>
+                                    <li>Confirm the payment amount</li>
+                                    <li>Complete the payment process</li>
+                                </ol>
+                                <div class="callout">
+                                    <div class="callout-title"><i class="fas fa-credit-card"></i> Payment Information</div>
+                                    <p>Payment fees vary by permit type:</p>
+                                    <ul>
+                                        <li>Resident Vehicle Permit: Free</li>
+                                        <li>Employee Vehicle Permit: $30.00</li>
+                                        <li>Non-Resident Property Owner Permit: $75.00</li>
+                                        <li>Commercial Fishing Permit: $5.00</li>
+                                        <li>Bed & Breakfast Permit: $375.00</li>
+                                    </ul>
+                                    <p>All transactions may include a small processing fee.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 6 -->
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h2 class="step-title">Application Approval</h2>
+                            <div class="step-details">
+                                <p>After submitting your application:</p>
+                                <ol>
+                                    <li>Your application will be reviewed by the town office or parking enforcement</li>
+                                    <li>You'll receive an email notification when your permit is approved</li>
+                                    <li>For approved permits, you can print or save a digital copy from your account</li>
+                                </ol>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="callout">
+                    <div class="callout-title"><i class="fas fa-exclamation-triangle"></i> Important Notes</div>
+                    <ul>
+                        <li>For Bar Harbor permits, make sure to select options that begin with "BH"</li>
+                        <li>For residential permits, the auto-renewal checkbox is required</li>
+                        <li>You must upload proof of vehicle registration in Bar Harbor</li>
+                        <li>The Resident Vehicle Permit (Summer) is valid until the end of the year</li>
+                        <li>Make sure your vehicle information matches your registration documents</li>
+                        <li>If you need assistance, you can use the "Contact Us" link at the bottom of the page</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="guide-section">
+                <h2>Permit Types Reference</h2>
+                <p>Bar Harbor offers various types of parking permits to meet different needs. Review the options below to determine which permit is right for you.</p>
+                
+                <div class="permit-info-grid">
+                    <!-- Resident Vehicle Permit -->
+                    <div class="permit-card">
+                        <h3 class="permit-card-title"><i class="fas fa-home"></i> Resident Vehicle Permit</h3>
+                        <p><strong>Cost:</strong> Free</p>
+                        <p><strong>Eligibility:</strong> Residents with vehicle registration in Bar Harbor who pay excise tax to Bar Harbor</p>
+                        <p><strong>Required Documents:</strong> Current vehicle registration showing Bar Harbor address</p>
+                    </div>
+                    
+                    <!-- Employee Vehicle Permit -->
+                    <div class="permit-card">
+                        <h3 class="permit-card-title"><i class="fas fa-briefcase"></i> Employee Vehicle Permit</h3>
+                        <p><strong>Cost:</strong> $30.00</p>
+                        <p><strong>Eligibility:</strong> Non-resident employees of Bar Harbor businesses</p>
+                        <p><strong>Required Documents:</strong> Proof of employment in Bar Harbor</p>
+                    </div>
+                    
+                    <!-- Non-Resident Property Owner Permit -->
+                    <div class="permit-card">
+                        <h3 class="permit-card-title"><i class="fas fa-house-user"></i> Non-Resident Property Owner Permit</h3>
+                        <p><strong>Cost:</strong> $75.00</p>
+                        <p><strong>Eligibility:</strong> Non-residents who own residential property and pay property taxes to Bar Harbor</p>
+                        <p><strong>Required Documents:</strong> Proof of property ownership</p>
+                    </div>
+                    
+                    <!-- Guest of Resident Permit -->
+                    <div class="permit-card">
+                        <h3 class="permit-card-title"><i class="fas fa-user-friends"></i> Guest of Resident Permit</h3>
+                        <p><strong>Cost:</strong> Free</p>
+                        <p><strong>Eligibility:</strong> Guests of residents requiring on-street parking</p>
+                        <p><strong>Duration:</strong> Three days</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo-container">
+                <img alt="Bar Harbor Police Department Logo" class="footer-logo" src="images/branding/logo.png"/>
+                <p><strong>Bar Harbor Police Department</strong></p>
+                <p>37 Firefly Lane, Bar Harbor, ME 04609</p>
+                <p>General Information: (207) 288-3391</p>
+                <div class="social-icons">
+                    <a aria-label="Visit our Facebook page" class="facebook" href="https://www.facebook.com/profile.php?id=61555282019664" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                    <a aria-label="Visit our YouTube channel" class="youtube" href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>DIVISIONS</h3>
+                    <ul>
+                        <li><a href="harbor-master-division.html">Harbor Master</a></li>
+                        <li><a href="bar-harbor-parking.html">Parking Enforcement</a></li>
+                        <li><a href="admin.html">Administrative Services</a></li>
+                        <li><a href="animalcontrol.html">Animal Control</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>SERVICES</h3>
+                    <ul>
+                        <li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" rel="noopener" target="_blank">AMBER Alert</a></li>
+                        <li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" rel="noopener" target="_blank">Missing Persons</a></li>
+                        <li><a href="community-outreach.html">Community Programs</a></li>
+                        <li><a href="mentalhealth.html">Mental Health Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>CAREERS</h3>
+                    <ul>
+                        <li><a href="application-process.html">Application Process</a></li>
+                        <li><a href="opportunities.html">Career Opportunities</a></li>
+                        <li><a href="benefits.html">Benefits</a></li>
+                        <li><a href="application-process.html">Apply Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>ABOUT</h3>
+                    <ul>
+                        <li><a href="command-staff.html">Command Staff</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-map">
+                <h3>Our Location</h3>
+                <iframe allowfullscreen="" height="250" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.076072177352!2d-68.20830382343881!3d44.38821380458311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4caebf7cae314357%3A0xb7e0edbf086c978c!2s37%20Firefly%20Ln%2C%20Bar%20Harbor%2C%20ME%2004609!5e1!3m2!1sen!2sus!4v1734624380504!5m2!1sen!2sus" style="border:0;" title="Map showing Bar Harbor Police Department location" width="100%">
+                </iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
+            <div class="last-updated">
+                Last updated: <time datetime="2024-05-15">May 15th, 2024</time>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
