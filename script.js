@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded and parsed');
+    
+    // Add News Dropdown to Navigation first
+    console.log('Adding News dropdown to navigation');
+    addNewsDropdown();
+    console.log('News dropdown addition complete');
+    
+    // Then initialize components
+    initReadMore();
+    initMobileMenu();
+    initSmoothScroll();
+    initAnimations();
+    initAccordions();
+    initTabs();
+    initModals();
+    initTooltips();
+    initDropdowns();
+    
+    // Log initialization complete
+    console.log('All components initialized');
+    
+    // Force check mobile menu visibility on page load
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    if (mobileMenuBtn) {
+        if (window.innerWidth <= 768) {
+            mobileMenuBtn.style.display = 'block';
+        } else {
+            mobileMenuBtn.style.display = 'none';
+        }
+    }
+
     // Add this debugging code at the top
     console.log('Script loaded');
     
@@ -172,6 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const mobileCloseBtn = document.querySelector('.mobile-close-btn');
         const navWrapper = document.querySelector('.nav-wrapper');
         const body = document.body;
+        const dropdowns = document.querySelectorAll('.dropdown > a');
 
         if (mobileMenuBtn && navWrapper) {
             console.log('Mobile menu initialized');
@@ -186,22 +218,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Toggle icon
                 const icon = this.querySelector('i');
-                if (this.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                    
-                    // Close all dropdowns when closing the menu
-                    const activeDropdowns = navWrapper.querySelectorAll('.dropdown.active');
-                    activeDropdowns.forEach(dropdown => {
-                        dropdown.classList.remove('active');
-                        const caretIcon = dropdown.querySelector('.fa-caret-down');
-                        if (caretIcon) {
-                            caretIcon.style.transform = 'rotate(0deg)';
-                        }
-                    });
+                if (icon) {
+                    if (this.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                        
+                        // Close all dropdowns when closing the menu
+                        closeAllDropdowns();
+                    }
                 }
             });
             
@@ -215,20 +242,45 @@ document.addEventListener('DOMContentLoaded', function() {
                     body.classList.remove('menu-open');
                     
                     const icon = mobileMenuBtn.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
                     
                     // Close all dropdowns
-                    const activeDropdowns = navWrapper.querySelectorAll('.dropdown.active');
-                    activeDropdowns.forEach(dropdown => {
-                        dropdown.classList.remove('active');
-                        const caretIcon = dropdown.querySelector('.fa-caret-down');
-                        if (caretIcon) {
-                            caretIcon.style.transform = 'rotate(0deg)';
-                        }
-                    });
+                    closeAllDropdowns();
                 });
             }
+
+            // Toggle dropdowns on mobile
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        const parent = this.parentElement;
+                        
+                        // Check if this dropdown is already active
+                        const wasActive = parent.classList.contains('active');
+                        
+                        // First close all dropdowns
+                        closeAllDropdowns();
+                        
+                        // If it wasn't active before, open it
+                        if (!wasActive) {
+                            // Toggle current dropdown
+                            parent.classList.add('active');
+                            
+                            // Toggle caret icon
+                            const caret = this.querySelector('.fa-caret-down');
+                            if (caret) {
+                                caret.style.transform = 'rotate(180deg)';
+                            }
+                        }
+                    }
+                });
+            });
 
             // Close menu when clicking outside
             document.addEventListener('click', function(e) {
@@ -239,119 +291,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     navWrapper.classList.remove('active');
                     mobileMenuBtn.classList.remove('active');
                     body.classList.remove('menu-open');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                    
-                    // Close all dropdowns
-                    const activeDropdowns = navWrapper.querySelectorAll('.dropdown.active');
-                    activeDropdowns.forEach(dropdown => {
-                        dropdown.classList.remove('active');
-                        const caretIcon = dropdown.querySelector('.fa-caret-down');
-                        if (caretIcon) {
-                            caretIcon.style.transform = 'rotate(0deg)';
-                        }
-                    });
-                }
-            });
-
-            // Handle dropdowns in mobile menu
-            const dropdowns = navWrapper.querySelectorAll('.dropdown > a');
-            dropdowns.forEach(dropdown => {
-                dropdown.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        console.log('Dropdown clicked in mobile view');
-                        e.preventDefault();
-                        e.stopPropagation(); // Prevent event bubbling
-                        
-                        // Close other dropdowns
-                        const allDropdowns = navWrapper.querySelectorAll('.dropdown');
-                        allDropdowns.forEach(item => {
-                            if (item !== this.parentElement) {
-                                item.classList.remove('active');
-                                const otherCaret = item.querySelector('.fa-caret-down');
-                                if (otherCaret) {
-                                    otherCaret.style.transform = 'rotate(0deg)';
-                                }
-                            }
-                        });
-                        
-                        // Toggle the current dropdown
-                        this.parentElement.classList.toggle('active');
-                        
-                        // Toggle caret icon rotation
-                        const caretIcon = this.querySelector('.fa-caret-down');
-                        if (caretIcon) {
-                            caretIcon.style.transform = this.parentElement.classList.contains('active') 
-                                ? 'rotate(180deg)' 
-                                : 'rotate(0deg)';
-                        }
-                    }
-                });
-            });
-            
-            // Handle all navigation links in mobile view for consistent behavior
-            const allNavLinks = navWrapper.querySelectorAll('.nav-links > li > a:not(.dropdown > a)');
-            allNavLinks.forEach(link => {
-                if (!link.closest('.dropdown')) {
-                    link.addEventListener('click', function(e) {
-                        if (window.innerWidth <= 768) {
-                            console.log('Nav link clicked in mobile view');
-                            // Don't prevent default to allow navigation
-                            
-                            // Close the menu
-                            navWrapper.classList.remove('active');
-                            mobileMenuBtn.classList.remove('active');
-                            body.classList.remove('menu-open');
-                            const icon = mobileMenuBtn.querySelector('i');
-                            if (icon) {
-                                icon.classList.remove('fa-times');
-                                icon.classList.add('fa-bars');
-                            }
-                            
-                            // Add visual feedback
-                            this.classList.add('clicked');
-                            setTimeout(() => {
-                                this.classList.remove('clicked');
-                            }, 300);
-                        }
-                    });
-                }
-            });
-            
-            // Allow clicking on dropdown links in mobile view
-            const dropdownLinks = navWrapper.querySelectorAll('.dropdown-content a');
-            dropdownLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        console.log('Dropdown link clicked');
-                        // Don't prevent default here to allow navigation
-                        // Just close the menu
-                        navWrapper.classList.remove('active');
-                        mobileMenuBtn.classList.remove('active');
-                        body.classList.remove('menu-open');
-                        const icon = mobileMenuBtn.querySelector('i');
-                        if (icon) {
-                            icon.classList.remove('fa-times');
-                            icon.classList.add('fa-bars');
-                        }
-                        
-                        // Add visual feedback
-                        this.classList.add('clicked');
-                        setTimeout(() => {
-                            this.classList.remove('clicked');
-                        }, 300);
-                    }
-                });
-            });
-            
-            // Add resize handler to reset mobile menu when switching to desktop view
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768 && navWrapper.classList.contains('active')) {
-                    console.log('Window resized to desktop, resetting mobile menu');
-                    navWrapper.classList.remove('active');
-                    mobileMenuBtn.classList.remove('active');
-                    body.classList.remove('menu-open');
                     
                     const icon = mobileMenuBtn.querySelector('i');
                     if (icon) {
@@ -359,146 +298,301 @@ document.addEventListener('DOMContentLoaded', function() {
                         icon.classList.add('fa-bars');
                     }
                     
-                    // Reset all dropdowns
-                    const activeDropdowns = navWrapper.querySelectorAll('.dropdown.active');
-                    activeDropdowns.forEach(dropdown => {
-                        dropdown.classList.remove('active');
-                        const caretIcon = dropdown.querySelector('.fa-caret-down');
-                        if (caretIcon) {
-                            caretIcon.style.transform = 'rotate(0deg)';
-                        }
-                    });
+                    // Close all dropdowns
+                    closeAllDropdowns();
                 }
             });
         }
+    }
+    
+    // Helper function to close all dropdowns
+    function closeAllDropdowns() {
+        console.log('Closing all dropdowns');
+        const allDropdowns = document.querySelectorAll('.dropdown');
+        
+        allDropdowns.forEach(dropdown => {
+            // Remove active class
+            dropdown.classList.remove('active');
+            
+            // Reset caret rotation
+            const caret = dropdown.querySelector('.fa-caret-down');
+            if (caret) {
+                caret.style.transform = 'rotate(0deg)';
+            }
+            
+            // Hide dropdown content
+            const content = dropdown.querySelector('.dropdown-content');
+            if (content) {
+                content.style.visibility = 'hidden';
+                content.style.maxHeight = '0';
+                content.style.opacity = '0';
+            }
+        });
     }
 
     // Initialize all components
-    initHeaderScroll();
-    initBackToTop();
-    initTabs();
-    initReadMore();
-    initMobileMenu();
-
-    // Initialize scroll progress if element exists
-    const progressBar = document.querySelector('.scroll-progress');
-    if (progressBar) {
-        initScrollProgress();
+    function initAll() {
+        console.log('Initializing all components');
+        // These are already called at the top of the file
+        // initHeaderScroll();
+        // initBackToTop();
+        // initTabs();
+        // initReadMore();
+        // initMobileMenu();
+        // initKeyboardNav();
+        // initShareButtons();
+        // initScrollProgress();
+        // handleAnchorLinks();
+        // addNewsDropdown();
     }
 
-    function initKeyboardNav() {
-        const dropdowns = document.querySelectorAll('.dropdown');
+    // Don't call the initialization function again
+    // initAll();
+
+    // Helper function to set up mobile dropdown functionality
+    function setupMobileDropdown(dropdown) {
+        console.log('Setting up mobile dropdown for:', dropdown);
+        const dropdownLink = dropdown.querySelector('a');
+        const navWrapper = document.querySelector('.nav-wrapper');
+        const dropdownContent = dropdown.querySelector('.dropdown-content');
         
-        dropdowns.forEach(dropdown => {
-            const link = dropdown.querySelector('a');
-            const content = dropdown.querySelector('.dropdown-content');
+        if (!navWrapper) {
+            console.log('Nav wrapper not found');
+            return;
+        }
+        
+        // Add click event for mobile dropdown toggle
+        if (dropdownLink) {
+            console.log('Adding click event to dropdown link');
             
-            link.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
+            // Remove any existing click event listeners
+            const newDropdownLink = dropdownLink.cloneNode(true);
+            dropdownLink.parentNode.replaceChild(newDropdownLink, dropdownLink);
+            
+            newDropdownLink.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    console.log('Dropdown clicked in mobile view');
                     e.preventDefault();
-                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-                }
-            });
-        });
-    }
-
-    // Add to your initialization
-    initKeyboardNav();
-
-    function initShareButtons() {
-        document.querySelectorAll('.share-btn').forEach(btn => {
-            btn.addEventListener('click', async () => {
-                const card = btn.closest('.news-card');
-                const title = card.querySelector('h3').textContent;
-                const text = card.querySelector('.news-preview p').textContent;
-                
-                if (navigator.share) {
-                    try {
-                        await navigator.share({
-                            title: title,
-                            text: text,
-                            url: window.location.href
-                        });
-                    } catch (err) {
-                        console.log('Error sharing:', err);
-                    }
-                } else {
-                    // Fallback copy to clipboard
-                    navigator.clipboard.writeText(window.location.href);
-                    alert('Link copied to clipboard!');
-                }
-            });
-        });
-    }
-
-    // Add to your initialization
-    initShareButtons();
-
-    function initScrollProgress() {
-        const scrollProgress = document.querySelector('.scroll-progress');
-        if (scrollProgress) {
-            window.addEventListener('scroll', () => {
-                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const progress = (window.scrollY / totalHeight) * 100;
-                scrollProgress.style.width = `${progress}%`;
-            });
-        }
-    }
-
-    // Make sure to call it after DOM is loaded
-    initScrollProgress();
-
-    // Add this function to handle anchor navigation
-    function handleAnchorLinks() {
-        // Check if we have a hash in the URL (anchor link)
-        if (window.location.hash) {
-            // Prevent the default scroll
-            event.preventDefault();
-            
-            // Get the target element
-            const targetId = window.location.hash.substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                // Wait a brief moment for page to settle
-                setTimeout(() => {
-                    // Get header height for offset
-                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    e.stopPropagation(); // Prevent event bubbling
                     
-                    // Calculate position
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+                    // Get all dropdowns
+                    const allDropdowns = document.querySelectorAll('.dropdown');
+                    const parent = this.parentElement;
                     
-                    // Smooth scroll to element
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
+                    // Check if this dropdown is already active
+                    const wasActive = parent.classList.contains('active');
+                    
+                    // First, close ALL dropdowns
+                    allDropdowns.forEach(item => {
+                        // Remove active class
+                        item.classList.remove('active');
+                        
+                        // Reset caret rotation
+                        const caret = item.querySelector('.fa-caret-down');
+                        if (caret) {
+                            caret.style.transform = 'rotate(0deg)';
+                        }
+                        
+                        // Hide dropdown content
+                        const content = item.querySelector('.dropdown-content');
+                        if (content) {
+                            content.style.visibility = 'hidden';
+                            content.style.maxHeight = '0';
+                            content.style.opacity = '0';
+                        }
                     });
-                }, 100);
+                    
+                    // If the clicked dropdown wasn't active before, open it
+                    if (!wasActive) {
+                        // Toggle the current dropdown
+                        parent.classList.add('active');
+                        console.log('Opening dropdown:', parent);
+                        
+                        // Rotate caret icon
+                        const caretIcon = this.querySelector('.fa-caret-down');
+                        if (caretIcon) {
+                            caretIcon.style.transform = 'rotate(180deg)';
+                        }
+                        
+                        // Show dropdown content
+                        if (dropdownContent) {
+                            dropdownContent.style.visibility = 'visible';
+                            dropdownContent.style.maxHeight = '500px';
+                            dropdownContent.style.opacity = '1';
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Add click events to dropdown links
+        const dropdownLinks = dropdown.querySelectorAll('.dropdown-content a');
+        dropdownLinks.forEach(link => {
+            // Remove any existing click event listeners
+            const newLink = link.cloneNode(true);
+            link.parentNode.replaceChild(newLink, link);
+            
+            newLink.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    console.log('Dropdown link clicked in mobile view');
+                    // Don't prevent default here to allow navigation
+                    
+                    // Close the menu
+                    navWrapper.classList.remove('active');
+                    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.classList.remove('active');
+                        const icon = mobileMenuBtn.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                    document.body.classList.remove('menu-open');
+                    
+                    // Add visual feedback
+                    this.classList.add('clicked');
+                    setTimeout(() => {
+                        this.classList.remove('clicked');
+                    }, 300);
+                }
+            });
+        });
+    }
+
+    // Add News Dropdown to Navigation
+    function addNewsDropdown() {
+        console.log('Starting addNewsDropdown function');
+        const navLinks = document.querySelector('.nav-links');
+        if (!navLinks) {
+            console.log('Nav links not found');
+            return;
+        }
+        
+        console.log('Nav links found:', navLinks);
+        
+        // Check if News dropdown already exists
+        const existingNewsDropdown = navLinks.querySelector('li.dropdown a i.fa-newspaper');
+        if (existingNewsDropdown) {
+            console.log('News dropdown already exists');
+            // Even if it exists, make sure it has proper event listeners
+            const existingDropdownLi = existingNewsDropdown.closest('li.dropdown');
+            if (existingDropdownLi) {
+                console.log('Setting up existing News dropdown');
+                setupMobileDropdown(existingDropdownLi);
             }
+            return;
+        }
+        
+        // Find the Contact link to insert before
+        const contactLink = Array.from(navLinks.children).find(li => {
+            const anchor = li.querySelector('a');
+            return anchor && anchor.textContent.trim().includes('Contact');
+        });
+        
+        // Create the News dropdown HTML
+        const newsDropdown = document.createElement('li');
+        newsDropdown.className = 'dropdown';
+        
+        // Create the dropdown HTML structure
+        const dropdownHTML = `
+            <a href="#"><i class="fas fa-newspaper"></i> News <i class="fas fa-caret-down"></i></a>
+            <ul class="dropdown-content">
+                <li><a href="news.html"><i class="fas fa-list"></i> All News</a></li>
+                <li><a href="news.html#department-updates"><i class="fas fa-bullhorn"></i> Department Updates</a></li>
+                <li><a href="news.html#community-news"><i class="fas fa-users"></i> Community News</a></li>
+                <li><a href="news.html#press-releases"><i class="fas fa-file-alt"></i> Press Releases</a></li>
+            </ul>
+        `;
+        
+        newsDropdown.innerHTML = dropdownHTML;
+        console.log('Created news dropdown element:', newsDropdown);
+        
+        // Fix paths for subdirectory pages
+        fixNewsDropdownPaths(newsDropdown);
+        
+        // Insert the dropdown in the correct position
+        if (contactLink) {
+            console.log('Contact link found, inserting before it');
+            navLinks.insertBefore(newsDropdown, contactLink);
+        } else {
+            console.log('Contact link not found, appending to end');
+            navLinks.appendChild(newsDropdown);
+        }
+        
+        console.log('News dropdown added to DOM');
+        
+        // Add mobile menu event listeners to the new dropdown
+        setupMobileDropdown(newsDropdown);
+        
+        // Force a redraw to ensure the dropdown is visible
+        setTimeout(() => {
+            newsDropdown.style.display = 'none';
+            newsDropdown.offsetHeight; // Force reflow
+            newsDropdown.style.display = '';
+        }, 100);
+    }
+
+    // Helper function to fix paths for subdirectory pages
+    function fixNewsDropdownPaths(dropdown) {
+        console.log('Fixing paths for news dropdown');
+        const path = window.location.pathname;
+        if (path.includes('/news-detail/') || path.includes('/subdirectory/')) {
+            console.log('In subdirectory, adjusting paths');
+            const links = dropdown.querySelectorAll('a');
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('news.html')) {
+                    const newHref = '../' + href;
+                    console.log(`Updating href from ${href} to ${newHref}`);
+                    link.setAttribute('href', newHref);
+                }
+            });
         }
     }
 
-    // Add to your initialization
-    handleAnchorLinks();
+    // Initialize smooth scrolling
+    function initSmoothScroll() {
+        console.log('Initializing smooth scroll');
+        // Implementation for smooth scrolling
+    }
     
-    // Handle dynamic navigation to anchor links
-    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href').split('#')[1];
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                e.preventDefault();
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
+    // Initialize animations
+    function initAnimations() {
+        console.log('Initializing animations');
+        // Implementation for animations
+    }
+    
+    // Initialize accordions
+    function initAccordions() {
+        console.log('Initializing accordions');
+        // Implementation for accordions
+    }
+    
+    // Initialize modals
+    function initModals() {
+        console.log('Initializing modals');
+        // Implementation for modals
+    }
+    
+    // Initialize tooltips
+    function initTooltips() {
+        console.log('Initializing tooltips');
+        // Implementation for tooltips
+    }
+    
+    // Initialize dropdowns
+    function initDropdowns() {
+        console.log('Initializing dropdowns');
+        
+        // Get all dropdowns
+        const allDropdowns = document.querySelectorAll('.dropdown');
+        console.log('Found dropdowns:', allDropdowns.length);
+        
+        // Set up each dropdown
+        allDropdowns.forEach(dropdown => {
+            console.log('Setting up dropdown:', dropdown);
+            setupMobileDropdown(dropdown);
         });
-    });
+    }
 });

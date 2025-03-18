@@ -58,6 +58,15 @@
 <li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
 <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
 <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+<li class="dropdown">
+<a href="#"><i class="fas fa-newspaper"></i> News <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="news.html"><i class="fas fa-list"></i> All News</a></li>
+<li><a href="news.html#department-updates"><i class="fas fa-bullhorn"></i> Department Updates</a></li>
+<li><a href="news.html#community-news"><i class="fas fa-users"></i> Community News</a></li>
+<li><a href="news.html#press-releases"><i class="fas fa-file-alt"></i> Press Releases</a></li>
+</ul>
+</li>
 <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
 </ul>
 </div>
@@ -187,6 +196,7 @@
 </div>
 </div>
 </div>
+</div>
 <!-- ParkMobile Tab -->
 <div class="tab-content" id="parkmobile">
 <div class="info-card">
@@ -215,6 +225,7 @@
 <h3><i class="fas fa-video"></i> How to Use ParkMobile</h3>
 <div class="video-container">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/RBSYC32KC-8" width="560"></iframe>
+</div>
 </div>
 </div>
 </div>
@@ -266,7 +277,8 @@
 </div>
 </div>
 </div>
-<!-- Contest Citation -->
+
+<!-- Contest Citation - Moved inside the citations tab -->
 <div class="section-group">
 <h3><i class="fas fa-gavel"></i> Contesting a Citation</h3>
 <div class="feature-card">
@@ -289,6 +301,7 @@
 </div>
 </div>
 </div>
+
 <!-- Contact Information -->
 <div class="section-group">
 <div class="contact-card">
@@ -305,125 +318,268 @@
 </div>
 </div>
 </div>
+
 <!-- Seasonal Tab -->
 <div class="tab-content" id="seasonal">
 <div class="info-card">
 <div class="card-header">
 <i class="fas fa-calendar-alt"></i>
-<h2>Seasonal Parking Information</h2>
+<h2>Seasonal Permits & Information</h2>
 </div>
 <div class="card-body">
-<div class="season-section">
-<div class="season-header">
-<i class="fas fa-sun"></i>
-<h3>Summer Season</h3>
-<span class="date-badge">May 15 - October 30</span>
-</div>
-<div class="rate-info">
-<h4>Parking Rates &amp; Hours</h4>
+<div class="seasonal-info">
+<!-- Season Details -->
+<div class="section-group">
+<h3><i class="fas fa-clock"></i> Seasonal Hours & Dates</h3>
 <ul class="feature-list">
-<li>
-<i class="fas fa-dollar-sign"></i>
-<span>
-<strong>Premium Zones:</strong> $4.00/hour
-                                                </span>
-</li>
-<li>
-<i class="fas fa-dollar-sign"></i>
-<span>
-<strong>Standard Zones:</strong> $2.00/hour
-                                                </span>
-</li>
-<li>
-<i class="fas fa-clock"></i>
-<span>
-<strong>Hours:</strong> Mon-Sat 8AM-9PM, Sun 12PM-9PM
-                                                </span>
-</li>
+<li><i class="fas fa-calendar-alt"></i> Season: May 15 - October 30</li>
+<li><i class="fas fa-clock"></i> Monday-Saturday: 8:00 AM - 9:00 PM</li>
+<li><i class="fas fa-sun"></i> Sunday: 12:00 PM - 9:00 PM</li>
+<li><i class="fas fa-ban"></i> Off-Season: No paid parking required</li>
 </ul>
 </div>
-<div class="contractor-permits">
-<h4><i class="fas fa-hard-hat"></i> Contractor &amp; Special Event Permits</h4>
-<div class="permit-cards">
-<div class="permit-card">
-<div class="permit-header">
-<h5>Non-Premium Areas</h5>
-<span class="price-tag">$24.00/day</span>
+
+<!-- Resident Permits -->
+<div class="section-group mt-4">
+<h3><i class="fas fa-home"></i> Resident Permits</h3>
+<div class="permit-grid">
+    <div class="permit-card">
+        <div class="permit-header">
+            <i class="fas fa-id-card"></i>
+            <h4>Resident Vehicle Permit</h4>
+        </div>
+        <div class="permit-details">
+            <p class="permit-price">FREE</p>
+            <ul class="feature-list">
+                <li>Residents who pay excise tax to Bar Harbor</li>
+                <li>One free permit per registered vehicle</li>
+                <li>Must provide proof of Bar Harbor registration</li>
+                <li>Available at Finance Department</li>
+            </ul>
+            <div class="qr-code-hint">
+                <i class="fas fa-qrcode"></i> Scan QR code on posted signs for quick application
+            </div>
+        </div>
+    </div>
+    
+    <div class="permit-card">
+        <div class="permit-header">
+            <i class="fas fa-user-friends"></i>
+            <h4>Guest of Resident</h4>
+        </div>
+        <div class="permit-details">
+            <p class="permit-price">FREE</p>
+            <ul class="feature-list">
+                <li>Guests of residents requiring on-street parking</li>
+                <li>Valid in "Permit Only Parking" areas</li>
+                <li>Three day duration</li>
+                <li>Available at Parking Enforcement or Finance</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="permit-card">
+        <div class="permit-header">
+            <i class="fas fa-ship"></i>
+            <h4>Resident Recreational Boater</h4>
+        </div>
+        <div class="permit-details">
+            <p class="permit-price">$24.00/day</p>
+            <ul class="feature-list">
+                <li>For boat trailer parking in Newport Drive lot</li>
+                <li>One day duration</li>
+                <li>Available from Harbormaster or Parking Enforcement</li>
+            </ul>
+        </div>
+    </div>
 </div>
-<ul>
-<li>Contractor/Dumpster Use of Space Permit</li>
-<li>Special Events Permit</li>
-</ul>
-<a class="btn btn-primary" href="http://www.thepermitportal.com">
-                                                    Apply for Non-Premium Permit
-                                                </a>
 </div>
-<div class="permit-card">
-<div class="permit-header">
-<h5>Premium Areas</h5>
-<span class="price-tag">$54.00/day</span>
+
+<!-- Property Owner Permits -->
+<div class="section-group mt-4">
+<h3><i class="fas fa-building"></i> Property Owner Permits</h3>
+<div class="permit-grid">
+    <div class="permit-card">
+        <div class="permit-header">
+            <i class="fas fa-home"></i>
+            <h4>Non-Resident Property Owner</h4>
+        </div>
+        <div class="permit-details">
+            <p class="permit-price">$75.00/season</p>
+            <ul class="feature-list">
+                <li>Non-residents who pay property taxes to Bar Harbor</li>
+                <li>One permit per registered vehicle</li>
+                <li>Must provide proof of property ownership</li>
+                <li>Available at Finance Department</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="permit-card">
+        <div class="permit-header">
+            <i class="fas fa-bed"></i>
+            <h4>Bed & Breakfast</h4>
+        </div>
+        <div class="permit-details">
+            <p class="permit-price">$375.00/permit</p>
+            <ul class="feature-list">
+                <li>For B&B guests in "Permit Parking Only" areas</li>
+                <li>Permits issued via IPS Permit Portal</li>
+                <li>Available from Parking Enforcement</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="permit-card">
+        <div class="permit-header">
+            <i class="fas fa-briefcase"></i>
+            <h4>Home Business/Weekly Rental</h4>
+        </div>
+        <div class="permit-details">
+            <p class="permit-price">$750.00/permit</p>
+            <ul class="feature-list">
+                <li>For guests in "Permit Parking Only" areas</li>
+                <li>Must provide business documentation</li>
+                <li>Available from Parking Enforcement</li>
+            </ul>
+        </div>
+    </div>
 </div>
-<ul>
-<li>Contractor/Dumpster Use of Space Permit</li>
-<li>Special Events Permit</li>
-</ul>
-<a class="btn btn-primary" href="http://www.thepermitportal.com">
-                                                    Apply for Premium Permit
-                                                </a>
+</div>
+
+<!-- Employee Permits -->
+<div class="section-group mt-4">
+<h3><i class="fas fa-briefcase"></i> Employee & Special Permits</h3>
+<div class="permit-grid">
+    <div class="permit-card">
+        <div class="permit-header">
+            <i class="fas fa-id-badge"></i>
+            <h4>Employee Vehicle</h4>
+        </div>
+        <div class="permit-details">
+            <p class="permit-price">$30.00/season</p>
+            <ul class="feature-list">
+                <li>For non-resident employees of Bar Harbor businesses</li>
+                <li>Must provide employment verification</li>
+                <li>Available at Finance Department</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="permit-card">
+        <div class="permit-header">
+            <i class="fas fa-hospital"></i>
+            <h4>Hospital Employee</h4>
+        </div>
+        <div class="permit-details">
+            <p class="permit-price">Special Fee*</p>
+            <ul class="feature-list">
+                <li>For hospital zone (Hancock, Wayman, Center)</li>
+                <li>Up to 75 permit spaces</li>
+                <li>*$2,250.00 annually paid by hospital</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="permit-card">
+        <div class="permit-header">
+            <i class="fas fa-graduation-cap"></i>
+            <h4>College of the Atlantic Student</h4>
+        </div>
+        <div class="permit-details">
+            <p class="permit-price">$30.00/season</p>
+            <ul class="feature-list">
+                <li>For "Permit Parking Only" areas</li>
+                <li>Must provide student ID</li>
+                <li>Available at Finance Department</li>
+            </ul>
+        </div>
+    </div>
 </div>
 </div>
+
+<!-- Special Use Permits -->
+<div class="section-group mt-4">
+<h3><i class="fas fa-certificate"></i> Special Use Permits</h3>
+<div class="permit-grid">
+    <div class="permit-card">
+        <div class="permit-header">
+            <i class="fas fa-fish"></i>
+            <h4>Commercial Fishing</h4>
+        </div>
+        <div class="permit-details">
+            <p class="permit-price">$5.00/season</p>
+            <ul class="feature-list">
+                <li>For commercial fishermen with commercial mooring</li>
+                <li>Maximum 30 permits per year</li>
+                <li>Available from Harbormaster</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="permit-card">
+        <div class="permit-header">
+            <i class="fas fa-hard-hat"></i>
+            <h4>Contractor/Dumpster</h4>
+        </div>
+        <div class="permit-details">
+            <p class="permit-price">$24.00-$54.00/day</p>
+            <ul class="feature-list">
+                <li>For contractors with approved Building Permit</li>
+                <li>Limited to 5 days</li>
+                <li>Price varies by location (premium/non-premium)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="permit-card">
+        <div class="permit-header">
+            <i class="fas fa-calendar-day"></i>
+            <h4>Special Events</h4>
+        </div>
+        <div class="permit-details">
+            <p class="permit-price">$24.00-$54.00/day</p>
+            <ul class="feature-list">
+                <li>For blocking off parking spaces for events</li>
+                <li>One day duration</li>
+                <li>Price varies by location (premium/non-premium)</li>
+            </ul>
+        </div>
+    </div>
 </div>
-<div class="permit-portal">
-<div class="qr-section">
-<img alt="QR Code for Permit Portal" class="qr-code" src="images/qr-codes/permit-qr.png"/>
-<div class="qr-info">
-<h4>Quick Access to Permit Portal</h4>
-<p>Scan the QR code or visit <a href="http://www.thepermitportal.com">www.thepermitportal.com</a></p>
+</div>
+
+<!-- How to Apply -->
+<div class="section-group mt-4">
+<h3><i class="fas fa-file-alt"></i> How to Apply</h3>
+<ol class="feature-list">
+    <li><i class="fas fa-1"></i> Complete permit application - available online or in person</li>
+    <li><i class="fas fa-2"></i> Gather required documentation specific to your permit type</li>
+    <li><i class="fas fa-3"></i> Submit payment if applicable (plus transaction fees)</li>
+    <li><i class="fas fa-4"></i> Apply at appropriate department (Finance, Parking Enforcement, or Harbormaster)</li>
+</ol>
+<div class="action-buttons mt-3">
+    <a href="forms/parking-permit.pdf" class="btn btn-primary">
+        <i class="fas fa-download"></i> Download Application
+    </a>
+    <a href="contact.html#parking" class="btn btn-secondary">
+        <i class="fas fa-question-circle"></i> Contact Parking Department
+    </a>
 </div>
 </div>
-</div>
-</div>
-<div class="season-section">
-<div class="season-header">
-<i class="fas fa-snowflake"></i>
-<h3>Winter Season</h3>
-<span class="date-badge">November 1 - May 14</span>
-</div>
+
+<!-- Important Notes -->
+<div class="section-group mt-4">
+<h3><i class="fas fa-exclamation-circle"></i> Important Information</h3>
 <ul class="feature-list">
-<li>
-<i class="fas fa-car"></i>
-<span>
-<strong>Free Parking Available</strong>
-<p>No meter enforcement in most areas</p>
-</span>
-</li>
-<li>
-<i class="fas fa-ban"></i>
-<span>
-<strong>Winter Parking Bans</strong>
-<p>Special restrictions during snow events</p>
-</span>
-</li>
-<li>
-<i class="fas fa-bell"></i>
-<span>
-<strong>Ban Notifications</strong>
-<p>Sign up for email/text alerts for parking bans</p>
-</span>
-</li>
-<li>
-<i class="fas fa-snowplow"></i>
-<span>
-<strong>Winter Permits</strong>
-<p>Available from November 15th to April 15th. Receive email notifications for snow removal and plowing to ensure vehicles are not parked on the main road.</p>
-</span>
-</li>
+    <li><i class="fas fa-wheelchair"></i> Handicapped vehicles park free in all paid/permit areas</li>
+    <li><i class="fas fa-exchange-alt"></i> Permits are non-transferable between vehicles</li>
+    <li><i class="fas fa-car"></i> Display permit clearly on dashboard</li>
+    <li><i class="fas fa-plus"></i> Transaction fees may apply to all permit applications</li>
+    <li><i class="fas fa-info-circle"></i> For complete documentation requirements, contact the Finance Department</li>
 </ul>
-<div class="winter-permit-cta">
-<a class="btn btn-primary" href="http://www.thepermitportal.com">
-<i class="fas fa-id-card"></i> Sign Up for Winter Permits
-                                        </a>
-<p class="permit-note"><i class="fas fa-info-circle"></i> Register at thepermitportal.com to receive important snow removal notifications</p>
+</div>
+
 </div>
 </div>
 </div>
