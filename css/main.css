@@ -1209,3 +1209,147 @@ body.transitioning {
   50% { opacity: 0.95; }
   100% { opacity: 1; }
 }
+
+/* Permit Types Accordion Styles */
+.permit-types-section {
+    margin-top: 30px;
+}
+
+.permit-intro {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.permit-accordion {
+    margin: 20px 0;
+}
+
+.accordion-item {
+    margin-bottom: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.accordion-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.accordion-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+.accordion-button:hover {
+    background-color: #f0f0f0;
+}
+
+.accordion-button.active {
+    background-color: #e9ecef;
+}
+
+.accordion-button i:first-child {
+    margin-right: 12px;
+    font-size: 1.2rem;
+    color: #2c5282;
+}
+
+.accordion-button span {
+    flex-grow: 1;
+    font-size: 1.05rem;
+}
+
+.permit-price {
+    padding: 4px 10px;
+    background-color: #edf2f7;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: #2c5282;
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.accordion-icon.rotate {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.permit-details {
+    padding: 20px;
+}
+
+.permit-detail {
+    margin-bottom: 15px;
+}
+
+.permit-detail h4 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #2c5282;
+    display: flex;
+    align-items: center;
+}
+
+.permit-detail h4 i {
+    margin-right: 8px;
+}
+
+.permit-detail ul {
+    list-style: none;
+    padding-left: 10px;
+    margin: 10px 0;
+}
+
+.permit-detail ul li {
+    margin-bottom: 8px;
+}
+
+.hidden-permits {
+    display: none;
+}
+
+.permit-documents {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #2c5282;
+}
+
+.permit-documents h4 {
+    display: flex;
+    align-items: center;
+    color: #2c5282;
+    margin-bottom: 12px;
+}
+
+.permit-documents h4 i {
+    margin-right: 10px;
+}
+
+.show-more-permits,
+.show-less-permits {
+    display: block;
+    margin: 20px auto;
+}

@@ -595,4 +595,54 @@ document.addEventListener('DOMContentLoaded', function() {
             setupMobileDropdown(dropdown);
         });
     }
+
+    // Accordion functionality for permit types
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+    
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Toggle active class on the button
+            this.classList.toggle('active');
+            
+            // Toggle the accordion content
+            const content = this.parentElement.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+            
+            // Toggle the chevron icon
+            const icon = this.querySelector('.accordion-icon');
+            icon.classList.toggle('rotate');
+        });
+    });
+    
+    // Show more/less permits functionality
+    const showMoreBtn = document.querySelector('.show-more-permits');
+    const showLessBtn = document.querySelector('.show-less-permits');
+    const hiddenPermits = document.querySelector('.hidden-permits');
+    
+    if (showMoreBtn && showLessBtn && hiddenPermits) {
+        showMoreBtn.addEventListener('click', function() {
+            hiddenPermits.style.display = 'block';
+            showMoreBtn.style.display = 'none';
+            showLessBtn.style.display = 'inline-block';
+            
+            // Smooth scroll to the first hidden permit
+            const firstHiddenPermit = hiddenPermits.querySelector('.accordion-item');
+            if (firstHiddenPermit) {
+                firstHiddenPermit.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        
+        showLessBtn.addEventListener('click', function() {
+            hiddenPermits.style.display = 'none';
+            showMoreBtn.style.display = 'inline-block';
+            showLessBtn.style.display = 'none';
+            
+            // Scroll back to the show more button
+            showMoreBtn.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
 });
