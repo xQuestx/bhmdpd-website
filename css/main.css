@@ -37,6 +37,7 @@
 @import 'pages/benefits.css';
 @import 'pages/faq.css';
 @import 'pages/parking.css';
+@import 'pages/permit-guide.css'; /* New permit guide styles */
 @import 'pages/application-process.css';
 @import 'pages/events.css';
 @import 'pages/harbor-master.css';
