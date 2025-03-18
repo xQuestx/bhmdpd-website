@@ -1353,3 +1353,64 @@ body.transitioning {
     display: block;
     margin: 20px auto;
 }
+
+/* Dark Mode Styles for Permit Accordion */
+.dark-mode .accordion-item {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .accordion-header {
+    background-color: #333;
+    border-bottom: 1px solid #444;
+}
+
+.dark-mode .accordion-button {
+    color: #e0e0e0;
+}
+
+.dark-mode .accordion-button:hover {
+    background-color: #3a3a3a;
+}
+
+.dark-mode .accordion-button.active {
+    background-color: #404040;
+}
+
+.dark-mode .accordion-button i:first-child {
+    color: #6ca1e9;
+}
+
+.dark-mode .permit-price {
+    background-color: #404040;
+    color: #6ca1e9;
+}
+
+.dark-mode .permit-detail h4 {
+    color: #6ca1e9;
+}
+
+.dark-mode .permit-documents {
+    background-color: #333;
+    border-left: 4px solid #6ca1e9;
+}
+
+.dark-mode .permit-documents h4 {
+    color: #6ca1e9;
+}
+
+.dark-mode .show-more-permits,
+.dark-mode .show-less-permits {
+    background-color: #404040;
+    color: #e0e0e0;
+    border: none;
+}
+
+.dark-mode .show-more-permits:hover,
+.dark-mode .show-less-permits:hover {
+    background-color: #505050;
+}
+
+.dark-mode .accordion-icon {
+    color: #aaa;
+}
