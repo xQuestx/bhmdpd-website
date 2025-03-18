@@ -63,6 +63,15 @@
                     <li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
                     <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
                     <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-newspaper"></i> News <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="news.html"><i class="fas fa-list"></i> All News</a></li>
+                            <li><a href="news.html#department-updates"><i class="fas fa-bullhorn"></i> Department Updates</a></li>
+                            <li><a href="news.html#community-news"><i class="fas fa-users"></i> Community News</a></li>
+                            <li><a href="news.html#press-releases"><i class="fas fa-file-alt"></i> Press Releases</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
                 <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
@@ -87,6 +96,15 @@
             </div>
         </section>
 
+        <section class="department-intro">
+            <div class="container">
+                <div class="section-intro">
+                    <h2>Training & Career Development</h2>
+                    <p>The Bar Harbor and Mount Desert Police Departments offer extensive training opportunities to our employees to prepare them for the demands of the job and to advance their careers. We pride ourselves on having highly trained Officers and Dispatchers who have the skills necessary to excel in their field and provide the highest possible level of service to our communities.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="tabs-section">
             <div class="container">
                 <div class="modern-tabs">
@@ -102,15 +120,15 @@
                         <i class="fas fa-users"></i>
                         <span>Community Impact</span>
                     </button>
-                    <button class="tab-button" data-target="education">
-                        <i class="fas fa-book"></i>
-                        <span>Education</span>
+                    <button class="tab-button" data-target="inservice">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>In-Service Training</span>
                     </button>
                 </div>
 
                 <div class="tab-content active" id="training">
                     <div class="section-intro">
-                        <h2>Comprehensive Training Program</h2>
+                        <h2>Specialty Training Opportunities</h2>
                         <p>Develop your skills through our extensive training opportunities</p>
                     </div>
                     
@@ -124,7 +142,7 @@
                                 <ul class="feature-list">
                                     <li><i class="fas fa-check"></i>Interview & Interrogation</li>
                                     <li><i class="fas fa-check"></i>Crime Scene Processing</li>
-                                    <li><i class="fas fa-check"></i>Advanced Investigative Methods</li>
+                                    <li><i class="fas fa-check"></i>OUI Detection</li>
                                 </ul>
                             </div>
                         </div>
@@ -136,9 +154,9 @@
                             </div>
                             <div class="card-body">
                                 <ul class="feature-list">
-                                    <li><i class="fas fa-check"></i>Firearms Instruction</li>
-                                    <li><i class="fas fa-check"></i>Defensive Tactics</li>
-                                    <li><i class="fas fa-check"></i>Situational Use of Force</li>
+                                    <li><i class="fas fa-check"></i>Firearms Instructor</li>
+                                    <li><i class="fas fa-check"></i>Defensive Tactics Instructor</li>
+                                    <li><i class="fas fa-check"></i>Situational Use of Force Instructor</li>
                                 </ul>
                             </div>
                         </div>
@@ -151,8 +169,22 @@
                             <div class="card-body">
                                 <ul class="feature-list">
                                     <li><i class="fas fa-check"></i>School Resource Officer</li>
-                                    <li><i class="fas fa-check"></i>Police Boat Operation</li>
-                                    <li><i class="fas fa-check"></i>Crisis Intervention</li>
+                                    <li><i class="fas fa-check"></i>Police Boat Operator</li>
+                                    <li><i class="fas fa-check"></i>Crisis Intervention Team</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="card-header">
+                                <i class="fas fa-users"></i>
+                                <h3>Leadership & Support</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i>Field Training Officer</li>
+                                    <li><i class="fas fa-check"></i>Peer Support Team</li>
+                                    <li><i class="fas fa-check"></i>Leadership Training</li>
                                 </ul>
                             </div>
                         </div>
@@ -173,7 +205,7 @@
                             </div>
                             <div class="card-body">
                                 <ul class="feature-list">
-                                    <li><i class="fas fa-check"></i>Paid Exercise Time</li>
+                                    <li><i class="fas fa-check"></i>Paid Exercise Time While On Duty</li>
                                     <li><i class="fas fa-check"></i>Fitness Equipment Access</li>
                                     <li><i class="fas fa-check"></i>Personal Training</li>
                                 </ul>
@@ -188,8 +220,8 @@
                             <div class="card-body">
                                 <ul class="feature-list">
                                     <li><i class="fas fa-check"></i>Confidential Counseling</li>
-                                    <li><i class="fas fa-check"></i>Stress Management</li>
-                                    <li><i class="fas fa-check"></i>Wellness Workshops</li>
+                                    <li><i class="fas fa-check"></i>Yearly Wellness Check-ins with Licensed Police Psychologists</li>
+                                    <li><i class="fas fa-check"></i>Stress Management Resources</li>
                                 </ul>
                             </div>
                         </div>
@@ -201,16 +233,104 @@
                             </div>
                             <div class="card-body">
                                 <ul class="feature-list">
-                                    <li><i class="fas fa-check"></i>Flexible Scheduling</li>
-                                    <li><i class="fas fa-check"></i>Vacation Benefits</li>
-                                    <li><i class="fas fa-check"></i>Recreation Access</li>
+                                    <li><i class="fas fa-check"></i>Flexible Scheduling Options</li>
+                                    <li><i class="fas fa-check"></i>Competitive Vacation Benefits</li>
+                                    <li><i class="fas fa-check"></i>Team Building Activities</li>
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wellness-statement">
+                        <p>The Bar Habor and Mount Desert Police Departments strive to provide our employees with a good work-life balance. We are located adjacent to Acadia National Park which provides countless opportunities for outdoor recreation. We encourage our employees to engage with one another outside of the work environment and regularly participate in team experiences.</p>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="community">
+                    <div class="section-intro">
+                        <h2>Our Community</h2>
+                        <p>Serve in one of Maine's most beautiful and vibrant communities</p>
+                    </div>
+                    
+                    <div class="community-description">
+                        <p>The communities of Bar Harbor and Mount Desert are world-renowned summer tourist destinations where millions of visitors travel each year to enjoy our beautiful sights, countless recreational opportunities, and great people. Although we enjoy a city-sized population in the summer months, we maintain our small-town vibe during the winter.</p>
+                        
+                        <div class="community-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-tree"></i>
+                                <h3>Acadia National Park</h3>
+                                <p>Work adjacent to one of America's most beautiful national parks with endless outdoor activities</p>
+                            </div>
+                            
+                            <div class="highlight-item">
+                                <i class="fas fa-water"></i>
+                                <h3>Coastal Living</h3>
+                                <p>Enjoy the unique experience of living in a picturesque coastal Maine community</p>
+                            </div>
+                            
+                            <div class="highlight-item">
+                                <i class="fas fa-users"></i>
+                                <h3>Community Connection</h3>
+                                <p>Build meaningful relationships in a close-knit community that values its public safety professionals</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Community and Education tabs would follow the same pattern -->
+                <div class="tab-content" id="inservice">
+                    <div class="section-intro">
+                        <h2>In-Service Training</h2>
+                        <p>Ongoing professional development to keep your skills sharp</p>
+                    </div>
+                    
+                    <div class="inservice-description">
+                        <p>The Bar Harbor and Mount Desert Police Departments conduct regular in-service training provided by our department for our Officers. We train on a regular basis in the following topics:</p>
+                        
+                        <div class="info-grid">
+                            <div class="info-card">
+                                <div class="card-header">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h3>Tactical Skills</h3>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i>Defensive Tactics</li>
+                                        <li><i class="fas fa-check"></i>Firearms Training</li>
+                                        <li><i class="fas fa-check"></i>Taser Certification</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="card-header">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <h3>Decision Making</h3>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i>Situational Use of Force</li>
+                                        <li><i class="fas fa-check"></i>De-escalation Techniques</li>
+                                        <li><i class="fas fa-check"></i>Crisis Response</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="card-header">
+                                    <i class="fas fa-search"></i>
+                                    <h3>Investigative Skills</h3>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i>Evidence Collection</li>
+                                        <li><i class="fas fa-check"></i>Interview Techniques</li>
+                                        <li><i class="fas fa-check"></i>Case Management</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
