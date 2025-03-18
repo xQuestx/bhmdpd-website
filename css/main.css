@@ -1414,3 +1414,64 @@ body.transitioning {
 .dark-mode .accordion-icon {
     color: #aaa;
 }
+
+/* Callout Styles */
+.callout {
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid;
+    position: relative;
+    background-color: #f9f9f9;
+}
+
+.callout-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.callout-title i {
+    font-size: 1.2rem;
+}
+
+.callout p {
+    margin-bottom: 0.5rem;
+}
+
+.callout p:last-child {
+    margin-bottom: 0;
+}
+
+.callout.success-callout {
+    background-color: rgba(var(--accent-color-rgb, 248, 160, 28), 0.1);
+    border-left-color: var(--accent-color, #f8a01c);
+}
+
+.callout.success-callout .callout-title {
+    color: var(--accent-color, #f8a01c);
+}
+
+.callout.info-callout {
+    background-color: rgba(var(--primary-color-rgb, 26, 60, 108), 0.1);
+    border-left-color: var(--primary-color, #1a3c6c);
+}
+
+.callout.info-callout .callout-title {
+    color: var(--primary-color, #1a3c6c);
+}
+
+body.dark-mode .callout {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .callout.success-callout {
+    background-color: rgba(var(--accent-color-rgb, 248, 160, 28), 0.15);
+}
+
+body.dark-mode .callout.info-callout {
+    background-color: rgba(var(--primary-color-rgb, 26, 60, 108), 0.15);
+}
