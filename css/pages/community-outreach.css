@@ -63,21 +63,72 @@ body.dark-mode .category-header h3 {
   padding: 1.5rem;
 }
 
+/* Standardized card styling - consistent borders and appearance */
 .resource-card {
-  background-color: white;
+  background-color: #1e1e1e;
   border-radius: var(--radius-md, 8px);
   padding: 1.5rem;
   box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.05));
   transition: all 0.3s ease;
-  border-top: 3px solid var(--primary-color, #1a2b4a);
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #333 !important; /* Standardized border color */
+}
+
+body:not(.dark-mode) .resource-card {
+  background-color: white;
+  border: 1px solid #e0e0e0 !important; /* Light mode border */
 }
 
 .resource-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Card Headers - Standardized styling with colorful headers */
+.resource-card-header {
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--primary-color, #1a2b4a);
+  color: white;
+  border: none !important; /* Remove any border on headers */
+}
+
+.resource-card-header h4 {
+  color: white !important;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+
+/* Only specify gradient colors for headers */
+.resource-category:nth-child(1) .resource-card .resource-card-header {
+  background: linear-gradient(135deg, #1a2b4a, #2c4270) !important; /* Dark blue gradient */
+}
+
+.resource-category:nth-child(2) .resource-card .resource-card-header {
+  background: linear-gradient(135deg, #2e7d32, #4caf50) !important; /* Green gradient */
+}
+
+.resource-category:nth-child(3) .resource-card .resource-card-header {
+  background: linear-gradient(135deg, #0277bd, #039be5) !important; /* Blue gradient */
+}
+
+.resource-category:nth-child(4) .resource-card .resource-card-header {
+  background: linear-gradient(135deg, #5d4037, #8d6e63) !important; /* Brown gradient */
+}
+
+.resource-category:nth-child(5) .resource-card .resource-card-header {
+  background: linear-gradient(135deg, #7b1fa2, #9c27b0) !important; /* Purple gradient */
+}
+
+.resource-category:nth-child(6) .resource-card .resource-card-header {
+  background: linear-gradient(135deg, #e65100, #f57c00) !important; /* Orange gradient */
+}
+
+.resource-category:nth-child(7) .resource-card .resource-card-header {
+  background: linear-gradient(135deg, #c62828, #e53935) !important; /* Red gradient */
 }
 
 .resource-card h4 {
