@@ -195,33 +195,89 @@
   font-size: 0.95rem;
 }
 
+/* Contact Card Specific Styles */
+.info-card.contact .card-body {
+  padding: 2.5rem; /* Increased padding for even more space */
+}
+
 /* Contact Details */
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2.5rem; /* Increased gap between contact items */
 }
 
 .contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.75rem; /* Increased gap between icon and text */
 }
 
 .contact-item i {
-  color: var(--accent-color, #007bff);
-  font-size: 1.2rem;
-  margin-top: 0.25rem;
+  color: #e74c3c; /* Red color to match screenshot */
+  font-size: 1.3rem;
+  background-color: rgba(231, 76, 60, 0.1); /* Light red background */
+  padding: 1rem;
+  border-radius: 50%;
+  width: 1.3rem;
+  height: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  margin-top: 0.25rem; /* Slight adjustment to better align with text */
+}
+
+.contact-item > div {
+  flex: 1; /* Allow text container to take full width */
 }
 
 .contact-item h3 {
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.85rem 0; /* Increased margin below heading */
   color: var(--primary-color, #1a2b4a);
-  font-size: 1.1rem;
+  font-size: 1.25rem; /* Slightly increased font size */
+  font-weight: 600;
 }
 
 .contact-item p {
   margin: 0;
+  font-size: 1.05rem; /* Increased text size */
+  line-height: 1.8; /* Improved line height for better spacing */
+  color: #505050; /* Darker text color for better contrast */
+  letter-spacing: 0.01em; /* Add slight letter spacing for better readability */
+}
+
+/* For the address specifically, add more line height for multi-line content */
+.contact-item:first-child p {
+  line-height: 2; /* Increased line height for address */
+}
+
+/* Add a bit more space between address lines with <br> tags */
+.contact-item p br {
+  display: block;
+  content: "";
+  margin-top: 0.5rem;
+}
+
+/* Mobile adjustments for contact info */
+@media (max-width: 576px) {
+  .contact-details {
+    gap: 2rem; /* Slightly reduced gap on mobile */
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  
+  .contact-item i {
+    margin-bottom: 0.25rem;
+  }
+  
+  .contact-item h3 {
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* Download Button */
@@ -327,8 +383,21 @@ body.dark-mode .reservation-note {
   border-left-color: var(--accent-color, #007bff);
 }
 
+body.dark-mode .info-card.contact .card-body {
+  background-color: var(--dark-mode-card-bg, #2d2d2d);
+}
+
+body.dark-mode .contact-item i {
+  background-color: rgba(231, 76, 60, 0.2); /* Darker red background for dark mode */
+  color: #e74c3c; /* Keep the red color for icon */
+}
+
 body.dark-mode .contact-item h3 {
   color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .contact-item p {
+  color: var(--dark-mode-text-color, #e0e0e0);
 }
 
 /* Harbor Master Page Specific Styles */
