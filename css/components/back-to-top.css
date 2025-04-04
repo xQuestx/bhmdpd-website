@@ -1,0 +1,33 @@
+/* Back to Top Button Styles */
+#backToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: var(--primary-color, #0056b3); /* Use primary color variable or fallback */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0.7;
+}
+
+#backToTopBtn:hover {
+  background-color: var(--primary-darker, #003d80); /* Darker background on hover */
+  opacity: 1;
+}
+
+/* Add specific styles for dark mode if needed */
+[data-theme="dark"] #backToTopBtn {
+  background-color: var(--primary-color-dark, #4dabf7); /* Example dark mode color */
+  color: var(--text-color-dark, #121212);
+}
+
+[data-theme="dark"] #backToTopBtn:hover {
+  background-color: var(--primary-darker-dark, #1e88e5); /* Example dark mode hover color */
+}

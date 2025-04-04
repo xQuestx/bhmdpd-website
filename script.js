@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initModals();
     initTooltips();
     initDropdowns();
+    initBackToTop(); // Add call to initialize the back-to-top button
+    initHeaderScroll(); // Add call to initialize the header scroll effect
     
     // Log initialization complete
     console.log('All components initialized');
@@ -116,18 +118,25 @@ document.addEventListener('DOMContentLoaded', function() {
         handleScroll();
     }
 
-    // Back to Top Button
+    // Back to Top Button (Updated)
     function initBackToTop() {
         const button = document.createElement('button');
-        button.id = 'back-to-top';
-        button.className = 'back-to-top';
-        button.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        button.id = 'backToTopBtn'; // Use the ID from the new CSS
+        // No need for extra class, ID is sufficient for styling
+        button.innerHTML = '<i class="fas fa-arrow-up"></i>'; // Keep Font Awesome icon
         document.body.appendChild(button);
 
+        // Show/hide button based on scroll position
         window.addEventListener('scroll', () => {
-            button.classList.toggle('visible', window.scrollY > 300);
+            // Check both documentElement and body for cross-browser compatibility
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
         });
 
+        // Scroll to top on click
         button.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
