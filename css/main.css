@@ -28,6 +28,7 @@
 @import 'components/faq.css';
 @import 'components/services.css';
 @import 'components/services-enhanced.css'; /* Enhanced service components */
+@import 'components/back-to-top.css';
 
 /* Page-Specific Styles */
 @import 'pages/home.css';
