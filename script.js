@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initDropdowns();
     initBackToTop(); // Add call to initialize the back-to-top button
     initHeaderScroll(); // Add call to initialize the header scroll effect
+    initScrollAnimations(); // Add call to initialize scroll animations
     
     // Log initialization complete
     console.log('All components initialized');
@@ -653,5 +654,39 @@ document.addEventListener('DOMContentLoaded', function() {
             // Scroll back to the show more button
             showMoreBtn.scrollIntoView({ behavior: 'smooth' });
         });
+    }
+
+    // Scroll Animation Functionality
+    function initScrollAnimations() {
+        const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+        
+        if (!elementsToAnimate.length) {
+            console.log('No elements found for scroll animation.');
+            return;
+        }
+
+        const observerOptions = {
+            root: null, // Use the viewport as the root
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once animated
+                    console.log('Element is visible, animating:', entry.target);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        elementsToAnimate.forEach(el => {
+            observer.observe(el);
+        });
+        
+        console.log(`Scroll animation observer initialized for ${elementsToAnimate.length} elements.`);
     }
 });

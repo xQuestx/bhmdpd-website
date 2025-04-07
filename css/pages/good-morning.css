@@ -42,7 +42,68 @@
   opacity: 1 !important;
 }
 
-/* Responsibility Grid */
+/* Content Wrapper */
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Make the first card span both columns */
+.info-grid .info-card:first-child {
+    grid-column: span 2;
+}
+
+/* Info Cards - Copied from harbor-master.css for consistency */
+.info-card {
+  background-color: var(--card-bg, #ffffff);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+  height: 100%; /* Ensure cards in the same row have equal height */
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.card-header {
+  background-color: var(--primary-color, #1a2b4a); /* Corrected default color */
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card-header h2 { /* Assuming h2 is used in headers */
+  color: var(--light-text-color, #fff) !important;
+  margin: 0;
+}
+
+.card-header i {
+  font-size: 1.5rem; /* Match harbor master icon size */
+  color: var(--accent-color, #007bff); /* Match harbor master icon color */
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body p {
+  margin-bottom: 1rem; /* Adjusted margin slightly */
+  line-height: 1.6;
+}
+
+/* Responsibility Grid (within cards) */
 .responsibility-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -50,22 +111,23 @@
   margin: 1.5rem 0;
 }
 
+/* Restore Responsibility Item styling to match screenshot */
 .responsibility-item {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem;
-  background-color: var(--gray-50, #f8f9fa);
+  padding: 1rem; /* Restore padding */
+  background-color: var(--gray-50, #f8f9fa); /* Restore background */
   border-radius: var(--radius-sm, 4px);
   transition: all 0.3s ease;
-  border: 1px solid var(--gray-200, #e9ecef);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--gray-200, #e9ecef); /* Restore border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Restore shadow */
 }
 
 .responsibility-item:hover {
   background-color: var(--gray-100, #f1f3f4);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Restore hover shadow */
 }
 
 .responsibility-item i {
@@ -75,7 +137,7 @@
 }
 
 .responsibility-item span {
-  color: var(--gray-800, #343a40);
+  color: var(--gray-800, #343a40); /* Restore specific color */
   font-weight: 500;
 }
 
@@ -83,31 +145,69 @@
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem; /* Increased gap like Harbor Master */
 }
 
+/* Adjusted Contact Item to be simpler */
 .contact-item {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
 }
 
+/* Add padding/radius to contact icons */
 .contact-item i {
   color: var(--accent-color, #007bff);
   font-size: 1.2rem;
   margin-top: 0.25rem;
+  flex-shrink: 0; /* Prevent shrinking */
+  width: 32px; /* Fixed width */
+  height: 32px; /* Fixed height */
+  display: inline-flex; /* Use inline-flex for centering */
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 123, 255, 0.1); /* Light blue background */
+  border-radius: 50%; /* Make it circular */
+  padding: 0.5rem; /* Add padding inside the circle */
 }
 
 .contact-item h3 {
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.5rem 0; /* Increased margin */
   color: var(--primary-color, #1a2b4a);
   font-size: 1.1rem;
+  font-weight: 600; /* Match Harbor Master heading weight */
 }
 
 .contact-item p {
   margin: 0;
-  color: var(--gray-700, #495057);
+  color: var(--text-color, #333); /* Use default text color */
+  line-height: 1.6;
 }
+
+/* Reservation Note Styling (from screenshot) */
+.reservation-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: var(--warning-light-bg, #fff8e1); /* Light yellow/orange background */
+  border-radius: var(--radius-md, 8px);
+  border-left: 4px solid var(--warning-color, #ff9800); /* Orange/red border */
+  margin-top: 1.5rem; /* Add some space above */
+}
+
+.reservation-note i {
+  color: var(--warning-color, #ff9800);
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+}
+
+.reservation-note p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--warning-dark-text, #6d4c41); /* Darker text for contrast */
+}
+
 
 /* Steps Section */
 .steps-section {
@@ -121,29 +221,8 @@
   margin-top: 1.5rem;
 }
 
-.step-card {
-  background-color: var(--gray-50, #f8f9fa);
-  border-radius: var(--radius-md, 8px);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.1));
-  transition: all 0.3s ease;
-}
-
-.step-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
-}
-
-.step-header {
-  background-color: var(--primary-color, #1a2b4a);
-  color: var(--light-text-color, #fff);
-  padding: 1rem;
-  text-align: center;
-}
-
 .step-header h3 {
   margin: 0;
-  color: var(--light-text-color, #fff);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,6 +243,15 @@
 }
 
 /* Responsive Styles */
+@media (max-width: 992px) { /* Adjust breakpoint for 2-col layout */
+  .info-grid {
+    grid-template-columns: 1fr; /* Stack to single column */
+  }
+  .info-grid .info-card:first-child {
+    grid-column: span 1; /* Reset span for single column */
+  }
+}
+
 @media (max-width: 768px) {
   .good-morning-page .hero-section {
     padding: 3rem 1.5rem;
@@ -179,6 +267,24 @@
 }
 
 /* Dark Mode Styles */
+/* Apply dark mode card styles from harbor-master */
+body.dark-mode .info-card {
+  background-color: var(--dark-mode-card-bg, #2d2d2d);
+  border-color: var(--dark-mode-border-color, #404040);
+}
+
+body.dark-mode .card-header {
+  background-color: var(--dark-mode-primary-color, #29487d);
+}
+
+body.dark-mode .card-header h2 {
+  color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .card-body p {
+  color: var(--dark-mode-text-color, #e0e0e0);
+}
+
 body.dark-mode .good-morning-page {
   background-color: var(--dark-mode-background, #121212);
 }
@@ -188,42 +294,43 @@ body.dark-mode .good-morning-page .hero-section {
               url('../../images/backgrounds/background.jpg') center/cover no-repeat !important;
 }
 
+/* Restore/Adjust dark mode styles for internal elements */
 body.dark-mode .responsibility-item {
-  background-color: var(--dark-mode-card-bg, #2d2d2d);
-  border-color: var(--dark-mode-border-color, #404040);
+  background-color: var(--dark-mode-card-bg, #2d2d2d); /* Restore background */
+  border-color: var(--dark-mode-border-color, #404040); /* Restore border */
 }
 
 body.dark-mode .responsibility-item:hover {
-  background-color: var(--dark-mode-background, #121212);
+  background-color: var(--dark-mode-background, #121212); /* Keep subtle hover */
 }
 
 body.dark-mode .responsibility-item span {
-  color: var(--light-text-color, #fff);
+  color: var(--dark-mode-text-color, #e0e0e0); /* Restore specific color */
+}
+
+body.dark-mode .contact-item i {
+   background-color: rgba(0, 123, 255, 0.2); /* Slightly darker blue background for dark mode */
 }
 
 body.dark-mode .contact-item h3 {
-  color: var(--light-text-color, #fff);
+  color: var(--light-text-color, #fff); /* Keep heading color */
 }
 
 body.dark-mode .contact-item p {
-  color: var(--dark-mode-text-color, #e0e0e0);
+  color: var(--dark-mode-text-color, #e0e0e0); /* Keep text color */
 }
 
-body.dark-mode .step-card {
-  background-color: var(--dark-mode-card-bg, #2d2d2d);
-  border-color: var(--dark-mode-border-color, #404040);
+body.dark-mode .reservation-note {
+  background-color: var(--dark-mode-warning-light-bg, #42342a); /* Darker background for note */
+  border-left-color: var(--warning-color, #ff9800); /* Keep border color */
 }
 
-body.dark-mode .step-header {
-  background-color: var(--dark-mode-primary-color, #29487d);
+body.dark-mode .reservation-note i {
+  color: var(--warning-color, #ff9800); /* Keep icon color */
 }
 
-body.dark-mode .step-body p {
-  color: var(--dark-mode-text-color, #e0e0e0);
-}
-
-body.dark-mode .good-morning-page .hero-icon {
-  color: var(--light-text-color-dark, #f0f0f0);
+body.dark-mode .reservation-note p {
+  color: var(--dark-mode-warning-text, #ffe0b2); /* Lighter text for note */
 }
 
 .action-button i {
