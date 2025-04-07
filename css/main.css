@@ -105,31 +105,49 @@
   }
 }
 
+/* CTA Section */
 .cta-section {
+    padding: 4rem 0;
     background-color: var(--primary-color, #1a2b4a);
-    color: white;
-    padding: 3rem 0;
-    margin-top: 2rem;
+    color: var(--light-text-color, #fff) !important; /* Force light text color */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/pattern.png);
+    opacity: 0.05;
+    pointer-events: none;
+}
+
 .cta-content {
-    text-align: center;
+    position: relative;
+    z-index: 1;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
 
-.cta-content h2 {
-    color: white;
-    margin-bottom: 1rem;
+.cta-section h2 {
+    color: var(--light-text-color, #fff) !important;
     font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
-.cta-content p {
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2rem;
+.cta-section p {
+    color: var(--light-text-color, #fff) !important;
     font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
 }
 
 .cta-buttons {
@@ -139,15 +157,30 @@
     flex-wrap: wrap;
 }
 
-@media (max-width: 576px) {
+/* Dark mode specific */
+body.dark-mode .cta-section {
+    background-color: var(--dark-mode-cta-bg, #1e3c6e);
+    color: var(--light-text-color, #fff) !important;
+}
+
+body.dark-mode .cta-section h2,
+body.dark-mode .cta-section p {
+    color: var(--light-text-color, #fff) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 3rem 0;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.75rem;
+    }
+    
     .cta-buttons {
         flex-direction: column;
         align-items: center;
-    }
-    
-    .cta-buttons a {
-        width: 100%;
-        max-width: 300px;
     }
 }
 
@@ -1476,4 +1509,20 @@ body.dark-mode .callout.success-callout {
 
 body.dark-mode .callout.info-callout {
     background-color: rgba(var(--primary-color-rgb, 26, 60, 108), 0.15);
+}
+
+/* Dark mode buttons in CTA */
+body.dark-mode .cta-buttons .btn-primary {
+    background-color: var(--dark-mode-accent-color, #3b9dff);
+    border-color: var(--dark-mode-accent-color, #3b9dff);
+    color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .cta-buttons .btn-outline-light {
+    border-color: var(--light-text-color, #fff);
+    color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .cta-buttons .btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }

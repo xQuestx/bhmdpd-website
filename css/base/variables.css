@@ -110,6 +110,9 @@
   --dark-mode-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   --dark-mode-border-color: #404040;
   --dark-mode-accent-color: #3b9dff;
+  --dark-mode-cta-bg: #1e3c6e; /* New variable for CTA section */
+  --dark-mode-warning-light-bg: #42342a;
+  --dark-mode-warning-text: #ffe0b2;
   
   /* Layout */
   --header-height: 80px;
