@@ -196,12 +196,6 @@ body.dark-mode .badge {
     margin-bottom: 1rem;
 }
 
-.cta-section {
-    padding: 4rem 0;
-    text-align: center;
-    background-color: var(--bg-main, #fff);
-}
-
 .cta-buttons {
     display: flex;
     gap: 1rem;
@@ -316,11 +310,6 @@ body.dark-mode .application-process-page .requirements-section {
 body.dark-mode .application-process-page .requirements-list li {
     color: var(--dark-mode-text-color);
     border-bottom: 1px solid var(--dark-mode-border-color);
-}
-
-body.dark-mode .application-process-page .cta-section {
-    background-color: var(--dark-mode-card-bg);
-    border: 1px solid var(--dark-mode-border-color);
 }
 
 body.dark-mode .application-process-page .action-button {
@@ -472,10 +461,5 @@ body.dark-mode .requirement-card h3 {
 
 body.dark-mode .cta-section {
     background-color: var(--dark-mode-background, #121212);
-    color: var(--dark-mode-text-color, #f0f0f0);
-}
-
-body.dark-mode .btn-outline {
-    border-color: var(--dark-mode-border-color, #333);
     color: var(--dark-mode-text-color, #f0f0f0);
 }
