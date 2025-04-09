@@ -161,19 +161,6 @@
     margin: 0.5rem 0;
 }
 
-/* CTA Section */
-.benefits-page .cta-section {
-    padding: 4rem 2rem;
-    background: var(--light-bg, #ffffff);
-    text-align: center;
-}
-
-.benefits-page .cta-section h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: var(--text-color, #333);
-}
-
 /* Dark Mode Styles */
 body.dark-mode .benefits-page .hero-section {
     background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
