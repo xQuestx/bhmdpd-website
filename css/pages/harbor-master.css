@@ -204,28 +204,29 @@
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem; /* Increased gap between contact items */
+  gap: 0; /* Remove gap, use padding/border for spacing */
 }
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
-  gap: 1.75rem; /* Increased gap between icon and text */
+  align-items: center; /* Center align icon and text vertically */
+  gap: 1rem; /* Reduced gap between icon and text */
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200, #e8eaed);
+}
+
+.contact-details > .contact-item:first-child {
+  padding-top: 0;
+  border-top: none;
 }
 
 .contact-item i {
-  color: #e74c3c; /* Red color to match screenshot */
-  font-size: 1.3rem;
-  background-color: rgba(231, 76, 60, 0.1); /* Light red background */
-  padding: 1rem;
-  border-radius: 50%;
-  width: 1.3rem;
-  height: 1.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: var(--primary-color, #1a2b4a); /* Use primary color */
+  font-size: 1.8rem; /* Increased icon size */
+  /* Removed background styles */
+  width: 2rem; /* Fixed width for alignment */
+  text-align: center;
   flex-shrink: 0; /* Prevent icon from shrinking */
-  margin-top: 0.25rem; /* Slight adjustment to better align with text */
 }
 
 .contact-item > div {
@@ -233,31 +234,22 @@
 }
 
 .contact-item h3 {
-  margin: 0 0 0.85rem 0; /* Increased margin below heading */
+  margin: 0 0 0.5rem 0; /* Reduced margin below heading */
   color: var(--primary-color, #1a2b4a);
-  font-size: 1.25rem; /* Slightly increased font size */
-  font-weight: 600;
+  font-size: 1.15rem; /* Slightly adjusted font size */
+  font-weight: 700; /* Bolder heading */
 }
 
 .contact-item p {
   margin: 0;
-  font-size: 1.05rem; /* Increased text size */
-  line-height: 1.8; /* Improved line height for better spacing */
-  color: #505050; /* Darker text color for better contrast */
-  letter-spacing: 0.01em; /* Add slight letter spacing for better readability */
+  font-size: 1rem; /* Slightly adjusted text size */
+  line-height: 1.6; /* Standard line height */
+  color: var(--gray-600, #6c757d); /* Lighter text color */
+  letter-spacing: normal; /* Reset letter spacing */
 }
 
-/* For the address specifically, add more line height for multi-line content */
-.contact-item:first-child p {
-  line-height: 2; /* Increased line height for address */
-}
-
-/* Add a bit more space between address lines with <br> tags */
-.contact-item p br {
-  display: block;
-  content: "";
-  margin-top: 0.5rem;
-}
+/* Remove specific line height for address */
+/* Remove br styling */
 
 /* Mobile adjustments for contact info */
 @media (max-width: 576px) {
@@ -271,12 +263,32 @@
     align-items: flex-start;
   }
   
+  /* Keep mobile styles as they were, they might still be relevant */
+  .contact-details {
+    gap: 2rem; /* Restore gap for mobile stacking */
+  }
+
+  .contact-item {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding-top: 1rem; /* Adjust padding */
+    border-top: 1px solid var(--gray-200, #e8eaed);
+  }
+
+  .contact-details > .contact-item:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+
   .contact-item i {
     margin-bottom: 0.25rem;
+    width: auto; /* Allow icon width to adjust */
+    text-align: left;
   }
-  
+
   .contact-item h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem; /* Adjust margin */
   }
 }
 
@@ -387,9 +399,12 @@ body.dark-mode .info-card.contact .card-body {
   background-color: var(--dark-mode-card-bg, #2d2d2d);
 }
 
+body.dark-mode .contact-item {
+  border-top-color: var(--dark-mode-border-color, #404040);
+}
+
 body.dark-mode .contact-item i {
-  background-color: rgba(231, 76, 60, 0.2); /* Darker red background for dark mode */
-  color: #e74c3c; /* Keep the red color for icon */
+  color: var(--accent-color, #007bff); /* Use accent color for icon in dark mode */
 }
 
 body.dark-mode .contact-item h3 {
@@ -397,7 +412,7 @@ body.dark-mode .contact-item h3 {
 }
 
 body.dark-mode .contact-item p {
-  color: var(--dark-mode-text-color, #e0e0e0);
+  color: var(--gray-400, #ced4da); /* Lighter gray for dark mode paragraph */
 }
 
 /* Harbor Master Page Specific Styles */
