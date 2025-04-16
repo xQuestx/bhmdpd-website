@@ -228,6 +228,36 @@ body.dark-mode .benefits-page .cta-section h2 {
     }
 }
 
+/* CTA Button Styles - Added to improve visibility */
+.benefits-page .cta-section .btn.btn-primary {
+    background-color: var(--accent-color, #007bff);
+    color: white;
+    border: 2px solid white;
+    font-weight: 600;
+    padding: 0.85rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.benefits-page .cta-section .btn.btn-primary:hover {
+    background-color: white;
+    color: var(--primary-color, #1a2b4a);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode styles for CTA button */
+body.dark-mode .benefits-page .cta-section .btn.btn-primary {
+    background-color: var(--accent-color, #007bff);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode .benefits-page .cta-section .btn.btn-primary:hover {
+    background-color: white;
+    color: var(--dark-mode-primary-color, #29487d);
+}
+
 @media print {
     .benefits-page .hero-section {
         min-height: auto;
