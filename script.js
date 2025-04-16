@@ -689,4 +689,33 @@ document.addEventListener('DOMContentLoaded', function() {
         
         console.log(`Scroll animation observer initialized for ${elementsToAnimate.length} elements.`);
     }
+
+    // Add ripple effect to all .btn elements
+    function initButtonRipples() {
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Remove any existing ripple
+                const oldRipple = this.querySelector('.ripple');
+                if (oldRipple) oldRipple.remove();
+                // Create ripple element
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                // Set position
+                const rect = button.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                // Remove after animation completes
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    }
+
+    initButtonRipples();
 });

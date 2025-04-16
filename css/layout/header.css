@@ -164,7 +164,12 @@
   background-color: var(--accent-color, #007bff);
   width: 0%;
   z-index: 1001;
-  transition: width 0.1s ease;
+  transition: width 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+
+.scroll-progress:focus {
+  outline: 2px solid var(--accent-color, #007bff);
+  outline-offset: 2px;
 }
 
 /* Responsive Styles */
