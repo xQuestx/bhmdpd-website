@@ -191,9 +191,16 @@
   background-color: #c4302b !important;
 }
 
-.social-icons a:hover {
-  transform: translateY(-2px) !important;
+.social-icons a:focus {
+  outline: 2px solid var(--accent-color, #007bff) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(0,123,255,0.15) !important;
+}
+
+.social-icons a:hover, .social-icons a:focus {
+  transform: scale(1.12) translateY(-2px) !important;
   filter: brightness(1.1) !important;
+  box-shadow: 0 4px 16px rgba(0,123,255,0.15) !important;
 }
 
 /* Dark mode adjustments */
@@ -239,6 +246,39 @@ address a {
 address a:hover {
   text-decoration: underline !important;
   color: var(--accent-color-dark) !important;
+}
+
+/* Map badge marker overlay */
+.map-badge-marker {
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  background: white;
+  border: 2px solid var(--accent-color, #007bff);
+  padding: 2px;
+}
+
+/* Footer column icons */
+.footer-column h3 i {
+  margin-right: 0.5em;
+  color: var(--accent-color, #007bff);
+}
+.footer-column a i {
+  color: var(--accent-color, #007bff);
+  min-width: 1.2em;
+  text-align: center;
+}
+
+/* Focus indicators for all interactive elements in footer */
+.footer a:focus, .footer button:focus, .footer .btn:focus {
+  outline: 2px solid var(--accent-color, #007bff) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(0,123,255,0.15) !important;
+}
+
+/* Last updated icon alignment */
+.last-updated i {
+  color: var(--accent-color, #007bff);
+  vertical-align: middle;
 }
 
 /* Responsive Styles */

@@ -3,38 +3,30 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-  <title>Page Not Found | Bar Harbor Mount Desert Police Department</title>
-  <meta name="description" content="Page not found - Bar Harbor Mount Desert Police Department"/>
+  <title>Success | Bar Harbor Mount Desert Police Department</title>
+  <meta name="description" content="Success/Confirmation Page - Bar Harbor Mount Desert Police Department"/>
   <link rel="stylesheet" href="css/main.css"/>
   <meta name="theme-color" content="#ffffff" id="theme-color"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
-  <main class="not-found-container" role="main" aria-labelledby="notFoundTitle">
+  <main class="not-found-container" role="main" aria-labelledby="successTitle">
     <img src="images/branding/logo.png" alt="Bar Harbor Police Department Patch" class="not-found-logo"/>
-    <h1 class="not-found-title" id="notFoundTitle">Page Not Found</h1>
+    <h1 class="not-found-title" id="successTitle">Success!</h1>
     <p class="not-found-message">
-      We couldn't find the page you were looking for.<br>
-      The page may have been moved, deleted, or never existed.<br>
-      <span aria-hidden="true" style="font-size:2rem;">🔍</span>
+      Your action was completed successfully.<br>
+      Thank you for using our services.<br>
+      <span aria-hidden="true" style="font-size:2rem;">✅</span>
     </p>
     <div class="not-found-actions">
       <a href="index.html" aria-label="Return to the Bar Harbor Police Department homepage"><i class="fas fa-home"></i> Return Home</a>
       <a href="javascript:history.back()" aria-label="Go back to the previous page"><i class="fas fa-arrow-left"></i> Go Back</a>
-      <a href="contact.html" aria-label="Contact the Bar Harbor Police Department"><i class="fas fa-envelope"></i> Contact Us</a>
     </div>
-    <div class="not-found-help" style="max-width:500px;margin:2rem auto;padding:1rem;background:rgba(52,152,219,0.1);border-radius:8px;text-align:left;">
-      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;"><i class="fas fa-info-circle"></i> Popular Pages</h2>
-      <ul style="padding-left:1.5rem;margin:0.75rem 0;line-height:1.6;">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="reports.html">Reports</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
+    <div class="not-found-help" style="max-width:500px;margin:2rem auto;padding:1rem;background:rgba(46,204,113,0.1);border-radius:8px;text-align:left;">
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;"><i class="fas fa-check-circle"></i> Confirmation</h2>
       <p style="font-size:0.95rem;margin-top:1rem;">
-        If you can't find what you're looking for, please <a href="contact.html">contact us</a> for assistance.
+        Your request has been processed. If you have any questions, feel free to <a href="contact.html">contact us</a>.
       </p>
     </div>
     <div class="not-found-map-section" aria-label="Map showing Bar Harbor Police Department location" style="margin:1.5rem auto 0;max-width:400px;width:100%;">
@@ -65,18 +57,6 @@
       </div>
     </footer>
   </main>
-  <script>
-    // Track 404 errors for site improvement
-    document.addEventListener('DOMContentLoaded', function() {
-      // Capture the URL that was not found
-      const notFoundUrl = window.location.pathname;
-      
-      // This is where you would typically send analytics data
-      console.log('404 error for: ' + notFoundUrl);
-      
-      // If you have analytics set up, you could log the error
-      // Example: if (typeof gtag === 'function') { gtag('event', '404_error', { 'page': notFoundUrl }); }
-    });
-  </script>
+  <!-- No specific script needed for success page -->
 </body>
-</html> 
+</html>
