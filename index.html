@@ -8,11 +8,12 @@
 <meta content="Official website of the Bar Harbor Mount Desert Police Department, serving the Bar Harbor Mount Desert community with pride and dedication." name="description"/>
 <meta content="Bar Harbor Police, Mount Desert, law enforcement, Maine police, public safety" name="keywords"/>
 <meta content="index, follow" name="robots"/>
+<link rel="canonical" href="https://www.bhmdpd.com/" />
 <!-- OpenGraph Tags -->
-<meta content="Bar Harbor Police Department" property="og:title"/>
-<meta content="Serving the Bar Harbor community with pride and dedication." property="og:description"/>
+<meta content="Bar Harbor Mount Desert Police Department" property="og:title"/>
+<meta content="Official website of the Bar Harbor Mount Desert Police Department, serving the Bar Harbor Mount Desert community with pride and dedication." property="og:description"/>
 <meta content="images/og-image.jpg" property="og:image"/>
-<meta content="https://example.com" property="og:url"/>
+<meta content="https://www.bhmdpd.com/" property="og:url"/>
 <meta content="website" property="og:type"/>
 <!-- Stylesheets -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
@@ -24,6 +25,61 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <script src="theme-init.js"></script> <!-- Load theme init script early -->
+<!-- Structured Data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PoliceStation",
+  "name": "Bar Harbor Mount Desert Police Department",
+  "url": "https://www.bhmdpd.com/",
+  "logo": "https://www.bhmdpd.com/images/branding/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "37 Firefly Lane",
+    "addressLocality": "Bar Harbor",
+    "addressRegion": "ME",
+    "postalCode": "04609",
+    "addressCountry": "US"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-207-288-3391",
+      "contactType": "General Information",
+      "areaServed": ["Bar Harbor", "Mount Desert"],
+      "availableLanguage": "English"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-207-288-5571",
+      "contactType": "Harbor Master",
+      "areaServed": ["Bar Harbor", "Mount Desert"],
+      "availableLanguage": "English"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61555282019664",
+    "https://youtube.com" /* TODO: Update with actual YouTube URL if available */
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "description": "Police services available 24/7",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-to-main" href="#main-content">
