@@ -321,6 +321,17 @@
   }
 }
 
+/* Full-width divider below hero */
+.hero-divider {
+  height: 4px; /* Match section title underline height */
+  width: 100%;
+  background: linear-gradient(to right, var(--accent-color, #1a73e8), var(--secondary-accent-color, #34a853)); /* Use existing gradient colors */
+  /* Ensure it sits flush */
+  margin: 0;
+  padding: 0;
+  display: block; 
+}
+
 /* Standard Hero Section */
 .hero-section {
   margin-top: var(--header-height, 80px);
