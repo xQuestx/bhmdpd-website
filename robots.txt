@@ -1,0 +1,6 @@
+# Allow all web crawlers access to all content
+User-agent: *
+Disallow:
+
+# Specify the location of the sitemap
+Sitemap: https://www.bhmdpd.com/sitemap.xml 
