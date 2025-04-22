@@ -29,6 +29,7 @@
 @import 'components/services.css';
 @import 'components/services-enhanced.css'; /* Enhanced service components */
 @import 'components/back-to-top.css';
+@import 'components/font-awesome-fix.css'; /* Font Awesome font-display fix */
 
 /* Page-Specific Styles */
 @import 'pages/home.css';

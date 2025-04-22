@@ -1,24 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM fully loaded and parsed');
     
-    // Add News Dropdown to Navigation first
+    // Initialize critical components first
+    console.log('Initializing critical components');
+    initHeaderScroll(); // Critical for header appearance
+    initMobileMenu(); // Critical for mobile navigation
+    
+    // Add News Dropdown to Navigation
     console.log('Adding News dropdown to navigation');
     addNewsDropdown();
     console.log('News dropdown addition complete');
     
-    // Then initialize components
-    initReadMore();
-    initMobileMenu();
-    initSmoothScroll();
-    initAnimations();
-    initAccordions();
-    initTabs();
-    initModals();
-    initTooltips();
-    initDropdowns();
-    initBackToTop(); // Add call to initialize the back-to-top button
-    initHeaderScroll(); // Add call to initialize the header scroll effect
-    initScrollAnimations(); // Add call to initialize scroll animations
+    // Defer non-critical initializations
+    setTimeout(function() {
+        // Initialize non-critical components
+        initReadMore();
+        initSmoothScroll();
+        initAnimations();
+        initAccordions();
+        initTabs();
+        initModals();
+        initTooltips();
+        initBackToTop();
+        initScrollAnimations();
+        console.log('Non-critical components initialized');
+    }, 100); // Short delay to prioritize critical rendering
     
     // Log initialization complete
     console.log('All components initialized');
@@ -207,13 +213,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Mobile Menu Functionality
+    // Mobile Menu Functionality - REVISED
     function initMobileMenu() {
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const mobileCloseBtn = document.querySelector('.mobile-close-btn');
         const navWrapper = document.querySelector('.nav-wrapper');
         const body = document.body;
-        const dropdowns = document.querySelectorAll('.dropdown > a');
+        // Select the anchor tag within the list item for dropdown toggling
+        const dropdownLinks = document.querySelectorAll('.nav-wrapper .dropdown > a'); 
 
         if (mobileMenuBtn && navWrapper) {
             console.log('Mobile menu initialized');
@@ -221,23 +228,21 @@ document.addEventListener('DOMContentLoaded', function() {
             // Toggle menu on hamburger button click
             mobileMenuBtn.addEventListener('click', function(e) {
                 console.log('Mobile menu button clicked');
-                e.stopPropagation();
-                this.classList.toggle('active');
-                navWrapper.classList.toggle('active');
-                body.classList.toggle('menu-open');
+                e.stopPropagation(); // Prevent triggering document click listener
+                const isActive = navWrapper.classList.toggle('active');
+                body.classList.toggle('menu-open', isActive); // Add/remove based on menu state
                 
-                // Toggle icon
+                // Toggle icon (assuming icon is direct child)
                 const icon = this.querySelector('i');
                 if (icon) {
-                    if (this.classList.contains('active')) {
+                    if (isActive) {
                         icon.classList.remove('fa-bars');
                         icon.classList.add('fa-times');
                     } else {
                         icon.classList.remove('fa-times');
                         icon.classList.add('fa-bars');
-                        
-                        // Close all dropdowns when closing the menu
-                        closeAllDropdowns();
+                        // Close all dropdowns when closing the main menu
+                        closeAllDropdowns(); 
                     }
                 }
             });
@@ -248,14 +253,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.log('Mobile close button clicked');
                     e.stopPropagation();
                     navWrapper.classList.remove('active');
-                    mobileMenuBtn.classList.remove('active');
                     body.classList.remove('menu-open');
                     
+                    // Reset hamburger button icon
                     const icon = mobileMenuBtn.querySelector('i');
-                    if (icon) {
+                     if (icon) {
                         icon.classList.remove('fa-times');
                         icon.classList.add('fa-bars');
                     }
+                    mobileMenuBtn.classList.remove('active'); // Ensure button state is reset
                     
                     // Close all dropdowns
                     closeAllDropdowns();
@@ -263,79 +269,116 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // Toggle dropdowns on mobile
-            dropdowns.forEach(dropdown => {
-                dropdown.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        const parent = this.parentElement;
-                        
-                        // Check if this dropdown is already active
-                        const wasActive = parent.classList.contains('active');
-                        
-                        // First close all dropdowns
-                        closeAllDropdowns();
-                        
-                        // If it wasn't active before, open it
-                        if (!wasActive) {
-                            // Toggle current dropdown
-                            parent.classList.add('active');
+            dropdownLinks.forEach(dropdownLink => {
+                 // Add a flag to prevent attaching multiple listeners if initMobileMenu runs again
+                 if (!dropdownLink.dataset.mobileListenerAttached) { 
+                    dropdownLink.dataset.mobileListenerAttached = 'true'; // Mark as attached
+                    dropdownLink.addEventListener('click', function(e) {
+                        // Only activate dropdown logic on mobile
+                        if (window.innerWidth <= 768) { 
+                            console.log('Mobile dropdown link clicked:', this.textContent.trim());
+                            e.preventDefault(); // Prevent navigation for the main dropdown link
+                            e.stopPropagation(); // Prevent closing menu immediately
                             
-                            // Toggle caret icon
-                            const caret = this.querySelector('.fa-caret-down');
-                            if (caret) {
-                                caret.style.transform = 'rotate(180deg)';
+                            const parentLi = this.closest('li.dropdown'); // Get the parent li.dropdown
+                            if (!parentLi) return;
+                            
+                            const content = parentLi.querySelector('.dropdown-content');
+                            
+                            // Check if this dropdown is already active
+                            const wasActive = parentLi.classList.contains('active');
+                            
+                            // First close all dropdowns unconditionally
+                            closeAllDropdowns(); 
+                            
+                            // If it wasn't active before, open it now
+                            if (!wasActive) {
+                                console.log('Opening dropdown:', this.textContent.trim());
+                                parentLi.classList.add('active');
+                                if (content) {
+                                    content.style.display = 'block'; // Use display: block to show
+                                }
+                                // Rotate caret icon
+                                const caret = this.querySelector('.fa-caret-down');
+                                if (caret) {
+                                    caret.style.transform = 'rotate(180deg)';
+                                }
+                            } else {
+                                console.log('Closing previously active dropdown:', this.textContent.trim());
+                                // If it *was* active, closeAllDropdowns already handled closing it.
+                                // The caret and active class were reset by closeAllDropdowns.
                             }
                         }
-                    }
-                });
+                        // On wider screens, allow default link behavior if needed, or handle hover elsewhere
+                    });
+                }
             });
 
             // Close menu when clicking outside
             document.addEventListener('click', function(e) {
+                 // Check if the click target is outside the nav wrapper and outside the toggle button
                 if (navWrapper.classList.contains('active') && 
                     !navWrapper.contains(e.target) && 
                     !mobileMenuBtn.contains(e.target)) {
+                    
                     console.log('Clicked outside menu, closing');
                     navWrapper.classList.remove('active');
-                    mobileMenuBtn.classList.remove('active');
                     body.classList.remove('menu-open');
                     
+                    // Reset hamburger button icon
                     const icon = mobileMenuBtn.querySelector('i');
                     if (icon) {
                         icon.classList.remove('fa-times');
                         icon.classList.add('fa-bars');
                     }
+                    mobileMenuBtn.classList.remove('active');
                     
                     // Close all dropdowns
                     closeAllDropdowns();
                 }
             });
+            
+             // Also close menu on Escape key press
+             document.addEventListener('keydown', function(e) {
+                 if (e.key === 'Escape' && navWrapper.classList.contains('active')) {
+                     console.log('Escape key pressed, closing menu');
+                      navWrapper.classList.remove('active');
+                      body.classList.remove('menu-open');
+                      const icon = mobileMenuBtn.querySelector('i');
+                      if (icon) {
+                          icon.classList.remove('fa-times');
+                          icon.classList.add('fa-bars');
+                      }
+                      mobileMenuBtn.classList.remove('active');
+                      closeAllDropdowns();
+                 }
+             });
+
+        } else {
+            console.error('Mobile menu button or nav wrapper not found!');
         }
     }
     
-    // Helper function to close all dropdowns
+    // Helper function to close all dropdowns - REVISED
     function closeAllDropdowns() {
         console.log('Closing all dropdowns');
-        const allDropdowns = document.querySelectorAll('.dropdown');
+        // Target only dropdowns within the nav-wrapper to be safe
+        const allDropdownLis = document.querySelectorAll('.nav-wrapper .dropdown'); 
         
-        allDropdowns.forEach(dropdown => {
-            // Remove active class
-            dropdown.classList.remove('active');
+        allDropdownLis.forEach(dropdownLi => {
+            // Remove active class from the list item
+            dropdownLi.classList.remove('active');
             
-            // Reset caret rotation
-            const caret = dropdown.querySelector('.fa-caret-down');
+            // Reset caret rotation on the link inside
+            const caret = dropdownLi.querySelector('a > .fa-caret-down');
             if (caret) {
                 caret.style.transform = 'rotate(0deg)';
             }
             
-            // Hide dropdown content
-            const content = dropdown.querySelector('.dropdown-content');
+            // Hide dropdown content using display: none
+            const content = dropdownLi.querySelector('.dropdown-content');
             if (content) {
-                content.style.visibility = 'hidden';
-                content.style.maxHeight = '0';
-                content.style.opacity = '0';
+                content.style.display = 'none'; 
             }
         });
     }
@@ -359,116 +402,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Don't call the initialization function again
     // initAll();
 
-    // Helper function to set up mobile dropdown functionality
-    function setupMobileDropdown(dropdown) {
-        console.log('Setting up mobile dropdown for:', dropdown);
-        const dropdownLink = dropdown.querySelector('a');
-        const navWrapper = document.querySelector('.nav-wrapper');
-        const dropdownContent = dropdown.querySelector('.dropdown-content');
-        
-        if (!navWrapper) {
-            console.log('Nav wrapper not found');
-            return;
-        }
-        
-        // Add click event for mobile dropdown toggle
-        if (dropdownLink) {
-            console.log('Adding click event to dropdown link');
-            
-            // Remove any existing click event listeners
-            const newDropdownLink = dropdownLink.cloneNode(true);
-            dropdownLink.parentNode.replaceChild(newDropdownLink, dropdownLink);
-            
-            newDropdownLink.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    console.log('Dropdown clicked in mobile view');
-                    e.preventDefault();
-                    e.stopPropagation(); // Prevent event bubbling
-                    
-                    // Get all dropdowns
-                    const allDropdowns = document.querySelectorAll('.dropdown');
-                    const parent = this.parentElement;
-                    
-                    // Check if this dropdown is already active
-                    const wasActive = parent.classList.contains('active');
-                    
-                    // First, close ALL dropdowns
-                    allDropdowns.forEach(item => {
-                        // Remove active class
-                        item.classList.remove('active');
-                        
-                        // Reset caret rotation
-                        const caret = item.querySelector('.fa-caret-down');
-                        if (caret) {
-                            caret.style.transform = 'rotate(0deg)';
-                        }
-                        
-                        // Hide dropdown content
-                        const content = item.querySelector('.dropdown-content');
-                        if (content) {
-                            content.style.visibility = 'hidden';
-                            content.style.maxHeight = '0';
-                            content.style.opacity = '0';
-                        }
-                    });
-                    
-                    // If the clicked dropdown wasn't active before, open it
-                    if (!wasActive) {
-                        // Toggle the current dropdown
-                        parent.classList.add('active');
-                        console.log('Opening dropdown:', parent);
-                        
-                        // Rotate caret icon
-                        const caretIcon = this.querySelector('.fa-caret-down');
-                        if (caretIcon) {
-                            caretIcon.style.transform = 'rotate(180deg)';
-                        }
-                        
-                        // Show dropdown content
-                        if (dropdownContent) {
-                            dropdownContent.style.visibility = 'visible';
-                            dropdownContent.style.maxHeight = '500px';
-                            dropdownContent.style.opacity = '1';
-                        }
-                    }
-                }
-            });
-        }
-        
-        // Add click events to dropdown links
-        const dropdownLinks = dropdown.querySelectorAll('.dropdown-content a');
-        dropdownLinks.forEach(link => {
-            // Remove any existing click event listeners
-            const newLink = link.cloneNode(true);
-            link.parentNode.replaceChild(newLink, link);
-            
-            newLink.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    console.log('Dropdown link clicked in mobile view');
-                    // Don't prevent default here to allow navigation
-                    
-                    // Close the menu
-                    navWrapper.classList.remove('active');
-                    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-                    if (mobileMenuBtn) {
-                        mobileMenuBtn.classList.remove('active');
-                        const icon = mobileMenuBtn.querySelector('i');
-                        if (icon) {
-                            icon.classList.remove('fa-times');
-                            icon.classList.add('fa-bars');
-                        }
-                    }
-                    document.body.classList.remove('menu-open');
-                    
-                    // Add visual feedback
-                    this.classList.add('clicked');
-                    setTimeout(() => {
-                        this.classList.remove('clicked');
-                    }, 300);
-                }
-            });
-        });
-    }
+    // Helper function to set up mobile dropdown functionality - REMOVED
+    /* 
+    function setupMobileDropdown(dropdown) { 
+        // ... implementation removed ...
+    } 
+    */
 
     // Add News Dropdown to Navigation
     function addNewsDropdown() {
@@ -489,7 +428,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const existingDropdownLi = existingNewsDropdown.closest('li.dropdown');
             if (existingDropdownLi) {
                 console.log('Setting up existing News dropdown');
-                setupMobileDropdown(existingDropdownLi);
+                // setupMobileDropdown(existingDropdownLi); // REMOVED - initMobileMenu listener should cover this now
             }
             return;
         }
@@ -532,8 +471,36 @@ document.addEventListener('DOMContentLoaded', function() {
         
         console.log('News dropdown added to DOM');
         
-        // Add mobile menu event listeners to the new dropdown
-        setupMobileDropdown(newsDropdown);
+        // Manually trigger listener attachment for the new dropdown link
+        const newDropdownLink = newsDropdown.querySelector('a');
+        if (newDropdownLink && !newDropdownLink.dataset.mobileListenerAttached) {
+            newDropdownLink.dataset.mobileListenerAttached = 'true'; // Mark as attached
+            newDropdownLink.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) { 
+                    console.log('Mobile dropdown link clicked (dynamic):', this.textContent.trim());
+                    e.preventDefault(); 
+                    e.stopPropagation(); 
+                    const parentLi = this.closest('li.dropdown'); 
+                    if (!parentLi) return;
+                    const content = parentLi.querySelector('.dropdown-content');
+                    const wasActive = parentLi.classList.contains('active');
+                    closeAllDropdowns(); 
+                    if (!wasActive) {
+                        console.log('Opening dropdown (dynamic):', this.textContent.trim());
+                        parentLi.classList.add('active');
+                        if (content) {
+                            content.style.display = 'block'; 
+                        }
+                        const caret = this.querySelector('.fa-caret-down');
+                        if (caret) {
+                            caret.style.transform = 'rotate(180deg)';
+                        }
+                    } else {
+                        console.log('Closing previously active dropdown (dynamic):', this.textContent.trim());
+                    }
+                }
+            });
+        }
         
         // Force a redraw to ensure the dropdown is visible
         setTimeout(() => {
@@ -591,21 +558,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Implementation for tooltips
     }
     
-    // Initialize dropdowns
-    function initDropdowns() {
-        console.log('Initializing dropdowns');
-        
-        // Get all dropdowns
-        const allDropdowns = document.querySelectorAll('.dropdown');
-        console.log('Found dropdowns:', allDropdowns.length);
-        
-        // Set up each dropdown
-        allDropdowns.forEach(dropdown => {
-            console.log('Setting up dropdown:', dropdown);
-            setupMobileDropdown(dropdown);
-        });
-    }
-
     // Accordion functionality for permit types
     const accordionButtons = document.querySelectorAll('.accordion-button');
     
