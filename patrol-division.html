@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Harbor Master Division - Bar Harbor Police Department</title>
+<title>Patrol Division - Bar Harbor Police Department</title>
 <!-- Dark mode initialization -->
 <meta content="#ffffff" id="theme-color" name="theme-color"/>
 <script src="darkmode.js"></script>
@@ -15,7 +15,7 @@
     </script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 <link href="css/main.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
 <a class="skip-to-main" href="#main-content">
@@ -31,18 +31,18 @@
 <div class="nav-wrapper">
 <ul class="nav-links">
 <li>
-<a class="active" href="index.html">
+<a href="index.html">
 <i class="fas fa-home"></i> Home
                         </a>
 </li>
 <li class="dropdown">
-<a href="#">
+<a href="#" class="active">
 <i class="fas fa-building"></i> Divisions
                             <i class="fas fa-caret-down"></i>
 </a>
 <ul class="dropdown-content">
 <li>
-<a href="patrol-division.html">
+<a href="patrol-division.html" class="active">
 <i class="fas fa-shield-alt"></i> Patrol Division
                                 </a>
 </li>
@@ -135,116 +135,88 @@
 </button>
 </nav>
 </header>
-<main class="harbor-master-page" id="main-content">
-<div class="hero-section harbor-hero">
+<main class="patrol-division-page" id="main-content">
+<div class="hero-section patrol-hero" style="background: linear-gradient(rgba(26, 43, 74, 0.9), rgba(10, 20, 40, 0.95));">
 <div class="hero-content">
-<i class="fas fa-ship hero-icon"></i>
-<h1>Harbor Master Division</h1>
-<p>Ensuring safe and efficient harbor operations in Bar Harbor</p>
+<i class="fas fa-shield-alt hero-icon" style="color: #ff3333; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);"></i>
+<h1 style="color: white; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);">Patrol Division</h1>
+<p style="color: white; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);">Protecting and serving the Bar Harbor and Mount Desert communities</p>
 </div>
 </div>
 <div class="content-wrapper">
 <section class="info-grid">
 <div class="info-card about">
 <div class="card-header">
-<i class="fas fa-anchor"></i>
+<i class="fas fa-shield-alt"></i>
 <h2>About Our Division</h2>
 </div>
 <div class="card-body">
-<p>The Harbor Master Division is responsible for ensuring the safe and efficient operation of Bar Harbor. We oversee mooring assignments, enforce harbor regulations, and provide assistance to boaters. Our goal is to maintain a welcoming and enjoyable environment for all who use the harbor.</p>
+<p>The Patrol Division is the backbone of the Bar Harbor Mount Desert Police Department, providing 24/7 law enforcement services to our communities. Our officers are dedicated to maintaining public safety, responding to emergencies, and building positive relationships with community members.</p>
 <div class="responsibilities">
-<h3>Key Responsibilities</h3>
-<div class="responsibility-grid">
-<div class="responsibility-item">
-<i class="fas fa-boat"></i>
-<span>Mooring Management</span>
+<h3>Our Responsibilities</h3>
+<ul>
+<li><i class="fas fa-check"></i> Emergency response</li>
+<li><i class="fas fa-check"></i> Crime prevention and investigation</li>
+<li><i class="fas fa-check"></i> Traffic enforcement</li>
+<li><i class="fas fa-check"></i> Community policing</li>
+<li><i class="fas fa-check"></i> Public assistance</li>
+</ul>
 </div>
-<div class="responsibility-item">
-<i class="fas fa-shield-alt"></i>
-<span>Harbor Enforcement</span>
 </div>
-<div class="responsibility-item">
+</div>
+
+<div class="info-card services">
+<div class="card-header">
+<i class="fas fa-hands-helping"></i>
+<h2>Services We Provide</h2>
+</div>
+<div class="card-body">
+<div class="service-item">
+<i class="fas fa-car"></i>
+<div>
+<h3>Traffic Safety</h3>
+<p>Our officers enforce traffic laws to ensure the safety of drivers, pedestrians, and cyclists throughout Bar Harbor and Mount Desert.</p>
+</div>
+</div>
+<div class="service-item">
+<i class="fas fa-search"></i>
+<div>
+<h3>Criminal Investigations</h3>
+<p>We investigate criminal activity to bring justice to victims and maintain the safety of our community.</p>
+</div>
+</div>
+<div class="service-item">
+<i class="fas fa-users"></i>
+<div>
+<h3>Community Engagement</h3>
+<p>Building relationships with community members through outreach programs, school visits, and public events.</p>
+</div>
+</div>
+<div class="service-item">
 <i class="fas fa-life-ring"></i>
-<span>Boater Safety</span>
-</div>
-<div class="responsibility-item">
-<i class="fas fa-water"></i>
-<span>Water Quality</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="info-card mooring">
-<div class="card-header">
-<i class="fas fa-link"></i>
-<h2>Mooring Services</h2>
-</div>
-<div class="card-body">
-<div class="service-buttons">
-<a class="action-button" href="https://dockwa.com/explore/destination/mncw35-bar-harbor-municipal-pier" target="_blank">
-<i class="fas fa-calendar-check"></i>
-                                Make a Reservation
-                            </a>
-<a class="action-button secondary" href="#">
-<i class="fas fa-info-circle"></i>
-                                Mooring Information
-                            </a>
-</div>
-<div class="reservation-note">
-<i class="fas fa-exclamation-circle"></i>
-<p>Book slips, docks, and moorings at the Bar Harbor Municipal Pier through our online reservation system.</p>
-</div>
-</div>
-</div>
-<div class="info-card contact">
-<div class="card-header">
-<i class="fas fa-phone-alt"></i>
-<h2>Contact Information</h2>
-</div>
-<div class="card-body">
-<div class="contact-details">
-<div class="contact-item">
-<i class="fas fa-map-marker-alt"></i>
 <div>
-<h3>Address</h3>
-<p>3 Town Pier<br/>Bar Harbor, ME 04609</p>
+<h3>Emergency Response</h3>
+<p>Rapid response to emergencies and critical incidents to protect life and property.</p>
 </div>
 </div>
-<div class="contact-item">
-<i class="fas fa-phone"></i>
-<div>
-<h3>Phone</h3>
-<p>207-288-5571</p>
-</div>
-</div>
-<div class="contact-item">
-<i class="fas fa-clock"></i>
-<div>
-<h3>Hours</h3>
-<p>Monday - Friday:<br/>8:00 AM - 4:00 PM</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="info-card regulations">
-<div class="card-header">
-<i class="fas fa-book"></i>
-<h2>Harbor Regulations</h2>
-</div>
-<div class="card-body">
-<p>Access the complete harbor regulations and guidelines for safe harbor operations.</p>
-<a class="download-button" href="#">
-<i class="fas fa-file-pdf"></i>
-                            Download Regulations (PDF)
-                        </a>
 </div>
 </div>
 </section>
+
+<section class="construction-notice">
+<div class="notice-container">
+<i class="fas fa-hard-hat notice-icon"></i>
+<div class="notice-content">
+<h2>Under Construction</h2>
+<p>We're currently enhancing this section with additional information about our Patrol Division. Please check back soon for updates on our team, equipment, and specialized units.</p>
+<p>In the meantime, if you have any questions about our Patrol Division, please <a href="contact.html">contact us</a>.</p>
+</div>
+</div>
+</section>
+
 </div>
 </main>
-<!-- Footer -->
+
 <footer class="footer" role="contentinfo" aria-label="Site Footer">
 <div class="footer-content">
 <div class="footer-logo-container">
@@ -260,8 +232,8 @@
 <nav class="footer-links" aria-label="Footer Navigation">
 <section class="footer-column" aria-labelledby="footer-divisions">
 <h3 id="footer-divisions"><i class="fas fa-building"></i> DIVISIONS</h3>
-<ul><li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
-
+<ul>
+<li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
 <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
 <li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
 <li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
@@ -296,22 +268,23 @@
 </ul>
 </section>
 </nav>
-<div class="footer-map" aria-label="Map showing Bar Harbor Police Department location">
+<div class="footer-map" aria-label="Map showing Bar Harbor Police Department locations">
 <h3><i class="fas fa-map-marker-alt"></i> Our Locations</h3>
 <div class="map-container" style="position:relative;">
 <div id="map" style="height: 250px; width: 100%; border:1px solid black;"></div>
-
 </div>
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
-<div class="last-updated"><i class="fas fa-clock" aria-hidden="true" style="margin-right:0.5em;"></i>Last updated: <time datetime="2024-04-16">April 16th, 2024</time></div>
+<p>© 2025 Bar Harbor Police Department. All Rights Reserved.</p>
+<div class="last-updated"><i class="fas fa-clock" aria-hidden="true" style="margin-right:0.5em;"></i>Last updated: <time datetime="2025-04-23">April 23rd, 2025</time></div>
 </div>
 </footer>
+
 <script src="script.js"></script>
 <!-- Footer loader script to dynamically load the footer with both addresses -->
 <script src="js/footer-loader.js" defer></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </body>
 </html>

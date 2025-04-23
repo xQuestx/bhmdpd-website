@@ -16,6 +16,9 @@
 <meta content="https://www.bhmdpd.com/" property="og:url"/>
 <meta content="website" property="og:type"/>
 
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
 <!-- Preload Fonts and Critical CSS -->
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
@@ -291,6 +294,11 @@
 </a>
 <ul class="dropdown-content">
 <li>
+<a href="patrol-division.html">
+<i class="fas fa-shield-alt"></i> Patrol Division
+                                </a>
+</li>
+<li>
 <a href="harbor-master-division.html">
 <i class="fas fa-ship"></i> Harbor Master
                                 </a>
@@ -415,6 +423,9 @@
             </a>
 <a class="btn btn-primary btn-lg contact-us" href="contact.html">
 <i class="fas fa-phone-alt"></i> Contact Us
+            </a>
+<a class="btn btn-primary btn-lg apply-now" href="bhmdrec.html#contact" style="background-color: #ff3333;">
+<i class="fas fa-user-plus"></i> Apply Now
             </a>
 </div>
 </div>
@@ -549,7 +560,7 @@
     </div>
     <div class="recruitment-cta">
         <a href="bhmdrec.html" class="primary-cta">View Opportunities</a>
-        <a href="application-process.html" class="secondary-cta">Apply Now</a>
+        <a href="bhmdrec.html#contact" class="secondary-cta">Apply Now</a>
     </div>
 </div>
 
@@ -594,23 +605,10 @@
 <!-- Upcoming Events Widget - Moved to bottom -->
 <div class="upcoming-events-widget">
 <h3 class="widget-title"><i class="fas fa-calendar"></i> Upcoming Events</h3>
-<div class="event-list">
-<a href="events.html" class="event">
-<span class="event-date">Apr 5</span>
-<div class="event-details">
-<h4>Coffee with a Cop</h4>
-<p>Local Bean Cafe, 8:00 AM</p>
+<div class="event-message" style="padding: 1rem; text-align: center; background-color: #f8f9fa; border-radius: 8px; margin-top: 1rem;">
+<i class="fas fa-info-circle" style="font-size: 1.5rem; color: #1a73e8; margin-bottom: 0.5rem; display: block;"></i>
+<p style="margin: 0; font-size: 0.95rem; color: #333;">We're currently updating our events calendar. Please check back soon for information about upcoming community events and programs.</p>
 </div>
-</a>
-<a href="events.html" class="event">
-<span class="event-date">Aug 8</span>
-<div class="event-details">
-<h4>Community Cookout</h4>
-<p>Town Park, 4:00 PM (Rain Location: Neighborhood House)</p>
-</div>
-</a>
-</div>
-<a href="events.html" class="view-all">View Calendar</a>
 </div>
 
 </div>
@@ -623,7 +621,7 @@
 <div class="footer-content">
 <div class="footer-logo-container">
 <img alt="Bar Harbor Police Department Logo" class="footer-logo" src="images/branding/logo.png" width="192" height="262"/>
-<p><strong>Bar Harbor Police Department</strong></p>
+<p><strong>Bar Harbor & Mount Desert Police Department</strong></p>
 <p>37 Firefly Lane, Bar Harbor, ME 04609</p>
 <p>General Information: (207) 288-3391</p>
 <div class="social-icons">
@@ -634,7 +632,8 @@
 <nav class="footer-links" aria-label="Footer Navigation">
 <section class="footer-column" aria-labelledby="footer-divisions">
 <h3 id="footer-divisions"><i class="fas fa-building"></i> DIVISIONS</h3>
-<ul>
+<ul><li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
+
 <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
 <li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
 <li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
@@ -669,21 +668,24 @@
 </ul>
 </section>
 </nav>
-<div class="footer-map" aria-label="Map showing Bar Harbor Police Department location">
-<h3><i class="fas fa-map-marker-alt"></i> Our Location</h3>
+<div class="footer-map" aria-label="Map showing Bar Harbor Police Department locations">
+<h3><i class="fas fa-map-marker-alt"></i> Our Locations</h3>
 <div class="map-container" style="position:relative;">
-<iframe allowfullscreen="" height="250" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.076072177352!2d-68.20830382343881!3d44.38821380458311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4caebf7cae314357%3A0xb7e0edbf086c978c!2s37%20Firefly%20Ln%2C%20Bar%20Harbor%2C%20ME%2004609!5e1!3m2!1sen!2sus!4v1734624380504!5m2!1sen!2sus" style="border:0;" title="Map showing Bar Harbor Police Department location" width="100%"></iframe>
-<img src="images/branding/logo.png" alt="Department Badge Marker" class="map-badge-marker" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);width:40px;height:40px;z-index:2;pointer-events:none;" aria-hidden="true" />
+<iframe height="250" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-68.31,44.28,-68.19,44.40&layer=mapnik&marker=44.3882,-68.2061&marker=44.2943,-68.2913" style="border:1px solid black; width: 100%;" title="Map showing Bar Harbor Police Department locations at 37 Firefly Ln, Bar Harbor and 21 Sea St, Mount Desert"></iframe>
 </div>
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2025 Bar Harbor Police Department. All Rights Reserved.</p>
+<p>© 2025 Bar Harbor & Mount Desert Police Department. All Rights Reserved.</p>
 <div class="last-updated"><i class="fas fa-clock" aria-hidden="true" style="margin-right:0.5em;"></i>Last updated: <time datetime="2025-04-21">April 21st, 2025</time></div>
 </div>
 </footer>
 <!-- JS FILES -->
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <!-- Link to your existing 'script.js' that contains the slider logic -->
 <script src="script.js" defer></script>
+<!-- Footer loader script to dynamically load the footer with both addresses -->
+<script src="js/footer-loader.js" defer></script>
 </body>
 </html>
