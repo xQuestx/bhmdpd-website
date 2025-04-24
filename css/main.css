@@ -1593,3 +1593,66 @@ body.dark-mode .not-found-actions a {
 body.dark-mode .not-found-actions a:hover {
   background: var(--accent-color, #2e5b9a);
 }
+
+/* Parking Map Section Styles */
+.parking-map-section {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin: 60px 0; /* Increased top/bottom margin */
+}
+
+.parking-map-section .section-header {
+    // ... existing code ...
+}
+
+/* --- Custom Parking Map Image Styles --- */
+.parking-map-section .map-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 24px auto;
+    max-width: 100%;
+    width: 100%; /* Ensure container is full width for centering */
+    text-align: center; /* Extra centering support */
+}
+
+.parking-map-image {
+    width: 80vw;
+    max-width: 900px;
+    height: auto;
+    border-radius: 16px;
+    border: 2px solid #e0e6ef;
+    box-shadow: 0 8px 32px rgba(30,60,108,0.18), 0 1.5px 6px rgba(0,0,0,0.08);
+    background: #fff;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.parking-map-image:hover {
+    box-shadow: 0 12px 40px rgba(30,60,108,0.22), 0 2px 8px rgba(0,0,0,0.12);
+    border-color: #b3c6e0;
+}
+
+@media (max-width: 600px) {
+    .parking-map-image {
+        width: 98vw;
+        max-width: 98vw;
+        border-radius: 10px;
+    }
+    .parking-map-section .map-image-container {
+        padding: 0 2vw;
+    }
+}
+
+body.dark-mode .parking-map-image {
+    background: #23272f;
+    border-color: #444c5e;
+    box-shadow: 0 8px 32px rgba(30,60,108,0.28), 0 1.5px 6px rgba(0,0,0,0.18);
+}
+body.dark-mode .parking-map-image:hover {
+    border-color: #6ca1e9;
+}

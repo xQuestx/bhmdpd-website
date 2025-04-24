@@ -116,7 +116,7 @@
                     </div>
                     <div class="stat-item">
                         <i class="fas fa-map-marked-alt"></i>
-                        <span class="stat-number">28</span>
+                        <span class="stat-number">70+</span>
                         <p>Square Miles Protected</p>
                     </div>
                     <div class="stat-item">
@@ -248,26 +248,34 @@
         <section id="contact" class="contact-section">
             <div class="contact-container">
                 <h2 class="section-title">Start Your Journey</h2>
-                <form class="modern-form" action="https://formsubmit.co/pdrecruitment@barharbormaine.gov" method="POST">
+                <form action="https://formsubmit.co/pdrecruitment@barharbormaine.gov" method="POST" class="modern-form">
+                    <input type="hidden" name="_next" value="https://www.bhmdpd.com/success.html">
                     <input type="hidden" name="_subject" value="New Recruitment Application Submission">
-                    <input type="hidden" name="_next" value="https://xquestx.github.io/success.html">
-                    
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" style="display:none">
+
                     <label for="name">Name <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" class="form-input" required>
-                    
+                    <input type="text" id="name" name="name" required class="form-input">
+
                     <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" class="form-input" required>
-                    
+                    <input type="email" id="email" name="email" placeholder="Email Address" required class="form-input">
+
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" class="form-input">
-                    
-                    <label for="referral">How did you hear about us? <span class="required">*</span></label>
-                    <input type="text" id="referral" name="referral" class="form-input" required>
-                    
+                    <input type="tel" id="phone" name="phone" class="form-input" pattern="[0-9\-\+\s\(\)]{7,}" placeholder="(Optional)">
+
+                    <label>Are you currently certified? <span class="required">*</span></label>
+                    <div class="form-radio-group">
+                      <input type="radio" id="certified-yes" name="certified" value="Yes" required>
+                      <label for="certified-yes">Yes</label>
+                      <input type="radio" id="certified-no" name="certified" value="No" required>
+                      <label for="certified-no">No</label>
+                    </div>
+
                     <label for="message">Additional Information</label>
                     <textarea id="message" name="message" class="form-textarea"></textarea>
-                    
-                    <button type="submit" class="submit-btn">Submit Application</button>
+
+                    <button type="submit" class="submit-btn">Contact a Recruiter</button>
                 </form>
             </div>
         </section>
@@ -280,7 +288,7 @@
                 <p class="requirements__text">If you are 20 years old, you must have a minimum of 60 credit hours to qualify.</p>
                 <p class="requirements__text">Applicants are required to have already taken and passed the Maine Criminal Justice Academy Alert and Physical Fitness Test.</p>
                 <div class="requirements__cta">
-                    <p>Visit the <a href="http://www.maine.gov/dps/mcja/index.shtml" target="_blank">Maine Criminal Justice Academy website</a> for more information</p>
+                    <p>Visit the <a href="https://www.maine.gov/dps/mcja" target="_blank">Maine Criminal Justice Academy website</a> for more information</p>
                 </div>
             </div>
         </section>

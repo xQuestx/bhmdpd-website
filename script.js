@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     addNewsDropdown();
     console.log('News dropdown addition complete');
     
+    // Lightbox Initialization (REMOVED)
+    // initLightbox(); 
+    
     // Defer non-critical initializations
     setTimeout(function() {
         // Initialize non-critical components
@@ -671,3 +674,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initButtonRipples();
 });
+
+// Lightbox Functionality (REMOVED)
+/*
+function initLightbox() {
+    console.log('Initializing lightbox');
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+
+    if (!lightboxOverlay || !lightboxImage || !lightboxClose || lightboxTriggers.length === 0) {
+        console.warn('Lightbox elements not found, skipping initialization.');
+        return; 
+    }
+
+    lightboxTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default link behavior
+            const imageSrc = this.getAttribute('href');
+            lightboxImage.setAttribute('src', imageSrc);
+            lightboxOverlay.classList.add('lightbox-active');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+            console.log('Lightbox opened with image:', imageSrc);
+        });
+    });
+
+    const closeLightbox = () => {
+        lightboxOverlay.classList.remove('lightbox-active');
+        document.body.style.overflow = ''; // Restore background scroll
+        console.log('Lightbox closed');
+    };
+
+    // Close lightbox when clicking the close button
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    // Close lightbox when clicking on the overlay background (but not the image itself)
+    lightboxOverlay.addEventListener('click', function(e) {
+        if (e.target === lightboxOverlay) { // Only close if clicking the overlay itself
+            closeLightbox();
+        }
+    });
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightboxOverlay.classList.contains('lightbox-active')) {
+            closeLightbox();
+        }
+    });
+    console.log('Lightbox event listeners added');
+}
+*/
