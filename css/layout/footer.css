@@ -127,6 +127,9 @@
   overflow: hidden !important;
   border-radius: 12px !important;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 420px !important;
 }
 
 .footer-map h3 {

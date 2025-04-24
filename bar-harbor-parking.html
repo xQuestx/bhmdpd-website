@@ -140,12 +140,23 @@
 <li><i class="fas fa-map-marker-alt"></i>Follow posted signage for restrictions</li>
 </ul>
 </div>
-<a class="btn btn-primary mt-4" download="" href="images/map.jpg">
-<i class="fas fa-map-marked-alt"></i> Download Parking Map
-                                </a>
-<a class="btn btn-primary mt-4 ml-2" href="permitstepbystep.html">
-<i class="fas fa-clipboard-list"></i> Step-by-Step Permit Guide
-                                </a>
+
+<!-- Parking Map Image moved to middle section -->
+<div class="map-image-container mt-4">
+    <img src="images/divisions/parking/parkingmap.jpg" alt="Bar Harbor Parking Map Overview" class="parking-map-image">
+</div>
+
+<div class="mt-4">
+    <a class="btn btn-primary" download="Bar_Harbor_Parking_Map.jpg" href="images/divisions/parking/parkingmap.jpg">
+        <i class="fas fa-map-marked-alt"></i> Download Map (JPG)
+    </a>
+    <a class="btn btn-primary ml-2" download="Bar_Harbor_Parking_Map.pdf" href="images/divisions/parking/parkingmap.pdf">
+        <i class="fas fa-file-pdf"></i> Download Map (PDF)
+    </a>
+    <a class="btn btn-primary ml-2" href="permitstepbystep.html">
+        <i class="fas fa-clipboard-list"></i> Step-by-Step Permit Guide
+    </a>
+</div>
 </div>
 </div>
 </div>
@@ -973,6 +984,9 @@
 </div>
 </div>
 </section>
+
+<!-- Parking Map section removed as it's now in the General Info tab -->
+
 <!-- Info Cards -->
 <section class="info-section">
 <div class="container">
@@ -1110,6 +1124,15 @@
 <div class="last-updated"><i class="fas fa-clock" aria-hidden="true" style="margin-right:0.5em;"></i>Last updated: <time datetime="2025-04-16">April 16th, 2025</time></div>
 </div>
 </footer>
+
+<!-- Lightbox Structure (REMOVED) -->
+<!--
+<div id="lightbox-overlay" class="lightbox-overlay">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-image" src="#" alt="Enlarged Parking Map">
+</div>
+-->
+
 <script src="script.js"></script>
 <!-- Footer loader script to dynamically load the footer with both addresses -->
 <script src="js/footer-loader.js" defer></script>

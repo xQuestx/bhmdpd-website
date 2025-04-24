@@ -435,15 +435,21 @@
   color: #ff0000;
 }
 
+/* Make recruitment form input and textarea fields larger and easier to use */
 .modern-form .form-input,
+.modern-form input[type="text"],
+.modern-form input[type="email"],
+.modern-form textarea,
 .modern-form .form-textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--gray-300, #dee2e6);
-  border-radius: var(--radius-md, 8px);
-  background-color: var(--card-bg, #ffffff);
-  color: var(--gray-800, #343a40);
-  transition: all 0.3s ease;
+  font-size: 1.25rem;
+  padding: 1.25rem 1.25rem;
+  min-height: 3.25rem;
+}
+
+.modern-form .form-textarea,
+.modern-form textarea {
+  min-height: 200px;
+  font-size: 1.25rem;
 }
 
 .modern-form .form-input:focus,
@@ -451,11 +457,6 @@
   border-color: var(--accent-color, #007bff);
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
   outline: none;
-}
-
-.modern-form .form-textarea {
-  min-height: 150px;
-  resize: vertical;
 }
 
 .submit-btn {
