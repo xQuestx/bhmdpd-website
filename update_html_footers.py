@@ -3,7 +3,14 @@ import re
 import glob
 
 # Define the required elements
-leaflet_css = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />'
+# Change leaflet_css to use preload/onload pattern
+# Use double quotes for the string to allow single quotes inside onload
+leaflet_css_preload = "<link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload=\"this.onload=null;this.rel='stylesheet'\">"
+leaflet_css_noscript = '<noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>'
+leaflet_css_href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" # Use href for simple check
+# Define the old blocking tag pattern (more specific)
+old_leaflet_link_pattern = r'<link[^>]*rel=["\']stylesheet["\'][^>]*href=["\']' + re.escape(leaflet_css_href) + r'["\'][^>]*>'
+
 leaflet_js = '<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>'
 footer_loader_js = '<script src="js/footer-loader.js" defer></script>'
 # Define the Google Analytics snippet
@@ -37,28 +44,46 @@ for filename in html_files:
             head_insert_point = head_match.start()
             head_content = content[:head_insert_point]
 
-            # Add Leaflet CSS to head if not already present
-            if leaflet_css not in head_content:
-                content = content[:head_insert_point] + f"  {leaflet_css}\n" + content[head_insert_point:]
-                # Adjust insert point for next potential insert
-                head_insert_point += len(f"  {leaflet_css}\n")
+            # Process Leaflet CSS: Replace old or Add new async version
+            new_leaflet_snippet = f"  {leaflet_css_preload}\n  {leaflet_css_noscript}\n"
+            
+            # Try to find and replace the old blocking link tag
+            match_old_link = re.search(old_leaflet_link_pattern, head_content)
+            if match_old_link:
+                content = content.replace(match_old_link.group(0), new_leaflet_snippet.strip()) # Use strip to avoid extra whitespace
                 needs_update = True
-                print(f"  - Added Leaflet CSS to <head>")
+                print(f"  - Replaced old Leaflet CSS link with async version in <head>")
+            # If old wasn't found, check if *any* version (including preload href) is missing
+            elif leaflet_css_href not in head_content:
+                # Insert the new snippet before </head>
+                content = content[:head_insert_point] + new_leaflet_snippet + content[head_insert_point:]
+                needs_update = True
+                print(f"  - Added Leaflet CSS (async) to <head>")
 
             # Add GA Snippet to head if not already present
-            if ga_id not in head_content:
-                # Ensure we re-calculate insert point based on potentially modified content
-                current_head_match = re.search(r"</head>", content, re.IGNORECASE)
-                if current_head_match:
-                    current_head_insert_point = current_head_match.start()
-                    content = content[:current_head_insert_point] + f"  {ga_snippet}\n" + content[current_head_insert_point:]
+            # Re-check head_content after potential leaflet update
+            current_head_match_for_ga = re.search(r"</head>", content, re.IGNORECASE)
+            if current_head_match_for_ga:
+                current_head_content = content[:current_head_match_for_ga.start()]
+                if ga_id not in current_head_content:
+                    # Insert GA snippet earlier if possible
+                    ga_insert_marker = re.search(r'<meta.*?name="viewport".*?>', content, re.IGNORECASE)
+                    if not ga_insert_marker:
+                        ga_insert_marker = re.search(r'<title>.*?</title>', content, re.IGNORECASE)
+                    
+                    if ga_insert_marker:
+                         ga_insert_point = ga_insert_marker.end()
+                         content = content[:ga_insert_point] + f"\n  {ga_snippet}\n" + content[ga_insert_point:]
+                    else: # Fallback to inserting before </head>
+                         content = content[:current_head_match_for_ga.start()] + f"  {ga_snippet}\n" + content[current_head_match_for_ga.start():]
+
                     needs_update = True
                     print(f"  - Added Google Analytics snippet to <head>")
-                else:
-                     print(f"  - Warning: Could not find </head> after potential modification in {filename}.")
+            else:
+                # This case should be unlikely if the head tag was found initially
+                print(f"  - Warning: Could not find </head> after potential modification in {filename} (during GA check).")
         else:
             print(f"  - Warning: Could not find </head> in {filename}. Cannot add head elements.")
-
 
         # Add scripts before closing body tag if not already present
         match_body = re.search(r"</body>", content, re.IGNORECASE)
@@ -67,10 +92,12 @@ for filename in html_files:
             body_content = content[:insert_point_body]
             scripts_to_add = []
 
-            if leaflet_js not in body_content:
+            # Check for leaflet.js using simple string check
+            if leaflet_js not in body_content and "unpkg.com/leaflet@" not in body_content:
                 scripts_to_add.append(leaflet_js)
 
-            if footer_loader_js not in body_content:
+            # Check for footer_loader.js using simple string check
+            if footer_loader_js not in body_content and "footer-loader.js" not in body_content:
                 scripts_to_add.append(footer_loader_js)
 
             if scripts_to_add:

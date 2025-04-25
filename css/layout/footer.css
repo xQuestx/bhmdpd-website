@@ -28,14 +28,15 @@
 
 /* Footer Content Grid */
 .footer-content {
-  display: grid !important;
-  grid-template-columns: 1fr 2fr 1fr !important;
+  display: grid;
+  grid-template-columns: 20% 40% 40%; /* Make the right column wider for the map */
   gap: 2rem !important;
   margin-bottom: 2rem !important;
   max-width: var(--content-max-width, 1400px) !important;
   margin-left: auto !important;
   margin-right: auto !important;
   padding: 0 var(--container-padding, 1.5rem) !important;
+  position: relative !important;
 }
 
 /* Logo Container */
@@ -124,12 +125,13 @@
 
 /* Footer Map */
 .footer-map {
-  overflow: hidden !important;
-  border-radius: 12px !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  max-width: 420px !important;
+  grid-column: 3 !important; /* Place in the third column (right side) */
 }
 
 .footer-map h3 {
@@ -143,9 +145,16 @@
 
 .footer-map iframe {
   width: 100% !important;
-  height: 200px !important;
+  height: 300px !important; /* Further increased height for better proportions */
   border: 0 !important;
   border-radius: 8px !important;
+  display: block !important; /* Ensure block display */
+}
+
+/* Add specific styling for the map container */
+.map-container {
+  width: 100% !important;
+  position: relative !important;
 }
 
 /* Footer Bottom */
@@ -291,7 +300,7 @@ address a:hover {
   }
   
   .footer-map {
-    grid-column: span 2 !important;
+    grid-column: 2 !important; /* Place in the second column on medium screens */
   }
 }
 
@@ -313,7 +322,9 @@ address a:hover {
   }
   
   .footer-map {
-    grid-column: span 1 !important;
+    grid-column: 1 !important; /* Full width on mobile */
+    width: 100% !important;
+    margin-top: 1.5rem !important;
   }
   
   .footer-logo-container {

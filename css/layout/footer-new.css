@@ -29,7 +29,7 @@
 /* Footer Content Grid */
 .footer-content {
   display: grid !important;
-  grid-template-columns: 1fr 2fr 1fr !important;
+  grid-template-columns: 1fr 1fr 1fr !important; /* Changed from 1fr 2fr 1fr to make columns more equal */
   gap: 2rem !important;
   margin-bottom: 2rem !important;
   max-width: 1400px !important;
@@ -127,6 +127,8 @@
   overflow: hidden !important;
   border-radius: 12px !important;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+  grid-column: span 3 !important; /* Make the map span all three columns */
+  margin-top: 1.5rem !important; /* Add some spacing above the map */
 }
 
 .footer-map h3 {
@@ -140,7 +142,7 @@
 
 .footer-map iframe {
   width: 100% !important;
-  height: 200px !important;
+  height: 250px !important; /* Match the height in the HTML */
   border: 0 !important;
   border-radius: 8px !important;
 }
@@ -230,9 +232,7 @@ address a:hover {
     grid-template-columns: 1fr 1fr !important;
   }
   
-  .footer-map {
-    grid-column: span 2 !important;
-  }
+  /* No need to specify grid-column for the map at this breakpoint since it's already spanning all columns */
 }
 
 @media (max-width: 768px) {
@@ -252,8 +252,10 @@ address a:hover {
     padding: 1.5rem 1rem !important;
   }
   
+  /* Keep the map full width on mobile */
   .footer-map {
-    grid-column: span 1 !important;
+    grid-column: 1 !important;
+    width: 100% !important;
   }
   
   .footer-logo-container {

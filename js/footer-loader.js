@@ -93,22 +93,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }).addTo(map);
         
         // Add markers
-        L.marker([44.3882, -68.2061]).addTo(map) // Bar Harbor
+        var marker1 = L.marker([44.3882, -68.2061]).addTo(map) // Bar Harbor
             .bindPopup('<b>Bar Harbor Station</b><br>37 Firefly Ln');
         
-        L.marker([44.2943, -68.2913]).addTo(map) // Mount Desert (Northeast Harbor)
+        var marker2 = L.marker([44.2943, -68.2913]).addTo(map) // Mount Desert (Northeast Harbor)
             .bindPopup('<b>Mount Desert Station</b><br>21 Sea St, Northeast Harbor');
 
         // Optional: Adjust bounds to fit markers if needed after initial load
         // var group = new L.featureGroup([marker1, marker2]);
         // map.fitBounds(group.getBounds().pad(0.1)); // Add padding if desired
 
+        // Force map size invalidation after a short delay to account for async CSS
+        setTimeout(() => {
+            if (map) { // Check if map object still exists
+                map.invalidateSize();
+            }
+        }, 1000); // Increased delay significantly to 1000ms (1 second)
+
     } catch (e) {
         console.error("Error initializing Leaflet map:", e);
         // Optional: Display a message to the user if the map fails
         const mapDiv = document.getElementById('map');
         if (mapDiv) {
-            mapDiv.innerHTML = '<p style=\"padding: 1em; text-align: center;\">Could not load map.</p>';
+            mapDiv.innerHTML = '<p style="padding: 1em; text-align: center;">Could not load map.</p>';
         }
     }
     // --- End Leaflet Map ---

@@ -27,7 +27,8 @@
 <meta content="website" property="og:type"/>
 
 <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
 
 <!-- Preload Fonts and Critical CSS -->
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -680,8 +681,8 @@
 </nav>
 <div class="footer-map" aria-label="Map showing Bar Harbor Police Department locations">
 <h3><i class="fas fa-map-marker-alt"></i> Our Locations</h3>
-<div class="map-container" style="position:relative;">
-<iframe height="250" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-68.31,44.28,-68.19,44.40&layer=mapnik&marker=44.3882,-68.2061&marker=44.2943,-68.2913" style="border:1px solid black; width: 100%;" title="Map showing Bar Harbor Police Department locations at 37 Firefly Ln, Bar Harbor and 21 Sea St, Mount Desert"></iframe>
+<div class="map-container" style="position:relative; width:100%; max-width:100%;">
+<iframe height="300" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-68.31,44.28,-68.19,44.40&layer=mapnik&marker=44.3882,-68.2061&marker=44.2943,-68.2913" style="border:1px solid black; width: 100%; display:block;" title="Map showing Bar Harbor Police Department locations at 37 Firefly Ln, Bar Harbor and 21 Sea St, Mount Desert"></iframe>
 </div>
 </div>
 </div>
