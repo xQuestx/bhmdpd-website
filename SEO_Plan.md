@@ -12,8 +12,13 @@ This plan outlines the key steps to improve the Search Engine Optimization (SEO)
 -   [ ] **Mobile-Friendliness Check:** Although the site uses responsive design, perform tests using Google's Mobile-Friendly Test tool and real devices to ensure seamless usability.
 -   [ ] **Core Web Vitals (CWV) Audit:** (Mobile Score: 77 - Needs Improvement)
     -   [x] Measure LCP, FID (or INP), and CLS using Google PageSpeed Insights and GSC's Core Web Vitals report. (Lighthouse Mobile: LCP=6.0s [Poor], TBT=0ms [Good], CLS=0 [Good])
-    -   [x] Identify specific elements/scripts causing poor scores (e.g., large images, slow server response, layout shifts during load). (LCP Element identified as `h1.hero-title`. High Render Delay [~5.5s] is the main cause.)
-    -   [ ] Implement optimizations to meet "Good" thresholds (LCP ≤ 2.5s). (Action: Focus on reducing `h1.hero-title` render delay. 1. Verify font loading strategy - preload web fonts if used, ensure `font-display: swap`. 2. Ensure critical CSS includes all H1 styles. 3. Ensure non-essential JS/CSS doesn't block H1 rendering.)
+    -   [x] Identify specific elements/scripts causing poor scores. (LCP Element: `h1.hero-title`. Cause: High Render Delay [~5.5s], preceded by Render-Blocking Resources [~1.2s total: `leaflet.css`, Cloudflare Rocket Loader].)
+    -   [ ] Implement optimizations to meet "Good" thresholds (LCP ≤ 2.5s). 
+        - [x] **Action 1 (High Priority):** Eliminate render-blocking `leaflet.css`. Modify HTML/script to load it asynchronously (e.g., via `rel="preload" as="style" onload="..."`). (Done via update script)
+        - [x] **Action 2 (High Priority):** Eliminate render-blocking Cloudflare Rocket Loader. Disable Rocket Loader in Cloudflare dashboard. (User confirmed done)
+        - [ ] **Action 3 (After 1 & 2):** Re-test LCP. If `h1.hero-title` render delay is still high, investigate CSS complexity/font rendering further.
+        - [ ] **Action 4 (Medium Priority):** Optimize image sizes identified in Lighthouse (e.g., `bbq.webp`, `goodmorningkev.webp`).
+        - [ ] **Action 5 (Medium Priority):** Reduce unused CSS, particularly from Font Awesome (`all.min.css`).
 -   [ ] **Structured Data (Schema) Review:**
     -   [ ] Validate existing `PoliceStation` schema using the Schema Markup Validator.
     -   [ ] Identify opportunities for additional schema on relevant pages (e.g., `Article` for news, `JobPosting` for careers, `FAQPage` for FAQs, `Event` for events).
