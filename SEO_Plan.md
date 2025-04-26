@@ -39,7 +39,7 @@ This plan outlines the key steps to improve the Search Engine Optimization (SEO)
     -   [x] Meta Descriptions (around 150-160 chars, compelling CTR focus)
     -   [x] Header Tags (H1 for main topic, H2s/H3s for sub-sections)
 -   [ ] **Image Optimization:** Ensure all images have descriptive `alt` text incorporating relevant keywords where appropriate. Use descriptive file names.
--   [ ] **Internal Linking:** Add contextual internal links between related pages (e.g., link from a news article about MARC training to a general training page, link from service pages to the contact page or relevant forms).
+-   [/] **Internal Linking:** Add contextual internal links between related pages (e.g., link from a news article about MARC training to a general training page, link from service pages to the contact page or relevant forms). (Action: Added links to index.html, news.html, bar-harbor-parking.html. Review other service/program pages.)
 
 ## Phase 3: Content Strategy & Creation
 
