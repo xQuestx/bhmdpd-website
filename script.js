@@ -4,7 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize critical components first
     console.log('Initializing critical components');
     initHeaderScroll(); // Critical for header appearance
-    initMobileMenu(); // Critical for mobile navigation
+    // Only initialize mobile menu on mobile screen sizes
+    if (window.innerWidth <= 768) {
+        initMobileMenu(); // Critical for mobile navigation
+    }
     
     // Add News Dropdown to Navigation
     console.log('Adding News dropdown to navigation');

@@ -4,8 +4,7 @@
 .recruitment__hero {
     margin-top: var(--header-height, 80px);
     position: relative;
-    background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95)),
-                url('../../images/backgrounds/background.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95));
     min-height: 400px;
     display: flex;
     align-items: center;
@@ -584,8 +583,7 @@
 
 /* Dark mode specific styles */
 body.dark-mode .recruitment__hero {
-    background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
-                url('../../images/backgrounds/background.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95));
 }
 
 body.dark-mode .modern-form label {

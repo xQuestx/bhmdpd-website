@@ -10,8 +10,7 @@
 
 /* Hero Section - Using more specific selectors */
 .good-morning-page .hero-section {
-  background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95)),
-              url('../../images/backgrounds/background.jpg') center/cover no-repeat !important;
+  background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95));
   padding: 4rem 2rem;
   text-align: center;
   color: var(--light-text-color, #fff);
@@ -290,8 +289,7 @@ body.dark-mode .good-morning-page {
 }
 
 body.dark-mode .good-morning-page .hero-section {
-  background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
-              url('../../images/backgrounds/background.jpg') center/cover no-repeat !important;
+  background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95));
 }
 
 /* Restore/Adjust dark mode styles for internal elements */
