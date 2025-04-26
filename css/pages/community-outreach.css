@@ -231,8 +231,7 @@ body:not(.dark-mode) .resource-card {
 
 /* Hero Section Customization */
 .hero-section {
-  background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95)),
-              url('../../images/backgrounds/background.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95));
   text-align: center;
   color: var(--light-text-color, #fff);
   padding: 4rem 2rem;
@@ -338,8 +337,7 @@ body:not(.dark-mode) .cta-section {
 
 /* Dark Mode Styles */
 body.dark-mode .hero-section {
-  background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95)),
-              url('../../images/backgrounds/background.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95));
 }
 
 body.dark-mode .resource-category {

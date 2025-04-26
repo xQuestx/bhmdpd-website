@@ -13,7 +13,7 @@ This plan outlines the key steps to improve the Search Engine Optimization (SEO)
 -   [ ] **Core Web Vitals (CWV) Audit:** (Mobile Score: 77 - Needs Improvement)
     -   [x] Measure LCP, FID (or INP), and CLS using Google PageSpeed Insights and GSC's Core Web Vitals report. (Lighthouse Mobile: LCP=6.0s [Poor], TBT=0ms [Good], CLS=0 [Good])
     -   [x] Identify specific elements/scripts causing poor scores. (LCP Element: `h1.hero-title`. Cause: High Render Delay [~5.5s], preceded by Render-Blocking Resources [~1.2s total: `leaflet.css`, Cloudflare Rocket Loader].)
-    -   [ ] Implement optimizations to meet "Good" thresholds (LCP ≤ 2.5s). 
+    -   [ ] Implement optimizations to meet "Good" thresholds (LCP ≤ 2.5s).
         - [x] **Action 1 (High Priority):** Eliminate render-blocking `leaflet.css`. Modify HTML/script to load it asynchronously (e.g., via `rel="preload" as="style" onload="..."`). (Done via update script)
         - [x] **Action 2 (High Priority):** Eliminate render-blocking Cloudflare Rocket Loader. Disable Rocket Loader in Cloudflare dashboard. (User confirmed done)
         - [ ] **Action 3 (After 1 & 2):** Re-test LCP. If `h1.hero-title` render delay is still high, investigate CSS complexity/font rendering further.
@@ -27,23 +27,35 @@ This plan outlines the key steps to improve the Search Engine Optimization (SEO)
 
 ## Phase 2: Keyword Integration & On-Page Optimization
 
--   [ ] **Keyword Mapping:** Systematically map the keywords identified in the research (Location-Based, Service, Informational, Career, Long-Tail) to the most relevant existing pages on `bhmdpd.com`.
--   [ ] **Homepage Optimization:** Integrate primary location keywords ("Bar Harbor Police Department", "Mount Desert Police Department", etc.) into the homepage (`index.html`) content, title tag, and H1 tag naturally.
--   [ ] **Service/Division Page Optimization:** Optimize each service/division page (`patrol-division.html`, `harbor-master-division.html`, `bar-harbor-parking.html`, `admin.html`, `animalcontrol.html`, `mentalhealth.html`) using relevant *service* and *location* keywords in:
-    -   [ ] Title Tags (under 60 chars)
-    -   [ ] Meta Descriptions (around 150-160 chars, compelling CTR focus)
-    -   [ ] Header Tags (H1 for main topic, H2s/H3s for sub-sections)
+-   [x] **Keyword Mapping:** Systematically map the keywords identified in the research (Location-Based, Service, Informational, Career, Long-Tail) to the most relevant existing pages on `bhmdpd.com`.
+-   [x] **Homepage Optimization:** Integrate primary location keywords ("Bar Harbor Police Department", "Mount Desert Police Department", etc.) into the homepage (`index.html`) content, title tag, and H1 tag naturally.
+-   [x] **Service/Division Page Optimization:** Optimize each service/division page (`patrol-division.html`, `harbor-master-division.html`, `bar-harbor-parking.html`, `admin.html`, `animalcontrol.html`, `mentalhealth.html`) using relevant *service* and *location* keywords in:
+    -   [x] Title Tags (under 60 chars)
+    -   [x] Meta Descriptions (around 150-160 chars, compelling CTR focus)
+    -   [x] Header Tags (H1 for main topic, H2s/H3s for sub-sections)
     -   [ ] Body Content (natural integration, clarity, E-E-A-T focus)
--   [ ] **Recruitment Page Optimization:** Optimize recruitment-related pages (`bhmdrec.html`, `application-process.html`, `benefits.html`, `academy-training.html`) using *career* keywords ("police jobs", "recruitment", "salary", "benefits", etc.).
+-   [x] **Recruitment Page Optimization:** Optimize recruitment-related pages (`bhmdrec.html`, `application-process.html`, `benefits.html`, `academy-training.html`) using *career* keywords ("police jobs", "recruitment", "salary", "benefits", etc.).
+    -   [x] Title Tags (under 60 chars)
+    -   [x] Meta Descriptions (around 150-160 chars, compelling CTR focus)
+    -   [x] Header Tags (H1 for main topic, H2s/H3s for sub-sections)
 -   [ ] **Image Optimization:** Ensure all images have descriptive `alt` text incorporating relevant keywords where appropriate. Use descriptive file names.
 -   [ ] **Internal Linking:** Add contextual internal links between related pages (e.g., link from a news article about MARC training to a general training page, link from service pages to the contact page or relevant forms).
 
 ## Phase 3: Content Strategy & Creation
 
--   [ ] **FAQ Expansion:** Use the *informational* keywords ("How to...", "department hours", "contact info") and *long-tail* keywords to significantly expand the `faq.html` page, providing direct answers. Consider `FAQPage` schema.
+-   [x] **FAQ Expansion:** Use the *informational* keywords ("How to...", "department hours", "contact info") and *long-tail* keywords to significantly expand the `faq.html` page, providing direct answers. Consider `FAQPage` schema.
+    -   [x] Title Tags (under 60 chars)
+    -   [x] Meta Descriptions (around 150-160 chars, compelling CTR focus)
+    -   [x] Header Tags (H1 for main topic)
 -   [ ] **Service Guides/Details:** Enhance service pages with more detailed information, explaining processes, requirements, and contact details clearly.
--   [ ] **Program Pages:** Detail community programs (`good-morning-program.html`, `community-outreach.html`) using relevant keywords and providing clear information on participation.
--   [ ] **News & Updates:** Maintain a regular cadence of posting news updates (like the MARC training or SRO articles) to keep content fresh and engage the community. Target relevant long-tail keywords here.
+-   [x] **Program Pages:** Detail community programs (`good-morning-program.html`, `community-outreach.html`) using relevant keywords and providing clear information on participation.
+    -   [x] Title Tags (under 60 chars)
+    -   [x] Meta Descriptions (around 150-160 chars, compelling CTR focus)
+    -   [x] Header Tags (H1 for main topic)
+-   [x] **News & Updates:** Maintain a regular cadence of posting news updates (like the MARC training or SRO articles) to keep content fresh and engage the community. Target relevant long-tail keywords here.
+    -   [x] Title Tags (under 60 chars)
+    -   [x] Meta Descriptions (around 150-160 chars, compelling CTR focus)
+    -   [x] Header Tags (H1 for main topic)
 -   [ ] **E-E-A-T Focus:** Ensure all content clearly demonstrates Expertise, Experience, Authoritativeness, and Trustworthiness. Highlight officer experience, official procedures, and community focus.
 -   [ ] **Content Audit:** Periodically review existing content for accuracy, relevance, and optimization opportunities.
 
@@ -69,4 +81,4 @@ This plan outlines the key steps to improve the Search Engine Optimization (SEO)
 -   [ ] **Regular Reporting:** Establish a schedule (e.g., monthly) to review key metrics and report on progress.
 -   [ ] **Adapt Strategy:** Use data and insights from monitoring to continually refine the SEO strategy.
 
-This plan provides a comprehensive roadmap. Prioritize based on potential impact and available resources, starting with the Technical SEO foundation and On-Page Optimization. 
+This plan provides a comprehensive roadmap. Prioritize based on potential impact and available resources, starting with the Technical SEO foundation and On-Page Optimization.

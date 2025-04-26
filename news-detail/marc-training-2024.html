@@ -29,6 +29,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
 </head>
 <body>
     <a href="#main-content" class="skip-to-main">
@@ -189,7 +191,7 @@
                     </header>
                     
                     <div class="article-featured-image" style="max-width: 600px; margin: 0 auto;">
-                        <img src="../images/misc/marc1.jpg" alt="Bar Harbor Police Officers during MARC training" class="full-width-image">
+                        <img src="../images/misc/marc1.webp" alt="Bar Harbor Police Officers during MARC training" class="full-width-image">
                         <p class="image-caption">Officers practice proper restraint techniques during the MARC training refresher.</p>
                     </div>
                     
@@ -212,7 +214,7 @@
                             <h3>Training Gallery</h3>
                             <div class="gallery-grid">
                                 <figure class="gallery-item">
-                                    <img src="../images/marc training/marc_training_001.webp" alt="Officers practicing MARC techniques">
+                                    <img src="../images/marc training/marc_training_002.webp" alt="Officers practicing MARC techniques">
                                     <figcaption>Officers demonstrating proper MARC restraint techniques</figcaption>
                                 </figure>
                                 <figure class="gallery-item">
@@ -238,7 +240,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <footer class="article-footer">
                         <div class="share-buttons">
                             <span>Share this article:</span>
@@ -251,12 +252,12 @@
                             <h3>Related Articles</h3>
                             <div class="related-articles-grid">
                                 <a href="sro-burne-2024.html" class="related-article">
-                                    <img src="../images/staff/sroburne.jpg" alt="Officer Elias Burne">
+                                    <img src="../images/staff/sroburne.webp" alt="Officer Elias Burne">
                                     <h4>Welcome Our New School Resource Officer</h4>
                                     <span class="article-date">March 3, 2025</span>
                                 </a>
                                 <a href="comprehensive-training-2024.html" class="related-article">
-                                    <img src="../images/misc/234.jpg" alt="Comprehensive Training">
+                                    <img src="../images/misc/234.webp" alt="Comprehensive Training">
                                     <h4>Bar Harbor Police Sharpen Skills with Comprehensive Training</h4>
                                     <span class="article-date">March 22, 2024</span>
                                 </a>
@@ -361,7 +362,7 @@
     <!-- JS FILES -->
     <!-- Link to your existing 'script.js' that contains the slider logic -->
     <script src="../script.js"></script>
-<!-- Footer loader script to dynamically load the footer with both addresses -->
-<script src="js/footer-loader.js" defer></script>
+    <script src="../js/footer-loader.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </body>
 </html>

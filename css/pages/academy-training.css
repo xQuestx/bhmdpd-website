@@ -23,8 +23,7 @@
 
 /* Hero Section */
 .hero-section.recruitment-hero {
-    background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95)),
-                url('../../images/backgrounds/background.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95));
     padding: 4rem 2rem;
     text-align: center;
     margin-top: 0; /* Remove any top margin */

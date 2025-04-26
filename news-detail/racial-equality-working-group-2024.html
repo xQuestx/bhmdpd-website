@@ -29,6 +29,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
 </head>
 <body>
     <a href="#main-content" class="skip-to-main">
@@ -123,7 +125,7 @@
                             </li>
                             <li>
                                 <a href="../benefits.html">
-                                    <i class="fas fa-medal"></i> Benefits &amp; Salary
+                                    <i class="fas fa-medal"></i> Benefits & Salary
                                 </a>
                             </li>
                             <li>
@@ -202,8 +204,8 @@
         <section class="news-article-section">
             <div class="content-wrapper">
                 <div class="breadcrumbs">
-                    <a href="../index.html">Home</a> &gt; 
-                    <a href="../news.html">News</a> &gt; 
+                    <a href="../index.html">Home</a> > 
+                    <a href="../news.html">News</a> > 
                     <span>Racial Equality Working Group</span>
                 </div>
                 
@@ -283,7 +285,7 @@
                             <div class="related-grid">
                                 <a href="marc-training-2024.html" class="related-article">
                                     <div class="related-image">
-                                        <img src="../images/misc/marc1.jpg" alt="MARC Training">
+                                        <img src="../images/misc/marc1.webp" alt="MARC Training">
                                     </div>
                                     <div class="related-content">
                                         <h4>Bar Harbor Police Officers Complete Annual MARC Training Refresher</h4>
@@ -292,7 +294,7 @@
                                 </a>
                                 <a href="comprehensive-training-2024.html" class="related-article">
                                     <div class="related-image">
-                                        <img src="../images/misc/234.jpg" alt="Comprehensive Training">
+                                        <img src="../images/misc/234.webp" alt="Comprehensive Training">
                                     </div>
                                     <div class="related-content">
                                         <h4>Bar Harbor Police Complete Comprehensive Training Program</h4>
@@ -301,7 +303,7 @@
                                 </a>
                                 <a href="sro-burne-2024.html" class="related-article">
                                     <div class="related-image">
-                                        <img src="../images/staff/sroburne.jpg" alt="SRO Burne">
+                                        <img src="../images/staff/sroburne.webp" alt="SRO Burne">
                                     </div>
                                     <div class="related-content">
                                         <h4>Officer Burne Appointed as School Resource Officer</h4>
@@ -404,6 +406,7 @@
     <!-- Scripts -->
     <script src="../js/main.js"></script>
 <!-- Footer loader script to dynamically load the footer with both addresses -->
-<script src="js/footer-loader.js" defer></script>
+<script src="../js/footer-loader.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </body>
-</html> 
+</html>
