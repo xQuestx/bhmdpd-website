@@ -2,128 +2,176 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.bhmdpd.com/</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.bhmdpd.com/index.html</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.bhmdpd.com/patrol-division.html</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.bhmdpd.com/harbor-master-division.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bhmdpd.com/bar-harbor-parking.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+   <url>
+    <loc>https://www.bhmdpd.com/permitstepbystep.html</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bhmdpd.com/admin.html</loc>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.bhmdpd.com/admin.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-    <url>
     <loc>https://www.bhmdpd.com/animalcontrol.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bhmdpd.com/mentalhealth.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bhmdpd.com/good-morning-program.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bhmdpd.com/community-outreach.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bhmdpd.com/bhmdrec.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+   <url>
+    <loc>https://www.bhmdpd.com/opportunities.html</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+   <url>
+    <loc>https://www.bhmdpd.com/hire.html</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.bhmdpd.com/application-process.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bhmdpd.com/benefits.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bhmdpd.com/academy-training.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bhmdpd.com/forms.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bhmdpd.com/faq.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bhmdpd.com/events.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.bhmdpd.com/contact.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
    <url>
     <loc>https://www.bhmdpd.com/news.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://www.bhmdpd.com/news-detail/marc-training-2024.html</loc>
-    <lastmod>2025-03-03</lastmod> <!-- Assuming lastmod from article date -->
+   <url>
+    <loc>https://www.bhmdpd.com/news-detail/coffee-with-a-cop-2025.html</loc>
+    <lastmod>2025-04-16</lastmod> <!-- Date from news article -->
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+   <url>
+    <loc>https://www.bhmdpd.com/news-detail/food-drive-2025.html</loc>
+    <lastmod>2025-04-08</lastmod> <!-- Date from news article -->
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+   <url>
+    <loc>https://www.bhmdpd.com/news-detail/regency-incident-2025.html</loc>
+    <lastmod>2025-02-24</lastmod> <!-- Date from news article -->
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+   <url>
+    <loc>https://www.bhmdpd.com/news-detail/racial-equality-working-group-2024.html</loc>
+    <lastmod>2025-03-13</lastmod> <!-- Date from news article -->
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.bhmdpd.com/news-detail/sro-burne-2024.html</loc>
-    <lastmod>2025-03-03</lastmod> <!-- Assuming lastmod from article date -->
+    <loc>https://www.bhmdpd.com/news-detail/marc-training-2024.html</loc>
+    <lastmod>2025-03-08</lastmod> <!-- Date from news article -->
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.bhmdpd.com/news-detail/comprehensive-training-2024.html</loc>
-    <lastmod>2025-03-03</lastmod> <!-- Assuming lastmod from article date -->
+    <lastmod>2025-03-02</lastmod> <!-- Date from news article -->
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-   <url>
-    <loc>https://www.bhmdpd.com/administration.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+  <url>
+    <loc>https://www.bhmdpd.com/news-detail/sro-burne-2024.html</loc>
+    <lastmod>2025-03-03</lastmod> <!-- Date from news article -->
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset> 
