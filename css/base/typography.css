@@ -10,7 +10,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h6 {
   font-family: var(--font-family-display);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -25,7 +25,7 @@ button {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h6 {
   margin-bottom: var(--spacing-sm, 1rem);
   line-height: 1.2;
   color: var(--primary-color, #1a2b4a);
@@ -54,6 +54,9 @@ h4 {
 
 h5 {
   font-size: 1.1rem;
+  margin-bottom: var(--spacing-sm, 1rem);
+  line-height: 1.2;
+  color: var(--light-text-color, #fff);
 }
 
 h6 {
