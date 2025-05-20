@@ -4,6 +4,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link rel="preconnect" href="https://openstreetmap.org">
+<link rel="preconnect" href="https://a.tile.openstreetmap.org" crossorigin>
+<link rel="preconnect" href="https://b.tile.openstreetmap.org" crossorigin>
+<link rel="preconnect" href="https://c.tile.openstreetmap.org" crossorigin>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LBXVRZLEN"></script>
 <script>
@@ -101,7 +105,7 @@
   .hero-container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
   .hero-content { color: white !important; text-align: center; max-width: 800px; }
   .department-badge { margin-bottom: 2rem; display: flex; justify-content: center; width: 100%; }
-  .badge-image { width: 180px; height: auto; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)); }
+  .badge-image { width: 180px; height: auto; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4)); } /* This line was already correct from the previous incorrect attempt, but I'm including it again as per instructions. */
   .hero-title { color: white !important; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); letter-spacing: -0.5px; }
   .hero-tagline { font-size: 1.5rem; margin: 1.5rem 0; line-height: 1.6; color: white !important; font-weight: 500; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; opacity: 1 !important; }
   .hero-cta { display: flex; gap: 1.5rem; margin-top: 3rem; justify-content: center; }
@@ -186,19 +190,25 @@
   }
   /* Critical styles for hero title to improve LCP */
   .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-size: 4rem;
+    font-weight: 800;
     margin-bottom: 1.5rem;
     color: white !important;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
     line-height: 1.1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     letter-spacing: -0.5px;
+  }
+  
+  @media (max-width: 1024px) {
+    .hero-title {
+      font-size: 3.5rem;
+    }
   }
   
   @media (max-width: 768px) {
     .hero-title {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   }
   
