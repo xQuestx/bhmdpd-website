@@ -12,7 +12,8 @@
   /* Colors */
   --primary-color: #1a2b4a;
   --primary-color-rgb: 26, 43, 74;
-  --primary-color-dark: #002c57;
+  --primary-color-light: #2a4a7a;
+  --primary-color-dark: #1a2b4a;
 
   --secondary-color: #f0f4f8;
   --secondary-color-dark: #e0e7f0;

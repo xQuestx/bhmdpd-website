@@ -84,8 +84,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- Initialize Leaflet Map ---
-    try {
-        var map = L.map('map').setView([44.34, -68.25], 10); // Centered view, changed zoom to 10
+    const initializeMap = async () => {
+        try {
+            // Wait for Leaflet to be loaded if promise exists
+            if (window.leafletLoaded) {
+                await window.leafletLoaded;
+            }
+            
+            // Check if L is defined
+            if (typeof L === 'undefined') {
+                console.warn('Leaflet not loaded, skipping map initialization');
+                return;
+            }
+            
+            var map = L.map('map').setView([44.34, -68.25], 10); // Centered view, changed zoom to 10
         
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -110,13 +122,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 1000); // Increased delay significantly to 1000ms (1 second)
 
-    } catch (e) {
-        console.error("Error initializing Leaflet map:", e);
-        // Optional: Display a message to the user if the map fails
-        const mapDiv = document.getElementById('map');
-        if (mapDiv) {
-            mapDiv.innerHTML = '<p style="padding: 1em; text-align: center;">Could not load map.</p>';
+        } catch (e) {
+            console.error("Error initializing Leaflet map:", e);
+            // Optional: Display a message to the user if the map fails
+            const mapDiv = document.getElementById('map');
+            if (mapDiv) {
+                mapDiv.innerHTML = '<p style="padding: 1em; text-align: center;">Could not load map.</p>';
+            }
         }
-    }
+    };
+    
+    // Call the map initialization
+    initializeMap();
+    
+    // Expose the function globally for Leaflet callback
+    window.initializeFooterMap = initializeMap;
     // --- End Leaflet Map ---
 });

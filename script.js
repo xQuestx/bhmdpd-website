@@ -135,8 +135,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function initBackToTop() {
         const button = document.createElement('button');
         button.id = 'backToTopBtn'; // Use the ID from the new CSS
+        button.setAttribute('aria-label', 'Back to top');
+        button.setAttribute('title', 'Back to top');
         // No need for extra class, ID is sufficient for styling
-        button.innerHTML = '<i class="fas fa-arrow-up"></i>'; // Keep Font Awesome icon
+        button.innerHTML = '<i class="fas fa-arrow-up" aria-hidden="true"></i>'; // Keep Font Awesome icon
         document.body.appendChild(button);
 
         // Show/hide button based on scroll position
