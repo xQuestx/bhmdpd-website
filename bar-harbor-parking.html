@@ -218,7 +218,7 @@
   .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
   
   /* Image containers to prevent layout shift */
-  .parking-map-image { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; aspect-ratio: 600/463; }
+  .parking-map-image { width: 100%; height: auto; max-width: 750px; display: block; margin: 0 auto; aspect-ratio: 600/463; }
   .map-image-container { margin: 2rem 0; text-align: center; }
   
   /* Optimize large images for faster loading */
@@ -387,6 +387,98 @@
   .cost-info { display: flex; align-items: center; gap: 1rem; background: #fff3cd; padding: 1rem; border-radius: 8px; }
   .cost-info i { color: #856404; font-size: 1.5rem; }
   
+  /* Dark mode styles for tabs */
+  body.dark-mode .step-details h4,
+  body.dark-mode .step-details p,
+  body.dark-mode .video-caption,
+  body.dark-mode .payment-list li,
+  body.dark-mode .tip-card p,
+  body.dark-mode .feature-list li,
+  body.dark-mode .numbered-list li,
+  body.dark-mode .lead-text { color: var(--text-color) !important; }
+  
+  body.dark-mode .step-number-circle { background: var(--accent-color); color: white; border: 2px solid rgba(255, 255, 255, 0.2); }
+  body.dark-mode .payment-info-box,
+  body.dark-mode .quick-start-guide,
+  body.dark-mode .zone-info-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); }
+  body.dark-mode .tip-card { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.1); }
+  body.dark-mode .feature-card-enhanced { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); }
+  body.dark-mode .feature-icon { background: var(--accent-color); border: 1px solid rgba(255, 255, 255, 0.2); }
+  body.dark-mode .kiosk-tips { background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); }
+  body.dark-mode .cost-info { background: rgba(255, 243, 205, 0.1); border: 1px solid rgba(255, 243, 205, 0.2); }
+  body.dark-mode .cost-info p { color: #ffc107; }
+  body.dark-mode .cost-info i { color: #ffc107; }
+  
+  /* App store buttons in dark mode */
+  body.dark-mode .app-store-btn { background: #fff; color: #000; }
+  body.dark-mode .app-store-btn:hover { background: #f0f0f0; color: #000; }
+  
+  /* Ensure headers are visible in dark mode */
+  body.dark-mode .two-column-layout h3,
+  body.dark-mode .two-column-layout h4,
+  body.dark-mode .kiosk-tips h3,
+  body.dark-mode .download-section h4,
+  body.dark-mode .feature-highlights h4 { color: var(--text-color) !important; }
+  
+  /* Citations Tab Styles */
+  .citation-action-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+  .action-card { padding: 2rem; background: #f8f9fa; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s; }
+  .action-card:hover { transform: translateY(-4px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+  .action-card.primary-action { background: linear-gradient(135deg, #e8f0fe 0%, #dbeafe 100%); border: 2px solid var(--accent-color); }
+  .action-icon { width: 80px; height: 80px; margin: 0 auto 1.5rem; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+  .payment-note { margin-top: 1rem; padding: 0.75rem; background: rgba(0,86,179,0.1); border-radius: 8px; font-size: 0.9rem; }
+  
+  /* Violation Table */
+  .violation-table { margin: 1.5rem 0; overflow-x: auto; }
+  .styled-table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .styled-table thead { background: var(--accent-color); color: white; }
+  .styled-table th, .styled-table td { padding: 1rem; text-align: left; }
+  .styled-table tbody tr { border-bottom: 1px solid #e0e0e0; }
+  .styled-table tbody tr:hover { background: #f8f9fa; }
+  .fine-note { text-align: center; color: #666; font-style: italic; margin-top: 1rem; }
+  .early-payment-note { padding: 1.5rem; background: #e8f4f8; border-radius: 8px; text-align: center; margin-bottom: 2rem; }
+  .early-payment-note .fine-note { margin: 0; color: var(--accent-color); font-size: 1.1rem; font-weight: 500; }
+  
+  /* Payment Methods */
+  .payment-methods-section { margin: 3rem 0; }
+  .payment-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .payment-method { padding: 1.5rem; background: #f8f9fa; border-radius: 8px; text-align: center; }
+  .method-icon { width: 60px; height: 60px; margin: 0 auto 1rem; background: #e8f0fe; color: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+  .payment-method address { font-style: normal; margin: 1rem 0; }
+  .mail-note { color: #666; font-size: 0.9rem; font-style: italic; }
+  
+  /* Contest Steps */
+  .contest-steps { margin: 2rem 0; }
+  .contest-step { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; }
+  .step-number-large { width: 60px; height: 60px; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; flex-shrink: 0; }
+  .step-info h4 { margin: 0 0 0.5rem 0; color: var(--gray-800); }
+  .step-info p { margin: 0; color: #666; }
+  
+  /* Important Info */
+  .citation-footer { margin-top: 3rem; }
+  .important-info { padding: 2rem; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; }
+  .important-info h4 { margin: 0 0 1rem 0; color: #856404; }
+  .important-info ul { margin: 0; padding-left: 1.5rem; }
+  .important-info li { margin-bottom: 0.5rem; color: #856404; }
+  
+  /* Dark mode for citations */
+  body.dark-mode .action-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); }
+  body.dark-mode .action-card.primary-action { background: rgba(0,86,179,0.2); border-color: var(--accent-color); }
+  body.dark-mode .action-card h3, body.dark-mode .action-card p { color: var(--text-color) !important; }
+  body.dark-mode .early-payment-note { background: rgba(0,86,179,0.15); border: 1px solid rgba(0,86,179,0.3); }
+  body.dark-mode .early-payment-note .fine-note { color: #4da3ff; }
+  body.dark-mode .styled-table { background: rgba(255,255,255,0.05); }
+  body.dark-mode .styled-table tbody tr:hover { background: rgba(255,255,255,0.08); }
+  body.dark-mode .payment-method { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
+  body.dark-mode .payment-method h4, body.dark-mode .payment-method p, body.dark-mode .payment-method li { color: var(--text-color) !important; }
+  body.dark-mode .payment-method address { color: var(--text-color) !important; }
+  body.dark-mode .mail-note { color: #999; }
+  body.dark-mode .contest-step { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
+  body.dark-mode .contest-step h4, body.dark-mode .contest-step p { color: var(--text-color) !important; }
+  body.dark-mode .important-info { background: rgba(255,243,205,0.15); border-color: rgba(255,243,205,0.3); }
+  body.dark-mode .important-info h4, body.dark-mode .important-info li { color: #ffc107; }
+  body.dark-mode .citation-info-section h3, body.dark-mode .payment-methods-section h3, body.dark-mode .contest-section h3 { color: var(--text-color) !important; }
+  
   /* Prevent accordion layout shifts */
   .accordion-item { margin-bottom: 1rem; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
   .accordion-button { width: 100%; min-height: 60px; padding: 1rem 1.5rem; background: #f8f9fa; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: background-color 0.2s; }
@@ -407,6 +499,18 @@
   .tab-hint { min-height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; text-align: center; background: #e8f0fe; padding: 1rem; border-radius: 8px; border: 1px solid #d2e1f5; }
   .tab-hint p { margin: 0; color: #1a2b4a; font-size: 1.1rem; font-weight: 500; }
   .tab-hint i { color: #0056b3; margin-right: 0.5rem; }
+  
+  /* Map preview styling */
+  .map-preview { background: #f0f4f8; border: 2px solid #ddd; border-radius: 8px; padding: 2rem; text-align: center; }
+  .map-preview-icon { font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem; display: block; }
+  .map-preview h3 { margin: 1rem 0 0.5rem 0; color: var(--gray-800); }
+  .map-preview p { color: #666; }
+  
+  /* Dark mode for map preview */
+  body.dark-mode .map-preview { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
+  body.dark-mode .map-preview h3 { color: var(--text-color) !important; }
+  body.dark-mode .map-preview p { color: var(--text-color) !important; opacity: 0.8; }
+  body.dark-mode .map-preview-icon { color: #4da3ff; }
   .fa-bars::before { content: "\f0c9"; }
   .fa-times::before { content: "\f00d"; }
   .fa-moon::before { content: "\f186"; }
@@ -448,6 +552,13 @@
     /* App buttons responsive */
     .app-buttons { flex-direction: column; }
     .app-store-btn { justify-content: center; }
+    /* Citations tab responsive */
+    .citation-action-cards { grid-template-columns: 1fr; gap: 1.5rem; }
+    .payment-options { grid-template-columns: 1fr; gap: 1.5rem; }
+    .styled-table { font-size: 0.9rem; }
+    .styled-table th, .styled-table td { padding: 0.75rem 0.5rem; }
+    .contest-step { flex-direction: column; text-align: center; }
+    .step-number-large { margin: 0 auto 1rem; }
   }
 </style>
 
@@ -596,8 +707,8 @@
 
 <!-- Parking Map Link instead of large image in general tab -->
 <div class="map-link-container mt-4">
-    <div class="map-preview" style="background: #f0f4f8; border: 2px solid #ddd; border-radius: 8px; padding: 2rem; text-align: center;">
-        <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+    <div class="map-preview">
+        <i class="fas fa-map-marked-alt map-preview-icon"></i>
         <h3>Parking Map Available</h3>
         <p>View the detailed parking map in the "Parking Lots" tab or download it below.</p>
     </div>
@@ -883,7 +994,7 @@
 
 <!-- Parking Map Image in appropriate tab -->
 <div class="map-image-container mt-4 mb-4">
-    <img src="images/divisions/parking/parkingmap.jpg" alt="Bar Harbor Parking Map Overview" class="parking-map-image" width="600" height="463" loading="lazy" decoding="async">
+    <img src="images/divisions/parking/parkingmap.jpg" alt="Bar Harbor Parking Map Overview" class="parking-map-image" width="750" height="579" loading="lazy" decoding="async">
     <div class="mt-3">
         <a class="btn btn-primary" download="Bar_Harbor_Parking_Map.jpg" href="images/divisions/parking/parkingmap.jpg">
             <i class="fas fa-map-marked-alt"></i> Download Map (JPG)
@@ -1041,77 +1152,136 @@
 <div class="info-card">
 <div class="card-header">
 <i class="fas fa-file-invoice"></i>
-<h2>Citation Information</h2>
+<h2>Parking Citations & Violations</h2>
 </div>
 <div class="card-body">
-<!-- Payment Methods -->
-<div class="section-group">
-<h3><i class="fas fa-money-bill-wave"></i> Payment Options</h3>
-<div class="two-column">
-<div class="feature-card">
-<div class="feature-card__inner">
-<div class="feature-card__header">
-<i class="fas fa-globe"></i>
-<h4>Pay Online</h4>
+<div class="citation-intro">
+<p class="lead-text" style="text-align: center; margin-bottom: 2rem;">Received a parking citation? We've made it easy to pay or contest your ticket online or by mail.</p>
 </div>
-<div class="feature-card__content">
-<p>Visit our secure citation payment portal:</p>
-<a class="btn btn-primary" href="https://barharbor.citationportal.com">
-                                                        Pay Citation Online <i class="fas fa-arrow-right"></i>
+
+<div class="citation-grid">
+<!-- Quick Actions -->
+<div class="citation-action-cards">
+<div class="action-card primary-action">
+<div class="action-icon">
+<i class="fas fa-credit-card"></i>
+</div>
+<h3>Pay Your Citation</h3>
+<p>Quick and secure online payment available 24/7</p>
+<a class="btn btn-primary btn-lg" href="https://barharbor.citationportal.com" target="_blank">
+<i class="fas fa-lock"></i> Pay Online Now
+</a>
+<div class="payment-note">
+<i class="fas fa-info-circle"></i> Have your citation number ready
+</div>
+</div>
+
+<div class="action-card">
+<div class="action-icon">
+<i class="fas fa-gavel"></i>
+</div>
+<h3>Contest a Citation</h3>
+<p>Believe you received a citation in error? Contest it online</p>
+<a class="btn btn-secondary" href="https://barharbor.citationportal.com" target="_blank">
+<i class="fas fa-balance-scale"></i> Contest Citation
 </a>
 </div>
 </div>
+
+<!-- Early Payment Note -->
+<div class="early-payment-note">
+<p class="fine-note"><i class="fas fa-clock"></i> Early payment discount available for most violations</p>
 </div>
-<div class="feature-card">
-<div class="feature-card__inner">
-<div class="feature-card__header">
+
+<!-- Payment Methods -->
+<div class="payment-methods-section">
+<h3><i class="fas fa-money-check-alt"></i> Payment Methods</h3>
+<div class="payment-options">
+<div class="payment-method">
+<div class="method-icon">
+<i class="fas fa-globe"></i>
+</div>
+<h4>Online Payment</h4>
+<p>Pay securely online 24/7 using credit/debit card</p>
+<ul>
+<li>Instant confirmation</li>
+<li>Print receipt immediately</li>
+<li>No processing fees</li>
+</ul>
+</div>
+<div class="payment-method">
+<div class="method-icon">
 <i class="fas fa-envelope"></i>
-<h4>Pay by Mail</h4>
 </div>
-<div class="feature-card__content">
-<p>Make checks payable to:</p>
+<h4>Mail Payment</h4>
+<p>Send check or money order to:</p>
 <address>
-                                                        <a href="https://www.barharbormaine.gov/160/Finance" target="_blank" rel="noopener noreferrer">Treasurer, Town of Bar Harbor</a><br/>
-                                                        93 Cottage Street<br/>
-                                                        Bar Harbor, ME 04609
-                                                    </address>
+<strong>Treasurer, Town of Bar Harbor</strong><br>
+93 Cottage Street<br>
+Bar Harbor, ME 04609
+</address>
+<p class="mail-note">Include citation number on check</p>
+</div>
+<div class="payment-method">
+<div class="method-icon">
+<i class="fas fa-building"></i>
+</div>
+<h4>In Person</h4>
+<p>Pay at Town Hall Finance Office</p>
+<ul>
+<li>Monday-Friday: 8:30 AM - 4:30 PM</li>
+<li>Cash, check, or card accepted</li>
+<li>Immediate receipt provided</li>
+</ul>
 </div>
 </div>
+</div>
+
+<!-- Contest Process -->
+<div class="contest-section">
+<h3><i class="fas fa-clipboard-list"></i> How to Contest a Citation</h3>
+<div class="contest-steps">
+<div class="contest-step">
+<div class="step-number-large">1</div>
+<div class="step-info">
+<h4>Gather Information</h4>
+<p>Have your citation number and any supporting evidence ready (photos, receipts, etc.)</p>
+</div>
+</div>
+<div class="contest-step">
+<div class="step-number-large">2</div>
+<div class="step-info">
+<h4>Submit Online</h4>
+<p>Visit our citation portal and select "Contest Citation" option</p>
+</div>
+</div>
+<div class="contest-step">
+<div class="step-number-large">3</div>
+<div class="step-info">
+<h4>Provide Details</h4>
+<p>Explain why you believe the citation was issued in error</p>
+</div>
+</div>
+<div class="contest-step">
+<div class="step-number-large">4</div>
+<div class="step-info">
+<h4>Await Review</h4>
+<p>You'll receive a decision via email within 10 business days</p>
 </div>
 </div>
 </div>
 </div>
 
-<!-- Contesting a Citation -->
-<div class="section-group mt-4">
-<h3><i class="fas fa-gavel"></i> How to Contest a Citation</h3>
-<div class="steps-container">
-    <div class="step-item">
-        <div class="step-number">1</div>
-        <div class="step-content">Visit <a href="https://barharbor.citationportal.com" target="_blank">citation portal</a></div>
-    </div>
-    <div class="step-item">
-        <div class="step-number">2</div>
-        <div class="step-content">Enter citation number</div>
-    </div>
-    <div class="step-item">
-        <div class="step-number">3</div>
-        <div class="step-content">Click "More Info"</div>
-    </div>
-    <div class="step-item">
-        <div class="step-number">4</div>
-        <div class="step-content">Select "Contest Citation"</div>
-    </div>
-    <div class="step-item">
-        <div class="step-number">5</div>
-        <div class="step-content">Complete contest form</div>
-    </div>
-</div>
-<div class="text-center mt-3">
-    <a class="btn btn-secondary" href="https://barharbor.citationportal.com">
-        <i class="fas fa-gavel"></i> Contest a Citation
-    </a>
-</div>
+<!-- Important Information -->
+<div class="citation-footer">
+<div class="important-info">
+<h4><i class="fas fa-exclamation-circle"></i> Important Information</h4>
+<ul>
+<li><strong>Payment Due:</strong> Within 30 days of citation date</li>
+<li><strong>Additional Fee:</strong> After 30 days</li>
+<li><strong>Questions?</strong> Call Parking Enforcement at (207) 288-1777</li>
+<li><strong>Lost Citation?</strong> Look up by license plate at <a href="https://barharbor.citationportal.com">citation portal</a></li>
+</ul>
 </div>
 </div>
 </div>
