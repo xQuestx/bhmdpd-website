@@ -10,8 +10,9 @@
 
 /* Hero Section - More specific selectors */
 .hero-section.parking-hero {
-  background: linear-gradient(rgba(26, 43, 74, 0.90), rgba(10, 20, 40, 0.95)),
-              url('../../images/parking-hero.jpg') center/cover no-repeat;
+  background: radial-gradient(ellipse at center, 
+    var(--primary-color-light) 0%, 
+    var(--primary-color-dark) 100%);
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -45,9 +46,9 @@ body.dark-mode .hero-section.parking-hero .hero-content p {
 }
 
 .badge {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.25rem;
+  border-radius: 25px;
   display: flex;
   align-items: center;
   gap: 0.5rem;

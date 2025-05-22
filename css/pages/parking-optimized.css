@@ -1,0 +1,44 @@
+/* Optimized CSS for Parking Page - Only essential styles */
+
+/* Import only necessary base styles */
+@import url('../base/variables.css');
+@import url('../base/reset.css');
+
+/* Import only necessary layout styles */
+@import url('../layout/footer.css');
+
+/* Import only necessary component styles */
+@import url('../components/buttons.css');
+@import url('../components/cards.css');
+
+/* Import parking-specific styles */
+@import url('parking.css');
+
+/* Additional optimizations for parking page */
+.parking-hero {
+  background: linear-gradient(135deg, var(--primary-color-light), var(--primary-color-dark));
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Use will-change sparingly for known animations */
+.tab-button {
+  will-change: background-color;
+}
+
+.tab-content {
+  will-change: display;
+}
+
+/* Remove will-change after animation */
+.tab-button.active,
+.tab-content.active {
+  will-change: auto;
+}
