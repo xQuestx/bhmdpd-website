@@ -283,7 +283,9 @@ document.addEventListener('DOMContentLoaded', function() {
                                 otherLi.classList.remove('active');
                                 const otherContent = otherLi.querySelector('.dropdown-content');
                                 const otherCaret = otherLi.querySelector('a > .fa-caret-down');
+                                const otherTrigger = otherLi.querySelector('a[aria-expanded]');
                                 if (otherCaret) otherCaret.style.transform = 'rotate(0deg)';
+                                if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
                                 if (otherContent) {
                                     setTimeout(() => {
                                         otherContent.style.display = 'none';
@@ -297,12 +299,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (GIsCurrentlyActive) { // It WAS active, so now we close it
                         parentLi.classList.remove('active');
                         if (caret) caret.style.transform = 'rotate(0deg)';
+                        this.setAttribute('aria-expanded', 'false');
                         setTimeout(() => {
                             dropdownContent.style.display = 'none';
                         }, 0);
                     } else { // It WAS NOT active, so now we open it
                         parentLi.classList.add('active');
                         if (caret) caret.style.transform = 'rotate(180deg)';
+                        this.setAttribute('aria-expanded', 'true');
                         setTimeout(() => {
                             dropdownContent.style.display = 'block';
                         }, 0);
@@ -344,7 +348,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (dropdownLi.classList.contains('active')) {
                 dropdownLi.classList.remove('active');
                 const caret = dropdownLi.querySelector('a > .fa-caret-down');
+                const trigger = dropdownLi.querySelector('a[aria-expanded]');
                 if (caret) caret.style.transform = 'rotate(0deg)';
+                if (trigger) trigger.setAttribute('aria-expanded', 'false');
                 const content = dropdownLi.querySelector('.dropdown-content');
                 // Use setTimeout here as well for consistency if called from a problematic context
                 if (content) {
@@ -418,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Create the dropdown HTML structure
         const dropdownHTML = `
-            <a href="#"><i class="fas fa-newspaper"></i> News <i class="fas fa-caret-down"></i></a>
+            <a href="#" role="button" aria-expanded="false" aria-haspopup="true" aria-label="News menu"><i class="fas fa-newspaper"></i> News <i class="fas fa-caret-down"></i></a>
             <ul class="dropdown-content">
                 <li><a href="news.html"><i class="fas fa-list"></i> All News</a></li>
                 <li><a href="news.html#department-updates"><i class="fas fa-bullhorn"></i> Department Updates</a></li>
@@ -469,7 +475,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             otherLi.classList.remove('active');
                             const otherContent = otherLi.querySelector('.dropdown-content');
                             const otherCaret = otherLi.querySelector('a > .fa-caret-down');
+                            const otherTrigger = otherLi.querySelector('a[aria-expanded]');
                             if (otherCaret) otherCaret.style.transform = 'rotate(0deg)';
+                            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
                             if (otherContent) {
                                 setTimeout(() => {
                                     otherContent.style.display = 'none';
@@ -483,6 +491,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (GIsCurrentlyActive) { // It WAS active, so now we close it
                     parentLi.classList.remove('active');
                     if (caret) caret.style.transform = 'rotate(0deg)';
+                    this.setAttribute('aria-expanded', 'false');
                     // console.log('Closing (dynamic News):', this.textContent.trim());
                     setTimeout(() => {
                         dropdownContent.style.display = 'none';
@@ -490,6 +499,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else { // It WAS NOT active, so now we open it
                     parentLi.classList.add('active');
                     if (caret) caret.style.transform = 'rotate(180deg)';
+                    this.setAttribute('aria-expanded', 'true');
                     // console.log('Opening (dynamic News):', this.textContent.trim());
                     setTimeout(() => {
                         dropdownContent.style.display = 'block';
