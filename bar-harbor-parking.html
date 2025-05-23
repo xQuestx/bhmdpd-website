@@ -209,7 +209,7 @@
   .hero-content { max-width: 900px; margin: 0 auto; padding: 0 2rem; width: 100%; height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
   .hero-icon { font-size: 5rem; color: white; margin-bottom: 1.5rem; display: block; width: 5rem; height: 5rem; line-height: 5rem; text-align: center; flex-shrink: 0; }
   .hero-section h1, .parking-hero h1 { color: white !important; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); margin: 0 0 1.5rem 0; font-size: 3.5rem; font-weight: 800; line-height: 1.1; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif; display: block; width: 100%; font-display: block; letter-spacing: -0.5px; text-rendering: optimizeSpeed; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-  .hero-section p, .parking-hero p { font-size: 1.4rem; opacity: 0.9; margin: 0 auto 2rem; color: white; line-height: 2rem; display: block; width: 100%; }
+  .hero-section p, .parking-hero p { font-size: 1.4rem; opacity: 1; margin: 0 auto 2rem; color: rgba(255, 255, 255, 0.95); line-height: 2rem; display: block; width: 100%; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
   .highlight-badges { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; min-height: 52px; contain: layout; width: 100%; }
   .badge { background: rgba(255, 255, 255, 0.2); padding: 0.75rem 1.25rem; border-radius: 25px; color: white; font-size: 1rem; height: 48px; display: flex; align-items: center; white-space: nowrap; flex-shrink: 0; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
   .badge i { color: white !important; opacity: 1 !important; margin-right: 0.5rem; font-size: 1.1rem; filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); }
@@ -252,8 +252,9 @@
   .parking-zones-container { margin: 2rem 0; }
   .zone-section { margin-bottom: 3rem; }
   .zone-header { margin-bottom: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, var(--primary-color-light), var(--primary-color-dark)); color: white; border-radius: var(--radius-lg); }
-  .zone-header h3 { margin: 0 0 0.5rem 0; font-size: 1.4rem; }
-  .zone-description { margin: 0; opacity: 0.9; font-size: 1rem; }
+  .zone-header h3 { margin: 0 0 0.5rem 0; font-size: 1.4rem; color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); font-weight: 700; }
+  .zone-header h3 i { color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); margin-right: 0.5rem; }
+  .zone-description { margin: 0; opacity: 1; font-size: 1rem; color: rgba(255, 255, 255, 0.95); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
   .permit-card.premium .price-tag.premium { background: linear-gradient(135deg, #f39c12, #e67e22); }
   .permit-card.standard .price-tag.standard { background: linear-gradient(135deg, #27ae60, #2ecc71); }
   .permit-card.specialty .price-tag.specialty { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
@@ -265,8 +266,9 @@
 
   /* Enhanced Seasonal Tab Styles */
   .seasonal-hero { background: linear-gradient(135deg, var(--primary-color-light), var(--primary-color-dark)); color: white; padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem; text-align: center; }
-  .seasonal-hero h2 { margin: 0 0 0.5rem 0; font-size: 2rem; }
-  .seasonal-subtitle { margin: 0; opacity: 0.9; font-size: 1.1rem; }
+  .seasonal-hero h2 { margin: 0 0 0.5rem 0; font-size: 2rem; color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); font-weight: 700; }
+  .seasonal-hero h2 i { color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); margin-right: 0.5rem; }
+  .seasonal-subtitle { margin: 0; opacity: 1; font-size: 1.1rem; color: rgba(255, 255, 255, 0.95); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
   .seasons-container { display: grid; gap: 2rem; }
   .season-card { background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); overflow: hidden; border: 1px solid #e0e0e0; }
   .season-card-header { display: flex; align-items: center; padding: 1.5rem; gap: 1rem; border-bottom: 1px solid #f0f0f0; }
@@ -304,8 +306,9 @@
   /* Contractor Permits Section */
   .contractor-permits-section { margin-top: 3rem; }
   .permits-hero { background: linear-gradient(135deg, #6c757d, #495057); color: white; padding: 2rem; border-radius: var(--radius-lg); text-align: center; margin-bottom: 2rem; }
-  .permits-hero h3 { margin: 0 0 0.5rem 0; font-size: 1.5rem; }
-  .permits-hero p { margin: 0; opacity: 0.9; }
+  .permits-hero h3 { margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); font-weight: 700; }
+  .permits-hero h3 i { color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); margin-right: 0.5rem; }
+  .permits-hero p { margin: 0; opacity: 1; color: rgba(255, 255, 255, 0.95); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
   .permit-options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
   .permit-option { background: white; border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid #e0e0e0; }
   .premium-option { border-left: 4px solid #f39c12; }
@@ -457,7 +460,7 @@
   .app-store-btn:hover { transform: translateY(-2px); color: white; }
   .app-store-btn i { font-size: 2rem; }
   .btn-text { display: flex; flex-direction: column; align-items: flex-start; }
-  .small-text { font-size: 0.75rem; opacity: 0.9; }
+  .small-text { font-size: 0.75rem; opacity: 1; color: #495057; }
   .main-text { font-size: 1.1rem; font-weight: 600; }
   
   /* Quick start and info boxes */
@@ -592,7 +595,7 @@
   /* Dark mode for map preview */
   body.dark-mode .map-preview { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
   body.dark-mode .map-preview h3 { color: var(--text-color) !important; }
-  body.dark-mode .map-preview p { color: var(--text-color) !important; opacity: 0.8; }
+  body.dark-mode .map-preview p { color: var(--light-text-color) !important; opacity: 1; }
   body.dark-mode .map-preview-icon { color: #4da3ff; }
   .fa-bars::before { content: "\f0c9"; }
   .fa-times::before { content: "\f00d"; }
@@ -715,7 +718,7 @@ window.addEventListener('DOMContentLoaded', function() {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
     letter-spacing: -0.5px;
   }
-  .hero-section p, .parking-hero p { margin: 0; color: white; font-size: 1.4rem; opacity: 0.9; }
+  .hero-section p, .parking-hero p { margin: 0; color: rgba(255, 255, 255, 0.95); font-size: 1.4rem; opacity: 1; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
   p { margin: 0.5rem 0; color: #333; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
   .tab-content { display: none; }
@@ -920,7 +923,7 @@ window.addEventListener('DOMContentLoaded', function() {
         <p>The use of tokens also will be more secure, as its use will limit US currency cash sitting in meters prior to collection, since cash paid for the tokens is received at the Town Office at the time of the initial sale of the tokens.</p>
         <p>The tokens have the Town logo on one side and a design chosen by finance staff from participating student artists from MDI High School. The design selected, of a sunrise in Acadia, was created and submitted by Austria Morehouse.</p>
         <div class="mt-4" style="text-align: center;">
-            <img src="images/divisions/parking/tokens.png" alt="Bar Harbor Parking Tokens - Front and Back" width="382" height="213" loading="lazy" style="max-width: 382px; width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+            <img src="images/divisions/parking/tokens.png" alt="Bar Harbor Parking Tokens - Front and Back" width="382" height="213" loading="lazy" decoding="async" style="max-width: 382px; width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
         </div>
     </div>
 </div>

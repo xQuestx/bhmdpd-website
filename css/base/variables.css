@@ -18,9 +18,9 @@
   --secondary-color: #f0f4f8;
   --secondary-color-dark: #e0e7f0;
 
-  --accent-color: #0056b3;
-  --accent-color-rgb: 0, 86, 179;
-  --accent-color-dark: #0056b3;
+  --accent-color: #0d47a1;
+  --accent-color-rgb: 13, 71, 161;
+  --accent-color-dark: #0d47a1;
 
   --blue: #1a73e8;
   --dark-blue: #1557b0;
@@ -34,15 +34,15 @@
   --gray-300: #dee2e6;
   --gray-400: #ced4da;
   --gray-500: #adb5bd;
-  --gray-600: #6c757d;
+  --gray-600: #495057;
   --gray-700: #495057;
   --gray-800: #343a40;
   --gray-900: #202124;
 
   /* Text Colors */
   --light-text-color: #fff;
-  --dark-text-color: #333;
-  --text-color: #333;
+  --dark-text-color: #212529;
+  --text-color: #212529;
 
   /* Border Colors */
   --border-color: #e1e1e1;
