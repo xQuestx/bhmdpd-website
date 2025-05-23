@@ -1219,7 +1219,9 @@ body.dark-mode .legend-item span {
   font-weight: 700;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
+  text-align: center;
 }
 
 .regulation-section h4 i {
@@ -1234,6 +1236,8 @@ body.dark-mode .legend-item span {
 
 .regulation-item {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
   padding: 1.25rem;
   background: white;
@@ -1241,6 +1245,7 @@ body.dark-mode .legend-item span {
   box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.05));
   border-left: 3px solid var(--accent-color, #007bff);
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .regulation-item:hover {
@@ -1266,6 +1271,8 @@ body.dark-mode .legend-item span {
   color: var(--primary-color, #1a2b4a);
   font-size: 1.05rem;
   font-weight: 600;
+  text-align: center;
+  width: 100%;
 }
 
 .regulation-item p {
@@ -1273,6 +1280,7 @@ body.dark-mode .legend-item span {
   color: var(--gray-600, #6c757d);
   font-size: 0.95rem;
   line-height: 1.6;
+  text-align: center;
 }
 
 .contact-options {
@@ -1280,6 +1288,8 @@ body.dark-mode .legend-item span {
   gap: 1rem;
   margin-top: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .contact-button {
@@ -1307,6 +1317,50 @@ body.dark-mode .legend-item span {
 
 .contact-button.secondary:hover {
   background: var(--gray-300, #dee2e6);
+}
+
+/* Contact Harbor Master Section */
+.contact-harbor-master {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--gray-50, #f8f9fa);
+  border-radius: var(--radius-lg, 12px);
+  text-align: center;
+}
+
+.contact-harbor-master h3 {
+  margin: 0 0 1rem 0;
+  color: var(--primary-color, #1a2b4a);
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.contact-harbor-master h3 i {
+  color: var(--accent-color, #007bff);
+}
+
+.contact-harbor-master p {
+  margin: 0 0 1.5rem 0;
+  color: var(--gray-600, #6c757d);
+  font-size: 1rem;
+}
+
+/* Dark mode for contact section */
+body.dark-mode .contact-harbor-master {
+  background: var(--dark-mode-card-bg, #2d2d2d);
+  border: 1px solid var(--dark-mode-border-color, #404040);
+}
+
+body.dark-mode .contact-harbor-master h3 {
+  color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .contact-harbor-master p {
+  color: var(--gray-400, #ced4da);
 }
 
 /* Dark mode for tabs */
@@ -1371,12 +1425,18 @@ body.dark-mode .regulation-item p {
   }
   
   .tab-button {
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     font-size: 0.9rem;
+    gap: 0.4rem;
   }
   
   .tab-button span {
-    display: none;
+    display: inline-block;
+    font-size: 0.85rem;
+  }
+  
+  .tab-button i {
+    font-size: 1rem;
   }
   
   .contact-grid {

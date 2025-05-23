@@ -3,32 +3,38 @@
  * Creates a 7-day tide forecast chart using Chart.js and NOAA CO-OPS API
  */
 
-class TideChart {
+// Make TideChart available globally
+window.TideChart = class TideChart {
     constructor() {
         this.stationId = '8413320'; // Bar Harbor, ME
         this.baseUrl = 'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter';
-        this.corsProxy = ''; // Try direct API call first
+        this.corsProxy = 'https://api.allorigins.win/raw?url='; // CORS proxy for NOAA API
         this.chart = null;
         this.init();
     }
 
     init() {
-        // Wait a moment for Chart.js to load if needed
-        if (typeof Chart === 'undefined') {
-            console.log('Chart.js not yet loaded, waiting...');
-            setTimeout(() => {
-                if (typeof Chart === 'undefined') {
-                    console.error('Chart.js failed to load');
-                    this.showSimpleFallback();
-                } else {
-                    console.log('Chart.js loaded, fetching tide data...');
-                    this.fetchWeeklyTideData();
-                }
-            }, 1000);
-        } else {
-            console.log('Chart.js already available');
+        // Wait for Chart.js to load with multiple retries
+        this.waitForChartJS();
+    }
+    
+    waitForChartJS(retries = 0) {
+        if (typeof Chart !== 'undefined') {
+            console.log('Chart.js is available, fetching tide data...');
             this.fetchWeeklyTideData();
+            return;
         }
+        
+        if (retries >= 10) { // Give up after 10 retries (5 seconds)
+            console.error('Chart.js failed to load after multiple attempts');
+            this.showSimpleFallback();
+            return;
+        }
+        
+        console.log(`Waiting for Chart.js... (attempt ${retries + 1})`);
+        setTimeout(() => {
+            this.waitForChartJS(retries + 1);
+        }, 500);
     }
 
     async loadChartJS() {
@@ -68,16 +74,40 @@ class TideChart {
                 format: 'json'
             });
 
-            const url = this.corsProxy ? 
-                `${this.corsProxy}${encodeURIComponent(this.baseUrl + '?' + params)}` :
-                `${this.baseUrl}?${params}`;
+            let url;
+            if (this.corsProxy) {
+                // Different CORS proxies have different URL formats
+                if (this.corsProxy.includes('allorigins')) {
+                    url = `${this.corsProxy}${encodeURIComponent(this.baseUrl + '?' + params)}`;
+                } else {
+                    // For corsproxy.io and others, don't encode the URL
+                    url = `${this.corsProxy}${this.baseUrl}?${params}`;
+                }
+            } else {
+                url = `${this.baseUrl}?${params}`;
+            }
             
             console.log('Fetching tide data from:', url);
+            console.log('Request parameters:', params.toString());
+            
             const response = await fetch(url);
+            console.log('Response status:', response.status);
             
-            if (!response.ok) throw new Error('Failed to fetch weekly tide data');
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
             
-            const data = await response.json();
+            const text = await response.text();
+            console.log('Raw response:', text.substring(0, 200) + '...');
+            
+            let data;
+            try {
+                data = JSON.parse(text);
+            } catch (parseError) {
+                console.error('Failed to parse JSON:', parseError);
+                throw new Error('Invalid JSON response from API');
+            }
+            
             console.log('NOAA API Response:', data);
             
             // Check if we have valid predictions data
@@ -91,7 +121,30 @@ class TideChart {
 
         } catch (error) {
             console.error('Error fetching weekly tide data:', error);
-            this.showFallbackChart();
+            console.error('Error details:', error.message);
+            
+            // Try alternative CORS proxies
+            if (!this.proxyAttempts) {
+                this.proxyAttempts = 1;
+            }
+            
+            const proxies = [
+                'https://api.allorigins.win/raw?url=',
+                'https://corsproxy.io/?',
+                'https://cors-anywhere.herokuapp.com/',
+                '' // Try direct connection as last resort
+            ];
+            
+            if (this.proxyAttempts < proxies.length) {
+                const nextProxy = proxies[this.proxyAttempts];
+                console.log(`Trying proxy ${this.proxyAttempts + 1} of ${proxies.length}: ${nextProxy || 'direct connection'}`);
+                this.corsProxy = nextProxy;
+                this.proxyAttempts++;
+                setTimeout(() => this.fetchWeeklyTideData(), 500); // Small delay before retry
+            } else {
+                console.log('All proxy attempts failed, showing fallback chart');
+                this.showFallbackChart();
+            }
         }
     }
 
@@ -121,13 +174,35 @@ class TideChart {
             return;
         }
 
+        // Store data for later use
+        this.chartData = chartData;
+        this.predictions = predictions;
+        
+        // Check if the tides tab is currently active
+        const tidesTab = document.getElementById('tides');
+        if (tidesTab && tidesTab.classList.contains('active')) {
+            this.renderChart();
+        } else {
+            console.log('Tides tab not active, deferring chart render');
+            // Chart will be rendered when tab is clicked
+        }
+    }
+    
+    renderChart() {
+        if (!this.chartData || !this.predictions) {
+            console.error('No chart data available');
+            return;
+        }
+        
         const canvas = document.getElementById('tideChart');
         if (!canvas) {
             console.error('Tide chart canvas not found');
             return;
         }
         
-        console.log('Creating chart with', chartData.labels.length, 'data points');
+        console.log('Creating chart with', this.chartData.labels.length, 'data points');
+        console.log('Canvas dimensions:', canvas.width, 'x', canvas.height);
+        console.log('Canvas parent visible:', canvas.parentElement.offsetHeight > 0);
 
         const ctx = canvas.getContext('2d');
 
@@ -146,32 +221,46 @@ class TideChart {
             return;
         }
 
-        this.chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: chartData.labels,
-                datasets: [{
-                    label: 'Tide Height',
-                    data: chartData.heights,
-                    borderColor: '#3b82f6',
-                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                    pointBackgroundColor: (context) => {
-                        if (!context || !predictions[context.dataIndex]) return '#3b82f6';
-                        const prediction = predictions[context.dataIndex];
-                        return prediction.type === 'H' ? '#3b82f6' : '#10b981';
-                    },
-                    pointBorderColor: '#ffffff',
-                    pointBorderWidth: 2,
-                    pointRadius: 6,
-                    pointHoverRadius: 8,
-                    fill: true,
-                    tension: 0.4,
-                    borderWidth: 3
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
+        // Force canvas to be visible and properly sized
+        canvas.style.display = 'block';
+        canvas.style.width = '100%';
+        canvas.style.height = '400px';
+        
+        // Set canvas actual dimensions
+        const container = canvas.parentElement;
+        if (container) {
+            canvas.width = container.offsetWidth || 800;
+            canvas.height = 400;
+        }
+        
+        // Create a small delay to ensure the canvas is rendered
+        setTimeout(() => {
+            this.chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: this.chartData.labels,
+                    datasets: [{
+                        label: 'Tide Height',
+                        data: this.chartData.heights,
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        pointBackgroundColor: (context) => {
+                            if (!context || !this.predictions[context.dataIndex]) return '#3b82f6';
+                            const prediction = this.predictions[context.dataIndex];
+                            return prediction.type === 'H' ? '#3b82f6' : '#10b981';
+                        },
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6,
+                        pointHoverRadius: 8,
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
                 interaction: {
                     intersect: false,
                     mode: 'index'
@@ -189,7 +278,7 @@ class TideChart {
                         cornerRadius: 8,
                         callbacks: {
                             title: (context) => {
-                                const prediction = predictions[context[0].dataIndex];
+                                const prediction = this.predictions[context[0].dataIndex];
                                 const date = new Date(prediction.t);
                                 return date.toLocaleDateString('en-US', {
                                     weekday: 'short',
@@ -201,7 +290,7 @@ class TideChart {
                                 });
                             },
                             label: (context) => {
-                                const prediction = predictions[context.dataIndex];
+                                const prediction = this.predictions[context.dataIndex];
                                 const type = prediction.type === 'H' ? 'High Tide' : 'Low Tide';
                                 const height = parseFloat(prediction.v).toFixed(1);
                                 return `${type}: ${height} ft`;
@@ -247,12 +336,13 @@ class TideChart {
                     }
                 }
             }
-        });
+            });
 
-        // Update chart for dark mode if needed
-        this.updateChartForTheme();
-        
-        console.log('Chart created successfully:', this.chart);
+            // Update chart for dark mode if needed
+            this.updateChartForTheme();
+            
+            console.log('Chart created successfully:', this.chart);
+        }, 100); // 100ms delay to ensure canvas is rendered
     }
 
     processChartData(predictions) {
@@ -448,6 +538,14 @@ class TideChart {
         this.chart.update('none');
     }
     
+    refreshChart() {
+        if (this.chart) {
+            console.log('Refreshing tide chart...');
+            this.chart.resize();
+            this.chart.update();
+        }
+    }
+    
     showSimpleFallback() {
         const canvas = document.getElementById('tideChart');
         if (!canvas) return;
@@ -480,7 +578,14 @@ class TideChart {
 document.addEventListener('DOMContentLoaded', () => {
     // Only initialize on harbor master page
     if (document.querySelector('.tide-chart-section') && !window.tideChartInstance) {
-        window.tideChartInstance = new TideChart();
+        console.log('Initializing Tide Chart...');
+        window.tideChartInstance = new window.TideChart();
+        
+        // If the tides tab is already active, make sure chart loads immediately
+        const tidesTab = document.getElementById('tides');
+        if (tidesTab && tidesTab.classList.contains('active')) {
+            console.log('Tides tab is active on page load');
+        }
     }
 });
 

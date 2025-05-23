@@ -196,6 +196,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 const tabId = button.getAttribute('data-tab');
                 // Activate the matching tab content
                 document.getElementById(tabId).classList.add('active');
+                
+                // If the tides tab is clicked, ensure the tide chart is initialized
+                if (tabId === 'tides') {
+                    console.log('Tides tab clicked, checking tide chart...');
+                    if (!window.tideChartInstance) {
+                        console.log('Creating new tide chart instance...');
+                        window.tideChartInstance = new window.TideChart();
+                    } else if (!window.tideChartInstance.chart) {
+                        console.log('Tide chart not loaded, attempting to fetch data...');
+                        window.tideChartInstance.waitForChartJS();
+                    } else {
+                        // Chart exists or data is ready, render/refresh it
+                        setTimeout(() => {
+                            if (window.tideChartInstance.chart) {
+                                window.tideChartInstance.refreshChart();
+                            } else if (window.tideChartInstance.chartData) {
+                                // Data is ready but chart hasn't been rendered yet
+                                console.log('Rendering deferred chart...');
+                                window.tideChartInstance.renderChart();
+                            }
+                        }, 100);
+                    }
+                }
             });
         });
     }
