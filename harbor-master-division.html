@@ -771,10 +771,10 @@
 <script src="script.js"></script>
 <!-- Harbor conditions API integration -->
 <script src="js/harbor-conditions.js" defer></script>
-<!-- Chart.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
-<!-- Tide chart integration -->
-<script src="js/tide-chart.js" defer></script>
+<!-- Chart.js CDN - Load before tide chart -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+<!-- Tide chart integration - Load after Chart.js -->
+<script src="js/tide-chart.js"></script>
 <!-- Footer loader script to dynamically load the footer with both addresses -->
 <script src="js/footer-loader.js" defer></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

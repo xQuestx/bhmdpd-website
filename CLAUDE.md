@@ -42,6 +42,9 @@ Key architectural decisions:
   - `darkmode.js` - Theme switching logic
   - `theme-init.js` - Early theme initialization (prevents flash)
   - `js/footer-loader.js` - Dynamic footer content loading
+  - `js/harbor-conditions.js` - Real-time NOAA data for harbor conditions
+  - `js/tide-chart.js` - Interactive tide forecast charts
+  - `js/parking-optimized.js` - Parking page enhancements
 
 ### Performance Optimizations
 - **Critical CSS inlined** in HTML `<head>` for above-the-fold content
@@ -50,6 +53,15 @@ Key architectural decisions:
 - **WebP images** with fallbacks
 - **Font optimization** using system fonts
 - **Lazy loading** implemented where appropriate
+
+## Commands
+
+### Development
+- **Start local server**: `python -m http.server 8000` or use any static file server
+- **View site**: Navigate to `http://localhost:8000`
+- **No build/compile steps**: Direct file editing with immediate results
+- **No linting**: Manual code review required
+- **No automated tests**: Manual browser testing required
 
 ## Common Development Tasks
 
@@ -108,7 +120,7 @@ Since this is a static site with no automated testing:
 
 ### Department Structure
 - **Patrol Division**: Primary law enforcement
-- **Harbor Master Division**: Marine safety and enforcement
+- **Harbor Master Division**: Marine safety and enforcement (with real-time NOAA data integration)
 - **Parking Division**: Municipal parking management
 - **Administrative Services**: Permits, forms, and citizen services
 
@@ -135,5 +147,19 @@ Since this is a static site with no automated testing:
 - **Mobile browsers**: iOS Safari, Chrome Mobile, Samsung Internet
 - **Graceful degradation** for older browsers
 - **Progressive enhancement** approach
+
+## External APIs and Services
+
+### NOAA CO-OPS API
+- **Harbor conditions**: Real-time data from Station 8413320 (Bar Harbor)
+- **Tide predictions**: 7-day forecast data
+- **CORS proxy**: May be required for API access from browser
+- **Fallback data**: Graceful degradation if API unavailable
+
+### Third-party Integrations
+- **Dockwa**: Mooring reservation system
+- **Chart.js**: Tide chart visualization (loaded from CDN)
+- **Leaflet**: Interactive maps in footer (loaded from CDN)
+- **Font Awesome**: Icon library (loaded from CDN)
 
 When working on this site, always test both theme modes and ensure responsive behavior across device sizes. The modular CSS architecture makes it easy to isolate changes to specific components or pages.
