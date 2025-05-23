@@ -178,6 +178,9 @@ window.TideChart = class TideChart {
         this.chartData = chartData;
         this.predictions = predictions;
         
+        // Populate the tide table
+        this.populateTideTable(predictions);
+        
         // Check if the tides tab is currently active
         const tidesTab = document.getElementById('tides');
         if (tidesTab && tidesTab.classList.contains('active')) {
@@ -410,6 +413,9 @@ window.TideChart = class TideChart {
 
         // Show notice about fallback data
         this.showFallbackNotice();
+        
+        // Populate table with sample data
+        this.populateFallbackTable();
     }
 
     generateFallbackData() {
@@ -544,6 +550,125 @@ window.TideChart = class TideChart {
             this.chart.resize();
             this.chart.update();
         }
+    }
+    
+    populateTideTable(predictions) {
+        const tableBody = document.getElementById('tideTableBody');
+        if (!tableBody) return;
+        
+        // Clear loading message
+        tableBody.innerHTML = '';
+        
+        // Group predictions by date
+        const tidesByDate = {};
+        
+        predictions.forEach(prediction => {
+            const date = new Date(prediction.t);
+            const dateKey = date.toLocaleDateString('en-US');
+            
+            if (!tidesByDate[dateKey]) {
+                tidesByDate[dateKey] = {
+                    date: date,
+                    highTides: [],
+                    lowTides: []
+                };
+            }
+            
+            const tideInfo = {
+                time: date.toLocaleTimeString('en-US', { 
+                    hour: 'numeric', 
+                    minute: '2-digit',
+                    hour12: true 
+                }).replace(' ', ''),
+                height: parseFloat(prediction.v).toFixed(1),
+                isPM: date.getHours() >= 12
+            };
+            
+            if (prediction.type === 'H') {
+                tidesByDate[dateKey].highTides.push(tideInfo);
+            } else {
+                tidesByDate[dateKey].lowTides.push(tideInfo);
+            }
+        });
+        
+        // Create table rows
+        Object.keys(tidesByDate).forEach(dateKey => {
+            const dayData = tidesByDate[dateKey];
+            const row = document.createElement('tr');
+            
+            // Date cell
+            const dateCell = document.createElement('td');
+            const dayName = dayData.date.toLocaleDateString('en-US', { weekday: 'short' });
+            const dayNum = dayData.date.getDate();
+            dateCell.innerHTML = `${dayNum} ${dayName}`;
+            row.appendChild(dateCell);
+            
+            // High tide cells (AM and PM)
+            const highAM = dayData.highTides.find(t => !t.isPM);
+            const highPM = dayData.highTides.find(t => t.isPM);
+            
+            row.appendChild(this.createTideCell(highAM?.time || '-'));
+            row.appendChild(this.createTideCell(highAM?.height || '-'));
+            row.appendChild(this.createTideCell(highPM?.time || '-'));
+            row.appendChild(this.createTideCell(highPM?.height || '-'));
+            
+            // Low tide cells (AM and PM)
+            const lowAM = dayData.lowTides.find(t => !t.isPM);
+            const lowPM = dayData.lowTides.find(t => t.isPM);
+            
+            row.appendChild(this.createTideCell(lowAM?.time || '-'));
+            row.appendChild(this.createTideCell(lowAM?.height || '-'));
+            row.appendChild(this.createTideCell(lowPM?.time || '-'));
+            row.appendChild(this.createTideCell(lowPM?.height || '-'));
+            
+            tableBody.appendChild(row);
+        });
+    }
+    
+    createTideCell(content) {
+        const cell = document.createElement('td');
+        cell.textContent = content;
+        return cell;
+    }
+    
+    populateFallbackTable() {
+        const tableBody = document.getElementById('tideTableBody');
+        if (!tableBody) return;
+        
+        tableBody.innerHTML = '';
+        
+        // Sample tide data for demonstration
+        const sampleData = [
+            { date: 'Fri', highAM: '12:17AM', highAMft: '12.4', highPM: '-', highPMft: '-', lowAM: '6:08AM', lowAMft: '-1.5', lowPM: '6:29PM', lowPMft: '0.2' },
+            { date: 'Sat', highAM: '12:39AM', highAMft: '13.0', highPM: '1:07PM', highPMft: '12.6', lowAM: '6:57AM', lowAMft: '-1.4', lowPM: '7:22PM', lowPMft: '0.1' },
+            { date: 'Sun', highAM: '1:31AM', highAMft: '12.6', highPM: '1:57PM', highPMft: '12.5', lowAM: '7:47AM', lowAMft: '-1.0', lowPM: '8:16PM', lowPMft: '0.0' },
+            { date: 'Mon', highAM: '2:25AM', highAMft: '12.0', highPM: '2:48PM', highPMft: '12.2', lowAM: '8:37AM', lowAMft: '-0.4', lowPM: '9:11PM', lowPMft: '0.1' },
+            { date: 'Tue', highAM: '3:22AM', highAMft: '11.2', highPM: '3:41PM', highPMft: '11.8', lowAM: '9:29AM', lowAMft: '0.3', lowPM: '10:06PM', lowPMft: '0.3' }
+        ];
+        
+        const now = new Date();
+        sampleData.forEach((data, index) => {
+            const row = document.createElement('tr');
+            const futureDate = new Date(now);
+            futureDate.setDate(now.getDate() + index);
+            
+            // Date cell
+            const dateCell = document.createElement('td');
+            dateCell.innerHTML = `${futureDate.getDate()} ${data.date}`;
+            row.appendChild(dateCell);
+            
+            // Add tide data cells
+            row.appendChild(this.createTideCell(data.highAM));
+            row.appendChild(this.createTideCell(data.highAMft));
+            row.appendChild(this.createTideCell(data.highPM));
+            row.appendChild(this.createTideCell(data.highPMft));
+            row.appendChild(this.createTideCell(data.lowAM));
+            row.appendChild(this.createTideCell(data.lowAMft));
+            row.appendChild(this.createTideCell(data.lowPM));
+            row.appendChild(this.createTideCell(data.lowPMft));
+            
+            tableBody.appendChild(row);
+        });
     }
     
     showSimpleFallback() {
