@@ -467,6 +467,42 @@
 					<span>Low Tide</span>
 				</div>
 			</div>
+			
+			<!-- Tide Table -->
+			<div class="tide-table-container">
+				<h3><i class="fas fa-table"></i> Tide Schedule</h3>
+				<div class="tide-table-wrapper">
+					<table class="tide-table" id="tideTable">
+						<thead>
+							<tr>
+								<th rowspan="2" class="date-column">Date</th>
+								<th colspan="4" class="tide-type high-tide-header">High Tide</th>
+								<th colspan="4" class="tide-type low-tide-header">Low Tide</th>
+							</tr>
+							<tr>
+								<th>AM</th>
+								<th>ft</th>
+								<th>PM</th>
+								<th>ft</th>
+								<th>AM</th>
+								<th>ft</th>
+								<th>PM</th>
+								<th>ft</th>
+							</tr>
+						</thead>
+						<tbody id="tideTableBody">
+							<!-- Table rows will be populated by JavaScript -->
+							<tr>
+								<td colspan="9" class="loading-message">Loading tide data...</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="tide-table-note">
+					<i class="fas fa-info-circle"></i>
+					<p>All times are in local time (EST/EDT). Heights are in feet above Mean Lower Low Water (MLLW).</p>
+				</div>
+			</div>
 		</div>
 	</div>
 
