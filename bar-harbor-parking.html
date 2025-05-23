@@ -197,6 +197,9 @@
   .dropdown:hover > a i.fa-caret-down, .dropdown.active > a i.fa-caret-down { transform: rotate(180deg); }
   .dropdown-content a:hover { background-color: #f8f9fa; color: var(--accent-color); }
 
+  /* Screen Reader Only */
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
   /* Mobile Menu Elements */
   .mobile-menu-btn { display: none; font-size: 1.5rem; color: var(--gray-800); z-index: 1002; }
   .mobile-close-btn { display: none; font-size: 1.5rem; color: var(--light-text-color); position: absolute; top: 1rem; right: 1rem; z-index: 1002; }
@@ -421,6 +424,12 @@
   
   /* Two column layout for tabs */
   .two-column-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+  
+  /* Constrain tab info cards for better contained appearance */
+  #parkmobile .info-card, #kiosk .info-card { max-width: 1000px; margin: 0 auto 2rem auto; }
+  
+  /* Additional padding for better visual containment */
+  #parkmobile .card-body, #kiosk .card-body { padding: 2rem; }
   .left-column, .right-column { min-height: 400px; }
   
   /* Enhanced video containers */
@@ -583,8 +592,13 @@
   
   /* Tab hint consistent height */
   .tab-hint { min-height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; text-align: center; background: #e8f0fe; padding: 1rem; border-radius: 8px; border: 1px solid #d2e1f5; }
-  .tab-hint p { margin: 0; color: #1a2b4a; font-size: 1.1rem; font-weight: 500; }
-  .tab-hint i { color: #0056b3; margin-right: 0.5rem; }
+  .tab-hint p { margin: 0; color: #1a2b4a; font-size: 1.1rem; font-weight: 600; }
+  .tab-hint i { color: #0d47a1; margin-right: 0.5rem; }
+  
+  /* Dark mode for tab hint */
+  body.dark-mode .tab-hint { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); }
+  body.dark-mode .tab-hint p { color: var(--light-text-color); }
+  body.dark-mode .tab-hint i { color: #64b5f6; }
   
   /* Map preview styling */
   .map-preview { background: #f0f4f8; border: 2px solid #ddd; border-radius: 8px; padding: 2rem; text-align: center; }
@@ -770,7 +784,7 @@ window.addEventListener('DOMContentLoaded', function() {
 <a class="logo-link" href="index.html">
 <img alt="Bar Harbor Police Department Logo" class="logo" src="images/branding/logo.png" width="192" height="262"/>
 </a>
-<div class="nav-wrapper">
+<div class="nav-wrapper" id="nav-wrapper">
 <ul class="nav-links">
 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
 <li class="dropdown">
@@ -811,12 +825,14 @@ window.addEventListener('DOMContentLoaded', function() {
 </ul>
 </div>
 <!-- Mobile Menu Button -->
-<button class="mobile-menu-btn">
-<i class="fas fa-bars"></i>
+<button aria-label="Toggle navigation menu" class="mobile-menu-btn" aria-expanded="false" aria-controls="nav-wrapper">
+<i class="fas fa-bars" aria-hidden="true"></i>
+<span class="sr-only">Menu</span>
 </button>
-<button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle">
-<i class="fas fa-moon"></i>
-<i class="fas fa-sun"></i>
+<button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle" aria-pressed="false">
+<i class="fas fa-moon" aria-hidden="true"></i>
+<i class="fas fa-sun" aria-hidden="true"></i>
+<span class="sr-only">Dark mode</span>
 </button>
 </nav>
 </header>
@@ -1065,10 +1081,10 @@ window.addEventListener('DOMContentLoaded', function() {
 <div class="info-card">
 <div class="card-header">
 <i class="fas fa-mobile-alt"></i>
-<h2>ParkMobile App - Park Smarter</h2>
+<h2>ParkMobile App</h2>
 </div>
 <div class="card-body">
-<p class="lead-text" style="text-align: center; margin-bottom: 2rem;">Skip the kiosk and pay for parking right from your phone. ParkMobile makes parking in Bar Harbor quick, easy, and contactless.</p>
+<p style="text-align: center; margin-bottom: 1.5rem; color: #666; font-size: 1.1rem;">Skip the kiosk and pay for parking right from your phone. ParkMobile makes parking in Bar Harbor quick, easy, and contactless.</p>
 <div class="two-column-layout">
 <div class="left-column">
 <h3><i class="fas fa-list-ol"></i> Quick Start Guide</h3>
