@@ -113,40 +113,93 @@
 }
 
 /* Responsibilities */
-.responsibilities {
-  margin-top: 1.5rem;
+.harbor-master-page .responsibilities {
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
 }
 
-.responsibilities h3 {
-  margin-bottom: 1rem;
+.harbor-master-page .responsibilities h3 {
+  margin-bottom: 1.5rem;
   color: var(--primary-color, #1a2b4a);
   font-family: "Roboto Slab", serif;
+  text-align: center;
+  width: 100%;
 }
 
-.responsibility-grid {
+.harbor-master-page .responsibility-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  justify-items: center;
 }
 
-.responsibility-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  background-color: var(--gray-50, #f8f9fa);
-  border-radius: var(--radius-sm, 4px);
+.harbor-master-page .responsibility-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+  padding: 1.5rem 1rem !important;
+  background-color: var(--gray-50, #f8f9fa) !important;
+  border-radius: var(--radius-md, 8px) !important;
   transition: all 0.3s ease;
+  text-align: center !important;
+  min-height: 140px;
+  width: 100%;
+  max-width: 180px;
 }
 
-.responsibility-item:hover {
+.harbor-master-page .responsibility-item:hover {
   background-color: var(--gray-100, #f1f3f4);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.responsibility-item i {
-  color: var(--accent-color, #007bff);
-  font-size: 1.2rem;
+.harbor-master-page .responsibility-item i {
+  color: var(--accent-color, #007bff) !important;
+  font-size: 2.5rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  line-height: 1 !important;
+}
+
+/* Ensure FontAwesome icons display */
+.harbor-master-page .responsibility-item i::before {
+  display: inline-block !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+/* Specific icon styles for visibility */
+.harbor-master-page .responsibility-item .fa-boat::before {
+  content: "\f21a" !important;
+}
+
+.harbor-master-page .responsibility-item .fa-shield-alt::before {
+  content: "\f3ed" !important;
+}
+
+.harbor-master-page .responsibility-item .fa-life-ring::before {
+  content: "\f1cd" !important;
+}
+
+.harbor-master-page .responsibility-item .fa-water::before {
+  content: "\f773" !important;
+}
+
+.harbor-master-page .responsibility-item span {
+  font-weight: 600 !important;
+  color: var(--gray-800, #343a40) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.3 !important;
 }
 
 /* Service Buttons */
@@ -155,6 +208,8 @@
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1.5rem;
+  justify-content: center;
+  width: 100%;
 }
 
 .action-button {
@@ -187,12 +242,16 @@
 /* Reservation Note */
 .reservation-note {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   padding: 1rem;
   background-color: var(--gray-50, #f8f9fa);
   border-radius: var(--radius-md, 8px);
   border-left: 4px solid var(--accent-color, #007bff);
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  text-align: center;
 }
 
 .reservation-note i {
@@ -357,12 +416,19 @@
     font-size: 2.8rem;
   }
   
-  .responsibility-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  .harbor-master-page .responsibility-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    max-width: 400px;
+  }
+  
+  .harbor-master-page .responsibility-item {
+    max-width: 160px;
   }
   
   .service-buttons {
     flex-direction: column;
+    align-items: center;
   }
   
   .action-button {
@@ -619,9 +685,12 @@
 }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .service-card {
@@ -632,6 +701,8 @@
   box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.1));
   transition: all 0.3s ease;
   border: 1px solid var(--border-color, #e8eaed);
+  flex: 0 1 300px;
+  max-width: 350px;
 }
 
 .service-card:hover {
@@ -755,10 +826,13 @@ body.dark-mode .contact-item p {
 
 .harbor-master-page .info-card .card-body p,
 .harbor-master-page .info-card .card-body h3,
-.harbor-master-page .info-card .responsibilities h3,
-.harbor-master-page .info-card .responsibility-item span {
+.harbor-master-page .info-card .responsibilities h3 {
     color: var(--text-color, #333);
 }
+/* Commented out to use new styles
+.harbor-master-page .info-card .responsibility-item span {
+    color: var(--text-color, #333);
+} */
 
 /* Maintain contrast in dark mode */
 .dark-mode .harbor-master-page .info-card .card-body {
@@ -767,10 +841,13 @@ body.dark-mode .contact-item p {
 
 .dark-mode .harbor-master-page .info-card .card-body p,
 .dark-mode .harbor-master-page .info-card .card-body h3,
-.dark-mode .harbor-master-page .info-card .responsibilities h3,
-.dark-mode .harbor-master-page .info-card .responsibility-item span {
+.dark-mode .harbor-master-page .info-card .responsibilities h3 {
     color: var(--dark-mode-text-color, #e0e0e0);
 }
+/* Commented out to use new styles
+.dark-mode .harbor-master-page .info-card .responsibility-item span {
+    color: var(--dark-mode-text-color, #e0e0e0);
+} */
 
 /* Dark mode styles for new sections */
 body.dark-mode .harbor-gallery {
