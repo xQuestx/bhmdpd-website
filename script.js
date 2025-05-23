@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Create a subtle parallax effect
                 heroImage.style.transform = `translateY(${scrollPosition * 0.3}px)`;
             }
-        });
+        }, { passive: true });
     }
 
     // FAQ Accordion Functionality
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         // Initial check
         handleScroll();
     }
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 button.style.display = "none";
             }
-        });
+        }, { passive: true });
 
         // Scroll to top on click
         button.addEventListener('click', () => {
