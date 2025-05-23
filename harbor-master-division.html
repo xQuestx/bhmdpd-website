@@ -97,7 +97,7 @@
       "@type": "ReserveAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://dockwa.com/explore/destination/mncw35-bar-harbor-municipal-pier",
+        "urlTemplate": "https://dockwa.com/explore/destination/mncw35-bar-harbor-municipal-pier?form=transient",
         "actionPlatform": [
             "http://schema.org/DesktopWebPlatform",
             "http://schema.org/IOSPlatform",
@@ -142,6 +142,7 @@
     </script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 <link href="css/main.css" rel="stylesheet"/>
+<link href="css/components/tabs.css" rel="stylesheet"/>
   <link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
   <!-- Google tag (gtag.js) -->
@@ -278,113 +279,429 @@
 <i class="fas fa-ship hero-icon"></i>
 <h1>Harbor Master Division</h1>
 <p>Ensuring safe and efficient harbor operations in Bar Harbor</p>
-</div>
-</div>
-<div class="content-wrapper">
-<section class="info-grid">
-<div class="info-card about">
-<div class="card-header">
-<i class="fas fa-anchor"></i>
-<h2>About Our Division</h2>
-</div>
-<div class="card-body">
-<p>The Harbor Master Division is responsible for ensuring the safe and efficient operation of Bar Harbor. We oversee mooring assignments, enforce harbor regulations, and provide assistance to boaters. Our goal is to maintain a welcoming and enjoyable environment for all who use the harbor.</p>
-<div class="link-to-faq">
-<a href="faq.html#marine-resources" class="faq-link">
-<i class="fas fa-question-circle"></i> See Marine Resources FAQ
-</a>
-</div>
-<div class="responsibilities">
-<h3>Key Responsibilities</h3>
-<div class="responsibility-grid">
-<div class="responsibility-item">
-<i class="fas fa-boat"></i>
-<span>Mooring Management</span>
-</div>
-<div class="responsibility-item">
-<i class="fas fa-shield-alt"></i>
-<span>Harbor Enforcement</span>
-</div>
-<div class="responsibility-item">
-<i class="fas fa-life-ring"></i>
-<span>Boater Safety</span>
-</div>
-<div class="responsibility-item">
-<i class="fas fa-water"></i>
-<span>Water Quality</span>
+<div class="highlight-badges">
+	<div class="badge">
+		<i class="fas fa-phone"></i>
+		<span>207-288-5571</span>
+	</div>
+	<div class="badge">
+		<i class="fas fa-clock"></i>
+		<span>8 AM - 4 PM</span>
+	</div>
+	<div class="badge">
+		<i class="fas fa-map-marker-alt"></i>
+		<span>3 Town Pier</span>
+	</div>
 </div>
 </div>
 </div>
+
+<div class="container">
+<!-- Tab Hint Message -->
+<div class="tab-hint">
+	<p><i class="fas fa-hand-pointer"></i> Click on any tab below to view detailed information</p>
+</div>
+
+<!-- Tab Buttons -->
+<div class="modern-tabs">
+	<button class="tab-button active" data-tab="overview">
+		<i class="fas fa-info-circle"></i>
+		<span>Overview</span>
+	</button>
+	<button class="tab-button" data-tab="conditions">
+		<i class="fas fa-water"></i>
+		<span>Live Conditions</span>
+	</button>
+	<button class="tab-button" data-tab="tides">
+		<i class="fas fa-chart-line"></i>
+		<span>Tide Forecast</span>
+	</button>
+	<button class="tab-button" data-tab="services">
+		<i class="fas fa-anchor"></i>
+		<span>Mooring Services</span>
+	</button>
+	<button class="tab-button" data-tab="regulations">
+		<i class="fas fa-book"></i>
+		<span>Regulations</span>
+	</button>
+</div>
+
+<!-- Tab Contents -->
+<div class="tab-contents">
+	<!-- Overview Tab -->
+	<div class="tab-content active" id="overview">
+		<div class="info-card">
+			<h2><i class="fas fa-anchor"></i> About Our Division</h2>
+			<p>The Harbor Master Division is responsible for ensuring the safe and efficient operation of Bar Harbor. We oversee mooring assignments, enforce harbor regulations, and provide assistance to boaters. Our goal is to maintain a welcoming and enjoyable environment for all who use the harbor.</p>
+			
+			<div class="responsibilities">
+				<h3>Key Responsibilities</h3>
+				<div class="responsibility-grid">
+					<div class="responsibility-item">
+						<i class="fas fa-boat"></i>
+						<span>Mooring Management</span>
+					</div>
+					<div class="responsibility-item">
+						<i class="fas fa-shield-alt"></i>
+						<span>Harbor Enforcement</span>
+					</div>
+					<div class="responsibility-item">
+						<i class="fas fa-life-ring"></i>
+						<span>Boater Safety</span>
+					</div>
+					<div class="responsibility-item">
+						<i class="fas fa-water"></i>
+						<span>Water Quality</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="contact-quick-info">
+				<h3><i class="fas fa-phone-alt"></i> Contact Information</h3>
+				<div class="contact-grid">
+					<div class="contact-item">
+						<i class="fas fa-map-marker-alt"></i>
+						<div>
+							<h4>Address</h4>
+							<p>3 Town Pier, Bar Harbor, ME 04609</p>
+						</div>
+					</div>
+					<div class="contact-item">
+						<i class="fas fa-phone"></i>
+						<div>
+							<h4>Phone</h4>
+							<p>207-288-5571</p>
+						</div>
+					</div>
+					<div class="contact-item">
+						<i class="fas fa-clock"></i>
+						<div>
+							<h4>Hours</h4>
+							<p>Monday - Friday: 8:00 AM - 4:00 PM</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="link-to-faq">
+				<a href="faq.html#marine-resources" class="faq-link">
+					<i class="fas fa-question-circle"></i> See Marine Resources FAQ
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Live Conditions Tab -->
+	<div class="tab-content" id="conditions">
+		<div class="harbor-conditions">
+			<div class="conditions-header">
+				<h2><i class="fas fa-water"></i> Current Harbor Conditions</h2>
+				<p>Real-time conditions at Bar Harbor</p>
+			</div>
+			<div class="conditions-grid">
+				<div class="condition-item">
+					<div class="condition-icon">
+						<i class="fas fa-eye"></i>
+					</div>
+					<div class="condition-info">
+						<h3>Visibility</h3>
+						<p>Excellent</p>
+						<span class="condition-detail">10+ miles</span>
+					</div>
+				</div>
+				<div class="condition-item">
+					<div class="condition-icon">
+						<i class="fas fa-wind"></i>
+					</div>
+					<div class="condition-info">
+						<h3>Wind</h3>
+						<p>Light</p>
+						<span class="condition-detail">5-10 mph SW</span>
+					</div>
+				</div>
+				<div class="condition-item">
+					<div class="condition-icon">
+						<i class="fas fa-waves"></i>
+					</div>
+					<div class="condition-info">
+						<h3>Sea State</h3>
+						<p>Calm</p>
+						<span class="condition-detail">1-2 ft swells</span>
+					</div>
+				</div>
+				<div class="condition-item">
+					<div class="condition-icon">
+						<i class="fas fa-clock"></i>
+					</div>
+					<div class="condition-info">
+						<h3>Next Tide</h3>
+						<p>High Tide</p>
+						<span class="condition-detail">2:30 PM</span>
+					</div>
+				</div>
+			</div>
+			<div class="conditions-note">
+				<i class="fas fa-info-circle"></i>
+				<p>Real-time conditions from NOAA Station 8413320. Data updates every 10 minutes. Always check current marine forecasts before departing.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Tide Forecast Tab -->
+	<div class="tab-content" id="tides">
+		<div class="tide-chart-section">
+			<div class="tide-chart-header">
+				<h2><i class="fas fa-chart-line"></i> 7-Day Tide Forecast</h2>
+				<p>High and low tide predictions for the next week</p>
+			</div>
+			<div class="tide-chart-container">
+				<canvas id="tideChart" width="800" height="400"></canvas>
+			</div>
+			<div class="tide-chart-legend">
+				<div class="legend-item">
+					<div class="legend-color high-tide"></div>
+					<span>High Tide</span>
+				</div>
+				<div class="legend-item">
+					<div class="legend-color low-tide"></div>
+					<span>Low Tide</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Mooring Services Tab -->
+	<div class="tab-content" id="services">
+		<div class="info-card">
+			<h2><i class="fas fa-anchor"></i> Mooring & Docking Services</h2>
+			<p>The Harbor Master Division provides comprehensive mooring and docking services for vessels visiting Bar Harbor. Our modern facilities and professional staff ensure a safe and convenient experience for all boaters.</p>
+
+			<div class="service-buttons">
+				<a class="action-button" href="https://dockwa.com/explore/destination/mncw35-bar-harbor-municipal-pier?form=transient" target="_blank">
+					<i class="fas fa-calendar-check"></i>
+					Make a Reservation
+				</a>
+				<a class="action-button secondary" href="contact.html#harbor-master">
+					<i class="fas fa-info-circle"></i>
+					Mooring Information
+				</a>
+			</div>
+
+			<div class="reservation-note">
+				<i class="fas fa-exclamation-circle"></i>
+				<p>Book slips, docks, and moorings at the Bar Harbor Municipal Pier through our online reservation system.</p>
+			</div>
+
+			<div class="harbor-services">
+				<div class="services-header">
+					<h3><i class="fas fa-cogs"></i> Available Services</h3>
+				</div>
+				<div class="services-grid">
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-boat"></i>
+						</div>
+						<h4>Mooring Management</h4>
+						<p>Professional mooring assignments and maintenance for safe harbor operations</p>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-life-ring"></i>
+						</div>
+						<h4>Boater Safety</h4>
+						<p>Safety inspections, emergency response, and boating education programs</p>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-calendar-check"></i>
+						</div>
+						<h4>Slip Reservations</h4>
+						<p>Easy online booking through Dockwa for slips and moorings</p>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">
+							<i class="fas fa-clipboard-list"></i>
+						</div>
+						<h4>Harbor Regulations</h4>
+						<p>Enforcement of harbor rules and regulations for orderly operations</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Regulations Tab -->
+	<div class="tab-content" id="regulations">
+		<div class="info-card">
+			<h2><i class="fas fa-book"></i> Harbor Regulations & Guidelines</h2>
+			<p>Access the complete harbor regulations and guidelines for safe harbor operations. All boaters and vessel operators must comply with these regulations while using Bar Harbor facilities.</p>
+			
+			<div class="regulation-actions">
+				<a class="download-button" href="images/divisions/harbor-master/Port%20and%20Harbor.pdf" target="_blank">
+					<i class="fas fa-file-pdf"></i>
+					Download Complete Regulations (PDF)
+				</a>
+			</div>
+
+			<div class="regulation-highlights">
+				<h3><i class="fas fa-exclamation-triangle"></i> Key Regulations</h3>
+				
+				<div class="regulation-section">
+					<h4><i class="fas fa-anchor"></i> Mooring Requirements</h4>
+					<div class="regulation-list">
+						<div class="regulation-item">
+							<i class="fas fa-file-signature"></i>
+							<div>
+								<h5>Annual Registration</h5>
+								<p>All permanent moorings must be registered annually with the Harbor Master by May 1st, including vessel information, charted position, and mooring type/condition. An annual fee is required.</p>
+							</div>
+						</div>
+						<div class="regulation-item">
+							<i class="fas fa-map-marked-alt"></i>
+							<div>
+								<h5>Placement Permission</h5>
+								<p>Placing any mooring in the harbor requires prior application and permission from the Harbor Master, who designates the location and ensures safety and best use of space.</p>
+							</div>
+						</div>
+						<div class="regulation-item">
+							<i class="fas fa-weight-hanging"></i>
+							<div>
+								<h5>Equipment Standards</h5>
+								<p>Moorings must meet specific stone weight, chain size, and scope requirements, and be visibly numbered. Unregistered or unsafe moorings are subject to removal.</p>
+							</div>
+						</div>
+						<div class="regulation-item">
+							<i class="fas fa-ban"></i>
+							<div>
+								<h5>Prohibited Mooring</h5>
+								<p>Mooring watercraft to buoys, beacons, or any Town channel markers is prohibited.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="regulation-section">
+					<h4><i class="fas fa-tachometer-alt"></i> Speed Limits</h4>
+					<div class="regulation-list">
+						<div class="regulation-item">
+							<i class="fas fa-exclamation-triangle"></i>
+							<div>
+								<h5>Safe Operation</h5>
+								<p>Watercraft must be operated at a rate of speed and in a manner that does not endanger other craft or persons.</p>
+							</div>
+						</div>
+						<div class="regulation-item">
+							<i class="fas fa-turtle"></i>
+							<div>
+								<h5>Headway Speed</h5>
+								<p>Speed must be reduced to "headway speed" (the slowest speed that maintains steerage way) in special anchorage areas, narrow channels, and congested mooring areas.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="regulation-section">
+					<h4><i class="fas fa-clock"></i> Time Limits (Temporary Tie-ups)</h4>
+					<div class="regulation-list">
+						<div class="regulation-item">
+							<i class="fas fa-clock"></i>
+							<div>
+								<h5>Municipal Pier</h5>
+								<p>Maximum 1 hour without Harbor Master permission.</p>
+							</div>
+						</div>
+						<div class="regulation-item">
+							<i class="fas fa-fish"></i>
+							<div>
+								<h5>Fisherman's Float</h5>
+								<p>Maximum 15 minutes at the northern end; maximum 1 hour at other parts without Harbor Master permission.</p>
+							</div>
+						</div>
+						<div class="regulation-item">
+							<i class="fas fa-ship"></i>
+							<div>
+								<h5>Public Floats</h5>
+								<p>Maximum 15 minutes at the eastern end; longer periods generally require Harbor Master permission.</p>
+							</div>
+						</div>
+						<div class="regulation-item">
+							<i class="fas fa-hand-paper"></i>
+							<div>
+								<h5>Finger Floats (Western Side)</h5>
+								<p>Maximum 1 hour without Harbor Master permission.</p>
+							</div>
+						</div>
+						<div class="regulation-item">
+							<i class="fas fa-truck-ramp"></i>
+							<div>
+								<h5>Launching Ramp</h5>
+								<p>Maximum 30 minutes without Harbor Master permission.</p>
+							</div>
+						</div>
+						<div class="regulation-item">
+							<i class="fas fa-home"></i>
+							<div>
+								<h5>Residential Use</h5>
+								<p>Watercraft used primarily as residences require specific permission from the Harbor Master and the owner of the shore rights.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="regulation-section">
+					<h4><i class="fas fa-leaf"></i> Environmental & Usage Restrictions</h4>
+					<div class="regulation-list">
+						<div class="regulation-item">
+							<i class="fas fa-ban"></i>
+							<div>
+								<h5>Marine Life Cleaning Prohibited</h5>
+								<p>Cleaning or disposal of any marine life (fish, lobsters, scallops, shrimp, clams, bait, or parts thereof) is prohibited at any float, pier, mooring, or anchorage within the inner harbor.</p>
+							</div>
+						</div>
+						<div class="regulation-item">
+							<i class="fas fa-net-wired"></i>
+							<div>
+								<h5>Trawling Restrictions</h5>
+								<p>Operating watercraft when towing a drag or trawl is prohibited within 300 feet of any dock, pier, or wharf, or within 100 feet of any mooring, or within the defined harbor boundaries.</p>
+							</div>
+						</div>
+						<div class="regulation-item">
+							<i class="fas fa-water"></i>
+							<div>
+								<h5>Channel Interference</h5>
+								<p>Interfering with vessel passage in channels, including excessive prop wash alongside floats, is prohibited.</p>
+							</div>
+						</div>
+						<div class="regulation-item">
+							<i class="fas fa-wind"></i>
+							<div>
+								<h5>Sailing Restrictions</h5>
+								<p>Operating watercraft under sail with an operable auxiliary engine is prohibited within the inner harbor.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="contact-harbor-master">
+				<h3><i class="fas fa-phone"></i> Questions about Regulations?</h3>
+				<p>Contact the Harbor Master office for clarification on any regulations or to report violations.</p>
+				<div class="contact-options">
+					<a href="tel:207-288-5571" class="contact-button">
+						<i class="fas fa-phone"></i>
+						Call: 207-288-5571
+					</a>
+					<a href="contact.html#harbor-master" class="contact-button secondary">
+						<i class="fas fa-envelope"></i>
+						Email Harbor Master
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 </div>
-<div class="info-card mooring">
-<div class="card-header">
-<i class="fas fa-link"></i>
-<h2>Mooring Services</h2>
-</div>
-<div class="card-body">
-<div class="service-buttons">
-<a class="action-button" href="https://dockwa.com/explore/destination/mncw35-bar-harbor-municipal-pier" target="_blank">
-<i class="fas fa-calendar-check"></i>
-                                Make a Reservation
-                            </a>
-<a class="action-button secondary" href="contact.html#harbor-master">
-<i class="fas fa-info-circle"></i>
-                                Mooring Information
-                            </a>
-</div>
-<div class="reservation-note">
-<i class="fas fa-exclamation-circle"></i>
-<p>Book slips, docks, and moorings at the Bar Harbor Municipal Pier through our online reservation system.</p>
-</div>
-</div>
-</div>
-<div class="info-card contact">
-<div class="card-header">
-<i class="fas fa-phone-alt"></i>
-<h2>Contact Information</h2>
-</div>
-<div class="card-body">
-<div class="contact-details">
-<div class="contact-item">
-<i class="fas fa-map-marker-alt"></i>
-<div>
-<h3>Address</h3>
-<p>3 Town Pier<br/>Bar Harbor, ME 04609</p>
-</div>
-</div>
-<div class="contact-item">
-<i class="fas fa-phone"></i>
-<div>
-<h3>Phone</h3>
-<p>207-288-5571</p>
-</div>
-</div>
-<div class="contact-item">
-<i class="fas fa-clock"></i>
-<div>
-<h3>Hours</h3>
-<p>Monday - Friday:<br/>8:00 AM - 4:00 PM</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="info-card regulations">
-<div class="card-header">
-<i class="fas fa-book"></i>
-<h2>Harbor Regulations</h2>
-</div>
-<div class="card-body">
-<p>Access the complete harbor regulations and guidelines for safe harbor operations.</p>
-<a class="download-button" href="images/divisions/harbor-master/Port%20and%20Harbor.pdf" target="_blank">
-<i class="fas fa-file-pdf"></i>
-                            Download Regulations (PDF)
-                        </a>
-</div>
-</div>
-</section>
-</div>
+
 </main>
 <!-- Footer -->
 <footer class="footer" role="contentinfo" aria-label="Site Footer">
@@ -452,6 +769,12 @@
 </div>
 </footer>
 <script src="script.js"></script>
+<!-- Harbor conditions API integration -->
+<script src="js/harbor-conditions.js" defer></script>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+<!-- Tide chart integration -->
+<script src="js/tide-chart.js" defer></script>
 <!-- Footer loader script to dynamically load the footer with both addresses -->
 <script src="js/footer-loader.js" defer></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
