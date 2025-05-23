@@ -426,10 +426,14 @@
   .two-column-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
   
   /* Constrain tab info cards for better contained appearance */
-  #parkmobile .info-card, #kiosk .info-card { max-width: 1000px; margin: 0 auto 2rem auto; }
+  #parkmobile .info-card, #kiosk .info-card, #lots .info-card, #citations .info-card, #seasonal .seasons-container { max-width: 1000px; margin: 0 auto 2rem auto; }
   
   /* Additional padding for better visual containment */
-  #parkmobile .card-body, #kiosk .card-body { padding: 2rem; }
+  #parkmobile .card-body, #kiosk .card-body, #lots .card-body, #citations .card-body { padding: 2rem; }
+  
+  /* Special containment for seasonal tab structure */
+  #seasonal .seasonal-hero { max-width: 1000px; margin: 0 auto 2rem auto; padding: 2rem; }
+  #seasonal .contractor-permits-section { max-width: 1000px; margin: 0 auto 2rem auto; }
   .left-column, .right-column { min-height: 400px; }
   
   /* Enhanced video containers */
@@ -573,6 +577,43 @@
   body.dark-mode .important-info { background: rgba(255,243,205,0.15); border-color: rgba(255,243,205,0.3); }
   body.dark-mode .important-info h4, body.dark-mode .important-info li { color: #ffc107; }
   body.dark-mode .citation-info-section h3, body.dark-mode .payment-methods-section h3, body.dark-mode .contest-section h3 { color: var(--text-color) !important; }
+  
+  /* Dark mode for seasonal tab elements */
+  body.dark-mode .season-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); }
+  body.dark-mode .season-card-body { background: transparent; }
+  body.dark-mode .season-card h3, body.dark-mode .season-card h4, body.dark-mode .season-card p { color: #e0e0e0 !important; }
+  body.dark-mode .rate-item { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+  body.dark-mode .rate-item h4, body.dark-mode .rate-item p, body.dark-mode .rate-item span { color: #e0e0e0 !important; }
+  body.dark-mode .rate-item.premium { background: rgba(0,86,179,0.2); border-color: var(--accent-color); }
+  body.dark-mode .hours-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); }
+  body.dark-mode .hours-item h4, body.dark-mode .hours-item p { color: #e0e0e0 !important; }
+  body.dark-mode .seasonal-hero { background: rgba(255,255,255,0.05); }
+  body.dark-mode .seasonal-hero h2, body.dark-mode .seasonal-hero p { color: #e0e0e0 !important; }
+  body.dark-mode .permit-option { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); }
+  body.dark-mode .permit-option h4, body.dark-mode .permit-option p, body.dark-mode .permit-option li { color: #e0e0e0 !important; }
+  body.dark-mode .permit-option.premium-option { background: rgba(0,86,179,0.15); border-color: var(--accent-color); }
+  body.dark-mode .portal-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); }
+  body.dark-mode .portal-card h4, body.dark-mode .portal-card p { color: #e0e0e0 !important; }
+  body.dark-mode .benefit-content h4, body.dark-mode .benefit-content p { color: #e0e0e0 !important; }
+  body.dark-mode .season-dates span, body.dark-mode .season-status { color: #e0e0e0 !important; }
+  body.dark-mode .rate-price, body.dark-mode .rate-period { color: #e0e0e0 !important; }
+  body.dark-mode .price-large { color: #e0e0e0 !important; }
+  body.dark-mode .permit-features li { color: #e0e0e0 !important; }
+  body.dark-mode .winter-benefits .benefit-content h4 { color: #e0e0e0 !important; }
+  body.dark-mode .winter-benefits .benefit-content p { color: #e0e0e0 !important; }
+  body.dark-mode .portal-right h4 { color: #e0e0e0 !important; }
+  body.dark-mode .portal-right p { color: #e0e0e0 !important; }
+  body.dark-mode .benefit-item { background: rgba(255,255,255,0.08) !important; border: 1px solid rgba(255,255,255,0.15) !important; }
+  body.dark-mode .winter-benefits { background: transparent !important; }
+  body.dark-mode .season-dates { color: #e0e0e0 !important; }
+  body.dark-mode .season-status.active { color: #e0e0e0 !important; background: rgba(0,86,179,0.3) !important; }
+  body.dark-mode .season-status.free { color: #e0e0e0 !important; background: rgba(76,175,80,0.3) !important; }
+  body.dark-mode .permits-hero h3 { color: #e0e0e0 !important; }
+  body.dark-mode .permits-hero p { color: #e0e0e0 !important; }
+  body.dark-mode .permit-portal-info { background: transparent !important; }
+  body.dark-mode .portal-card { background: rgba(255,255,255,0.08) !important; border: 1px solid rgba(255,255,255,0.15) !important; }
+  body.dark-mode .portal-left { background: transparent !important; }
+  body.dark-mode .portal-right { background: transparent !important; }
   
   /* Prevent accordion layout shifts */
   .accordion-item { margin-bottom: 1rem; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
