@@ -981,6 +981,17 @@ body.dark-mode .faq-widget .view-all:hover {
     font-weight: 500;
 }
 
+.benefit-item a {
+    color: #ffffff !important;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.benefit-item a:hover {
+    color: #f8f9fa !important;
+    text-decoration: none;
+}
+
 .recruitment-text {
     padding: 0 1.25rem 0.75rem;
     margin: 0;
@@ -1051,6 +1062,16 @@ body.dark-mode .salary-spotlight {
 
 body.dark-mode .benefit-item i {
     color: #e74c3c;
+}
+
+body.dark-mode .benefit-item a {
+    color: #90caf9 !important;
+    text-decoration: underline;
+}
+
+body.dark-mode .benefit-item a:hover {
+    color: #64b5f6 !important;
+    text-decoration: none;
 }
 
 body.dark-mode .recruitment-cta .primary-cta {
