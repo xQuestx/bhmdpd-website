@@ -204,11 +204,11 @@
   /* Dark Mode Toggle */
   .dark-mode-toggle { display: flex; align-items: center; justify-content: center; margin-left: var(--spacing-md); width: 45px; height: 45px; border-radius: var(--radius-md); background: var(--gray-100); border: 2px solid var(--gray-200); color: var(--gray-800); cursor: pointer; font-size: 1.2rem; box-shadow: var(--shadow-sm); z-index: 1002; }
 
-  /* Hero Section - Critical for LCP - Make this the largest element */
-  .hero-section, .parking-hero { margin-top: var(--header-height); padding: 4rem 0 3rem; background: radial-gradient(ellipse at center, var(--primary-color-light) 0%, var(--primary-color-dark) 100%); color: white; text-align: center; min-height: 420px; display: flex; align-items: center; contain: layout style; position: relative; }
-  .hero-content { max-width: 900px; margin: 0 auto; padding: 0 2rem; width: 100%; min-height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+  /* Hero Section - Critical for LCP - Fixed dimensions to prevent layout shift */
+  .hero-section, .parking-hero { margin-top: var(--header-height); padding: 4rem 0 3rem; background: radial-gradient(ellipse at center, var(--primary-color-light) 0%, var(--primary-color-dark) 100%); color: white; text-align: center; height: 420px; display: flex; align-items: center; contain: layout style; position: relative; }
+  .hero-content { max-width: 900px; margin: 0 auto; padding: 0 2rem; width: 100%; height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
   .hero-icon { font-size: 5rem; color: white; margin-bottom: 1.5rem; display: block; width: 5rem; height: 5rem; line-height: 5rem; text-align: center; flex-shrink: 0; }
-  .hero-section h1, .parking-hero h1 { color: white !important; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); margin: 0 0 1.5rem 0; font-size: 3.5rem; font-weight: 800; line-height: 1.2; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif; display: block; width: 100%; }
+  .hero-section h1, .parking-hero h1 { color: white !important; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); margin: 0 0 1.5rem 0; font-size: 3.5rem; font-weight: 800; line-height: 1.1; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif; display: block; width: 100%; font-display: block; letter-spacing: -0.5px; text-rendering: optimizeSpeed; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
   .hero-section p, .parking-hero p { font-size: 1.4rem; opacity: 0.9; margin: 0 auto 2rem; color: white; line-height: 2rem; display: block; width: 100%; }
   .highlight-badges { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; min-height: 52px; contain: layout; width: 100%; }
   .badge { background: rgba(255, 255, 255, 0.2); padding: 0.75rem 1.25rem; border-radius: 25px; color: white; font-size: 1rem; height: 48px; display: flex; align-items: center; white-space: nowrap; flex-shrink: 0; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
@@ -230,7 +230,7 @@
   .qr-code { width: 125px; height: 125px; display: block; }
   
   /* Tab and content containers */
-  .tabs-section { margin: 2rem 0; }
+  .tabs-section { margin: 2rem 0; position: relative; z-index: 10; background: white; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
   
   /* Fix tabs to prevent layout shifts - Use display none/block instead of absolute positioning */
@@ -247,6 +247,89 @@
   .tab-content { min-height: 300px; }
   .tab-content .info-card { margin-bottom: 2rem; }
   .tab-content h2 { margin: 0 0 1rem 0; }
+
+  /* Parking Zones Organization */
+  .parking-zones-container { margin: 2rem 0; }
+  .zone-section { margin-bottom: 3rem; }
+  .zone-header { margin-bottom: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, var(--primary-color-light), var(--primary-color-dark)); color: white; border-radius: var(--radius-lg); }
+  .zone-header h3 { margin: 0 0 0.5rem 0; font-size: 1.4rem; }
+  .zone-description { margin: 0; opacity: 0.9; font-size: 1rem; }
+  .permit-card.premium .price-tag.premium { background: linear-gradient(135deg, #f39c12, #e67e22); }
+  .permit-card.standard .price-tag.standard { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+  .permit-card.specialty .price-tag.specialty { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+  .ev-badge, .rv-badge { background: rgba(0,0,0,0.1); padding: 0.2rem 0.5rem; border-radius: 12px; font-size: 0.8rem; margin-left: 0.5rem; }
+  .permit-card { border-left: 4px solid transparent; }
+  .permit-card.premium { border-left-color: #f39c12; }
+  .permit-card.standard { border-left-color: #27ae60; }
+  .permit-card.specialty { border-left-color: #9b59b6; }
+
+  /* Enhanced Seasonal Tab Styles */
+  .seasonal-hero { background: linear-gradient(135deg, var(--primary-color-light), var(--primary-color-dark)); color: white; padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem; text-align: center; }
+  .seasonal-hero h2 { margin: 0 0 0.5rem 0; font-size: 2rem; }
+  .seasonal-subtitle { margin: 0; opacity: 0.9; font-size: 1.1rem; }
+  .seasons-container { display: grid; gap: 2rem; }
+  .season-card { background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); overflow: hidden; border: 1px solid #e0e0e0; }
+  .season-card-header { display: flex; align-items: center; padding: 1.5rem; gap: 1rem; border-bottom: 1px solid #f0f0f0; }
+  .season-icon-container { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .summer-season .season-icon-container { background: linear-gradient(135deg, #f39c12, #e67e22); }
+  .winter-season .season-icon-container { background: linear-gradient(135deg, #3498db, #2980b9); }
+  .season-icon { font-size: 1.5rem; color: white; }
+  .season-info { flex: 1; }
+  .season-info h3 { margin: 0 0 0.5rem 0; font-size: 1.4rem; color: #333; }
+  .season-dates { display: flex; align-items: center; gap: 0.5rem; color: #666; font-size: 0.9rem; }
+  .season-status { padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+  .season-status.active { background: #fff3cd; color: #856404; }
+  .season-status.free { background: #d1edff; color: #0c5460; }
+  .season-card-body { padding: 1.5rem; }
+  .rates-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+  .rate-item { display: flex; gap: 1rem; padding: 1rem; border-radius: var(--radius-md); }
+  .rate-item.premium { background: #fef9e7; border-left: 4px solid #f39c12; }
+  .rate-item.standard { background: #eafaf1; border-left: 4px solid #27ae60; }
+  .rate-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; }
+  .rate-item.premium .rate-icon { background: #f39c12; }
+  .rate-item.standard .rate-icon { background: #27ae60; }
+  .rate-details h4 { margin: 0 0 0.25rem 0; font-size: 1rem; }
+  .rate-price { font-size: 1.2rem; font-weight: 700; color: #333; margin-bottom: 0.25rem; }
+  .rate-details p { margin: 0; font-size: 0.85rem; color: #666; }
+  .hours-info h4 { margin: 0 0 1rem 0; color: #333; }
+  .hours-grid { display: grid; gap: 0.5rem; }
+  .hours-item { display: flex; justify-content: space-between; padding: 0.5rem; background: #f8f9fa; border-radius: var(--radius-md); }
+  .winter-benefits { display: grid; gap: 1rem; margin-bottom: 1.5rem; }
+  .benefit-item { display: flex; gap: 1rem; padding: 1rem; background: #f0f8ff; border-radius: var(--radius-md); border-left: 4px solid #3498db; }
+  .benefit-icon { width: 40px; height: 40px; border-radius: 50%; background: #3498db; color: white; display: flex; align-items: center; justify-content: center; }
+  .benefit-content h4 { margin: 0 0 0.25rem 0; }
+  .benefit-content p { margin: 0; color: #666; font-size: 0.9rem; }
+  .btn-winter { background: linear-gradient(135deg, #3498db, #2980b9); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius-md); font-weight: 600; }
+  
+  /* Contractor Permits Section */
+  .contractor-permits-section { margin-top: 3rem; }
+  .permits-hero { background: linear-gradient(135deg, #6c757d, #495057); color: white; padding: 2rem; border-radius: var(--radius-lg); text-align: center; margin-bottom: 2rem; }
+  .permits-hero h3 { margin: 0 0 0.5rem 0; font-size: 1.5rem; }
+  .permits-hero p { margin: 0; opacity: 0.9; }
+  .permit-options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+  .permit-option { background: white; border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid #e0e0e0; }
+  .premium-option { border-left: 4px solid #f39c12; }
+  .permit-option-header { text-align: center; margin-bottom: 1.5rem; }
+  .permit-option-header h4 { margin: 0 0 0.5rem 0; font-size: 1.2rem; }
+  .price-large { font-size: 2rem; font-weight: 700; color: var(--accent-color); }
+  .price-large span { font-size: 1rem; font-weight: 400; color: #666; }
+  .permit-features { list-style: none; padding: 0; margin: 0 0 1.5rem 0; }
+  .permit-features li { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; }
+  .permit-features i { color: #27ae60; }
+  .btn-full { width: 100%; justify-content: center; }
+  .permit-portal-info { background: #f8f9fa; border-radius: var(--radius-lg); padding: 1.5rem; }
+  .portal-card { display: flex; gap: 1.5rem; align-items: center; }
+  .portal-left { flex-shrink: 0; }
+  .portal-right h4 { margin: 0 0 0.5rem 0; }
+  .portal-right p { margin: 0 0 1rem 0; color: #666; }
+  .btn-outline { background: transparent; border: 1px solid var(--accent-color); color: var(--accent-color); }
+  .btn-outline:hover { background: var(--accent-color); color: white; }
+  
+  @media (max-width: 768px) { 
+    .rates-grid { grid-template-columns: 1fr; }
+    .permit-options-grid { grid-template-columns: 1fr; }
+    .portal-card { flex-direction: column; text-align: center; }
+  }
   .tab-content h3 { margin: 1.5rem 0 1rem 0; }
   .tab-content p { margin: 0.5rem 0; }
   .tab-content ul { margin: 1rem 0; }
@@ -529,16 +612,15 @@
     .nav-links a { color: var(--light-text-color); font-size: 1.1rem; padding: 0.75rem 0; width: 100%; }
     .mobile-menu-btn { display: block; position: absolute; right: 70px; top: 50%; transform: translateY(-50%); }
     .mobile-close-btn { display: block; }
-    /* Optimize hero for mobile performance */
-    .hero-section h1, .parking-hero h1 { font-size: 2rem; min-height: auto; height: auto; contain: layout; }
-    .hero-section, .parking-hero { padding: 1.5rem 0; min-height: auto; height: auto; contain: layout style; }
-    .hero-content { min-height: auto; height: auto; padding: 0 1rem; }
+    /* Mobile hero optimization - now handled by critical CSS media queries above */
+    .hero-section, .parking-hero { padding: 2rem 0; height: auto; min-height: 50vh; contain: layout style; z-index: 1; }
+    .hero-content { height: auto; padding: 0 1rem; display: flex; flex-direction: column; justify-content: center; align-items: center; }
     .hero-icon { display: none; } /* Hide icon on mobile to improve LCP */
-    .highlight-badges { flex-direction: column; gap: 0.5rem; align-items: center; min-height: auto; height: auto; }
+    .highlight-badges { flex-direction: column; gap: 0.5rem; align-items: center; min-height: auto; height: auto; margin-top: 1rem; margin-bottom: 0; }
     .hero-section p, .parking-hero p { height: auto; min-height: auto; font-size: 1.1rem; margin-bottom: 1rem; }
     .badge { height: 40px; font-size: 0.9rem; padding: 0.5rem 1rem; }
     .parking-map-image { max-width: 100%; }
-    .tabs-section { margin: 1rem 0; }
+    .tabs-section { margin: 1rem 0; position: relative; z-index: 10; background: white; }
     .tab-contents { min-height: auto; }
     .tab-content { padding: 0.5rem 0; }
     .modern-tabs { flex-wrap: wrap; gap: 0.5rem; }
@@ -560,15 +642,114 @@
     .contest-step { flex-direction: column; text-align: center; }
     .step-number-large { margin: 0 auto 1rem; }
   }
+  
+  /* Additional hero styling beyond critical CSS */
+  .badge { background: rgba(255, 255, 255, 0.2); padding: 0.75rem 1.25rem; border-radius: 25px; color: white; font-size: 1rem; height: 48px; display: flex; align-items: center; white-space: nowrap; flex-shrink: 0; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+  .badge i { color: white !important; opacity: 1 !important; margin-right: 0.5rem; font-size: 1.1rem; filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); }
+  .highlight-badges { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; min-height: 52px; contain: layout; width: 100%; }
+  
+  /* Tab and content containers */
+  .tabs-section { margin: 2rem 0; position: relative; z-index: 10; background: white; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 </style>
 
-<!-- Load optimized stylesheet for parking page -->
-<link rel="preload" href="css/pages/parking-optimized.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="css/pages/parking-optimized.css"></noscript>
+<!-- Load essential CSS synchronously, defer non-critical -->
+<link rel="stylesheet" href="css/base/variables.css">
+<link rel="stylesheet" href="css/base/reset.css">
+<link rel="stylesheet" href="css/layout/footer.css">
+<link rel="stylesheet" href="css/components/buttons.css">
+<link rel="stylesheet" href="css/components/cards.css">
+<link rel="stylesheet" href="css/components/tabs.css">
 
-<!-- Load Leaflet CSS -->
-<link rel='stylesheet' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'>
-<noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
+<!-- Load Font Awesome and non-critical CSS after -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  const fa = document.createElement('link');
+  fa.rel = 'stylesheet';
+  fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
+  document.head.appendChild(fa);
+});
+</script>
+
+<!-- Minimal Critical CSS for immediate hero render -->
+<style>
+  /* Only essential variables */
+  :root {
+    --header-height: 80px;
+    --primary-color-light: #2a4a7a;
+    --primary-color-dark: #1a2b4a;
+  }
+  
+  /* Critical styles for immediate render */
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: #f8f9fa; }
+  .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; height: 80px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  .hero-section, .parking-hero { 
+    margin-top: 80px; 
+    padding: 4rem 0 3rem; 
+    background: radial-gradient(ellipse at center, #2a4a7a 0%, #1a2b4a 100%); 
+    color: white; 
+    text-align: center; 
+    height: 420px; 
+    display: flex; 
+    align-items: center;
+  }
+  .hero-content { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 0 2rem; 
+    width: 100%; 
+    height: 320px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  h1 { 
+    font-size: 4rem; 
+    font-weight: 800; 
+    margin: 0 0 1.5rem 0; 
+    line-height: 1.1; 
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif; 
+    color: white !important; 
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
+    letter-spacing: -0.5px;
+  }
+  .hero-section p, .parking-hero p { margin: 0; color: white; font-size: 1.4rem; opacity: 0.9; }
+  p { margin: 0.5rem 0; color: #333; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+  .tab-button { background: #f8f9fa; color: #333; padding: 0.75rem 1.5rem; border: none; cursor: pointer; }
+  .tab-button.active { background: #0056b3; color: white; }
+  h2, h3 { color: #333; margin: 1rem 0; }
+  ul, ol { margin: 1rem 0; color: #333; }
+  li { color: #333; }
+  .info-card { background: white; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  .btn { display: inline-block; padding: 0.75rem 1.5rem; background: #0056b3; color: white; text-decoration: none; border-radius: 5px; }
+  
+  /* Dark mode support */
+  body.dark-mode { background: #1a1a1a; color: #e0e0e0; }
+  body.dark-mode .tabs-section { background: #1a1a1a; }
+  body.dark-mode .tab-button { background: #333; color: #e0e0e0; }
+  body.dark-mode .tab-button.active { background: #0056b3; color: white; }
+  body.dark-mode .info-card { background: #2a2a2a; color: #e0e0e0; }
+  body.dark-mode h2, body.dark-mode h3, body.dark-mode p, body.dark-mode li { color: #e0e0e0; }
+  
+  /* Mobile only */
+  @media (max-width: 768px) {
+    .hero-section, .parking-hero { padding: 2rem 0; height: auto; min-height: 50vh; }
+    .hero-content { height: auto; padding: 0 1rem; }
+    h1 { font-size: 3rem; }
+  }
+  
+  @media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+  }
+</style>
+
+<!-- Lazy load Leaflet CSS only when needed -->
+<style id="leaflet-placeholder">.leaflet-container { display: none; }</style>
 
 <!-- Defer non-critical JS -->
 <script src="darkmode.js" defer></script>
@@ -641,7 +822,7 @@
 <section class="hero-section parking-hero">
 <div class="hero-content">
 <i class="fas fa-parking hero-icon" aria-hidden="true"></i>
-<h1>Bar Harbor Parking Services & Enforcement</h1>
+<h1>Bar Harbor Parking<br/>Services & Enforcement</h1>
 <p>Convenient, efficient parking solutions for Bar Harbor</p>
 <div class="highlight-badges">
 <span class="badge"><i class="fas fa-money-bill" aria-hidden="true"></i> $2.00 - $4.00/hour</span>
@@ -1005,125 +1186,162 @@
     </div>
 </div>
 
-<div class="permit-cards">
-<!-- Casino Lot -->
-<div class="permit-card">
-<div class="permit-header">
-<h5>Casino Lot</h5>
-<span class="price-tag">$4.00/hour</span>
-</div>
-<ul>
-<li>Premium parking zone</li>
-<li>Centrally located</li>
-</ul>
-<a class="btn btn-primary" href="https://maps.google.com/?q=44.389222,-68.209611" target="_blank">
-<i class="fas fa-map-marked-alt"></i> View on Map
-</a>
-</div>
+<!-- Parking Zones Organization -->
+<div class="parking-zones-container">
+    <!-- Premium Zone Section -->
+    <div class="zone-section">
+        <div class="zone-header">
+            <h3><i class="fas fa-star"></i> Premium Parking Zone - $4.00/hour</h3>
+            <p class="zone-description">High-demand downtown locations with convenient access to shops, restaurants, and attractions</p>
+        </div>
+        <div class="permit-cards">
+            <!-- Casino Lot -->
+            <div class="permit-card premium">
+                <div class="permit-header">
+                    <h5>Casino Lot</h5>
+                    <span class="price-tag premium">$4.00/hr</span>
+                </div>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Downtown center</li>
+                    <li><i class="fas fa-walking"></i> Walk to shops & dining</li>
+                    <li><i class="fas fa-clock"></i> High turnover area</li>
+                </ul>
+                <a class="btn btn-primary" href="https://maps.google.com/?q=44.389222,-68.209611" target="_blank">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
 
-<!-- Municipal Building Lot -->
-<div class="permit-card">
-<div class="permit-header">
-<h5>Municipal Building Lot</h5>
-<span class="price-tag">$2.00/hour</span>
-</div>
-<ul>
-<li>Standard parking zone</li>
-<li>Near Town Hall</li>
-</ul>
-<a class="btn btn-primary" href="https://maps.google.com/?q=44.389111,-68.210389" target="_blank">
-<i class="fas fa-map-marked-alt"></i> View on Map
-</a>
-</div>
+            <!-- Grants Park Lot -->
+            <div class="permit-card premium">
+                <div class="permit-header">
+                    <h5>Grants Park Lot</h5>
+                    <span class="price-tag premium">$4.00/hr</span>
+                </div>
+                <ul>
+                    <li><i class="fas fa-tree"></i> Near Grants Park</li>
+                    <li><i class="fas fa-camera"></i> Scenic area access</li>
+                    <li><i class="fas fa-walking"></i> Tourist district</li>
+                </ul>
+                <a class="btn btn-primary" href="https://maps.google.com/?q=44.388861,-68.201472" target="_blank">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
 
-<!-- Grants Park Lot -->
-<div class="permit-card">
-<div class="permit-header">
-<h5>Grants Park Lot</h5>
-<span class="price-tag">$4.00/hour</span>
-</div>
-<ul>
-<li>Premium parking zone</li>
-<li>Near Grants Park</li>
-</ul>
-<a class="btn btn-primary" href="https://maps.google.com/?q=44.388861,-68.201472" target="_blank">
-<i class="fas fa-map-marked-alt"></i> View on Map
-</a>
-</div>
+            <!-- Town Pier Lot -->
+            <div class="permit-card premium">
+                <div class="permit-header">
+                    <h5>Town Pier Lot</h5>
+                    <span class="price-tag premium">$4.00/hr</span>
+                </div>
+                <ul>
+                    <li><i class="fas fa-anchor"></i> Waterfront access</li>
+                    <li><i class="fas fa-ship"></i> Harbor views</li>
+                    <li><i class="fas fa-camera"></i> Photo opportunities</li>
+                </ul>
+                <a class="btn btn-primary" href="https://maps.google.com/?q=44.391556,-68.204250" target="_blank">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
 
-<!-- Rodick Street Lot -->
-<div class="permit-card">
-<div class="permit-header">
-<h5>Rodick Street Lot</h5>
-<span class="price-tag">$4.00/hour</span>
-</div>
-<ul>
-<li>Premium parking zone</li>
-<li>Formerly Old PD Lot</li>
-</ul>
-<a class="btn btn-primary" href="https://maps.google.com/?q=44.388694,-68.206083" target="_blank">
-<i class="fas fa-map-marked-alt"></i> View on Map
-</a>
-</div>
+            <!-- Upper Central Lot -->
+            <div class="permit-card premium">
+                <div class="permit-header">
+                    <h5>Upper Central Lot</h5>
+                    <span class="price-tag premium">$4.00/hr</span>
+                </div>
+                <ul>
+                    <li><i class="fas fa-building"></i> Central downtown</li>
+                    <li><i class="fas fa-shopping-bag"></i> Shopping district</li>
+                    <li><i class="fas fa-utensils"></i> Restaurant access</li>
+                </ul>
+                <a class="btn btn-primary" href="https://maps.google.com/?q=44.388667,-68.205139" target="_blank">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
 
-<!-- Town Pier Lot -->
-<div class="permit-card">
-<div class="permit-header">
-<h5>Town Pier Lot</h5>
-<span class="price-tag">$4.00/hour</span>
-</div>
-<ul>
-<li>Premium parking zone</li>
-<li>Waterfront access</li>
-</ul>
-<a class="btn btn-primary" href="https://maps.google.com/?q=44.391556,-68.204250" target="_blank">
-<i class="fas fa-map-marked-alt"></i> View on Map
-</a>
-</div>
+            <!-- Rodick Street Lot -->
+            <div class="permit-card premium">
+                <div class="permit-header">
+                    <h5>Rodick Street Lot</h5>
+                    <span class="price-tag premium">$4.00/hr</span>
+                </div>
+                <ul>
+                    <li><i class="fas fa-history"></i> Historic district</li>
+                    <li><i class="fas fa-walking"></i> Walking distance downtown</li>
+                    <li><i class="fas fa-info-circle"></i> Formerly Old PD Lot</li>
+                </ul>
+                <a class="btn btn-primary" href="https://maps.google.com/?q=44.388694,-68.206083" target="_blank">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
+        </div>
+    </div>
 
-<!-- Upper Central Lot -->
-<div class="permit-card">
-<div class="permit-header">
-<h5>Upper Central Lot</h5>
-<span class="price-tag">$4.00/hour</span>
-</div>
-<ul>
-<li>Premium parking zone</li>
-<li>Central downtown location</li>
-</ul>
-<a class="btn btn-primary" href="https://maps.google.com/?q=44.388667,-68.205139" target="_blank">
-<i class="fas fa-map-marked-alt"></i> View on Map
-</a>
-</div>
+    <!-- Standard Zone Section -->
+    <div class="zone-section">
+        <div class="zone-header">
+            <h3><i class="fas fa-building"></i> Standard Parking Zone - $2.00/hour</h3>
+            <p class="zone-description">Budget-friendly option with easy access to municipal services</p>
+        </div>
+        <div class="permit-cards">
+            <!-- Municipal Building Lot -->
+            <div class="permit-card standard">
+                <div class="permit-header">
+                    <h5>Municipal Building Lot</h5>
+                    <span class="price-tag standard">$2.00/hr</span>
+                </div>
+                <ul>
+                    <li><i class="fas fa-landmark"></i> Near Town Hall</li>
+                    <li><i class="fas fa-dollar-sign"></i> Most affordable rate</li>
+                    <li><i class="fas fa-file-alt"></i> Municipal services access</li>
+                </ul>
+                <a class="btn btn-primary" href="https://maps.google.com/?q=44.389111,-68.210389" target="_blank">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
+        </div>
+    </div>
 
-<!-- Athletic Field (EV Chargers) -->
-<div class="permit-card">
-<div class="permit-header">
-<h5>Athletic Field (EV Chargers)</h5>
-<span class="price-tag">$4.00/hour</span>
-</div>
-<ul>
-<li>Premium parking zone</li>
-<li>EV Charging Available</li>
-</ul>
-<a class="btn btn-primary" href="https://maps.google.com/?q=44.381944,-68.204778" target="_blank">
-<i class="fas fa-map-marked-alt"></i> View on Map
-</a>
-</div>
+    <!-- Specialty Parking Section -->
+    <div class="zone-section">
+        <div class="zone-header">
+            <h3><i class="fas fa-bolt"></i> Specialty Parking - $4.00/hour</h3>
+            <p class="zone-description">Special-purpose parking with unique amenities</p>
+        </div>
+        <div class="permit-cards">
+            <!-- Athletic Field (EV Chargers) -->
+            <div class="permit-card specialty">
+                <div class="permit-header">
+                    <h5>Athletic Field <span class="ev-badge">EV Charging</span></h5>
+                    <span class="price-tag specialty">$4.00/hr</span>
+                </div>
+                <ul>
+                    <li><i class="fas fa-charging-station"></i> EV charging stations</li>
+                    <li><i class="fas fa-running"></i> Near athletic facilities</li>
+                    <li><i class="fas fa-leaf"></i> Eco-friendly option</li>
+                </ul>
+                <a class="btn btn-primary" href="https://maps.google.com/?q=44.381944,-68.204778" target="_blank">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
 
-<!-- RV Parking -->
-<div class="permit-card">
-<div class="permit-header">
-<h5>RV Parking</h5>
-<span class="price-tag">$4.00/hour</span>
-</div>
-<ul>
-<li>Premium parking zone</li>
-<li>Designated RV spaces</li>
-</ul>
-<a class="btn btn-primary" href="https://maps.google.com/?q=44.382472,-68.203000" target="_blank">
-<i class="fas fa-map-marked-alt"></i> View on Map
-</a>
+            <!-- RV Parking -->
+            <div class="permit-card specialty">
+                <div class="permit-header">
+                    <h5>RV Parking <span class="rv-badge">Large Vehicles</span></h5>
+                    <span class="price-tag specialty">$4.00/hr</span>
+                </div>
+                <ul>
+                    <li><i class="fas fa-truck"></i> Designated RV spaces</li>
+                    <li><i class="fas fa-ruler-horizontal"></i> Oversized vehicle friendly</li>
+                    <li><i class="fas fa-route"></i> Easy in/out access</li>
+                </ul>
+                <a class="btn btn-primary" href="https://maps.google.com/?q=44.382472,-68.203000" target="_blank">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Eden Street Lot -->
@@ -1291,660 +1509,174 @@ Bar Harbor, ME 04609
 
 <!-- Seasonal Tab -->
 <div class="tab-content" id="seasonal">
-<div class="info-card">
-<div class="card-header">
-<i class="fas fa-calendar-alt"></i>
-<h2>Seasonal Parking Information</h2>
-</div>
-<div class="card-body">
-<div class="season-section">
-<div class="season-header">
-<i class="fas fa-sun"></i>
-<h3>Summer Season</h3>
-<span class="date-badge">May 15 - October 30</span>
-</div>
-<div class="rate-info">
-<h4>Parking Rates & Hours</h4>
-<ul class="feature-list">
-<li>
-<i class="fas fa-dollar-sign"></i>
-<span>
-<strong>Premium Zones:</strong> $4.00/hour
-                                                </span>
-</li>
-<li>
-<i class="fas fa-dollar-sign"></i>
-<span>
-<strong>Standard Zones:</strong> $2.00/hour
-                                                </span>
-</li>
-<li>
-<i class="fas fa-clock"></i>
-<span>
-<strong>Hours:</strong> Mon-Sat 8AM-9PM, Sun 12PM-9PM
-                                                </span>
-</li>
-</ul>
-</div>
-<div class="contractor-permits">
-<h4><i class="fas fa-hard-hat"></i> Contractor & Special Event Permits</h4>
-<div class="permit-cards">
-<div class="permit-card">
-<div class="permit-header">
-<h5>Non-Premium Areas</h5>
-<span class="price-tag">$24.00/day</span>
-</div>
-<ul>
-<li>Contractor/Dumpster Use of Space Permit</li>
-<li>Special Events Permit</li>
-</ul>
-<a class="btn btn-primary" href="http://www.thepermitportal.com">
-                                                    Apply for Non-Premium Permit
-                                                </a>
-</div>
-<div class="permit-card">
-<div class="permit-header">
-<h5>Premium Areas</h5>
-<span class="price-tag">$54.00/day</span>
-</div>
-<ul>
-<li>Contractor/Dumpster Use of Space Permit</li>
-<li>Special Events Permit</li>
-</ul>
-<a class="btn btn-primary" href="http://www.thepermitportal.com">
-                                                    Apply for Premium Permit
-                                                </a>
-</div>
-</div>
-</div>
-<div class="permit-portal">
-<div class="qr-section">
-<img alt="QR Code for Permit Portal" class="qr-code" src="images/qr-codes/permit-qr.png" width="125" height="125" loading="lazy"/>
-<div class="qr-info">
-<h4>Quick Access to Permit Portal</h4>
-<p>Scan the QR code or visit <a href="http://www.thepermitportal.com">www.thepermitportal.com</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="season-section">
-<div class="season-header">
-<i class="fas fa-snowflake"></i>
-<h3>Winter Season</h3>
-<span class="date-badge">November 1 - May 14</span>
-</div>
-<ul class="feature-list">
-<li>
-<i class="fas fa-car"></i>
-<span>
-<strong>Free Parking Available</strong>
-<p>No meter enforcement</p>
-</span>
-</li>
-<li>
-<i class="fas fa-ban"></i>
-<span>
-<strong>Winter Parking Bans</strong>
-<p>Special restrictions during snow events</p>
-</span>
-</li>
-<li>
-<i class="fas fa-bell"></i>
-<span>
-<strong>Ban Notifications</strong>
-<p>Sign up for email alerts for parking bans</p>
-</span>
-</li>
-<li>
-<i class="fas fa-snowplow"></i>
-<span>
-<strong>Winter Permits</strong>
-<p>Available from November 15th to April 15th. Receive email notifications for snow removal and plowing to ensure vehicles are not parked on the main road.</p>
-</span>
-</li>
-</ul>
-<div class="winter-permit-cta">
-<a class="btn btn-primary" href="http://www.thepermitportal.com">
-<i class="fas fa-id-card"></i> Sign Up for Winter Permits
-                                        </a>
-<p class="permit-note"><i class="fas fa-info-circle"></i> Register at thepermitportal.com to receive important snow removal notifications</p>
-</div>
-</div>
-
-<!-- Permit Types Section -->
-<div class="season-section permit-types-section">
-<div class="season-header">
-<i class="fas fa-id-card"></i>
-<h3>Parking Permit Types</h3>
-<span class="date-badge">Available Year-Round</span>
-</div>
-
-<p class="permit-intro">Expand each permit type below for detailed information including eligibility, fees, and application requirements.</p>
-
-<div class="callout success-callout mb-4">
-    <div class="callout-title">
-        <i class="fas fa-map-signs"></i> Need Help Applying?
-    </div>
-    <p>Follow our <a href="permitstepbystep.html" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Step-by-Step Permit Guide</a> for a detailed walkthrough of the application process.</p>
-</div>
-
-<div class="permit-accordion">
-    <!-- Resident Vehicle Permit -->
-    <div class="accordion-item">
-        <div class="accordion-header">
-            <button class="accordion-button">
-                <i class="fas fa-home"></i>
-                <span>Resident Vehicle Permit</span>
-                <span class="permit-price">Free</span>
-                <i class="fas fa-chevron-down accordion-icon"></i>
-            </button>
-        </div>
-        <div class="accordion-content">
-            <div class="permit-details">
-                <div class="permit-detail">
-                    <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                    <p>Residents with vehicle registration in Bar Harbor who pay excise tax to Bar Harbor</p>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-info-circle"></i> Details</h4>
-                    <ul>
-                        <li>Limit: One free permit per registered vehicle</li>
-                        <li>Fee: $0</li>
-                        <li>Required Materials: Section II.B.3</li>
-                    </ul>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                    <p><a href="contact.html">Finance Department</a> during normal business hours</p>
-                </div>
-                <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                    <i class="fas fa-external-link-alt"></i> Apply for Permit
-                </a>
-            </div>
+    <!-- Seasonal Overview -->
+    <div class="seasonal-hero">
+        <div class="seasonal-hero-content">
+            <h2><i class="fas fa-calendar-alt"></i> Year-Round Parking Guide</h2>
+            <p class="seasonal-subtitle">Navigate Bar Harbor parking through every season with our comprehensive guide</p>
         </div>
     </div>
 
-    <!-- Employee Vehicle Permit -->
-    <div class="accordion-item">
-        <div class="accordion-header">
-            <button class="accordion-button">
-                <i class="fas fa-briefcase"></i>
-                <span>Employee Vehicle Permit</span>
-                <span class="permit-price">$30.00</span>
-                <i class="fas fa-chevron-down accordion-icon"></i>
-            </button>
-        </div>
-        <div class="accordion-content">
-            <div class="permit-details">
-                <div class="permit-detail">
-                    <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                    <p>Non-resident employees of Bar Harbor businesses</p>
+    <!-- Seasons Container -->
+    <div class="seasons-container">
+        <!-- Summer Season Card -->
+        <div class="season-card summer-season">
+            <div class="season-card-header">
+                <div class="season-icon-container">
+                    <i class="fas fa-sun season-icon"></i>
                 </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-info-circle"></i> Details</h4>
-                    <ul>
-                        <li>Fee: $30.00 plus transaction fees</li>
-                        <li>Required Materials: Section II.B.2, 4</li>
-                    </ul>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                    <p><a href="contact.html">Finance Department</a> during normal business hours</p>
-                </div>
-                <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                    <i class="fas fa-external-link-alt"></i> Apply for Permit
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Non-Resident Property Owner Permit -->
-    <div class="accordion-item">
-        <div class="accordion-header">
-            <button class="accordion-button">
-                <i class="fas fa-house-user"></i>
-                <span>Non-Resident Property Owner Permit</span>
-                <span class="permit-price">$75.00</span>
-                <i class="fas fa-chevron-down accordion-icon"></i>
-            </button>
-        </div>
-        <div class="accordion-content">
-            <div class="permit-details">
-                <div class="permit-detail">
-                    <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                    <p>Non-residents who own residential property and pay property taxes to Bar Harbor</p>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-info-circle"></i> Details</h4>
-                    <ul>
-                        <li>Limit: One permit per registered vehicle</li>
-                        <li>Fee: $75.00 plus transaction fees</li>
-                        <li>Required Materials: Section II.B.1, 2</li>
-                    </ul>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                    <p><a href="contact.html">Finance Department</a> during normal business hours</p>
-                </div>
-                <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                    <i class="fas fa-external-link-alt"></i> Apply for Permit
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Commercial Fishing Permit -->
-    <div class="accordion-item">
-        <div class="accordion-header">
-            <button class="accordion-button">
-                <i class="fas fa-fish"></i>
-                <span>Commercial Fishing Permit</span>
-                <span class="permit-price">$5.00</span>
-                <i class="fas fa-chevron-down accordion-icon"></i>
-            </button>
-        </div>
-        <div class="accordion-content">
-            <div class="permit-details">
-                <div class="permit-detail">
-                    <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                    <p>Commercial fishermen</p>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-info-circle"></i> Details</h4>
-                    <ul>
-                        <li>Limit: One parking space per commercial mooring, maximum 30 permits per year</li>
-                        <li>Fee: $5.00 plus transaction fee</li>
-                        <li>Required Materials: Section II.B.1, 2, 6</li>
-                    </ul>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                    <p><a href="harbor-master-division.html">Harbormaster</a> during normal business hours</p>
-                </div>
-                <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                    <i class="fas fa-external-link-alt"></i> Apply for Permit
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Municipal Employee Permit -->
-    <div class="accordion-item">
-        <div class="accordion-header">
-            <button class="accordion-button">
-                <i class="fas fa-city"></i>
-                <span>Municipal Employee Permit</span>
-                <span class="permit-price">Free</span>
-                <i class="fas fa-chevron-down accordion-icon"></i>
-            </button>
-        </div>
-        <div class="accordion-content">
-            <div class="permit-details">
-                <div class="permit-detail">
-                    <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                    <p>Municipal employees</p>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-info-circle"></i> Details</h4>
-                    <ul>
-                        <li>Location: Municipal Building Kiosk Lot</li>
-                        <li>Fee: $0</li>
-                        <li>Required Materials: Section II.B.2, 4</li>
-                    </ul>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                    <p><a href="contact.html">Finance Department</a> during normal business hours</p>
-                </div>
-                <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                    <i class="fas fa-external-link-alt"></i> Apply for Permit
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bed & Breakfast Permit -->
-    <div class="accordion-item">
-        <div class="accordion-header">
-            <button class="accordion-button">
-                <i class="fas fa-bed"></i>
-                <span>Bed & Breakfast Permit</span>
-                <span class="permit-price">$375.00</span>
-                <i class="fas fa-chevron-down accordion-icon"></i>
-            </button>
-        </div>
-        <div class="accordion-content">
-            <div class="permit-details">
-                <div class="permit-detail">
-                    <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                    <p>B&B owners requiring on-street parking for guests in "Permit Parking Only" areas</p>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-info-circle"></i> Details</h4>
-                    <ul>
-                        <li>Note: Permits issued to guests via IPS Permit Portal</li>
-                        <li>Fee: $375.00 per permit plus transaction fees</li>
-                        <li>Required Materials: Section II.B.1, 5a, 5b</li>
-                    </ul>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                    <p><a href="contact.html#scott-pinkham">Parking Enforcement Personnel</a> during normal business hours</p>
-                </div>
-                <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                    <i class="fas fa-external-link-alt"></i> Apply for Permit
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Guest of Resident Permit -->
-    <div class="accordion-item">
-        <div class="accordion-header">
-            <button class="accordion-button">
-                <i class="fas fa-user-friends"></i>
-                <span>Guest of Resident Permit</span>
-                <span class="permit-price">Free</span>
-                <i class="fas fa-chevron-down accordion-icon"></i>
-            </button>
-        </div>
-        <div class="accordion-content">
-            <div class="permit-details">
-                <div class="permit-detail">
-                    <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                    <p>Guests of residents requiring on-street parking</p>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-info-circle"></i> Details</h4>
-                    <ul>
-                        <li>Location: "Permit Only Parking" areas</li>
-                        <li>Duration: Three days</li>
-                        <li>Fee: $0 plus transaction fees</li>
-                        <li>Required Materials: Section II.B.8</li>
-                    </ul>
-                </div>
-                <div class="permit-detail">
-                    <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                    <p><a href="contact.html#scott-pinkham">Parking Enforcement Personnel</a> or <a href="contact.html">Finance Department</a> during normal business hours</p>
-                </div>
-                <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                    <i class="fas fa-external-link-alt"></i> Apply for Permit
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Show More Button -->
-    <button class="btn btn-secondary show-more-permits mt-3">
-        <i class="fas fa-plus-circle"></i> Show More Permit Types
-    </button>
-
-    <!-- Hidden permits that will be revealed with "Show More" -->
-    <div class="hidden-permits">
-        <!-- Resident Recreational Boater Permit -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                <button class="accordion-button">
-                    <i class="fas fa-ship"></i>
-                    <span>Resident Recreational Boater Permit</span>
-                    <span class="permit-price">$24.00</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-            </div>
-            <div class="accordion-content">
-                <div class="permit-details">
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                        <p>Resident recreational boat owners</p>
+                <div class="season-info">
+                    <h3>Summer Season</h3>
+                    <div class="season-dates">
+                        <i class="fas fa-calendar"></i>
+                        <span>May 15 - October 30</span>
                     </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-info-circle"></i> Details</h4>
-                        <ul>
-                            <li>Location: Boat trailer parking spaces in Newport Drive Parking Lot</li>
-                            <li>Duration: One day</li>
-                            <li>Fee: $24.00 plus transaction fees</li>
-                            <li>Required Materials: Section II.B.1, 2, 6</li>
-                        </ul>
+                </div>
+                <div class="season-status active">
+                    <i class="fas fa-circle"></i> Peak Season
+                </div>
+            </div>
+            <div class="season-card-body">
+                <div class="rates-grid">
+                    <div class="rate-item premium">
+                        <div class="rate-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="rate-details">
+                            <h4>Premium Zones</h4>
+                            <div class="rate-price">$4.00/hour</div>
+                            <p>Downtown & waterfront areas</p>
+                        </div>
                     </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                        <p><a href="harbor-master-division.html">Harbormaster</a> or <a href="contact.html#scott-pinkham">Parking Enforcement Personnel</a> during normal business hours</p>
+                    <div class="rate-item standard">
+                        <div class="rate-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="rate-details">
+                            <h4>Standard Zones</h4>
+                            <div class="rate-price">$2.00/hour</div>
+                            <p>Municipal & residential areas</p>
+                        </div>
                     </div>
-                    <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                        <i class="fas fa-external-link-alt"></i> Apply for Permit
-                    </a>
+                </div>
+                <div class="hours-info">
+                    <h4><i class="fas fa-clock"></i> Enforcement Hours</h4>
+                    <div class="hours-grid">
+                        <div class="hours-item">
+                            <strong>Monday - Saturday</strong>
+                            <span>8:00 AM - 9:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <strong>Sunday</strong>
+                            <span>12:00 PM - 9:00 PM</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Contractor/Dumpster Use of Space Permit -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                <button class="accordion-button">
-                    <i class="fas fa-hard-hat"></i>
-                    <span>Contractor/Dumpster Use of Space Permit</span>
-                    <span class="permit-price">$24.00 - $54.00</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-            </div>
-            <div class="accordion-content">
-                <div class="permit-details">
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                        <p>Contractors with verifiable lack of private property area for property improvements under approved Building Permit</p>
+        <!-- Winter Season Card -->
+        <div class="season-card winter-season">
+            <div class="season-card-header">
+                <div class="season-icon-container">
+                    <i class="fas fa-snowflake season-icon"></i>
+                </div>
+                <div class="season-info">
+                    <h3>Winter Season</h3>
+                    <div class="season-dates">
+                        <i class="fas fa-calendar"></i>
+                        <span>November 1 - May 14</span>
                     </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-info-circle"></i> Details</h4>
-                        <ul>
-                            <li>Duration: Limited to 5 days</li>
-                            <li>Fee: $54.00 per premium metered space/day; $24.00 per non-premium metered space/day</li>
-                            <li>Required Materials: Section II.B.5a</li>
-                        </ul>
-                    </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                        <p><a href="contact.html#scott-pinkham">Parking Enforcement Personnel</a> during normal business hours</p>
-                    </div>
-                    <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                        <i class="fas fa-external-link-alt"></i> Apply for Permit
-                    </a>
+                </div>
+                <div class="season-status free">
+                    <i class="fas fa-circle"></i> Free Parking
                 </div>
             </div>
-        </div>
-
-        <!-- Special Events Permit -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                <button class="accordion-button">
-                    <i class="fas fa-calendar-day"></i>
-                    <span><a href="events.html">Special Events Permit</a></span>
-                    <span class="permit-price">$24.00 - $54.00</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-            </div>
-            <div class="accordion-content">
-                <div class="permit-details">
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                        <p>Anyone requiring blocking off one or more paid parking spaces for an event</p>
+            <div class="season-card-body">
+                <div class="winter-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Free Parking</h4>
+                            <p>No meter enforcement throughout winter months</p>
+                        </div>
                     </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-info-circle"></i> Details</h4>
-                        <ul>
-                            <li>Duration: One day</li>
-                            <li>Fee: $54.00 per premium metered space/day; $24.00 per non-premium metered space/day</li>
-                            <li>Required Materials: Section II.B.5a</li>
-                        </ul>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-snowplow"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Snow Removal Permits</h4>
+                            <p>Get email alerts for parking restrictions during snow events</p>
+                        </div>
                     </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                        <p><a href="contact.html#scott-pinkham">Parking Enforcement Personnel</a> during normal business hours</p>
-                    </div>
-                    <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                        <i class="fas fa-external-link-alt"></i> Apply for Permit
-                    </a>
                 </div>
-            </div>
-        </div>
-
-        <!-- Hospital Permit -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                <button class="accordion-button">
-                    <i class="fas fa-hospital"></i>
-                    <span>Hospital Permit</span>
-                    <span class="permit-price">Free</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-            </div>
-            <div class="accordion-content">
-                <div class="permit-details">
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                        <p>Hospital employees</p>
-                    </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-info-circle"></i> Details</h4>
-                        <ul>
-                            <li>Location: Hospital zone (Hancock, Wayman and Center Streets)</li>
-                            <li>Limit: Up to 75 permit spaces</li>
-                            <li>Note: Parking spaces not guaranteed</li>
-                            <li>Fee: $0 plus transaction fees ($2,250.00 annually)</li>
-                            <li>Required Materials: Section II.B.2</li>
-                        </ul>
-                    </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                        <p><a href="contact.html">Finance Department</a> during normal business hours</p>
-                    </div>
-                    <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                        <i class="fas fa-external-link-alt"></i> Apply for Permit
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- College of the Atlantic Student Permit -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                <button class="accordion-button">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>College of the Atlantic Student Permit</span>
-                    <span class="permit-price">$30.00</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-            </div>
-            <div class="accordion-content">
-                <div class="permit-details">
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                        <p>College of the Atlantic students</p>
-                    </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-info-circle"></i> Details</h4>
-                        <ul>
-                            <li>Location: "Permit Parking Only" areas</li>
-                            <li>Fee: $30.00 plus transaction fees</li>
-                            <li>Required Materials: Section II.B.2, 7</li>
-                        </ul>
-                    </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                        <p><a href="contact.html">Finance Department</a> during normal business hours</p>
-                    </div>
-                    <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                        <i class="fas fa-external-link-alt"></i> Apply for Permit
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Home Business/Weekly Rental Permit -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                <button class="accordion-button">
-                    <i class="fas fa-home"></i>
-                    <span>Home Business/Weekly Rental Permit</span>
-                    <span class="permit-price">$750.00</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-            </div>
-            <div class="accordion-content">
-                <div class="permit-details">
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                        <p>Business owners/weekly rental business owners</p>
-                    </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-info-circle"></i> Details</h4>
-                        <ul>
-                            <li>Location: "Permit Parking Only" areas for guests</li>
-                            <li>Fee: $750.00 per permit plus transaction fees</li>
-                            <li>Required Materials: Section II.B.1, 5a, 5b</li>
-                        </ul>
-                    </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                        <p><a href="contact.html#scott-pinkham">Parking Enforcement Personnel</a></p>
-                    </div>
-                    <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                        <i class="fas fa-external-link-alt"></i> Apply for Permit
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Municipal Guest Permit -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                <button class="accordion-button">
-                    <i class="fas fa-clipboard-list"></i>
-                    <span>Municipal Guest Permit</span>
-                    <span class="permit-price">Free</span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </button>
-            </div>
-            <div class="accordion-content">
-                <div class="permit-details">
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-user-check"></i> Eligibility</h4>
-                        <p>For guests attending meetings or conducting Town business with Town staff</p>
-                    </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-info-circle"></i> Details</h4>
-                        <ul>
-                            <li>Issuance: Finance and Police Departments</li>
-                            <li>Purpose: For guests attending meetings or conducting Town business with Town staff</li>
-                        </ul>
-                    </div>
-                    <div class="permit-detail">
-                        <h4><i class="fas fa-check-circle"></i> Approval Process</h4>
-                        <p><a href="contact.html">Finance</a> or <a href="contact.html">Police Department</a></p>
-                    </div>
-                    <a href="http://www.thepermitportal.com" class="btn btn-primary mt-3">
-                        <i class="fas fa-external-link-alt"></i> Apply for Permit
+                <div class="winter-actions">
+                    <a href="http://www.thepermitportal.com" class="btn btn-winter">
+                        <i class="fas fa-bell"></i> Sign Up for Winter Alerts
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <button class="btn btn-secondary show-less-permits mt-3" style="display: none;">
-        <i class="fas fa-minus-circle"></i> Show Fewer Permit Types
-    </button>
+    <!-- Contractor & Special Event Permits Section -->
+    <div class="contractor-permits-section">
+        <div class="permits-hero">
+            <h3><i class="fas fa-hard-hat"></i> Contractor & Special Event Permits</h3>
+            <p>Professional parking solutions for contractors, dumpsters, and special events</p>
+        </div>
+        <div class="permit-options-grid">
+            <div class="permit-option">
+                <div class="permit-option-header">
+                    <h4>Non-Premium Areas</h4>
+                    <div class="price-large">$24.00<span>/day</span></div>
+                </div>
+                <ul class="permit-features">
+                    <li><i class="fas fa-check"></i> Contractor parking permit</li>
+                    <li><i class="fas fa-check"></i> Dumpster space permit</li>
+                    <li><i class="fas fa-check"></i> Special events permit</li>
+                    <li><i class="fas fa-check"></i> Municipal & residential areas</li>
+                </ul>
+                <a href="http://www.thepermitportal.com" class="btn btn-primary btn-full">
+                    <i class="fas fa-external-link-alt"></i> Apply for Non-Premium Permit
+                </a>
+            </div>
+            <div class="permit-option premium-option">
+                <div class="permit-option-header">
+                    <h4>Premium Areas</h4>
+                    <div class="price-large">$54.00<span>/day</span></div>
+                </div>
+                <ul class="permit-features">
+                    <li><i class="fas fa-check"></i> Downtown locations</li>
+                    <li><i class="fas fa-check"></i> Waterfront access</li>
+                    <li><i class="fas fa-check"></i> High-traffic areas</li>
+                    <li><i class="fas fa-check"></i> Tourist districts</li>
+                </ul>
+                <a href="http://www.thepermitportal.com" class="btn btn-primary btn-full">
+                    <i class="fas fa-external-link-alt"></i> Apply for Premium Permit
+                </a>
+            </div>
+        </div>
+        <div class="permit-portal-info">
+            <div class="portal-card">
+                <div class="portal-left">
+                    <img alt="QR Code for Permit Portal" class="qr-code" src="images/qr-codes/permit-qr.png" width="125" height="125" loading="lazy"/>
+                </div>
+                <div class="portal-right">
+                    <h4><i class="fas fa-qrcode"></i> Quick Access to Permit Portal</h4>
+                    <p>Scan the QR code with your phone or visit the portal directly for fast permit applications.</p>
+                    <a href="http://www.thepermitportal.com" class="btn btn-outline">
+                        <i class="fas fa-external-link-alt"></i> www.thepermitportal.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div class="permit-documents mt-4">
-    <h4><i class="fas fa-file-pdf"></i> Permit Documentation</h4>
-    <p>For detailed information about required materials referenced in permit descriptions (Section II.B), please refer to our complete parking ordinance document.</p>
-    <a href="https://www.barharbormaine.gov/DocumentCenter/View/3156/Permit-and-Paid-Parking-Policy" class="btn btn-outline-primary" target="_blank" rel="noopener">
-        <i class="fas fa-download"></i> Download Parking Ordinance
-    </a>
-</div>
-</div>
-</div>
-</div>
-</div>
+    </div>
 </section>
 
 <!-- Parking Map section removed as it's now in the General Info tab -->
@@ -1990,16 +1722,25 @@ Bar Harbor, ME 04609
 <script src="js/footer-loader.js" defer></script>
 <!-- Defer Leaflet loading until user scrolls near footer -->
 <script>
-// Lazy load Leaflet when user scrolls near footer
+// Optimized lazy loading with passive listeners and better performance
 let leafletLoaded = false;
+let scrolling = false;
+
 const loadLeaflet = () => {
     if (!leafletLoaded && !document.querySelector('script[src*="leaflet"]')) {
         leafletLoaded = true;
+        
+        // Load Leaflet CSS first
+        const cssLink = document.createElement('link');
+        cssLink.rel = 'stylesheet';
+        cssLink.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        document.head.appendChild(cssLink);
+        
+        // Then load the JS
         const script = document.createElement('script');
         script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
         script.onload = () => {
             window.leafletLoaded = Promise.resolve();
-            // Trigger map initialization after Leaflet loads
             if (window.initializeFooterMap) {
                 window.initializeFooterMap();
             }
@@ -2008,8 +1749,25 @@ const loadLeaflet = () => {
     }
 };
 
-// Load immediately since we need it for the footer map
-loadLeaflet();
+// Use passive listeners for better scroll performance
+const handleScroll = () => {
+    if (!scrolling) {
+        scrolling = true;
+        requestAnimationFrame(() => {
+            const footer = document.querySelector('footer');
+            if (footer) {
+                const footerTop = footer.getBoundingClientRect().top;
+                if (footerTop < window.innerHeight + 200) {
+                    loadLeaflet();
+                }
+            }
+            scrolling = false;
+        });
+    }
+};
+
+// Add passive scroll listener
+window.addEventListener('scroll', handleScroll, { passive: true });
 </script>
 </body>
 </html>
