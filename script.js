@@ -161,6 +161,50 @@ document.addEventListener('DOMContentLoaded', function() {
     function initTabs() {
         const tabButtons = document.querySelectorAll('.tab-button');
         const tabContents = document.querySelectorAll('.tab-content');
+        const tabLinks = document.querySelectorAll('.tab-link');
+
+        // Function to switch tabs
+        function switchTab(tabId, sourceElement) {
+            // Remove .active from all tab buttons
+            tabButtons.forEach((btn) => btn.classList.remove('active'));
+            // Remove .active from all tab contents
+            tabContents.forEach((tab) => tab.classList.remove('active'));
+
+            // Find and activate the corresponding tab button
+            const targetButton = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
+            if (targetButton) {
+                targetButton.classList.add('active');
+            }
+            
+            // Activate the matching tab content
+            const targetContent = document.getElementById(tabId);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+            
+            // Handle special tab functionality
+            if (tabId === 'tides') {
+                console.log('Tides tab clicked, checking tide chart...');
+                if (!window.tideChartInstance) {
+                    console.log('Creating new tide chart instance...');
+                    window.tideChartInstance = new window.TideChart();
+                } else if (!window.tideChartInstance.chart) {
+                    console.log('Tide chart not loaded, attempting to fetch data...');
+                    window.tideChartInstance.waitForChartJS();
+                } else {
+                    // Chart exists or data is ready, render/refresh it
+                    setTimeout(() => {
+                        if (window.tideChartInstance.chart) {
+                            window.tideChartInstance.refreshChart();
+                        } else if (window.tideChartInstance.chartData) {
+                            // Data is ready but chart hasn't been rendered yet
+                            console.log('Rendering deferred chart...');
+                            window.tideChartInstance.renderChart();
+                        }
+                    }, 100);
+                }
+            }
+        }
 
         tabButtons.forEach((button) => {
             // Add ripple effect to tab buttons
@@ -185,39 +229,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     ripple.remove();
                 }, 600);
                 
-                // Remove .active from all tab buttons
-                tabButtons.forEach((btn) => btn.classList.remove('active'));
-                // Remove .active from all tab contents
-                tabContents.forEach((tab) => tab.classList.remove('active'));
-
-                // Add .active to the clicked button
-                button.classList.add('active');
                 // Get the ID from data-tab="..."
                 const tabId = button.getAttribute('data-tab');
-                // Activate the matching tab content
-                document.getElementById(tabId).classList.add('active');
-                
-                // If the tides tab is clicked, ensure the tide chart is initialized
-                if (tabId === 'tides') {
-                    console.log('Tides tab clicked, checking tide chart...');
-                    if (!window.tideChartInstance) {
-                        console.log('Creating new tide chart instance...');
-                        window.tideChartInstance = new window.TideChart();
-                    } else if (!window.tideChartInstance.chart) {
-                        console.log('Tide chart not loaded, attempting to fetch data...');
-                        window.tideChartInstance.waitForChartJS();
-                    } else {
-                        // Chart exists or data is ready, render/refresh it
-                        setTimeout(() => {
-                            if (window.tideChartInstance.chart) {
-                                window.tideChartInstance.refreshChart();
-                            } else if (window.tideChartInstance.chartData) {
-                                // Data is ready but chart hasn't been rendered yet
-                                console.log('Rendering deferred chart...');
-                                window.tideChartInstance.renderChart();
-                            }
-                        }, 100);
-                    }
+                switchTab(tabId, this);
+            });
+        });
+
+        // Handle tab links (like parking map link in quick links)
+        tabLinks.forEach((link) => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default link behavior
+                const tabId = this.getAttribute('data-tab');
+                if (tabId) {
+                    switchTab(tabId, this);
                 }
             });
         });

@@ -1,114 +1,760 @@
 /*
- * Permit Guide Styles
- * Styles specific to the step-by-step permit application guide
+ * Modern Permit Guide Styles
+ * Completely redesigned step-by-step permit application guide
  */
 
-.step-container {
+/* Progress Section */
+.progress-section {
+    margin-bottom: 2rem;
+}
+
+.progress-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.progress-header h2 {
+    color: var(--primary-color, #1a2b4a);
+    margin-bottom: 0.5rem;
+}
+
+.progress-header p {
+    color: var(--text-color-muted, #6c757d);
+    font-size: 1.1rem;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--gray-50, #f8f9fa);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg, 12px);
+    position: relative;
+    overflow-x: auto;
+}
+
+.progress-steps::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--gray-300, #dee2e6);
+    z-index: 1;
+}
+
+.progress-step {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    margin: 30px 0;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 2;
+    min-width: 80px;
 }
 
-.step {
-    display: flex;
-    gap: 20px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #eee;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.step:last-child {
-    border-bottom: none;
-}
-
-.step-number {
-    background-color: var(--accent-color, #f8a01c);
-    color: white;
+.progress-step-number {
     width: 40px;
     height: 40px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background-color: white;
+    border: 2px solid var(--gray-300, #dee2e6);
+    color: var(--text-color-muted, #6c757d);
+    transition: all 0.3s ease;
+}
+
+.progress-step.active .progress-step-number {
+    background-color: var(--accent-color, #007bff);
+    border-color: var(--accent-color, #007bff);
+    color: white;
+}
+
+.progress-step span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-color-muted, #6c757d);
+    text-align: center;
+}
+
+.progress-step.active span {
+    color: var(--primary-color, #1a2b4a);
+    font-weight: 600;
+}
+
+/* Quick Start Section */
+.quick-start-section {
+    margin-bottom: 3rem;
+}
+
+.checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--gray-50, #f8f9fa);
+    border-radius: var(--radius-sm, 6px);
+    border-left: 3px solid var(--success-color, #28a745);
+}
+
+.checklist-item i {
+    color: var(--success-color, #28a745);
+    font-size: 1.2rem;
+    margin-top: 0.1rem;
     flex-shrink: 0;
 }
 
-.step-content {
+.checklist-item strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--primary-color, #1a2b4a);
+}
+
+.checklist-item span {
+    font-size: 0.9rem;
+    color: var(--text-color-muted, #6c757d);
+}
+
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    border-radius: var(--radius-md, 8px);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.action-button.primary {
+    background-color: var(--accent-color, #007bff);
+    color: white;
+    border: 2px solid var(--accent-color, #007bff);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.action-button.primary:hover {
+    background-color: var(--accent-color-dark, #0056b3);
+    border-color: var(--accent-color-dark, #0056b3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.action-button.secondary {
+    background-color: white;
+    color: var(--primary-color, #1a2b4a);
+    border: 2px solid var(--primary-color, #1a2b4a);
+    box-shadow: 0 2px 6px rgba(26, 43, 74, 0.15);
+}
+
+.action-button.secondary:hover {
+    background-color: var(--primary-color, #1a2b4a);
+    border-color: var(--primary-color, #1a2b4a);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(26, 43, 74, 0.25);
+    text-decoration: none;
+}
+
+.action-button i {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.action-button strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.action-button span {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Steps Section */
+.steps-section {
+    margin-bottom: 3rem;
+}
+
+.steps-section > h2 {
+    text-align: center;
+    color: var(--primary-color, #1a2b4a);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.step-card {
+    background-color: white;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border: 1px solid var(--gray-200, #e9ecef);
+    transition: all 0.3s ease;
+}
+
+.step-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.step-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color, #1a2b4a) 0%, var(--primary-color-dark, #142339) 100%);
+    color: white;
+}
+
+.step-number-large {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--accent-color, #007bff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.step-title-section h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.step-title-section p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.step-card-body {
+    padding: 2rem;
+}
+
+.step-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+}
+
+.step-instructions h4 {
+    color: var(--primary-color, #1a2b4a);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.instruction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.instruction-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.instruction-number {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--accent-color, #007bff);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.instruction-item strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--primary-color, #1a2b4a);
+    font-size: 0.95rem;
+}
+
+.instruction-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color-muted, #6c757d);
+    line-height: 1.4;
+}
+
+.step-visual {
+    text-align: center;
+    min-width: 300px;
+}
+
+.step-screenshot {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md, 8px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-200, #e9ecef);
+}
+
+/* Form Sections for Step 3 */
+.form-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-section {
+    background-color: var(--gray-50, #f8f9fa);
+    padding: 1.5rem;
+    border-radius: var(--radius-md, 8px);
+    border-left: 4px solid var(--accent-color, #007bff);
+}
+
+.form-section h4 {
+    color: var(--primary-color, #1a2b4a);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.form-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.form-item i {
+    color: var(--accent-color, #007bff);
+    font-size: 1rem;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+    width: 1.2rem;
+}
+
+.important-notice {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: var(--warning-light, #fff3cd);
+    border-left: 4px solid var(--warning-color, #ffc107);
+    border-radius: var(--radius-sm, 6px);
+}
+
+.notice-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--warning-dark, #856404);
+}
+
+.notice-content p {
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    color: var(--warning-dark, #856404);
+}
+
+.notice-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Payment Layout for Step 5 */
+.payment-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+}
+
+.payment-steps {
     flex: 1;
 }
 
-.step-title {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--primary-color, #1a3c6c);
+.pricing-card {
+    background-color: var(--gray-50, #f8f9fa);
+    padding: 1.5rem;
+    border-radius: var(--radius-md, 8px);
+    border: 1px solid var(--gray-200, #e9ecef);
+    min-width: 300px;
 }
 
-.step-details {
-    margin-bottom: 15px;
+.pricing-card h4 {
+    color: var(--primary-color, #1a2b4a);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.step-image {
-    max-width: 100%;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 15px;
+.price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
 }
 
-.guide-section {
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
     background-color: white;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-bottom: 30px;
+    border-radius: var(--radius-sm, 6px);
+    border: 1px solid var(--gray-200, #e9ecef);
 }
 
-.permit-info-grid {
+.price-item.free .price {
+    color: var(--success-color, #28a745);
+    font-weight: 700;
+}
+
+.permit-type {
+    font-size: 0.9rem;
+    color: var(--primary-color, #1a2b4a);
+}
+
+.price {
+    font-weight: 600;
+    color: var(--accent-color, #007bff);
+}
+
+.processing-note {
+    font-size: 0.8rem;
+    color: var(--text-color-muted, #6c757d);
+    margin: 0;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Approval Timeline for Step 6 */
+.approval-process h4 {
+    color: var(--primary-color, #1a2b4a);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.approval-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.timeline-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color, #007bff);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.timeline-content strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--primary-color, #1a2b4a);
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color-muted, #6c757d);
+}
+
+/* Tips Section */
+.tips-section {
+    margin-bottom: 3rem;
+}
+
+.tips-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
 }
 
-.permit-card {
+.tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--gray-50, #f8f9fa);
+    border-radius: var(--radius-sm, 6px);
+    border-left: 3px solid var(--accent-color, #007bff);
+}
+
+.tip-item i {
+    color: var(--accent-color, #007bff);
+    font-size: 1.2rem;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+}
+
+.tip-item strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--primary-color, #1a2b4a);
+    font-size: 0.95rem;
+}
+
+.tip-item p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-color-muted, #6c757d);
+}
+
+/* Permit Types Section */
+.permit-types-section {
+    margin-bottom: 3rem;
+}
+
+.permit-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.permit-type-card {
     background-color: white;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-200, #e9ecef);
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.permit-card-title {
-    font-size: 18px;
+.permit-type-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.permit-type-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: var(--gray-50, #f8f9fa);
+    border-bottom: 1px solid var(--gray-200, #e9ecef);
+}
+
+.permit-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--accent-color, #007bff);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.permit-title {
+    flex: 1;
+}
+
+.permit-title h3 {
+    margin: 0 0 0.5rem;
+    color: var(--primary-color, #1a2b4a);
+    font-size: 1.1rem;
+}
+
+.permit-price {
+    background-color: var(--accent-color, #007bff);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
     font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--primary-color, #1a3c6c);
 }
 
-/* Dark mode overrides */
-body.dark-mode .guide-section,
-body.dark-mode .permit-card {
-    background-color: var(--dark-card-bg);
-    color: var(--dark-text-color);
+.permit-price.free {
+    background-color: var(--success-color, #28a745);
 }
 
-body.dark-mode .step {
-    border-bottom-color: var(--dark-border-color);
+.permit-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-body.dark-mode .step-title {
-    color: var(--accent-color);
+.detail-item strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color, #1a2b4a);
+    font-size: 0.9rem;
 }
 
-/* Responsive styles */
+.detail-item p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-color-muted, #6c757d);
+    line-height: 1.4;
+}
+
+/* Dark Mode Support */
+body.dark-mode .progress-steps {
+    background-color: var(--dark-mode-card-bg, #2d2d2d);
+}
+
+body.dark-mode .progress-step-number {
+    background-color: var(--dark-mode-card-bg, #2d2d2d);
+    border-color: var(--dark-mode-border-color, #404040);
+    color: var(--dark-mode-text-color, #e0e0e0);
+}
+
+body.dark-mode .progress-step.active .progress-step-number {
+    background-color: var(--accent-color, #007bff);
+    border-color: var(--accent-color, #007bff);
+}
+
+body.dark-mode .checklist-item {
+    background-color: var(--dark-mode-card-bg, #2d2d2d);
+}
+
+body.dark-mode .action-button.secondary {
+    background-color: var(--dark-mode-card-bg, #2d2d2d);
+    color: var(--dark-mode-text-color, #e0e0e0);
+    border: 2px solid var(--accent-color, #007bff);
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+}
+
+body.dark-mode .action-button.secondary:hover {
+    background-color: var(--accent-color, #007bff);
+    border-color: var(--accent-color, #007bff);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+body.dark-mode .step-card {
+    background-color: var(--dark-mode-card-bg, #2d2d2d);
+    border-color: var(--dark-mode-border-color, #404040);
+}
+
+body.dark-mode .form-section {
+    background-color: var(--dark-mode-background, #1a1a1a);
+}
+
+body.dark-mode .pricing-card {
+    background-color: var(--dark-mode-background, #1a1a1a);
+    border-color: var(--dark-mode-border-color, #404040);
+}
+
+body.dark-mode .price-item {
+    background-color: var(--dark-mode-card-bg, #2d2d2d);
+    border-color: var(--dark-mode-border-color, #404040);
+}
+
+body.dark-mode .tip-item {
+    background-color: var(--dark-mode-card-bg, #2d2d2d);
+}
+
+body.dark-mode .permit-type-card {
+    background-color: var(--dark-mode-card-bg, #2d2d2d);
+    border-color: var(--dark-mode-border-color, #404040);
+}
+
+body.dark-mode .permit-type-header {
+    background-color: var(--dark-mode-background, #1a1a1a);
+    border-color: var(--dark-mode-border-color, #404040);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .step {
+    .progress-steps {
         flex-direction: column;
+        gap: 1rem;
     }
     
-    .permit-info-grid {
+    .progress-steps::before {
+        display: none;
+    }
+    
+    .step-layout {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .step-visual {
+        min-width: auto;
+    }
+    
+    .payment-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .pricing-card {
+        min-width: auto;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .permit-types-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-button {
+        padding: 1rem;
+    }
+    
+    .step-card-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
     }
 } 
