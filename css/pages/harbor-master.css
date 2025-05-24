@@ -593,11 +593,45 @@
   gap: 1rem;
   transition: all 0.3s ease;
   border: 1px solid var(--border-color, #e8eaed);
+  position: relative;
 }
 
 .condition-item:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Clickable condition items */
+.condition-item.clickable {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.condition-item.clickable:hover {
+  background-color: var(--gray-50, #f8f9fa);
+  border-color: var(--accent-color, #007bff);
+}
+
+.condition-item.clickable:active {
+  transform: translateY(-1px);
+}
+
+.external-link-icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.condition-item.clickable:hover .external-link-icon {
+  opacity: 1;
+}
+
+.external-link-icon i {
+  font-size: 0.75rem;
+  color: var(--accent-color, #007bff);
 }
 
 .condition-icon {
@@ -895,6 +929,11 @@ body.dark-mode .conditions-header p {
 body.dark-mode .condition-item {
   background-color: var(--dark-mode-card-bg, #2d2d2d);
   border-color: var(--dark-mode-border-color, #404040);
+}
+
+body.dark-mode .condition-item.clickable:hover {
+  background-color: var(--dark-mode-background, #121212);
+  border-color: var(--accent-color, #007bff);
 }
 
 body.dark-mode .condition-info h3 {

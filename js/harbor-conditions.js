@@ -7,7 +7,6 @@ class HarborConditions {
     constructor() {
         this.stationId = '8413320'; // Bar Harbor, ME
         this.baseUrl = 'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter';
-        this.corsProxy = 'https://api.allorigins.win/raw?url=';
         this.updateInterval = 10 * 60 * 1000; // 10 minutes
         this.fallbackData = this.getFallbackData();
         this.consecutiveErrors = 0;
@@ -17,10 +16,12 @@ class HarborConditions {
 
     getFallbackData() {
         return {
-            visibility: { description: 'Good', visibility: '8.0 nm' },
             wind: { description: 'Light', speed: '8 mph', direction: 'SW' },
             waterLevel: { description: 'Normal', level: '2.1 ft' },
-            tide: { nextTide: 'High Tide', time: '3:15 PM', height: '11.2 ft' }
+            tide: { nextTide: 'High Tide', time: '3:15 PM', height: '11.2 ft' },
+            tideRange: { description: 'Moderate', range: '10.8 ft range' },
+            tidePhase: { description: 'Rising', timeToNext: '2 hrs to high' },
+            todayTides: { description: '2 High / 2 Low', next: 'Next: High 3:15 PM' }
         };
     }
 
@@ -34,24 +35,27 @@ class HarborConditions {
         this.showLoadingState();
 
         try {
-            const [tideData, windData, visibilityData, waterLevelData] = await Promise.allSettled([
+            const [tideData, windData, waterLevelData] = await Promise.allSettled([
                 this.fetchTidePredictions(),
                 this.fetchWindData(),
-                this.fetchVisibilityData(),
                 this.fetchWaterLevel()
             ]);
 
-            const hasValidData = [tideData, windData, visibilityData, waterLevelData].some(
+            const hasValidData = [tideData, windData, waterLevelData].some(
                 result => result.status === 'fulfilled' && result.value
             );
 
             if (hasValidData) {
                 this.consecutiveErrors = 0;
+                const processedTide = tideData.status === 'fulfilled' ? tideData.value : this.fallbackData.tide;
+                
                 this.updateConditionsDisplay({
-                    tide: tideData.status === 'fulfilled' ? tideData.value : this.fallbackData.tide,
+                    tide: processedTide,
                     wind: windData.status === 'fulfilled' ? windData.value : this.fallbackData.wind,
-                    visibility: visibilityData.status === 'fulfilled' ? visibilityData.value : this.fallbackData.visibility,
-                    waterLevel: waterLevelData.status === 'fulfilled' ? waterLevelData.value : this.fallbackData.waterLevel
+                    waterLevel: waterLevelData.status === 'fulfilled' ? waterLevelData.value : this.fallbackData.waterLevel,
+                    tideRange: this.calculateTideRange(processedTide),
+                    tidePhase: this.calculateTidePhase(processedTide),
+                    todayTides: this.calculateTodayTides(processedTide)
                 }, hasValidData);
             } else {
                 throw new Error('No valid data received from any source');
@@ -103,11 +107,11 @@ class HarborConditions {
             time_zone: 'lst_ldt',
             interval: 'hilo',
             units: 'english',
-            application: 'BHMDPD_Website',
+            application: 'BarHarborPD_Website',
             format: 'json'
         });
 
-        const url = `${this.corsProxy}${encodeURIComponent(this.baseUrl + '?' + params)}`;
+        const url = `${this.baseUrl}?${params}`;
         const response = await fetch(url);
         
         if (!response.ok) throw new Error('Failed to fetch tide data');
@@ -118,16 +122,16 @@ class HarborConditions {
 
     async fetchWindData() {
         const params = new URLSearchParams({
-            date: 'latest',
+            date: 'today',
             station: this.stationId,
             product: 'wind',
             time_zone: 'lst_ldt',
             units: 'english',
-            application: 'BHMDPD_Website',
+            application: 'BarHarborPD_Website',
             format: 'json'
         });
 
-        const url = `${this.corsProxy}${encodeURIComponent(this.baseUrl + '?' + params)}`;
+        const url = `${this.baseUrl}?${params}`;
         const response = await fetch(url);
         
         if (!response.ok) throw new Error('Failed to fetch wind data');
@@ -136,39 +140,94 @@ class HarborConditions {
         return this.processWindData(data);
     }
 
-    async fetchVisibilityData() {
-        const params = new URLSearchParams({
-            date: 'latest',
-            station: this.stationId,
-            product: 'visibility',
-            time_zone: 'lst_ldt',
-            units: 'english',
-            application: 'BHMDPD_Website',
-            format: 'json'
-        });
+    calculateTideRange(tideData) {
+        if (!tideData.allTides || tideData.allTides.length < 4) {
+            return this.fallbackData.tideRange;
+        }
+        
+        const today = new Date().toDateString();
+        const todayTides = tideData.allTides.filter(tide => 
+            new Date(tide.time).toDateString() === today
+        );
+        
+        if (todayTides.length < 2) return this.fallbackData.tideRange;
+        
+        const heights = todayTides.map(tide => parseFloat(tide.height));
+        const maxHeight = Math.max(...heights);
+        const minHeight = Math.min(...heights);
+        const range = maxHeight - minHeight;
+        
+        let description = 'Moderate';
+        if (range > 12) description = 'Very Large';
+        else if (range > 10) description = 'Large';
+        else if (range < 8) description = 'Small';
+        
+        return {
+            description: description,
+            range: `${range.toFixed(1)} ft range`
+        };
+    }
 
-        const url = `${this.corsProxy}${encodeURIComponent(this.baseUrl + '?' + params)}`;
-        const response = await fetch(url);
+    calculateTidePhase(tideData) {
+        if (!tideData.nextTide || !tideData.currentLevel) {
+            return this.fallbackData.tidePhase;
+        }
         
-        if (!response.ok) throw new Error('Failed to fetch visibility data');
+        const now = new Date();
+        const nextTideTime = new Date(tideData.nextTideTime || now.getTime() + 2*60*60*1000);
+        const timeToNext = Math.round((nextTideTime - now) / (60 * 1000)); // minutes
         
-        const data = await response.json();
-        return this.processVisibilityData(data);
+        const isRising = tideData.nextTide === 'High Tide';
+        const phase = isRising ? 'Rising' : 'Falling';
+        
+        const hours = Math.floor(timeToNext / 60);
+        const minutes = timeToNext % 60;
+        let timeString = '';
+        
+        if (hours > 0) {
+            timeString = `${hours}h ${minutes}m to ${isRising ? 'high' : 'low'}`;
+        } else {
+            timeString = `${minutes}m to ${isRising ? 'high' : 'low'}`;
+        }
+        
+        return {
+            description: phase,
+            timeToNext: timeString
+        };
+    }
+
+    calculateTodayTides(tideData) {
+        if (!tideData.allTides) {
+            return this.fallbackData.todayTides;
+        }
+        
+        const today = new Date().toDateString();
+        const todayTides = tideData.allTides.filter(tide => 
+            new Date(tide.time).toDateString() === today
+        );
+        
+        const highTides = todayTides.filter(tide => tide.type === 'H').length;
+        const lowTides = todayTides.filter(tide => tide.type === 'L').length;
+        
+        return {
+            description: `${highTides} High / ${lowTides} Low`,
+            next: `Next: ${tideData.nextTide} ${tideData.time}`
+        };
     }
 
     async fetchWaterLevel() {
         const params = new URLSearchParams({
-            date: 'latest',
+            date: 'today',
             station: this.stationId,
             product: 'water_level',
             datum: 'MLLW',
             time_zone: 'lst_ldt',
             units: 'english',
-            application: 'BHMDPD_Website',
+            application: 'BarHarborPD_Website',
             format: 'json'
         });
 
-        const url = `${this.corsProxy}${encodeURIComponent(this.baseUrl + '?' + params)}`;
+        const url = `${this.baseUrl}?${params}`;
         const response = await fetch(url);
         
         if (!response.ok) throw new Error('Failed to fetch water level data');
@@ -179,7 +238,7 @@ class HarborConditions {
 
     processTideData(data) {
         if (!data.predictions || data.predictions.length === 0) {
-            return { nextTide: 'Data unavailable', time: '' };
+            return { nextTide: 'Data unavailable', time: '', allTides: [] };
         }
 
         const now = new Date();
@@ -187,6 +246,13 @@ class HarborConditions {
             const predictionTime = new Date(prediction.t);
             return predictionTime > now;
         });
+
+        // Process all tide data for calculations
+        const allTides = data.predictions.map(prediction => ({
+            time: prediction.t,
+            height: prediction.v,
+            type: prediction.type
+        }));
 
         if (nextTide) {
             const time = new Date(nextTide.t);
@@ -200,11 +266,13 @@ class HarborConditions {
                     minute: '2-digit',
                     hour12: true 
                 }),
-                height: `${height} ft`
+                nextTideTime: nextTide.t,
+                height: `${height} ft`,
+                allTides: allTides
             };
         }
 
-        return { nextTide: 'No data', time: '', height: '' };
+        return { nextTide: 'No data', time: '', height: '', allTides: allTides };
     }
 
     processWindData(data) {
@@ -224,20 +292,6 @@ class HarborConditions {
         };
     }
 
-    processVisibilityData(data) {
-        if (!data.data || data.data.length === 0) {
-            return { visibility: 'N/A', description: 'No data' };
-        }
-
-        const latest = data.data[data.data.length - 1];
-        const visibility = parseFloat(latest.v);
-        const description = this.getVisibilityDescription(visibility);
-
-        return {
-            visibility: `${visibility.toFixed(1)} nm`,
-            description: description
-        };
-    }
 
     processWaterLevelData(data) {
         if (!data.data || data.data.length === 0) {
@@ -269,13 +323,6 @@ class HarborConditions {
         return 'Very Strong';
     }
 
-    getVisibilityDescription(visibility) {
-        if (visibility >= 10) return 'Excellent';
-        if (visibility >= 5) return 'Good';
-        if (visibility >= 2) return 'Fair';
-        if (visibility >= 1) return 'Poor';
-        return 'Very Poor';
-    }
 
     getWaterLevelDescription(level) {
         if (level > 8) return 'Very High';
@@ -286,12 +333,6 @@ class HarborConditions {
     }
 
     updateConditionsDisplay(data, isLiveData = true) {
-        // Update visibility
-        if (data.visibility) {
-            this.updateConditionItem('visibility', 'Visibility', 
-                data.visibility.description, data.visibility.visibility);
-        }
-
         // Update wind
         if (data.wind) {
             this.updateConditionItem('wind', 'Wind', 
@@ -299,9 +340,9 @@ class HarborConditions {
                 `${data.wind.speed} ${data.wind.direction}`);
         }
 
-        // Update water level (sea state)
+        // Update water level
         if (data.waterLevel) {
-            this.updateConditionItem('sea-state', 'Sea State', 
+            this.updateConditionItem('water-level', 'Water Level', 
                 data.waterLevel.description, data.waterLevel.level);
         }
 
@@ -310,6 +351,24 @@ class HarborConditions {
             this.updateConditionItem('next-tide', 'Next Tide', 
                 data.tide.nextTide, 
                 data.tide.time + (data.tide.height ? ` (${data.tide.height})` : ''));
+        }
+
+        // Update tide range
+        if (data.tideRange) {
+            this.updateConditionItem('tide-range', 'Tide Range', 
+                data.tideRange.description, data.tideRange.range);
+        }
+
+        // Update tide phase
+        if (data.tidePhase) {
+            this.updateConditionItem('current-phase', 'Current Phase', 
+                data.tidePhase.description, data.tidePhase.timeToNext);
+        }
+
+        // Update today's tides
+        if (data.todayTides) {
+            this.updateConditionItem('today-tides', "Today's Tides", 
+                data.todayTides.description, data.todayTides.next);
         }
 
         // Add last updated timestamp
