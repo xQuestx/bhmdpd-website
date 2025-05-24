@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <title>Bar Harbor ME Parking: Permits, Rates, & Enforcement | BHPD</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="Official Bar Harbor, ME parking guide: permits, seasonal rates ($2-$4/hr, May-Oct), enforcement, kiosk/ParkMobile. Find lot locations, maps, costs & citation info.">
+<meta name="description" content="Official Bar Harbor parking guide: downtown lots ($2-$4/hr), Ferry Terminal free parking, EV charging stations, RV spaces, ParkMobile app, kiosk payments. Maps, rates, and permits for Acadia visitors.">
 <link rel="canonical" href="https://www.bhmdpd.com/bar-harbor-parking.html" />
 
 <!-- Primary Meta Tags -->
 <meta name="title" content="Bar Harbor ME Parking: Permits, Rates, & Enforcement | BHPD">
-<meta name="keywords" content="Bar Harbor parking, Maine parking permits, downtown Bar Harbor parking, seasonal parking, Bar Harbor parking rates, Bar Harbor parking map, Bar Harbor parking lots, Bar Harbor RV parking, Bar Harbor free parking, Bar Harbor permit system, parking enforcement, parking kiosks, ParkMobile, Mount Desert parking, Bar Harbor parking citations">
+<meta name="keywords" content="Bar Harbor parking, Ferry Terminal parking Eden Street, EV charging stations Bar Harbor, RV parking Maine, Athletic Field parking, ParkMobile Bar Harbor, Acadia National Park parking, downtown Bar Harbor parking lots, Maine parking rates, tourist parking Bar Harbor, Bar Harbor ferry parking, electric vehicle charging, large vehicle parking, grants park parking shore path, Bar Harbor parking map, seasonal parking permits, kiosk payments, Maine parking enforcement">
 <meta name="author" content="Bar Harbor Mount Desert Police Department">
 <meta name="robots" content="index, follow">
 
@@ -24,14 +24,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.bhmdpd.com/bar-harbor-parking.html">
 <meta property="og:title" content="Bar Harbor ME Parking: Permits, Rates, & Enforcement | BHPD">
-<meta property="og:description" content="Official Bar Harbor, ME parking guide: permits, seasonal rates ($2-$4/hr, May-Oct), enforcement, kiosk/ParkMobile. Find lot locations, maps, costs & citation info.">
+<meta property="og:description" content="Complete Bar Harbor parking guide: Ferry Terminal free parking, EV charging stations, RV spaces, downtown lots, ParkMobile app. Perfect for Acadia National Park visitors.">
 <meta property="og:image" content="https://www.bhmdpd.com/images/divisions/parking/parkingmap.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://www.bhmdpd.com/bar-harbor-parking.html">
 <meta property="twitter:title" content="Bar Harbor ME Parking: Permits, Rates, & Enforcement | BHPD">
-<meta property="twitter:description" content="Bar Harbor, ME parking: permits, rates ($2-$4/hr, May-Oct), lot info (maps, costs), ParkMobile, citations. Official guide.">
+<meta property="twitter:description" content="Bar Harbor parking guide: Ferry Terminal free parking, EV charging, RV spaces, downtown lots ($2-$4/hr), ParkMobile app for Acadia visitors.">
 <meta property="twitter:image" content="https://www.bhmdpd.com/images/divisions/parking/parkingmap.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -40,7 +40,7 @@
   "@context": "https://schema.org",
   "@type": "GovernmentService",
   "name": "Bar Harbor Parking Program",
-  "serviceType": "Parking Enforcement & Permits",
+  "serviceType": ["Parking Enforcement & Permits", "Electric Vehicle Charging", "Ferry Terminal Parking", "Mobile Payment Services", "RV/Large Vehicle Parking"],
   "provider": {
     "@type": "GovernmentOrganization",
     "name": "Bar Harbor Mount Desert Police Department",
@@ -91,6 +91,38 @@
       "closes": "21:00",
       "validFrom": "2025-05-15",
       "validThrough": "2025-10-30"
+    }
+  ],
+  "description": "Complete Bar Harbor parking services including downtown lots, Ferry Terminal free parking, EV charging stations, RV spaces, mobile payments via ParkMobile app, and permit services for residents and Acadia National Park visitors.",
+  "potentialAction": [
+    {
+      "@type": "ViewAction",
+      "name": "Download Parking Map",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.bhmdpd.com/images/divisions/parking/parkingmap.pdf",
+        "encodingType": "application/pdf"
+      }
+    },
+    {
+      "@type": "ViewAction", 
+      "name": "Access ParkMobile App",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://parkmobile.io/",
+        "actionPlatform": [
+          "http://schema.org/IOSPlatform",
+          "http://schema.org/AndroidPlatform"
+        ]
+      }
+    },
+    {
+      "@type": "ViewAction",
+      "name": "View Ferry Terminal Parking",
+      "target": {
+        "@type": "EntryPoint", 
+        "urlTemplate": "https://www.bhmdpd.com/bar-harbor-parking.html#lots"
+      }
     }
   ]
 }
@@ -730,6 +762,7 @@
 <link rel="stylesheet" href="css/components/buttons.css">
 <link rel="stylesheet" href="css/components/cards.css">
 <link rel="stylesheet" href="css/components/tabs.css">
+<link rel="stylesheet" href="css/pages/parking.css">
 
 <!-- Load Font Awesome and non-critical CSS after -->
 <script>
@@ -1299,6 +1332,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     <li><i class="fas fa-tree"></i> Near Grants Park</li>
                     <li><i class="fas fa-camera"></i> Scenic area access</li>
                     <li><i class="fas fa-walking"></i> Tourist district</li>
+                    <li><i class="fas fa-water"></i> Close to Shore Path - scenic walking trail with beautiful views of Frenchman Bay</li>
                 </ul>
                 <a class="btn btn-primary" href="https://maps.google.com/?q=44.388861,-68.201472" target="_blank">
                     <i class="fas fa-directions"></i> Get Directions
@@ -1377,21 +1411,12 @@ window.addEventListener('DOMContentLoaded', function() {
                     <i class="fas fa-directions"></i> Get Directions
                 </a>
             </div>
-        </div>
-    </div>
 
-    <!-- Specialty Parking Section -->
-    <div class="zone-section">
-        <div class="zone-header">
-            <h3><i class="fas fa-bolt"></i> Specialty Parking - $4.00/hour</h3>
-            <p class="zone-description">Special-purpose parking with unique amenities</p>
-        </div>
-        <div class="permit-cards">
             <!-- Athletic Field (EV Chargers) -->
-            <div class="permit-card specialty">
+            <div class="permit-card standard">
                 <div class="permit-header">
                     <h5>Athletic Field <span class="ev-badge">EV Charging</span></h5>
-                    <span class="price-tag specialty">$4.00/hr</span>
+                    <span class="price-tag standard">$2.00/hr</span>
                 </div>
                 <ul>
                     <li><i class="fas fa-charging-station"></i> EV charging stations</li>
@@ -1404,10 +1429,10 @@ window.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <!-- RV Parking -->
-            <div class="permit-card specialty">
+            <div class="permit-card standard">
                 <div class="permit-header">
                     <h5>RV Parking <span class="rv-badge">Large Vehicles</span></h5>
-                    <span class="price-tag specialty">$4.00/hr</span>
+                    <span class="price-tag standard">$2.00/hr</span>
                 </div>
                 <ul>
                     <li><i class="fas fa-truck"></i> Designated RV spaces</li>
@@ -1420,6 +1445,7 @@ window.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
     </div>
+
 </div>
 
 <!-- Eden Street Lot -->
@@ -1429,8 +1455,9 @@ window.addEventListener('DOMContentLoaded', function() {
 <span class="price-tag">Free Parking</span>
 </div>
 <ul>
-<li>A little outside of town</li>
-<li>Allows RVs</li>
+<li><i class="fas fa-ship"></i> Bar Harbor Ferry Terminal - 121 Eden Street</li>
+<li><i class="fas fa-truck"></i> Allows RVs</li>
+<li><i class="fas fa-map-marker-alt"></i> A little outside of town</li>
 </ul>
 <a class="btn btn-primary" href="https://maps.google.com/?q=44.397833,-68.227417" target="_blank">
 <i class="fas fa-map-marked-alt"></i> View on Map
