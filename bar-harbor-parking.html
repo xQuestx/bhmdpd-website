@@ -964,6 +964,7 @@
     .highlight-badges { flex-direction: column; gap: 0.5rem; align-items: center; min-height: auto; height: auto; margin-top: 1rem; margin-bottom: 0; }
     .hero-section p, .parking-hero p { height: auto; min-height: auto; font-size: 1.1rem; margin-bottom: 1rem; }
     .badge { height: 40px; font-size: 0.9rem; padding: 0.5rem 1rem; }
+    .badge-price, .badge-season, .badge-hours { box-shadow: 0 2px 4px rgba(0,0,0,0.15); }
     .parking-map-image { max-width: 100%; }
     .tabs-section { margin: 1rem 0; position: relative; z-index: 10; background: white; }
     .tab-contents { min-height: auto; }
@@ -989,8 +990,14 @@
   }
   
   /* Additional hero styling beyond critical CSS */
-  .badge { background: rgba(255, 255, 255, 0.2); padding: 0.75rem 1.25rem; border-radius: 25px; color: white; font-size: 1rem; height: 48px; display: flex; align-items: center; white-space: nowrap; flex-shrink: 0; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+  .badge { padding: 0.75rem 1.25rem; border-radius: 25px; color: white; font-size: 1rem; height: 48px; display: flex; align-items: center; white-space: nowrap; flex-shrink: 0; backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.3); font-weight: 600; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
   .badge i { color: white !important; opacity: 1 !important; margin-right: 0.5rem; font-size: 1.1rem; filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); }
+  
+  /* Colorful badge variants */
+  .badge-price { background: linear-gradient(135deg, #28a745, #20c997); border-color: rgba(255,255,255,0.4); }
+  .badge-season { background: linear-gradient(135deg, #fd7e14, #e83e8c); border-color: rgba(255,255,255,0.4); }
+  .badge-hours { background: linear-gradient(135deg, #6f42c1, #6610f2); border-color: rgba(255,255,255,0.4); }
+  
   .highlight-badges { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; min-height: 52px; contain: layout; width: 100%; }
   
   /* Tab and content containers */
@@ -1181,9 +1188,9 @@ window.addEventListener('DOMContentLoaded', function() {
 <h1>Bar Harbor Parking<br/>Services & Enforcement</h1>
 <p>Convenient, efficient parking solutions for Bar Harbor</p>
 <div class="highlight-badges">
-<span class="badge"><i class="fas fa-money-bill" aria-hidden="true"></i> $2.00 - $4.00/hour</span>
-<span class="badge"><i class="fas fa-calendar" aria-hidden="true"></i> May 15 - Oct 30</span>
-<span class="badge"><i class="fas fa-clock" aria-hidden="true"></i> 8 AM - 9 PM</span>
+<span class="badge badge-price"><i class="fas fa-money-bill" aria-hidden="true"></i> $2.00 - $4.00/hour</span>
+<span class="badge badge-season"><i class="fas fa-calendar" aria-hidden="true"></i> May 15 - Oct 30</span>
+<span class="badge badge-hours"><i class="fas fa-clock" aria-hidden="true"></i> 8 AM - 9 PM</span>
 </div>
 </div>
 </section>
