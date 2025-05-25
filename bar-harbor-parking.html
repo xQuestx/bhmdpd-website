@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <title>Bar Harbor ME Parking: Permits, Rates, & Enforcement | BHPD</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="Official Bar Harbor parking guide: downtown lots ($2-$4/hr), Ferry Terminal free parking, EV charging stations, RV spaces, ParkMobile app, kiosk payments. Maps, rates, and permits for Acadia visitors.">
+<meta name="description" content="Official Bar Harbor parking guide with interactive map: click to navigate parking lots ($2-$4/hr), Ferry Terminal free parking, EV charging, RV spaces, ParkMobile app. Real-time directions for Acadia visitors.">
 <link rel="canonical" href="https://www.bhmdpd.com/bar-harbor-parking.html" />
 
 <!-- Primary Meta Tags -->
 <meta name="title" content="Bar Harbor ME Parking: Permits, Rates, & Enforcement | BHPD">
-<meta name="keywords" content="Bar Harbor parking, Ferry Terminal parking Eden Street, EV charging stations Bar Harbor, RV parking Maine, Athletic Field parking, ParkMobile Bar Harbor, Acadia National Park parking, downtown Bar Harbor parking lots, Maine parking rates, tourist parking Bar Harbor, Bar Harbor ferry parking, electric vehicle charging, large vehicle parking, grants park parking shore path, Bar Harbor parking map, seasonal parking permits, kiosk payments, Maine parking enforcement">
+<meta name="keywords" content="Bar Harbor parking, interactive parking map, clickable parking locations, Ferry Terminal parking Eden Street, EV charging stations Bar Harbor, RV parking Maine, Athletic Field parking, ParkMobile Bar Harbor, Acadia National Park parking, downtown Bar Harbor parking lots, Maine parking rates, tourist parking Bar Harbor, Bar Harbor ferry parking, electric vehicle charging, large vehicle parking, grants park parking shore path, Bar Harbor parking map, interactive map navigation, real-time directions, seasonal parking permits, kiosk payments, Maine parking enforcement, Leaflet map, GPS parking coordinates">
 <meta name="author" content="Bar Harbor Mount Desert Police Department">
 <meta name="robots" content="index, follow">
 
@@ -24,14 +24,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.bhmdpd.com/bar-harbor-parking.html">
 <meta property="og:title" content="Bar Harbor ME Parking: Permits, Rates, & Enforcement | BHPD">
-<meta property="og:description" content="Complete Bar Harbor parking guide: Ferry Terminal free parking, EV charging stations, RV spaces, downtown lots, ParkMobile app. Perfect for Acadia National Park visitors.">
+<meta property="og:description" content="Complete Bar Harbor parking guide with interactive map: click to navigate to parking lots, Ferry Terminal free parking, EV charging stations, RV spaces, downtown lots, ParkMobile app. Perfect for Acadia National Park visitors.">
 <meta property="og:image" content="https://www.bhmdpd.com/images/divisions/parking/parkingmap.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://www.bhmdpd.com/bar-harbor-parking.html">
 <meta property="twitter:title" content="Bar Harbor ME Parking: Permits, Rates, & Enforcement | BHPD">
-<meta property="twitter:description" content="Bar Harbor parking guide: Ferry Terminal free parking, EV charging, RV spaces, downtown lots ($2-$4/hr), ParkMobile app for Acadia visitors.">
+<meta property="twitter:description" content="Bar Harbor parking guide with interactive map: click to navigate parking lots, Ferry Terminal free parking, EV charging, RV spaces, downtown lots ($2-$4/hr), ParkMobile app for Acadia visitors.">
 <meta property="twitter:image" content="https://www.bhmdpd.com/images/divisions/parking/parkingmap.jpg">
 
 <!-- Schema.org JSON-LD -->
@@ -128,11 +128,83 @@
 }
 </script>
 
+<!-- Additional Schema.org for Interactive Parking Map -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bar Harbor Interactive Parking Map",
+  "description": "Interactive map showing all Bar Harbor parking locations with clickable navigation, real-time directions, and pricing information",
+  "url": "https://www.bhmdpd.com/bar-harbor-parking.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "permissions": "location",
+  "featureList": [
+    "Interactive parking lot map",
+    "Clickable marker navigation", 
+    "Real-time GPS directions",
+    "Parking rate information",
+    "Mobile-friendly interface",
+    "EV charging station locations",
+    "RV parking designation"
+  ],
+  "provider": {
+    "@type": "GovernmentOrganization", 
+    "name": "Bar Harbor Mount Desert Police Department"
+  }
+}
+</script>
+
+<!-- Schema.org for Individual Parking Facilities -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Bar Harbor Parking Facilities",
+  "description": "Complete list of parking facilities in Bar Harbor, Maine",
+  "itemListElement": [
+    {
+      "@type": "ParkingFacility",
+      "name": "Ferry Terminal Free Parking",
+      "address": "121 Eden Street, Bar Harbor, ME",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.397833,
+        "longitude": -68.227417
+      },
+      "priceRange": "Free",
+      "amenityFeature": ["RV Friendly", "Large Vehicle Access"]
+    },
+    {
+      "@type": "ParkingFacility", 
+      "name": "Athletic Field EV Charging",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.381944,
+        "longitude": -68.204778
+      },
+      "priceRange": "$2.00/hour",
+      "amenityFeature": ["Electric Vehicle Charging", "Athletic Facility Access"]
+    },
+    {
+      "@type": "ParkingFacility",
+      "name": "Downtown Premium Parking",
+      "description": "High-demand downtown locations including Casino Lot, Grants Park, Town Pier, and Upper Central",
+      "priceRange": "$4.00/hour",
+      "amenityFeature": ["Downtown Access", "Restaurant Proximity", "Shopping District"]
+    }
+  ]
+}
+</script>
+
 <!-- Mobile and Responsive Tags -->
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Bar Harbor Parking Map">
 <meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#1a2b4a">
+<meta name="msapplication-navbutton-color" content="#1a2b4a">
 <meta name="application-name" content="BHMDPD Parking">
 <meta name="msapplication-TileColor" content="#2d89ef">
 
@@ -761,6 +833,43 @@
   .legend-desc { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; line-height: 1.4; }
   .legend-desc strong { color: #333; }
   
+  /* All-Day Parking Notice */
+  .parking-notice {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  .notice-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+  }
+  .notice-icon {
+    font-size: 2.5rem;
+    color: white;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+  .notice-text h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
+  .notice-text p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  }
+  
   /* Clickable legend descriptions */
   .legend-desc.clickable { 
     cursor: pointer; 
@@ -797,11 +906,38 @@
     border-color: #4da3ff;
   }
   
+  /* Dark mode for parking notice */
+  body.dark-mode .parking-notice {
+    background: linear-gradient(135deg, #1b5e20, #00695c);
+    border-color: rgba(255,255,255,0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
   /* Mobile responsive map */
   @media (max-width: 768px) {
     #parking-map { height: 400px !important; }
     .map-legend { gap: 1rem; }
     .legend-item { font-size: 0.9rem; }
+    
+    /* Mobile responsive parking notice */
+    .parking-notice { 
+      margin: 1rem; 
+      padding: 1rem; 
+    }
+    .notice-content { 
+      flex-direction: column; 
+      text-align: center; 
+      gap: 0.75rem; 
+    }
+    .notice-icon { 
+      font-size: 2rem; 
+    }
+    .notice-text h4 { 
+      font-size: 1.1rem; 
+    }
+    .notice-text p { 
+      font-size: 0.95rem; 
+    }
   }
   .fa-bars::before { content: "\f0c9"; }
   .fa-times::before { content: "\f00d"; }
@@ -1102,6 +1238,17 @@ window.addEventListener('DOMContentLoaded', function() {
             <a class="btn btn-primary ml-2" download="Bar_Harbor_Parking_Map.pdf" href="images/divisions/parking/parkingmap.pdf">
                 <i class="fas fa-file-pdf"></i> Download Map (PDF)
             </a>
+        </div>
+        
+        <!-- All-Day Parking Notice -->
+        <div class="parking-notice mt-4">
+            <div class="notice-content">
+                <i class="fas fa-clock notice-icon"></i>
+                <div class="notice-text">
+                    <h4>🅿️ All-Day Parking Lots</h4>
+                    <p>Pay for the time you need - up to all-day parking (13 hours, 8 AM - 9 PM). All lots support extended stays with flexible payment options!</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
