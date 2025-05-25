@@ -696,6 +696,113 @@
   body.dark-mode .map-preview h3 { color: var(--text-color) !important; }
   body.dark-mode .map-preview p { color: var(--light-text-color) !important; opacity: 1; }
   body.dark-mode .map-preview-icon { color: #4da3ff; }
+  
+  /* Map Section Styling */
+  .map-section { padding: 3rem 0; background: #f8f9fa; }
+  .map-header { text-align: center; margin-bottom: 2rem; }
+  .map-header h2 { color: #333; margin: 0 0 0.5rem 0; font-size: 2.5rem; font-weight: 700; }
+  .map-header p { color: #666; font-size: 1.1rem; margin: 0; }
+  
+  /* Interactive Map Styling */
+  .map-container { position: relative; width: 100%; z-index: 1; }
+  #parking-map { 
+    border: 2px solid #ddd; 
+    height: 500px !important; 
+    width: 100% !important; 
+    min-height: 500px;
+    background: #f8f9fa;
+    position: relative;
+    z-index: 1000 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Ensure Leaflet tiles load properly */
+  #parking-map .leaflet-container {
+    background: #f8f9fa;
+    height: 500px !important;
+    width: 100% !important;
+  }
+  
+  #parking-map .leaflet-tile-pane {
+    opacity: 1 !important;
+  }
+  
+  /* Map Legend */
+  .map-legend { display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; }
+  .legend-marker { width: 20px; height: 20px; border-radius: 50%; display: inline-block; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+  
+  /* Clickable legend items */
+  .legend-item.clickable {
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+    border: 1px solid transparent;
+  }
+  .legend-item.clickable:hover {
+    background-color: #e8f4f8;
+    transform: translateY(-1px);
+    border-color: #0056b3;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .legend-item.clickable:active {
+    transform: translateY(0);
+  }
+  .legend-marker.premium { background-color: #e74c3c; }
+  .legend-marker.standard { background-color: #f39c12; }
+  .legend-marker.rv { background-color: #9c27b0; }
+  .legend-marker.free { background-color: #27ae60; }
+  
+  /* Legend descriptions */
+  .legend-descriptions { margin-top: 1rem; }
+  .legend-desc { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; line-height: 1.4; }
+  .legend-desc strong { color: #333; }
+  
+  /* Clickable legend descriptions */
+  .legend-desc.clickable { 
+    cursor: pointer; 
+    padding: 0.5rem; 
+    border-radius: 5px; 
+    transition: background-color 0.2s, transform 0.1s;
+    border: 1px solid transparent;
+  }
+  .legend-desc.clickable:hover { 
+    background-color: #e8f4f8; 
+    transform: translateY(-1px);
+    border-color: #0056b3;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .legend-desc.clickable:active {
+    transform: translateY(0);
+  }
+  
+  /* Dark mode for map elements */
+  body.dark-mode .map-section { background: #1a1a1a; }
+  body.dark-mode .map-header h2 { color: var(--text-color); }
+  body.dark-mode .map-header p { color: var(--light-text-color); }
+  body.dark-mode #parking-map { border-color: rgba(255,255,255,0.2); }
+  body.dark-mode .legend-item { color: var(--text-color); }
+  body.dark-mode .legend-marker { border-color: rgba(255,255,255,0.8); }
+  body.dark-mode .legend-desc { color: var(--light-text-color); }
+  body.dark-mode .legend-desc strong { color: var(--text-color); }
+  body.dark-mode .legend-desc.clickable:hover { 
+    background-color: rgba(255,255,255,0.1); 
+    border-color: #4da3ff;
+  }
+  body.dark-mode .legend-item.clickable:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-color: #4da3ff;
+  }
+  
+  /* Mobile responsive map */
+  @media (max-width: 768px) {
+    #parking-map { height: 400px !important; }
+    .map-legend { gap: 1rem; }
+    .legend-item { font-size: 0.9rem; }
+  }
   .fa-bars::before { content: "\f0c9"; }
   .fa-times::before { content: "\f00d"; }
   .fa-moon::before { content: "\f186"; }
@@ -771,6 +878,14 @@ window.addEventListener('DOMContentLoaded', function() {
   fa.rel = 'stylesheet';
   fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
   document.head.appendChild(fa);
+  
+  // Load Leaflet CSS
+  const leafletCSS = document.createElement('link');
+  leafletCSS.rel = 'stylesheet';
+  leafletCSS.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+  leafletCSS.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+  leafletCSS.crossOrigin = '';
+  document.head.appendChild(leafletCSS);
 });
 </script>
 
@@ -936,6 +1051,62 @@ window.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 </section>
+
+<!-- Interactive Parking Map Section -->
+<section class="map-section">
+<div class="container">
+    <div class="map-header">
+        <h2><i class="fas fa-map-marked-alt"></i> Interactive Parking Map</h2>
+        <p>Click on any marker to view parking lot details, rates, and get directions</p>
+    </div>
+    
+    <!-- Interactive Parking Map -->
+    <div class="map-container mt-4 mb-4">
+        <div id="parking-map" style="height: 500px; width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"></div>
+        <div class="map-legend mt-3">
+            <div class="legend-item clickable" data-parking-type="premium">
+                <span class="legend-marker premium"></span>
+                <span>Premium ($4.00/hr)</span>
+            </div>
+            <div class="legend-item clickable" data-parking-type="standard">
+                <span class="legend-marker standard"></span>
+                <span>Standard ($2.00/hr)</span>
+            </div>
+            <div class="legend-item clickable" data-parking-type="rv">
+                <span class="legend-marker rv"></span>
+                <span>RV Parking ($2.00/hr)</span>
+            </div>
+            <div class="legend-item clickable" data-parking-type="free">
+                <span class="legend-marker free"></span>
+                <span>Free Parking</span>
+            </div>
+        </div>
+        <div class="legend-descriptions mt-2">
+            <div class="legend-desc clickable" data-parking-type="premium">
+                <strong>Premium:</strong> High-demand downtown locations with convenient access to shops, restaurants, and attractions
+            </div>
+            <div class="legend-desc clickable" data-parking-type="standard">
+                <strong>Standard:</strong> Budget-friendly option with easy access to municipal services and EV charging
+            </div>
+            <div class="legend-desc clickable" data-parking-type="rv">
+                <strong>RV Parking:</strong> Designated spaces for RVs and oversized vehicles with easy in/out access
+            </div>
+            <div class="legend-desc clickable" data-parking-type="free">
+                <strong>Free:</strong> No charge parking areas, some outside downtown core
+            </div>
+        </div>
+        <div class="mt-3" style="text-align: center;">
+            <a class="btn btn-primary" download="Bar_Harbor_Parking_Map.jpg" href="images/divisions/parking/parkingmap.jpg">
+                <i class="fas fa-map-marked-alt"></i> Download Map (JPG)
+            </a>
+            <a class="btn btn-primary ml-2" download="Bar_Harbor_Parking_Map.pdf" href="images/divisions/parking/parkingmap.pdf">
+                <i class="fas fa-file-pdf"></i> Download Map (PDF)
+            </a>
+        </div>
+    </div>
+</div>
+</section>
+
 <!-- Tabs Section (Moved up) -->
 <section class="tabs-section">
 <div class="container">
@@ -1369,18 +1540,7 @@ window.addEventListener('DOMContentLoaded', function() {
 <div class="card-body">
 <p class="mb-4">Find information about our parking lots including locations and hourly rates.</p>
 
-<!-- Parking Map Image in appropriate tab -->
-<div class="map-image-container mt-4 mb-4" style="text-align: center;">
-    <img src="images/divisions/parking/parkingmap.jpg" alt="Bar Harbor Parking Map Overview" class="parking-map-image" width="750" height="579" loading="lazy" decoding="async">
-    <div class="mt-3">
-        <a class="btn btn-primary" download="Bar_Harbor_Parking_Map.jpg" href="images/divisions/parking/parkingmap.jpg">
-            <i class="fas fa-map-marked-alt"></i> Download Map (JPG)
-        </a>
-        <a class="btn btn-primary ml-2" download="Bar_Harbor_Parking_Map.pdf" href="images/divisions/parking/parkingmap.pdf">
-            <i class="fas fa-file-pdf"></i> Download Map (PDF)
-        </a>
-    </div>
-</div>
+<!-- Map moved to main page above tabs -->
 
 <!-- Parking Zones Organization -->
 <div class="parking-zones-container">
@@ -1911,6 +2071,413 @@ Bar Harbor, ME 04609
 <script src="js/parking-optimized.js" defer></script>
 <script src="js/footer-loader.js" defer></script>
 <!-- Defer Leaflet loading until user scrolls near footer -->
+<!-- Parking Map Script -->
+<script>
+// Parking Lot Data with coordinates and details - Using exact coordinates from Get Directions links
+const parkingLots = [
+    // Premium Lots ($4.00/hr)
+    {
+        name: "Casino Lot",
+        lat: 44.389222,
+        lng: -68.209611,
+        price: "$4.00/hr",
+        type: "premium",
+        description: "Downtown center with easy access to shops & dining",
+        features: ["Downtown center", "Walk to shops & dining", "High turnover area"]
+    },
+    {
+        name: "Grants Park Lot",
+        lat: 44.388861,
+        lng: -68.201472,
+        price: "$4.00/hr",
+        type: "premium",
+        description: "Near Grants Park with scenic area access",
+        features: ["Near Grants Park", "Scenic area access", "Tourist district", "Close to Shore Path - scenic walking trail"]
+    },
+    {
+        name: "Town Pier Lot",
+        lat: 44.391556,
+        lng: -68.204250,
+        price: "$4.00/hr",
+        type: "premium",
+        description: "Waterfront access with harbor views",
+        features: ["Waterfront access", "Harbor views", "Photo opportunities"]
+    },
+    {
+        name: "Upper Central Lot",
+        lat: 44.388667,
+        lng: -68.205139,
+        price: "$4.00/hr",
+        type: "premium",
+        description: "Central downtown location",
+        features: ["Central downtown", "Shopping district", "Restaurant access"]
+    },
+    {
+        name: "Rodick Street Lot",
+        lat: 44.388694,
+        lng: -68.206083,
+        price: "$4.00/hr",
+        type: "premium",
+        description: "Historic district parking",
+        features: ["Historic district", "Walking distance downtown", "Formerly Old PD Lot"]
+    },
+    // Standard Lots ($2.00/hr)
+    {
+        name: "Municipal Building Lot",
+        lat: 44.389111,
+        lng: -68.210389,
+        price: "$2.00/hr",
+        type: "standard",
+        description: "Near Town Hall with municipal services access",
+        features: ["Near Town Hall", "Most affordable rate", "Municipal services access"]
+    },
+    {
+        name: "Athletic Field (EV Charging)",
+        lat: 44.381944,
+        lng: -68.204778,
+        price: "$2.00/hr",
+        type: "standard",
+        description: "EV charging stations and athletic facilities",
+        features: ["EV charging stations", "Near athletic facilities", "Eco-friendly option"]
+    },
+    {
+        name: "RV Parking",
+        lat: 44.382472,
+        lng: -68.203000,
+        price: "$2.00/hr",
+        type: "rv",
+        description: "Designated RV and oversized vehicle parking",
+        features: ["Designated RV spaces", "Oversized vehicle friendly", "Easy in/out access"]
+    },
+    // Free Parking
+    {
+        name: "Eden Street Lot (Ferry Terminal)",
+        lat: 44.397833,
+        lng: -68.227417,
+        price: "Free",
+        type: "free",
+        description: "Bar Harbor Ferry Terminal parking",
+        features: ["Bar Harbor Ferry Terminal - 121 Eden Street", "Allows RVs", "A little outside of town"]
+    }
+];
+
+// Initialize parking map when parking lots tab is active
+let parkingMap = null;
+let parkingMapInitialized = false;
+
+function initializeParkingMap() {
+    console.log('initializeParkingMap called');
+    console.log('parkingMapInitialized:', parkingMapInitialized);
+    console.log('window.L available:', !!window.L);
+    
+    if (parkingMapInitialized) {
+        console.log('Map already initialized');
+        return;
+    }
+    
+    if (!window.L) {
+        console.log('Leaflet not available');
+        return;
+    }
+    
+    const mapContainer = document.getElementById('parking-map');
+    console.log('Map container found:', !!mapContainer);
+    if (!mapContainer) {
+        console.log('No map container element found');
+        return;
+    }
+    
+    console.log('Initializing parking map...');
+    parkingMapInitialized = true;
+    
+    try {
+        // Create map centered on Bar Harbor
+        parkingMap = L.map('parking-map').setView([44.3886, -68.2056], 15);
+        console.log('Map object created successfully');
+        
+        // Add OpenStreetMap tiles with error handling
+        const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 18,
+            crossOrigin: true
+        });
+        
+        tileLayer.on('loading', function() {
+            console.log('Tiles started loading');
+        });
+        
+        tileLayer.on('load', function() {
+            console.log('Tiles finished loading');
+        });
+        
+        tileLayer.on('tileerror', function(error) {
+            console.error('Tile loading error:', error);
+        });
+        
+        tileLayer.addTo(parkingMap);
+        console.log('Tile layer added successfully');
+    } catch (error) {
+        console.error('Error creating map:', error);
+        parkingMapInitialized = false;
+        return;
+    }
+    
+    // Define marker colors for each type
+    const markerColors = {
+        premium: '#e74c3c',
+        standard: '#f39c12',
+        rv: '#9c27b0',
+        free: '#27ae60'
+    };
+    
+    // Collect markers for bounds fitting
+    const markers = [];
+    
+    // Add markers for each parking lot
+    parkingLots.forEach(lot => {
+        const markerColor = markerColors[lot.type];
+        
+        // Create custom marker HTML
+        const markerHtml = `
+            <div style="
+                background-color: ${markerColor};
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                border: 3px solid white;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+                font-size: 12px;
+            ">P</div>
+        `;
+        
+        // Create marker icon
+        const customIcon = L.divIcon({
+            html: markerHtml,
+            iconSize: [25, 25],
+            iconAnchor: [12.5, 12.5],
+            popupAnchor: [0, -12.5],
+            className: 'custom-parking-marker'
+        });
+        
+        // Create popup content
+        const popupContent = `
+            <div style="min-width: 250px;">
+                <h4 style="margin: 0 0 8px 0; color: ${markerColor}; font-size: 16px;">${lot.name}</h4>
+                <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 18px;">${lot.price}</p>
+                <p style="margin: 0 0 12px 0; color: #666; font-size: 14px;">${lot.description}</p>
+                <ul style="margin: 0 0 12px 0; padding-left: 20px; font-size: 13px;">
+                    ${lot.features.map(feature => `<li>${feature}</li>`).join('')}
+                </ul>
+                <a href="https://maps.google.com/?q=${lot.lat},${lot.lng}" 
+                   target="_blank" 
+                   style="display: inline-block; background: #0056b3; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; font-size: 13px;">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
+        `;
+        
+        // Create and add marker to map
+        const marker = L.marker([lot.lat, lot.lng], { icon: customIcon })
+            .addTo(parkingMap)
+            .bindPopup(popupContent);
+            
+        markers.push(marker);
+    });
+    
+    // Fit map to show all markers
+    let group = null;
+    if (markers.length > 0) {
+        group = new L.featureGroup(markers);
+        parkingMap.fitBounds(group.getBounds().pad(0.1));
+        console.log('Map bounds fitted to show all markers');
+    }
+    
+    // Force map to recognize its container size with multiple attempts
+    setTimeout(() => {
+        if (parkingMap) {
+            parkingMap.invalidateSize();
+            console.log('Map size invalidated (first pass)');
+        }
+    }, 100);
+    
+    setTimeout(() => {
+        if (parkingMap) {
+            parkingMap.invalidateSize();
+            console.log('Map size invalidated (second pass)');
+        }
+    }, 500);
+    
+    setTimeout(() => {
+        if (parkingMap) {
+            parkingMap.invalidateSize();
+            if (group) {
+                parkingMap.fitBounds(group.getBounds().pad(0.1));
+                console.log('Map size invalidated and bounds refitted (third pass)');
+            } else {
+                console.log('Map size invalidated (third pass, no bounds to fit)');
+            }
+        }
+    }, 1000);
+    
+    console.log('Parking map initialization complete');
+    
+    // Add click handlers for legend descriptions
+    setupLegendClickHandlers();
+}
+
+// Function to set up clickable legend descriptions and items
+function setupLegendClickHandlers() {
+    // Handle legend description clicks
+    const legendDescs = document.querySelectorAll('.legend-desc.clickable');
+    legendDescs.forEach(desc => {
+        desc.addEventListener('click', function() {
+            const parkingType = this.getAttribute('data-parking-type');
+            navigateToParkingType(parkingType);
+        });
+    });
+    
+    // Handle legend item clicks (colored markers)
+    const legendItems = document.querySelectorAll('.legend-item.clickable');
+    legendItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const parkingType = this.getAttribute('data-parking-type');
+            navigateToParkingType(parkingType);
+        });
+    });
+    
+    console.log('Legend click handlers set up for', legendDescs.length, 'descriptions and', legendItems.length, 'legend items');
+}
+
+// Function to navigate to specific parking type
+function navigateToParkingType(type) {
+    if (!parkingMap) {
+        console.log('Map not initialized yet');
+        return;
+    }
+    
+    console.log('Navigating to parking type:', type);
+    
+    // Filter parking lots by type
+    const lotsOfType = parkingLots.filter(lot => lot.type === type);
+    
+    if (lotsOfType.length === 0) {
+        console.log('No parking lots found for type:', type);
+        return;
+    }
+    
+    // Create bounds for all lots of this type
+    const bounds = L.latLngBounds();
+    lotsOfType.forEach(lot => {
+        bounds.extend([lot.lat, lot.lng]);
+    });
+    
+    // Fit map to show all lots of this type
+    if (lotsOfType.length === 1) {
+        // If only one lot, center on it with appropriate zoom
+        parkingMap.setView([lotsOfType[0].lat, lotsOfType[0].lng], 17);
+        console.log('Centered on single', type, 'parking lot');
+    } else {
+        // If multiple lots, fit bounds with padding
+        parkingMap.fitBounds(bounds, { padding: [20, 20] });
+        console.log('Fitted bounds for', lotsOfType.length, type, 'parking lots');
+    }
+    
+    // Add a subtle visual feedback
+    const clickedDesc = document.querySelector(`[data-parking-type="${type}"]`);
+    if (clickedDesc) {
+        clickedDesc.style.backgroundColor = '#d4edda';
+        setTimeout(() => {
+            clickedDesc.style.backgroundColor = '';
+        }, 1000);
+    }
+}
+
+// Initialize map immediately when page loads (map is now on main page)
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Page loaded, initializing parking map...');
+    
+    // Small delay to ensure page is fully rendered
+    setTimeout(() => {
+        const mapContainer = document.getElementById('parking-map');
+        console.log('Map container found:', !!mapContainer);
+        
+        if (mapContainer) {
+            if (window.L && !parkingMapInitialized) {
+                console.log('Leaflet available, initializing map');
+                initializeParkingMap();
+            } else if (!window.L) {
+                console.log('Loading Leaflet library');
+                loadParkingMapLeaflet();
+            }
+        } else {
+            console.log('Map container not found');
+        }
+    }, 200);
+});
+
+function loadParkingMapLeaflet() {
+    console.log('loadParkingMapLeaflet called');
+    
+    // Check if Leaflet is already loaded
+    if (window.L) {
+        console.log('Leaflet already available');
+        initializeParkingMap();
+        return;
+    }
+    
+    // Check if there's a promise for leaflet loading
+    if (window.leafletLoaded && typeof window.leafletLoaded.then === 'function') {
+        console.log('Waiting for existing Leaflet promise');
+        window.leafletLoaded.then(() => {
+            initializeParkingMap();
+        });
+        return;
+    }
+    
+    // Check if Leaflet is already being loaded
+    if (document.querySelector('script[src*="leaflet"]')) {
+        console.log('Leaflet script already loading, waiting...');
+        const checkLeaflet = setInterval(() => {
+            if (window.L) {
+                clearInterval(checkLeaflet);
+                initializeParkingMap();
+            }
+        }, 100);
+        return;
+    }
+    
+    console.log('Loading Leaflet CSS and JS');
+    
+    // Load Leaflet CSS
+    const cssLink = document.createElement('link');
+    cssLink.rel = 'stylesheet';
+    cssLink.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    cssLink.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+    cssLink.crossOrigin = '';
+    document.head.appendChild(cssLink);
+    
+    // Load Leaflet JS
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+    script.crossOrigin = '';
+    script.onload = () => {
+        console.log('Leaflet loaded successfully');
+        window.leafletLoaded = Promise.resolve();
+        initializeParkingMap();
+    };
+    script.onerror = (error) => {
+        console.error('Failed to load Leaflet:', error);
+    };
+    document.body.appendChild(script);
+}
+</script>
+
 <script>
 // Optimized lazy loading with passive listeners and better performance
 let leafletLoaded = false;
