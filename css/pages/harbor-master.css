@@ -1746,3 +1746,259 @@ body.dark-mode .regulation-item p {
     font-size: 0.9rem;
   }
 }
+
+/* Booking Information Section */
+.booking-info-section {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--gray-50, #f8f9fa);
+  border-radius: var(--radius-lg, 12px);
+  border-left: 6px solid var(--accent-color, #007bff);
+}
+
+.booking-info-section h3 {
+  margin: 0 0 1.5rem 0;
+  color: var(--primary-color, #1a2b4a);
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.booking-info-section h3 i {
+  color: var(--accent-color, #007bff);
+  font-size: 1.5rem;
+}
+
+/* Rates Section */
+.rates-section {
+  margin-bottom: 2.5rem;
+}
+
+.rates-section h4 {
+  margin: 0 0 1.5rem 0;
+  color: var(--primary-color, #1a2b4a);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.rates-section h4 i {
+  color: var(--accent-color, #007bff);
+}
+
+.rates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.rate-period {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius-md, 8px);
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.05));
+  border: 1px solid var(--border-color, #e8eaed);
+}
+
+.rate-period h5 {
+  margin: 0 0 1rem 0;
+  color: var(--primary-color, #1a2b4a);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--accent-color, #007bff);
+}
+
+.rate-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rate-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--gray-50, #f8f9fa);
+  border-radius: var(--radius-sm, 4px);
+  border-left: 3px solid var(--accent-color, #007bff);
+}
+
+.rate-type {
+  font-weight: 600;
+  color: var(--gray-800, #343a40);
+}
+
+.rate-price {
+  font-weight: 700;
+  color: var(--accent-color, #007bff);
+  font-size: 1.1rem;
+}
+
+.convenience-fee-note {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: var(--radius-md, 8px);
+  border-left: 4px solid var(--accent-color, #007bff);
+  margin-top: 1rem;
+}
+
+.convenience-fee-note i {
+  color: var(--accent-color, #007bff);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.convenience-fee-note p {
+  margin: 0;
+  color: var(--gray-700, #495057);
+  font-size: 0.95rem;
+}
+
+/* Amenities Section */
+.amenities-section h4 {
+  margin: 0 0 1.5rem 0;
+  color: var(--primary-color, #1a2b4a);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.amenities-section h4 i {
+  color: var(--accent-color, #007bff);
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: white;
+  border-radius: var(--radius-md, 8px);
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.05));
+  border-left: 3px solid var(--accent-color, #007bff);
+  transition: all 0.3s ease;
+}
+
+.amenity-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.amenity-item i {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-color, #007bff), rgba(59, 130, 246, 0.8));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+.amenity-item span {
+  font-weight: 500;
+  color: var(--gray-800, #343a40);
+  font-size: 0.95rem;
+}
+
+/* Dark Mode for Booking Info */
+body.dark-mode .booking-info-section {
+  background: var(--dark-mode-card-bg, #2d2d2d);
+  border-left-color: var(--accent-color, #007bff);
+}
+
+body.dark-mode .booking-info-section h3,
+body.dark-mode .rates-section h4,
+body.dark-mode .amenities-section h4 {
+  color: var(--light-text-color, #fff);
+}
+
+body.dark-mode .rate-period {
+  background: var(--dark-mode-background, #121212);
+  border-color: var(--dark-mode-border-color, #404040);
+}
+
+body.dark-mode .rate-period h5 {
+  color: var(--light-text-color, #fff);
+  border-bottom-color: var(--accent-color, #007bff);
+}
+
+body.dark-mode .rate-item {
+  background: var(--dark-mode-card-bg, #2d2d2d);
+  border-left-color: var(--accent-color, #007bff);
+}
+
+body.dark-mode .rate-type {
+  color: var(--dark-mode-text-color, #e0e0e0);
+}
+
+body.dark-mode .convenience-fee-note {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+body.dark-mode .convenience-fee-note p {
+  color: var(--gray-400, #ced4da);
+}
+
+body.dark-mode .amenity-item {
+  background: var(--dark-mode-background, #121212);
+  border-left-color: var(--accent-color, #007bff);
+}
+
+body.dark-mode .amenity-item span {
+  color: var(--dark-mode-text-color, #e0e0e0);
+}
+
+/* Mobile responsiveness for booking info */
+@media (max-width: 768px) {
+  .booking-info-section {
+    padding: 1.5rem;
+  }
+  
+  .rates-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .rate-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .booking-info-section h3 {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
