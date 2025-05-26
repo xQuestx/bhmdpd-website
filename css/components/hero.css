@@ -6,7 +6,7 @@
 /* Modern Hero Section */
 .modern-hero {
   position: relative;
-  height: 700px;
+  height: 500px;
   overflow: hidden;
   margin-top: var(--header-height, 80px);
   box-shadow: var(--shadow-lg, 0 8px 15px rgba(0, 0, 0, 0.1));
