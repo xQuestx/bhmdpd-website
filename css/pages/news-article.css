@@ -101,20 +101,36 @@
   gap: 1.5rem;
 }
 
+/* Image Gallery (used in officer-keene article) */
+.image-gallery {
+  margin: 3rem 0;
+}
+
+.gallery-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
 .gallery-item {
   margin: 0;
 }
 
 .gallery-item img {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
-  border-radius: var(--radius-sm);
+  object-position: center top;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   transition: transform 0.3s ease;
+  transform: scale(0.9);
 }
 
 .gallery-item img:hover {
-  transform: scale(1.05);
+  transform: scale(0.95);
+  box-shadow: var(--shadow-lg);
 }
 
 .gallery-item figcaption {
@@ -218,6 +234,15 @@
   
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .gallery-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .gallery-item img {
+    height: 250px;
   }
   
   .related-articles-grid {
