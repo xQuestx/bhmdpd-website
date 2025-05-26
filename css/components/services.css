@@ -378,3 +378,41 @@ body.dark-mode .service-content p {
         max-width: 100%;
     }
 }
+
+/* Section Divider */
+.section-divider {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, 
+    var(--accent-color, #007bff) 0%, 
+    var(--primary-color, #1a2b4a) 50%, 
+    var(--accent-color, #007bff) 100%);
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Services Introduction */
+.services-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.services-intro .section-title {
+  margin-bottom: 1rem;
+  color: var(--primary-color, #1a2b4a);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--gray-600, #6c757d);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Dark mode support */
+body.dark-mode .section-subtitle {
+  color: var(--gray-400, #ced4da);
+}
+}
