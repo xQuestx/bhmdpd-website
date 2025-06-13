@@ -1348,7 +1348,13 @@ window.addEventListener('DOMContentLoaded', function() {
 </li>
 <li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
 <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
-<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+<li class="dropdown">
+<a href="#" role="button" aria-expanded="false" aria-haspopup="true" aria-label="Events menu"><i class="fas fa-calendar-alt"></i> Events <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="events.html"><i class="fas fa-calendar"></i> Community Events</a></li>
+<li><a href="july-4th.html"><i class="fas fa-flag-usa"></i> July 4th Celebration</a></li>
+</ul>
+</li>
 <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
 </ul>
 </div>
@@ -1378,6 +1384,69 @@ window.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 </section>
+
+<!-- July 4th Special Notice -->
+<section class="july-4th-notice" style="background: linear-gradient(135deg, #1a2b4a 0%, #dc3545 50%, #0056b3 100%); padding: 2rem 0; margin: 0;">
+    <div class="container" style="text-align: center;">
+        <div class="july-notice-card" style="background: var(--card-bg, rgba(255, 255, 255, 0.95)); border-radius: 12px; padding: 2rem; box-shadow: 0 8px 16px rgba(0,0,0,0.2); max-width: 800px; margin: 0 auto;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                <i class="fas fa-star" style="font-size: 2rem; color: #dc3545;"></i>
+                <h2 style="margin: 0; color: var(--text-color, #1a2b4a); font-size: 2rem; text-align: center;">July 4th Parking Information</h2>
+                <i class="fas fa-flag-usa" style="font-size: 2rem; color: #0056b3;"></i>
+            </div>
+            <p style="font-size: 1.2rem; color: var(--text-color, #333); margin: 1rem 0;">
+                <strong>FREE PARKING</strong> on July 4th! No paid parking enforcement, but standard safety regulations apply.
+            </p>
+            <p style="color: var(--text-secondary, #666); margin: 1rem 0;">
+                Celebrating Independence Day in Bar Harbor? Get parade routes, fireworks viewing spots, and important parking restrictions.
+            </p>
+            <div style="margin-top: 1.5rem;">
+                <a href="july-4th.html" class="btn btn-primary" style="background: #dc3545; color: white; padding: 0.75rem 1.5rem; border-radius: 25px; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.2s ease; white-space: nowrap;">
+                    <i class="fas fa-star"></i> 
+                    <span>View July 4th Celebration Guide</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Dark mode support for July 4th notice */
+body.dark-mode .july-notice-card {
+    --card-bg: rgba(30, 30, 30, 0.95);
+    --text-color: #e0e0e0;
+    --text-secondary: #b0b0b0;
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 768px) {
+    .july-4th-notice h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .july-4th-notice .btn {
+        font-size: 0.95rem;
+        padding: 0.65rem 1.25rem !important;
+        width: auto;
+        max-width: 100%;
+    }
+    
+    .july-notice-card {
+        padding: 1.5rem !important;
+    }
+    
+    .july-4th-notice p {
+        font-size: 1rem !important;
+    }
+}
+
+/* Hover effect */
+.july-4th-notice .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+}
+</style>
 
 <!-- Interactive Parking Map Section -->
 <section class="map-section">

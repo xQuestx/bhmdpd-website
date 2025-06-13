@@ -169,6 +169,58 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 <link href="css/main.css" rel="stylesheet"/>
 <link href="css/components/tabs.css" rel="stylesheet"/>
+<style>
+/* Harbor Master specific tab styling to ensure professional appearance */
+/* Using !important to override any conflicting styles */
+.harbor-master-page .modern-tabs {
+    gap: 0.75rem !important;
+}
+
+.harbor-master-page .tab-button {
+    background-color: #f8f9fa !important;
+    background-image: none !important;
+    color: #343a40 !important;
+    border: 1px solid #dee2e6 !important;
+}
+
+.harbor-master-page .tab-button:hover {
+    background-color: #e9ecef !important;
+    background-image: none !important;
+    border-color: #adb5bd !important;
+    color: #343a40 !important;
+}
+
+.harbor-master-page .tab-button.active {
+    background-color: #1a2b4a !important;
+    background-image: none !important;
+    color: white !important;
+    border-color: #1a2b4a !important;
+}
+
+.harbor-master-page .tab-button.active i {
+    color: white !important;
+}
+
+.harbor-master-page .tab-button i {
+    color: inherit !important;
+}
+
+.harbor-master-page .tab-hint p {
+    background-color: #17a2b8 !important;
+    background-image: none !important;
+}
+
+/* Ensure no gradient backgrounds */
+.harbor-master-page .tab-button::before,
+.harbor-master-page .tab-button::after {
+    background-image: none !important;
+}
+
+/* Override any potential July 4th styling */
+body.harbor-master-page .tab-button[style*="background"] {
+    background-image: none !important;
+}
+</style>
   <link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
   <!-- Google tag (gtag.js) -->
@@ -181,7 +233,7 @@
   gtag('config', 'G-3LBXVRZLEN');
 </script>
 </head>
-<body>
+<body class="harbor-master-page">
 <a class="skip-to-main" href="#main-content">
         Skip to main content
     </a>
@@ -966,6 +1018,61 @@
 <div class="last-updated"><i class="fas fa-clock" aria-hidden="true" style="margin-right:0.5em;"></i>Last updated: <time datetime="2024-04-16">April 16th, 2024</time></div>
 </div>
 </footer>
+<!-- Auto-open tides tab if coming from July 4th page - MUST run before script.js -->
+<script>
+// Check URL and localStorage immediately
+(function() {
+    const tabPreference = localStorage.getItem('harborTabPreference');
+    const hashTab = window.location.hash === '#tides';
+    
+    if (tabPreference === 'tides' || hashTab) {
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                activateTidesTab();
+            });
+        } else {
+            activateTidesTab();
+        }
+    }
+    
+    function activateTidesTab() {
+        // Clear the preference
+        if (tabPreference === 'tides') {
+            localStorage.removeItem('harborTabPreference');
+        }
+        
+        // Remove active class from overview
+        const overviewTab = document.querySelector('[data-tab="overview"]');
+        if (overviewTab) {
+            overviewTab.classList.remove('active');
+        }
+        const overviewContent = document.getElementById('overview');
+        if (overviewContent) {
+            overviewContent.classList.remove('active');
+        }
+        
+        // Add active class to tides
+        const tidesTab = document.querySelector('[data-tab="tides"]');
+        if (tidesTab) {
+            tidesTab.classList.add('active');
+        }
+        const tidesContent = document.getElementById('tides');
+        if (tidesContent) {
+            tidesContent.classList.add('active');
+        }
+        
+        // Scroll to tide table after content is visible
+        setTimeout(() => {
+            const tideTable = document.querySelector('.tide-table-container');
+            if (tideTable) {
+                tideTable.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 500);
+    }
+})();
+</script>
+
 <script src="script.js"></script>
 <!-- Harbor conditions API integration -->
 <script src="js/harbor-conditions.js" defer></script>
