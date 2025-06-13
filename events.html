@@ -79,7 +79,13 @@
 </li>
 <li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
 <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
-<li><a class="active" href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+<li class="dropdown">
+<a class="active" href="#" role="button" aria-expanded="false" aria-haspopup="true" aria-label="Events menu"><i class="fas fa-calendar-alt"></i> Events <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a class="active" href="events.html"><i class="fas fa-calendar"></i> Community Events</a></li>
+<li><a href="july-4th.html"><i class="fas fa-flag-usa"></i> July 4th Celebration</a></li>
+</ul>
+</li>
 <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
 </ul>
 </div>
@@ -105,7 +111,29 @@
 <section class="featured-events">
 <h2>Upcoming Featured Events</h2>
 <div class="event-cards">
-<!-- Event cards will be removed -->
+<div class="event-card featured">
+    <div class="event-badge">Featured Event</div>
+    <div class="event-icon">
+        <i class="fas fa-flag-usa"></i>
+    </div>
+    <h3>July 4th Celebration</h3>
+    <div class="event-details">
+        <div class="event-date">
+            <i class="fas fa-calendar"></i>
+            <span>July 4, 2025</span>
+        </div>
+        <div class="event-time">
+            <i class="fas fa-clock"></i>
+            <span>10:00 AM - 9:30 PM</span>
+        </div>
+        <div class="event-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Downtown Bar Harbor</span>
+        </div>
+    </div>
+    <p class="event-description">Join us for Bar Harbor's annual Independence Day celebration featuring a morning parade and evening fireworks display.</p>
+    <a href="july-4th.html" class="btn btn-primary">View Details</a>
+</div>
 </div>
 </section>
 <section>

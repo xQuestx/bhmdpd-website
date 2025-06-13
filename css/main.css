@@ -49,6 +49,7 @@
 @import 'pages/admin.css';
 @import 'pages/news-article.css';
 @import 'pages/news-archive.css';
+@import 'pages/july-4th.css';
 
 /* Theme Styles - These should come last */
 @import 'themes/light.css';
