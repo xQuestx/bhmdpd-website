@@ -476,22 +476,25 @@
   }
   
   /* Tab and content containers */
-  .tabs-section { margin: 2rem 0; position: relative; z-index: 10; background: white; }
+  .tabs-section { margin: 2rem 0; position: relative; z-index: 10; background: white; padding: 2rem 0; }
+  .tabs-wrapper { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1000px; margin: 0 auto; }
   
   /* Fix tabs to prevent layout shifts - Use display none/block instead of absolute positioning */
-  .modern-tabs { display: flex; gap: 0.75rem; margin-bottom: 2rem; min-height: 50px; flex-wrap: wrap; contain: layout; }
-  .tab-button { min-height: 44px; padding: 0.75rem 1.25rem; border: none; background: #f8f9fa; color: #333; cursor: pointer; border-radius: 5px; transition: background-color 0.2s, transform 0.2s; display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; font-size: 0.95rem; }
+  .modern-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; min-height: 50px; flex-wrap: wrap; contain: layout; justify-content: center; align-items: center; padding: 0.75rem; background: #f8f9fa; border-radius: 12px; }
+  .tab-button { min-height: 44px; padding: 0.75rem 1.5rem; border: 2px solid #dee2e6; background: white; color: #495057; cursor: pointer; border-radius: 8px; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; font-size: 0.95rem; font-weight: 500; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .tab-button:hover { background: #f8f9fa; border-color: #adb5bd; transform: translateY(-1px); box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
   .tab-button span { display: inline-block; }
-  .tab-button i { width: 1.2rem; height: 1.2rem; display: inline-flex; align-items: center; justify-content: center; }
-  .tab-button.active { background: var(--accent-color); color: white; }
-  .tab-contents { min-height: auto; contain: layout style; }
-  .tab-content { display: none; padding: 1rem 0; contain: layout style; }
+  .tab-button i { width: 1.2rem; height: 1.2rem; display: inline-flex; align-items: center; justify-content: center; color: #6c757d; }
+  .tab-button.active { background: var(--accent-color); color: white; border-color: var(--accent-color); box-shadow: 0 2px 8px rgba(13,71,161,0.25); }
+  .tab-button.active i { color: white; }
+  .tab-contents { min-height: auto; contain: layout style; max-width: 1200px; margin: 0 auto; }
+  .tab-content { display: none; padding: 2rem 0; contain: layout style; }
   .tab-content.active { display: block; }
   
   /* Ensure consistent spacing for all tab content */
   .tab-content { min-height: 300px; }
-  .tab-content .info-card { margin-bottom: 2rem; }
-  .tab-content h2 { margin: 0 0 1rem 0; }
+  .tab-content .info-card { margin: 0 auto 2rem; max-width: 1000px; }
+  .tab-content h2 { margin: 0 0 1rem 0; text-align: center; }
 
   /* Mobile Responsive Design */
   @media (max-width: 768px) {
@@ -511,8 +514,8 @@
     .dropdown-content { position: static; opacity: 1; visibility: visible; transform: none; background-color: rgba(255, 255, 255, 0.1); box-shadow: none; border-radius: 0; width: 100%; }
     .dropdown-content a { color: var(--light-text-color); padding-left: 3rem; }
     .mobile-close-btn { display: block; position: fixed; top: 1rem; left: calc(85% - 3rem); z-index: 1002; color: var(--light-text-color); }
-    .modern-tabs { gap: 0.5rem; }
-    .tab-button { padding: 0.6rem 1rem; font-size: 0.9rem; }
+    .modern-tabs { gap: 0.4rem; padding: 0.5rem; }
+    .tab-button { padding: 0.5rem 0.9rem; font-size: 0.85rem; min-height: 38px; }
   }
   
   /* Skip link */
@@ -730,6 +733,7 @@
 <section class="tabs-section">
 <div class="container">
 <!-- Tab Hint Message -->
+<div class="tabs-wrapper">
 <div class="tab-hint">
 <p><i class="fas fa-hand-pointer"></i> Click on any tab below to view detailed information</p>
 </div>
@@ -766,6 +770,7 @@
 <i class="fas fa-phone"></i>
 <span>Contact</span>
 </button>
+</div>
 </div>
 
 <div class="tab-contents">
@@ -2132,15 +2137,27 @@ document.addEventListener('DOMContentLoaded', function() {
 .card-body {
     background: #ffffff !important;
     color: #212529 !important;
+    text-align: center !important;
 }
 
 .card-header {
     background: #f8f9fa !important;
     color: #212529 !important;
+    text-align: center !important;
 }
 
 .card-header h2, .card-header h3, .card-header h4 {
     color: #212529 !important;
+}
+
+/* Ensure proper alignment for content within cards */
+.card-body h3, .card-body h4 {
+    text-align: left !important;
+}
+
+.card-body > p:first-of-type {
+    text-align: center !important;
+    margin-bottom: 2rem !important;
 }
 
 /* Ensure all text is readable */
@@ -2178,18 +2195,18 @@ h1, h2, h3, h4, h5, h6 {
 /* Tab hint */
 .tab-hint {
     text-align: center;
-    margin-bottom: 1.5rem;
-    background: #f8f9fa !important;
-    padding: 0.75rem 1.25rem !important;
-    border-radius: 8px !important;
-    border: 2px solid #dee2e6 !important;
+    margin-bottom: 1rem;
+    background: transparent !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0 !important;
+    border: none !important;
 }
 
 .tab-hint p {
     margin: 0 !important;
-    color: #495057 !important;
-    font-size: 1rem !important;
-    font-weight: 600 !important;
+    color: #6c757d !important;
+    font-size: 0.9rem !important;
+    font-weight: 400 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -3116,11 +3133,14 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    margin-top: 2rem;
+    margin: 2rem auto 0;
+    max-width: 1000px;
+    text-align: left;
 }
 
 .left-column, .right-column {
     min-height: 400px;
+    text-align: left;
 }
 
 /* Steps List */
