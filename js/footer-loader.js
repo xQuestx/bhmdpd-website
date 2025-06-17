@@ -24,8 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <section class="footer-column" aria-labelledby="footer-divisions">
                     <h3 id="footer-divisions"><i class="fas fa-building"></i> DIVISIONS</h3>
                     <ul>
+                        <li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
                         <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
-                        <li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
+                        <li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Bar Harbor Parking</a></li>
+                        <li><a href="mount-desert-parking.html"><i class="fas fa-parking"></i> Mount Desert Parking</a></li>
                         <li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
                         <li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
                     </ul>
