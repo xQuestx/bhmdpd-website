@@ -1727,7 +1727,9 @@ Bar Harbor, ME 04609<br>
 <strong>Limit:</strong> One permit per eligible resident<br>
 <strong>Valid:</strong> Only in the village where you reside<br>
 <strong>Requirements:</strong> Current proof of residency & current vehicle registration<br>
-<strong>Note:</strong> May include verification meeting at residence</p>
+<strong>Note:</strong> May include verification meeting at residence<br>
+<strong>Apply:</strong> <a href="https://thepermitportal.com" target="_blank" style="color: var(--accent-color);">Apply for permit online</a><br>
+<strong>Policy:</strong> <a href="pdf/mountdesertparkingpolicy.pdf" target="_blank" style="color: var(--accent-color);">Download parking policy (PDF)</a></p>
 </div>
 </div>
 <div class="step-item-vertical">
@@ -3331,6 +3333,35 @@ h1, h2, h3, h4, h5, h6 {
     .step-number-circle {
         margin: 0 auto;
     }
+}
+
+/* Fix tab content overflow and visibility */
+.tab-content {
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.tab-content:not(.active) {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
+.tab-contents {
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Ensure step-item-vertical elements are contained */
+.step-item-vertical {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+.step-number {
+    position: relative !important;
+    z-index: 1 !important;
 }
 </style>
 </body>
