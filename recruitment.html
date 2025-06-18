@@ -895,20 +895,90 @@
 <i class="fas fa-paper-plane"></i>
 <h2>Start Your Application</h2>
 </div>
-<p class="content-intro">Ready to begin your career in law enforcement? Contact our recruitment team to get started.</p>
+
+<!-- Application Introduction Section -->
+<div class="application-intro-section">
+<div class="welcome-message">
+<h3><i class="fas fa-handshake"></i> Welcome to Your Career Journey</h3>
+<p>Thank you for your interest in joining the Bar Harbor & Mount Desert Police Departments. This application takes just 2-3 minutes to complete and is the first step toward an exciting career in law enforcement.</p>
+</div>
+
+<!-- Process Indicator -->
+<div class="process-indicator">
+<div class="process-step active">
+<div class="step-circle">1</div>
+<div class="step-label">Initial Contact</div>
+</div>
+<div class="process-arrow"><i class="fas fa-arrow-right"></i></div>
+<div class="process-step">
+<div class="step-circle">2</div>
+<div class="step-label">Review & Testing</div>
+</div>
+<div class="process-arrow"><i class="fas fa-arrow-right"></i></div>
+<div class="process-step">
+<div class="step-circle">3</div>
+<div class="step-label">Interview & Hiring</div>
+</div>
+</div>
+
+<!-- Response Time Expectation -->
+<div class="response-time-notice">
+<i class="fas fa-clock"></i>
+<span><strong>Quick Response:</strong> We'll contact you within 48 hours of receiving your application</span>
+</div>
+</div>
+
+<!-- Pre-Application Checklist -->
+<div class="pre-application-section">
+<h3><i class="fas fa-clipboard-check"></i> Before You Apply</h3>
+<div class="confidence-builder">
+<p>Take a moment to review our requirements and benefits to ensure this opportunity is right for you:</p>
+<div class="checklist-links">
+<a href="#requirements" class="checklist-link" onclick="openTab(event, 'requirements')">
+<i class="fas fa-list-check"></i>
+<span>Review Requirements</span>
+<small>See what qualifications you need</small>
+</a>
+<a href="#benefits" class="checklist-link" onclick="openTab(event, 'benefits')">
+<i class="fas fa-star"></i>
+<span>Explore Benefits</span>
+<small>Learn about salary & benefits</small>
+</a>
+</div>
+</div>
+
+<!-- Confidence Building Elements -->
+<div class="confidence-elements">
+<div class="confidence-item">
+<i class="fas fa-graduation-cap"></i>
+<span><strong>No College Degree Required</strong> - High school diploma is sufficient</span>
+</div>
+<div class="confidence-item">
+<i class="fas fa-users-cog"></i>
+<span><strong>Full Training Provided</strong> - We'll prepare you for success</span>
+</div>
+<div class="confidence-item">
+<i class="fas fa-dollar-sign"></i>
+<span><strong>Paid During Training</strong> - Earn while you learn</span>
+</div>
+</div>
+</div>
 
 <div class="content-layout">
 <div class="main-content">
-<!-- Application Form -->
+<!-- Enhanced Application Form -->
 <div class="content-section">
-<h3><i class="fas fa-envelope"></i> Contact Recruitment</h3>
-<form action="https://formsubmit.co/pdrecruitment@barharbormaine.gov" method="POST" class="application-form">
+<h3><i class="fas fa-envelope"></i> Your Application</h3>
+<form action="https://formsubmit.co/pdrecruitment@barharbormaine.gov" method="POST" class="application-form enhanced-form">
 <input type="hidden" name="_next" value="https://www.bhmdpd.com/success.html">
-<input type="hidden" name="_subject" value="New Police Recruitment Inquiry">
+<input type="hidden" name="_subject" value="New Police Recruitment Application">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 <input type="text" name="_honey" style="display:none">
 
+<!-- Personal Information -->
+<div class="form-section">
+<h4><i class="fas fa-user"></i> Personal Information</h4>
 <div class="form-group">
 <label for="name">Full Name <span class="required">*</span></label>
 <input type="text" id="name" name="name" required placeholder="Enter your full name">
@@ -920,55 +990,170 @@
 <input type="email" id="email" name="email" required placeholder="your.email@example.com">
 </div>
 <div class="form-group">
-<label for="phone">Phone Number</label>
-<input type="tel" id="phone" name="phone" placeholder="(207) 555-0123">
+<label for="phone">Phone Number <span class="required">*</span></label>
+<input type="tel" id="phone" name="phone" required placeholder="(207) 555-0123">
+</div>
 </div>
 </div>
 
+<!-- Employment & Experience -->
+<div class="form-section">
+<h4><i class="fas fa-briefcase"></i> Employment & Experience</h4>
+<div class="form-group">
+<label for="employment-status">Current Employment Status <span class="required">*</span></label>
+<select id="employment-status" name="employment_status" required class="form-select">
+<option value="">Select your current status</option>
+<option value="Employed Full-time">Employed Full-time</option>
+<option value="Employed Part-time">Employed Part-time</option>
+<option value="Unemployed">Unemployed</option>
+<option value="Student">Student</option>
+<option value="Military Active Duty">Military Active Duty</option>
+<option value="Military Veteran">Military Veteran</option>
+<option value="Retired">Retired</option>
+<option value="Other">Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="law-enforcement-experience">Previous Law Enforcement Experience</label>
+<select id="law-enforcement-experience" name="law_enforcement_experience" class="form-select">
+<option value="">Select your experience level</option>
+<option value="No Experience">No Experience</option>
+<option value="Less than 1 year">Less than 1 year</option>
+<option value="1-3 years">1-3 years</option>
+<option value="3-5 years">3-5 years</option>
+<option value="5-10 years">5-10 years</option>
+<option value="10+ years">10+ years</option>
+<option value="Military Police">Military Police Experience</option>
+<option value="Security Experience">Security/Loss Prevention</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="start-date">Preferred Start Date</label>
+<input type="date" id="start-date" name="preferred_start_date" class="form-input">
+<small class="form-text">When would you be available to begin employment?</small>
+</div>
+</div>
+
+<!-- Certification & Training -->
+<div class="form-section">
+<h4><i class="fas fa-certificate"></i> Certification Status</h4>
 <div class="form-group">
 <label>Maine Law Enforcement Certification <span class="required">*</span></label>
 <div class="radio-group">
 <label class="radio-option">
-<input type="radio" name="certified" value="Yes" required>
-<span>Yes, I am certified</span>
+<input type="radio" name="certified" value="Yes - Currently Certified" required>
+<span>Yes, I am currently certified</span>
 </label>
 <label class="radio-option">
-<input type="radio" name="certified" value="No" required>
+<input type="radio" name="certified" value="Previously Certified" required>
+<span>Previously certified (needs renewal)</span>
+</label>
+<label class="radio-option">
+<input type="radio" name="certified" value="Planning to get certified" required>
+<span>Planning to get certified</span>
+</label>
+<label class="radio-option">
+<input type="radio" name="certified" value="No - Need Academy Training" required>
 <span>No, I need academy training</span>
 </label>
 </div>
 </div>
+</div>
+
+<!-- Additional Information -->
+<div class="form-section">
+<h4><i class="fas fa-info-circle"></i> Additional Information</h4>
+<div class="form-group">
+<label for="how-heard">How did you hear about this opportunity?</label>
+<select id="how-heard" name="how_heard_about_us" class="form-select">
+<option value="">Select an option</option>
+<option value="Department Website">Department Website</option>
+<option value="Social Media">Social Media (Facebook, etc.)</option>
+<option value="Job Board">Job Board (Indeed, etc.)</option>
+<option value="Current Employee">Current Employee Referral</option>
+<option value="Career Fair">Career Fair</option>
+<option value="Community Event">Community Event</option>
+<option value="News/Media">News or Media</option>
+<option value="Word of Mouth">Word of Mouth</option>
+<option value="Other">Other</option>
+</select>
+</div>
 
 <div class="form-group">
 <label for="message">Tell Us About Yourself</label>
-<textarea id="message" name="message" rows="5" placeholder="Share your background, experience, and why you're interested in joining our team..."></textarea>
+<textarea id="message" name="message" rows="5" placeholder="Share your background, experience, and why you're interested in joining our team. What motivates you to pursue a career in law enforcement?"></textarea>
+<small class="form-text">Optional: Help us get to know you better</small>
+</div>
 </div>
 
-<button type="submit" class="btn btn-primary btn-large">
-<i class="fas fa-paper-plane"></i> Submit Application
+<div class="form-submit-section">
+<button type="submit" class="btn btn-primary btn-large application-submit-btn">
+<i class="fas fa-paper-plane"></i> Submit My Application
 </button>
+<p class="submit-note">By submitting this application, you agree to be contacted by our recruitment team.</p>
+</div>
 </form>
 </div>
 
-<!-- Next Steps -->
-<div class="content-section">
-<h3><i class="fas fa-arrow-right"></i> What Happens Next?</h3>
-<div class="next-steps">
-<div class="step-item">
-<i class="fas fa-check-circle"></i>
-<p>We'll review your submission within 2-3 business days</p>
+<!-- Enhanced What Happens Next Section -->
+<div class="content-section what-happens-next-enhanced">
+<h3><i class="fas fa-route"></i> What Happens Next?</h3>
+<div class="next-steps-timeline">
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fas fa-paper-plane"></i>
 </div>
-<div class="step-item">
-<i class="fas fa-check-circle"></i>
-<p>Qualified candidates will be contacted to schedule testing</p>
+<div class="timeline-content">
+<h4>Application Submitted</h4>
+<p><strong>Within 48 hours:</strong> You'll receive a confirmation email and our recruitment team will review your application.</p>
+<span class="timeline-badge">Step 1</span>
 </div>
-<div class="step-item">
-<i class="fas fa-check-circle"></i>
-<p>You'll receive information about required documents</p>
 </div>
-<div class="step-item">
-<i class="fas fa-check-circle"></i>
-<p>We'll guide you through each step of the process</p>
+
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fas fa-phone"></i>
+</div>
+<div class="timeline-content">
+<h4>Initial Contact</h4>
+<p><strong>2-5 business days:</strong> If you meet our basic requirements, we'll call to discuss the position and answer your questions.</p>
+<span class="timeline-badge">Step 2</span>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fas fa-clipboard-list"></i>
+</div>
+<div class="timeline-content">
+<h4>Testing & Documentation</h4>
+<p><strong>1-2 weeks:</strong> Complete required testing and submit necessary documents. We'll guide you through each requirement.</p>
+<span class="timeline-badge">Step 3</span>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fas fa-handshake"></i>
+</div>
+<div class="timeline-content">
+<h4>Interview & Decision</h4>
+<p><strong>2-3 weeks:</strong> Final interviews with command staff and hiring decision. We'll keep you informed throughout the process.</p>
+<span class="timeline-badge">Step 4</span>
+</div>
+</div>
+</div>
+
+<!-- Department Support Promise -->
+<div class="support-promise">
+<div class="support-icon">
+<i class="fas fa-hands-helping"></i>
+</div>
+<div class="support-content">
+<h4>Our Commitment to You</h4>
+<p>We understand that starting a career in law enforcement is a big decision. Our recruitment team is here to support you every step of the way, answer your questions, and help you succeed in the application process.</p>
 </div>
 </div>
 </div>
@@ -1008,11 +1193,11 @@ Bar Harbor, ME 04609
 </div>
 </div>
 
-<!-- Quick Requirements -->
+<!-- Enhanced Requirements Panel -->
 <div class="info-panel">
 <div class="panel-header">
 <i class="fas fa-clipboard-check"></i>
-<h3>Requirements Checklist</h3>
+<h3>Quick Requirements</h3>
 </div>
 <div class="panel-content">
 <div class="checklist-item">
@@ -1033,7 +1218,37 @@ Bar Harbor, ME 04609
 </div>
 <div class="checklist-item">
 <i class="fas fa-check"></i>
-<span>MCJA fitness test passed</span>
+<span>Pass fitness requirements</span>
+</div>
+<div class="requirements-note">
+<i class="fas fa-info-circle"></i>
+<small>Don't meet all requirements yet? Apply anyway - we can help you prepare!</small>
+</div>
+</div>
+</div>
+
+<!-- Application Tips Panel -->
+<div class="info-panel">
+<div class="panel-header">
+<i class="fas fa-lightbulb"></i>
+<h3>Application Tips</h3>
+</div>
+<div class="panel-content">
+<div class="tip-item">
+<i class="fas fa-star"></i>
+<span>Be honest and thorough</span>
+</div>
+<div class="tip-item">
+<i class="fas fa-star"></i>
+<span>Highlight relevant experience</span>
+</div>
+<div class="tip-item">
+<i class="fas fa-star"></i>
+<span>Show your community commitment</span>
+</div>
+<div class="tip-item">
+<i class="fas fa-star"></i>
+<span>Ask questions during the process</span>
 </div>
 </div>
 </div>

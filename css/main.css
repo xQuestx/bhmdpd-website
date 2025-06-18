@@ -41,6 +41,7 @@
 @import 'pages/parking.css';
 @import 'pages/permit-guide.css'; /* New permit guide styles */
 @import 'pages/application-process.css';
+@import 'pages/recruitment-enhanced.css'; /* Enhanced recruitment page styles */
 @import 'pages/events.css';
 @import 'pages/harbor-master.css';
 @import 'pages/good-morning.css';
@@ -1626,7 +1627,7 @@ body.dark-mode .not-found-actions a:hover {
 }
 
 .parking-map-section .section-header {
-    // ... existing code ...
+    /* ... existing code ... */
 }
 
 /* --- Custom Parking Map Image Styles --- */
