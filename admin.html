@@ -5,35 +5,318 @@
 <meta charset="utf-8"/>
 <title>Administrative Services - Bar Harbor & Mount Desert Police</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="Learn about the Administrative Services of the Bar Harbor and Mount Desert Police Departments, including records management, office support, training, and fiscal management.">
+<meta name="description" content="Administrative Services Division: Supporting Bar Harbor & Mount Desert Police operations with records management, training coordination, fiscal oversight, and office support. Open Mon-Fri 8:00 AM - 4:00 PM.">
 <link rel="canonical" href="https://www.bhmdpd.com/admin.html" />
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="Administrative Services - Bar Harbor & Mount Desert Police">
+<meta name="keywords" content="Bar Harbor Police administrative services, Mount Desert Police administration, police records management, training coordination, fiscal management, office support, license applications, POST certification, department purchasing">
+<meta name="author" content="Bar Harbor Mount Desert Police Department">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+<meta name="revisit-after" content="7 days">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="government">
+<meta property="og:url" content="https://www.bhmdpd.com/admin.html">
+<meta property="og:title" content="Administrative Services - Bar Harbor & Mount Desert Police">
+<meta property="og:description" content="Supporting police operations with professional administrative services including records management, training coordination, and fiscal oversight.">
+<meta property="og:image" content="https://www.bhmdpd.com/images/branding/logo.png">
+<meta property="og:site_name" content="Bar Harbor Mount Desert Police Department">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.bhmdpd.com/admin.html">
+<meta property="twitter:title" content="Administrative Services - BHMDPD">
+<meta property="twitter:description" content="Professional administrative support for Bar Harbor & Mount Desert Police operations.">
+<meta property="twitter:image" content="https://www.bhmdpd.com/images/branding/logo.png">
+
 <!-- Dark mode initialization -->
 <meta content="#ffffff" id="theme-color" name="theme-color"/>
-<script src="darkmode.js"></script>
-<script>
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            document.getElementById('theme-color').setAttribute('content', '#121212');
-        }
-    </script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<script src="js/theme-init.js"></script>
+
+<!-- Preload Critical Resources -->
+<link rel="preload" href="images/branding/logo.png" as="image">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.setAttribute('data-font-display','swap')">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+
+<!-- Critical CSS for Above-the-Fold Content -->
+<style>
+  /* Critical Styles for Admin Page */
+  :root {
+    --header-height: 80px;
+    --primary-color: #1a2b4a;
+    --primary-color-light: #2a4a7a;
+    --primary-color-dark: #1a2b4a;
+    --light-text-color: #fff;
+    --text-color: #333;
+    --gray-50: #f8f9fa;
+    --gray-100: #f1f3f4;
+    --gray-200: #e8eaed;
+    --gray-600: #6c757d;
+    --gray-800: #343a40;
+    --accent-color: #0d47a1;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --spacing-md: 1.5rem;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  body { 
+    margin: 0; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; 
+    line-height: 1.6; 
+    background-color: #f8f9fa; 
+    color: var(--text-color); 
+  }
+  
+  *, *::before, *::after { box-sizing: border-box; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; height: auto; display: block; }
+  h1, h2, h3, h4 { 
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif; 
+    line-height: 1.2;
+    margin: 0;
+  }
+  button { border: none; background: none; padding: 0; cursor: pointer; }
+  ul { list-style: none; padding: 0; margin: 0; }
+
+  /* Header Base */
+  .header { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+    height: var(--header-height); 
+    background: var(--light-text-color); 
+    box-shadow: var(--shadow-sm); 
+  }
+  
+  .main-nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 0 var(--spacing-md); 
+    height: 100%; 
+  }
+  
+  .logo-link { display: flex; align-items: center; }
+  .logo { height: 60px; width: auto; }
+
+  /* Hero Section */
+  .admin-hero {
+    margin-top: var(--header-height);
+    padding: 3rem 0 2.5rem;
+    background: radial-gradient(ellipse at center, var(--primary-color-light) 0%, var(--primary-color-dark) 100%);
+    color: white;
+    text-align: center;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+  }
+  
+  .hero-icon {
+    font-size: 5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    display: block;
+    text-align: center;
+  }
+  
+  .admin-hero h1 {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0 0 1.5rem 0;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  
+  .admin-hero p {
+    font-size: 1.4rem;
+    margin: 0 auto 2rem;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .highlight-badges {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  
+  .badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.65rem 1rem;
+    border-radius: 25px;
+    color: white;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .badge i {
+    color: white !important;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+  }
+
+  /* Content wrapper */
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem 3rem;
+  }
+
+  /* Info Card Styles */
+  .info-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 2rem;
+  }
+  
+  .card-header {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+  }
+  
+  .card-header i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .card-header h2 {
+    color: #212529;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .card-body {
+    padding: 2rem;
+    background: #ffffff;
+  }
+
+  /* Mobile Menu */
+  .mobile-menu-btn { 
+    display: none; 
+    font-size: 1.5rem; 
+    color: var(--gray-800); 
+  }
+  
+  .mobile-close-btn { 
+    display: none; 
+  }
+
+  /* Dark Mode Toggle */
+  .dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: var(--spacing-md);
+    width: 45px;
+    height: 45px;
+    border-radius: var(--radius-md);
+    background: var(--gray-100);
+    border: 2px solid var(--gray-200);
+    color: var(--gray-800);
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .dark-mode-toggle:hover {
+    background: var(--gray-200);
+    transform: scale(1.05);
+  }
+  
+  .dark-mode-toggle .fas {
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .dark-mode-toggle .fa-moon {
+    opacity: 1;
+  }
+  
+  .dark-mode-toggle .fa-sun {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+  
+  .dark-mode .dark-mode-toggle .fa-moon {
+    opacity: 0;
+    transform: rotate(-180deg);
+  }
+  
+  .dark-mode .dark-mode-toggle .fa-sun {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .admin-hero h1 { font-size: 2rem; }
+    .admin-hero p { font-size: 1.1rem; }
+    .hero-icon { font-size: 3rem; }
+    .badge { font-size: 0.75rem; padding: 0.4rem 0.6rem; }
+    .mobile-menu-btn { display: block; }
+    .nav-wrapper { display: none; }
+    .content-wrapper { padding: 0.5rem 1rem 2rem; }
+    .tabs-section { padding: 0.5rem 0 1.5rem; }
+  }
+</style>
+
+<!-- Load CSS -->
 <link href="css/main.css" rel="stylesheet"/>
-  <link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
-  <!-- Google tag (gtag.js) -->
+<link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LBXVRZLEN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-3LBXVRZLEN');
 </script>
 </head>
 <body>
-<a class="skip-to-main" href="#main-content">
-        Skip to main content
-    </a>
+<a class="skip-to-main" href="#main-content">Skip to main content</a>
 <div class="scroll-progress"></div>
+
+<!-- Header and Navigation -->
 <header class="header">
 <nav class="main-nav">
 <a class="logo-link" href="index.html">
@@ -48,24 +331,11 @@
 <li class="dropdown">
 <a class="active" href="#"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
 <ul class="dropdown-content">
-<li>
-<a href="patrol-division.html">
-<i class="fas fa-shield-alt"></i> Patrol Division
-                                </a>
-</li>
+<li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
 <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
-<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
-</li>
+<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Bar Harbor Parking</a></li>
+<li><a href="mount-desert-parking.html"><i class="fas fa-parking"></i> Mount Desert Parking</a></li>
 <li><a class="active" href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
-</li>
 <li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
 <li><a href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Unit</a></li>
 </ul>
@@ -80,9 +350,7 @@
 <li class="dropdown">
 <a href="#"><i class="fas fa-user-tie"></i> Recruitment <i class="fas fa-caret-down"></i></a>
 <ul class="dropdown-content">
-<li><a href="bhmdrec.html"><i class="fas fa-briefcase"></i> Career Opportunities</a></li>
-<li><a href="application-process.html"><i class="fas fa-file-alt"></i> Application Process</a></li>
-<li><a href="benefits.html"><i class="fas fa-medal"></i> Benefits & Salary</a></li>
+<li><a href="recruitment.html"><i class="fas fa-user-tie"></i> Join Our Team</a></li>
 <li><a href="academy-training.html"><i class="fas fa-chalkboard-teacher"></i> Academy Training</a></li>
 </ul>
 </li>
@@ -107,196 +375,1202 @@
 </button>
 </nav>
 </header>
-<main class="admin-page" id="main-content">
-<div class="hero-section admin-hero">
+
+<!-- Main Content -->
+<main id="main-content">
+<!-- Hero Section -->
+<div class="admin-hero">
 <div class="hero-content">
 <i class="fas fa-users-cog hero-icon"></i>
-<h1>Bar Harbor & Mount Desert Police Administrative Services</h1>
-<p>Supporting the operations of the Bar Harbor Police Department</p>
+<h1>Administrative Services Division</h1>
+<p>Supporting the operations of Bar Harbor & Mount Desert Police Departments</p>
 <div class="highlight-badges">
 <span class="badge"><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 4:00 PM</span>
 <span class="badge"><i class="fas fa-phone"></i> (207) 288-3391</span>
+<span class="badge"><i class="fas fa-map-marker-alt"></i> 37 Firefly Lane</span>
 </div>
 </div>
 </div>
+
+<!-- Content Section -->
 <div class="content-wrapper">
-<section class="info-grid">
-<!-- Office Support Card -->
+<!-- Tab Navigation -->
+<div class="tabs-section">
+<div class="tabs-wrapper">
+<div class="tab-hint">
+<p><i class="fas fa-hand-point-down"></i> Click tabs below to explore different sections</p>
+</div>
+<div class="modern-tabs">
+<button class="tab-button active" data-tab="overview">
+<i class="fas fa-info-circle"></i>
+<span>Overview</span>
+</button>
+<button class="tab-button" data-tab="services">
+<i class="fas fa-concierge-bell"></i>
+<span>Our Services</span>
+</button>
+<button class="tab-button" data-tab="contact">
+<i class="fas fa-headset"></i>
+<span>Contact Us</span>
+</button>
+</div>
+</div>
+
+<div class="tab-contents">
+<!-- Overview Tab -->
+<div class="tab-content active" id="overview">
 <div class="info-card">
 <div class="card-header">
-<i class="fas fa-desktop"></i>
-<h2>Office Support</h2>
+<i class="fas fa-info-circle"></i>
+<h2 style="color: #ffffff !important;">Administrative Services Overview</h2>
 </div>
 <div class="card-body">
-<ul>
-<li>Document processing and management</li>
-<li>Administrative correspondence</li>
-<li>Filing system maintenance</li>
-<li>Department communications support</li>
+<p style="text-align: center; margin-bottom: 2rem; color: #444; font-size: 1.1rem;">
+The Administrative Services Division is the backbone of the Bar Harbor and Mount Desert Police Departments, providing essential support services that enable our officers to serve the community effectively and efficiently.
+</p>
+
+<div class="two-column-layout">
+<div class="left-column">
+<h3><i class="fas fa-list-ol"></i> Our Core Functions</h3>
+<div class="steps-list">
+<div class="step-item-vertical">
+<div class="step-number-circle">1</div>
+<div class="step-details">
+<h4>Office Support & Communications</h4>
+<p>Managing daily administrative operations, handling correspondence, maintaining filing systems, and supporting department communications.</p>
+</div>
+</div>
+<div class="step-item-vertical">
+<div class="step-number-circle">2</div>
+<div class="step-details">
+<h4>Records & Information Management</h4>
+<p>Maintaining comprehensive department records, processing documentation for new hires, handling license applications, and managing public records requests.</p>
+</div>
+</div>
+<div class="step-item-vertical">
+<div class="step-number-circle">3</div>
+<div class="step-details">
+<h4>Training & Certification Coordination</h4>
+<p>Enforcing POST rules and regulations, maintaining training certification records, scheduling department training, and tracking continuing education requirements.</p>
+</div>
+</div>
+<div class="step-item-vertical">
+<div class="step-number-circle">4</div>
+<div class="step-details">
+<h4>Fiscal Management & Procurement</h4>
+<p>Handling department purchasing, managing contracts and agreements, monitoring budget expenditures, and processing financial documentation.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="right-column">
+<h3><i class="fas fa-clock"></i> Service Information</h3>
+<div class="payment-info-box">
+<div class="season-info">
+<div class="season-badge-large">
+<i class="fas fa-building"></i>
+<span>Office Hours</span>
+</div>
+<ul class="payment-list">
+<li><i class="fas fa-calendar-day"></i> <strong>Monday - Friday:</strong> 8:00 AM - 4:00 PM</li>
+<li><i class="fas fa-calendar-times"></i> <strong>Weekends:</strong> Closed</li>
+<li><i class="fas fa-calendar-check"></i> <strong>Holidays:</strong> Closed (Federal & State)</li>
+<li><i class="fas fa-phone"></i> <strong>Main Office:</strong> (207) 288-3391</li>
+<li><i class="fas fa-envelope"></i> <strong>Email:</strong> Contact through main office</li>
 </ul>
 </div>
 </div>
-<!-- Records Management Card -->
-<div class="info-card">
-<div class="card-header">
-<i class="fas fa-folder-open"></i>
-<h2><a href="forms.html">Records & Information</a></h2>
+
+<div class="quick-facts-box">
+<h3><i class="fas fa-info-circle"></i> Quick Facts</h3>
+<div class="fact-item">
+<i class="fas fa-users"></i>
+<strong>Department Size:</strong> Supporting 30+ officers
 </div>
-<div class="card-body">
-<ul>
-<li>Maintain department files and records</li>
-<li>Process documentation for <a href="application-process.html">new hires</a></li>
-<li>Handle <a href="forms.html">license applications</a></li>
-<li>Process Injured on Duty payments</li>
-</ul>
+<div class="fact-item">
+<i class="fas fa-map"></i>
+<strong>Service Area:</strong> Bar Harbor & Mount Desert
 </div>
+<div class="fact-item">
+<i class="fas fa-file-alt"></i>
+<strong>Records Processed:</strong> 1000s annually
 </div>
-<!-- Training & Development Card -->
-<div class="info-card">
-<div class="card-header">
+<div class="fact-item">
 <i class="fas fa-graduation-cap"></i>
-<h2><a href="academy-training.html">Training & Development</a></h2>
-</div>
-<div class="card-body">
-<ul>
-<li>Enforce POST rules and regulations</li>
-<li>Maintain training certification records</li>
-<li>Schedule <a href="academy-training.html">department training</a></li>
-<li>Track continuing education requirements</li>
-</ul>
+<strong>Training Hours:</strong> 40+ per officer/year
 </div>
 </div>
-<!-- Fiscal Management Card -->
+
+<div class="alert-box info" style="margin-top: 1.5rem;">
+<i class="fas fa-info-circle"></i>
+<strong>Public Records Requests:</strong> Please allow 5-7 business days for processing. Complex requests may require additional time.
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Services Tab -->
+<div class="tab-content" id="services">
 <div class="info-card">
 <div class="card-header">
-<i class="fas fa-calculator"></i>
-<h2>Fiscal Management</h2>
+<i class="fas fa-concierge-bell"></i>
+<h2 style="color: #ffffff !important;">Our Services</h2>
 </div>
 <div class="card-body">
-<ul>
-<li>Handle department purchasing</li>
-<li>Manage contracts and agreements</li>
-<li>Monitor budget expenditures</li>
-<li>Process financial documentation</li>
+
+<div class="services-grid">
+<!-- Records Management -->
+<div class="service-card">
+<div class="service-icon" style="background: linear-gradient(135deg, #4CAF50, #45a049);">
+<i class="fas fa-folder-open"></i>
+</div>
+<h3>Records Management</h3>
+<ul class="service-list">
+<li><i class="fas fa-check"></i> Public records requests</li>
+<li><i class="fas fa-check"></i> Accident report copies</li>
+<li><i class="fas fa-check"></i> Background check letters</li>
+<li><i class="fas fa-check"></i> Department statistics</li>
 </ul>
+<a href="forms.html" class="service-link">Request Records <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<!-- Training Coordination -->
+<div class="service-card">
+<div class="service-icon" style="background: linear-gradient(135deg, #2196F3, #1976D2);">
+<i class="fas fa-graduation-cap"></i>
+</div>
+<h3>Training Coordination</h3>
+<ul class="service-list">
+<li><i class="fas fa-check"></i> POST certification tracking</li>
+<li><i class="fas fa-check"></i> Training schedule management</li>
+<li><i class="fas fa-check"></i> Continuing education records</li>
+<li><i class="fas fa-check"></i> Academy coordination</li>
+</ul>
+<a href="academy-training.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<!-- Fiscal Services -->
+<div class="service-card">
+<div class="service-icon" style="background: linear-gradient(135deg, #FF9800, #F57C00);">
+<i class="fas fa-calculator"></i>
+</div>
+<h3>Fiscal Management</h3>
+<ul class="service-list">
+<li><i class="fas fa-check"></i> Budget monitoring</li>
+<li><i class="fas fa-check"></i> Purchase processing</li>
+<li><i class="fas fa-check"></i> Contract management</li>
+<li><i class="fas fa-check"></i> Grant administration</li>
+</ul>
+<a href="contact.html" class="service-link">Contact Us <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<!-- Human Resources -->
+<div class="service-card">
+<div class="service-icon" style="background: linear-gradient(135deg, #9C27B0, #7B1FA2);">
+<i class="fas fa-user-tie"></i>
+</div>
+<h3>Human Resources Support</h3>
+<ul class="service-list">
+<li><i class="fas fa-check"></i> New hire processing</li>
+<li><i class="fas fa-check"></i> Benefits administration</li>
+<li><i class="fas fa-check"></i> Personnel records</li>
+<li><i class="fas fa-check"></i> Recruitment support</li>
+</ul>
+<a href="recruitment.html" class="service-link">Join Our Team <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<!-- Licensing Services -->
+<div class="service-card">
+<div class="service-icon" style="background: linear-gradient(135deg, #E91E63, #C2185B);">
+<i class="fas fa-id-card"></i>
+</div>
+<h3>Licensing & Permits</h3>
+<ul class="service-list">
+<li><i class="fas fa-check"></i> Concealed carry permits</li>
+<li><i class="fas fa-check"></i> Special event permits</li>
+<li><i class="fas fa-check"></i> Vendor licenses</li>
+<li><i class="fas fa-check"></i> Application processing</li>
+</ul>
+<a href="forms.html" class="service-link">Apply Online <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<!-- Community Support -->
+<div class="service-card">
+<div class="service-icon" style="background: linear-gradient(135deg, #00BCD4, #0097A7);">
+<i class="fas fa-hands-helping"></i>
+</div>
+<h3>Community Support</h3>
+<ul class="service-list">
+<li><i class="fas fa-check"></i> Program coordination</li>
+<li><i class="fas fa-check"></i> Event planning support</li>
+<li><i class="fas fa-check"></i> Volunteer management</li>
+<li><i class="fas fa-check"></i> Public information</li>
+</ul>
+<a href="community-outreach.html" class="service-link">Get Involved <i class="fas fa-arrow-right"></i></a>
 </div>
 </div>
-<!-- Contact Information Card -->
-<div class="info-card contact">
+</div>
+</div>
+</div>
+
+<!-- Contact Tab -->
+<div class="tab-content" id="contact">
+<div class="info-card">
 <div class="card-header">
-<i class="fas fa-phone"></i>
-<h2>Contact Administrative Services</h2>
+<i class="fas fa-headset"></i>
+<h2 style="color: #ffffff !important;">Contact Administrative Services</h2>
 </div>
 <div class="card-body">
-<div class="contact-details">
-<div class="contact-item">
-<i class="fas fa-clock"></i>
-<div>
-<h3>Office Hours</h3>
-<p>Monday - Friday: 8:00 AM - 4:00 PM</p>
-</div>
-</div>
-<div class="contact-item">
-<i class="fas fa-phone"></i>
-<div>
-<h3>Phone</h3>
-<p>(207) 288-3391</p>
-</div>
-</div>
+<div class="two-column-layout">
+<div class="left-column">
+<h3><i class="fas fa-building"></i> Visit Our Office</h3>
+<div class="contact-info-box">
 <div class="contact-item">
 <i class="fas fa-map-marker-alt"></i>
 <div>
-<h3>Location</h3>
-<p>37 Firefly Lane<br/>Bar Harbor, ME 04609</p>
+<h4>Location</h4>
+<p>37 Firefly Lane<br>Bar Harbor, ME 04609</p>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-car"></i>
+<div>
+<h4>Parking</h4>
+<p>Free visitor parking available<br>Handicap accessible entrance</p>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-clock"></i>
+<div>
+<h4>Office Hours</h4>
+<p>Monday - Friday: 8:00 AM - 4:00 PM<br>Closed weekends and holidays</p>
 </div>
 </div>
 </div>
-<a class="btn btn-primary" href="contact.html">
+</div>
+
+<div class="right-column">
+<h3><i class="fas fa-phone-alt"></i> Get in Touch</h3>
+<div class="contact-info-box" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border: 2px solid #2196f3;">
+<div class="contact-methods">
+<div class="contact-method">
+<i class="fas fa-phone"></i>
+<div>
+<h4>Phone</h4>
+<p style="font-size: 1.2rem; font-weight: 600; color: #1976d2;">(207) 288-3391</p>
+<p style="font-size: 0.9rem; color: #666;">Main office line</p>
+</div>
+</div>
+<div class="contact-method">
+<i class="fas fa-fax"></i>
+<div>
+<h4>Fax</h4>
+<p>(207) 288-2884</p>
+</div>
+</div>
+<div class="contact-method">
 <i class="fas fa-envelope"></i>
-                            Contact Us
-                        </a>
+<div>
+<h4>Email</h4>
+<p>Contact through main office<br>Response within 1-2 business days</p>
 </div>
 </div>
-</section>
+</div>
+</div>
+
+<!-- Administrative Assistant Contact -->
+<div class="contact-info-box" style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border: 2px solid #9c27b0; margin-top: 1.5rem;">
+<h4 style="text-align: center; margin-bottom: 1rem; color: #7b1fa2;"><i class="fas fa-user-tie"></i> Administrative Assistant</h4>
+<div class="contact-methods">
+<div class="contact-method">
+<i class="fas fa-user"></i>
+<div>
+<h4>Karen Richter</h4>
+<p style="font-size: 1rem; color: #666;">Administrative Assistant<br>Bar Harbor and Mount Desert</p>
+</div>
+</div>
+<div class="contact-method">
+<i class="fas fa-envelope"></i>
+<div>
+<h4>Direct Email</h4>
+<p style="font-size: 1.1rem; font-weight: 600; color: #7b1fa2;">krichter@barharbormaine.gov</p>
+<p style="font-size: 0.9rem; color: #666;">For administrative inquiries</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="alert-box warning" style="margin-top: 1rem;">
+<i class="fas fa-exclamation-triangle"></i>
+<strong>For Emergencies:</strong> Call 911 immediately. Administrative Services cannot respond to emergency situations.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Important Information -->
+<div class="info-section" style="margin-top: 2rem;">
+<div class="info-grid">
+<div class="info-card-small">
+<div class="info-icon" style="background: #e3f2fd;">
+<i class="fas fa-clock" style="color: #1976d2;"></i>
+</div>
+<h4>Response Times</h4>
+<p>Most requests processed within 5-7 business days</p>
+</div>
+<div class="info-card-small">
+<div class="info-icon" style="background: #fff3cd;">
+<i class="fas fa-dollar-sign" style="color: #f57c00;"></i>
+</div>
+<h4>Fees May Apply</h4>
+<p>Some services require payment. Contact us for details</p>
+</div>
+<div class="info-card-small">
+<div class="info-icon" style="background: #d4edda;">
+<i class="fas fa-id-card" style="color: #28a745;"></i>
+</div>
+<h4>ID Required</h4>
+<p>Valid photo ID needed for most in-person services</p>
+</div>
+<div class="info-card-small">
+<div class="info-icon" style="background: #f8d7da;">
+<i class="fas fa-file-alt" style="color: #dc3545;"></i>
+</div>
+<h4>Forms Available</h4>
+<p>Download forms online or pick up at our office</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </main>
-<footer class="footer" role="contentinfo" aria-label="Site Footer">
-<div class="footer-content">
-<div class="footer-logo-container">
-<img alt="Bar Harbor Police Department Logo" class="footer-logo" src="images/branding/logo.png" width="192" height="262"/>
-<p><strong>Bar Harbor Police Department</strong></p>
-<p>37 Firefly Lane, Bar Harbor, ME 04609</p>
-<p>General Information: (207) 288-3391</p>
-<div class="social-icons">
-<a aria-label="Visit our Facebook page" class="facebook" href="https://www.facebook.com/profile.php?id=61555282019664" target="_blank" rel="noopener" tabindex="0"><i class="fab fa-facebook-f"></i></a>
-<a aria-label="Visit our YouTube channel" class="youtube" href="https://youtube.com" target="_blank" tabindex="0"><i class="fab fa-youtube"></i></a>
-</div>
-</div>
-<nav class="footer-links" aria-label="Footer Navigation">
-<section class="footer-column" aria-labelledby="footer-divisions">
-<h3 id="footer-divisions"><i class="fas fa-building"></i> DIVISIONS</h3>
-<ul><li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
 
-<li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
-<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
-</li>
-<li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
-</li>
-<li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
-</ul>
-</section>
-<section class="footer-column" aria-labelledby="footer-services">
-<h3 id="footer-services"><i class="fas fa-concierge-bell"></i> SERVICES</h3>
-<ul>
-<li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" rel="noopener" target="_blank"><i class="fas fa-bullhorn"></i> AMBER Alert</a></li>
-<li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" rel="noopener" target="_blank"><i class="fas fa-user-slash"></i> Missing Persons</a></li>
-<li><a href="community-outreach.html"><i class="fas fa-hands-helping"></i> Community Programs</a></li>
-<li><a href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Resources</a></li>
-</ul>
-</section>
-<section class="footer-column" aria-labelledby="footer-careers">
-<h3 id="footer-careers"><i class="fas fa-user-tie"></i> CAREERS</h3>
-<ul>
-<li><a href="application-process.html"><i class="fas fa-file-alt"></i> Application Process</a></li>
-<li><a href="opportunities.html"><i class="fas fa-briefcase"></i> Career Opportunities</a></li>
-<li><a href="benefits.html"><i class="fas fa-medal"></i> Benefits</a></li>
-<li><a href="application-process.html"><i class="fas fa-file-signature"></i> Apply Now</a></li>
-</ul>
-</section>
-<section class="footer-column" aria-labelledby="footer-about">
-<h3 id="footer-about"><i class="fas fa-info-circle"></i> ABOUT</h3>
-<ul>
-<li><a href="administration.html"><i class="fas fa-user-shield"></i> Administration</a></li>
-<li><a href="contact.html#administration"><i class="fas fa-users-cog"></i> Command Staff</a></li>
-<li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
-<li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
-</ul>
-</section>
-</nav>
-<div class="footer-map" aria-label="Map showing Bar Harbor Police Department location">
-<h3><i class="fas fa-map-marker-alt"></i> Our Locations</h3>
-<div class="map-container" style="position:relative;">
-<div id="map" style="height: 250px; width: 100%; border:1px solid black;"></div>
+<!-- Footer -->
+<footer id="dynamic-footer"></footer>
 
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2025 Bar Harbor Police Department. All Rights Reserved.</p>
-<div class="last-updated"><i class="fas fa-clock" aria-hidden="true" style="margin-right:0.5em;"></i>Last updated: <time datetime="2025-04-16">April 16th, 2025</time></div>
-</div>
-</footer>
-<script src="script.js"></script>
-<!-- Footer loader script to dynamically load the footer with both addresses -->
+<!-- Scripts -->
+<script src="js/darkmode.js" defer></script>
+<script src="script.js" defer></script>
 <script src="js/footer-loader.js" defer></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Dark Mode Toggle Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', function() {
+            // Toggle dark mode class
+            document.documentElement.classList.toggle('dark-mode');
+            document.body.classList.toggle('dark-mode');
+            
+            // Save preference
+            const isDarkMode = document.documentElement.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            
+            // Update theme color meta tag
+            const themeColorMeta = document.getElementById('theme-color');
+            if (themeColorMeta) {
+                themeColorMeta.setAttribute('content', isDarkMode ? '#121212' : '#ffffff');
+            }
+        });
+    }
+    
+    // Apply saved dark mode preference
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode === 'enabled') {
+        document.documentElement.classList.add('dark-mode');
+        document.body.classList.add('dark-mode');
+        const themeColorMeta = document.getElementById('theme-color');
+        if (themeColorMeta) {
+            themeColorMeta.setAttribute('content', '#121212');
+        }
+    }
+});
+</script>
+
+
+<!-- Additional Styles -->
+<style>
+/* Two Column Layout */
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+/* Steps List */
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.step-item-vertical {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.step-number-circle {
+    width: 48px;
+    height: 48px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.step-details h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.step-details p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Payment Info Box */
+.payment-info-box {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.season-badge-large {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.payment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.payment-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.payment-list li:last-child {
+    border-bottom: none;
+}
+
+.payment-list i {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Quick Facts Box */
+.quick-facts-box {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid var(--accent-color);
+    margin-top: 1.5rem;
+}
+
+.quick-facts-box h3 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+}
+
+.fact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+}
+
+.fact-item i {
+    color: var(--accent-color);
+    width: 20px;
+    text-align: center;
+}
+
+/* Alert Boxes */
+.alert-box {
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.alert-box.info {
+    background: #e3f2fd;
+    border: 1px solid #90caf9;
+    color: #1565c0;
+}
+
+.alert-box.warning {
+    background: #fff3cd;
+    border: 1px solid #ffecb3;
+    color: #856404;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.service-card h3 {
+    text-align: center;
+    margin: 0 0 1.5rem 0;
+    color: var(--primary-color);
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.service-list li {
+    padding: 0.5rem 0;
+    color: #666;
+}
+
+.service-list i {
+    color: var(--success-color);
+    margin-right: 0.5rem;
+}
+
+.service-link {
+    display: inline-block;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.service-link:hover {
+    color: var(--primary-color);
+}
+
+/* Contact Section */
+.contact-info-box {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-item i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    width: 30px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.contact-item h4 {
+    margin: 0 0 0.25rem 0;
+    color: var(--primary-color);
+}
+
+.contact-item p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-method i {
+    font-size: 2rem;
+    color: #1976d2;
+    width: 40px;
+    text-align: center;
+}
+
+/* Info Cards Small */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card-small {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.info-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+}
+
+.info-card-small h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.info-card-small p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .two-column-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-methods {
+        gap: 1rem;
+    }
+    
+    .contact-method i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Ensure proper text contrast */
+body {
+    color: #212529;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #212529;
+}
+
+p, li, span {
+    color: #212529;
+}
+
+.card-header h2 {
+    color: #212529 !important;
+}
+
+.card-body {
+    color: #212529 !important;
+}
+
+/* Tab Styles */
+.tabs-section {
+    margin: 0;
+    background: white;
+    padding: 1rem 0 2rem;
+}
+
+.tabs-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.modern-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.tab-button {
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #dee2e6;
+    background: white;
+    color: #212529;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.tab-button:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.tab-button.active {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    box-shadow: 0 2px 8px rgba(13,71,161,0.25);
+}
+
+.tab-button i {
+    color: #495057;
+}
+
+.tab-button.active i {
+    color: white;
+}
+
+.tab-contents {
+    min-height: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tab-content {
+    display: none;
+    padding: 2rem 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Tab hint */
+.tab-hint {
+    text-align: center;
+    margin-bottom: 1rem;
+    background: transparent !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.tab-hint p {
+    margin: 0 !important;
+    color: #212529 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+}
+
+.tab-hint i {
+    color: #0d47a1 !important;
+    font-size: 1.2rem !important;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Dark Mode Fixes - Higher Specificity */
+body.dark-mode main .info-card,
+html.dark-mode main .info-card {
+    background: #1e1e1e !important;
+    border-color: #333 !important;
+}
+
+body.dark-mode main .card-header,
+html.dark-mode main .card-header {
+    background: #2a2a2a !important;
+    border-color: #333 !important;
+}
+
+body.dark-mode main .card-header h2,
+html.dark-mode main .card-header h2,
+body.dark-mode .card-header h2,
+html.dark-mode .card-header h2,
+.dark-mode .card-header h2 {
+    color: #ffffff !important;
+}
+
+body.dark-mode main .card-body,
+html.dark-mode main .card-body {
+    background: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode main .card-body p,
+body.dark-mode main .card-body h3,
+body.dark-mode main .card-body h4,
+body.dark-mode main .step-details p,
+body.dark-mode main .step-details h4,
+html.dark-mode main .card-body p,
+html.dark-mode main .card-body h3,
+html.dark-mode main .card-body h4,
+html.dark-mode main .step-details p,
+html.dark-mode main .step-details h4 {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode main .payment-info-box,
+html.dark-mode main .payment-info-box {
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode main .quick-facts-box,
+html.dark-mode main .quick-facts-box {
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode main .service-card,
+html.dark-mode main .service-card {
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode main .service-card h3,
+html.dark-mode main .service-card h3 {
+    color: #ffffff !important;
+}
+
+body.dark-mode main .service-list li,
+html.dark-mode main .service-list li {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode main .contact-info-box,
+html.dark-mode main .contact-info-box {
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode main .contact-item h4,
+body.dark-mode main .contact-method h4,
+html.dark-mode main .contact-item h4,
+html.dark-mode main .contact-method h4 {
+    color: #ffffff !important;
+}
+
+body.dark-mode main .contact-item p,
+body.dark-mode main .contact-method p,
+html.dark-mode main .contact-item p,
+html.dark-mode main .contact-method p {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode main .info-card-small,
+html.dark-mode main .info-card-small {
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode main .info-card-small h4,
+html.dark-mode main .info-card-small h4 {
+    color: #ffffff !important;
+}
+
+body.dark-mode main .info-card-small p,
+html.dark-mode main .info-card-small p {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode main .alert-box.info,
+html.dark-mode main .alert-box.info {
+    background: #1a237e !important;
+    border-color: #3949ab !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode main .alert-box.warning,
+html.dark-mode main .alert-box.warning {
+    background: #5d4037 !important;
+    border-color: #6d4c41 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode main .fact-item,
+html.dark-mode main .fact-item {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode main .payment-list li,
+html.dark-mode main .payment-list li {
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode .tabs-section,
+html.dark-mode .tabs-section {
+    background: #121212 !important;
+}
+
+body.dark-mode .modern-tabs,
+html.dark-mode .modern-tabs {
+    background: #1e1e1e !important;
+}
+
+body.dark-mode .tab-button,
+html.dark-mode .tab-button {
+    background: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode .tab-button:hover,
+html.dark-mode .tab-button:hover {
+    background: #333 !important;
+    border-color: #555 !important;
+}
+
+/* Override tab styles from parking page */
+.tab-button:nth-child(odd),
+.tab-button:nth-child(even) {
+    background: #ffffff !important;
+    color: #212529 !important;
+    font-weight: 600 !important;
+    border-color: #adb5bd !important;
+}
+
+.tab-button:nth-child(odd):hover,
+.tab-button:nth-child(even):hover {
+    background: #f5f5f5 !important;
+    color: #0d47a1 !important;
+    border-color: #0d47a1 !important;
+}
+
+.tab-button:nth-child(odd).active,
+.tab-button:nth-child(even).active {
+    background: #0d47a1 !important;
+    color: white !important;
+    border-color: #0d47a1 !important;
+}
+
+.tab-button:nth-child(odd) i,
+.tab-button:nth-child(even) i {
+    color: #495057 !important;
+}
+
+.tab-button:nth-child(odd):hover i,
+.tab-button:nth-child(even):hover i {
+    color: #0d47a1 !important;
+}
+
+.tab-button:nth-child(odd).active i,
+.tab-button:nth-child(even).active i {
+    color: white !important;
+}
+
+body.dark-mode .tab-button:nth-child(odd),
+body.dark-mode .tab-button:nth-child(even),
+html.dark-mode .tab-button:nth-child(odd),
+html.dark-mode .tab-button:nth-child(even) {
+    background: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .tab-button:nth-child(odd):hover,
+body.dark-mode .tab-button:nth-child(even):hover,
+html.dark-mode .tab-button:nth-child(odd):hover,
+html.dark-mode .tab-button:nth-child(even):hover {
+    background: #333 !important;
+}
+
+/* Override all text elements in dark mode */
+body.dark-mode main h1,
+body.dark-mode main h2,
+body.dark-mode main h3,
+body.dark-mode main h4,
+body.dark-mode main h5,
+body.dark-mode main h6,
+body.dark-mode main p,
+body.dark-mode main span,
+body.dark-mode main li,
+body.dark-mode main div,
+html.dark-mode main h1,
+html.dark-mode main h2,
+html.dark-mode main h3,
+html.dark-mode main h4,
+html.dark-mode main h5,
+html.dark-mode main h6,
+html.dark-mode main p,
+html.dark-mode main span,
+html.dark-mode main li,
+html.dark-mode main div {
+    color: #e0e0e0 !important;
+}
+
+/* Specific overrides for key elements */
+body.dark-mode main .season-badge-large,
+html.dark-mode main .season-badge-large {
+    background: #0d47a1 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode main .service-link,
+html.dark-mode main .service-link {
+    color: #64b5f6 !important;
+}
+
+body.dark-mode main .service-link:hover,
+html.dark-mode main .service-link:hover {
+    color: #90caf9 !important;
+}
+
+/* Super specific overrides for stubborn elements */
+body.dark-mode main .info-card .card-header h2,
+html.dark-mode main .info-card .card-header h2,
+body.dark-mode .info-card .card-header h2,
+html.dark-mode .info-card .card-header h2,
+.dark-mode .info-card .card-header h2,
+body.dark-mode h2,
+html.dark-mode h2,
+.dark-mode h2 {
+    color: #ffffff !important;
+}
+
+/* Force all headings to be white in dark mode */
+body.dark-mode main div.card-header h2,
+html.dark-mode main div.card-header h2,
+body.dark-mode div.card-header h2,
+html.dark-mode div.card-header h2 {
+    color: #ffffff !important;
+}
+
+/* Target the exact structure */
+body.dark-mode .info-card > .card-header > h2,
+html.dark-mode .info-card > .card-header > h2,
+.dark-mode .info-card > .card-header > h2 {
+    color: #ffffff !important;
+    --text-color: #ffffff !important;
+}
+
+/* Nuclear option - target all h2 elements */
+body.dark-mode h2[class],
+body.dark-mode h2:not([class]),
+html.dark-mode h2[class],
+html.dark-mode h2:not([class]),
+.dark-mode h2[class],
+.dark-mode h2:not([class]) {
+    color: #ffffff !important;
+    --text-color: #ffffff !important;
+}
+
+/* Override CSS variables that might be affecting text color */
+body.dark-mode,
+html.dark-mode {
+    --text-color: #e0e0e0 !important;
+    --dark-text-color: #e0e0e0 !important;
+}
+
+/* MAXIMUM SPECIFICITY - Override the #212529 !important rule */
+body.dark-mode main#main-content .info-card .card-header h2,
+html.dark-mode main#main-content .info-card .card-header h2,
+body.dark-mode.dark-mode main .info-card .card-header h2,
+html.dark-mode.dark-mode main .info-card .card-header h2 {
+    color: #ffffff !important;
+    background: transparent !important;
+}
+
+/* Use attribute selector for even higher specificity */
+body.dark-mode main .card-header h2[class],
+body.dark-mode main .card-header h2:not([style*="color"]),
+html.dark-mode main .card-header h2[class],
+html.dark-mode main .card-header h2:not([style*="color"]) {
+    color: #ffffff !important;
+}
+
+/* Last resort - inline style override */
+body.dark-mode .card-header h2,
+html.dark-mode .card-header h2 {
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+</style>
 </body>
 </html>
