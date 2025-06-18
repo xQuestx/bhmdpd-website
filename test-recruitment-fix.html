@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment Page Fix Test</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        .test-section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .status.fixed {
+            background: #28a745;
+            color: white;
+        }
+        .status.issue {
+            background: #dc3545;
+            color: white;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        .code-block {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .iframe-container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Recruitment Page Fix Verification</h1>
+        
+        <div class="test-section">
+            <h2>Issue #1: Hero Section Hidden Under Navbar <span class="status fixed">FIXED</span></h2>
+            <p><strong>Problem:</strong> The hero section was hidden under the navbar due to missing margin-top.</p>
+            <p><strong>Solution:</strong> Changed the hero section to use the proper class structure:</p>
+            <div class="code-block">
+                <code>
+                    &lt;!-- Before --&gt;<br>
+                    &lt;div class="recruitment-hero"&gt;<br><br>
+                    &lt;!-- After --&gt;<br>
+                    &lt;section class="hero-section recruitment-hero"&gt;
+                </code>
+            </div>
+            <p>The <code>.hero-section</code> class provides the necessary <code>margin-top: var(--header-height, 80px)</code> to prevent overlap with the fixed header.</p>
+        </div>
+        
+        <div class="test-section">
+            <h2>Issue #2: Dark Mode Toggle Button <span class="status fixed">FIXED</span></h2>
+            <p><strong>Problem:</strong> Dark mode toggle button wasn't functioning properly.</p>
+            <p><strong>Solutions Applied:</strong></p>
+            <ol>
+                <li>Added proper ARIA attributes to the button:
+                    <div class="code-block">
+                        <code>
+                            &lt;button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle" aria-pressed="false"&gt;<br>
+                            &nbsp;&nbsp;&lt;i class="fas fa-moon" aria-hidden="true"&gt;&lt;/i&gt;<br>
+                            &nbsp;&nbsp;&lt;i class="fas fa-sun" aria-hidden="true"&gt;&lt;/i&gt;<br>
+                            &nbsp;&nbsp;&lt;span class="sr-only"&gt;Dark mode&lt;/span&gt;<br>
+                            &lt;/button&gt;
+                        </code>
+                    </div>
+                </li>
+                <li>Added the darkmode.js script to handle the toggle functionality:
+                    <div class="code-block">
+                        <code>&lt;script src="darkmode.js"&gt;&lt;/script&gt;</code>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="test-section">
+            <h2>Live Preview</h2>
+            <p>The recruitment-new.html page should now display correctly with:</p>
+            <ul>
+                <li>✅ Hero section visible below the navbar</li>
+                <li>✅ Dark mode toggle button functioning</li>
+                <li>✅ Smooth transitions between light and dark modes</li>
+                <li>✅ Consistent styling with bar-harbor-parking.html</li>
+            </ul>
+            
+            <div class="iframe-container">
+                <iframe src="recruitment-new.html" width="100%" height="600" style="border: none;"></iframe>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Files Modified</h2>
+            <ul>
+                <li><code>recruitment-new.html</code> - Updated hero section structure and dark mode button, added darkmode.js script</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

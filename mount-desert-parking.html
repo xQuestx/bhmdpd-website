@@ -2036,6 +2036,64 @@ Bar Harbor, ME 04609<br>
 
 <!-- Tab functionality handled by script.js -->
 
+<!-- Enhanced Tab Navigation Script -->
+<script>
+// Global function to switch tabs and scroll to top of tab content
+window.showTab = function(tabId) {
+    // Get all tab buttons and contents
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    // Remove active class from all tabs
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    tabContents.forEach(content => content.classList.remove('active'));
+    
+    // Find and activate the target tab button
+    const targetButton = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
+    if (targetButton) {
+        targetButton.classList.add('active');
+    }
+    
+    // Find and activate the target tab content
+    const targetContent = document.getElementById(tabId);
+    if (targetContent) {
+        targetContent.classList.add('active');
+        
+        // Scroll to the tabs section
+        const tabsSection = document.querySelector('.tabs-section');
+        if (tabsSection) {
+            // Use a small delay to ensure the tab content is rendered
+            setTimeout(() => {
+                tabsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    }
+    
+    // Prevent default anchor behavior
+    return false;
+};
+
+// Function to handle tab navigation from URL hash
+function handleTabFromHash() {
+    const hash = window.location.hash.slice(1); // Remove the #
+    if (hash) {
+        const validTabs = ['overview', 'seasonal', 'overnight', 'locations', 'rules', 'fines', 'permits', 'contact'];
+        if (validTabs.includes(hash)) {
+            showTab(hash);
+        }
+    }
+}
+
+// Listen for hash changes
+window.addEventListener('hashchange', handleTabFromHash);
+
+// Check for hash on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Give the main tab initialization time to run first
+    setTimeout(handleTabFromHash, 200);
+});
+</script>
+
 <!-- Map Modal Script -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
