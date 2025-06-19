@@ -521,6 +521,109 @@
   /* Skip link */
   .skip-to-main { position: absolute; left: -999px; width: 1px; height: 1px; overflow: hidden; background-color: #007bff; color: white; padding: 10px; z-index: 9999; }
   .skip-to-main:focus { left: 10px; top: 10px; width: auto; height: auto; }
+  
+  /* Dark Mode Styles for Parking Page */
+  body.dark-mode .step-details p,
+  body.dark-mode .step-details h4,
+  body.dark-mode .step-details h5 {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+  }
+  
+  body.dark-mode .step-item-vertical {
+    background-color: var(--dark-mode-card-bg, #2d2d2d) !important;
+    border-color: var(--dark-mode-border-color, #404040) !important;
+  }
+  
+  body.dark-mode .step-item-vertical h4 {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+  }
+  
+  body.dark-mode .payment-info-box {
+    background: var(--dark-mode-card-bg, #2d2d2d) !important;
+    border-color: var(--dark-mode-border-color, #404040) !important;
+  }
+  
+  body.dark-mode .payment-info-box h4 {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+  }
+  
+  body.dark-mode .season-info,
+  body.dark-mode .quick-facts-box {
+    background: transparent !important;
+  }
+  
+  body.dark-mode .payment-list li,
+  body.dark-mode .fact-item,
+  body.dark-mode .compact-rule-item span,
+  body.dark-mode .compact-rule-item strong {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+  }
+  
+  body.dark-mode .info-card p,
+  body.dark-mode .info-card h3,
+  body.dark-mode .info-card h4,
+  body.dark-mode .info-card h5 {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+  }
+  
+  body.dark-mode .left-column h3,
+  body.dark-mode .right-column h3 {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+  }
+  
+  body.dark-mode .quick-facts-box h3 {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+  }
+  
+  body.dark-mode .kiosk-step {
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%) !important;
+    border-color: #1976d2 !important;
+  }
+  
+  body.dark-mode .kiosk-step h5 {
+    color: #64b5f6 !important;
+  }
+  
+  body.dark-mode .kiosk-step p {
+    color: #bbdefb !important;
+  }
+  
+  body.dark-mode .step-number-circle {
+    background: #1976d2 !important;
+    color: white !important;
+  }
+  
+  /* Fix for all text elements in card body */
+  body.dark-mode .card-body,
+  body.dark-mode .card-body * {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+  }
+  
+  /* Preserve icon colors */
+  body.dark-mode .card-body i.fas,
+  body.dark-mode .card-body i.far,
+  body.dark-mode .card-body i.fab {
+    color: #64b5f6 !important;
+  }
+  
+  /* Fix compact rules list */
+  body.dark-mode .compact-rules-list {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+  }
+  
+  body.dark-mode .compact-rule-item {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+  }
+  
+  /* Ensure all headings are visible */
+  body.dark-mode h1, 
+  body.dark-mode h2, 
+  body.dark-mode h3, 
+  body.dark-mode h4, 
+  body.dark-mode h5, 
+  body.dark-mode h6 {
+    color: var(--dark-mode-text-color, #e0e0e0) !important;
+  }
 </style>
 
 <!-- Load theme early to prevent flash -->
@@ -745,7 +848,7 @@
 <h2>General Parking Information</h2>
 </div>
 <div class="card-body">
-<p style="text-align: center; margin-bottom: 1.5rem; color: #444; font-size: 1.1rem;">Everything you need to know about parking in Mount Desert. From seasonal regulations to winter parking bans, find all essential parking information for our four villages: Northeast Harbor, Seal Harbor, Somesville, and Pretty Marsh.</p>
+<p style="text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem;">Everything you need to know about parking in Mount Desert. From seasonal regulations to winter parking bans, find all essential parking information for our four villages: Northeast Harbor, Seal Harbor, Somesville, and Pretty Marsh.</p>
 
 <div class="two-column-layout">
 <div class="left-column">
@@ -863,27 +966,27 @@
 
 <!-- Using the Kiosk -->
 <div class="payment-info-box" style="margin-top: 1.5rem; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border: 2px solid #2196f3;">
-<h4 style="text-align: center; margin-bottom: 1rem; color: #1976d2;"><i class="fas fa-desktop"></i> Using the Parking Kiosk</h4>
+<h4 style="text-align: center; margin-bottom: 1rem;"><i class="fas fa-desktop"></i> Using the Parking Kiosk</h4>
 <div class="steps-list" style="padding: 0 1rem;">
 <div class="step-item-vertical" style="margin-bottom: 1.2rem;">
 <div class="step-number-circle" style="width: 36px; height: 36px; font-size: 1rem; background: #2196f3;">2</div>
 <div class="step-details">
-<h5 style="margin: 0 0 0.25rem 0; font-size: 1rem; color: #1565c0;">Enter License Plate</h5>
-<p style="font-size: 0.9rem; color: #555; margin: 0;">Use the touchscreen to enter your vehicle's license plate number. Double-check for accuracy.</p>
+<h5 style="margin: 0 0 0.25rem 0; font-size: 1rem;">Enter License Plate</h5>
+<p style="font-size: 0.9rem; margin: 0;">Use the touchscreen to enter your vehicle's license plate number. Double-check for accuracy.</p>
 </div>
 </div>
 <div class="step-item-vertical" style="margin-bottom: 1.2rem;">
 <div class="step-number-circle" style="width: 36px; height: 36px; font-size: 1rem; background: #2196f3;">3</div>
 <div class="step-details">
-<h5 style="margin: 0 0 0.25rem 0; font-size: 1rem; color: #1565c0;">Select Duration</h5>
-<p style="font-size: 0.9rem; color: #555; margin: 0;">Choose how long you want to park. The screen will display the total cost.</p>
+<h5 style="margin: 0 0 0.25rem 0; font-size: 1rem;">Select Duration</h5>
+<p style="font-size: 0.9rem; margin: 0;">Choose how long you want to park. The screen will display the total cost.</p>
 </div>
 </div>
 <div class="step-item-vertical">
 <div class="step-number-circle" style="width: 36px; height: 36px; font-size: 1rem; background: #2196f3;">4</div>
 <div class="step-details">
-<h5 style="margin: 0 0 0.25rem 0; font-size: 1rem; color: #1565c0;">Make Payment</h5>
-<p style="font-size: 0.9rem; color: #555; margin: 0;">Pay with credit/debit card, or Apple Pay. Collect your receipt if needed.</p>
+<h5 style="margin: 0 0 0.25rem 0; font-size: 1rem;">Make Payment</h5>
+<p style="font-size: 0.9rem; margin: 0;">Pay with credit/debit card, or Apple Pay. Collect your receipt if needed.</p>
 </div>
 </div>
 </div>
