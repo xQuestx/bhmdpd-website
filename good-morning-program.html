@@ -1,41 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Good Morning Program - Daily Wellness Checks | Bar Harbor & Mount Desert Police Department</title>
-    <meta name="description" content="Learn about the Good Morning Program offered by the Bar Harbor and Mount Desert Police Departments, providing daily wellness checks for senior and disabled residents living alone in Bar Harbor and Mount Desert, Maine."/>
-    <meta name="keywords" content="Good Morning Program, wellness checks, senior citizen program, disabled resident program, community program, Bar Harbor Police Department, Mount Desert Police Department, Bar Harbor Maine, Mount Desert Island"/>
-    <link rel="canonical" href="https://www.bhmdpd.com/good-morning-program.html" />
-    <!-- Dark mode initialization -->
-    <meta name="theme-color" content="#ffffff" id="theme-color">
-    <script src="darkmode.js"></script>
-    <script>
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            document.getElementById('theme-color').setAttribute('content', '#121212');
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/main.css">
-  <link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
-  <!-- Google tag (gtag.js) -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Good Morning Program - Daily Wellness Checks | Bar Harbor & Mount Desert Police</title>
+<meta name="description" content="Learn about the Good Morning Program offered by the Bar Harbor and Mount Desert Police Departments, providing daily wellness checks for senior and disabled residents living alone."/>
+<meta name="keywords" content="Good Morning Program, wellness checks, senior citizen program, disabled resident program, community program, Bar Harbor Police Department, Mount Desert Police Department, Bar Harbor Maine, Mount Desert Island"/>
+<link rel="canonical" href="https://www.bhmdpd.com/good-morning-program.html" />
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="Good Morning Program - Bar Harbor & Mount Desert Police">
+<meta name="author" content="Bar Harbor Mount Desert Police Department">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.bhmdpd.com/good-morning-program.html">
+<meta property="og:title" content="Good Morning Program - Daily Wellness Checks">
+<meta property="og:description" content="Free daily wellness check program for senior and disabled residents living alone in Bar Harbor and Mount Desert.">
+<meta property="og:image" content="https://www.bhmdpd.com/images/good-morning-program.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.bhmdpd.com/good-morning-program.html">
+<meta property="twitter:title" content="Good Morning Program - BHMDPD">
+<meta property="twitter:description" content="Free daily wellness check program for senior and disabled residents living alone in Bar Harbor and Mount Desert.">
+<meta property="twitter:image" content="https://www.bhmdpd.com/images/good-morning-program.jpg">
+
+<!-- Dark mode initialization -->
+<meta content="#ffffff" id="theme-color" name="theme-color"/>
+<script src="darkmode.js"></script>
+<script>
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.getElementById('theme-color').setAttribute('content', '#121212');
+    }
+</script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<link href="css/main.css" rel="stylesheet"/>
+
+<style>
+/* Page-specific styles */
+.good-morning-page {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(76, 175, 80, 0.85), rgba(56, 142, 60, 0.90)),
+                url('images/good-morning-hero.jpg') center/cover no-repeat;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-top: var(--header-height, 80px);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-30px, -30px) rotate(180deg); }
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-icon {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    animation: sunrise 3s ease-in-out infinite;
+}
+
+@keyframes sunrise {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(15deg); }
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: white;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Tab Styles */
+.tabs-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #dee2e6;
+    background: white;
+    color: #212529;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.tab-btn:hover::before {
+    left: 100%;
+}
+
+.tab-btn:hover {
+    background: #f1f8e9;
+    border-color: #4caf50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+.tab-btn.active {
+    background: #4caf50;
+    color: white;
+    border-color: #4caf50;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.tab-btn i {
+    font-size: 1.1rem;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Statistics Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4caf50, #388e3c);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.stat-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4caf50;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Feature Cards */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Process Timeline */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #4caf50;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    padding: 0 2rem 3rem;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: 3rem;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+    padding-left: 3rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #4caf50;
+    border-radius: 50%;
+    top: 0;
+    border: 4px solid white;
+    box-shadow: 0 0 0 4px #4caf501a;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    color: #4caf50;
+    margin-bottom: 0.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: center;
+    color: white;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: float 15s ease-in-out infinite reverse;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    color: #4caf50;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode */
+body.dark-mode .hero-section {
+    background: linear-gradient(rgba(76, 175, 80, 0.75), rgba(56, 142, 60, 0.80)),
+                url('images/good-morning-hero.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .tab-buttons {
+    background: #1e1e1e;
+}
+
+body.dark-mode .tab-btn {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .tab-btn:hover {
+    background: #333;
+    border-color: #4caf50;
+}
+
+body.dark-mode .tab-btn.active {
+    background: #4caf50;
+    color: white;
+}
+
+body.dark-mode .stat-card,
+body.dark-mode .feature-card,
+body.dark-mode .timeline-content {
+    background: #2d2d2d;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .stat-card h3,
+body.dark-mode .feature-card h3 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .stat-card p,
+body.dark-mode .feature-card p {
+    color: #b0b0b0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 60px !important;
+        padding-right: 1rem !important;
+        text-align: left !important;
+    }
+    
+    .timeline-dot {
+        left: 20px !important;
+        right: auto !important;
+    }
+    
+    .cta-section {
+        padding: 2rem 1.5rem;
+    }
+}
+</style>
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LBXVRZLEN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-3LBXVRZLEN');
 </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-to-main">
-        Skip to main content
-    </a>
-    <div class="scroll-progress"></div>
+<a href="#main-content" class="skip-to-main">
+    Skip to main content
+</a>
+<div class="scroll-progress"></div>
 
-    <!-- Header and Navigation -->
+<!-- Header and Navigation -->
 <header class="header">
 <nav class="main-nav">
 <a class="logo-link" href="index.html">
@@ -96,128 +588,291 @@
 </nav>
 </header>
 
+<main id="main-content" class="good-morning-page">
+<section class="hero-section">
+<div class="hero-content">
+<i class="fas fa-sun hero-icon"></i>
+<h1>Good Morning Program</h1>
+<p>Daily wellness checks providing peace of mind for our senior and disabled community members</p>
+</div>
+</section>
 
-    <main id="main-content" class="main-content good-morning-page">
-        <!-- Removed top-spacer div to fix spacing -->
+<div class="tabs-container">
+<!-- Tab Buttons -->
+<div class="tab-buttons">
+<button class="tab-btn active" onclick="showTab('overview')">
+<i class="fas fa-info-circle"></i>
+<span>Program Overview</span>
+</button>
+<button class="tab-btn" onclick="showTab('how-it-works')">
+<i class="fas fa-cogs"></i>
+<span>How It Works</span>
+</button>
+<button class="tab-btn" onclick="showTab('eligibility')">
+<i class="fas fa-user-check"></i>
+<span>Eligibility</span>
+</button>
+<button class="tab-btn" onclick="showTab('enrollment')">
+<i class="fas fa-file-signature"></i>
+<span>Enrollment</span>
+</button>
+</div>
 
-        <div class="hero-section good-morning-hero">
-            <div class="hero-content">
-                <i class="fas fa-sun hero-icon"></i>
-                <h1>Good Morning Program - Bar Harbor & Mount Desert Police Department</h1>
-                <p>Daily wellness checks for our senior and disabled community members in Bar Harbor and Mount Desert</p>
-            </div>
-        </div>
+<!-- Tab Panels -->
+<div class="tab-panels">
+<!-- Overview Tab -->
+<div id="overview" class="tab-panel active">
+<!-- Statistics -->
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-icon">
+<i class="fas fa-calendar-check"></i>
+</div>
+<div class="stat-number">5</div>
+<div class="stat-label">Days Per Week</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">
+<i class="fas fa-clock"></i>
+</div>
+<div class="stat-number">8:30-10:30</div>
+<div class="stat-label">Morning Check-ins</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">
+<i class="fas fa-dollar-sign"></i>
+</div>
+<div class="stat-number">FREE</div>
+<div class="stat-label">No Cost Program</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">
+<i class="fas fa-shield-alt"></i>
+</div>
+<div class="stat-number">24/7</div>
+<div class="stat-label">Emergency Response</div>
+</div>
+</div>
 
-        <div class="content-wrapper">
-            <section class="info-grid">
-                <!-- Program Overview Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-phone-alt"></i>
-                        <h2>How It Works</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-clock"></i>
-                                <div>
-                                    <h3>Daily Check-ins</h3>
-                                    <p>Monday through Friday<br>8:30 AM - 10:30 AM</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="responsibility-grid">
-                            <div class="responsibility-item">
-                                <i class="fas fa-user-check"></i>
-                                <span>Daily Wellness Calls</span>
-                            </div>
-                            <div class="responsibility-item">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>Safety Follow-ups</span>
-                            </div>
-                            <div class="responsibility-item">
-                                <i class="fas fa-heart"></i>
-                                <span>Community Care</span>
-                            </div>
-                            <div class="responsibility-item">
-                                <i class="fas fa-hands-helping"></i>
-                                <span>Support Network</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- Program Description -->
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-heart"></i>
+<h2>Caring for Our Community</h2>
+</div>
+<div class="card-body">
+<p style="font-size: 1.1rem; text-align: center; margin-bottom: 2rem;">
+The Good Morning Program is a free service providing daily wellness checks for senior citizens and adults with disabilities who live alone in Bar Harbor and Mount Desert. Our dedicated team ensures the safety and well-being of our community's most vulnerable residents.
+</p>
 
-                <!-- Eligibility Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-user-check"></i>
-                        <h2>Who Can Participate?</h2>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Senior citizens living alone in Mount Desert and Bar Harbor</li>
-                            <li>Adults with disabilities residing independently</li>
-                            <li>Bar Harbor and Mount Desert residents</li>
-                        </ul>
-                    </div>
-                </div>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-phone-alt"></i>
+</div>
+<h3>Daily Phone Calls</h3>
+<p>Friendly check-in calls every weekday morning to ensure participants are safe and well.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-user-shield"></i>
+</div>
+<h3>Immediate Response</h3>
+<p>If we can't reach you, officers are dispatched to check on your well-being in person.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-hands-helping"></i>
+</div>
+<h3>Community Connection</h3>
+<p>Building relationships between residents and the police department through daily interaction.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-                <!-- Process Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-list-check"></i>
-                        <h2>Program Process</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <h3>Step 1: Daily Call</h3>
-                                    <p>Our team makes friendly check-in calls each morning</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-shield-alt"></i>
-                                <div>
-                                    <h3>Step 2: Verification</h3>
-                                    <p>Well-being is confirmed through phone contact</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-car"></i>
-                                <div>
-                                    <h3>Step 3: Follow-up</h3>
-                                    <p>If needed, wellness checks are conducted in person</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- How It Works Tab -->
+<div id="how-it-works" class="tab-panel">
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-list-check"></i>
+<h2>Program Process</h2>
+</div>
+<div class="card-body">
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>Step 1: Morning Call</h3>
+<p>Our team calls you between 8:30 AM and 10:30 AM, Monday through Friday.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>Step 2: Check-In</h3>
+<p>A brief, friendly conversation to confirm you're doing well and don't need assistance.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>Step 3: Follow-Up</h3>
+<p>If we can't reach you after multiple attempts, an officer visits your home.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>Step 4: Emergency Response</h3>
+<p>If needed, we coordinate with emergency services to ensure your safety.</p>
+</div>
+</div>
+</div>
 
-                <!-- Enrollment Card -->
-                <div class="info-card">
-                    <div class="card-header">
-                        <i class="fas fa-file-signature"></i>
-                        <h2>Ready to Join?</h2>
-                    </div>
-                    <div class="card-body">
-                        <p>Download and complete the enrollment form to get started with this free, voluntary program.</p>
-                        <div class="reservation-note">
-                            <i class="fas fa-info-circle"></i>
-                            <p>This program is provided at no cost to participants</p>
-                        </div>
-                        <a href="https://www.mtdesert.org/police-department/files/good-morning-program" class="action-button" target="_blank">
-                            <i class="fas fa-file-download"></i>
-                            Download Enrollment Form
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
+<div class="alert-box info" style="margin-top: 2rem;">
+<i class="fas fa-info-circle"></i>
+<strong>Flexibility:</strong> Going away? Just let us know, and we'll pause your calls until you return.
+</div>
+</div>
+</div>
+</div>
 
-    <footer class="footer" role="contentinfo" aria-label="Site Footer">
+<!-- Eligibility Tab -->
+<div id="eligibility" class="tab-panel">
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-user-check"></i>
+<h2>Who Can Participate?</h2>
+</div>
+<div class="card-body">
+<div class="two-column-layout">
+<div class="left-column">
+<h3><i class="fas fa-check-circle"></i> Eligible Participants</h3>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 1rem;">
+<i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i>
+Senior citizens (65+) living alone
+</li>
+<li style="margin-bottom: 1rem;">
+<i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i>
+Adults with disabilities living independently
+</li>
+<li style="margin-bottom: 1rem;">
+<i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i>
+Residents of Bar Harbor or Mount Desert
+</li>
+<li style="margin-bottom: 1rem;">
+<i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i>
+Those who would benefit from daily check-ins
+</li>
+</ul>
+</div>
+
+<div class="right-column">
+<h3><i class="fas fa-home"></i> Service Areas</h3>
+<div class="service-area-box" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+<h4 style="color: #4caf50; margin-bottom: 1rem;">Bar Harbor</h4>
+<p>All residential areas within Bar Harbor town limits</p>
+</div>
+<div class="service-area-box" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+<h4 style="color: #4caf50; margin-bottom: 1rem;">Mount Desert</h4>
+<p>All residential areas within Mount Desert town limits</p>
+</div>
+</div>
+</div>
+
+<div class="alert-box warning" style="margin-top: 2rem;">
+<i class="fas fa-exclamation-triangle"></i>
+<strong>Note:</strong> This program is specifically for individuals living alone who may need daily wellness checks.
+</div>
+</div>
+</div>
+</div>
+
+<!-- Enrollment Tab -->
+<div id="enrollment" class="tab-panel">
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-file-signature"></i>
+<h2>How to Enroll</h2>
+</div>
+<div class="card-body">
+<!-- CTA Section -->
+<div class="cta-section">
+<div class="cta-content">
+<h2>Ready to Join?</h2>
+<p>Enrollment is easy and free. Download our form to get started today!</p>
+<a href="https://www.mtdesert.org/police-department/files/good-morning-program" class="cta-button" target="_blank">
+<i class="fas fa-file-download"></i>
+Download Enrollment Form
+</a>
+</div>
+</div>
+
+<div class="enrollment-steps" style="margin-top: 2rem;">
+<h3 style="text-align: center; margin-bottom: 2rem;"><i class="fas fa-clipboard-list"></i> Simple Enrollment Process</h3>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">
+<span style="font-weight: 700;">1</span>
+</div>
+<h3>Download Form</h3>
+<p>Get the enrollment form from our website or pick one up at the police department.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<span style="font-weight: 700;">2</span>
+</div>
+<h3>Complete Information</h3>
+<p>Fill out your contact details and emergency contact information.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<span style="font-weight: 700;">3</span>
+</div>
+<h3>Submit Form</h3>
+<p>Return the form to the police department in person or by mail.</p>
+</div>
+</div>
+</div>
+
+<div class="contact-info-box" style="margin-top: 2rem; background: #f8f9fa; padding: 2rem; border-radius: 12px;">
+<h3 style="margin-bottom: 1.5rem;"><i class="fas fa-envelope"></i> Submit Your Application</h3>
+<div class="contact-methods">
+<div class="contact-method">
+<i class="fas fa-building"></i>
+<div>
+<h4>In Person</h4>
+<p>Bar Harbor Police Department<br>37 Firefly Lane<br>Bar Harbor, ME 04609</p>
+</div>
+</div>
+<div class="contact-method">
+<i class="fas fa-envelope"></i>
+<div>
+<h4>By Mail</h4>
+<p>Good Morning Program<br>Bar Harbor Police Department<br>37 Firefly Lane<br>Bar Harbor, ME 04609</p>
+</div>
+</div>
+<div class="contact-method">
+<i class="fas fa-phone"></i>
+<div>
+<h4>Questions?</h4>
+<p>Call us at (207) 288-3391<br>We're happy to help!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo" aria-label="Site Footer">
 <div class="footer-content">
 <div class="footer-logo-container">
 <img alt="Bar Harbor Police Department Logo" class="footer-logo" src="images/branding/logo.png" width="192" height="262"/>
@@ -232,21 +887,12 @@
 <nav class="footer-links" aria-label="Footer Navigation">
 <section class="footer-column" aria-labelledby="footer-divisions">
 <h3 id="footer-divisions"><i class="fas fa-building"></i> DIVISIONS</h3>
-<ul><li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
-
+<ul>
+<li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
 <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
 <li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
-</li>
+<li><a href="mount-desert-parking.html"><i class="fas fa-parking"></i> Mount Desert Parking</a></li>
 <li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
-</li>
 <li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
 </ul>
 </section>
@@ -282,19 +928,56 @@
 <h3><i class="fas fa-map-marker-alt"></i> Our Locations</h3>
 <div class="map-container" style="position:relative;">
 <div id="map" style="height: 250px; width: 100%; border:1px solid black;"></div>
-
 </div>
 </div>
 </div>
 <div class="footer-bottom">
 <p>© 2025 Bar Harbor Police Department. All Rights Reserved.</p>
-<div class="last-updated"><i class="fas fa-clock" aria-hidden="true" style="margin-right:0.5em;"></i>Last updated: <time datetime="2025-04-16">April 16th, 2025</time></div>
+<div class="last-updated"><i class="fas fa-clock" aria-hidden="true" style="margin-right:0.5em;"></i>Last updated: <time datetime="2025-06-19">June 19th, 2025</time></div>
 </div>
 </footer>
 
-    <script src="script.js"></script>
+<script src="darkmode.js"></script>
+<script src="script.js"></script>
+
+<script>
+// Simple tab functionality
+function showTab(tabName) {
+    // Hide all panels
+    const panels = document.querySelectorAll('.tab-panel');
+    panels.forEach(panel => {
+        panel.classList.remove('active');
+    });
+    
+    // Remove active from all buttons
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+    
+    // Show selected panel
+    const selectedPanel = document.getElementById(tabName);
+    if (selectedPanel) {
+        selectedPanel.classList.add('active');
+    }
+    
+    // Mark button as active
+    const clickedButton = event.target.closest('.tab-btn');
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
+}
+
+// Ensure overview tab is shown on page load
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('overview').classList.add('active');
+});
+</script>
+
 <!-- Footer loader script to dynamically load the footer with both addresses -->
 <script src="js/footer-loader.js" defer></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </body>
 </html>
