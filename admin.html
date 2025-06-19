@@ -398,9 +398,6 @@
 <!-- Tab Navigation -->
 <div class="tabs-section">
 <div class="tabs-wrapper">
-<div class="tab-hint">
-<p><i class="fas fa-hand-point-down"></i> Click tabs below to explore different sections</p>
-</div>
 <div class="modern-tabs">
 <button class="tab-button active" data-tab="overview">
 <i class="fas fa-info-circle"></i>
@@ -1197,10 +1194,10 @@ p, li, span {
 }
 
 .tab-button.active {
-    background: var(--accent-color);
+    background: #64b5f6;
     color: white;
-    border-color: var(--accent-color);
-    box-shadow: 0 2px 8px rgba(13,71,161,0.25);
+    border-color: #64b5f6;
+    box-shadow: 0 2px 8px rgba(100,181,246,0.25);
 }
 
 .tab-button i {
@@ -1246,9 +1243,49 @@ p, li, span {
 }
 
 .tab-hint i {
-    color: #0d47a1 !important;
+    color: #64b5f6 !important;
     font-size: 1.2rem !important;
     animation: pulse 2s ease-in-out infinite;
+}
+
+.tab-hint .fas.fa-hand-point-down {
+    color: #64b5f6 !important;
+}
+
+/* Maximum specificity for tab hint icon */
+.tabs-section .tabs-wrapper .tab-hint p i.fas.fa-hand-point-down,
+.tab-hint p i.fas.fa-hand-point-down[style],
+body .tab-hint p i.fas.fa-hand-point-down,
+html body .tab-hint p i.fas.fa-hand-point-down {
+    color: #64b5f6 !important;
+    background-color: transparent !important;
+}
+
+/* Dark mode override */
+body.dark-mode .tab-hint i.fas.fa-hand-point-down,
+html.dark-mode .tab-hint i.fas.fa-hand-point-down {
+    color: #64b5f6 !important;
+}
+
+/* Tab hint text with CSS arrow */
+.tab-hint-text::before {
+    content: "👇";
+    color: #64b5f6 !important;
+    font-size: 1.2rem;
+    margin-right: 8px;
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.tab-hint-text {
+    margin: 0 !important;
+    color: #212529 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
 }
 
 @keyframes pulse {
@@ -1421,15 +1458,15 @@ html.dark-mode .tab-button:hover {
 .tab-button:nth-child(odd):hover,
 .tab-button:nth-child(even):hover {
     background: #f5f5f5 !important;
-    color: #0d47a1 !important;
-    border-color: #0d47a1 !important;
+    color: #64b5f6 !important;
+    border-color: #64b5f6 !important;
 }
 
 .tab-button:nth-child(odd).active,
 .tab-button:nth-child(even).active {
-    background: #0d47a1 !important;
+    background: #64b5f6 !important;
     color: white !important;
-    border-color: #0d47a1 !important;
+    border-color: #64b5f6 !important;
 }
 
 .tab-button:nth-child(odd) i,
@@ -1439,7 +1476,7 @@ html.dark-mode .tab-button:hover {
 
 .tab-button:nth-child(odd):hover i,
 .tab-button:nth-child(even):hover i {
-    color: #0d47a1 !important;
+    color: #64b5f6 !important;
 }
 
 .tab-button:nth-child(odd).active i,
