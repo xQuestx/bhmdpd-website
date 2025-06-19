@@ -32,37 +32,26 @@
         Skip to main content
     </a>
 <div class="scroll-progress"></div>
-<header class="header hero-header">
+<!-- Header and Navigation -->
+<header class="header">
 <nav class="main-nav">
-<!-- Logo Section -->
 <a class="logo-link" href="index.html">
 <img alt="Bar Harbor Police Department Logo" class="logo" src="images/branding/logo.png" width="192" height="262"/>
 </a>
 <div class="nav-wrapper">
+<button aria-label="Close menu" class="mobile-close-btn">
+<i class="fas fa-times"></i>
+</button>
 <ul class="nav-links">
-<li><a class="active" href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
 <li class="dropdown">
 <a href="#"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
 <ul class="dropdown-content">
-<li>
-<a href="patrol-division.html">
-<i class="fas fa-shield-alt"></i> Patrol Division
-                                </a>
-</li><li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
-
+<li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
 <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
-<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
-</li>
+<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Bar Harbor Parking</a></li>
+<li><a href="mount-desert-parking.html"><i class="fas fa-parking"></i> Mount Desert Parking</a></li>
 <li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
-</li>
 <li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
 <li><a href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Unit</a></li>
 </ul>
@@ -77,7 +66,7 @@
 <li class="dropdown">
 <a href="#"><i class="fas fa-user-tie"></i> Recruitment <i class="fas fa-caret-down"></i></a>
 <ul class="dropdown-content">
-<li><a href="recruitment.html"><i class="fas fa-user-tie"></i> Join Our Team</a></li>
+<li><a href="recruitment.html"><i class="fas fa-briefcase"></i> Join Our Team</a></li>
 <li><a href="academy-training.html"><i class="fas fa-chalkboard-teacher"></i> Academy Training</a></li>
 </ul>
 </li>
@@ -90,16 +79,16 @@
 <li><a href="july-4th.html"><i class="fas fa-flag-usa"></i> July 4th Celebration</a></li>
 </ul>
 </li>
-<li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+<li><a class="active" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
 </ul>
 </div>
-<!-- Mobile Menu Button -->
-<button class="mobile-menu-btn">
+<button aria-label="Toggle menu" class="mobile-menu-btn">
 <i class="fas fa-bars"></i>
 </button>
-<button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle">
-<i class="fas fa-moon"></i>
-<i class="fas fa-sun"></i>
+<button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle" aria-pressed="false">
+<i class="fas fa-moon" aria-hidden="true"></i>
+<i class="fas fa-sun" aria-hidden="true"></i>
+<span class="sr-only">Dark mode</span>
 </button>
 </nav>
 </header>

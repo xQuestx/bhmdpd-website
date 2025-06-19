@@ -51,144 +51,66 @@
     </a>
     <div class="scroll-progress"></div>
 
-    <header class="header">
-        <nav class="main-nav">
-            <!-- Logo -->
-            <a href="index.html" class="logo-link">
-                <img src="images/branding/logo.png" alt="Bar Harbor Police Department Logo" class="logo" width="192" height="262">
-            </a>
-
-            <!-- Navigation -->
-            <div class="nav-wrapper">
-                <ul class="nav-links">
-                    <li>
-                        <a href="index.html">
-                            <i class="fas fa-home"></i> Home
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">
-                            <i class="fas fa-building"></i> Divisions
-                            <i class="fas fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-content">
-                            <li>
-<a href="patrol-division.html">
-<i class="fas fa-shield-alt"></i> Patrol Division
-                                </a>
+    <!-- Header and Navigation -->
+<header class="header">
+<nav class="main-nav">
+<a class="logo-link" href="index.html">
+<img alt="Bar Harbor Police Department Logo" class="logo" src="images/branding/logo.png" width="192" height="262"/>
+</a>
+<div class="nav-wrapper">
+<button aria-label="Close menu" class="mobile-close-btn">
+<i class="fas fa-times"></i>
+</button>
+<ul class="nav-links">
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li class="dropdown">
+<a href="#"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
+<li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
+<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Bar Harbor Parking</a></li>
+<li><a href="mount-desert-parking.html"><i class="fas fa-parking"></i> Mount Desert Parking</a></li>
+<li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
+<li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
+<li><a href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Unit</a></li>
+</ul>
 </li>
-<li>
-                                <a href="harbor-master-division.html">
-                                    <i class="fas fa-ship"></i> Harbor Master
-                                </a>
-                            </li>
-                            <li>
-                                <a href="bar-harbor-parking.html">
-                                    <i class="fas fa-parking"></i> Parking Enforcement
-                                </a>
-                            </li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
+<li class="dropdown">
+<a class="active" href="#"><i class="fas fa-hands-helping"></i> Programs <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="good-morning-program.html"><i class="fas fa-sun"></i> Good Morning Program</a></li>
+<li><a class="active" href="community-outreach.html"><i class="fas fa-heart"></i> Community Outreach</a></li>
+</ul>
 </li>
-                            <li>
-                                <a href="admin.html">
-                                    <i class="fas fa-users"></i> Administrative Services
-                                </a>
-                            </li>
-                            <li>
-                                <a href="animalcontrol.html">
-                                    <i class="fas fa-paw"></i> Animal Control
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mentalhealth.html">
-                                    <i class="fas fa-heart"></i> Mental Health Unit
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="active">
-                            <i class="fas fa-hands-helping"></i> Programs
-                            <i class="fas fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-content">
-                            <li>
-                                <a href="good-morning-program.html">
-                                    <i class="fas fa-sun"></i> Good Morning Program
-                                </a>
-                            </li>
-                            <li>
-                                <a href="community-outreach.html" class="active">
-                                    <i class="fas fa-heart"></i> Community Outreach
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">
-                            <i class="fas fa-user-tie"></i> Recruitment
-                            <i class="fas fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-content">
-                            <li>
-                                <a href="bhmdrec.html">
-                                    <i class="fas fa-briefcase"></i> Career Opportunities
-                                </a>
-                            </li>
-                            <li>
-                                <a href="application-process.html">
-                                    <i class="fas fa-file-alt"></i> Application Process
-                                </a>
-                            </li>
-                            <li>
-                                <a href="benefits.html">
-                                    <i class="fas fa-medal"></i> Benefits & Salary
-                                </a>
-                            </li>
-                            <li>
-                                <a href="academy-training.html">
-                                    <i class="fas fa-chalkboard-teacher"></i> Academy Training
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="forms.html">
-                            <i class="fas fa-file-alt"></i> Forms
-                        </a>
-                    </li>
-                    <li>
-                        <a href="faq.html">
-                            <i class="fas fa-question-circle"></i> FAQ
-                        </a>
-                    </li>
-                    <li>
-                        <a href="events.html">
-                            <i class="fas fa-calendar-alt"></i> Events
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contact.html">
-                            <i class="fas fa-envelope"></i> Contact
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
-            </button>
-        </nav>
-    </header>
+<li class="dropdown">
+<a href="#"><i class="fas fa-user-tie"></i> Recruitment <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="recruitment.html"><i class="fas fa-briefcase"></i> Join Our Team</a></li>
+<li><a href="academy-training.html"><i class="fas fa-chalkboard-teacher"></i> Academy Training</a></li>
+</ul>
+</li>
+<li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
+<li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+<li class="dropdown">
+<a href="#" role="button" aria-expanded="false" aria-haspopup="true" aria-label="Events menu"><i class="fas fa-calendar-alt"></i> Events <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown-content">
+<li><a href="events.html"><i class="fas fa-calendar"></i> Community Events</a></li>
+<li><a href="july-4th.html"><i class="fas fa-flag-usa"></i> July 4th Celebration</a></li>
+</ul>
+</li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+</ul>
+</div>
+<button aria-label="Toggle menu" class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+<button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle" aria-pressed="false">
+<i class="fas fa-moon" aria-hidden="true"></i>
+<i class="fas fa-sun" aria-hidden="true"></i>
+<span class="sr-only">Dark mode</span>
+</button>
+</nav>
+</header>
 
     <!-- MAIN CONTENT -->
     <main id="main-content" class="main-content">
