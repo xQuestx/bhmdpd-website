@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -7,21 +6,141 @@
 <title>Animal Control - Bar Harbor & Mount Desert Police</title>
 <meta name="description" content="Learn about the Animal Control services provided by the Bar Harbor and Mount Desert Police Departments, including lost pet services, community education, and responsible pet ownership guidelines.">
 <link rel="canonical" href="https://www.bhmdpd.com/animalcontrol.html" />
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="Animal Control - Bar Harbor & Mount Desert Police Department">
+<meta name="keywords" content="animal control police, Bar Harbor animal control, Mount Desert animal control, pet licensing Maine, lost pet services, stray animal pickup, dog licensing, responsible pet ownership, animal law enforcement, Maine animal services">
+<meta name="author" content="Bar Harbor Mount Desert Police Department">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.bhmdpd.com/animalcontrol.html">
+<meta property="og:title" content="Animal Control - Bar Harbor & Mount Desert Police">
+<meta property="og:description" content="Professional animal control services protecting community safety and animal welfare on Mount Desert Island, including emergency response, pet licensing, and lost pet services.">
+<meta property="og:image" content="https://www.bhmdpd.com/images/animal-control-unit.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.bhmdpd.com/animalcontrol.html">
+<meta property="twitter:title" content="Animal Control - BHMDPD">
+<meta property="twitter:description" content="Professional animal control services protecting community safety and animal welfare on Mount Desert Island, including emergency response, pet licensing, and lost pet services.">
+<meta property="twitter:image" content="https://www.bhmdpd.com/images/animal-control-unit.jpg">
+
+<!-- Dark mode initialization -->
+<meta content="#ffffff" id="theme-color" name="theme-color"/>
+<script src="darkmode.js"></script>
+<script>
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.getElementById('theme-color').setAttribute('content', '#121212');
+    }
+</script>
+
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 <link href="css/main.css" rel="stylesheet"/>
-  <link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
-  <!-- Google tag (gtag.js) -->
+<link href="css/pages/animalcontrol.css" rel="stylesheet"/>
+
+<style>
+/* Simple Tab Styles */
+.tabs-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #dee2e6;
+    background: white;
+    color: #212529;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: #f8f9fa;
+    border-color: #ff9800;
+    transform: translateY(-2px);
+}
+
+.tab-btn.active {
+    background: #ff9800;
+    color: white;
+    border-color: #ff9800;
+}
+
+.tab-btn i {
+    font-size: 1.1rem;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Dark mode support */
+body.dark-mode .tab-buttons {
+    background: #1e1e1e;
+}
+
+body.dark-mode .tab-btn {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .tab-btn:hover {
+    background: #333;
+    border-color: #ff9800;
+}
+
+body.dark-mode .tab-btn.active {
+    background: #ff9800;
+    color: white;
+}
+</style>
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LBXVRZLEN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-3LBXVRZLEN');
 </script>
 </head>
 <body>
+<a class="skip-to-main" href="#main-content">
+    Skip to main content
+</a>
+<div class="scroll-progress"></div>
+
 <!-- Header and Navigation -->
 <header class="header">
 <nav class="main-nav">
@@ -82,7 +201,8 @@
 </button>
 </nav>
 </header>
-<main class="animal-control-page">
+
+<main class="animal-control-page" id="main-content">
 <div class="top-spacer"></div>
 <section class="hero-section animal-control-hero">
 <div class="hero-content">
@@ -91,33 +211,48 @@
 <p>Protecting Community Safety and Animal Welfare</p>
 </div>
 </section>
-<div class="content-wrapper">
-<section class="info-grid">
-<!-- Emergency Response Card -->
+
+<div class="tabs-container">
+<!-- Tab Buttons -->
+<div class="tab-buttons">
+<button class="tab-btn active" onclick="showTab('overview')">
+<i class="fas fa-info-circle"></i>
+<span>Overview</span>
+</button>
+<button class="tab-btn" onclick="showTab('services')">
+<i class="fas fa-paw"></i>
+<span>Our Services</span>
+</button>
+<button class="tab-btn" onclick="showTab('licensing')">
+<i class="fas fa-id-card"></i>
+<span>Pet Licensing</span>
+</button>
+<button class="tab-btn" onclick="showTab('contact')">
+<i class="fas fa-phone"></i>
+<span>Contact Us</span>
+</button>
+</div>
+
+<!-- Tab Panels -->
+<div class="tab-panels">
+<!-- Overview Tab -->
+<div id="overview" class="tab-panel active">
 <div class="info-card">
 <div class="card-header">
 <i class="fas fa-shield-alt"></i>
-<h2>Emergency Response</h2>
+<h2>Animal Control Overview</h2>
 </div>
 <div class="card-body">
-<div class="contact-details">
-<div class="contact-item">
-<i class="fas fa-phone-alt"></i>
-<div>
-<h3>24/7 Emergency Contact</h3>
-<p>(207) 288-3391</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Services Card -->
-<div class="info-card">
-<div class="card-header">
-<i class="fas fa-user-shield"></i>
-<h2>Our Services</h2>
-</div>
-<div class="card-body">
+<p style="text-align: center; margin-bottom: 2rem; color: #444; font-size: 1.1rem;">
+The Bar Harbor and Mount Desert Police Departments are committed to protecting both community safety and animal welfare through professional animal control services.
+</p>
+
+<div class="two-column-layout">
+<div class="left-column">
+<h3><i class="fas fa-heart"></i> Our Mission</h3>
+<p>We strive to create a safe environment for both residents and animals through education, enforcement, and compassionate response. Our animal control services focus on public safety while ensuring humane treatment of all animals.</p>
+
+<h3 style="margin-top: 2rem;"><i class="fas fa-chart-line"></i> Our Responsibilities</h3>
 <div class="responsibility-grid">
 <div class="responsibility-item">
 <i class="fas fa-balance-scale"></i>
@@ -133,64 +268,310 @@
 </div>
 <div class="responsibility-item">
 <i class="fas fa-graduation-cap"></i>
-<span><a href="community-outreach.html">Community Education</a></span>
+<span>Community Education</span>
 </div>
 </div>
 </div>
-</div>
-<!-- Pet Licensing Card -->
-<div class="info-card">
-<div class="card-header">
-<i class="fas fa-id-card"></i>
-<h2>Pet Licensing</h2>
-</div>
-<div class="card-body">
-<p>All dogs over six months must be licensed annually in Bar Harbor.</p>
-<a class="action-button" href="https://www.maine.gov/dacf/ahw/animal_welfare/doglicense/index.shtml" rel="noopener" target="_blank">
-<i class="fas fa-file-alt"></i>
-                            Maine Dog Licensing Portal <i class="fas fa-external-link-alt"></i>
-</a>
-</div>
-</div>
-<!-- Lost & Found Card -->
-<div class="info-card">
-<div class="card-header">
-<i class="fas fa-search"></i>
-<h2>Lost &amp; Found</h2>
-</div>
-<div class="card-body">
-<p>Stray animals are taken to the Small Animal Clinic in Ellsworth</p>
-<div class="contact-details">
-<div class="contact-item">
-<i class="fas fa-phone"></i>
-<div>
-<h3>Contact</h3>
-<p>(207) 667-8753</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Community Safety Card -->
-<div class="info-card">
-<div class="card-header">
+
+<div class="right-column">
+<h3><i class="fas fa-phone-alt"></i> Emergency Contact</h3>
+<div class="payment-info-box">
+<div class="season-info">
+<div class="season-badge-large">
 <i class="fas fa-shield-alt"></i>
-<h2>Community Safety</h2>
+<span>24/7 Response</span>
 </div>
-<div class="card-body">
-<h3>Responsible Pet Ownership</h3>
-<ul>
-<li>Maintain control of your pet at all times</li>
-<li>Ensure proper identification</li>
-<li>Follow local leash laws</li>
-<li>Address any concerning behavior</li>
+<ul class="payment-list">
+<li><i class="fas fa-phone"></i> <strong>Emergency Line:</strong> (207) 288-3391</li>
+<li><i class="fas fa-clock"></i> <strong>Available:</strong> 24 hours a day, 7 days a week</li>
+<li><i class="fas fa-map-marker-alt"></i> <strong>Coverage:</strong> Bar Harbor & Mount Desert</li>
+<li><i class="fas fa-users"></i> <strong>Response:</strong> Trained officers available</li>
 </ul>
 </div>
 </div>
-</section>
+
+<div class="alert-box info" style="margin-top: 1.5rem;">
+<i class="fas fa-info-circle"></i>
+<strong>Quick Response:</strong> Our officers respond promptly to animal-related emergencies and public safety concerns.
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Services Tab -->
+<div id="services" class="tab-panel">
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-paw"></i>
+<h2>Our Services</h2>
+</div>
+<div class="card-body">
+<div class="services-grid">
+<!-- Law Enforcement -->
+<div class="service-card">
+<div class="service-icon" style="background: linear-gradient(135deg, #2196f3, #1976d2);">
+<i class="fas fa-balance-scale"></i>
+</div>
+<h3>Law Enforcement</h3>
+<ul class="service-list">
+<li><i class="fas fa-check"></i> Animal bite investigations</li>
+<li><i class="fas fa-check"></i> Dangerous animal reports</li>
+<li><i class="fas fa-check"></i> Leash law enforcement</li>
+<li><i class="fas fa-check"></i> Animal cruelty investigations</li>
+</ul>
+</div>
+
+<!-- Lost Pet Services -->
+<div class="service-card">
+<div class="service-icon" style="background: linear-gradient(135deg, #4caf50, #45a049);">
+<i class="fas fa-search"></i>
+</div>
+<h3>Lost Pet Services</h3>
+<ul class="service-list">
+<li><i class="fas fa-check"></i> Stray animal pickup</li>
+<li><i class="fas fa-check"></i> Lost pet reporting</li>
+<li><i class="fas fa-check"></i> Owner reunification</li>
+<li><i class="fas fa-check"></i> Shelter coordination</li>
+</ul>
+<div class="service-contact">
+<p><strong>Stray animals taken to:</strong><br>
+Small Animal Clinic, Ellsworth<br>
+<i class="fas fa-phone"></i> (207) 667-8753</p>
+</div>
+</div>
+
+<!-- Emergency Response -->
+<div class="service-card">
+<div class="service-icon" style="background: linear-gradient(135deg, #e91e63, #c2185b);">
+<i class="fas fa-exclamation-triangle"></i>
+</div>
+<h3>Emergency Response</h3>
+<ul class="service-list">
+<li><i class="fas fa-check"></i> Animal attack response</li>
+<li><i class="fas fa-check"></i> Wildlife conflicts</li>
+<li><i class="fas fa-check"></i> Injured animal assistance</li>
+<li><i class="fas fa-check"></i> Public safety concerns</li>
+</ul>
+</div>
+
+<!-- Community Education -->
+<div class="service-card">
+<div class="service-icon" style="background: linear-gradient(135deg, #ff9800, #f57c00);">
+<i class="fas fa-graduation-cap"></i>
+</div>
+<h3>Community Education</h3>
+<ul class="service-list">
+<li><i class="fas fa-check"></i> Responsible pet ownership</li>
+<li><i class="fas fa-check"></i> Safety programs</li>
+<li><i class="fas fa-check"></i> School presentations</li>
+<li><i class="fas fa-check"></i> Community outreach</li>
+</ul>
+<a href="community-outreach.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="two-column-layout" style="margin-top: 2rem;">
+<div class="left-column">
+<h3><i class="fas fa-shield-alt"></i> Community Safety Guidelines</h3>
+<ul style="margin-top: 1rem;">
+<li>Maintain control of your pet at all times</li>
+<li>Ensure proper identification (tags, microchips)</li>
+<li>Follow local leash laws and ordinances</li>
+<li>Address any concerning behavior promptly</li>
+<li>Report stray or aggressive animals immediately</li>
+</ul>
+</div>
+<div class="right-column">
+<h3><i class="fas fa-heart"></i> Responsible Pet Ownership</h3>
+<ul style="margin-top: 1rem;">
+<li>Keep vaccinations current</li>
+<li>Spay or neuter your pets</li>
+<li>Provide adequate shelter and care</li>
+<li>Clean up after your pet</li>
+<li>Register and license as required</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Licensing Tab -->
+<div id="licensing" class="tab-panel">
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-id-card"></i>
+<h2>Pet Licensing Requirements</h2>
+</div>
+<div class="card-body">
+<div class="two-column-layout">
+<div class="left-column">
+<h3><i class="fas fa-clipboard-list"></i> Licensing Requirements</h3>
+<div class="alert-box warning">
+<i class="fas fa-exclamation-triangle"></i>
+<strong>Required:</strong> All dogs over six months must be licensed annually in Bar Harbor and Mount Desert.
+</div>
+<ul style="margin-top: 1rem;">
+<li><strong>Age Requirement:</strong> Dogs 6 months and older</li>
+<li><strong>Renewal:</strong> Annual licensing required</li>
+<li><strong>Documentation:</strong> Current rabies vaccination certificate</li>
+<li><strong>Fee:</strong> Varies by spay/neuter status</li>
+</ul>
+
+<h3 style="margin-top: 2rem;"><i class="fas fa-file-alt"></i> Required Documents</h3>
+<ul>
+<li>Current rabies vaccination certificate</li>
+<li>Spay/neuter certificate (if applicable)</li>
+<li>Previous year's license (for renewals)</li>
+</ul>
+</div>
+
+<div class="right-column">
+<h3><i class="fas fa-globe"></i> Online Licensing</h3>
+<div class="contact-info-box" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border: 2px solid #2196f3;">
+<div class="contact-methods">
+<div class="contact-method">
+<i class="fas fa-laptop"></i>
+<div>
+<h4>Maine Dog Licensing Portal</h4>
+<p>Apply and renew licenses online</p>
+</div>
+</div>
+<div class="contact-method">
+<i class="fas fa-clock"></i>
+<div>
+<h4>Available 24/7</h4>
+<p>Convenient online processing</p>
+</div>
+</div>
+<div class="contact-method">
+<i class="fas fa-credit-card"></i>
+<div>
+<h4>Secure Payment</h4>
+<p>Multiple payment options</p>
+</div>
+</div>
+</div>
+<a class="action-button" href="https://www.maine.gov/dacf/ahw/animal_welfare/doglicense/index.shtml" rel="noopener" target="_blank" style="margin-top: 1rem; display: block; text-align: center;">
+<i class="fas fa-file-alt"></i>
+Maine Dog Licensing Portal <i class="fas fa-external-link-alt"></i>
+</a>
+</div>
+
+<div class="alert-box info" style="margin-top: 1.5rem;">
+<i class="fas fa-info-circle"></i>
+<strong>Benefits:</strong> Licensed pets are easier to return if lost and help support animal welfare programs.
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Contact Tab -->
+<div id="contact" class="tab-panel">
+<div class="info-card">
+<div class="card-header">
+<i class="fas fa-phone"></i>
+<h2>Contact Animal Control</h2>
+</div>
+<div class="card-body">
+<div class="two-column-layout">
+<div class="left-column">
+<h3><i class="fas fa-shield-alt"></i> Emergency Response</h3>
+<div class="contact-info-box" style="background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border: 2px solid #e91e63;">
+<div class="contact-methods">
+<div class="contact-method">
+<i class="fas fa-phone-alt"></i>
+<div>
+<h4>24/7 Emergency Line</h4>
+<p style="font-size: 1.2rem; font-weight: 600; color: #c2185b;">(207) 288-3391</p>
+</div>
+</div>
+<div class="contact-method">
+<i class="fas fa-clock"></i>
+<div>
+<h4>Response Time</h4>
+<p>Immediate dispatch for emergencies</p>
+</div>
+</div>
+<div class="contact-method">
+<i class="fas fa-map-marker-alt"></i>
+<div>
+<h4>Service Area</h4>
+<p>Bar Harbor & Mount Desert</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="right-column">
+<h3><i class="fas fa-hospital"></i> Lost & Found Resources</h3>
+<div class="contact-info-box">
+<div class="contact-item">
+<i class="fas fa-building"></i>
+<div>
+<h4>Small Animal Clinic</h4>
+<p>1154 Bar Harbor Road<br>Trenton, ME 04605</p>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<div>
+<h4>Clinic Phone</h4>
+<p style="font-size: 1.1rem; font-weight: 600; color: #2196f3;">(207) 667-8753</p>
+</div>
+</div>
+<div class="contact-item">
+<i class="fas fa-info-circle"></i>
+<div>
+<h4>Stray Animals</h4>
+<p>All stray animals are taken to the Small Animal Clinic for care and potential owner reunification.</p>
+</div>
+</div>
+</div>
+
+<h3 style="margin-top: 2rem;"><i class="fab fa-facebook"></i> Community Lost Pet Network</h3>
+<div class="contact-info-box" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border: 2px solid #1877f2;">
+<div class="contact-methods">
+<div class="contact-method">
+<i class="fab fa-facebook" style="color: #1877f2; background-color: rgba(24, 119, 242, 0.1);"></i>
+<div>
+<h4>MDI Lost & Found Pet Alert</h4>
+<p>Community Facebook group for reporting and finding lost pets on Mount Desert Island</p>
+</div>
+</div>
+<div class="contact-method">
+<i class="fas fa-users" style="color: #1877f2; background-color: rgba(24, 119, 242, 0.1);"></i>
+<div>
+<h4>Active Community</h4>
+<p>Hundreds of local residents helping reunite pets with their families</p>
+</div>
+</div>
+</div>
+<a href="https://www.facebook.com/mdilostfoundpetalert" target="_blank" rel="noopener" class="action-button" style="background: #1877f2; margin-top: 1rem; display: block; text-align: center;">
+<i class="fab fa-facebook-f"></i>
+Visit MDI Lost & Found Pet Alert <i class="fas fa-external-link-alt"></i>
+</a>
+</div>
+
+<div class="alert-box info" style="margin-top: 1.5rem;">
+<i class="fas fa-search"></i>
+<strong>Lost Your Pet?</strong> Contact us at (207) 288-3391, check the Small Animal Clinic, and post on the MDI Lost & Found Pet Alert Facebook page.
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </main>
-<!-- Footer remains the same -->
+
+<!-- Footer -->
 <footer class="footer" role="contentinfo" aria-label="Site Footer">
 <div class="footer-content">
 <div class="footer-logo-container">
@@ -206,21 +587,12 @@
 <nav class="footer-links" aria-label="Footer Navigation">
 <section class="footer-column" aria-labelledby="footer-divisions">
 <h3 id="footer-divisions"><i class="fas fa-building"></i> DIVISIONS</h3>
-<ul><li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
-
+<ul>
+<li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
 <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
 <li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
-</li>
+<li><a href="mount-desert-parking.html"><i class="fas fa-parking"></i> Mount Desert Parking</a></li>
 <li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
-</li>
 <li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
 </ul>
 </section>
@@ -256,19 +628,56 @@
 <h3><i class="fas fa-map-marker-alt"></i> Our Locations</h3>
 <div class="map-container" style="position:relative;">
 <div id="map" style="height: 250px; width: 100%; border:1px solid black;"></div>
-
 </div>
 </div>
 </div>
 <div class="footer-bottom">
 <p>© 2025 Bar Harbor Police Department. All Rights Reserved.</p>
-<div class="last-updated"><i class="fas fa-clock" aria-hidden="true" style="margin-right:0.5em;"></i>Last updated: <time datetime="2025-04-16">April 16th, 2025</time></div>
+<div class="last-updated"><i class="fas fa-clock" aria-hidden="true" style="margin-right:0.5em;"></i>Last updated: <time datetime="2025-06-19">June 19th, 2025</time></div>
 </div>
 </footer>
+
 <script src="darkmode.js"></script>
 <script src="script.js"></script>
+
+<script>
+// Simple tab functionality that actually works
+function showTab(tabName) {
+    // Hide all panels
+    const panels = document.querySelectorAll('.tab-panel');
+    panels.forEach(panel => {
+        panel.classList.remove('active');
+    });
+    
+    // Remove active from all buttons
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+    
+    // Show selected panel
+    const selectedPanel = document.getElementById(tabName);
+    if (selectedPanel) {
+        selectedPanel.classList.add('active');
+    }
+    
+    // Mark button as active
+    const clickedButton = event.target.closest('.tab-btn');
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
+}
+
+// Ensure overview tab is shown on page load
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('overview').classList.add('active');
+});
+</script>
+
 <!-- Footer loader script to dynamically load the footer with both addresses -->
 <script src="js/footer-loader.js" defer></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </body>
 </html>

@@ -445,3 +445,92 @@ body.dark-mode .reservation-note p {
     flex-direction: column;
   }
 }
+
+/* Mental Health Specific Tab Styles - Override July 4th patriotic colors */
+.mental-health-page .modern-tabs .tab-button,
+.mental-health-page .tab-button {
+  background-color: #f8f9fa !important;
+  background: #f8f9fa !important;
+  color: #495057 !important;
+  border: 2px solid #e9ecef !important;
+}
+
+.mental-health-page .modern-tabs .tab-button:nth-child(odd),
+.mental-health-page .modern-tabs .tab-button:nth-child(even),
+.mental-health-page .tab-button:nth-child(odd),
+.mental-health-page .tab-button:nth-child(even) {
+  background-color: #f8f9fa !important;
+  background: #f8f9fa !important;
+  color: #495057 !important;
+  border: 2px solid #e9ecef !important;
+}
+
+.mental-health-page .modern-tabs .tab-button:hover,
+.mental-health-page .tab-button:hover {
+  background-color: #e9ecef !important;
+  background: #e9ecef !important;
+  border-color: #64b5f6 !important;
+  color: #495057 !important;
+  transform: translateY(-2px);
+}
+
+.mental-health-page .modern-tabs .tab-button:nth-child(odd):hover,
+.mental-health-page .modern-tabs .tab-button:nth-child(even):hover,
+.mental-health-page .tab-button:nth-child(odd):hover,
+.mental-health-page .tab-button:nth-child(even):hover {
+  background-color: #e9ecef !important;
+  background: #e9ecef !important;
+  border-color: #64b5f6 !important;
+  color: #495057 !important;
+}
+
+.mental-health-page .modern-tabs .tab-button.active,
+.mental-health-page .tab-button.active {
+  background-color: #64b5f6 !important;
+  background: #64b5f6 !important;
+  color: #ffffff !important;
+  border-color: #64b5f6 !important;
+}
+
+.mental-health-page .modern-tabs .tab-button.active i,
+.mental-health-page .tab-button.active i {
+  color: #ffffff !important;
+}
+
+.mental-health-page .modern-tabs .tab-button::after,
+.mental-health-page .tab-button::after {
+  background-color: #64b5f6 !important;
+  background: #64b5f6 !important;
+}
+
+.mental-health-page .modern-tabs .tab-button.active::before,
+.mental-health-page .modern-tabs .tab-button.active::after,
+.mental-health-page .tab-button.active::before,
+.mental-health-page .tab-button.active::after {
+  background: #64b5f6 !important;
+  background-color: #64b5f6 !important;
+}
+
+/* Dark mode tab overrides */
+body.dark-mode .mental-health-page .modern-tabs .tab-button,
+body.dark-mode .mental-health-page .tab-button {
+  background-color: #2d2d2d !important;
+  background: #2d2d2d !important;
+  color: #e0e0e0 !important;
+  border-color: #404040 !important;
+}
+
+body.dark-mode .mental-health-page .modern-tabs .tab-button:hover,
+body.dark-mode .mental-health-page .tab-button:hover {
+  background-color: #404040 !important;
+  background: #404040 !important;
+  border-color: #64b5f6 !important;
+}
+
+body.dark-mode .mental-health-page .modern-tabs .tab-button.active,
+body.dark-mode .mental-health-page .tab-button.active {
+  background-color: #64b5f6 !important;
+  background: #64b5f6 !important;
+  color: #ffffff !important;
+  border-color: #64b5f6 !important;
+}
