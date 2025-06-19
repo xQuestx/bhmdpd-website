@@ -29,9 +29,10 @@
 
 <!-- Dark mode initialization -->
 <meta content="#ffffff" id="theme-color" name="theme-color"/>
-<script src="darkmode.js"></script>
 <script>
+    // Check for saved dark mode preference on page load
     if (localStorage.getItem('darkMode') === 'enabled') {
+        document.documentElement.classList.add('dark-mode-loading');
         document.getElementById('theme-color').setAttribute('content', '#121212');
     }
 </script>

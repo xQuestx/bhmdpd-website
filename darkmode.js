@@ -23,10 +23,20 @@ function initDarkMode() {
         updateDarkModeIcon(darkMode);
         
         // Add click listener
-        darkModeToggle.addEventListener('click', () => {
-            // Add transition class to body before toggling dark mode
+        darkModeToggle.addEventListener('click', (e) => {
+            // Prevent any default behavior
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Get current scroll position
+            const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Add transition class
             document.body.classList.add('transitioning');
             document.documentElement.classList.add('transitioning');
+            
+            // Force a reflow to ensure the transition class is applied
+            void document.body.offsetHeight;
             
             // Toggle dark mode
             document.body.classList.toggle('dark-mode');
@@ -37,11 +47,16 @@ function initDarkMode() {
             updateDarkModeIcon(isDarkMode);
             updateThemeColor(isDarkMode);
             
-            // Remove transition class after animation completes
-            setTimeout(() => {
-                document.body.classList.remove('transitioning');
-                document.documentElement.classList.remove('transitioning');
-            }, 600); // Slightly longer than the CSS transition duration
+            // Ensure scroll position is maintained
+            window.scrollTo(0, scrollPos);
+            
+            // Remove transition class after a short delay
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    document.body.classList.remove('transitioning');
+                    document.documentElement.classList.remove('transitioning');
+                });
+            });
             
             // Force repaint of mobile navigation if it's active
             const navWrapper = document.querySelector('.nav-wrapper');

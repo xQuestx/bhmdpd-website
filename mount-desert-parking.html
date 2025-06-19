@@ -624,14 +624,78 @@
   body.dark-mode h6 {
     color: var(--dark-mode-text-color, #e0e0e0) !important;
   }
+  
+  /* Fix for screen bounce when toggling dark mode */
+  html {
+    scroll-behavior: auto !important;
+  }
+  
+  /* Prevent position jump during dark mode transition */
+  body {
+    overflow-anchor: none;
+  }
+  
+  /* Disable smooth scrolling during theme transition */
+  body.transitioning {
+    scroll-behavior: auto !important;
+  }
+  
+  /* Fix dark mode background colors */
+  body.dark-mode {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+  }
+  
+  /* Fix tabs section background in dark mode */
+  body.dark-mode .tabs-section {
+    background: #1e1e1e !important;
+  }
+  
+  /* Fix tab buttons background in dark mode */
+  body.dark-mode .modern-tabs {
+    background: #2a2a2a !important;
+  }
+  
+  body.dark-mode .tab-button {
+    background: #3a3a3a !important;
+    color: #e0e0e0 !important;
+    border-color: #555 !important;
+  }
+  
+  body.dark-mode .tab-button:hover {
+    background: #4a4a4a !important;
+    border-color: #666 !important;
+  }
+  
+  body.dark-mode .tab-button.active {
+    background: var(--accent-color) !important;
+    color: white !important;
+    border-color: var(--accent-color) !important;
+  }
+  
+  /* Fix header in dark mode */
+  body.dark-mode .header {
+    background: #1e1e1e !important;
+  }
+  
+  /* Fix dropdown in dark mode */
+  body.dark-mode .dropdown-content {
+    background-color: #2a2a2a !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  body.dark-mode .dropdown-content a {
+    color: #e0e0e0 !important;
+  }
+  
+  body.dark-mode .dropdown-content a:hover {
+    background-color: #3a3a3a !important;
+  }
 </style>
 
 <!-- Load theme early to prevent flash -->
 <script src="js/theme-init.js"></script>
-<script src="darkmode.js" defer></script>
-<script src="script.js" defer></script>
 <meta content="#ffffff" id="theme-color" name="theme-color"/>
-<script src="theme-init.js" defer></script>
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="images/favicon.ico">
@@ -2063,7 +2127,7 @@ Bar Harbor, ME 04609<br>
 <footer id="dynamic-footer"></footer>
 
 <!-- Main JavaScript Files -->
-<script src="js/darkmode.js" defer></script>
+<script src="darkmode.js" defer></script>
 <script src="script.js" defer></script>
 <script src="js/footer-loader.js" defer></script>
 
@@ -2184,13 +2248,208 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Additional Styles -->
 <style>
-/* Fix contrast issues */
-.info-card {
+/* Prevent screen bounce on dark mode toggle */
+html {
+    overflow-anchor: none !important;
+}
+
+body {
+    overflow-anchor: none !important;
+}
+
+/* Disable all scroll-behavior during transition */
+html.transitioning,
+body.transitioning {
+    scroll-behavior: auto !important;
+}
+
+/* Prevent layout shift during transition */
+body.transitioning {
+    overflow-y: scroll !important;
+    position: relative !important;
+    transition: none !important;
+}
+
+/* Override the default body transition that causes zoom effect */
+body {
+    transition: none !important;
+}
+
+/* Only allow color transitions on specific elements, not the whole body */
+body.dark-mode {
+    transition: none !important;
+}
+
+/* Dark mode overrides with high specificity */
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode main,
+body.dark-mode .main-content {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .content-wrapper {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .tabs-section {
+    background: #1e1e1e !important;
+}
+
+body.dark-mode .modern-tabs {
+    background: #2a2a2a !important;
+}
+
+body.dark-mode .tab-button,
+body.dark-mode button.tab-button {
+    background: #3a3a3a !important;
+    background-color: #3a3a3a !important;
+    color: #e0e0e0 !important;
+    border-color: #555 !important;
+}
+
+body.dark-mode .tab-button:hover,
+body.dark-mode button.tab-button:hover {
+    background: #4a4a4a !important;
+    background-color: #4a4a4a !important;
+    border-color: #666 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .tab-button.active,
+body.dark-mode button.tab-button.active {
+    background: #0d47a1 !important;
+    background-color: #0d47a1 !important;
+    color: white !important;
+    border-color: #0d47a1 !important;
+}
+
+/* Force tab button text color */
+body.dark-mode .tab-button span,
+body.dark-mode .tab-button i {
+    color: inherit !important;
+}
+
+/* Override the inline styles from first style block */
+body.dark-mode .tabs-section .tab-button,
+body.dark-mode .tabs-wrapper .tab-button,
+body.dark-mode .modern-tabs .tab-button {
+    background: #3a3a3a !important;
+    background-color: #3a3a3a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .tabs-section .tab-button:hover,
+body.dark-mode .tabs-wrapper .tab-button:hover,
+body.dark-mode .modern-tabs .tab-button:hover {
+    background: #4a4a4a !important;
+    background-color: #4a4a4a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .tabs-section .tab-button.active,
+body.dark-mode .tabs-wrapper .tab-button.active,
+body.dark-mode .modern-tabs .tab-button.active {
+    background: #0d47a1 !important;
+    background-color: #0d47a1 !important;
+    color: white !important;
+}
+
+body.dark-mode .tab-hint p {
+    color: #b0b0b0 !important;
+}
+
+/* Maximum specificity override for tabs */
+body.dark-mode .tabs-section .container .tabs-wrapper .modern-tabs button.tab-button {
+    background: #3a3a3a !important;
+    background-color: #3a3a3a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode button.tab-button[type="button"] {
+    background: #3a3a3a !important;
+    background-color: #3a3a3a !important;
+    color: #e0e0e0 !important;
+}
+
+/* Dark mode overrides for specific elements with forced colors */
+body.dark-mode .styled-list li {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .permit-card {
+    background: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .permit-card p,
+body.dark-mode .permit-card li,
+body.dark-mode .permit-card ul {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .location-card {
+    background: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .location-card p,
+body.dark-mode .location-card h5 {
+    color: #e0e0e0 !important;
+}
+
+/* Dark mode overrides for all card elements */
+body.dark-mode .info-card {
+    background: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
+body.dark-mode .card-header {
+    background: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode .card-header h2,
+body.dark-mode .card-header h3,
+body.dark-mode .card-header h4 {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .card-body {
+    background: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .card-body p,
+body.dark-mode .card-body li,
+body.dark-mode .card-body span,
+body.dark-mode .card-body div {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .card-body h1,
+body.dark-mode .card-body h2,
+body.dark-mode .card-body h3,
+body.dark-mode .card-body h4,
+body.dark-mode .card-body h5,
+body.dark-mode .card-body h6 {
+    color: #e0e0e0 !important;
+}
+
+/* Fix contrast issues in light mode */
+body:not(.dark-mode) .info-card {
     background: #ffffff !important;
     color: #212529 !important;
 }
 
-.card-body {
+body:not(.dark-mode) .card-body {
     background: #ffffff !important;
     color: #212529 !important;
     text-align: center !important;
@@ -2216,12 +2475,20 @@ document.addEventListener('DOMContentLoaded', function() {
     margin-bottom: 2rem !important;
 }
 
-/* Ensure all text is readable */
-p, li, span, div {
+/* Ensure all text is readable in light mode */
+body:not(.dark-mode) p,
+body:not(.dark-mode) li,
+body:not(.dark-mode) span,
+body:not(.dark-mode) div {
     color: #212529;
 }
 
-h1, h2, h3, h4, h5, h6 {
+body:not(.dark-mode) h1,
+body:not(.dark-mode) h2,
+body:not(.dark-mode) h3,
+body:not(.dark-mode) h4,
+body:not(.dark-mode) h5,
+body:not(.dark-mode) h6 {
     color: #212529;
 }
 
