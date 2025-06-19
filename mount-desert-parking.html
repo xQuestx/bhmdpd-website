@@ -2403,6 +2403,193 @@ body.dark-mode .location-card h5 {
     color: #e0e0e0 !important;
 }
 
+/* Fix alert boxes in dark mode */
+body.dark-mode .alert-box {
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .alert-box.info {
+    background: #1e3a5f !important;
+    border-color: #2196f3 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .alert-box.warning {
+    background: #3d2f00 !important;
+    border-color: #ff9800 !important;
+    color: #ffcc80 !important;
+}
+
+body.dark-mode .alert-box.danger {
+    background: #4a1c1c !important;
+    border-color: #f44336 !important;
+    color: #ffcdd2 !important;
+}
+
+body.dark-mode .alert-box strong {
+    color: inherit !important;
+}
+
+body.dark-mode .alert-box p {
+    color: inherit !important;
+}
+
+/* Fix payment info boxes */
+body.dark-mode .payment-info-box {
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode .payment-info-box h3,
+body.dark-mode .payment-info-box h4,
+body.dark-mode .payment-info-box p,
+body.dark-mode .payment-info-box li {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .season-badge-summer {
+    background: #3d2f00 !important;
+    color: #ffcc80 !important;
+}
+
+body.dark-mode .season-badge-winter {
+    background: #1e3a5f !important;
+    color: #90caf9 !important;
+}
+
+/* Fix the specific yellow/cream boxes visible in screenshot */
+body.dark-mode .warning-box,
+body.dark-mode .notice-box {
+    background: #3d2f00 !important;
+    border-color: #ff9800 !important;
+    color: #ffcc80 !important;
+}
+
+body.dark-mode .warning-box h3,
+body.dark-mode .warning-box h4,
+body.dark-mode .warning-box p,
+body.dark-mode .notice-box h3,
+body.dark-mode .notice-box h4,
+body.dark-mode .notice-box p {
+    color: #ffcc80 !important;
+}
+
+/* Ensure all text in season info is visible */
+body.dark-mode .season-info {
+    background: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .season-info h3,
+body.dark-mode .season-info h4,
+body.dark-mode .season-info p,
+body.dark-mode .season-info li {
+    color: #e0e0e0 !important;
+}
+
+/* Override any inline margin styles for dark mode elements */
+body.dark-mode .alert-box h4[style*="margin"],
+body.dark-mode .alert-box h3[style*="margin"] {
+    color: inherit !important;
+}
+
+/* Ensure readability of all regulation and rule boxes */
+body.dark-mode .regulation-card {
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .regulation-card h3,
+body.dark-mode .regulation-card h4,
+body.dark-mode .regulation-card p,
+body.dark-mode .regulation-card li {
+    color: #e0e0e0 !important;
+}
+
+/* Fix any remaining light boxes with better specificity */
+body.dark-mode [style*="background: #fff"],
+body.dark-mode [style*="background:#fff"],
+body.dark-mode [style*="background-color: #fff"],
+body.dark-mode [style*="background-color:#fff"] {
+    background: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+/* Fix inline styles in permits and contact sections */
+body.dark-mode [style*="color: #444"],
+body.dark-mode [style*="color:#444"] {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode [style*="color: var(--gray-600)"] {
+    color: #b0b0b0 !important;
+}
+
+body.dark-mode [style*="background: var(--gray-50)"] {
+    background: #2a2a2a !important;
+}
+
+body.dark-mode [style*="background: #fff3cd"] {
+    background: #3d2f00 !important;
+}
+
+body.dark-mode [style*="color: #856404"] {
+    color: #ffcc80 !important;
+}
+
+/* Fix step items in permits section */
+body.dark-mode .step-item-vertical {
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode .step-item-vertical h4,
+body.dark-mode .step-item-vertical p,
+body.dark-mode .step-item-vertical strong {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .step-details p {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .step-details a {
+    color: #64b5f6 !important;
+}
+
+/* Fix contact section boxes */
+body.dark-mode .step-content h4,
+body.dark-mode .step-content p {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode div[style*="background: var(--gray-50)"] {
+    background: #2a2a2a !important;
+    border: 1px solid #444 !important;
+}
+
+body.dark-mode div[style*="background: var(--gray-50)"] p {
+    color: #e0e0e0 !important;
+}
+
+/* Fix the yellow note boxes in contact section */
+body.dark-mode p[style*="background: #fff3cd"] {
+    background: #3d2f00 !important;
+    color: #ffcc80 !important;
+}
+
+/* Override CSS variables for dark mode */
+body.dark-mode {
+    --gray-50: #2a2a2a;
+    --gray-600: #b0b0b0;
+    --primary-color: #4a9eff;
+    --accent-color: #64b5f6;
+    --success-color: #4caf50;
+}
+
 /* Dark mode overrides for all card elements */
 body.dark-mode .info-card {
     background: #1e1e1e !important;
