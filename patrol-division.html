@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -7,19 +7,733 @@
 <title>Patrol Division - Bar Harbor & Mount Desert Law Enforcement</title>
 <meta name="description" content="Learn about the Bar Harbor and Mount Desert Police Department's Patrol Division, providing 24/7 law enforcement, emergency response, and community policing services in Bar Harbor and Mount Desert, Maine.">
 <link rel="canonical" href="https://www.bhmdpd.com/patrol-division.html" />
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="Patrol Division - Bar Harbor & Mount Desert Police Department">
+<meta name="keywords" content="Bar Harbor police patrol, Mount Desert law enforcement, 24/7 police service, community policing Maine, emergency response, traffic enforcement, criminal investigations, police units">
+<meta name="author" content="Bar Harbor Mount Desert Police Department">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.bhmdpd.com/patrol-division.html">
+<meta property="og:title" content="Patrol Division - Bar Harbor & Mount Desert Police">
+<meta property="og:description" content="24/7 law enforcement services for Bar Harbor and Mount Desert communities. Emergency response, community policing, traffic enforcement, and specialized units serving Maine.">
+<meta property="og:image" content="https://www.bhmdpd.com/images/branding/logo.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.bhmdpd.com/patrol-division.html">
+<meta property="twitter:title" content="Patrol Division - BHMDPD">
+<meta property="twitter:description" content="24/7 law enforcement services for Bar Harbor and Mount Desert communities. Emergency response, community policing, and specialized units.">
+<meta property="twitter:image" content="https://www.bhmdpd.com/images/branding/logo.png">
+
 <!-- Dark mode initialization -->
 <meta content="#ffffff" id="theme-color" name="theme-color"/>
 <script src="darkmode.js"></script>
 <script>
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            document.getElementById('theme-color').setAttribute('content', '#121212');
-        }
-    </script>
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.getElementById('theme-color').setAttribute('content', '#121212');
+    }
+</script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 <link href="css/main.css" rel="stylesheet"/>
+<link href="css/components/tabs.css" rel="stylesheet"/>
+<style>
+/* 
+ * CONSOLIDATED AND REFINED STYLES FOR PATROL DIVISION PAGE
+ */
+
+/* --- Hero Section --- */
+.patrol-division-page .hero-section {
+    background: linear-gradient(135deg, var(--primary-color, #1a2b4a) 0%, var(--primary-color-dark, #0f1d33) 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--light-text-color, #fff);
+}
+.patrol-division-page .hero-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color, #ff3333);
+}
+.patrol-division-page .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--light-text-color, #fff);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.patrol-division-page .hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    font-weight: 500;
+    color: var(--light-text-color, #fff);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* --- Tab Layout & Sidebar --- */
+.tab-content-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+.tab-sidebar {
+    position: sticky;
+    top: 2rem;
+}
+.sidebar-section {
+    background: var(--card-bg, #ffffff);
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.1));
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color, #e8eaed);
+}
+.sidebar-header {
+    background: var(--gray-50, #f8f9fa);
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-color, #e8eaed);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+}
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+.sidebar-header i {
+    color: var(--primary-color, #1a2b4a);
+}
+.sidebar-content {
+    padding: 1.25rem;
+}
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color, #e8eaed);
+    font-size: 0.95rem;
+}
+.sidebar-item:last-child { border-bottom: none; }
+.sidebar-item i {
+    color: var(--primary-color, #1a2b4a);
+    width: 20px;
+    text-align: center;
+}
+.quick-link-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    color: var(--text-color, #333);
+    text-decoration: none;
+    border-radius: var(--radius-md, 8px);
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+.quick-link-item:hover {
+    background: var(--gray-50, #f8f9fa);
+    color: var(--primary-color, #1a2b4a);
+}
+.quick-link-item i {
+    width: 20px;
+    text-align: center;
+}
+.tab-main-content {
+    flex: 1;
+    min-height: 500px;
+}
+
+/* --- Main Content Card Wrapper --- */
+.patrol-info-card {
+    background: var(--card-bg, #ffffff);
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.1));
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color, #e8eaed);
+}
+.patrol-info-card-header {
+    background: var(--primary-color, #1a2b4a);
+    padding: 1rem 1.5rem;
+    color: var(--light-text-color, #fff);
+}
+.patrol-info-card-header h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.2rem;
+}
+.patrol-info-card-content {
+    padding: 1.5rem;
+}
+.patrol-info-card-content > p:first-of-type {
+    margin-top: 0;
+}
+
+/* --- UNIFIED CONTENT GRID & CARD STYLES --- */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.content-card {
+    background: var(--card-bg, #ffffff);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color, #e8eaed);
+    display: flex;
+    flex-direction: column;
+}
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md, 0 4px 8px rgba(0, 0, 0, 0.15));
+}
+.content-card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--accent-color, #007bff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+}
+.content-card-icon i {
+    font-size: 1.75rem;
+    color: white;
+}
+.content-card h4 {
+    color: var(--primary-color, #1a2b4a);
+    margin: 0 0 1rem 0;
+    text-align: center;
+    font-size: 1.15rem;
+}
+.content-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+    flex-grow: 1;
+}
+.content-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    font-size: 0.9rem;
+    text-align: left;
+}
+.content-card ul li {
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+    margin-bottom: 0.5rem;
+}
+.content-card ul li::before {
+    content: "\f00c"; /* Font Awesome check icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--accent-color, #007bff);
+    margin-right: 0.75em;
+}
+.content-card .card-link {
+    margin-top: 1rem;
+    text-align: center;
+}
+.content-card .card-link a {
+    text-decoration: none;
+    color: var(--primary-color, #1a2b4a);
+    font-weight: 600;
+}
+.content-card .card-link a:hover {
+    text-decoration: underline;
+}
+
+/* --- TAB BUTTONS: SINGLE ROW ADJUSTMENT --- */
+.modern-tabs {
+    display: flex; /* Use flexbox for distribution */
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    width: 100%;
+    gap: 0.5rem; /* Add a small gap between tabs */
+    background: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 12px;
+}
+.modern-tabs .tab-button {
+    flex: 1 1 auto; /* Make each tab grow and shrink equally */
+    padding: 0.85rem 0.5rem; /* Adjust padding (more vertical, less horizontal) */
+    font-size: 0.9rem; /* Slightly reduce font size to fit more text */
+    white-space: nowrap; /* Keep icon and text on one line */
+    min-width: 0; /* Critical for allowing flex items to shrink below content size */
+    justify-content: center;
+    background: white;
+    color: #212529;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.modern-tabs .tab-button i {
+    margin-right: 0.5rem;
+    color: #495057;
+}
+.modern-tabs .tab-button:hover {
+    background: #f5f5f5;
+    color: #B8860B; /* Dark Goldenrod */
+    border-color: #B8860B;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.modern-tabs .tab-button:hover i {
+    color: #B8860B;
+}
+.modern-tabs .tab-button.active {
+    background: #1e3a8a; /* Navy Blue */
+    color: white;
+    border-color: #1e3a8a;
+    box-shadow: 0 2px 8px rgba(30,58,138,0.25);
+}
+.modern-tabs .tab-button.active i {
+    color: #FFD700; /* Gold */
+}
+
+/* --- Dark Mode Styles --- */
+body.dark-mode .sidebar-section,
+body.dark-mode .patrol-info-card,
+body.dark-mode .content-card {
+    background: var(--dark-mode-card-bg, #2d2d2d);
+    border-color: var(--dark-mode-border-color, #404040);
+}
+body.dark-mode .sidebar-header {
+    background: var(--dark-mode-background, #121212);
+    border-bottom-color: var(--dark-mode-border-color, #404040);
+}
+body.dark-mode .sidebar-item {
+    border-bottom-color: var(--dark-mode-border-color, #404040);
+}
+body.dark-mode .patrol-info-card-header {
+    background: var(--dark-mode-primary-color, #29487d);
+}
+body.dark-mode .content-card h4,
+body.dark-mode .content-card .card-link a {
+    color: var(--light-text-color, #fff);
+}
+body.dark-mode .content-card p,
+body.dark-mode .content-card ul li {
+    color: var(--dark-mode-text-color, #e0e0e0);
+}
+body.dark-mode .quick-link-item {
+    color: var(--dark-mode-text-color, #e0e0e0);
+}
+body.dark-mode .quick-link-item:hover {
+    background: var(--dark-mode-background, #121212);
+}
+
+/* Dark mode tab styles */
+body.dark-mode .modern-tabs {
+    background: #1e1e1e;
+}
+body.dark-mode .modern-tabs .tab-button {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+body.dark-mode .modern-tabs .tab-button i {
+    color: #adb5bd;
+}
+body.dark-mode .modern-tabs .tab-button:hover {
+    background: #333;
+    color: #B8860B;
+    border-color: #B8860B;
+}
+body.dark-mode .modern-tabs .tab-button:hover i {
+    color: #B8860B;
+}
+body.dark-mode .modern-tabs .tab-button.active {
+    background: #1e3a8a;
+    color: white;
+    border-color: #1e3a8a;
+}
+body.dark-mode .modern-tabs .tab-button.active i {
+    color: #FFD700;
+}
+
+/* --- Recruitment Tab Specific Styles --- */
+#careers .patrol-info-card-content {
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Hero Salary Section */
+#careers .salary-hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#careers .salary-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    transform: rotate(45deg);
+}
+
+#careers .salary-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#careers .salary-hero h4 {
+    color: #FFD700;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+#careers .salary-amount {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+#careers .salary-hero p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+/* Benefits Section */
+#careers .benefits-section {
+    padding: 2.5rem 1.5rem;
+    background: #f8f9fa;
+}
+
+#careers .benefits-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#careers .benefits-header h3 {
+    font-size: 1.8rem;
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+}
+
+#careers .benefits-header p {
+    font-size: 1rem;
+    color: #6c757d;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#careers .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#careers .benefit-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-top: 3px solid #B8860B;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+#careers .benefit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+#careers .benefit-card i {
+    font-size: 2.25rem;
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+#careers .benefit-card h4 {
+    color: #1e3a8a;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+#careers .benefit-card p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Additional Benefits List */
+#careers .additional-benefits {
+    background: white;
+    padding: 2rem 1.5rem;
+    margin-top: -2px;
+}
+
+#careers .additional-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    max-width: 100%;
+    margin: 0;
+}
+
+#careers .additional-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+#careers .additional-benefit i {
+    color: #B8860B;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+#careers .additional-benefit div h5 {
+    color: #1e3a8a;
+    font-size: 1rem;
+    margin: 0 0 0.25rem 0;
+    font-weight: 600;
+}
+
+#careers .additional-benefit div p {
+    color: #6c757d;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* CTA Section */
+#careers .recruitment-cta {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#careers .recruitment-cta::before {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -10%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    transform: rotate(-45deg);
+}
+
+#careers .recruitment-cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#careers .recruitment-cta h3 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+#careers .recruitment-cta p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+#careers .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#careers .cta-buttons .btn {
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#careers .btn-primary {
+    background: #FFD700;
+    color: #1e3a8a;
+    border: 2px solid #FFD700;
+}
+
+#careers .btn-primary:hover {
+    background: white;
+    color: #1e3a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+#careers .btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+#careers .btn-outline:hover {
+    background: white;
+    color: #1e3a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Dark mode styles for careers */
+body.dark-mode #careers .salary-hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+}
+body.dark-mode #careers .benefits-section {
+    background: #1e1e1e;
+}
+body.dark-mode #careers .benefit-card {
+    background: #2a2a2a;
+    border-top-color: #B8860B;
+}
+body.dark-mode #careers .benefit-card h4 {
+    color: #FFD700;
+}
+body.dark-mode #careers .benefit-card p {
+    color: #e0e0e0;
+}
+body.dark-mode #careers .additional-benefits {
+    background: #121212;
+}
+body.dark-mode #careers .additional-benefit div h5 {
+    color: #FFD700;
+}
+body.dark-mode #careers .additional-benefit div p {
+    color: #e0e0e0;
+}
+body.dark-mode #careers .recruitment-cta {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+}
+
+
+/* --- Responsive Styles --- */
+@media (max-width: 992px) {
+    .tab-content-layout {
+        grid-template-columns: 1fr;
+    }
+    .tab-sidebar {
+        position: static;
+    }
+}
+@media (max-width: 768px) {
+    .patrol-division-page .hero-section { padding: 2rem 1rem; }
+    .patrol-division-page .hero-content h1 { font-size: 2rem; }
+    .content-grid { grid-template-columns: 1fr; }
+    /* Careers responsive styles */
+    #careers .salary-amount {
+        font-size: 2.8rem;
+    }
+    #careers .salary-hero {
+        padding: 2rem 1rem;
+    }
+    #careers .salary-hero h4 {
+        font-size: 1rem;
+    }
+    #careers .benefits-section {
+        padding: 2rem 1rem;
+    }
+    #careers .benefits-header h3 {
+        font-size: 1.5rem;
+    }
+    #careers .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    #careers .benefit-card {
+        padding: 1.25rem;
+    }
+    #careers .benefit-card i {
+        font-size: 2rem;
+    }
+    #careers .additional-benefits {
+        padding: 1.5rem 1rem;
+    }
+    #careers .additional-benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    #careers .recruitment-cta {
+        padding: 2rem 1rem;
+    }
+    #careers .recruitment-cta h3 {
+        font-size: 1.6rem;
+    }
+    #careers .recruitment-cta p {
+        font-size: 0.95rem;
+    }
+    #careers .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+    #careers .cta-buttons .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+    }
+    /* On smaller screens, allow tabs to scroll horizontally */
+    .modern-tabs {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 10px; /* Space for scrollbar if visible */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .modern-tabs::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+    }
+    .modern-tabs .tab-button {
+        flex-shrink: 0; /* Prevent tabs from shrinking */
+        padding: 0.85rem 1rem;
+    }
+}
+</style>
 <link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LBXVRZLEN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -29,7 +743,7 @@
   gtag('config', 'G-3LBXVRZLEN');
 </script>
 </head>
-<body>
+<body class="patrol-division-page">
 <a class="skip-to-main" href="#main-content">
         Skip to main content
     </a>
@@ -95,85 +809,531 @@
 </nav>
 </header>
 <main class="patrol-division-page" id="main-content">
-<div class="hero-section patrol-hero" style="background: linear-gradient(rgba(26, 43, 74, 0.9), rgba(10, 20, 40, 0.95));">
+<div class="hero-section patrol-hero">
 <div class="hero-content">
-<i class="fas fa-shield-alt hero-icon" style="color: #ff3333; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);"></i>
-<h1 style="color: white; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);">Patrol Division</h1>
-<p style="color: white; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);">Protecting and serving the Bar Harbor and Mount Desert communities</p>
-</div>
-</div>
-<div class="content-wrapper">
-<section class="info-grid">
-<div class="info-card about">
-<div class="card-header">
-<i class="fas fa-shield-alt"></i>
-<h2>About Our Division</h2>
-</div>
-<div class="card-body">
-<p>The Patrol Division is the backbone of the Bar Harbor Mount Desert Police Department, providing 24/7 law enforcement services to our communities. Our officers are dedicated to maintaining public safety, responding to emergencies, and building positive relationships with community members.</p>
-<div class="responsibilities">
-<h3>Our Responsibilities</h3>
-<ul>
-<li><i class="fas fa-check"></i> Emergency response</li>
-<li><i class="fas fa-check"></i> Crime prevention and investigation</li>
-<li><i class="fas fa-check"></i> Traffic enforcement</li>
-<li><i class="fas fa-check"></i> <a href="community-outreach.html">Community policing</a></li>
-<li><i class="fas fa-check"></i> Public assistance</li>
-</ul>
+<i class="fas fa-shield-alt hero-icon"></i>
+<h1>Patrol Division</h1>
+<p>Protecting and serving the Bar Harbor and Mount Desert communities 24/7</p>
+<div class="highlight-badges">
+	<div class="badge">
+		<i class="fas fa-clock"></i>
+		<span>24/7 Service</span>
+	</div>
+	<div class="badge">
+		<i class="fas fa-phone"></i>
+		<span>Emergency: 911</span>
+	</div>
+	<div class="badge">
+		<i class="fas fa-map-marker-alt"></i>
+		<span>37 Firefly Ln (BH)</span>
+	</div>
+	<div class="badge">
+		<i class="fas fa-map-marker-alt"></i>
+		<span>21 Sea St (MD)</span>
+	</div>
 </div>
 </div>
 </div>
 
-<div class="info-card services">
-<div class="card-header">
-<i class="fas fa-hands-helping"></i>
-<h2>Services We Provide</h2>
+<div class="container">
+<!-- Tab Hint Message -->
+<div class="tab-hint">
+	<p><i class="fas fa-hand-pointer"></i> Click on any tab below to explore our Patrol Division</p>
 </div>
-<div class="card-body">
-<div class="service-item">
-<i class="fas fa-car"></i>
-<div>
-<h3>Traffic Safety</h3>
-<p>Our officers enforce traffic laws to ensure the safety of drivers, pedestrians, and cyclists throughout Bar Harbor and Mount Desert.</p>
-</div>
-</div>
-<div class="service-item">
-<i class="fas fa-search"></i>
-<div>
-<h3>Criminal Investigations</h3>
-<p>We investigate criminal activity to bring justice to victims and maintain the safety of our community.</p>
-</div>
-</div>
-<div class="service-item">
-<i class="fas fa-users"></i>
-<div>
-<h3>Community Engagement</h3>
-<p>Building relationships with community members through <a href="community-outreach.html">outreach programs</a>, school visits, and <a href="events.html">public events</a>.</p>
-</div>
-</div>
-<div class="service-item">
-<i class="fas fa-life-ring"></i>
-<div>
-<h3>Emergency Response</h3>
-<p>Rapid response to emergencies and critical incidents to protect life and property.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
 
-<section class="construction-notice">
-<div class="notice-container">
-<i class="fas fa-hard-hat notice-icon"></i>
-<div class="notice-content">
-<h2>Under Construction</h2>
-<p>We're currently enhancing this section with additional information about our Patrol Division. Please check back soon for updates on our team, equipment, and specialized units.</p>
-<p>In the meantime, if you have any questions about our Patrol Division, please <a href="contact.html">contact us</a>.</p>
+<!-- Tab Buttons -->
+<div class="modern-tabs">
+	<button class="tab-button active" data-tab="overview">
+		<i class="fas fa-info-circle"></i>
+		<span>Overview</span>
+	</button>
+	<button class="tab-button" data-tab="services">
+		<i class="fas fa-hands-helping"></i>
+		<span>Services</span>
+	</button>
+	<button class="tab-button" data-tab="units">
+		<i class="fas fa-users-cog"></i>
+		<span>Units</span>
+	</button>
+	<button class="tab-button" data-tab="community">
+		<i class="fas fa-heart"></i>
+		<span>Community</span>
+	</button>
+	<button class="tab-button" data-tab="equipment">
+		<i class="fas fa-cogs"></i>
+		<span>Equipment</span>
+	</button>
+	<button class="tab-button" data-tab="careers">
+		<i class="fas fa-user-tie"></i>
+		<span>Careers</span>
+	</button>
 </div>
-</div>
-</section>
+
+<!-- Tab Contents -->
+<div class="tab-contents">
+	<!-- Overview Tab -->
+	<div class="tab-content active" id="overview">
+		<div class="tab-content-layout">
+			<!-- Sidebar -->
+			<div class="tab-sidebar">
+				<div class="sidebar-section">
+					<div class="sidebar-header">
+						<i class="fas fa-phone-alt"></i>
+						<h3>Contact Information</h3>
+					</div>
+					<div class="sidebar-content">
+						<div class="sidebar-item">
+							<i class="fas fa-phone"></i>
+							<span><strong>Emergency:</strong> 911</span>
+						</div>
+						<div class="sidebar-item">
+							<i class="fas fa-phone-alt"></i>
+							<span><strong>Non-Emergency:</strong> (207) 288-3391</span>
+						</div>
+						<div class="sidebar-item">
+							<i class="fas fa-map-marker-alt"></i>
+							<span><strong>Bar Harbor Station:</strong><br>37 Firefly Lane, Bar Harbor, ME 04609</span>
+						</div>
+						<div class="sidebar-item">
+							<i class="fas fa-map-marker-alt"></i>
+							<span><strong>Mount Desert Station:</strong><br>21 Sea Street, Northeast Harbor, ME 04662</span>
+						</div>
+						<div class="sidebar-item">
+							<i class="fas fa-envelope"></i>
+							<span><a href="mailto:recruitment@barharbormaine.gov">recruitment@barharbormaine.gov</a></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="sidebar-section">
+					<div class="sidebar-header">
+						<i class="fas fa-chart-line"></i>
+						<h3>Division at a Glance</h3>
+					</div>
+					<div class="sidebar-content">
+						<div class="sidebar-item">
+							<i class="fas fa-shield-alt"></i>
+							<span><strong>20+</strong> Sworn Officers</span>
+						</div>
+						<div class="sidebar-item">
+							<i class="fas fa-clock"></i>
+							<span><strong>24/7</strong> Community Coverage</span>
+						</div>
+						<div class="sidebar-item">
+							<i class="fas fa-map"></i>
+							<span><strong>100+</strong> Sq. Miles Patrolled</span>
+						</div>
+						<div class="sidebar-item">
+							<i class="fas fa-tachometer-alt"></i>
+							<span><strong><5 min</strong> Avg. Response Time</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Main Content -->
+			<div class="tab-main-content">
+				<div class="patrol-info-card">
+					<div class="patrol-info-card-header">
+						<h3><i class="fas fa-shield-alt"></i> About Our Patrol Division</h3>
+					</div>
+					<div class="patrol-info-card-content">
+						<p>The Patrol Division is the backbone of the Bar Harbor Mount Desert Police Department, providing continuous law enforcement services to our communities. Our officers are the first responders, dedicated to maintaining public safety, enforcing laws, and building positive relationships with residents and visitors alike.</p>
+					</div>
+				</div>
+				<div class="patrol-info-card">
+					<div class="patrol-info-card-header">
+						<h3><i class="fas fa-flag-checkered"></i> Core Responsibilities</h3>
+					</div>
+					<div class="patrol-info-card-content">
+						<p>Our officers are trained and equipped to handle a wide range of responsibilities to ensure community safety and well-being.</p>
+						<div class="content-grid">
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-car-crash"></i></div>
+								<h4>Emergency Response</h4>
+								<p>Rapidly responding to 911 calls, including crimes in progress, medical emergencies, and accidents.</p>
+							</div>
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-search"></i></div>
+								<h4>Proactive Patrol</h4>
+								<p>Maintaining a visible presence in neighborhoods and business districts to deter crime.</p>
+							</div>
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-road"></i></div>
+								<h4>Traffic Enforcement</h4>
+								<p>Ensuring road safety through enforcement of traffic laws and accident investigation.</p>
+							</div>
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-users"></i></div>
+								<h4>Community Policing</h4>
+								<p>Engaging with the public to build trust and collaboratively solve local issues.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Services Tab -->
+	<div class="tab-content" id="services">
+		<div class="tab-content-layout">
+			<!-- Sidebar -->
+			<div class="tab-sidebar">
+				<div class="sidebar-section">
+					<div class="sidebar-header"><i class="fas fa-concierge-bell"></i><h3>Service Categories</h3></div>
+					<div class="sidebar-content">
+						<div class="sidebar-item"><i class="fas fa-car-crash"></i><span>Emergency Response</span></div>
+						<div class="sidebar-item"><i class="fas fa-road"></i><span>Traffic Services</span></div>
+						<div class="sidebar-item"><i class="fas fa-search-plus"></i><span>Investigations</span></div>
+						<div class="sidebar-item"><i class="fas fa-users"></i><span>Community Programs</span></div>
+						<div class="sidebar-item"><i class="fas fa-home"></i><span>Property Services</span></div>
+					</div>
+				</div>
+				<div class="sidebar-section">
+					<div class="sidebar-header"><i class="fas fa-info-circle"></i><h3>Requesting Service</h3></div>
+					<div class="sidebar-content">
+						<p style="margin-bottom: 1rem; font-size: 0.9rem;">Contact us through the appropriate channels:</p>
+						<a href="tel:911" class="quick-link-item" style="background: #dc3545; color: white;"><i class="fas fa-phone"></i><span>Emergency: Dial 911</span></a>
+						<a href="tel:207-288-3391" class="quick-link-item" style="margin-top: 0.5rem;"><i class="fas fa-phone-alt"></i><span>Non-Emergency Line</span></a>
+					</div>
+				</div>
+			</div>
+			<!-- Main Content -->
+			<div class="tab-main-content">
+				<div class="patrol-info-card">
+					<div class="patrol-info-card-header"><h3><i class="fas fa-hands-helping"></i> Comprehensive Law Enforcement Services</h3></div>
+					<div class="patrol-info-card-content">
+						<p>Our Patrol Division provides a wide array of services to ensure the safety and security of all residents and visitors in Bar Harbor and Mount Desert.</p>
+						<div class="content-grid">
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-car"></i></div>
+								<h4>Traffic Safety</h4>
+								<p>Proactive enforcement and education to ensure safe roadways for drivers, pedestrians, and cyclists.</p>
+								<ul>
+									<li>Speed & OUI Enforcement</li>
+									<li>Accident Investigation</li>
+									<li>School Zone Safety</li>
+								</ul>
+							</div>
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-search-plus"></i></div>
+								<h4>Criminal Investigations</h4>
+								<p>Thorough investigation of criminal activity to bring justice to victims and maintain community safety.</p>
+								<ul>
+									<li>Crime Scene Processing</li>
+									<li>Evidence Collection</li>
+									<li>Witness Interviews</li>
+								</ul>
+							</div>
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-life-ring"></i></div>
+								<h4>Emergency Response</h4>
+								<p>Rapid, 24/7 response to critical incidents, working with fire and EMS to protect life and property.</p>
+								<ul>
+									<li>911 Emergency Calls</li>
+									<li>Crisis Intervention</li>
+									<li>Medical Assists</li>
+								</ul>
+							</div>
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-home"></i></div>
+								<h4>Property Protection</h4>
+								<p>Residential and commercial property checks, alarm response, and burglary prevention to keep communities secure.</p>
+								<ul>
+									<li>Property Checks</li>
+									<li>Alarm Response</li>
+									<li>Vacation Watches</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Specialized Units Tab -->
+	<div class="tab-content" id="units">
+		<div class="tab-content-layout">
+			<!-- Sidebar -->
+			<div class="tab-sidebar">
+				<div class="sidebar-section">
+					<div class="sidebar-header"><i class="fas fa-star"></i><h3>Unit Categories</h3></div>
+					<div class="sidebar-content">
+						<div class="sidebar-item"><i class="fas fa-car-crash"></i><span>Traffic Unit</span></div>
+						<div class="sidebar-item"><i class="fas fa-users"></i><span>Community Response</span></div>
+					</div>
+				</div>
+				<div class="sidebar-section">
+					<div class="sidebar-header"><i class="fas graduation-cap"></i><h3>Officer Training</h3></div>
+					<div class="sidebar-content">
+						<p style="font-size: 0.9rem;">Our officers receive continuous training in areas like Crisis Intervention (CIT), School Resource functions, and advanced forensics.</p>
+						<a href="recruitment.html#specialized" class="quick-link-item" style="margin-top: 1rem;"><i class="fas fa-info-circle"></i><span>Learn About Careers</span></a>
+					</div>
+				</div>
+			</div>
+			<!-- Main Content -->
+			<div class="tab-main-content">
+				<div class="patrol-info-card">
+					<div class="patrol-info-card-header"><h3><i class="fas fa-users-cog"></i> Specialized Units & Programs</h3></div>
+					<div class="patrol-info-card-content">
+						<p>Our Patrol Division includes specialized units designed to address specific community needs and enhance our law enforcement capabilities.</p>
+						<div class="content-grid">
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-car-crash"></i></div>
+								<h4>Traffic Unit</h4>
+								<p>Focuses on road safety, accident reconstruction, and specialized traffic enforcement operations.</p>
+							</div>
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-shield-alt"></i></div>
+								<h4>Community Response</h4>
+								<p>A team trained for high-risk situations, crisis intervention, and special event security.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Community Policing Tab -->
+	<div class="tab-content" id="community">
+		<div class="tab-content-layout">
+			<!-- Sidebar -->
+			<div class="tab-sidebar">
+				<div class="sidebar-section">
+					<div class="sidebar-header"><i class="fas fa-calendar-alt"></i><h3>Featured Event</h3></div>
+					<div class="sidebar-content">
+						<div class="sidebar-item">
+							<i class="fas fa-flag-usa" style="color: var(--accent-color);"></i>
+							<span style="font-weight: 600;"><a href="july-4th.html">July 4th Celebration<br><small style="font-weight: 400;">Plan your visit »</small></a></span>
+						</div>
+					</div>
+				</div>
+				<div class="sidebar-section">
+					<div class="sidebar-header"><i class="fas fa-hands-helping"></i><h3>Get Involved</h3></div>
+					<div class="sidebar-content">
+						<a href="good-morning-program.html" class="quick-link-item"><i class="fas fa-sun"></i><span>Good Morning Program</span></a>
+						<a href="community-outreach.html" class="quick-link-item"><i class="fas fa-heart"></i><span>Community Outreach</span></a>
+						<a href="contact.html" class="quick-link-item"><i class="fas fa-envelope"></i><span>Contact Us</span></a>
+					</div>
+				</div>
+			</div>
+			<!-- Main Content -->
+			<div class="tab-main-content">
+				<div class="patrol-info-card">
+					<div class="patrol-info-card-header"><h3><i class="fas fa-heart"></i> Community Policing & Outreach</h3></div>
+					<div class="patrol-info-card-content">
+						<p>We believe that law enforcement is a collaborative effort. Our community policing philosophy focuses on building strong relationships through proactive engagement, education, and joint problem-solving.</p>
+						<div class="content-grid">
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-sun"></i></div>
+								<h4>Good Morning Program</h4>
+								<p>Daily wellness checks for elderly and vulnerable residents, ensuring their safety and well-being.</p>
+								<div class="card-link"><a href="good-morning-program.html">Learn More →</a></div>
+							</div>
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-graduation-cap"></i></div>
+								<h4>School Safety Programs</h4>
+								<p>Educational programs in local schools on safety, drug awareness, and positive police relations.</p>
+							</div>
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-coffee"></i></div>
+								<h4>Coffee with a Cop</h4>
+								<p>Informal meetings where community members can chat with officers and discuss concerns.</p>
+							</div>
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-brain"></i></div>
+								<h4>Mental Health Support</h4>
+								<p>A collaborative approach with mental health professionals to provide appropriate crisis response.</p>
+								<div class="card-link"><a href="mentalhealth.html">Learn More →</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Equipment Tab -->
+	<div class="tab-content" id="equipment">
+		<div class="tab-content-layout">
+			<!-- Sidebar -->
+			<div class="tab-sidebar">
+				<div class="sidebar-section">
+					<div class="sidebar-header"><i class="fas fa-car-side"></i><h3>Fleet & Tech</h3></div>
+					<div class="sidebar-content">
+						<div class="sidebar-item"><i class="fas fa-car"></i><span><strong>12+</strong> Patrol Vehicles</span></div>
+						<div class="sidebar-item"><i class="fas fa-mobile-alt"></i><span>Mobile Data Terminals</span></div>
+						<div class="sidebar-item"><i class="fas fa-wifi"></i><span>Digital Radio System</span></div>
+					</div>
+				</div>
+				<div class="sidebar-section">
+					<div class="sidebar-header"><i class="fas fa-shield-alt"></i><h3>Officer Safety</h3></div>
+					<div class="sidebar-content">
+						<p style="font-size: 0.9rem;">All officers are equipped with state-of-the-art protective gear and less-lethal options to ensure safety for both the officer and the public.</p>
+					</div>
+				</div>
+			</div>
+			<!-- Main Content -->
+			<div class="tab-main-content">
+				<div class="patrol-info-card">
+					<div class="patrol-info-card-header"><h3><i class="fas fa-cogs"></i> Equipment & Technology</h3></div>
+					<div class="patrol-info-card-content">
+						<p>Our officers are equipped with modern technology and vehicles to effectively serve our communities while ensuring officer safety and operational efficiency.</p>
+						<div class="content-grid">
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-car-side"></i></div>
+								<h4>Modern Patrol Fleet</h4>
+								<p>Police cruisers equipped with lighting, communications, and mobile data terminals for efficient operations.</p>
+							</div>
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-laptop-code"></i></div>
+								<h4>In-Car Technology</h4>
+								<p>Mobile Data Terminals provide access to critical databases, mapping, and communication systems on the go.</p>
+							</div>
+							<div class="content-card">
+								<div class="content-card-icon"><i class="fas fa-shield-alt"></i></div>
+								<h4>Protective Equipment</h4>
+								<p>Officers are equipped with advanced ballistic vests, medical kits, and less-lethal tools for safety.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Careers Tab -->
+	<div class="tab-content" id="careers">
+		<div class="tab-content-layout">
+			<!-- Sidebar -->
+			<div class="tab-sidebar">
+				<div class="sidebar-section">
+					<div class="sidebar-header"><i class="fas fa-dollar-sign"></i><h3>Compensation</h3></div>
+					<div class="sidebar-content">
+						<div class="sidebar-item"><i class="fas fa-money-bill-wave"></i><span><strong>$32.35/hour</strong> Starting</span></div>
+						<div class="sidebar-item"><i class="fas fa-piggy-bank"></i><span><strong>MEPERS 3C</strong> Retirement</span></div>
+						<div class="sidebar-item"><i class="fas fa-plus-circle"></i><span>Full Health & Wellness</span></div>
+					</div>
+				</div>
+				<div class="sidebar-section">
+					<div class="sidebar-header"><i class="fas fa-rocket"></i><h3>Apply Now</h3></div>
+					<div class="sidebar-content">
+						<a href="recruitment.html#apply" class="quick-link-item" style="background: var(--primary-color, #1a2b4a); color: white;"><i class="fas fa-paper-plane"></i><span>Start Your Application</span></a>
+					</div>
+				</div>
+			</div>
+			<!-- Main Content -->
+			<div class="tab-main-content">
+				<div class="patrol-info-card">
+					<div class="patrol-info-card-header"><h3><i class="fas fa-user-tie"></i> Join Our Patrol Division</h3></div>
+					<div class="patrol-info-card-content">
+						<!-- Salary Hero Section -->
+						<div class="salary-hero">
+							<div class="salary-hero-content">
+								<h4>Starting Salary</h4>
+								<div class="salary-amount">$32.35</div>
+								<p>per hour with annual increases</p>
+							</div>
+						</div>
+						
+						<!-- Benefits Section -->
+						<div class="benefits-section">
+							<div class="benefits-header">
+								<h3>Exceptional Benefits Package</h3>
+								<p>We offer competitive compensation and comprehensive benefits that support your career and personal well-being.</p>
+							</div>
+							
+							<div class="benefits-grid">
+								<div class="benefit-card">
+									<i class="fas fa-chart-line"></i>
+									<h4>Career Growth</h4>
+									<p>Clear advancement paths with opportunities for specialization in K-9, investigations, marine patrol, and more.</p>
+								</div>
+								
+								<div class="benefit-card">
+									<i class="fas fa-calendar-alt"></i>
+									<h4>Work-Life Balance</h4>
+									<p>12-hour shifts with built-in days off, providing more time with family and personal pursuits.</p>
+								</div>
+								
+								
+								<div class="benefit-card">
+									<i class="fas fa-dumbbell"></i>
+									<h4>Wellness Program</h4>
+									<p>Paid on-duty fitness time and access to department gym facilities to maintain peak physical condition.</p>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Additional Benefits -->
+						<div class="additional-benefits">
+							<div class="additional-benefits-grid">
+								<div class="additional-benefit">
+									<i class="fas fa-piggy-bank"></i>
+									<div>
+										<h5>MEPERS 3C Retirement</h5>
+										<p>Secure pension plan with early retirement options</p>
+									</div>
+								</div>
+								
+								<div class="additional-benefit">
+									<i class="fas fa-medkit"></i>
+									<div>
+										<h5>Health & Dental</h5>
+										<p>Comprehensive medical coverage for you and your family</p>
+									</div>
+								</div>
+								
+								<div class="additional-benefit">
+									<i class="fas fa-graduation-cap"></i>
+									<div>
+										<h5>Education Support</h5>
+										<p>Tuition reimbursement and paid training opportunities</p>
+									</div>
+								</div>
+								
+								<div class="additional-benefit">
+									<i class="fas fa-umbrella-beach"></i>
+									<div>
+										<h5>Generous Leave</h5>
+										<p>Vacation, sick, and personal time plus 11 paid holidays</p>
+									</div>
+								</div>
+								
+								<div class="additional-benefit">
+									<i class="fas fa-shield-alt"></i>
+									<div>
+										<h5>Life Insurance</h5>
+										<p>Department-paid life insurance and disability coverage</p>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						
+						<!-- CTA Section -->
+						<div class="recruitment-cta">
+							<div class="recruitment-cta-content">
+								<h3>Ready to Make a Difference?</h3>
+								<p>Join a department with over 125 years of service excellence. We provide comprehensive academy training and ongoing support to help you build a rewarding law enforcement career.</p>
+								<div class="cta-buttons">
+									<a href="recruitment.html#apply" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Apply Now</a>
+									<a href="recruitment.html#process" class="btn btn-outline"><i class="fas fa-info-circle"></i> Learn More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
+</div>
+
 </main>
 
 <footer class="footer" role="contentinfo" aria-label="Site Footer">
@@ -194,18 +1354,9 @@
 <ul>
 <li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
 <li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
-<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Parking Enforcement</a></li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
-</li>
+<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Bar Harbor Parking</a></li>
+<li><a href="mount-desert-parking.html"><i class="fas fa-parking"></i> Mount Desert Parking</a></li>
 <li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
-<li>
-<a href="mount-desert-parking.html">
-<i class="fas fa-parking"></i> Mount Desert Parking
-                                </a>
-</li>
 <li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
 </ul>
 </section>
@@ -221,16 +1372,16 @@
 <section class="footer-column" aria-labelledby="footer-careers">
 <h3 id="footer-careers"><i class="fas fa-user-tie"></i> CAREERS</h3>
 <ul>
-<li><a href="application-process.html"><i class="fas fa-file-alt"></i> Application Process</a></li>
-<li><a href="opportunities.html"><i class="fas fa-briefcase"></i> Career Opportunities</a></li>
-<li><a href="benefits.html"><i class="fas fa-medal"></i> Benefits</a></li>
-<li><a href="application-process.html"><i class="fas fa-file-signature"></i> Apply Now</a></li>
+<li><a href="recruitment.html"><i class="fas fa-briefcase"></i> Career Opportunities</a></li>
+<li><a href="recruitment.html#benefits"><i class="fas fa-medal"></i> Benefits & Salary</a></li>
+<li><a href="recruitment.html#process"><i class="fas fa-file-alt"></i> Application Process</a></li>
+<li><a href="recruitment.html"><i class="fas fa-file-signature"></i> Apply Now</a></li>
 </ul>
 </section>
 <section class="footer-column" aria-labelledby="footer-about">
 <h3 id="footer-about"><i class="fas fa-info-circle"></i> ABOUT</h3>
 <ul>
-<li><a href="administration.html"><i class="fas fa-user-shield"></i> Administration</a></li>
+<li><a href="admin.html"><i class="fas fa-user-shield"></i> Administration</a></li>
 <li><a href="contact.html#administration"><i class="fas fa-users-cog"></i> Command Staff</a></li>
 <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
 <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
@@ -250,10 +1401,62 @@
 </div>
 </footer>
 
+<!-- Tab functionality -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to handle tab switching
+    function switchTab(event, tabId) {
+        // Hide all tab contents
+        document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
+        
+        // Deactivate all tab buttons
+        document.querySelectorAll(".tab-button").forEach(button => button.classList.remove("active"));
+        
+        // Show the selected tab content and activate its button
+        document.getElementById(tabId).classList.add("active");
+        event.currentTarget.classList.add("active");
+
+        // Optional: Scroll to the top of the tab container for a better user experience on mobile
+        setTimeout(() => {
+            const tabContainer = document.querySelector('.tab-contents');
+            if (tabContainer) {
+                const headerOffset = 100; // Adjust if you have a sticky header
+                const elementPosition = tabContainer.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        }, 100);
+    }
+
+    // Add click event listeners to all tab buttons
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            const tabId = this.getAttribute('data-tab');
+            switchTab(e, tabId);
+        });
+    });
+
+    // Handle deep-linking via URL hash (e.g., patrol-division.html#careers)
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+        const targetButton = document.querySelector(`.tab-button[data-tab="${hash}"]`);
+        if (targetButton) {
+            // Use a small timeout to ensure the page has fully rendered
+            setTimeout(() => { targetButton.click(); }, 150);
+        }
+    }
+});
+</script>
+
 <script src="script.js"></script>
 <!-- Footer loader script to dynamically load the footer with both addresses -->
 <script src="js/footer-loader.js" defer></script>
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"952a35c618744d02","version":"2025.6.2","r":1,"token":"7c056db122e548fcaea716f277b69941","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
 </body>
 </html>
