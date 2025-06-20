@@ -674,19 +674,43 @@ body.dark-mode .token-features h4 {
 .tip-card.link-card {
   transition: all 0.3s ease;
   cursor: pointer;
+  background-color: white;
+  border: 2px solid var(--accent-color, #007bff);
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.tip-card.link-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--accent-color, #007bff) 0%, var(--primary-color, #1a2b4a) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
 }
 
 .tip-card.link-card:hover {
-  background-color: var(--primary-color, #1a2b4a);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.25);
+  border-color: var(--primary-color, #1a2b4a);
+}
+
+.tip-card.link-card:hover::before {
+  opacity: 1;
 }
 
 .tip-card.link-card a {
   text-decoration: none;
-  color: inherit;
+  color: var(--primary-color, #1a2b4a);
   display: block;
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
 }
 
 .tip-card.link-card:hover a {
@@ -695,6 +719,61 @@ body.dark-mode .token-features h4 {
 
 .tip-card.link-card i {
   margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--accent-color, #007bff);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.tip-card.link-card:hover i {
+  color: white;
+  transform: scale(1.1);
+}
+
+.tip-card.link-card strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.tip-card.link-card small {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+/* Compact version specific */
+.tip-card.link-card.compact {
+  padding: 1rem;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Add subtle arrow indicator */
+.tip-card.link-card::after {
+  content: '\f061';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--accent-color, #007bff);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.tip-card.link-card:hover::after {
+  color: white;
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 /* Token Info Section */
@@ -781,8 +860,23 @@ body.dark-mode .payment-list li {
   color: var(--dark-mode-text-color, #e0e0e0);
 }
 
+body.dark-mode .tip-card.link-card {
+  background-color: var(--dark-mode-card-bg, #2d2d2d);
+  border-color: var(--accent-color, #007bff);
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+}
+
+body.dark-mode .tip-card.link-card::before {
+  background: linear-gradient(135deg, var(--accent-color, #007bff) 0%, var(--dark-mode-primary-color, #29487d) 100%);
+}
+
 body.dark-mode .tip-card.link-card:hover {
-  background-color: var(--dark-mode-primary-color, #29487d);
+  border-color: var(--accent-color, #007bff);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+body.dark-mode .tip-card.link-card a {
+  color: var(--dark-mode-text-color, #e0e0e0);
 }
 
 body.dark-mode .token-info-section {
