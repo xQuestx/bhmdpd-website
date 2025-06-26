@@ -4,18 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize critical components first
     console.log('Initializing critical components');
     initHeaderScroll(); // Critical for header appearance
-    // Only initialize mobile menu on mobile screen sizes
-    if (window.innerWidth <= 768) {
-        initMobileMenu(); // Critical for mobile navigation
-    }
-    
-    // Add News Dropdown to Navigation
-    console.log('Adding News dropdown to navigation');
-    addNewsDropdown();
-    console.log('News dropdown addition complete');
-    
-    // Lightbox Initialization (REMOVED)
-    // initLightbox(); 
+    initMobileMenu(); // Critical for all navigation
     
     // Defer non-critical initializations
     setTimeout(function() {
@@ -34,20 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Log initialization complete
     console.log('All components initialized');
-    
-    // Force check mobile menu visibility on page load
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    if (mobileMenuBtn) {
-        if (window.innerWidth <= 768) {
-            mobileMenuBtn.style.display = 'block';
-        } else {
-            mobileMenuBtn.style.display = 'none';
-        }
-    }
 
-    // Add this debugging code at the top
-    console.log('Script loaded');
-    
     // Handle all links that go to contact.html#scott-pinkham specifically
     document.querySelectorAll('a[href="contact.html#scott-pinkham"]').forEach(link => {
         console.log('Found parking manager link:', link);
@@ -268,301 +244,98 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Mobile Menu Functionality - Restoring to best known working state
+    // Mobile Menu Functionality
     function initMobileMenu() {
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileCloseBtn = document.querySelector('.mobile-close-btn'); // Restoring close button
+        const mobileCloseBtn = document.querySelector('.mobile-close-btn');
         const navWrapper = document.querySelector('.nav-wrapper');
         const body = document.body;
-        const dropdownTriggers = document.querySelectorAll('.nav-wrapper .dropdown > a'); // General selector for all dropdown triggers
+        const dropdownTriggers = document.querySelectorAll('.nav-wrapper .dropdown > button');
 
-        if (mobileMenuBtn && navWrapper) {
-            // Main mobile menu toggle
-            mobileMenuBtn.addEventListener('click', function(e) {
+        if (!mobileMenuBtn || !navWrapper) return;
+
+        const toggleMenu = (forceClose = false) => {
+            const menuIsActive = navWrapper.classList.contains('active');
+            if (forceClose || menuIsActive) {
+                navWrapper.classList.remove('active');
+                body.classList.remove('menu-open');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                closeAllMobileDropdowns();
+            } else {
+                navWrapper.classList.add('active');
+                body.classList.add('menu-open');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                mobileMenuBtn.querySelector('i').classList.replace('fa-bars', 'fa-times');
+            }
+        };
+
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        if (mobileCloseBtn) {
+            mobileCloseBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const menuIsNowActive = navWrapper.classList.toggle('active');
-                body.classList.toggle('menu-open', menuIsNowActive);
-                const icon = this.querySelector('i');
-                if (icon) {
-                    menuIsNowActive ? icon.classList.replace('fa-bars', 'fa-times') : icon.classList.replace('fa-times', 'fa-bars');
-                }
-                if (!menuIsNowActive) {
-                    closeAllMobileDropdowns(); // Close all sub-dropdowns when main menu closes
-                }
+                toggleMenu(true);
             });
-
-            // Close button handler (restored)
-            if (mobileCloseBtn) {
-                mobileCloseBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    navWrapper.classList.remove('active');
-                    body.classList.remove('menu-open');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    if (icon) { icon.classList.replace('fa-times', 'fa-bars'); }
-                    mobileMenuBtn.classList.remove('active'); // Ensure button state is reset
-                    closeAllMobileDropdowns();
-                });
-            }
-
-            // Handler for all dropdown triggers
-            dropdownTriggers.forEach(trigger => {
-                // Ensure a listener isn't added multiple times if initMobileMenu could be recalled
-                // (Using a data attribute is a robust way, but for this revert, direct attachment)
-                if (trigger.dataset.mobileListenerAttached === 'true') return;
-                trigger.dataset.mobileListenerAttached = 'true';
-
-                trigger.addEventListener('click', function(e) {
-                    if (window.innerWidth > 768) return; // Only on mobile
-
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    const parentLi = this.closest('li.dropdown');
-                    if (!parentLi) return;
-                    const dropdownContent = parentLi.querySelector('.dropdown-content');
-                    if (!dropdownContent) return;
-
-                    const GIsCurrentlyActive = parentLi.classList.contains('active');
-                    const caret = this.querySelector('.fa-caret-down');
-
-                    // Step 1: Handle OTHER dropdowns
-                    if (!GIsCurrentlyActive) { // If we intend to OPEN this one, close others
-                        document.querySelectorAll('.nav-wrapper .dropdown').forEach(otherLi => {
-                            if (otherLi !== parentLi && otherLi.classList.contains('active')) {
-                                otherLi.classList.remove('active');
-                                const otherContent = otherLi.querySelector('.dropdown-content');
-                                const otherCaret = otherLi.querySelector('a > .fa-caret-down');
-                                const otherTrigger = otherLi.querySelector('a[aria-expanded]');
-                                if (otherCaret) otherCaret.style.transform = 'rotate(0deg)';
-                                if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
-                                if (otherContent) {
-                                    setTimeout(() => {
-                                        otherContent.style.display = 'none';
-                                    }, 0);
-                                }
-                            }
-                        });
-                    }
-
-                    // Step 2: Toggle THIS dropdown
-                    if (GIsCurrentlyActive) { // It WAS active, so now we close it
-                        parentLi.classList.remove('active');
-                        if (caret) caret.style.transform = 'rotate(0deg)';
-                        this.setAttribute('aria-expanded', 'false');
-                        setTimeout(() => {
-                            dropdownContent.style.display = 'none';
-                        }, 0);
-                    } else { // It WAS NOT active, so now we open it
-                        parentLi.classList.add('active');
-                        if (caret) caret.style.transform = 'rotate(180deg)';
-                        this.setAttribute('aria-expanded', 'true');
-                        setTimeout(() => {
-                            dropdownContent.style.display = 'block';
-                        }, 0);
-                    }
-                });
-            });
-
-            // Click outside to close (restored)
-            document.addEventListener('click', function(e) {
-                if (navWrapper.classList.contains('active') && 
-                    !navWrapper.contains(e.target) && 
-                    !mobileMenuBtn.contains(e.target)) {
-                    navWrapper.classList.remove('active');
-                    body.classList.remove('menu-open');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    if (icon) { icon.classList.replace('fa-times', 'fa-bars'); }
-                    mobileMenuBtn.classList.remove('active');
-                    closeAllMobileDropdowns();
-                }
-            });
-            
-            // Escape key to close (restored)
-             document.addEventListener('keydown', function(e) {
-                 if (e.key === 'Escape' && navWrapper.classList.contains('active')) {
-                      navWrapper.classList.remove('active');
-                      body.classList.remove('menu-open');
-                      const icon = mobileMenuBtn.querySelector('i');
-                      if (icon) { icon.classList.replace('fa-times', 'fa-bars'); }
-                      mobileMenuBtn.classList.remove('active');
-                      closeAllMobileDropdowns();
-                 }
-             });
         }
-    }
-    
-    // This is the general helper to close all dropdowns
-    function closeAllMobileDropdowns() { 
-        document.querySelectorAll('.nav-wrapper .dropdown').forEach(dropdownLi => {
-            if (dropdownLi.classList.contains('active')) {
-                dropdownLi.classList.remove('active');
-                const caret = dropdownLi.querySelector('a > .fa-caret-down');
-                const trigger = dropdownLi.querySelector('a[aria-expanded]');
-                if (caret) caret.style.transform = 'rotate(0deg)';
-                if (trigger) trigger.setAttribute('aria-expanded', 'false');
-                const content = dropdownLi.querySelector('.dropdown-content');
-                // Use setTimeout here as well for consistency if called from a problematic context
-                if (content) {
-                    setTimeout(() => {
-                         content.style.display = 'none';
-                    }, 0);
+
+        dropdownTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                if (window.innerWidth > 768) return;
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parentLi = this.closest('li.dropdown');
+                const dropdownContent = parentLi.querySelector('.dropdown-content');
+                const isCurrentlyActive = parentLi.classList.contains('active');
+
+                // Close other dropdowns before opening a new one
+                if (!isCurrentlyActive) {
+                    closeAllMobileDropdowns();
                 }
+
+                // Toggle the current dropdown
+                parentLi.classList.toggle('active');
+                this.setAttribute('aria-expanded', !isCurrentlyActive);
+                dropdownContent.style.display = isCurrentlyActive ? 'none' : 'block';
+                const caret = this.querySelector('.fa-caret-down');
+                if (caret) {
+                    caret.style.transform = isCurrentlyActive ? 'rotate(0deg)' : 'rotate(180deg)';
+                }
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (navWrapper.classList.contains('active') && !navWrapper.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                toggleMenu(true);
             }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navWrapper.classList.contains('active')) {
+                toggleMenu(true);
+            }
+        });
+    }
+
+    function closeAllMobileDropdowns() {
+        document.querySelectorAll('.nav-wrapper .dropdown').forEach(dropdownLi => {
+            dropdownLi.classList.remove('active');
+            const trigger = dropdownLi.querySelector('button[aria-expanded]');
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
+            const content = dropdownLi.querySelector('.dropdown-content');
+            if (content) content.style.display = 'none';
+            const caret = dropdownLi.querySelector('.fa-caret-down');
+            if (caret) caret.style.transform = 'rotate(0deg)';
         });
     }
 
     // Initialize all components
     function initAll() {
         console.log('Initializing all components');
-        // These are already called at the top of the file
-        // initHeaderScroll();
-        // initBackToTop();
-        // initTabs();
-        // initReadMore();
-        // initMobileMenu();
-        // initKeyboardNav();
-        // initShareButtons();
-        // initScrollProgress();
-        // handleAnchorLinks();
-        // addNewsDropdown();
-    }
-
-    // Don't call the initialization function again
-    // initAll();
-
-    // Helper function to set up mobile dropdown functionality - REMOVED
-    /* 
-    function setupMobileDropdown(dropdown) { 
-        // ... implementation removed ...
-    } 
-    */
-
-    // Restore addNewsDropdown to use the same logic
-    function addNewsDropdown() {
-        console.log('Starting addNewsDropdown function');
-        const navLinks = document.querySelector('.nav-links');
-        if (!navLinks) {
-            console.log('Nav links not found');
-            return;
-        }
-        
-        console.log('Nav links found:', navLinks);
-        
-        // Check if News dropdown already exists
-        const existingNewsDropdown = navLinks.querySelector('li.dropdown a i.fa-newspaper');
-        if (existingNewsDropdown) {
-            console.log('News dropdown already exists');
-            // Even if it exists, make sure it has proper event listeners
-            const existingDropdownLi = existingNewsDropdown.closest('li.dropdown');
-            if (existingDropdownLi) {
-                console.log('Setting up existing News dropdown');
-                // setupMobileDropdown(existingDropdownLi); // REMOVED - initMobileMenu listener should cover this now
-            }
-            return;
-        }
-        
-        // Find the Contact link to insert before
-        const contactLink = Array.from(navLinks.children).find(li => {
-            const anchor = li.querySelector('a');
-            return anchor && anchor.textContent.trim().includes('Contact');
-        });
-        
-        // Create the News dropdown HTML
-        const newsDropdown = document.createElement('li');
-        newsDropdown.className = 'dropdown';
-        
-        // Create the dropdown HTML structure
-        const dropdownHTML = `
-            <a href="#" role="button" aria-expanded="false" aria-haspopup="true" aria-label="News menu"><i class="fas fa-newspaper"></i> News <i class="fas fa-caret-down"></i></a>
-            <ul class="dropdown-content">
-                <li><a href="news.html"><i class="fas fa-list"></i> All News</a></li>
-                <li><a href="news.html#department-updates"><i class="fas fa-bullhorn"></i> Department Updates</a></li>
-                <li><a href="news.html#community-news"><i class="fas fa-users"></i> Community News</a></li>
-                <li><a href="news.html#press-releases"><i class="fas fa-file-alt"></i> Press Releases</a></li>
-            </ul>
-        `;
-        
-        newsDropdown.innerHTML = dropdownHTML;
-        console.log('Created news dropdown element:', newsDropdown);
-        
-        // Fix paths for subdirectory pages
-        fixNewsDropdownPaths(newsDropdown);
-        
-        // Insert the dropdown in the correct position
-        if (contactLink) {
-            console.log('Contact link found, inserting before it');
-            navLinks.insertBefore(newsDropdown, contactLink);
-        } else {
-            console.log('Contact link not found, appending to end');
-            navLinks.appendChild(newsDropdown);
-        }
-        
-        console.log('News dropdown added to DOM');
-        
-        // Manually trigger listener attachment for the new dropdown link
-        const newDropdownLink = newsDropdown.querySelector('a');
-        if (newDropdownLink && !newDropdownLink.dataset.mobileListenerAttached) {
-            newDropdownLink.dataset.mobileListenerAttached = 'true'; // Mark as attached
-            newDropdownLink.addEventListener('click', function(e) {
-                if (window.innerWidth > 768) return; // Only on mobile
-
-                e.preventDefault();
-                e.stopPropagation();
-
-                const parentLi = this.closest('li.dropdown');
-                if (!parentLi) return;
-                const dropdownContent = parentLi.querySelector('.dropdown-content');
-                if (!dropdownContent) return;
-
-                const GIsCurrentlyActive = parentLi.classList.contains('active');
-                const caret = this.querySelector('.fa-caret-down');
-
-                // Step 1: Handle OTHER dropdowns
-                if (!GIsCurrentlyActive) { // If we intend to OPEN this one, close others
-                    document.querySelectorAll('.nav-wrapper .dropdown').forEach(otherLi => {
-                        if (otherLi !== parentLi && otherLi.classList.contains('active')) {
-                            otherLi.classList.remove('active');
-                            const otherContent = otherLi.querySelector('.dropdown-content');
-                            const otherCaret = otherLi.querySelector('a > .fa-caret-down');
-                            const otherTrigger = otherLi.querySelector('a[aria-expanded]');
-                            if (otherCaret) otherCaret.style.transform = 'rotate(0deg)';
-                            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
-                            if (otherContent) {
-                                setTimeout(() => {
-                                    otherContent.style.display = 'none';
-                                }, 0);
-                            }
-                        }
-                    });
-                }
-
-                // Step 2: Toggle THIS dropdown
-                if (GIsCurrentlyActive) { // It WAS active, so now we close it
-                    parentLi.classList.remove('active');
-                    if (caret) caret.style.transform = 'rotate(0deg)';
-                    this.setAttribute('aria-expanded', 'false');
-                    // console.log('Closing (dynamic News):', this.textContent.trim());
-                    setTimeout(() => {
-                        dropdownContent.style.display = 'none';
-                    }, 0);
-                } else { // It WAS NOT active, so now we open it
-                    parentLi.classList.add('active');
-                    if (caret) caret.style.transform = 'rotate(180deg)';
-                    this.setAttribute('aria-expanded', 'true');
-                    // console.log('Opening (dynamic News):', this.textContent.trim());
-                    setTimeout(() => {
-                        dropdownContent.style.display = 'block';
-                    }, 0);
-                }
-            });
-        }
-        
-        // Force a redraw to ensure the dropdown is visible
-        setTimeout(() => {
-            newsDropdown.style.display = 'none';
-            newsDropdown.offsetHeight; // Force reflow
-            newsDropdown.style.display = '';
-        }, 100);
     }
 
     // Helper function to fix paths for subdirectory pages

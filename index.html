@@ -308,10 +308,24 @@
       visibility: hidden; /* Add initial visibility hidden consistent with mobile-fix */
     }
     .nav-links { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; width: 100%; }
-    .nav-links a { color: var(--light-text-color); font-size: 1.1rem; padding: 0.75rem 0; width: 100%; }
+    .nav-links a,
+    .nav-links .dropdown > button {
+        color: var(--light-text-color);
+        font-size: 1.1rem;
+        padding: 0.75rem 0;
+        width: 100%;
+        text-align: left;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
     .nav-links a.active::after { display: none; } /* No underline on mobile nav */
     .dropdown { flex-direction: column; align-items: flex-start; width: 100%; height: auto; }
-    .dropdown > a { width: 100%; }
+    .dropdown > a, 
+    .dropdown > button { width: 100%; }
     .dropdown-content { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; background: none; padding: 0.5rem 0 0.5rem 1.5rem; margin-top: 0.5rem; width: 100%; display: none; /* Hidden until toggled by JS */ border-radius: 0; }
     .dropdown-content a { color: rgba(255, 255, 255, 0.8); padding: 0.5rem 0; font-size: 1rem; }
     .dropdown-content a i { color: rgba(255, 255, 255, 0.6); }
@@ -460,47 +474,56 @@
 <i class="fas fa-times"></i>
 </button>
 <ul class="nav-links">
-<li><a class="active" href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li><a class="active" href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
 <li class="dropdown">
-<a href="#"><i class="fas fa-building"></i> Divisions <i class="fas fa-caret-down"></i></a>
-<ul class="dropdown-content">
-<li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
-<li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
-<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Bar Harbor Parking</a></li>
-<li><a href="mount-desert-parking.html"><i class="fas fa-parking"></i> Mount Desert Parking</a></li>
-<li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
-<li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
-<li><a href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Unit</a></li>
+<button type="button" aria-expanded="false" aria-controls="divisions-menu"><i class="fas fa-building" aria-hidden="true"></i> Divisions <i class="fas fa-caret-down" aria-hidden="true"></i></button>
+<ul class="dropdown-content" id="divisions-menu">
+<li><a href="patrol-division.html"><i class="fas fa-shield-alt" aria-hidden="true"></i> Patrol Division</a></li>
+<li><a href="harbor-master-division.html"><i class="fas fa-ship" aria-hidden="true"></i> Harbor Master</a></li>
+<li><a href="bar-harbor-parking.html"><i class="fas fa-parking" aria-hidden="true"></i> Bar Harbor Parking</a></li>
+<li><a href="mount-desert-parking.html"><i class="fas fa-parking" aria-hidden="true"></i> Mount Desert Parking</a></li>
+<li><a href="admin.html"><i class="fas fa-users" aria-hidden="true"></i> Administrative Services</a></li>
+<li><a href="animalcontrol.html"><i class="fas fa-paw" aria-hidden="true"></i> Animal Control</a></li>
+<li><a href="mentalhealth.html"><i class="fas fa-heart" aria-hidden="true"></i> Mental Health Unit</a></li>
 </ul>
 </li>
 <li class="dropdown">
-<a href="#"><i class="fas fa-hands-helping"></i> Programs <i class="fas fa-caret-down"></i></a>
-<ul class="dropdown-content">
-<li><a href="good-morning-program.html"><i class="fas fa-sun"></i> Good Morning Program</a></li>
-<li><a href="community-outreach.html"><i class="fas fa-heart"></i> Community Outreach</a></li>
+<button type="button" aria-expanded="false" aria-controls="programs-menu"><i class="fas fa-hands-helping" aria-hidden="true"></i> Programs <i class="fas fa-caret-down" aria-hidden="true"></i></button>
+<ul class="dropdown-content" id="programs-menu">
+<li><a href="good-morning-program.html"><i class="fas fa-sun" aria-hidden="true"></i> Good Morning Program</a></li>
+<li><a href="community-outreach.html"><i class="fas fa-heart" aria-hidden="true"></i> Community Outreach</a></li>
 </ul>
 </li>
 <li class="dropdown">
-<a href="#"><i class="fas fa-user-tie"></i> Recruitment <i class="fas fa-caret-down"></i></a>
-<ul class="dropdown-content">
-<li><a href="recruitment.html"><i class="fas fa-briefcase"></i> Join Our Team</a></li>
-<li><a href="academy-training.html"><i class="fas fa-chalkboard-teacher"></i> Academy Training</a></li>
+<button type="button" aria-expanded="false" aria-controls="recruitment-menu"><i class="fas fa-user-tie" aria-hidden="true"></i> Recruitment <i class="fas fa-caret-down" aria-hidden="true"></i></button>
+<ul class="dropdown-content" id="recruitment-menu">
+<li><a href="recruitment.html"><i class="fas fa-briefcase" aria-hidden="true"></i> Join Our Team</a></li>
+<li><a href="academy-training.html"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> Academy Training</a></li>
 </ul>
 </li>
-<li><a href="forms.html"><i class="fas fa-file-alt"></i> Forms</a></li>
-<li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+<li><a href="forms.html"><i class="fas fa-file-alt" aria-hidden="true"></i> Forms</a></li>
+<li><a href="faq.html"><i class="fas fa-question-circle" aria-hidden="true"></i> FAQ</a></li>
 <li class="dropdown">
-<a href="#" role="button" aria-expanded="false" aria-haspopup="true" aria-label="Events menu"><i class="fas fa-calendar-alt"></i> Events <i class="fas fa-caret-down"></i></a>
-<ul class="dropdown-content">
-<li><a href="events.html"><i class="fas fa-calendar"></i> Community Events</a></li>
-<li><a href="july-4th.html"><i class="fas fa-flag-usa"></i> July 4th Celebration</a></li>
+<button type="button" aria-expanded="false" aria-haspopup="true" aria-label="Events menu" aria-controls="events-menu"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Events <i class="fas fa-caret-down" aria-hidden="true"></i></button>
+<ul class="dropdown-content" id="events-menu">
+<li><a href="events.html"><i class="fas fa-calendar" aria-hidden="true"></i> Community Events</a></li>
+<li><a href="july-4th.html"><i class="fas fa-flag-usa" aria-hidden="true"></i> July 4th Celebration</a></li>
 </ul>
 </li>
-<li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+<li class="dropdown">
+<button type="button" aria-expanded="false" aria-controls="news-menu"><i class="fas fa-newspaper" aria-hidden="true"></i> News <i class="fas fa-caret-down" aria-hidden="true"></i></button>
+<ul class="dropdown-content" id="news-menu">
+<li><a href="news.html"><i class="fas fa-list" aria-hidden="true"></i> All News</a></li>
+<li><a href="news.html#department-updates"><i class="fas fa-bullhorn" aria-hidden="true"></i> Department Updates</a></li>
+<li><a href="news.html#community-news"><i class="fas fa-users" aria-hidden="true"></i> Community News</a></li>
+<li><a href="news.html#press-releases"><i class="fas fa-file-alt" aria-hidden="true"></i> Press Releases</a></li>
+</ul>
+</li>
+<li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
 </ul>
 </div>
 <button aria-label="Toggle menu" class="mobile-menu-btn">
-<i class="fas fa-bars"></i>
+<i class="fas fa-bars" aria-hidden="true"></i>
 </button>
 <button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle" aria-pressed="false">
 <i class="fas fa-moon" aria-hidden="true"></i>
@@ -513,7 +536,7 @@
 <main class="main-content" id="main-content">
 <!-- MODERN HERO SECTION -->
 <section class="modern-hero">
-<div class="hero-background" style="background-color: #1a2b4a;">
+<div class="hero-background">
 <video class="hero-video" autoplay muted loop playsinline poster="images/branding/logo.png">
 <!-- Desktop version -->
 <source src="video/hero-video-mountains.mp4" type="video/mp4" media="(min-width: 768px)">
@@ -553,64 +576,64 @@
 <!-- Featured News Card - July 4th Celebration -->
 <article class="news-item">
 <div class="news-image">
-<img alt="Bar Harbor July 4th Celebration" src="images/misc/july4thmap.png" loading="lazy" style="object-fit: cover; object-position: center center;"/>
+<img alt="Bar Harbor July 4th Celebration" src="images/misc/july4thmap.png" loading="lazy" class="news-image-fit"/>
 </div>
 <div class="news-content">
 <span class="news-date">June 13, 2025</span>
 <h4>Bar Harbor's  4th of July Celebration Guide</h4>
 <p>Get ready for Bar Harbor's premier Independence Day festivities! Join us for a full day of patriotic celebration featuring our traditional parade, seafood festival, town band concert, and spectacular fireworks over Frenchman Bay.</p>
 <p>Our comprehensive guide includes parade route maps, parking information, fireworks viewing locations, marine safety guidelines, and important event details. Plan your visit to ensure you don't miss any of the excitement!</p>
-<a class="read-more-link" href="july-4th.html">View Complete Guide <i class="fas fa-arrow-right"></i></a>
+<a class="read-more-link" href="july-4th.html">View Complete Guide <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </div>
 </article>
 <div class="news-list" style="margin-top: 2rem;">
 <!-- News Item 1 - Officer Keene Graduation -->
 <article class="news-item" style="margin-bottom: 2rem;">
 <div class="news-image">
-<img alt="Officer Lukas Keene Academy Graduation" src="images/staff/officers/academy1.jpg" loading="lazy" style="object-fit: cover; object-position: center 42%;"/>
+<img alt="Officer Lukas Keene Academy Graduation" src="images/staff/officers/academy1.jpg" loading="lazy" class="news-image-fit"/>
 </div>
 <div class="news-content">
 <span class="news-date">May 26, 2025</span>
 <h4>Officer Lukas Keene Graduates from Maine Criminal Justice Academy</h4>
 <p>Congratulations to Bar Harbor & Mount Desert PD's Officer Lukas Keene on his graduation from the <a href="academy-training.html">Maine Criminal Justice Academy</a>. Officer Keene completed 18 weeks of education to develop the training, skills, and experience necessary to serve our community!</p>
-<a class="read-more-link" href="news-detail/officer-keene-graduation-2025.html">Read Full Story <i class="fas fa-arrow-right"></i></a>
+<a class="read-more-link" href="news-detail/officer-keene-graduation-2025.html">Read Full Story <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </div>
 </article>
 <!-- News Item 2 - MARC Training -->
 <article class="news-item" style="margin-bottom: 2rem;">
 <div class="news-image">
-<img alt="MARC Training" src="images/marc training/marc_training_001_resized.webp" loading="lazy" style="object-fit: cover; object-position: center 70;"/>
+<img alt="MARC Training" src="images/marc training/marc_training_001_resized.webp" loading="lazy" class="news-image-fit"/>
 </div>
 <div class="news-content">
 <span class="news-date">March 3, 2025</span>
 <h4>Spring Training Sessions: MARC Training Refresher</h4>
 <p>The officers of the Bar Harbor Police Department recently completed their annual <a href="academy-training.html">MARC (Mechanics of Arrest, Restraint and Control) training</a> refresher, reinforcing essential skills that help keep both officers and the community safe.</p>
-<a class="read-more-link" href="news-detail/marc-training-2024.html">Read Full Story <i class="fas fa-arrow-right"></i></a>
+<a class="read-more-link" href="news-detail/marc-training-2024.html">Read Full Story <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </div>
 </article>
 <!-- News Item 3 - School Resource Officer -->
 <article class="news-item" style="margin-bottom: 2rem;">
 <div class="news-image">
-<img alt="Officer Elias Burne" src="images/staff/sroburne.webp" loading="lazy" style="object-fit: cover; object-position: center 62%;"/>
+<img alt="Officer Elias Burne" src="images/staff/sroburne.webp" loading="lazy" class="news-image-fit"/>
 </div>
 <div class="news-content">
 <span class="news-date">March 3, 2025</span>
 <h4>Welcome Our New School Resource Officer</h4>
 <p>We are proud to announce Officer Elias Burne as our newest <a href="community-outreach.html#sro-program">School Resource Officer</a>! SRO Burne has been an integral part of the Bar Harbor Mount Desert Police Department since 2018, where he has served with distinction in the <a href="patrol-division.html">patrol division</a>. He will be serving MDI High School, Conners-Emerson School, and Mount Desert Elementary School.</p>
-<a class="read-more-link" href="news-detail/sro-burne-2024.html">Read Full Story <i class="fas fa-arrow-right"></i></a>
+<a class="read-more-link" href="news-detail/sro-burne-2024.html">Read Full Story <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </div>
 </article>
 <!-- News Item 4 - Comprehensive Training -->
 <article class="news-item">
 <div class="news-image">
-<img alt="Police Training" src="images/misc/234.webp" loading="lazy" style="object-fit: cover; object-position: center 50%;"/>
+<img alt="Police Training" src="images/misc/234.webp" loading="lazy" class="news-image-fit"/>
 </div>
 <div class="news-content">
 <span class="news-date">March 3, 2025</span>
 <h4>Bar Harbor Police Sharpen Skills with Comprehensive Training</h4>
 <p>The Bar Harbor Police Department recently conducted an intensive training day that combined <a href="academy-training.html#firearms">firearms qualification</a> at the <a href="academy-training.html#range">shooting range</a> with hands-on practice using <a href="academy-training.html#equipment">non-lethal equipment</a>, underscoring the department's commitment to officer preparedness and public safety.</p>
 <p>At dawn, officers gathered at the department's designated shooting range where Range Safety Officers carefully oversaw qualification exercises. Each officer methodically worked through a series of drills designed to test accuracy, proper weapon handling, and decision-making under pressure.</p>
-<a class="read-more-link" href="news-detail/comprehensive-training-2024.html">Read Full Story <i class="fas fa-arrow-right"></i></a>
+<a class="read-more-link" href="news-detail/comprehensive-training-2024.html">Read Full Story <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </div>
 </article>
 </div>
@@ -627,7 +650,7 @@
 <div class="recruitment-widget">
     <div class="recruitment-badge">Hiring</div>
     <div class="widget-header">
-        <h3 class="widget-title"><i class="fas fa-user-tie"></i> Join Our Team</h3>
+        <h3 class="widget-title"><i class="fas fa-user-tie" aria-hidden="true"></i> Join Our Team</h3>
     </div>
     <div class="recruitment-highlight">
         <div class="salary-spotlight">
@@ -637,15 +660,15 @@
         </div>
         <div class="recruitment-benefits">
             <div class="benefit-item">
-                <i class="fas fa-piggy-bank"></i>
+                <i class="fas fa-piggy-bank" aria-hidden="true"></i>
                 <span><a href="recruitment.html#pay-benefits">MEPERS 3C Retirement Plan</a></span>
             </div>
             <div class="benefit-item">
-                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart" aria-hidden="true"></i>
                 <span><a href="recruitment.html#pay-benefits">MMEHT PPO-1500 Health Plan</a></span>
             </div>
             <div class="benefit-item">
-                <i class="fas fa-calendar-check"></i>
+                <i class="fas fa-calendar-check" aria-hidden="true"></i>
                 <span>$6,000 Annual Wellness Incentive</span>
             </div>
         </div>
@@ -659,45 +682,45 @@
 
 <!-- Emergency Contacts Widget -->
 <div class="quick-links-widget">
-<h3 class="widget-title"><i class="fas fa-phone-alt"></i> Emergency Contacts</h3>
-<div class="emergency-numbers">
-<div class="contact-item">
+<h3 class="widget-title"><i class="fas fa-phone-alt" aria-hidden="true"></i> Emergency Contacts</h3>
+<ul class="emergency-numbers">
+<li class="contact-item">
 <span class="label">Emergency:</span>
 <a href="tel:911" class="phone-number">911</a>
-</div>
-<div class="contact-item">
+</li>
+<li class="contact-item">
 <span class="label">Non-Emergency:</span>
 <a href="tel:2072883391" class="phone-number">(207) 288-3391</a>
-</div>
-<div class="contact-item">
+</li>
+<li class="contact-item">
 <span class="label">Harbor Master:</span>
 <a href="tel:2072885571" class="phone-number">(207) 288-5571</a>
-</div>
-</div>
+</li>
+</ul>
 <a href="contact.html" class="view-all">More Contact Info</a>
 </div>
 
 <!-- Common Forms Widget -->
 <div class="common-forms-widget">
-<h3 class="widget-title"><i class="fas fa-file-alt"></i> Common Forms</h3>
+<h3 class="widget-title"><i class="fas fa-file-alt" aria-hidden="true"></i> Common Forms</h3>
 <ul class="forms-list">
-<li><a href="https://www.thepermitportal.com" target="_blank" rel="noopener"><i class="fas fa-parking"></i> Parking Permit Application</a></li>
-<li><a href="forms.html"><i class="fas fa-file-signature"></i> File a Police Report</a></li>
-<li><a href="admin.html"><i class="fas fa-archive"></i> Records Request Form</a></li>
+<li><a href="https://www.thepermitportal.com" target="_blank" rel="noopener"><i class="fas fa-parking" aria-hidden="true"></i> Parking Permit Application</a></li>
+<li><a href="forms.html"><i class="fas fa-file-signature" aria-hidden="true"></i> File a Police Report</a></li>
+<li><a href="admin.html"><i class="fas fa-archive" aria-hidden="true"></i> Records Request Form</a></li>
 </ul>
 <a href="forms.html" class="view-all">All Forms</a>
 </div>
 
 <!-- FAQ Widget -->
 <div class="faq-widget">
-<h3 class="widget-title"><i class="fas fa-question-circle"></i> FAQ</h3>
+<h3 class="widget-title"><i class="fas fa-question-circle" aria-hidden="true"></i> FAQ</h3>
 <p>Find answers to commonly asked questions about our services, permits, and processes.</p>
 <a href="faq.html" class="btn btn-outline">Browse FAQ</a>
 </div>
 
 <!-- Upcoming Events Widget - Moved to bottom -->
 <div class="upcoming-events-widget">
-<h3 class="widget-title"><i class="fas fa-calendar"></i> Upcoming Events</h3>
+<h3 class="widget-title"><i class="fas fa-calendar" aria-hidden="true"></i> Upcoming Events</h3>
 <div class="event-message" style="padding: 1rem; text-align: center; background-color: #f8f9fa; border-radius: 8px; margin-top: 1rem;">
 <i class="fas fa-info-circle" style="font-size: 1.5rem; color: #1a73e8; margin-bottom: 0.5rem; display: block;"></i>
 <p style="margin: 0; font-size: 0.95rem; color: #333;">We're currently updating our events calendar. Please check back soon for information about upcoming community events and programs.</p>
@@ -725,7 +748,7 @@
 <img alt="Community Engagement" src="images/staff/bbq.webp" loading="lazy"/>
 </div>
 <div class="service-content">
-<h3><i class="fas fa-mug-hot"></i> Community Engagement</h3>
+<h3><i class="fas fa-mug-hot" aria-hidden="true"></i> Community Engagement</h3>
 <p>Join us for coffee and conversation. Our Coffee with a Cop program builds bridges with community members in a relaxed environment.</p>
 <a class="btn btn-outline" href="events.html">Upcoming Events</a>
 </div>
@@ -735,7 +758,7 @@
 <img alt="Emergency Response" src="images/services/emergency/police_lights.webp" loading="lazy"/>
 </div>
 <div class="service-content">
-<h3><i class="fas fa-shield-alt"></i> Emergency Response</h3>
+<h3><i class="fas fa-shield-alt" aria-hidden="true"></i> Emergency Response</h3>
 <p>Our officers are available 24/7 to respond to emergency situations throughout Bar Harbor and Mount Desert.</p>
 <a class="btn btn-outline" href="contact.html">Emergency Contacts</a>
 </div>
@@ -745,7 +768,7 @@
 <img alt="Community Programs" src="images/staff/goodmorningkev.webp" loading="lazy"/>
 </div>
 <div class="service-content">
-<h3><i class="fas fa-hands-helping"></i> Community Programs</h3>
+<h3><i class="fas fa-hands-helping" aria-hidden="true"></i> Community Programs</h3>
 <p>We offer various community programs including the <a href="good-morning-program.html">Good Morning Program</a>.</p>
 <a class="btn btn-outline" href="community-outreach.html">Our Programs</a>
 </div>
@@ -763,52 +786,52 @@
 <p>37 Firefly Lane, Bar Harbor, ME 04609</p>
 <p>General Information: (207) 288-3391</p>
 <div class="social-icons">
-<a aria-label="Visit our Facebook page" class="facebook" href="https://www.facebook.com/profile.php?id=61555282019664" target="_blank" rel="noopener" tabindex="0"><i class="fab fa-facebook-f"></i></a>
-<a aria-label="Visit our YouTube channel" class="youtube" href="https://youtube.com" target="_blank" tabindex="0"><i class="fab fa-youtube"></i></a>
+<a aria-label="Visit our Facebook page" class="facebook" href="https://www.facebook.com/profile.php?id=61555282019664" target="_blank" rel="noopener" tabindex="0"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+<a aria-label="Visit our YouTube channel" class="youtube" href="https://youtube.com" target="_blank" tabindex="0"><i class="fab fa-youtube" aria-hidden="true"></i></a>
 </div>
 </div>
 <nav class="footer-links" aria-label="Footer Navigation">
 <section class="footer-column" aria-labelledby="footer-divisions">
-<h3 id="footer-divisions"><i class="fas fa-building"></i> DIVISIONS</h3>
-<ul><li><a href="patrol-division.html"><i class="fas fa-shield-alt"></i> Patrol Division</a></li>
+<h3 id="footer-divisions"><i class="fas fa-building" aria-hidden="true"></i> DIVISIONS</h3>
+<ul><li><a href="patrol-division.html"><i class="fas fa-shield-alt" aria-hidden="true"></i> Patrol Division</a></li>
 
-<li><a href="harbor-master-division.html"><i class="fas fa-ship"></i> Harbor Master</a></li>
-<li><a href="bar-harbor-parking.html"><i class="fas fa-parking"></i> Bar Harbor Parking</a></li>
-<li><a href="mount-desert-parking.html"><i class="fas fa-parking"></i> Mount Desert Parking</a></li>
-<li><a href="admin.html"><i class="fas fa-users"></i> Administrative Services</a></li>
-<li><a href="animalcontrol.html"><i class="fas fa-paw"></i> Animal Control</a></li>
+<li><a href="harbor-master-division.html"><i class="fas fa-ship" aria-hidden="t" aria-hidden="true"rue></i> Harbor Master</a></li>
+<li><a href="bar-harbor-parking.html"><i class="fas fa-parking" aria-hidden="true"></i> Bar Harbor Parking</a></li>
+<li><a href="mount-desert-parking.html"><i class="fas fa-parking" aria-hidden="true"></i> Mount Desert Parking</a></li>
+<li><a href="admin.html"><i class="fas fa-users" aria-hidden="true"></i> Administrative Services</a></li>
+<li><a href="animalcontrol.html"><i class="fas fa-paw" aria-hidden="true"></i> Animal Control</a></li>
 </ul>
 </section>
 <section class="footer-column" aria-labelledby="footer-services">
-<h3 id="footer-services"><i class="fas fa-concierge-bell"></i> SERVICES</h3>
+<h3 id="footer-services"><i class="fas fa-concierge-bell" aria-hidden="true"></i> SERVICES</h3>
 <ul>
-<li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" rel="noopener" target="_blank"><i class="fas fa-bullhorn"></i> AMBER Alert</a></li>
-<li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" rel="noopener" target="_blank"><i class="fas fa-user-slash"></i> Missing Persons</a></li>
-<li><a href="community-outreach.html"><i class="fas fa-hands-helping"></i> Community Programs</a></li>
-<li><a href="mentalhealth.html"><i class="fas fa-heart"></i> Mental Health Resources</a></li>
+<li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" rel="noopener" target="_blank"><i class="fas fa-bullhorn" aria-hidden="true"></i> AMBER Alert</a></li>
+<li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" rel="noopener" target="_blank"><i class="fas fa-user-slash" aria-hidden="true"></i> Missing Persons</a></li>
+<li><a href="community-outreach.html"><i class="fas fa-hands-helping" aria-hidden="true"></i> Community Programs</a></li>
+<li><a href="mentalhealth.html"><i class="fas fa-heart" aria-hidden="true"></i> Mental Health Resources</a></li>
 </ul>
 </section>
 <section class="footer-column" aria-labelledby="footer-careers">
-<h3 id="footer-careers"><i class="fas fa-user-tie"></i> CAREERS</h3>
+<h3 id="footer-careers"><i class="fas fa-user-tie" aria-hidden="true"></i> CAREERS</h3>
 <ul>
-<li><a href="recruitment.html"><i class="fas fa-user-tie"></i> Join Our Team</a></li>
-<li><a href="recruitment.html#application-process"><i class="fas fa-file-alt"></i> Application Process</a></li>
-<li><a href="recruitment.html#pay-benefits"><i class="fas fa-medal"></i> Benefits & Salary</a></li>
-<li><a href="recruitment.html#apply"><i class="fas fa-file-signature"></i> Apply Now</a></li>
+<li><a href="recruitment.html"><i class="fas fa-user-tie" aria-hidden="true"></i> Join Our Team</a></li>
+<li><a href="recruitment.html#application-process"><i class="fas fa-file-alt" aria-hidden="true"></i> Application Process</a></li>
+<li><a href="recruitment.html#pay-benefits"><i class="fas fa-medal" aria-hidden="true"></i> Benefits & Salary</a></li>
+<li><a href="recruitment.html#apply"><i class="fas fa-file-signature" aria-hidden="true"></i> Apply Now</a></li>
 </ul>
 </section>
 <section class="footer-column" aria-labelledby="footer-about">
-<h3 id="footer-about"><i class="fas fa-info-circle"></i> ABOUT</h3>
+<h3 id="footer-about"><i class="fas fa-info-circle" aria-hidden="true"></i> ABOUT</h3>
 <ul>
-<li><a href="administration.html"><i class="fas fa-user-shield"></i> Administration</a></li>
-<li><a href="contact.html#administration"><i class="fas fa-users-cog"></i> Command Staff</a></li>
-<li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
-<li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+<li><a href="administration.html"><i class="fas fa-user-shield" aria-hidden="true"></i> Administration</a></li>
+<li><a href="contact.html#administration"><i class="fas fa-users-cog" aria-hidden="true"></i> Command Staff</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact Us</a></li>
+<li><a href="faq.html"><i class="fas fa-question-circle" aria-hidden="true"></i> FAQ</a></li>
 </ul>
 </section>
 </nav>
 <div class="footer-map" aria-label="Map showing Bar Harbor Police Department locations">
-<h3><i class="fas fa-map-marker-alt"></i> Our Locations</h3>
+<h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Our Locations</h3>
 <div class="map-container" style="position:relative; width:100%; max-width:100%;">
 <iframe height="300" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-68.31,44.28,-68.19,44.40&layer=mapnik&marker=44.3882,-68.2061&marker=44.2943,-68.2913" style="border:1px solid black; width: 100%; display:block;" title="Map showing Bar Harbor Police Department locations at 37 Firefly Ln, Bar Harbor and 21 Sea St, Mount Desert"></iframe>
 </div>
@@ -821,7 +844,7 @@
 </footer>
 <!-- JS FILES -->
 <!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 
 <!-- Hero Video Optimization Script -->
 <script>
