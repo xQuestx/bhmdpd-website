@@ -1,367 +1,277 @@
 <!DOCTYPE html>
+
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hancock County Food Drive Success | Bar Harbor Mount Desert Police Department</title>
-    <meta name="description" content="Bar Harbor Mount Desert Police Department helps collect food and necessities for the Hancock County Food Drive, run by Healthy Acadia.">
-    <link rel="canonical" href="https://www.bhmdpd.com/news-detail/food-drive-2025.html" />
-    
-    <!-- Favicon -->
-    <link rel="icon" href="../images/branding/favicon.ico" type="image/x-icon">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/main.css">
-    
-    <!-- Add this right after your stylesheet links and before other scripts -->
-    <script src="../darkmode.js"></script>
-    
-    <!-- Add these meta tags -->
-    <meta name="theme-color" content="#ffffff" id="theme-color">
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hancock County Food Drive Success | Bar Harbor Mount Desert Police Department</title>
+<meta content="Bar Harbor Mount Desert Police Department helps collect food and necessities for the Hancock County Food Drive, run by Healthy Acadia." name="description"/>
+<link href="https://www.bhmdpd.com/news-detail/food-drive-2025.html" rel="canonical"/>
+<!-- Favicon -->
+<link href="../images/branding/favicon.ico" rel="icon" type="image/x-icon"/>
+<!-- Stylesheets -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<link href="../css/main.css" rel="stylesheet"/>
+<!-- Add this right after your stylesheet links and before other scripts -->
+<script src="../darkmode.js"></script>
+<!-- Add these meta tags -->
+<meta content="#ffffff" id="theme-color" name="theme-color"/>
+<script>
         // Update theme-color based on dark mode
         if (localStorage.getItem('darkMode') === 'enabled') {
             document.getElementById('theme-color').setAttribute('content', '#121212');
         }
     </script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/></noscript>
 </head>
 <body>
-    <a href="#main-content" class="skip-to-main">
+<a class="skip-to-main" href="#main-content">
         Skip to main content
     </a>
-    <div class="scroll-progress"></div>
-
-    <header class="header hero-header">
-        <nav class="main-nav">
-            <!-- Logo -->
-            <a href="../index.html" class="logo-link">
-                <img src="../images/branding/logo.png" alt="Bar Harbor Mount Desert Police Department Logo" class="logo">
-            </a>
-
-            <!-- Navigation -->
-            <div class="nav-wrapper">
-                <button class="mobile-close-btn" aria-label="Close menu">
-                    <i class="fas fa-times"></i>
-                </button>
-                <ul class="nav-links">
-                    <li>
-                        <a href="../index.html">
-                            <i class="fas fa-home"></i> Home
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">
-                            <i class="fas fa-building"></i> Divisions
-                            <i class="fas fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-content">
-                            <li>
-                                <a href="../harbor-master-division.html">
-                                    <i class="fas fa-ship"></i> Harbor Master
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../bar-harbor-parking.html">
-                                    <i class="fas fa-parking"></i> Parking Enforcement
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../admin.html">
-                                    <i class="fas fa-users"></i> Administrative Services
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../animalcontrol.html">
-                                    <i class="fas fa-paw"></i> Animal Control
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../mentalhealth.html">
-                                    <i class="fas fa-heart"></i> Mental Health Unit
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">
-                            <i class="fas fa-hands-helping"></i> Programs
-                            <i class="fas fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-content">
-                            <li>
-                                <a href="../good-morning-program.html">
-                                    <i class="fas fa-sun"></i> Good Morning Program
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../community-outreach.html">
-                                    <i class="fas fa-heart"></i> Community Outreach
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">
-                            <i class="fas fa-user-tie"></i> Recruitment
-                            <i class="fas fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-content">
-                            <li>
-                                <a href="../bhmdrec.html">
-                                    <i class="fas fa-briefcase"></i> Career Opportunities
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../application-process.html">
-                                    <i class="fas fa-file-alt"></i> Application Process
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../benefits.html">
-                                    <i class="fas fa-medal"></i> Benefits & Salary
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../hire.html">
-                                    <i class="fas fa-user-plus"></i> Hiring Process
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../forms.html">
-                            <i class="fas fa-file-alt"></i> Forms
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../faq.html">
-                            <i class="fas fa-question-circle"></i> FAQ
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../events.html">
-                            <i class="fas fa-calendar-alt"></i> Events
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../contact.html">
-                            <i class="fas fa-envelope"></i> Contact
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
-            </button>
-        </nav>
-    </header>
-
-    <!-- MAIN CONTENT -->
-    <main id="main-content" class="main-content">
-        <!-- NEWS ARTICLE SECTION -->
-        <section class="news-article-section">
-            <div class="content-wrapper">
-                <div class="breadcrumbs">
-                    <a href="../index.html">Home</a> &gt; 
+<div class="scroll-progress"></div>
+<header class="header hero-header">
+<nav class="main-nav">
+<!-- Logo -->
+<a class="logo-link" href="../index.html">
+<img alt="Bar Harbor Mount Desert Police Department Logo" class="logo" src="../images/branding/logo.png"/>
+</a>
+<!-- Navigation -->
+<div class="nav-wrapper">
+<button aria-label="Close menu" class="mobile-close-btn">
+<i aria-hidden="true" class="fas fa-times"></i>
+</button>
+<ul class="nav-links">
+<li><a class="active" href="../index.html"><i aria-hidden="true" class="fas fa-home"></i> Home</a></li>
+<li class="dropdown">
+<button aria-controls="divisions-menu" aria-expanded="false" aria-haspopup="true" type="button"><i aria-hidden="true" class="fas fa-building"></i> Divisions <i aria-hidden="true" class="fas fa-caret-down"></i></button>
+<ul class="dropdown-content" id="divisions-menu">
+<li><a href="../patrol-division.html"><i aria-hidden="true" class="fas fa-shield-alt"></i> Patrol Division</a></li>
+<li><a href="../harbor-master-division.html"><i aria-hidden="true" class="fas fa-ship"></i> Harbor Master</a></li>
+<li><a href="../bar-harbor-parking.html"><i aria-hidden="true" class="fas fa-parking"></i> Bar Harbor Parking</a></li>
+<li><a href="../mount-desert-parking.html"><i aria-hidden="true" class="fas fa-parking"></i> Mount Desert Parking</a></li>
+<li><a href="../admin.html"><i aria-hidden="true" class="fas fa-users"></i> Administrative Services</a></li>
+<li><a href="../animalcontrol.html"><i aria-hidden="true" class="fas fa-paw"></i> Animal Control</a></li>
+<li><a href="../mentalhealth.html"><i aria-hidden="true" class="fas fa-heart"></i> Mental Health Unit</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<button aria-controls="programs-menu" aria-expanded="false" aria-haspopup="true" type="button"><i aria-hidden="true" class="fas fa-hands-helping"></i> Programs <i aria-hidden="true" class="fas fa-caret-down"></i></button>
+<ul class="dropdown-content" id="programs-menu">
+<li><a href="../good-morning-program.html"><i aria-hidden="true" class="fas fa-sun"></i> Good Morning Program</a></li>
+<li><a href="../community-outreach.html"><i aria-hidden="true" class="fas fa-heart"></i> Community Outreach</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<button aria-controls="recruitment-menu" aria-expanded="false" aria-haspopup="true" type="button"><i aria-hidden="true" class="fas fa-user-tie"></i> Recruitment <i aria-hidden="true" class="fas fa-caret-down"></i></button>
+<ul class="dropdown-content" id="recruitment-menu">
+<li><a href="../recruitment.html"><i aria-hidden="true" class="fas fa-briefcase"></i> Join Our Team</a></li>
+<li><a href="../academy-training.html"><i aria-hidden="true" class="fas fa-chalkboard-teacher"></i> Academy Training</a></li>
+</ul>
+</li>
+<li><a href="../forms.html"><i aria-hidden="true" class="fas fa-file-alt"></i> Forms</a></li>
+<li><a href="../faq.html"><i aria-hidden="true" class="fas fa-question-circle"></i> FAQ</a></li>
+<li class="dropdown">
+<button aria-controls="events-menu" aria-expanded="false" aria-haspopup="true" aria-label="Events menu" type="button"><i aria-hidden="true" class="fas fa-calendar-alt"></i> Events <i aria-hidden="true" class="fas fa-caret-down"></i></button>
+<ul class="dropdown-content" id="events-menu">
+<li><a href="../events.html"><i aria-hidden="true" class="fas fa-calendar"></i> Community Events</a></li>
+<li><a href="../july-4th.html"><i aria-hidden="true" class="fas fa-flag-usa"></i> July 4th Celebration</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<button aria-controls="news-menu" aria-expanded="false" aria-haspopup="true" type="button"><i aria-hidden="true" class="fas fa-newspaper"></i> News <i aria-hidden="true" class="fas fa-caret-down"></i></button>
+<ul class="dropdown-content" id="news-menu">
+<li><a href="../news.html"><i aria-hidden="true" class="fas fa-list"></i> All News</a></li>
+<li><a href="../news.html#department-updates"><i aria-hidden="true" class="fas fa-bullhorn"></i> Department Updates</a></li>
+<li><a href="../news.html#community-news"><i aria-hidden="true" class="fas fa-users"></i> Community News</a></li>
+<li><a href="../news.html#press-releases"><i aria-hidden="true" class="fas fa-file-alt"></i> Press Releases</a></li>
+</ul>
+</li>
+<li><a href="../contact.html"><i aria-hidden="true" class="fas fa-envelope"></i> Contact</a></li>
+</ul>
+</div>
+<!-- Mobile Menu Button -->
+<button aria-label="Toggle menu" class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+<button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle">
+<i class="fas fa-moon"></i>
+<i class="fas fa-sun"></i>
+</button>
+</nav>
+</header>
+<!-- MAIN CONTENT -->
+<main class="main-content" id="main-content">
+<!-- NEWS ARTICLE SECTION -->
+<section class="news-article-section">
+<div class="content-wrapper">
+<div class="breadcrumbs">
+<a href="../index.html">Home</a> &gt; 
                     <a href="../news.html">News</a> &gt; 
                     <span>Hancock County Food Drive</span>
-                </div>
-                
-                <article class="news-article">
-                    <header class="article-header">
-                        <h1 class="article-title">Bar Harbor Mount Desert Police Support Successful Hancock County Food Drive</h1>
-                        <div class="article-meta">
-                            <span class="article-date"><i class="far fa-calendar-alt"></i> April 7, 2025</span>
-                            <span class="article-category"><i class="fas fa-tag"></i> Community</span>
-                        </div>
-                    </header>
-                    
-                    <div class="article-featured-image" style="max-width: 600px; margin: 0 auto;">
-                        <img src="../images/misc/hannaford1.jpg" alt="Bar Harbor Mount Desert Police vehicle filled with food donations" class="full-width-image">
-                        <p class="image-caption">Public Safety Operations Coordinator Edgecomb's cruiser filled with food, toiletries, and other necessities for community members in need.</p>
-                    </div>
-                    
-                    <div class="article-content">
-                        <p>Yesterday was a very cold but very productive day at the Bar Harbor Hannaford, where many people stopped by to help contribute to the Hancock County Food Drive, run by Healthy Acadia.</p>
-                        
-                        <p>Despite the chilly weather, community members showed remarkable generosity, donating essential items to support those in need throughout Hancock County. As the photos show, Public Safety Operations Coordinator Edgecomb's cruiser left full of food, toiletries, and other necessities for people in our community.</p>
-                        
-                        <blockquote>
-                            <p>"The generosity of Bar Harbor residents, even on such a cold day, demonstrates the strength and compassion of our community," said Public Safety Operations Coordinator Edgecomb. "These donations will make a real difference in the lives of our neighbors facing food insecurity."</p>
-                        </blockquote>
-                        
-                        <p>The Bar Harbor Mount Desert Police Department would like to extend heartfelt thanks to everyone who helped make this event successful, including:</p>
-                        
-                        <ul>
-                            <li>Hannaford and their generous and kind staff</li>
-                            <li>Chris Popper</li>
-                            <li>MDI HS student volunteers: Mahala, Julian, and Audrey</li>
-                            <li>Everyone who donated items</li>
-                        </ul>
-                        
-                        <p>The collected items will be distributed by Healthy Acadia through their Hancock County Food Drive initiative, which works to address food insecurity throughout our region.</p>
-                        
-                        <div class="article-gallery">
-                            <h3>Event Gallery</h3>
-                            <div class="gallery-grid">
-                                <figure class="gallery-item">
-                                    <img src="../images/misc/kevinhannaford.jpg" alt="Coordinator at Hannaford food drive">
-                                    <figcaption>Public Safety Operations Coordinator Edgecomb at the Hancock County Food Drive event</figcaption>
-                                </figure>
-                                <figure class="gallery-item">
-                                    <img src="../images/misc/hannaford2.jpg" alt="Collected donations at Hannaford">
-                                    <figcaption>Generous donations collected at the Bar Harbor Hannaford</figcaption>
-                                </figure>
-                                <figure class="gallery-item">
-                                    <img src="../images/misc/hannaford1.jpg" alt="Police cruiser filled with donations">
-                                    <figcaption>Police cruiser filled with essential items for community members</figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                        
-                        <div class="call-to-action-box">
-                            <h3><i class="fas fa-info-circle"></i> Get Involved</h3>
-                            <p>To learn more about what Healthy Acadia is doing for our communities and how you can help with their food security initiatives, visit their website: <a href="https://healthyacadia.org/hffa-hcfd" target="_blank" rel="noopener">https://healthyacadia.org/hffa-hcfd</a></p>
-                        </div>
-                    </div>
-                    <footer class="article-footer">
-                        <div class="share-buttons">
-                            <span>Share this article:</span>
-                            <a href="https://www.facebook.com/profile.php?id=61555282019664" class="share-btn facebook" target="_blank" rel="noopener" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="share-btn email"><i class="fas fa-envelope"></i></a>
-                        </div>
-                        
-                        <div class="related-articles">
-                            <h3>Related Articles</h3>
-                            <div class="related-articles-grid">
-                                <a href="racial-equality-working-group-2024.html" class="related-article">
-                                    <img src="../images/lib/lib1.jpg" alt="Racial Equality Working Group">
-                                    <h4>Bar Harbor Mount Desert Police Participate in Racial Equality Working Group</h4>
-                                    <span class="article-date">March 13, 2025</span>
-                                </a>
-                                <a href="sro-burne-2024.html" class="related-article">
-                                    <img src="../images/staff/sroburne.webp" alt="Officer Elias Burne">
-                                    <h4>Welcome Our New School Resource Officer</h4>
-                                    <span class="article-date">March 3, 2025</span>
-                                </a>
-                            </div>
-                        </div>
-                    </footer>
-                </article>
-            </div>
-        </section>
-    </main>
-    <!-- END MAIN CONTENT -->
-
-    <!-- CONTACT SECTION -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Want to Get Involved in Community Outreach?</h2>
-            <p>Our team is dedicated to supporting community initiatives and would love to hear from you.</p>
-            <div class="cta-buttons">
-                <a href="../contact.html" class="btn btn-primary btn-lg contact-us">
-                    <i class="fas fa-envelope"></i> Contact Us
+</div>
+<article class="news-article">
+<header class="article-header">
+<h1 class="article-title">Bar Harbor Mount Desert Police Support Successful Hancock County Food Drive</h1>
+<div class="article-meta">
+<span class="article-date"><i class="far fa-calendar-alt"></i> April 7, 2025</span>
+<span class="article-category"><i class="fas fa-tag"></i> Community</span>
+</div>
+</header>
+<div class="article-featured-image" style="max-width: 600px; margin: 0 auto;">
+<img alt="Bar Harbor Mount Desert Police vehicle filled with food donations" class="full-width-image" src="../images/misc/hannaford1.jpg"/>
+<p class="image-caption">Public Safety Operations Coordinator Edgecomb's cruiser filled with food, toiletries, and other necessities for community members in need.</p>
+</div>
+<div class="article-content">
+<p>Yesterday was a very cold but very productive day at the Bar Harbor Hannaford, where many people stopped by to help contribute to the Hancock County Food Drive, run by Healthy Acadia.</p>
+<p>Despite the chilly weather, community members showed remarkable generosity, donating essential items to support those in need throughout Hancock County. As the photos show, Public Safety Operations Coordinator Edgecomb's cruiser left full of food, toiletries, and other necessities for people in our community.</p>
+<blockquote>
+<p>"The generosity of Bar Harbor residents, even on such a cold day, demonstrates the strength and compassion of our community," said Public Safety Operations Coordinator Edgecomb. "These donations will make a real difference in the lives of our neighbors facing food insecurity."</p>
+</blockquote>
+<p>The Bar Harbor Mount Desert Police Department would like to extend heartfelt thanks to everyone who helped make this event successful, including:</p>
+<ul>
+<li>Hannaford and their generous and kind staff</li>
+<li>Chris Popper</li>
+<li>MDI HS student volunteers: Mahala, Julian, and Audrey</li>
+<li>Everyone who donated items</li>
+</ul>
+<p>The collected items will be distributed by Healthy Acadia through their Hancock County Food Drive initiative, which works to address food insecurity throughout our region.</p>
+<div class="article-gallery">
+<h3>Event Gallery</h3>
+<div class="gallery-grid">
+<figure class="gallery-item">
+<img alt="Coordinator at Hannaford food drive" src="../images/misc/kevinhannaford.jpg"/>
+<figcaption>Public Safety Operations Coordinator Edgecomb at the Hancock County Food Drive event</figcaption>
+</figure>
+<figure class="gallery-item">
+<img alt="Collected donations at Hannaford" src="../images/misc/hannaford2.jpg"/>
+<figcaption>Generous donations collected at the Bar Harbor Hannaford</figcaption>
+</figure>
+<figure class="gallery-item">
+<img alt="Police cruiser filled with donations" src="../images/misc/hannaford1.jpg"/>
+<figcaption>Police cruiser filled with essential items for community members</figcaption>
+</figure>
+</div>
+</div>
+<div class="call-to-action-box">
+<h3><i class="fas fa-info-circle"></i> Get Involved</h3>
+<p>To learn more about what Healthy Acadia is doing for our communities and how you can help with their food security initiatives, visit their website: <a href="https://healthyacadia.org/hffa-hcfd" rel="noopener" target="_blank">https://healthyacadia.org/hffa-hcfd</a></p>
+</div>
+</div>
+<footer class="article-footer">
+<div class="share-buttons">
+<span>Share this article:</span>
+<a aria-label="Visit our Facebook page" class="share-btn facebook" href="https://www.facebook.com/profile.php?id=61555282019664" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a class="share-btn twitter" href="#"><i class="fab fa-twitter"></i></a>
+<a class="share-btn email" href="#"><i class="fas fa-envelope"></i></a>
+</div>
+<div class="related-articles">
+<h3>Related Articles</h3>
+<div class="related-articles-grid">
+<a class="related-article" href="racial-equality-working-group-2024.html">
+<img alt="Racial Equality Working Group" src="../images/lib/lib1.jpg"/>
+<h4>Bar Harbor Mount Desert Police Participate in Racial Equality Working Group</h4>
+<span class="article-date">March 13, 2025</span>
+</a>
+<a class="related-article" href="sro-burne-2024.html">
+<img alt="Officer Elias Burne" src="../images/staff/sroburne.webp"/>
+<h4>Welcome Our New School Resource Officer</h4>
+<span class="article-date">March 3, 2025</span>
+</a>
+</div>
+</div>
+</footer>
+</article>
+</div>
+</section>
+</main>
+<!-- END MAIN CONTENT -->
+<!-- CONTACT SECTION -->
+<section class="cta-section">
+<div class="cta-content">
+<h2>Want to Get Involved in Community Outreach?</h2>
+<p>Our team is dedicated to supporting community initiatives and would love to hear from you.</p>
+<div class="cta-buttons">
+<a class="btn btn-primary btn-lg contact-us" href="../contact.html">
+<i class="fas fa-envelope"></i> Contact Us
                 </a>
-                <a href="tel:2072883391" class="btn btn-outline-light btn-lg">
-                    <i class="fas fa-phone-alt"></i> (207) 288-3391
+<a class="btn btn-outline-light btn-lg" href="tel:2072883391">
+<i class="fas fa-phone-alt"></i> (207) 288-3391
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo-container">
-                <img src="../images/branding/logo.png" alt="Bar Harbor Mount Desert Police Department Logo" class="footer-logo">
-                <p><strong>Bar Harbor Mount Desert Police Department</strong></p>
-                <p>37 Firefly Lane, Bar Harbor, ME 04609</p>
-                <p>General Information: (207) 288-3391</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/profile.php?id=61555282019664" class="facebook" target="_blank" rel="noopener" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://youtube.com" class="youtube" target="_blank" aria-label="Visit our YouTube channel"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h3>DIVISIONS</h3>
-                    <ul>
-                        <li><a href="../harbor-master-division.html">Harbor Master</a></li>
-                        <li><a href="../bar-harbor-parking.html">Parking Enforcement</a></li>
-                        <li><a href="../administrative-services.html">Administrative Services</a></li>
-                        <li><a href="../animalcontrol.html">Animal Control</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>SERVICES</h3>
-                    <ul>
-                        <li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" target="_blank" rel="noopener">AMBER Alert</a></li>
-                        <li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" target="_blank" rel="noopener">Missing Persons</a></li>
-                        <li><a href="../community-outreach.html">Community Programs</a></li>
-                        <li><a href="../mentalhealth.html">Mental Health Resources</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>CAREERS</h3>
-                    <ul>
-                        <li><a href="../application-process.html">Application Process</a></li>
-                        <li><a href="../opportunities.html">Career Opportunities</a></li>
-                        <li><a href="../benefits.html">Benefits</a></li>
-                        <li><a href="../hire.html">Apply Now</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>ABOUT</h3>
-                    <ul>
-                        <li><a href="../administration.html">Administration</a></li>
-                        <li><a href="../command-staff.html">Command Staff</a></li>
-                        <li><a href="../contact.html">Contact Us</a></li>
-                        <li><a href="../faq.html">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-map">
-                <h3>Our Location</h3>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.076072177352!2d-68.20830382343881!3d44.38821380458311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4caebf7cae314357%3A0xb7e0edbf086c978c!2s37%20Firefly%20Ln%2C%20Bar%20Harbor%2C%20ME%2004609!5e1!3m2!1sen!2sus!4v1734624380504!5m2!1sen!2sus"
-                    width="100%"
-                    height="250"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    title="Map showing Bar Harbor Mount Desert Police Department location">
-                </iframe>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Bar Harbor Mount Desert Police Department. All Rights Reserved.</p>
-            <div class="last-updated">
+</div>
+</div>
+</section>
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-logo-container">
+<img alt="Bar Harbor Mount Desert Police Department Logo" class="footer-logo" src="../images/branding/logo.png"/>
+<p><strong>Bar Harbor Mount Desert Police Department</strong></p>
+<p>37 Firefly Lane, Bar Harbor, ME 04609</p>
+<p>General Information: (207) 288-3391</p>
+<div class="social-icons">
+<a aria-label="Visit our Facebook page" class="facebook" href="https://www.facebook.com/profile.php?id=61555282019664" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Visit our YouTube channel" class="youtube" href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<div class="footer-links">
+<div class="footer-column">
+<h3>DIVISIONS</h3>
+<ul>
+<li><a href="../harbor-master-division.html">Harbor Master</a></li>
+<li><a href="../bar-harbor-parking.html">Parking Enforcement</a></li>
+<li><a href="../administrative-services.html">Administrative Services</a></li>
+<li><a href="../animalcontrol.html">Animal Control</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>SERVICES</h3>
+<ul>
+<li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" rel="noopener" target="_blank">AMBER Alert</a></li>
+<li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" rel="noopener" target="_blank">Missing Persons</a></li>
+<li><a href="../community-outreach.html">Community Programs</a></li>
+<li><a href="../mentalhealth.html">Mental Health Resources</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>CAREERS</h3>
+<ul>
+<li><a href="../application-process.html">Application Process</a></li>
+<li><a href="../opportunities.html">Career Opportunities</a></li>
+<li><a href="../benefits.html">Benefits</a></li>
+<li><a href="../hire.html">Apply Now</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>ABOUT</h3>
+<ul>
+<li><a href="../administration.html">Administration</a></li>
+<li><a href="../command-staff.html">Command Staff</a></li>
+<li><a href="../contact.html">Contact Us</a></li>
+<li><a href="../faq.html">FAQ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-map">
+<h3>Our Location</h3>
+<iframe allowfullscreen="" height="250" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.076072177352!2d-68.20830382343881!3d44.38821380458311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4caebf7cae314357%3A0xb7e0edbf086c978c!2s37%20Firefly%20Ln%2C%20Bar%20Harbor%2C%20ME%2004609!5e1!3m2!1sen!2sus!4v1734624380504!5m2!1sen!2sus" style="border:0;" title="Map showing Bar Harbor Mount Desert Police Department location" width="100%">
+</iframe>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 Bar Harbor Mount Desert Police Department. All Rights Reserved.</p>
+<div class="last-updated">
                 Last updated: <time datetime="2025-04-08">April 8th, 2025</time>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JS FILES -->
-    <!-- Link to your existing 'script.js' that contains the slider logic -->
-    <script src="../script.js"></script>
-    <script src="../js/footer-loader.js" defer></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</div>
+</div>
+</footer>
+<!-- JS FILES -->
+<!-- Link to your existing 'script.js' that contains the slider logic -->
+<script src="../script.js"></script>
+<script defer="" src="../js/footer-loader.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </body>
 </html>

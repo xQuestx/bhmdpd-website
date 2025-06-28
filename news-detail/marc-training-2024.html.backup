@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARC Training Refresher 2024 | Bar Harbor Police Department</title>
+    <meta name="description" content="Bar Harbor Police Department officers complete annual MARC training refresher, reinforcing essential skills for community safety.">
+    <link rel="canonical" href="https://www.bhmdpd.com/news-detail/marc-training-2024.html" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../images/branding/favicon.ico" type="image/x-icon">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <!-- Add this right after your stylesheet links and before other scripts -->
+    <script src="../darkmode.js"></script>
+    
+    <!-- Add these meta tags -->
+    <meta name="theme-color" content="#ffffff" id="theme-color">
+    <script>
+        // Update theme-color based on dark mode
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.getElementById('theme-color').setAttribute('content', '#121212');
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel='preload' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' as='style' onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">
+        Skip to main content
+    </a>
+    <div class="scroll-progress"></div>
+
+    <header class="header hero-header">
+        <nav class="main-nav">
+            <!-- Logo -->
+            <a href="../index.html" class="logo-link">
+                <img src="../images/branding/logo.png" alt="Bar Harbor Police Department Logo" class="logo">
+            </a>
+
+            <!-- Navigation -->
+            <div class="nav-wrapper">
+                <button class="mobile-close-btn" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="nav-links">
+                    <li>
+                        <a href="../index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            <i class="fas fa-building"></i> Divisions
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li>
+                                <a href="../harbor-master-division.html">
+                                    <i class="fas fa-ship"></i> Harbor Master
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../bar-harbor-parking.html">
+                                    <i class="fas fa-parking"></i> Parking Enforcement
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../admin.html">
+                                    <i class="fas fa-users"></i> Administrative Services
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../animalcontrol.html">
+                                    <i class="fas fa-paw"></i> Animal Control
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../mentalhealth.html">
+                                    <i class="fas fa-heart"></i> Mental Health Unit
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            <i class="fas fa-hands-helping"></i> Programs
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li>
+                                <a href="../good-morning-program.html">
+                                    <i class="fas fa-sun"></i> Good Morning Program
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../community-outreach.html">
+                                    <i class="fas fa-heart"></i> Community Outreach
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            <i class="fas fa-user-tie"></i> Recruitment
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li>
+                                <a href="../bhmdrec.html">
+                                    <i class="fas fa-briefcase"></i> Career Opportunities
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../application-process.html">
+                                    <i class="fas fa-file-alt"></i> Application Process
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../benefits.html">
+                                    <i class="fas fa-medal"></i> Benefits & Salary
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../hire.html">
+                                    <i class="fas fa-user-plus"></i> Hiring Process
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../forms.html">
+                            <i class="fas fa-file-alt"></i> Forms
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../faq.html">
+                            <i class="fas fa-question-circle"></i> FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../events.html">
+                            <i class="fas fa-calendar-alt"></i> Events
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../contact.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" class="main-content">
+        <!-- NEWS ARTICLE SECTION -->
+        <section class="news-article-section">
+            <div class="content-wrapper">
+                <div class="breadcrumbs">
+                    <a href="../index.html">Home</a> &gt; 
+                    <a href="../news.html">News</a> &gt; 
+                    <span>MARC Training Refresher</span>
+                </div>
+                
+                <article class="news-article">
+                    <header class="article-header">
+                        <h1 class="article-title">Bar Harbor Police Officers Complete Annual MARC Training Refresher</h1>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="far fa-calendar-alt"></i> March 3, 2025</span>
+                            <span class="article-category"><i class="fas fa-tag"></i> Training</span>
+                        </div>
+                    </header>
+                    
+                    <div class="article-featured-image" style="max-width: 600px; margin: 0 auto;">
+                        <img src="../images/misc/marc1.webp" alt="Bar Harbor Police Officers during MARC training" class="full-width-image">
+                        <p class="image-caption">Officers practice proper restraint techniques during the MARC training refresher.</p>
+                    </div>
+                    
+                    <div class="article-content">
+                        <p>The officers of the Bar Harbor Police Department recently completed their annual MARC (Mechanics of Arrest, Restraint and Control) training refresher, reinforcing essential skills that help keep both officers and the community safe.</p>
+                        
+                        <p>On a brisk spring morning, officers gathered at the department's training facility where certified MARC instructors led them through a comprehensive review of proper restraint techniques, control methods, and situational use of force options. The training emphasized the department's commitment to using appropriate force only when necessary while prioritizing de-escalation whenever possible.</p>
+                        
+                        <blockquote>
+                            <p>"MARC training is fundamental to our department's approach to law enforcement," said Officer Cake, who participated in the training. "It gives us the tools to respond effectively in challenging situations while minimizing the risk of injury to everyone involved."</p>
+                        </blockquote>
+                        
+                        <p>The refresher covered everything from proper handcuffing procedures to defensive tactics and control techniques. Officers practiced scenarios that mirrored real-world situations they might encounter while patrolling Bar Harbor's streets, especially as the town prepares for the upcoming tourist season.</p>
+                        
+                        <p>Chief Kerns observed the training and noted its importance to the department's operations. "Our officers serve a diverse community that grows significantly during the summer months. This training helps ensure they can handle any situation professionally and safely."</p>
+                        
+                        <p>The MARC curriculum, developed by the Maine Criminal Justice Academy, has been a cornerstone of law enforcement training in Maine for decades, providing officers with standardized techniques that align with state laws and court decisions regarding appropriate use of force.</p>
+                        
+                        <div class="article-gallery">
+                            <h3>Training Gallery</h3>
+                            <div class="gallery-grid">
+                                <figure class="gallery-item">
+                                    <img src="../images/marc training/marc_training_002.webp" alt="Officers practicing MARC techniques">
+                                    <figcaption>Officers demonstrating proper MARC restraint techniques</figcaption>
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="../images/marc training/marc_training_005.webp" alt="Defensive tactics training">
+                                    <figcaption>Officers practicing defensive tactics during MARC training</figcaption>
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="../images/marc training/marc_training_010.webp" alt="Control techniques demonstration">
+                                    <figcaption>Instructors demonstrating proper control techniques</figcaption>
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="../images/marc training/marc_training_015.webp" alt="De-escalation scenario">
+                                    <figcaption>Officers participating in de-escalation scenarios</figcaption>
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="../images/marc training/marc_training_020.webp" alt="Handcuffing procedures">
+                                    <figcaption>Proper handcuffing procedures being demonstrated</figcaption>
+                                </figure>
+                                <figure class="gallery-item">
+                                    <img src="../images/marc training/marc_training_025.webp" alt="Group training session">
+                                    <figcaption>Group training session with MARC instructors</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="article-footer">
+                        <div class="share-buttons">
+                            <span>Share this article:</span>
+                            <a href="https://www.facebook.com/profile.php?id=61555282019664" class="share-btn facebook" target="_blank" rel="noopener" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="share-btn email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                        
+                        <div class="related-articles">
+                            <h3>Related Articles</h3>
+                            <div class="related-articles-grid">
+                                <a href="sro-burne-2024.html" class="related-article">
+                                    <img src="../images/staff/sroburne.webp" alt="Officer Elias Burne">
+                                    <h4>Welcome Our New School Resource Officer</h4>
+                                    <span class="article-date">March 3, 2025</span>
+                                </a>
+                                <a href="comprehensive-training-2024.html" class="related-article">
+                                    <img src="../images/misc/234.webp" alt="Comprehensive Training">
+                                    <h4>Bar Harbor Police Sharpen Skills with Comprehensive Training</h4>
+                                    <span class="article-date">March 22, 2024</span>
+                                </a>
+                            </div>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </section>
+    </main>
+    <!-- END MAIN CONTENT -->
+
+    <!-- CONTACT SECTION -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Have Questions About Our Training Programs?</h2>
+            <p>Our team is here to provide information about our officer training and professional development.</p>
+            <div class="cta-buttons">
+                <a href="../contact.html" class="btn btn-primary btn-lg contact-us">
+                    <i class="fas fa-envelope"></i> Contact Us
+                </a>
+                <a href="tel:2072883391" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-phone-alt"></i> (207) 288-3391
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo-container">
+                <img src="../images/branding/logo.png" alt="Bar Harbor Police Department Logo" class="footer-logo">
+                <p><strong>Bar Harbor Police Department</strong></p>
+                <p>37 Firefly Lane, Bar Harbor, ME 04609</p>
+                <p>General Information: (207) 288-3391</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61555282019664" class="facebook" target="_blank" rel="noopener" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" class="youtube" target="_blank" aria-label="Visit our YouTube channel"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>DIVISIONS</h3>
+                    <ul>
+                        <li><a href="../harbor-master-division.html">Harbor Master</a></li>
+                        <li><a href="../bar-harbor-parking.html">Parking Enforcement</a></li>
+                        <li><a href="../administrative-services.html">Administrative Services</a></li>
+                        <li><a href="../animalcontrol.html">Animal Control</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>SERVICES</h3>
+                    <ul>
+                        <li><a href="https://www.maine.gov/dps/msp/media-center/alerts/current-alerts" target="_blank" rel="noopener">AMBER Alert</a></li>
+                        <li><a href="https://www.maine.gov/dps/msp/investigation-traffic/missing-persons" target="_blank" rel="noopener">Missing Persons</a></li>
+                        <li><a href="../community-outreach.html">Community Programs</a></li>
+                        <li><a href="../mentalhealth.html">Mental Health Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>CAREERS</h3>
+                    <ul>
+                        <li><a href="../application-process.html">Application Process</a></li>
+                        <li><a href="../opportunities.html">Career Opportunities</a></li>
+                        <li><a href="../benefits.html">Benefits</a></li>
+                        <li><a href="../hire.html">Apply Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>ABOUT</h3>
+                    <ul>
+                        <li><a href="../administration.html">Administration</a></li>
+                        <li><a href="../command-staff.html">Command Staff</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                        <li><a href="../faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-map">
+                <h3>Our Location</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.076072177352!2d-68.20830382343881!3d44.38821380458311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4caebf7cae314357%3A0xb7e0edbf086c978c!2s37%20Firefly%20Ln%2C%20Bar%20Harbor%2C%20ME%2004609!5e1!3m2!1sen!2sus!4v1734624380504!5m2!1sen!2sus"
+                    width="100%"
+                    height="250"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    title="Map showing Bar Harbor Police Department location">
+                </iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Bar Harbor Police Department. All Rights Reserved.</p>
+            <div class="last-updated">
+                Last updated: <time datetime="2025-03-03">March 3rd, 2025</time>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS FILES -->
+    <!-- Link to your existing 'script.js' that contains the slider logic -->
+    <script src="../script.js"></script>
+    <script src="../js/footer-loader.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</body>
+</html>

@@ -374,9 +374,11 @@ body.menu-open {
     box-sizing: border-box;
   }
   
-  /* All navigation links */
+  /* All navigation links and buttons */
   .nav-links > li > a,
+  .nav-links > li > button,
   .dropdown > a,
+  .dropdown > button,
   .dropdown-content a {
     font-size: 0.9rem;
     padding: 0.8rem 0.3rem;
@@ -384,7 +386,7 @@ body.menu-open {
     justify-content: center;
     align-items: center;
     width: 100%;
-    color: var(--light-text-color, #ffffff);
+    color: var(--light-text-color, #ffffff) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: background-color 0.3s ease, color 0.3s ease;
     text-align: center;
@@ -398,13 +400,15 @@ body.menu-open {
   
   /* Ensure all icons have consistent styling */
   .nav-links > li > a i,
+  .nav-links > li > button i,
   .dropdown > a i:not(.fa-caret-down),
+  .dropdown > button i:not(.fa-caret-down),
   .dropdown-content a i {
     margin-right: 0;
     font-size: 0.85rem;
     width: 0.9rem;
     text-align: center;
-    color: var(--light-text-color, #ffffff);
+    color: var(--light-text-color, #ffffff) !important;
     flex-shrink: 0;
   }
   
@@ -416,13 +420,15 @@ body.menu-open {
     align-items: center;
   }
   
-  .dropdown > a {
+  .dropdown > a,
+  .dropdown > button {
     justify-content: center;
     width: 100%;
     position: relative;
   }
   
-  .dropdown > a i.fa-caret-down {
+  .dropdown > a i.fa-caret-down,
+  .dropdown > button i.fa-caret-down {
     position: relative;
     right: auto;
     top: auto;
@@ -430,6 +436,7 @@ body.menu-open {
     margin-left: 3px;
     transition: transform 0.3s ease;
     font-size: 0.75rem;
+    color: var(--light-text-color, #ffffff) !important;
   }
   
   .dropdown-content {
@@ -471,22 +478,27 @@ body.menu-open {
     max-height: 500px;
   }
   
-  .dropdown.active > a i.fa-caret-down {
+  .dropdown.active > a i.fa-caret-down,
+  .dropdown.active > button i.fa-caret-down {
     transform: rotate(180deg);
   }
   
   /* Hover and active states */
   .nav-links > li > a:hover,
+  .nav-links > li > button:hover,
   .dropdown > a:hover,
+  .dropdown > button:hover,
   .dropdown-content a:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
   
   .nav-links > li > a.active,
+  .nav-links > li > button.active,
   .dropdown > a.active,
+  .dropdown > button.active,
   .dropdown-content a.active {
     font-weight: 600;
-    color: var(--accent-color);
+    color: var(--accent-color) !important;
   }
   
   /* Visual feedback for clicked items */
