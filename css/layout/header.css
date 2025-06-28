@@ -206,12 +206,12 @@
 
 /* Dark Mode Styles */
 body.dark-mode .header {
-  background-color: var(--dark-mode-background, #121212);
+  background-color: var(--dark-mode-background, #121212) !important;
   box-shadow: var(--dark-mode-shadow, 0 2px 4px rgba(255, 255, 255, 0.1));
 }
 
 body.dark-mode .header.scrolled {
-  background-color: var(--dark-mode-background, #121212); /* Make background fully opaque dark */
+  background-color: var(--dark-mode-background, #121212) !important; /* Make background fully opaque dark */
   box-shadow: var(--dark-mode-shadow, 0 4px 6px rgba(255, 255, 255, 0.1)); /* Ensure shadow is visible */
 }
 

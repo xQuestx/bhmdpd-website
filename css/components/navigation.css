@@ -22,7 +22,8 @@
   align-items: center;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links button {
   color: var(--gray-800);
   text-decoration: none;
   display: flex;
@@ -34,18 +35,25 @@
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
   letter-spacing: -0.01em;
   font-size: 0.95rem;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .nav-links a:hover,
-.nav-links a.active {
+.nav-links a.active,
+.nav-links button:hover,
+.nav-links button.active {
   color: var(--accent-color);
 }
 
-.nav-links a.active {
+.nav-links a.active,
+.nav-links button.active {
   position: relative;
 }
 
-.nav-links a.active::after {
+.nav-links a.active::after,
+.nav-links button.active::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -63,25 +71,30 @@
   align-items: center;
 }
 
-.dropdown > a {
+.dropdown > a,
+.dropdown > button {
   position: relative;
   padding: 0.5rem 0;
 }
 
 /* Clean dropdown indicator */
-.dropdown > a i.fa-caret-down {
+.dropdown > a i.fa-caret-down,
+.dropdown > button i.fa-caret-down {
   margin-left: 0.25rem;
   font-size: 0.8rem;
   transition: transform 0.2s ease;
 }
 
 .dropdown:hover > a i.fa-caret-down,
-.dropdown.active > a i.fa-caret-down {
+.dropdown:hover > button i.fa-caret-down,
+.dropdown.active > a i.fa-caret-down,
+.dropdown.active > button i.fa-caret-down {
   transform: rotate(180deg);
 }
 
 /* Subtle hover effect */
-.dropdown > a:hover {
+.dropdown > a:hover,
+.dropdown > button:hover {
   background-color: rgba(0, 0, 0, 0.03);
   border-radius: var(--radius-sm);
   padding: 0.5rem 0.75rem;
@@ -318,7 +331,7 @@ body.menu-open {
     right: -100%;
     width: 100%;
     height: calc(100vh - var(--header-height));
-    background-color: var(--primary-color);
+    background-color: var(--primary-color, #1a2b4a);
     transition: right 0.3s ease, visibility 0.3s ease;
     z-index: 1000;
     overflow-y: auto;
@@ -371,7 +384,7 @@ body.menu-open {
     justify-content: center;
     align-items: center;
     width: 100%;
-    color: var(--light-text-color);
+    color: var(--light-text-color, #ffffff);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: background-color 0.3s ease, color 0.3s ease;
     text-align: center;
@@ -391,7 +404,7 @@ body.menu-open {
     font-size: 0.85rem;
     width: 0.9rem;
     text-align: center;
-    color: var(--light-text-color);
+    color: var(--light-text-color, #ffffff);
     flex-shrink: 0;
   }
   
@@ -765,12 +778,15 @@ body.menu-open {
 }
 
 /* Dark Mode Styles */
-body.dark-mode .nav-links a {
+body.dark-mode .nav-links a,
+body.dark-mode .nav-links button {
   color: var(--dark-text-color);
 }
 
 body.dark-mode .nav-links a:hover,
-body.dark-mode .nav-links a.active {
+body.dark-mode .nav-links a.active,
+body.dark-mode .nav-links button:hover,
+body.dark-mode .nav-links button.active {
   color: var(--dark-accent-color);
 }
 
@@ -791,7 +807,8 @@ body.dark-mode .dropdown-content a.active {
   border-left: 2px solid var(--dark-accent-color);
 }
 
-body.dark-mode .dropdown > a:hover {
+body.dark-mode .dropdown > a:hover,
+body.dark-mode .dropdown > button:hover {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
@@ -818,7 +835,11 @@ body.dark-mode .pagination-item:hover {
 }
 
 body.dark-mode .nav-wrapper {
-  background-color: var(--dark-primary-color);
+  background-color: var(--dark-primary-color) !important;
+}
+
+body.dark-mode .header {
+  background-color: var(--dark-primary-color) !important;
 }
 
 body.dark-mode .nav-links > li > a {
@@ -829,12 +850,12 @@ body.dark-mode .nav-links > li > a {
 /* Mobile Dark Mode Specific Styles */
 @media (max-width: 768px) {
   body.dark-mode .nav-wrapper {
-    background-color: var(--dark-mode-background, #121212);
+    background-color: var(--dark-mode-background, #121212) !important;
     box-shadow: none;
   }
   
   body.dark-mode .nav-wrapper.active {
-    background-color: var(--dark-mode-background, #121212);
+    background-color: var(--dark-mode-background, #121212) !important;
     right: 0;
     visibility: visible;
   }
