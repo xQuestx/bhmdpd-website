@@ -532,13 +532,13 @@
 <!-- MODERN HERO SECTION -->
 <section class="modern-hero">
 <div class="hero-background">
-<video class="hero-video" autoplay muted loop playsinline poster="images/branding/logo.png">
+<video class="hero-video" autoplay muted loop playsinline preload="metadata">
+<!-- Mobile version first for iOS Safari compatibility - MP4 prioritized for iOS -->
+<source src="video/hero-video-mountains-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
+<source src="video/hero-video-mountains-mobile.webm" type="video/webm" media="(max-width: 767px)">
 <!-- Desktop version - WebM first for better compression -->
 <source src="video/hero-video-mountains.webm" type="video/webm" media="(min-width: 768px)">
 <source src="video/hero-video-mountains.mp4" type="video/mp4" media="(min-width: 768px)">
-<!-- Mobile version - WebM first for better compression -->
-<source src="video/hero-video-mountains-mobile.webm" type="video/webm" media="(max-width: 767px)">
-<source src="video/hero-video-mountains-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
 <!-- Fallback for browsers that don't support video -->
 <div class="video-fallback"></div>
 </video>
@@ -876,10 +876,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroVideo = document.querySelector('.hero-video');
     
     if (heroVideo) {
+        // iOS and mobile detection
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        const isMobile = window.innerWidth <= 767;
+        
         // Pause video on slow connections to save bandwidth
         if ('connection' in navigator && navigator.connection.effectiveType === 'slow-2g') {
             heroVideo.pause();
             heroVideo.style.display = 'none';
+            return;
+        }
+        
+        // Enhanced iOS handling
+        if (isIOS) {
+            // Force load the video metadata on iOS
+            heroVideo.load();
+            
+            // Add interaction-based play for iOS
+            let hasInteracted = false;
+            const enableVideoOnInteraction = () => {
+                if (!hasInteracted) {
+                    hasInteracted = true;
+                    heroVideo.play().catch(() => {
+                        console.log('iOS autoplay blocked, video available on interaction');
+                    });
+                }
+            };
+            
+            // Listen for any user interaction to enable video
+            ['touchstart', 'click', 'scroll'].forEach(event => {
+                document.addEventListener(event, enableVideoOnInteraction, { once: true, passive: true });
+            });
         }
         
         // Pause video when tab becomes hidden (performance optimization)
@@ -903,6 +930,16 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Hero video failed to load, showing fallback');
             heroVideo.style.display = 'none';
         });
+        
+        // Fallback: If video doesn't start playing within 3 seconds on mobile, ensure fallback is visible
+        if (isMobile) {
+            setTimeout(() => {
+                if (heroVideo.paused && heroVideo.currentTime === 0) {
+                    console.log('Mobile video not playing, ensuring fallback background is visible');
+                    heroVideo.style.opacity = '0.2'; // Make video semi-transparent to show gradient behind
+                }
+            }, 3000);
+        }
     }
 });
 </script>

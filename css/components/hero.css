@@ -38,6 +38,29 @@
   object-position: center top;
   filter: brightness(0.85);
   z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* iOS and mobile video handling */
+@media (max-width: 767px) {
+  .hero-video {
+    /* On mobile, if video fails or is blocked, it gracefully fades to show gradient behind */
+    opacity: 1;
+  }
+  
+  /* Ensure gradient fallback is always visible behind video on mobile */
+  .hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+      var(--primary-color-light, #2a4a7a) 0%, 
+      var(--primary-color-dark, #1a2b4a) 100%);
+    z-index: -2;
+  }
 }
 
 .video-fallback {
@@ -49,6 +72,7 @@
   background: linear-gradient(135deg, 
     var(--primary-color-light, #2a4a7a) 0%, 
     var(--primary-color-dark, #1a2b4a) 100%);
+  z-index: -1; /* Behind video but available as fallback */
 }
 
 .hero-overlay {
