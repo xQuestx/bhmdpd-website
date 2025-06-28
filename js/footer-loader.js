@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="footer-bottom">
             <p>© 2025 Bar Harbor Police Department. All Rights Reserved.</p>
-            <div class="last-updated"><i class="fas fa-clock" aria-hidden="true" style="margin-right:0.5em;"></i>Last updated: <time datetime="2025-06-13">June 13th, 2025</time></div>
+            <div class="last-updated"><i class="fas fa-clock" aria-hidden="true" style="margin-right:0.5em;"></i>Last updated: <time datetime="2025-06-28">June 28th, 2025</time></div>
         </div>
     </footer>
     `;

@@ -33,3 +33,16 @@
   src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2') format('woff2'),
        url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.ttf') format('truetype');
 }
+
+/* Font Awesome Icon Definitions - Moved from inline CSS for better performance */
+.fas { font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.fa-caret-down::before { content: "\f0d7"; }
+.fa-times::before { content: "\f00d"; }
+.fa-bars::before { content: "\f0c9"; }
+.fa-moon::before { content: "\f186"; }
+.fa-sun::before { content: "\f185"; }
+
+/* Hero button icons */
+.fa-hands-helping::before { content: "\f4c4"; }
+.fa-envelope::before { content: "\f0e0"; }
+.fa-user-tie::before { content: "\f508"; }
